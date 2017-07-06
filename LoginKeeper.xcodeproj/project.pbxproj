@@ -1,0 +1,328 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		111EB6CD1F0E2DDD00B12AC8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111EB6CC1F0E2DDD00B12AC8 /* AppDelegate.swift */; };
+		111EB6CF1F0E2DDD00B12AC8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111EB6CE1F0E2DDD00B12AC8 /* ViewController.swift */; };
+		111EB6D21F0E2DDD00B12AC8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 111EB6D01F0E2DDD00B12AC8 /* Main.storyboard */; };
+		111EB6D51F0E2DDD00B12AC8 /* LoginKeeper.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 111EB6D31F0E2DDD00B12AC8 /* LoginKeeper.xcdatamodeld */; };
+		111EB6D71F0E2DDD00B12AC8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 111EB6D61F0E2DDD00B12AC8 /* Assets.xcassets */; };
+		111EB6DA1F0E2DDD00B12AC8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 111EB6D81F0E2DDD00B12AC8 /* LaunchScreen.storyboard */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		111EB6C91F0E2DDD00B12AC8 /* LoginKeeper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LoginKeeper.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		111EB6CC1F0E2DDD00B12AC8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		111EB6CE1F0E2DDD00B12AC8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		111EB6D11F0E2DDD00B12AC8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		111EB6D41F0E2DDD00B12AC8 /* LoginKeeper.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = LoginKeeper.xcdatamodel; sourceTree = "<group>"; };
+		111EB6D61F0E2DDD00B12AC8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		111EB6D91F0E2DDD00B12AC8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		111EB6DB1F0E2DDD00B12AC8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		111EB6C61F0E2DDD00B12AC8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		111EB6C01F0E2DDD00B12AC8 = {
+			isa = PBXGroup;
+			children = (
+				111EB6CB1F0E2DDD00B12AC8 /* LoginKeeper */,
+				111EB6CA1F0E2DDD00B12AC8 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		111EB6CA1F0E2DDD00B12AC8 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				111EB6C91F0E2DDD00B12AC8 /* LoginKeeper.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		111EB6CB1F0E2DDD00B12AC8 /* LoginKeeper */ = {
+			isa = PBXGroup;
+			children = (
+				111EB6CC1F0E2DDD00B12AC8 /* AppDelegate.swift */,
+				111EB6CE1F0E2DDD00B12AC8 /* ViewController.swift */,
+				111EB6D01F0E2DDD00B12AC8 /* Main.storyboard */,
+				111EB6D61F0E2DDD00B12AC8 /* Assets.xcassets */,
+				111EB6D81F0E2DDD00B12AC8 /* LaunchScreen.storyboard */,
+				111EB6DB1F0E2DDD00B12AC8 /* Info.plist */,
+				111EB6D31F0E2DDD00B12AC8 /* LoginKeeper.xcdatamodeld */,
+			);
+			path = LoginKeeper;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		111EB6C81F0E2DDD00B12AC8 /* LoginKeeper */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 111EB6DE1F0E2DDD00B12AC8 /* Build configuration list for PBXNativeTarget "LoginKeeper" */;
+			buildPhases = (
+				111EB6C51F0E2DDD00B12AC8 /* Sources */,
+				111EB6C61F0E2DDD00B12AC8 /* Frameworks */,
+				111EB6C71F0E2DDD00B12AC8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = LoginKeeper;
+			productName = LoginKeeper;
+			productReference = 111EB6C91F0E2DDD00B12AC8 /* LoginKeeper.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		111EB6C11F0E2DDD00B12AC8 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0830;
+				LastUpgradeCheck = 0830;
+				ORGANIZATIONNAME = "Dusan Juranovic";
+				TargetAttributes = {
+					111EB6C81F0E2DDD00B12AC8 = {
+						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = UKQDW363ZZ;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 111EB6C41F0E2DDD00B12AC8 /* Build configuration list for PBXProject "LoginKeeper" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 111EB6C01F0E2DDD00B12AC8;
+			productRefGroup = 111EB6CA1F0E2DDD00B12AC8 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				111EB6C81F0E2DDD00B12AC8 /* LoginKeeper */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		111EB6C71F0E2DDD00B12AC8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				111EB6DA1F0E2DDD00B12AC8 /* LaunchScreen.storyboard in Resources */,
+				111EB6D71F0E2DDD00B12AC8 /* Assets.xcassets in Resources */,
+				111EB6D21F0E2DDD00B12AC8 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		111EB6C51F0E2DDD00B12AC8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				111EB6CF1F0E2DDD00B12AC8 /* ViewController.swift in Sources */,
+				111EB6CD1F0E2DDD00B12AC8 /* AppDelegate.swift in Sources */,
+				111EB6D51F0E2DDD00B12AC8 /* LoginKeeper.xcdatamodeld in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		111EB6D01F0E2DDD00B12AC8 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				111EB6D11F0E2DDD00B12AC8 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		111EB6D81F0E2DDD00B12AC8 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				111EB6D91F0E2DDD00B12AC8 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		111EB6DC1F0E2DDD00B12AC8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		111EB6DD1F0E2DDD00B12AC8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		111EB6DF1F0E2DDD00B12AC8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = UKQDW363ZZ;
+				INFOPLIST_FILE = LoginKeeper/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.dusanjuranovic.LoginKeeper;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		111EB6E01F0E2DDD00B12AC8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = UKQDW363ZZ;
+				INFOPLIST_FILE = LoginKeeper/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.dusanjuranovic.LoginKeeper;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		111EB6C41F0E2DDD00B12AC8 /* Build configuration list for PBXProject "LoginKeeper" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				111EB6DC1F0E2DDD00B12AC8 /* Debug */,
+				111EB6DD1F0E2DDD00B12AC8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		111EB6DE1F0E2DDD00B12AC8 /* Build configuration list for PBXNativeTarget "LoginKeeper" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				111EB6DF1F0E2DDD00B12AC8 /* Debug */,
+				111EB6E01F0E2DDD00B12AC8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		111EB6D31F0E2DDD00B12AC8 /* LoginKeeper.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				111EB6D41F0E2DDD00B12AC8 /* LoginKeeper.xcdatamodel */,
+			);
+			currentVersion = 111EB6D41F0E2DDD00B12AC8 /* LoginKeeper.xcdatamodel */;
+			path = LoginKeeper.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 111EB6C11F0E2DDD00B12AC8 /* Project object */;
+}
