@@ -17,6 +17,13 @@
 		111EB6E41F0E33DC00B12AC8 /* AddNewAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111EB6E31F0E33DC00B12AC8 /* AddNewAccountViewController.swift */; };
 		111EB6E61F0E382000B12AC8 /* EntriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111EB6E51F0E382000B12AC8 /* EntriesViewController.swift */; };
 		111EB6E81F0E3A0100B12AC8 /* EntriesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111EB6E71F0E3A0100B12AC8 /* EntriesCell.swift */; };
+		111EB6EA1F0E3C2D00B12AC8 /* AddNewEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111EB6E91F0E3C2D00B12AC8 /* AddNewEntryViewController.swift */; };
+		111EB6EC1F0E3EA500B12AC8 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111EB6EB1F0E3EA500B12AC8 /* DetailsViewController.swift */; };
+		111EB6F11F0E431E00B12AC8 /* Account+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111EB6ED1F0E431E00B12AC8 /* Account+CoreDataClass.swift */; };
+		111EB6F21F0E431E00B12AC8 /* Account+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111EB6EE1F0E431E00B12AC8 /* Account+CoreDataProperties.swift */; };
+		111EB6F31F0E431E00B12AC8 /* Entry+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111EB6EF1F0E431E00B12AC8 /* Entry+CoreDataClass.swift */; };
+		111EB6F41F0E431E00B12AC8 /* Entry+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111EB6F01F0E431E00B12AC8 /* Entry+CoreDataProperties.swift */; };
+		111EB6FB1F0E868B00B12AC8 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111EB6FA1F0E868B00B12AC8 /* AboutViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +39,13 @@
 		111EB6E31F0E33DC00B12AC8 /* AddNewAccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddNewAccountViewController.swift; sourceTree = "<group>"; };
 		111EB6E51F0E382000B12AC8 /* EntriesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntriesViewController.swift; sourceTree = "<group>"; };
 		111EB6E71F0E3A0100B12AC8 /* EntriesCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntriesCell.swift; sourceTree = "<group>"; };
+		111EB6E91F0E3C2D00B12AC8 /* AddNewEntryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddNewEntryViewController.swift; sourceTree = "<group>"; };
+		111EB6EB1F0E3EA500B12AC8 /* DetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
+		111EB6ED1F0E431E00B12AC8 /* Account+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Account+CoreDataClass.swift"; sourceTree = "<group>"; };
+		111EB6EE1F0E431E00B12AC8 /* Account+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Account+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		111EB6EF1F0E431E00B12AC8 /* Entry+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Entry+CoreDataClass.swift"; sourceTree = "<group>"; };
+		111EB6F01F0E431E00B12AC8 /* Entry+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Entry+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		111EB6FA1F0E868B00B12AC8 /* AboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,19 +78,50 @@
 		111EB6CB1F0E2DDD00B12AC8 /* LoginKeeper */ = {
 			isa = PBXGroup;
 			children = (
-				111EB6CC1F0E2DDD00B12AC8 /* AppDelegate.swift */,
-				111EB6CE1F0E2DDD00B12AC8 /* AccountsViewController.swift */,
 				111EB6D01F0E2DDD00B12AC8 /* Main.storyboard */,
-				111EB6E71F0E3A0100B12AC8 /* EntriesCell.swift */,
-				111EB6E51F0E382000B12AC8 /* EntriesViewController.swift */,
+				111EB6FA1F0E868B00B12AC8 /* AboutViewController.swift */,
+				111EB6CE1F0E2DDD00B12AC8 /* AccountsViewController.swift */,
 				111EB6E31F0E33DC00B12AC8 /* AddNewAccountViewController.swift */,
-				111EB6E11F0E312500B12AC8 /* AccountsCell.swift */,
+				111EB6E51F0E382000B12AC8 /* EntriesViewController.swift */,
+				111EB6E91F0E3C2D00B12AC8 /* AddNewEntryViewController.swift */,
+				111EB6EB1F0E3EA500B12AC8 /* DetailsViewController.swift */,
+				111EB6F71F0E438900B12AC8 /* CustomCells */,
+				111EB6F51F0E432300B12AC8 /* CoreDataModel */,
+				111EB6F61F0E435000B12AC8 /* SupportingFiles */,
+			);
+			path = LoginKeeper;
+			sourceTree = "<group>";
+		};
+		111EB6F51F0E432300B12AC8 /* CoreDataModel */ = {
+			isa = PBXGroup;
+			children = (
+				111EB6ED1F0E431E00B12AC8 /* Account+CoreDataClass.swift */,
+				111EB6EE1F0E431E00B12AC8 /* Account+CoreDataProperties.swift */,
+				111EB6EF1F0E431E00B12AC8 /* Entry+CoreDataClass.swift */,
+				111EB6F01F0E431E00B12AC8 /* Entry+CoreDataProperties.swift */,
+			);
+			name = CoreDataModel;
+			sourceTree = "<group>";
+		};
+		111EB6F61F0E435000B12AC8 /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				111EB6CC1F0E2DDD00B12AC8 /* AppDelegate.swift */,
 				111EB6D61F0E2DDD00B12AC8 /* Assets.xcassets */,
 				111EB6D81F0E2DDD00B12AC8 /* LaunchScreen.storyboard */,
 				111EB6DB1F0E2DDD00B12AC8 /* Info.plist */,
 				111EB6D31F0E2DDD00B12AC8 /* LoginKeeper.xcdatamodeld */,
 			);
-			path = LoginKeeper;
+			name = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		111EB6F71F0E438900B12AC8 /* CustomCells */ = {
+			isa = PBXGroup;
+			children = (
+				111EB6E11F0E312500B12AC8 /* AccountsCell.swift */,
+				111EB6E71F0E3A0100B12AC8 /* EntriesCell.swift */,
+			);
+			name = CustomCells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -153,11 +198,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				111EB6CF1F0E2DDD00B12AC8 /* AccountsViewController.swift in Sources */,
+				111EB6F21F0E431E00B12AC8 /* Account+CoreDataProperties.swift in Sources */,
+				111EB6F11F0E431E00B12AC8 /* Account+CoreDataClass.swift in Sources */,
 				111EB6E81F0E3A0100B12AC8 /* EntriesCell.swift in Sources */,
+				111EB6EC1F0E3EA500B12AC8 /* DetailsViewController.swift in Sources */,
+				111EB6F41F0E431E00B12AC8 /* Entry+CoreDataProperties.swift in Sources */,
 				111EB6E21F0E312500B12AC8 /* AccountsCell.swift in Sources */,
 				111EB6E41F0E33DC00B12AC8 /* AddNewAccountViewController.swift in Sources */,
 				111EB6CD1F0E2DDD00B12AC8 /* AppDelegate.swift in Sources */,
 				111EB6D51F0E2DDD00B12AC8 /* LoginKeeper.xcdatamodeld in Sources */,
+				111EB6FB1F0E868B00B12AC8 /* AboutViewController.swift in Sources */,
+				111EB6EA1F0E3C2D00B12AC8 /* AddNewEntryViewController.swift in Sources */,
+				111EB6F31F0E431E00B12AC8 /* Entry+CoreDataClass.swift in Sources */,
 				111EB6E61F0E382000B12AC8 /* EntriesViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

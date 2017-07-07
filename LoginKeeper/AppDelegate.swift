@@ -16,6 +16,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        UINavigationBar.appearance().tintColor = UIColor(red: 216/255, green: 67/255, blue: 35/255, alpha: 1)
+        UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName: UIColor(red: 216/255, green: 67/255, blue: 35/255, alpha: 1), NSFontAttributeName: UIFont(name: "HiraginoSans-W6", size: 15)!]
         // Override point for customization after application launch.
         return true
     }
