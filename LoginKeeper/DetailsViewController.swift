@@ -11,6 +11,7 @@ import CoreData
 
 class DetailsViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet var stackView: UIStackView!
+    @IBOutlet var favoritedStar: UIImageView!
 
     @IBOutlet var topStackConstraint: NSLayoutConstraint!
     var entryDetails: Entry?
@@ -36,6 +37,20 @@ class DetailsViewController: UIViewController, UITextFieldDelegate {
         username.text = entryDetails?.username
         password.text = entryDetails?.password
         comment.text = entryDetails?.comment
+        
+        if entryDetails!.account!.entries!.count > 1 {
+            if entryDetails?.favorited == true {
+                favoritedStar.image = UIImage(named: "star")
+            } else {
+                favoritedStar.image = UIImage(named: "emptyStar")
+            }
+        } else {
+            if entryDetails?.account?.favorited == true {
+                favoritedStar.image = UIImage(named: "star")
+            } else {
+                favoritedStar.image = UIImage(named: "emptyStar")
+            }
+        }
     }
     
     func dismissKeyboard(sender: UITapGestureRecognizer ) {
@@ -44,11 +59,17 @@ class DetailsViewController: UIViewController, UITextFieldDelegate {
     
     func handleKeyboardNotification(notification: NSNotification) {
         let navigationBar = navigationController?.navigationBar.frame.height
+        //print("NavBar: \(navigationBar!)")
         if let userInfo = notification.userInfo {
             let keyBoardFrame = userInfo[UIKeyboardFrameEndUserInfoKey] as! CGRect
-            let totalHeights = (activeTextField?.frame.maxY)! + navigationBar!
+            //  print("KeyboardFrame: \(keyBoardFrame.height)")
+            let totalHeights = (activeTextField?.frame.maxY)! + navigationBar! + topStackConstraint.constant
+            //print("TotalHeights: \(totalHeights)")
             let isKeyboardShowing = notification.name == .UIKeyboardWillShow
-            let difference = totalHeights - keyBoardFrame.origin.y
+            //print("isShowing: \(isKeyboardShowing)")
+            let difference = totalHeights - keyBoardFrame.size.height
+            //print("Diff: \(difference)")
+            //print("kbFrameOriginY\(keyBoardFrame.origin.y)")
             if keyBoardFrame.origin.y < totalHeights {
                 self.topStackConstraint.constant -= isKeyboardShowing ? difference + 30 : 0
                 UIView.animate(withDuration: 0.5) {
@@ -56,7 +77,7 @@ class DetailsViewController: UIViewController, UITextFieldDelegate {
                 }
                 
             } else {
-                topStackConstraint.constant = 8
+                topStackConstraint.constant = 40
                 UIView.animate(withDuration: 0.5) {
                     self.view.layoutIfNeeded()
                 }

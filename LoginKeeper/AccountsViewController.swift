@@ -8,26 +8,206 @@
 
 import UIKit
 import CoreData
+import LocalAuthentication
 
-class AccountsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-
+class AccountsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate {
+    @IBOutlet var lockButton: UIBarButtonItem!
+    @IBOutlet var searchBar: UISearchBar!
     @IBOutlet var tableView: UITableView!
     var index: Int?
     var accounts = [Account]()
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
+    let defaults = UserDefaults.standard
+    var passwordSetShownBefore = false
+    var authenticated = false
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        tapGesture.cancelsTouchesInView = false
+        view.addGestureRecognizer(tapGesture)
+        
+        
+        if let shown = defaults.value(forKey: "shownBefore") as? Bool {
+            passwordSetShownBefore = shown
+        }
+        if passwordSetShownBefore == false {
+            setPassword()
+        } else {
+            authenticateUser()
+        }
+    }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
+        if authenticated {
+            fetchFromCoreData()
+        }
+    }
+    
+    func dismissKeyboard() {
+        searchBar.resignFirstResponder()
+    }
+    
+    func setPassword() {
+        let alert = UIAlertController(title: "Password", message: "Set your password for LoginKeeper®", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Done", style: .default, handler: { _ in
+            let password = alert.textFields?.first?.text!
+            
+            self.defaults.set(password, forKey: "userPassword")
+            self.defaults.set(true, forKey: "shownBefore")
+            self.authenticateUser()
+        }))
         
-        fetchFromCoreData()
+        alert.addAction(UIAlertAction(title: "Cancel", style: .default, handler: { _ in
+            self.defaults.set(false, forKey: "shownBefore")
+            let alert = UIAlertController(title: "Password is required", message: "Please set your password to continue.", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: {_ in
+                self.setPassword()
+            }))
+            self.present(alert, animated: true, completion: nil)
+        }))
+        alert.addTextField(configurationHandler: {textField in
+            textField.placeholder = "Enter password"
+        })
+        present(alert, animated: true, completion: nil)
+    }
+    
+    
+    func alert(message: String) {
+        let alert = UIAlertController(title: "Login Error!", message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: {_ in
+            self.authenticateUser()
+        }))
+        present(alert, animated: true, completion: nil)
+    }
+    
+    func authenticateUser() {
+        let context = LAContext()
+        var error: NSError?
+        let message = "Identify yourself"
+        
+        if context.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: &error) {
+            context.evaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, localizedReason: message, reply: {success, error in
+                // Touch ID
+                DispatchQueue.main.async {
+                if success {
+                    self.navigationItem.rightBarButtonItem?.isEnabled = true
+                    self.searchBar.isUserInteractionEnabled = true
+                    self.fetchFromCoreData()
+                    self.authenticated = true
+                    print("Success: TouchID")
+                } else {
+                    self.authenticated = false
+                    self.accounts = []
+                    self.navigationItem.rightBarButtonItem?.isEnabled = false
+                    self.searchBar.isUserInteractionEnabled = false
+                    self.lockButton.title = "Unlock"
+                    self.tableView.reloadData()
+                    
+                    switch error! {
+                    case LAError.authenticationFailed:
+                        self.alert(message: error!.localizedDescription)
+                    case LAError.userCancel:
+                        self.alert(message: error!.localizedDescription)
+                    case LAError.touchIDNotEnrolled:
+                        self.alert(message: error!.localizedDescription)
+                    case LAError.passcodeNotSet:
+                        self.alert(message: error!.localizedDescription)
+                    case LAError.systemCancel:
+                        self.alert(message: error!.localizedDescription)
+                    case LAError.userFallback:
+                        let alert = UIAlertController(title: "Password", message: "Enter your password", preferredStyle: .alert)
+                        alert.addTextField(configurationHandler: {textField in
+                            textField.placeholder = "Enter your password"
+                        })
+                        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { _ in
+                            let defaults = UserDefaults.standard
+                            if let pass = defaults.value(forKey: "userPassword") as? String {
+                                if pass == alert.textFields?.first?.text {
+                                    self.navigationItem.rightBarButtonItem?.isEnabled = true
+                                    self.searchBar.isUserInteractionEnabled = true
+                                    self.lockButton.title = "Lock"
+                                    self.fetchFromCoreData()
+                                    self.authenticated = true
+                                    print("Success")
+                                } else {
+                                    self.alert(message: error!.localizedDescription)
+                                    self.searchBar.isUserInteractionEnabled = false
+                                    self.authenticated = false
+                                }
+                            }
+                        }))
+                        alert.addAction(UIAlertAction(title: "Cancel", style: .default, handler: nil))
+                        self.present(alert, animated: true, completion: nil)
+                    default:
+                        self.alert(message: error!.localizedDescription)
+                    }
+                    print("Error: TouchID Failed")
+                }
+                }
+            })
+        } else {
+            context.evaluatePolicy(.deviceOwnerAuthentication, localizedReason: message, reply: {success, error in
+                //No Touch ID
+                DispatchQueue.main.async {
+                    
+                if success {
+                    self.navigationItem.rightBarButtonItem?.isEnabled = true
+                    self.searchBar.isUserInteractionEnabled = true
+                    self.lockButton.title = "Lock"
+                    self.fetchFromCoreData()
+                    self.authenticated = true
+                    print("Success: No TouchID, used password")
+                } else {
+                    self.authenticated = false
+                    self.accounts = []
+                    self.navigationItem.rightBarButtonItem?.isEnabled = false
+                    self.searchBar.isUserInteractionEnabled = false
+                    self.lockButton.title = "Unlock"
+                    self.tableView.reloadData()
+                    switch error! {
+                    case LAError.authenticationFailed:
+                        self.alert(message: error!.localizedDescription)
+                    case LAError.userCancel:
+                        self.alert(message: error!.localizedDescription)
+                    case LAError.touchIDNotEnrolled:
+                        self.alert(message: error!.localizedDescription)
+                    case LAError.passcodeNotSet:
+                        self.alert(message: error!.localizedDescription)
+                    case LAError.systemCancel:
+                        self.alert(message: error!.localizedDescription)
+                    case LAError.userFallback:
+                        self.alert(message: error!.localizedDescription)
+                    default:
+                        self.alert(message: error!.localizedDescription)
+                    }
+                    print("Error: No TouchID, wrong password")
+                }
+                }
+            })
+        }
+    }
+    
+    @IBAction func addAccountButton(_ sender: Any) {
+        searchBar.resignFirstResponder()
+        performSegue(withIdentifier: "addNewAccountSegue", sender: self)
+    }
+    @IBAction func lockButton(_ sender: UIBarButtonItem) {
+        accounts = []
+        tableView.reloadData()
+        authenticateUser()
+        self.authenticated = false
     }
     
     func fetchFromCoreData() {
         let context = appDelegate.persistentContainer.viewContext
         let fetchRequest = NSFetchRequest<Account>(entityName: "Account")
-        
+        let sortDescriptor = NSSortDescriptor(key: "name", ascending: true, selector: #selector(NSString.localizedCaseInsensitiveCompare(_:)))
+        fetchRequest.sortDescriptors = [sortDescriptor]
         do {
             accounts = try context.fetch(fetchRequest)
+            lockButton.title = "Lock"
             tableView.reloadData()
         } catch {
             print("Unable to fetch: \(error)")
@@ -44,6 +224,24 @@ class AccountsViewController: UIViewController, UITableViewDelegate, UITableView
         }
     }
     
+    func searchCoreDataWith(text: String) {
+        if text != "" {
+            let context = appDelegate.persistentContainer.viewContext
+            let fetchRequest = NSFetchRequest<Account>(entityName: "Account")
+            fetchRequest.predicate = NSPredicate(format: "name CONTAINS[c] %@", text)
+            let sortDescriptor = NSSortDescriptor(key: "name", ascending: true, selector: #selector(NSString.caseInsensitiveCompare(_:)))
+            fetchRequest.sortDescriptors = [sortDescriptor]
+            do {
+                accounts = try context.fetch(fetchRequest)
+                tableView.reloadData()
+            } catch {
+                print("Unable to fetch: \(error)")
+            }
+        } else {
+            fetchFromCoreData()
+        }
+    }
+    
     //MARK: - Table View DataSource and Delegate
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -54,11 +252,16 @@ class AccountsViewController: UIViewController, UITableViewDelegate, UITableView
         let cell = tableView.dequeueReusableCell(withIdentifier: "accountCell", for: indexPath) as! AccountsCell
         cell.accountNameLabel.text = accounts[indexPath.row].name
         cell.entriesCountForAccountLabel.text = "\(accounts[indexPath.row].entries!.count)"
+        cell.favoriteImageView.image = accounts[indexPath.row].favorited == true ? UIImage(named: "star") : UIImage(named: "emptyStar")
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         index = indexPath.row
+        if searchBar.isFirstResponder {
+            searchBar.resignFirstResponder()
+        }
+        
         if accounts[indexPath.row].entries!.allObjects.count > 1 {
             performSegue(withIdentifier: "showEntriesSegue", sender: self)
         } else {
@@ -68,20 +271,21 @@ class AccountsViewController: UIViewController, UITableViewDelegate, UITableView
     
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
         index = indexPath.row
-        let delete = UITableViewRowAction(style: .destructive, title: "Delete Account", handler: {_ in
-            
+        
+        let deleteAction = UITableViewRowAction(style: .destructive, title: "Delete Acc", handler: {_ in
             self.appDelegate.persistentContainer.viewContext.delete(self.accounts[indexPath.row])
             self.accounts.remove(at: indexPath.row)
             self.tableView.deleteRows(at: [indexPath], with: .automatic)
             self.saveToCoreData()
-
         })
         
-        let insert = UITableViewRowAction(style: .normal, title: "Insert Entry", handler: {_ in
+        let insertAction = UITableViewRowAction(style: .normal, title: "Add Entry", handler: {_ in
             self.performSegue(withIdentifier: "addNewEntrySegue", sender: self)
         })
-        insert.backgroundColor = UIColor.green
-        return [delete, insert]
+        deleteAction.backgroundColor = UIColor(red: 216/255, green: 67/255, blue: 35/255, alpha: 1)
+        insertAction.backgroundColor = UIColor(red: 44/255, green: 152/255, blue: 41/255, alpha: 1)
+        
+        return [deleteAction, insertAction]
     }
     
     // MARK: - Segue Preparation
@@ -102,9 +306,14 @@ class AccountsViewController: UIViewController, UITableViewDelegate, UITableView
             let controller = segue.destination as? DetailsViewController
             if let destinationVC = controller {
                 destinationVC.entryDetails = accounts[index!].entries!.allObjects.first as? Entry
+                destinationVC.title = "\(accounts[index!].name!) details"
             }
-
         }
+    }
+    
+    //MARK: - SearchBar Delegates
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        searchCoreDataWith(text: searchBar.text!)
     }
 }
 

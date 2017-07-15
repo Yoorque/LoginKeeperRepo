@@ -23,7 +23,7 @@
 		111EB6F21F0E431E00B12AC8 /* Account+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111EB6EE1F0E431E00B12AC8 /* Account+CoreDataProperties.swift */; };
 		111EB6F31F0E431E00B12AC8 /* Entry+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111EB6EF1F0E431E00B12AC8 /* Entry+CoreDataClass.swift */; };
 		111EB6F41F0E431E00B12AC8 /* Entry+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111EB6F01F0E431E00B12AC8 /* Entry+CoreDataProperties.swift */; };
-		111EB6FB1F0E868B00B12AC8 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111EB6FA1F0E868B00B12AC8 /* AboutViewController.swift */; };
+		11E850F91F18DE5900F1B5C7 /* InfoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11E850F81F18DE5900F1B5C7 /* InfoTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,7 +45,7 @@
 		111EB6EE1F0E431E00B12AC8 /* Account+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Account+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		111EB6EF1F0E431E00B12AC8 /* Entry+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Entry+CoreDataClass.swift"; sourceTree = "<group>"; };
 		111EB6F01F0E431E00B12AC8 /* Entry+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Entry+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		111EB6FA1F0E868B00B12AC8 /* AboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
+		11E850F81F18DE5900F1B5C7 /* InfoTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,10 +79,10 @@
 			isa = PBXGroup;
 			children = (
 				111EB6D01F0E2DDD00B12AC8 /* Main.storyboard */,
-				111EB6FA1F0E868B00B12AC8 /* AboutViewController.swift */,
 				111EB6CE1F0E2DDD00B12AC8 /* AccountsViewController.swift */,
 				111EB6E31F0E33DC00B12AC8 /* AddNewAccountViewController.swift */,
 				111EB6E51F0E382000B12AC8 /* EntriesViewController.swift */,
+				11E850F81F18DE5900F1B5C7 /* InfoTableViewController.swift */,
 				111EB6E91F0E3C2D00B12AC8 /* AddNewEntryViewController.swift */,
 				111EB6EB1F0E3EA500B12AC8 /* DetailsViewController.swift */,
 				111EB6F71F0E438900B12AC8 /* CustomCells */,
@@ -203,11 +203,11 @@
 				111EB6E81F0E3A0100B12AC8 /* EntriesCell.swift in Sources */,
 				111EB6EC1F0E3EA500B12AC8 /* DetailsViewController.swift in Sources */,
 				111EB6F41F0E431E00B12AC8 /* Entry+CoreDataProperties.swift in Sources */,
+				11E850F91F18DE5900F1B5C7 /* InfoTableViewController.swift in Sources */,
 				111EB6E21F0E312500B12AC8 /* AccountsCell.swift in Sources */,
 				111EB6E41F0E33DC00B12AC8 /* AddNewAccountViewController.swift in Sources */,
 				111EB6CD1F0E2DDD00B12AC8 /* AppDelegate.swift in Sources */,
 				111EB6D51F0E2DDD00B12AC8 /* LoginKeeper.xcdatamodeld in Sources */,
-				111EB6FB1F0E868B00B12AC8 /* AboutViewController.swift in Sources */,
 				111EB6EA1F0E3C2D00B12AC8 /* AddNewEntryViewController.swift in Sources */,
 				111EB6F31F0E431E00B12AC8 /* Entry+CoreDataClass.swift in Sources */,
 				111EB6E61F0E382000B12AC8 /* EntriesViewController.swift in Sources */,

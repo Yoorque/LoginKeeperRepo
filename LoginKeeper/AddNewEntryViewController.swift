@@ -44,9 +44,9 @@ class AddNewEntryViewController: UIViewController, UITextFieldDelegate {
         let navigationBar = navigationController?.navigationBar.frame.height
         if let userInfo = notification.userInfo {
             let keyBoardFrame = userInfo[UIKeyboardFrameEndUserInfoKey] as! CGRect
-            let totalHeights = (activeTextField?.frame.maxY)! + navigationBar!
+            let totalHeights = (activeTextField?.frame.maxY)! + navigationBar!  + topStackConstraint.constant
             let isKeyboardShowing = notification.name == .UIKeyboardWillShow
-            let difference = totalHeights - keyBoardFrame.origin.y
+            let difference = totalHeights - keyBoardFrame.size.height
             if keyBoardFrame.origin.y < totalHeights {
                 self.topStackConstraint.constant -= isKeyboardShowing ? difference + 30 : 0
                 UIView.animate(withDuration: 0.5) {
@@ -54,7 +54,7 @@ class AddNewEntryViewController: UIViewController, UITextFieldDelegate {
                 }
                 
             } else {
-                topStackConstraint.constant = 8
+                topStackConstraint.constant = 10
                 UIView.animate(withDuration: 0.5) {
                     self.view.layoutIfNeeded()
                 }

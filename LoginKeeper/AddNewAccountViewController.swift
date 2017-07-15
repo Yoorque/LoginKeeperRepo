@@ -30,13 +30,14 @@ class AddNewAccountViewController: UIViewController, UITextFieldDelegate {
         NotificationCenter.default.addObserver(self, selector: #selector(handleKeyboardNotification), name: .UIKeyboardWillShow, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(handleKeyboardNotification), name: .UIKeyboardWillHide, object: nil)
     }
+    
     func handleKeyboardNotification(notification: NSNotification) {
         let navigationBar = navigationController?.navigationBar.frame.height
         if let userInfo = notification.userInfo {
             let keyBoardFrame = userInfo[UIKeyboardFrameEndUserInfoKey] as! CGRect
-            let totalHeights = (activeTextField?.frame.maxY)! + navigationBar!
             let isKeyboardShowing = notification.name == .UIKeyboardWillShow
-            let difference = totalHeights - keyBoardFrame.origin.y
+            let totalHeights = (activeTextField?.frame.maxY)! + navigationBar!  + topStackConstraint.constant
+            let difference = totalHeights - keyBoardFrame.size.height
             if keyBoardFrame.origin.y < totalHeights {
                 self.topStackConstraint.constant -= isKeyboardShowing ? difference + 30 : 0
                 UIView.animate(withDuration: 0.5) {
@@ -44,7 +45,7 @@ class AddNewAccountViewController: UIViewController, UITextFieldDelegate {
                 }
                 
             } else {
-                topStackConstraint.constant = 8
+                topStackConstraint.constant = 10
                 UIView.animate(withDuration: 0.5) {
                     self.view.layoutIfNeeded()
                 }

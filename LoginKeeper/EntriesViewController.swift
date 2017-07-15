@@ -80,6 +80,7 @@ class EntriesViewController: UIViewController, UITableViewDataSource, UITableVie
         let cell = tableView.dequeueReusableCell(withIdentifier: "entryCell", for: indexPath) as! EntriesCell
         cell.entryName.text = entries![indexPath.row].name
         cell.entryComment.text = entries![indexPath.row].comment
+        cell.favoriteImageView.image = entries?[indexPath.row].favorited == true ? UIImage(named: "star") : UIImage(named: "emptyStar")
         return cell
     }
     
