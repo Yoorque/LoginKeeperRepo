@@ -25,6 +25,8 @@ class AddNewEntryViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        appDelegate.loadBannerView(forViewController: self)
+        
         view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard)))
         
         NotificationCenter.default.addObserver(self, selector: #selector(handleKeyboardNotification), name: .UIKeyboardWillShow, object: nil)
@@ -38,6 +40,14 @@ class AddNewEntryViewController: UIViewController, UITextFieldDelegate {
     
     func dismissKeyboard(sender: UITapGestureRecognizer ) {
         activeTextField?.resignFirstResponder()
+    }
+    
+    override func willRotate(to toInterfaceOrientation: UIInterfaceOrientation, duration: TimeInterval) {
+        appDelegate.removeBannerView()
+    }
+    
+    override func didRotate(from fromInterfaceOrientation: UIInterfaceOrientation) {
+        appDelegate.loadBannerView(forViewController: self)
     }
     
     func handleKeyboardNotification(notification: NSNotification) {
@@ -86,15 +96,16 @@ class AddNewEntryViewController: UIViewController, UITextFieldDelegate {
                         navigationController?.popViewController(animated: true)
                     } catch {
                         print("Unable to save: \(error)")
+                        displayAlert(title: "Error!", msg: "Oops! Unable to save at this time, please try again.")
                     }
                 } else {
-                    displayAlert(title: "No Entry name!", msg: "New Entry name is required")
+                    displayAlert(title: "No Entry name!", msg: "New Entry name is required.")
                 }
             } else {
-                displayAlert(title: "Empty password", msg: "Please enter your password")
+                displayAlert(title: "Empty password", msg: "Please enter your password.")
             }
         } else {
-            displayAlert(title: "Passwords do no match!", msg: "Please enter you password again")
+            displayAlert(title: "Passwords do no match!", msg: "Please enter you password again.")
         }
     }
     

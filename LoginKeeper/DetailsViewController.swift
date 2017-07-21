@@ -23,14 +23,17 @@ class DetailsViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet var password: UITextField!
     @IBOutlet var comment: UITextField!
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        appDelegate.loadBannerView(forViewController: self)
+        
         view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard)))
         
         NotificationCenter.default.addObserver(self, selector: #selector(handleKeyboardNotification), name: .UIKeyboardWillShow, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(handleKeyboardNotification), name: .UIKeyboardWillHide, object: nil)
     }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         name.text = entryDetails?.name
@@ -55,6 +58,14 @@ class DetailsViewController: UIViewController, UITextFieldDelegate {
     
     func dismissKeyboard(sender: UITapGestureRecognizer ) {
         activeTextField?.resignFirstResponder()
+    }
+    
+    override func willRotate(to toInterfaceOrientation: UIInterfaceOrientation, duration: TimeInterval) {
+        appDelegate.removeBannerView()
+    }
+    
+    override func didRotate(from fromInterfaceOrientation: UIInterfaceOrientation) {
+        appDelegate.loadBannerView(forViewController: self)
     }
     
     func handleKeyboardNotification(notification: NSNotification) {
@@ -100,6 +111,9 @@ class DetailsViewController: UIViewController, UITextFieldDelegate {
             navigationController?.popViewController(animated: true)
         } catch {
             print("Unable to save: \(error)")
+            let alert = UIAlertController(title: "Error!", message: "Oops! Unable to save changes at this time, please try again!", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            present(alert, animated: true, completion: nil)
         }
     }
     

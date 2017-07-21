@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 
-class EntriesViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class EntriesViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, EntriesDisplayAlertDelegate {
 
     @IBOutlet var tableView: UITableView!
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
@@ -19,6 +19,7 @@ class EntriesViewController: UIViewController, UITableViewDataSource, UITableVie
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
+        appDelegate.loadBannerView(forViewController: self)
         fetchFromCoreData()
     }
 
@@ -32,18 +33,31 @@ class EntriesViewController: UIViewController, UITableViewDataSource, UITableVie
             tableView.reloadData()
         } catch {
             print("Unable to fetch: \(error)")
+            let alert = UIAlertController(title: "Error!", message: "Oops! Unable to fetch data at this time, please try again!", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            present(alert, animated: true, completion: nil)
         }
     }
     
     func saveToCoreData() {
         let context = appDelegate.persistentContainer.viewContext
         do {
-            
             try context.save()
             tableView.reloadData()
         } catch {
             print("Unable to save: \(error)")
+            let alert = UIAlertController(title: "Error!", message: "Oops! Unable to save at this time, please try again!", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            present(alert, animated: true, completion: nil)
         }
+    }
+
+    override func willRotate(to toInterfaceOrientation: UIInterfaceOrientation, duration: TimeInterval) {
+        appDelegate.removeBannerView()
+    }
+    
+    override func didRotate(from fromInterfaceOrientation: UIInterfaceOrientation) {
+        appDelegate.loadBannerView(forViewController: self)
     }
 
     
@@ -67,7 +81,11 @@ class EntriesViewController: UIViewController, UITableViewDataSource, UITableVie
         }
     }
     
-    
+    func alert(message: String) {
+        let alert = UIAlertController(title: "Error!", message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        present(alert, animated: true, completion: nil)
+    }
    
     
     //MARK: - Table View DataSource and Delegate
@@ -78,6 +96,7 @@ class EntriesViewController: UIViewController, UITableViewDataSource, UITableVie
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "entryCell", for: indexPath) as! EntriesCell
+        cell.delegate = self
         cell.entryName.text = entries![indexPath.row].name
         cell.entryComment.text = entries![indexPath.row].comment
         cell.favoriteImageView.image = entries?[indexPath.row].favorited == true ? UIImage(named: "star") : UIImage(named: "emptyStar")

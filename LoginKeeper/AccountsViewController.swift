@@ -9,11 +9,14 @@
 import UIKit
 import CoreData
 import LocalAuthentication
+import GoogleMobileAds
 
-class AccountsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate {
+
+class AccountsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate, AccountsDisplayAlertDelegate {
     @IBOutlet var lockButton: UIBarButtonItem!
     @IBOutlet var searchBar: UISearchBar!
     @IBOutlet var tableView: UITableView!
+        
     var index: Int?
     var accounts = [Account]()
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
@@ -23,10 +26,10 @@ class AccountsViewController: UIViewController, UITableViewDelegate, UITableView
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
         tapGesture.cancelsTouchesInView = false
         view.addGestureRecognizer(tapGesture)
-        
         
         if let shown = defaults.value(forKey: "shownBefore") as? Bool {
             passwordSetShownBefore = shown
@@ -40,6 +43,7 @@ class AccountsViewController: UIViewController, UITableViewDelegate, UITableView
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
+        appDelegate.loadBannerView(forViewController: self)
         if authenticated {
             fetchFromCoreData()
         }
@@ -47,6 +51,14 @@ class AccountsViewController: UIViewController, UITableViewDelegate, UITableView
     
     func dismissKeyboard() {
         searchBar.resignFirstResponder()
+    }
+    
+    override func willRotate(to toInterfaceOrientation: UIInterfaceOrientation, duration: TimeInterval) {
+        appDelegate.removeBannerView()
+    }
+    
+    override func didRotate(from fromInterfaceOrientation: UIInterfaceOrientation) {
+        appDelegate.loadBannerView(forViewController: self)
     }
     
     func setPassword() {
@@ -74,8 +86,8 @@ class AccountsViewController: UIViewController, UITableViewDelegate, UITableView
     }
     
     
-    func alert(message: String) {
-        let alert = UIAlertController(title: "Login Error!", message: message, preferredStyle: .alert)
+    func loginAlert(message: String) {
+        let alert = UIAlertController(title: "Error!", message: message, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: {_ in
             self.authenticateUser()
         }))
@@ -107,15 +119,15 @@ class AccountsViewController: UIViewController, UITableViewDelegate, UITableView
                     
                     switch error! {
                     case LAError.authenticationFailed:
-                        self.alert(message: error!.localizedDescription)
+                        self.loginAlert(message: error!.localizedDescription)
                     case LAError.userCancel:
-                        self.alert(message: error!.localizedDescription)
+                        self.loginAlert(message: error!.localizedDescription)
                     case LAError.touchIDNotEnrolled:
-                        self.alert(message: error!.localizedDescription)
+                        self.loginAlert(message: error!.localizedDescription)
                     case LAError.passcodeNotSet:
-                        self.alert(message: error!.localizedDescription)
+                        self.loginAlert(message: error!.localizedDescription)
                     case LAError.systemCancel:
-                        self.alert(message: error!.localizedDescription)
+                        self.loginAlert(message: error!.localizedDescription)
                     case LAError.userFallback:
                         let alert = UIAlertController(title: "Password", message: "Enter your password", preferredStyle: .alert)
                         alert.addTextField(configurationHandler: {textField in
@@ -141,9 +153,8 @@ class AccountsViewController: UIViewController, UITableViewDelegate, UITableView
                         alert.addAction(UIAlertAction(title: "Cancel", style: .default, handler: nil))
                         self.present(alert, animated: true, completion: nil)
                     default:
-                        self.alert(message: error!.localizedDescription)
+                        self.loginAlert(message: error!.localizedDescription)
                     }
-                    print("Error: TouchID Failed")
                 }
                 }
             })
@@ -158,7 +169,7 @@ class AccountsViewController: UIViewController, UITableViewDelegate, UITableView
                     self.lockButton.title = "Lock"
                     self.fetchFromCoreData()
                     self.authenticated = true
-                    print("Success: No TouchID, used password")
+            
                 } else {
                     self.authenticated = false
                     self.accounts = []
@@ -168,21 +179,20 @@ class AccountsViewController: UIViewController, UITableViewDelegate, UITableView
                     self.tableView.reloadData()
                     switch error! {
                     case LAError.authenticationFailed:
-                        self.alert(message: error!.localizedDescription)
+                        self.loginAlert(message: error!.localizedDescription)
                     case LAError.userCancel:
-                        self.alert(message: error!.localizedDescription)
+                        self.loginAlert(message: error!.localizedDescription)
                     case LAError.touchIDNotEnrolled:
-                        self.alert(message: error!.localizedDescription)
+                        self.loginAlert(message: error!.localizedDescription)
                     case LAError.passcodeNotSet:
-                        self.alert(message: error!.localizedDescription)
+                        self.loginAlert(message: error!.localizedDescription)
                     case LAError.systemCancel:
-                        self.alert(message: error!.localizedDescription)
+                        self.loginAlert(message: error!.localizedDescription)
                     case LAError.userFallback:
-                        self.alert(message: error!.localizedDescription)
+                        self.loginAlert(message: error!.localizedDescription)
                     default:
-                        self.alert(message: error!.localizedDescription)
+                        self.loginAlert(message: error!.localizedDescription)
                     }
-                    print("Error: No TouchID, wrong password")
                 }
                 }
             })
@@ -200,6 +210,18 @@ class AccountsViewController: UIViewController, UITableViewDelegate, UITableView
         self.authenticated = false
     }
     
+    func displayAlert(title: String, msg: String) {
+        let alert = UIAlertController(title: title, message: msg, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        present(alert, animated: true, completion: nil)
+    }
+
+    func alert(message: String) {
+        let alert = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        present(alert, animated: true, completion: nil)
+    }
+    
     func fetchFromCoreData() {
         let context = appDelegate.persistentContainer.viewContext
         let fetchRequest = NSFetchRequest<Account>(entityName: "Account")
@@ -211,6 +233,7 @@ class AccountsViewController: UIViewController, UITableViewDelegate, UITableView
             tableView.reloadData()
         } catch {
             print("Unable to fetch: \(error)")
+            alert(message: "Oops! Unable to fetch data at this time, please try again.")
         }
     }
     
@@ -221,6 +244,7 @@ class AccountsViewController: UIViewController, UITableViewDelegate, UITableView
             tableView.reloadData()
         } catch {
             print("Unable to save: \(error)")
+            alert(message: "Oops! Unable to save at this time, please try again.")
         }
     }
     
@@ -236,6 +260,8 @@ class AccountsViewController: UIViewController, UITableViewDelegate, UITableView
                 tableView.reloadData()
             } catch {
                 print("Unable to fetch: \(error)")
+                alert(message: "Oops! Unable to fetch data at this time, please try again.")
+                
             }
         } else {
             fetchFromCoreData()
@@ -250,6 +276,7 @@ class AccountsViewController: UIViewController, UITableViewDelegate, UITableView
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "accountCell", for: indexPath) as! AccountsCell
+        cell.delegate = self
         cell.accountNameLabel.text = accounts[indexPath.row].name
         cell.entriesCountForAccountLabel.text = "\(accounts[indexPath.row].entries!.count)"
         cell.favoriteImageView.image = accounts[indexPath.row].favorited == true ? UIImage(named: "star") : UIImage(named: "emptyStar")

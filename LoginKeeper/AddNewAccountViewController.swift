@@ -8,11 +8,17 @@
 
 import UIKit
 import CoreData
+import Firebase
+import FirebaseDatabase
 
 class AddNewAccountViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet var topStackConstraint: NSLayoutConstraint!
     @IBOutlet var stackView: UIStackView!
+    let appDelegate = UIApplication.shared.delegate as! AppDelegate
+    
+    var ref: DatabaseReference!
+
     
     var activeTextField: UITextField?
     @IBOutlet var accountTitle: UITextField!
@@ -21,10 +27,10 @@ class AddNewAccountViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet var confirmPassword: UITextField!
     @IBOutlet var password: UITextField!
     
-    let appDelegate = UIApplication.shared.delegate as! AppDelegate
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+         ref = Database.database().reference()
+        appDelegate.loadBannerView(forViewController: self)
         view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard)))
         
         NotificationCenter.default.addObserver(self, selector: #selector(handleKeyboardNotification), name: .UIKeyboardWillShow, object: nil)
@@ -58,8 +64,18 @@ class AddNewAccountViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func saveAccountButton(_ sender: UIBarButtonItem) {
+        
         saveAccount()
     }
+    
+    override func willRotate(to toInterfaceOrientation: UIInterfaceOrientation, duration: TimeInterval) {
+        appDelegate.removeBannerView()
+    }
+    
+    override func didRotate(from fromInterfaceOrientation: UIInterfaceOrientation) {
+        appDelegate.loadBannerView(forViewController: self)
+    }
+
     
     func displayAlert(title: String, msg: String) {
         let alert = UIAlertController(title: title, message: msg, preferredStyle: .alert)
@@ -84,18 +100,20 @@ class AddNewAccountViewController: UIViewController, UITextFieldDelegate {
                     accountEntity.addToEntries(entryEntity)
                     do {
                         try context.save()
+                        
                         navigationController?.popViewController(animated: true)
+                        
                     } catch {
-                        print("Unable to save: \(error)")
+                        displayAlert(title: "Error!", msg: "Oops! Unable to save at this time, please try again.")
                     }
                 } else {
-                    displayAlert(title: "No Account name!", msg: "Account name is required")
+                    displayAlert(title: "No Account name!", msg: "Account name is required.")
                 }
             } else {
-                displayAlert(title: "Empty password", msg: "Please enter your password")
+                displayAlert(title: "Empty password", msg: "Please enter your password.")
             }
         } else {
-            displayAlert(title: "Passwords do no match!", msg: "Please enter you password again")
+            displayAlert(title: "Passwords do no match!", msg: "Please enter you password again.")
         }
     }
     

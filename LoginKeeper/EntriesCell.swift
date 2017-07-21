@@ -9,8 +9,13 @@
 import UIKit
 import CoreData
 
+protocol EntriesDisplayAlertDelegate {
+    func alert(message: String)
+}
+
 class EntriesCell: UITableViewCell {
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    var delegate: EntriesDisplayAlertDelegate?
     
     @IBOutlet var favoriteImageView: UIImageView! {
         didSet {
@@ -40,6 +45,7 @@ class EntriesCell: UITableViewCell {
                 try context.save()
             } catch {
                 print("Can't save favorites")
+                delegate?.alert(message: "Can't save favorites.")
             }
         }
     }
@@ -52,6 +58,7 @@ class EntriesCell: UITableViewCell {
             entryForCell = try context.fetch(fetchRequest).first as! Entry
         } catch {
             print("Unable to fetch: \(error)")
+            delegate?.alert(message: "Unable to fetch data.")
         }
     }
     

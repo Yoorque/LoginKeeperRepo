@@ -9,8 +9,14 @@
 import UIKit
 import CoreData
 
+protocol AccountsDisplayAlertDelegate {
+    func alert(message: String)
+}
+
 class AccountsCell: UITableViewCell {
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    
+    var delegate: AccountsDisplayAlertDelegate?
     
     @IBOutlet var favoriteImageView: UIImageView! {
         didSet {
@@ -39,7 +45,7 @@ class AccountsCell: UITableViewCell {
             do {
                 try context.save()
             } catch {
-                print("Can't save favorites")
+                delegate?.alert(message: "Can't save to favorites.")
             }
         }
     }
@@ -53,6 +59,7 @@ class AccountsCell: UITableViewCell {
             accountForCell = try context.fetch(fetchRequest).first as! Account
         } catch {
             print("Unable to fetch: \(error)")
+            delegate?.alert(message: "Unable to fetch data.")
         }
     }
 }
