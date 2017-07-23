@@ -12,10 +12,9 @@ class InfoTableViewController: UITableViewController {
     @IBOutlet var feedbackCell: UITableViewCell!
     @IBOutlet var devWebsiteCell: UITableViewCell!
     @IBOutlet var moreAppsCell: UITableViewCell!
-
-    @IBOutlet var openStreetCell: UITableViewCell!
-    @IBOutlet var overpassCell: UITableViewCell!
     @IBOutlet var iconsCell: UITableViewCell!
+    
+    let accountsVC = AccountsViewController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,7 +43,13 @@ class InfoTableViewController: UITableViewController {
         case feedbackCell.tag:
             let email = "juranovicd@gmail.com"
             if let url = URL(string: "mailto:\(email)") {
-                UIApplication.shared.open(url)
+                if authenticated == true {
+                  UIApplication.shared.open(url)
+                } else {
+                    let alert = UIAlertController(title: "Error", message: "You are not authorised to use this feature", preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                    present(alert, animated: true, completion: nil)
+                }
             }
             
         case devWebsiteCell.tag:

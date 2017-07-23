@@ -11,21 +11,28 @@ import CoreData
 import LocalAuthentication
 import GoogleMobileAds
 
+var authenticated = false
 
 class AccountsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate, AccountsDisplayAlertDelegate {
     @IBOutlet var lockButton: UIBarButtonItem!
     @IBOutlet var searchBar: UISearchBar!
     @IBOutlet var tableView: UITableView!
-        
+    
     var index: Int?
     var accounts = [Account]()
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     let defaults = UserDefaults.standard
     var passwordSetShownBefore = false
-    var authenticated = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        NotificationCenter.default.addObserver(forName: NSNotification.Name.UIApplicationWillEnterForeground, object: nil, queue: nil, using: {_ in
+            self.navigationController?.popToViewController(self, animated: true)
+            self.accounts = []
+            self.tableView.reloadData()
+            self.authenticateUser()
+            authenticated = false
+        })
         
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
         tapGesture.cancelsTouchesInView = false
@@ -41,12 +48,17 @@ class AccountsViewController: UIViewController, UITableViewDelegate, UITableView
         }
     }
     
+    func appDidEnterForeground() {
+        authenticateUser()
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         appDelegate.loadBannerView(forViewController: self, andOrientation: UIDevice.current.orientation)
         if authenticated {
             fetchFromCoreData()
         }
+        
     }
     
     func dismissKeyboard() {
@@ -107,10 +119,10 @@ class AccountsViewController: UIViewController, UITableViewDelegate, UITableView
                     self.navigationItem.rightBarButtonItem?.isEnabled = true
                     self.searchBar.isUserInteractionEnabled = true
                     self.fetchFromCoreData()
-                    self.authenticated = true
+                    authenticated = true
                     print("Success: TouchID")
                 } else {
-                    self.authenticated = false
+                    authenticated = false
                     self.accounts = []
                     self.navigationItem.rightBarButtonItem?.isEnabled = false
                     self.searchBar.isUserInteractionEnabled = false
@@ -141,12 +153,12 @@ class AccountsViewController: UIViewController, UITableViewDelegate, UITableView
                                     self.searchBar.isUserInteractionEnabled = true
                                     self.lockButton.title = "Lock"
                                     self.fetchFromCoreData()
-                                    self.authenticated = true
+                                    authenticated = true
                                     print("Success")
                                 } else {
                                     self.alert(message: error!.localizedDescription)
                                     self.searchBar.isUserInteractionEnabled = false
-                                    self.authenticated = false
+                                    authenticated = false
                                 }
                             }
                         }))
@@ -168,10 +180,10 @@ class AccountsViewController: UIViewController, UITableViewDelegate, UITableView
                     self.searchBar.isUserInteractionEnabled = true
                     self.lockButton.title = "Lock"
                     self.fetchFromCoreData()
-                    self.authenticated = true
+                    authenticated = true
             
                 } else {
-                    self.authenticated = false
+                    authenticated = false
                     self.accounts = []
                     self.navigationItem.rightBarButtonItem?.isEnabled = false
                     self.searchBar.isUserInteractionEnabled = false
@@ -207,7 +219,7 @@ class AccountsViewController: UIViewController, UITableViewDelegate, UITableView
         accounts = []
         tableView.reloadData()
         authenticateUser()
-        self.authenticated = false
+        authenticated = false
     }
     
     func displayAlert(title: String, msg: String) {

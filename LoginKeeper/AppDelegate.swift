@@ -17,6 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GADBannerViewDelegate {
 
     var window: UIWindow?
     var adBannerView = GADBannerView()
+    var accountsVC: AccountsViewController?
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
@@ -85,7 +86,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GADBannerViewDelegate {
 
     func applicationWillEnterForeground(_ application: UIApplication) {
         // Called as part of the transition from the background to the active state; here you can undo many of the changes made on entering the background.
-       
     }
 
     func applicationDidBecomeActive(_ application: UIApplication) {

@@ -57,6 +57,16 @@ class DetailsViewController: UIViewController, UITextFieldDelegate {
             }
         }
     }
+    @IBAction func shareButton(_ sender: UIBarButtonItem) {
+        let textToShare = "Account name : \(entryDetails!.account!.name!)\nEntry name: \(entryDetails!.name!)\nUsername: \(entryDetails!.username!)\nPassword: \(entryDetails!.password!)\nComment: \(entryDetails!.comment!)"
+        
+            let objectsToShare = [textToShare]
+            let activityVC = UIActivityViewController(activityItems: objectsToShare, applicationActivities: nil)
+            
+            activityVC.popoverPresentationController?.sourceView = sender.customView
+            self.present(activityVC, animated: true, completion: nil)
+        
+    }
     
     override func willRotate(to toInterfaceOrientation: UIInterfaceOrientation, duration: TimeInterval) {
         appDelegate.removeBannerView()

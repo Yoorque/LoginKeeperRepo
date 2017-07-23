@@ -1400,7 +1400,13 @@
                             </mask>
                         </variation>
                     </view>
-                    <navigationItem key="navigationItem" title="Title" id="YJU-ma-TiN"/>
+                    <navigationItem key="navigationItem" title="Title" id="YJU-ma-TiN">
+                        <barButtonItem key="rightBarButtonItem" systemItem="action" id="lKU-gH-Bvk">
+                            <connections>
+                                <action selector="shareButton:" destination="gFM-Ue-sol" id="ksK-IH-6VJ"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="accountName" destination="G3E-E7-jUM" id="kh8-mg-mSL"/>
                         <outlet property="comment" destination="Blt-9E-2tY" id="Wj6-hq-ExI"/>
@@ -1444,7 +1450,7 @@
         <image name="web" width="50" height="50"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="mYc-lo-ZTI"/>
         <segue reference="h9s-k7-aFA"/>
-        <segue reference="iTS-a3-3V6"/>
     </inferredMetricsTieBreakers>
 </document>

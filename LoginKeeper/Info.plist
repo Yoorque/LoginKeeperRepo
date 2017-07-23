@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>UIApplicationExitsOnSuspend</key>
-	<true/>
+	<false/>
 	<key>NSLocationUsageDescription</key>
 	<string>Location is not used at any time</string>
 	<key>CFBundleExecutable</key>
