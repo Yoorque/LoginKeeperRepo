@@ -18,8 +18,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GADBannerViewDelegate {
     var window: UIWindow?
     var adBannerView = GADBannerView()
     
-    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        
         adBannerView = GADBannerView(adSize: kGADAdSizeSmartBannerPortrait)
         adBannerView.delegate = self
         adBannerView.adUnitID = "ca-app-pub-9468673959133010/5461633889"
@@ -50,9 +50,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GADBannerViewDelegate {
         bannerView.isHidden = true
     }
     
-    func loadBannerView(forViewController view: UIViewController) {
+    func loadBannerView(forViewController view: UIViewController, andOrientation orientation: UIDeviceOrientation) {
+        if orientation.isPortrait {
+            adBannerView.adSize = kGADAdSizeSmartBannerPortrait
+        } else {
+            adBannerView.adSize = kGADAdSizeSmartBannerLandscape
+        }
+        
         adBannerView.frame.origin = CGPoint(x: 0, y: view.view.frame.size.height - adBannerView.bounds.size.height)
-        adBannerView.frame.size.width = view.view.frame.size.width
         
         adBannerView.rootViewController = view
         adBannerView.load(GADRequest())
@@ -62,15 +67,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GADBannerViewDelegate {
         
         view.view.addSubview(adBannerView)
         adBannerView.isHidden = true
-        DispatchQueue.main.async {
-            self.adBannerView.setNeedsLayout()
-        }
     }
     
     func removeBannerView() {
         adBannerView.removeFromSuperview()
     }
-
 
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

@@ -30,7 +30,7 @@ class AddNewAccountViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
          ref = Database.database().reference()
-        appDelegate.loadBannerView(forViewController: self)
+        appDelegate.loadBannerView(forViewController: self, andOrientation: UIDevice.current.orientation)
         view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard)))
         
         NotificationCenter.default.addObserver(self, selector: #selector(handleKeyboardNotification), name: .UIKeyboardWillShow, object: nil)
@@ -73,7 +73,7 @@ class AddNewAccountViewController: UIViewController, UITextFieldDelegate {
     }
     
     override func didRotate(from fromInterfaceOrientation: UIInterfaceOrientation) {
-        appDelegate.loadBannerView(forViewController: self)
+        appDelegate.loadBannerView(forViewController: self, andOrientation: UIDevice.current.orientation)
     }
 
     

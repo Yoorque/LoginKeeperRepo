@@ -19,8 +19,9 @@ class EntriesViewController: UIViewController, UITableViewDataSource, UITableVie
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-        appDelegate.loadBannerView(forViewController: self)
+        appDelegate.loadBannerView(forViewController: self, andOrientation: UIDevice.current.orientation)
         fetchFromCoreData()
+        tableView.setNeedsLayout()
     }
 
     func fetchFromCoreData() {
@@ -57,7 +58,8 @@ class EntriesViewController: UIViewController, UITableViewDataSource, UITableVie
     }
     
     override func didRotate(from fromInterfaceOrientation: UIInterfaceOrientation) {
-        appDelegate.loadBannerView(forViewController: self)
+        appDelegate.loadBannerView(forViewController: self, andOrientation: UIDevice.current.orientation)
+        
     }
 
     

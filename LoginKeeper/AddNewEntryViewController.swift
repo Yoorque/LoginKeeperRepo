@@ -25,7 +25,7 @@ class AddNewEntryViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        appDelegate.loadBannerView(forViewController: self)
+        appDelegate.loadBannerView(forViewController: self, andOrientation: UIDevice.current.orientation)
         
         view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard)))
         
@@ -47,7 +47,7 @@ class AddNewEntryViewController: UIViewController, UITextFieldDelegate {
     }
     
     override func didRotate(from fromInterfaceOrientation: UIInterfaceOrientation) {
-        appDelegate.loadBannerView(forViewController: self)
+        appDelegate.loadBannerView(forViewController: self, andOrientation: UIDevice.current.orientation)
     }
     
     func handleKeyboardNotification(notification: NSNotification) {

@@ -18,6 +18,7 @@ class DetailsViewController: UIViewController, UITextFieldDelegate {
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     
     var activeTextField: UITextField?
+    @IBOutlet var accountName: UITextField!
     @IBOutlet var name: UITextField!
     @IBOutlet var username: UITextField!
     @IBOutlet var password: UITextField!
@@ -26,7 +27,7 @@ class DetailsViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        appDelegate.loadBannerView(forViewController: self)
+        appDelegate.loadBannerView(forViewController: self, andOrientation: UIDevice.current.orientation)
         
         view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard)))
         
@@ -36,6 +37,7 @@ class DetailsViewController: UIViewController, UITextFieldDelegate {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
+        accountName.text = entryDetails?.account?.name
         name.text = entryDetails?.name
         username.text = entryDetails?.username
         password.text = entryDetails?.password
@@ -56,16 +58,16 @@ class DetailsViewController: UIViewController, UITextFieldDelegate {
         }
     }
     
-    func dismissKeyboard(sender: UITapGestureRecognizer ) {
-        activeTextField?.resignFirstResponder()
-    }
-    
     override func willRotate(to toInterfaceOrientation: UIInterfaceOrientation, duration: TimeInterval) {
         appDelegate.removeBannerView()
     }
     
     override func didRotate(from fromInterfaceOrientation: UIInterfaceOrientation) {
-        appDelegate.loadBannerView(forViewController: self)
+        appDelegate.loadBannerView(forViewController: self, andOrientation: UIDevice.current.orientation)
+    }
+    
+    func dismissKeyboard(sender: UITapGestureRecognizer ) {
+        activeTextField?.resignFirstResponder()
     }
     
     func handleKeyboardNotification(notification: NSNotification) {
@@ -108,13 +110,16 @@ class DetailsViewController: UIViewController, UITextFieldDelegate {
         entryDetails?.comment = comment.text
         do {
             try context.save()
-            navigationController?.popViewController(animated: true)
         } catch {
             print("Unable to save: \(error)")
             let alert = UIAlertController(title: "Error!", message: "Oops! Unable to save changes at this time, please try again!", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
             present(alert, animated: true, completion: nil)
         }
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        saveChanges()
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {

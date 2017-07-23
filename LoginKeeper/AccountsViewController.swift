@@ -43,7 +43,7 @@ class AccountsViewController: UIViewController, UITableViewDelegate, UITableView
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-        appDelegate.loadBannerView(forViewController: self)
+        appDelegate.loadBannerView(forViewController: self, andOrientation: UIDevice.current.orientation)
         if authenticated {
             fetchFromCoreData()
         }
@@ -58,7 +58,7 @@ class AccountsViewController: UIViewController, UITableViewDelegate, UITableView
     }
     
     override func didRotate(from fromInterfaceOrientation: UIInterfaceOrientation) {
-        appDelegate.loadBannerView(forViewController: self)
+        appDelegate.loadBannerView(forViewController: self, andOrientation: UIDevice.current.orientation)
     }
     
     func setPassword() {
@@ -322,7 +322,7 @@ class AccountsViewController: UIViewController, UITableViewDelegate, UITableView
             if let destinationVC = controller {
                 destinationVC.entries = accounts[index!].entries?.allObjects as? [Entry]
                 destinationVC.account = accounts[index!]
-                destinationVC.title = accounts[index!].name
+                destinationVC.title = "Entries of \(accounts[index!].name!)"
             }
         } else if segue.identifier == "addNewEntrySegue" {
             let controller = segue.destination as? AddNewEntryViewController

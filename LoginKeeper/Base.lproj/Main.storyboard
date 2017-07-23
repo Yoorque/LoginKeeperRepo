@@ -27,7 +27,7 @@
                             <textView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" delaysContentTouches="NO" canCancelContentTouches="NO" bouncesZoom="NO" editable="NO" textAlignment="justified" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3gR-S5-rT6">
                                 <rect key="frame" x="16" y="101" width="343" height="370"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <mutableString key="text">LoginKeeper® was developed solely using Apple Libraries and available resources provided by Apple and free open source resources. I, Dusan Juranovic, as a developer of LoginKeeper®, claim all distribution rights of LoginKeeper® as well as all copyrights©. LoginKeeper® is not recommended for storing valuable information such as , credit card details, bank details and all other information where loss of such information would bare great impact to individuals or companies alike. LoginKeeper® is intended only for purpose of not having to remember all of your login details or writing them down on pieces of paper. It is users judgment call to decide which information they enter into the app. If you have any issues or suggestions, please write an email to below provided email address. Thanks.</mutableString>
+                                <string key="text">LoginKeeper® was developed solely using Apple Libraries and available resources provided by Apple and free open source resources. I, Dusan Juranovic, as a developer of LoginKeeper®, claim all distribution rights of LoginKeeper® as well as all copyrights©. LoginKeeper® is not recommended for storing valuable information such as , credit card details, bank details and all other information where loss of such information would bare great impact to individuals or companies alike. LoginKeeper® is intended only for purpose of not having to remember all of your login details or writing them down on pieces of paper. It is users judgment call to decide which information they enter into the app. If you have any issues or suggestions, please write an email to below provided email address. Thanks.</string>
                                 <fontDescription key="fontDescription" name="HiraMinProN-W3" family="Hiragino Mincho ProN" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
@@ -610,7 +610,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="lY3-W0-58N">
                                 <rect key="frame" x="26" y="74" width="323" height="190"/>
                                 <subviews>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Account Title" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="vgY-17-wLs">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Account Title (required)" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="vgY-17-wLs">
                                         <rect key="frame" x="0.0" y="0.0" width="323" height="30"/>
                                         <color key="textColor" red="0.2196078431372549" green="0.48627450980392156" blue="0.99607843137254903" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -628,7 +628,7 @@
                                             <outlet property="delegate" destination="rpA-qm-WNA" id="TZT-Vo-XV0"/>
                                         </connections>
                                     </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your password" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="sAf-ga-LgP">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your password (required)" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="sAf-ga-LgP">
                                         <rect key="frame" x="0.0" y="80" width="323" height="30"/>
                                         <color key="textColor" red="0.2196078431372549" green="0.48627450980392156" blue="0.99607843137254903" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -637,7 +637,7 @@
                                             <outlet property="delegate" destination="rpA-qm-WNA" id="Ajp-Ul-qcN"/>
                                         </connections>
                                     </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Confirm your password" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="C9D-Gp-eeI">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Confirm your password (required)" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="C9D-Gp-eeI">
                                         <rect key="frame" x="0.0" y="120" width="323" height="30"/>
                                         <color key="textColor" red="0.2196078431372549" green="0.48627450980392156" blue="0.99607843137254903" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -755,7 +755,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="K79-Tq-njK">
                                 <rect key="frame" x="26" y="74" width="323" height="190"/>
                                 <subviews>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Name for Entry" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="zOh-H8-h8M">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Name for Entry(required)" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="zOh-H8-h8M">
                                         <rect key="frame" x="0.0" y="0.0" width="323" height="30"/>
                                         <color key="textColor" red="0.2196078431372549" green="0.48627450980392156" blue="0.99607843137254903" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -773,7 +773,7 @@
                                             <outlet property="delegate" destination="ox9-YF-LOE" id="XWu-Ke-Kjq"/>
                                         </connections>
                                     </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your password" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="LNo-xb-YV2">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your password (required)" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="LNo-xb-YV2">
                                         <rect key="frame" x="0.0" y="80" width="323" height="30"/>
                                         <color key="textColor" red="0.2196078431372549" green="0.48627450980392156" blue="0.99607843137254903" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -782,7 +782,7 @@
                                             <outlet property="delegate" destination="ox9-YF-LOE" id="19Z-4G-GIJ"/>
                                         </connections>
                                     </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Confirm your password" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="4NY-8P-15S">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Confirm your password (required)" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="4NY-8P-15S">
                                         <rect key="frame" x="0.0" y="120" width="323" height="30"/>
                                         <color key="textColor" red="0.2196078431372549" green="0.48627450980392156" blue="0.99607843137254903" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -1143,31 +1143,37 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="gwv-rq-Lsy">
-                                <rect key="frame" x="15" y="104" width="345" height="135"/>
+                                <rect key="frame" x="15" y="104" width="345" height="170"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="tJS-da-H6s">
-                                        <rect key="frame" x="0.0" y="0.0" width="88" height="135"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="110" height="170"/>
                                         <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Account name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="28i-Mw-C5V">
+                                                <rect key="frame" x="0.0" y="0.0" width="110" height="30"/>
+                                                <fontDescription key="fontDescription" name="HiraMinProN-W3" family="Hiragino Mincho ProN" pointSize="16"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Entry name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EN3-26-xC9">
-                                                <rect key="frame" x="0.0" y="0.0" width="88" height="30"/>
+                                                <rect key="frame" x="0.0" y="35" width="110" height="30"/>
                                                 <fontDescription key="fontDescription" name="HiraMinProN-W3" family="Hiragino Mincho ProN" pointSize="16"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="owc-0p-pfa">
-                                                <rect key="frame" x="0.0" y="35" width="88" height="30"/>
+                                                <rect key="frame" x="0.0" y="70" width="110" height="30"/>
                                                 <fontDescription key="fontDescription" name="HiraMinProN-W3" family="Hiragino Mincho ProN" pointSize="16"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="slb-33-AHV">
-                                                <rect key="frame" x="0.0" y="70" width="88" height="30"/>
+                                                <rect key="frame" x="0.0" y="105" width="110" height="30"/>
                                                 <fontDescription key="fontDescription" name="HiraMinProN-W3" family="Hiragino Mincho ProN" pointSize="16"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Comment" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3ug-en-Aoa">
-                                                <rect key="frame" x="0.0" y="105" width="88" height="30"/>
+                                                <rect key="frame" x="0.0" y="140" width="110" height="30"/>
                                                 <fontDescription key="fontDescription" name="HiraMinProN-W3" family="Hiragino Mincho ProN" pointSize="16"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -1175,10 +1181,16 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="mya-bb-i7N">
-                                        <rect key="frame" x="98" y="0.0" width="247" height="135"/>
+                                        <rect key="frame" x="120" y="0.0" width="225" height="170"/>
                                         <subviews>
+                                            <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="G3E-E7-jUM">
+                                                <rect key="frame" x="0.0" y="0.0" width="225" height="30"/>
+                                                <color key="textColor" red="0.76085748237175899" green="0.78060471219543937" blue="0.86270385561573604" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" name="HiraMinProN-W6" family="Hiragino Mincho ProN" pointSize="20"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="qzY-lV-ISe">
-                                                <rect key="frame" x="0.0" y="0.0" width="247" height="30"/>
+                                                <rect key="frame" x="0.0" y="35" width="225" height="30"/>
                                                 <color key="textColor" red="0.2196078431372549" green="0.48627450980392156" blue="0.99607843137254903" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" name="HiraMinProN-W6" family="Hiragino Mincho ProN" pointSize="20"/>
                                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="next"/>
@@ -1187,7 +1199,7 @@
                                                 </connections>
                                             </textField>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="HAt-gr-4L7">
-                                                <rect key="frame" x="0.0" y="35" width="247" height="30"/>
+                                                <rect key="frame" x="0.0" y="70" width="225" height="30"/>
                                                 <color key="textColor" red="0.2196078431372549" green="0.48627450980392156" blue="0.99607843137254903" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" name="HiraMinProN-W6" family="Hiragino Mincho ProN" pointSize="20"/>
                                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="next"/>
@@ -1196,7 +1208,7 @@
                                                 </connections>
                                             </textField>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="wCW-qc-GmP">
-                                                <rect key="frame" x="0.0" y="70" width="247" height="30"/>
+                                                <rect key="frame" x="0.0" y="105" width="225" height="30"/>
                                                 <color key="textColor" red="0.2196078431372549" green="0.48627450980392156" blue="0.99607843137254903" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" name="HiraMinProN-W6" family="Hiragino Mincho ProN" pointSize="20"/>
                                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="next"/>
@@ -1205,7 +1217,7 @@
                                                 </connections>
                                             </textField>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Blt-9E-2tY">
-                                                <rect key="frame" x="0.0" y="105" width="247" height="30"/>
+                                                <rect key="frame" x="0.0" y="140" width="225" height="30"/>
                                                 <color key="textColor" red="0.2196078431372549" green="0.48627450980392156" blue="0.99607843137254903" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" name="HiraMinProN-W6" family="Hiragino Mincho ProN" pointSize="20"/>
                                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="done"/>
@@ -1218,7 +1230,7 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="2SC-iH-RSA">
-                                <rect key="frame" x="65" y="294" width="245" height="105"/>
+                                <rect key="frame" x="65" y="329" width="245" height="105"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Icon" translatesAutoresizingMaskIntoConstraints="NO" id="2IH-T3-LmR">
                                         <rect key="frame" x="94" y="0.0" width="57" height="57"/>
@@ -1261,24 +1273,59 @@
                                     </mask>
                                 </variation>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="All changes are automatically saved" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fmv-Ys-hzA">
+                                <rect key="frame" x="175" y="76" width="142" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="at8-tu-jML"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="8"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="at8-tu-jML"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=compact-widthClass=compact">
+                                    <fontDescription key="fontDescription" type="system" pointSize="9"/>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="at8-tu-jML"/>
+                                    </mask>
+                                </variation>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.87905663249999999" green="0.89664590359999996" blue="0.98421400790000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="mya-bb-i7N" firstAttribute="top" secondItem="nDU-H1-Tht" secondAttribute="bottom" constant="8" id="8XE-of-Zey"/>
                             <constraint firstItem="gwv-rq-Lsy" firstAttribute="top" secondItem="nDU-H1-Tht" secondAttribute="bottom" constant="8" id="9Bp-FN-pWP"/>
+                            <constraint firstItem="nDU-H1-Tht" firstAttribute="leading" secondItem="fmv-Ys-hzA" secondAttribute="trailing" constant="13.5" id="F7U-5S-WQa"/>
                             <constraint firstItem="2SC-iH-RSA" firstAttribute="centerX" secondItem="1AP-bX-O2J" secondAttribute="centerX" id="Ft4-FB-KG8"/>
+                            <constraint firstItem="nDU-H1-Tht" firstAttribute="leading" secondItem="fmv-Ys-hzA" secondAttribute="trailing" constant="22" id="Gqv-j1-Rdv"/>
+                            <constraint firstItem="fmv-Ys-hzA" firstAttribute="centerX" secondItem="G3E-E7-jUM" secondAttribute="centerX" id="LtD-iX-ZmR"/>
                             <constraint firstItem="2SC-iH-RSA" firstAttribute="top" secondItem="gwv-rq-Lsy" secondAttribute="bottom" constant="55" id="RD7-fd-YuN"/>
                             <constraint firstItem="2SC-iH-RSA" firstAttribute="centerX" secondItem="1AP-bX-O2J" secondAttribute="centerX" id="SXH-8p-V39"/>
                             <constraint firstItem="gwv-rq-Lsy" firstAttribute="leading" secondItem="1AP-bX-O2J" secondAttribute="leading" constant="15" id="UFG-wA-rh2"/>
+                            <constraint firstItem="G3E-E7-jUM" firstAttribute="top" secondItem="fmv-Ys-hzA" secondAttribute="bottom" constant="12" id="VtX-PA-D6Y"/>
+                            <constraint firstItem="fmv-Ys-hzA" firstAttribute="centerX" secondItem="G3E-E7-jUM" secondAttribute="centerX" id="W7Q-1W-PnK">
+                                <variation key="heightClass=regular-widthClass=compact" constant="-1.5"/>
+                            </constraint>
                             <constraint firstItem="gwv-rq-Lsy" firstAttribute="top" secondItem="qqa-B5-7Bu" secondAttribute="bottom" constant="40" id="Wzh-pM-87a"/>
+                            <constraint firstItem="fmv-Ys-hzA" firstAttribute="centerY" secondItem="nDU-H1-Tht" secondAttribute="centerY" id="bRn-Sn-vdd"/>
                             <constraint firstItem="2SC-iH-RSA" firstAttribute="top" secondItem="mya-bb-i7N" secondAttribute="bottom" constant="23" id="cwh-ia-8Iu"/>
                             <constraint firstAttribute="trailingMargin" secondItem="nDU-H1-Tht" secondAttribute="trailing" id="ehP-x4-j38"/>
                             <constraint firstAttribute="trailing" secondItem="gwv-rq-Lsy" secondAttribute="trailing" constant="15" id="fOC-LZ-vl1"/>
+                            <constraint firstItem="fmv-Ys-hzA" firstAttribute="centerX" secondItem="G3E-E7-jUM" secondAttribute="centerX" id="fld-IV-lfL"/>
+                            <constraint firstItem="fmv-Ys-hzA" firstAttribute="centerY" secondItem="nDU-H1-Tht" secondAttribute="centerY" id="hRC-EW-8AJ"/>
                             <constraint firstAttribute="trailingMargin" secondItem="nDU-H1-Tht" secondAttribute="trailing" id="nd6-DB-deB"/>
                             <constraint firstItem="gwv-rq-Lsy" firstAttribute="leading" secondItem="1AP-bX-O2J" secondAttribute="leading" constant="15" id="orp-Nf-fJh"/>
                             <constraint firstItem="2SC-iH-RSA" firstAttribute="top" secondItem="Blt-9E-2tY" secondAttribute="bottom" constant="30" id="qE4-bN-PXy"/>
-                            <constraint firstItem="gwv-rq-Lsy" firstAttribute="top" secondItem="qqa-B5-7Bu" secondAttribute="bottom" constant="40" id="uUr-g3-Vu9"/>
+                            <constraint firstItem="gwv-rq-Lsy" firstAttribute="top" secondItem="qqa-B5-7Bu" secondAttribute="bottom" constant="40" id="t0M-Qv-M6y"/>
+                            <constraint firstItem="G3E-E7-jUM" firstAttribute="top" secondItem="fmv-Ys-hzA" secondAttribute="bottom" constant="8" id="tgF-Dl-1PJ"/>
                             <constraint firstAttribute="trailing" secondItem="gwv-rq-Lsy" secondAttribute="trailing" constant="15" id="wuM-wv-ij3"/>
+                            <constraint firstItem="G3E-E7-jUM" firstAttribute="top" secondItem="fmv-Ys-hzA" secondAttribute="bottom" constant="12" id="ybm-x3-KLr"/>
+                            <constraint firstItem="fmv-Ys-hzA" firstAttribute="centerY" secondItem="nDU-H1-Tht" secondAttribute="centerY" id="yfb-SI-rWW"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
@@ -1287,14 +1334,25 @@
                                 <exclude reference="Wzh-pM-87a"/>
                                 <exclude reference="fOC-LZ-vl1"/>
                                 <exclude reference="orp-Nf-fJh"/>
-                                <exclude reference="uUr-g3-Vu9"/>
+                                <exclude reference="t0M-Qv-M6y"/>
                                 <exclude reference="wuM-wv-ij3"/>
+                                <exclude reference="VtX-PA-D6Y"/>
+                                <exclude reference="tgF-Dl-1PJ"/>
+                                <exclude reference="ybm-x3-KLr"/>
                                 <exclude reference="8XE-of-Zey"/>
+                                <exclude reference="LtD-iX-ZmR"/>
+                                <exclude reference="W7Q-1W-PnK"/>
+                                <exclude reference="bRn-Sn-vdd"/>
+                                <exclude reference="fld-IV-lfL"/>
+                                <exclude reference="hRC-EW-8AJ"/>
+                                <exclude reference="yfb-SI-rWW"/>
                                 <exclude reference="Ft4-FB-KG8"/>
                                 <exclude reference="RD7-fd-YuN"/>
                                 <exclude reference="SXH-8p-V39"/>
                                 <exclude reference="cwh-ia-8Iu"/>
                                 <exclude reference="qE4-bN-PXy"/>
+                                <exclude reference="F7U-5S-WQa"/>
+                                <exclude reference="Gqv-j1-Rdv"/>
                                 <exclude reference="ehP-x4-j38"/>
                                 <exclude reference="nd6-DB-deB"/>
                             </mask>
@@ -1304,7 +1362,10 @@
                                 <include reference="Wzh-pM-87a"/>
                                 <include reference="fOC-LZ-vl1"/>
                                 <include reference="orp-Nf-fJh"/>
+                                <include reference="VtX-PA-D6Y"/>
                                 <include reference="8XE-of-Zey"/>
+                                <include reference="LtD-iX-ZmR"/>
+                                <include reference="hRC-EW-8AJ"/>
                                 <include reference="SXH-8p-V39"/>
                                 <include reference="cwh-ia-8Iu"/>
                                 <exclude reference="qE4-bN-PXy"/>
@@ -1315,34 +1376,45 @@
                             <mask key="constraints">
                                 <include reference="9Bp-FN-pWP"/>
                                 <include reference="UFG-wA-rh2"/>
-                                <include reference="uUr-g3-Vu9"/>
+                                <include reference="t0M-Qv-M6y"/>
                                 <include reference="wuM-wv-ij3"/>
+                                <include reference="ybm-x3-KLr"/>
+                                <include reference="bRn-Sn-vdd"/>
+                                <include reference="fld-IV-lfL"/>
                                 <include reference="Ft4-FB-KG8"/>
                                 <include reference="RD7-fd-YuN"/>
+                                <include reference="F7U-5S-WQa"/>
                                 <include reference="nd6-DB-deB"/>
                             </mask>
                         </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="constraints">
+                                <include reference="tgF-Dl-1PJ"/>
+                                <exclude reference="ybm-x3-KLr"/>
+                                <include reference="W7Q-1W-PnK"/>
+                                <exclude reference="bRn-Sn-vdd"/>
+                                <exclude reference="fld-IV-lfL"/>
+                                <include reference="yfb-SI-rWW"/>
+                                <exclude reference="F7U-5S-WQa"/>
+                                <include reference="Gqv-j1-Rdv"/>
+                            </mask>
+                        </variation>
                     </view>
-                    <navigationItem key="navigationItem" title="Title" id="YJU-ma-TiN">
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="jWn-Mn-iFO">
-                            <connections>
-                                <action selector="saveChangesButton:" destination="gFM-Ue-sol" id="nDr-I8-oP8"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Title" id="YJU-ma-TiN"/>
                     <connections>
+                        <outlet property="accountName" destination="G3E-E7-jUM" id="kh8-mg-mSL"/>
                         <outlet property="comment" destination="Blt-9E-2tY" id="Wj6-hq-ExI"/>
                         <outlet property="favoritedStar" destination="nDU-H1-Tht" id="g3B-GY-rVt"/>
                         <outlet property="name" destination="qzY-lV-ISe" id="N41-b6-7CC"/>
                         <outlet property="password" destination="wCW-qc-GmP" id="6Mi-Mv-UQ8"/>
                         <outlet property="stackView" destination="gwv-rq-Lsy" id="ouz-1s-Rxk"/>
-                        <outlet property="topStackConstraint" destination="uUr-g3-Vu9" id="sgg-t0-7OF"/>
+                        <outlet property="topStackConstraint" destination="Wzh-pM-87a" id="yxP-7r-cFc"/>
                         <outlet property="username" destination="HAt-gr-4L7" id="Mdn-4I-dop"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Uw1-YF-ans" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2436" y="-564"/>
+            <point key="canvasLocation" x="2436" y="-564.46776611694156"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="tAA-Nm-5hO">
@@ -1373,6 +1445,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="h9s-k7-aFA"/>
-        <segue reference="mYc-lo-ZTI"/>
+        <segue reference="iTS-a3-3V6"/>
     </inferredMetricsTieBreakers>
 </document>
