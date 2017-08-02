@@ -11,7 +11,7 @@ import CoreData
 import Firebase
 import FirebaseDatabase
 
-class AddNewAccountViewController: UIViewController, UITextFieldDelegate {
+class AddNewAccountViewController: UIViewController {
     
     @IBOutlet var topStackConstraint: NSLayoutConstraint!
     @IBOutlet var stackView: UIStackView!
@@ -20,7 +20,11 @@ class AddNewAccountViewController: UIViewController, UITextFieldDelegate {
     var ref: DatabaseReference!
 
     
-    var activeTextField: UITextField?
+    var activeTextField: UITextField? {
+        didSet {
+            addToolBarTo(textField: activeTextField!)
+        }
+    }
     @IBOutlet var accountTitle: UITextField!
     @IBOutlet var username: UITextField!
     @IBOutlet var comment: UITextField!
@@ -35,6 +39,11 @@ class AddNewAccountViewController: UIViewController, UITextFieldDelegate {
         
         NotificationCenter.default.addObserver(self, selector: #selector(handleKeyboardNotification), name: .UIKeyboardWillShow, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(handleKeyboardNotification), name: .UIKeyboardWillHide, object: nil)
+        if let activeTF = activeTextField {
+            activeTF.inputAccessoryView = UIView()
+            activeTF.inputAccessoryView?.backgroundColor = .red
+        }
+    
     }
     
     func handleKeyboardNotification(notification: NSNotification) {
@@ -60,11 +69,11 @@ class AddNewAccountViewController: UIViewController, UITextFieldDelegate {
     }
     
     func dismissKeyboard(sender: UITapGestureRecognizer ) {
-        activeTextField?.resignFirstResponder()
+        //activeTextField?.resignFirstResponder()
+        view.endEditing(true)
     }
     
     @IBAction func saveAccountButton(_ sender: UIBarButtonItem) {
-        
         saveAccount()
     }
     
@@ -90,6 +99,7 @@ class AddNewAccountViewController: UIViewController, UITextFieldDelegate {
                     let context = appDelegate.persistentContainer.viewContext
                     let accountEntity = NSEntityDescription.insertNewObject(forEntityName: "Account", into: context) as! Account
                     accountEntity.name = accountTitle.text
+                    accountEntity.image = accountTitle.text?.lowercased()
                     
                     let entryEntity = NSEntityDescription.insertNewObject(forEntityName: "Entry", into: context) as! Entry
                     entryEntity.name = accountTitle.text
@@ -113,7 +123,7 @@ class AddNewAccountViewController: UIViewController, UITextFieldDelegate {
                 displayAlert(title: "Empty password", msg: "Please enter your password.")
             }
         } else {
-            displayAlert(title: "Passwords do no match!", msg: "Please enter you password again.")
+            displayAlert(title: "Passwords do not match!", msg: "Please enter your password again.")
         }
     }
     

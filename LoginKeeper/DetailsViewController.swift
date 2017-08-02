@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 
-class DetailsViewController: UIViewController, UITextFieldDelegate {
+class DetailsViewController: UIViewController {
     @IBOutlet var stackView: UIStackView!
     @IBOutlet var favoritedStar: UIImageView!
 
@@ -17,7 +17,11 @@ class DetailsViewController: UIViewController, UITextFieldDelegate {
     var entryDetails: Entry?
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     
-    var activeTextField: UITextField?
+    var activeTextField: UITextField? {
+        didSet {
+            addToolBarTo(textField: activeTextField!)
+        }
+    }
     @IBOutlet var accountName: UITextField!
     @IBOutlet var name: UITextField!
     @IBOutlet var username: UITextField!
@@ -30,13 +34,15 @@ class DetailsViewController: UIViewController, UITextFieldDelegate {
         appDelegate.loadBannerView(forViewController: self, andOrientation: UIDevice.current.orientation)
         
         view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard)))
-        
+    }
+    func addObservers() {
         NotificationCenter.default.addObserver(self, selector: #selector(handleKeyboardNotification), name: .UIKeyboardWillShow, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(handleKeyboardNotification), name: .UIKeyboardWillHide, object: nil)
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
+        addObservers()
         accountName.text = entryDetails?.account?.name
         name.text = entryDetails?.name
         username.text = entryDetails?.username
@@ -58,11 +64,13 @@ class DetailsViewController: UIViewController, UITextFieldDelegate {
         }
     }
     @IBAction func shareButton(_ sender: UIBarButtonItem) {
-        let textToShare = "Account name : \(entryDetails!.account!.name!)\nEntry name: \(entryDetails!.name!)\nUsername: \(entryDetails!.username!)\nPassword: \(entryDetails!.password!)\nComment: \(entryDetails!.comment!)"
+        NotificationCenter.default.removeObserver(self)
+        
+        let textToShare = "Account name: \(entryDetails!.account!.name!)\nEntry name: \(entryDetails!.name!)\nUsername: \(entryDetails!.username!)\nPassword: \(entryDetails!.password!)\nComment: \(entryDetails!.comment!)"
         
             let objectsToShare = [textToShare]
             let activityVC = UIActivityViewController(activityItems: objectsToShare, applicationActivities: nil)
-            
+
             activityVC.popoverPresentationController?.sourceView = sender.customView
             self.present(activityVC, animated: true, completion: nil)
         
@@ -81,18 +89,19 @@ class DetailsViewController: UIViewController, UITextFieldDelegate {
     }
     
     func handleKeyboardNotification(notification: NSNotification) {
-        let navigationBar = navigationController?.navigationBar.frame.height
-        //print("NavBar: \(navigationBar!)")
+        guard let navigationBar = navigationController?.navigationBar.frame.height else {
+            return
+        }
+        
         if let userInfo = notification.userInfo {
             let keyBoardFrame = userInfo[UIKeyboardFrameEndUserInfoKey] as! CGRect
-            //  print("KeyboardFrame: \(keyBoardFrame.height)")
-            let totalHeights = (activeTextField?.frame.maxY)! + navigationBar! + topStackConstraint.constant
-            //print("TotalHeights: \(totalHeights)")
+            
+            let totalHeights = (activeTextField?.frame.maxY)! + navigationBar + topStackConstraint.constant
             let isKeyboardShowing = notification.name == .UIKeyboardWillShow
-            //print("isShowing: \(isKeyboardShowing)")
+            
             let difference = totalHeights - keyBoardFrame.size.height
-            //print("Diff: \(difference)")
-            //print("kbFrameOriginY\(keyBoardFrame.origin.y)")
+            
+            
             if keyBoardFrame.origin.y < totalHeights {
                 self.topStackConstraint.constant -= isKeyboardShowing ? difference + 30 : 0
                 UIView.animate(withDuration: 0.5) {

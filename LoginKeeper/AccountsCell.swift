@@ -26,6 +26,7 @@ class AccountsCell: UITableViewCell {
         }
     }
 
+    @IBOutlet var accountImageView: UIImageView!
     @IBOutlet var accountNameLabel: UILabel!
     @IBOutlet var entriesCountForAccountLabel: UILabel!
     var accountForCell: Account!

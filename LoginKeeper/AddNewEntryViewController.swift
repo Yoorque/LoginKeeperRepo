@@ -9,14 +9,18 @@
 import UIKit
 import CoreData
 
-class AddNewEntryViewController: UIViewController, UITextFieldDelegate {
+class AddNewEntryViewController: UIViewController {
     @IBOutlet var stackView: UIStackView!
     
     @IBOutlet var topStackConstraint: NSLayoutConstraint!
     var account: Account?
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     
-    var activeTextField: UITextField?
+    var activeTextField: UITextField? {
+        didSet {
+            addToolBarTo(textField: activeTextField!)
+        }
+    }
     @IBOutlet var name: UITextField!
     @IBOutlet var username: UITextField!
     @IBOutlet var password: UITextField!
@@ -39,7 +43,8 @@ class AddNewEntryViewController: UIViewController, UITextFieldDelegate {
     }
     
     func dismissKeyboard(sender: UITapGestureRecognizer ) {
-        activeTextField?.resignFirstResponder()
+        //activeTextField?.resignFirstResponder()
+        view.endEditing(true)
     }
     
     override func willRotate(to toInterfaceOrientation: UIInterfaceOrientation, duration: TimeInterval) {
@@ -105,7 +110,7 @@ class AddNewEntryViewController: UIViewController, UITextFieldDelegate {
                 displayAlert(title: "Empty password", msg: "Please enter your password.")
             }
         } else {
-            displayAlert(title: "Passwords do no match!", msg: "Please enter you password again.")
+            displayAlert(title: "Passwords do not match!", msg: "Please enter your password again.")
         }
     }
     

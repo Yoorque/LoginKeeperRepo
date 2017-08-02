@@ -2,7 +2,7 @@
 //  Account+CoreDataProperties.swift
 //  LoginKeeper
 //
-//  Created by Dusan Juranovic on 7/13/17.
+//  Created by Dusan Juranovic on 7/31/17.
 //  Copyright © 2017 Dusan Juranovic. All rights reserved.
 //
 
@@ -16,8 +16,9 @@ extension Account {
         return NSFetchRequest<Account>(entityName: "Account")
     }
 
-    @NSManaged public var name: String?
     @NSManaged public var favorited: Bool
+    @NSManaged public var name: String?
+    @NSManaged public var image: String?
     @NSManaged public var entries: NSSet?
 
 }

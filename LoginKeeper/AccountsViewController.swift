@@ -15,7 +15,12 @@ var authenticated = false
 
 class AccountsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate, AccountsDisplayAlertDelegate {
     @IBOutlet var lockButton: UIBarButtonItem!
-    @IBOutlet var searchBar: UISearchBar!
+    @IBOutlet var searchBar: UISearchBar! {
+        didSet {
+            searchBar.returnKeyType = .done
+            searchBar.enablesReturnKeyAutomatically = false
+        }
+    }
     @IBOutlet var tableView: UITableView!
     
     var index: Int?
@@ -32,6 +37,7 @@ class AccountsViewController: UIViewController, UITableViewDelegate, UITableView
             self.tableView.reloadData()
             self.authenticateUser()
             authenticated = false
+            
         })
         
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
@@ -46,6 +52,8 @@ class AccountsViewController: UIViewController, UITableViewDelegate, UITableView
         } else {
             authenticateUser()
         }
+        
+        addToolBarTo(searchBar: searchBar)
     }
     
     func appDidEnterForeground() {
@@ -292,6 +300,8 @@ class AccountsViewController: UIViewController, UITableViewDelegate, UITableView
         cell.accountNameLabel.text = accounts[indexPath.row].name
         cell.entriesCountForAccountLabel.text = "\(accounts[indexPath.row].entries!.count)"
         cell.favoriteImageView.image = accounts[indexPath.row].favorited == true ? UIImage(named: "star") : UIImage(named: "emptyStar")
+        cell.accountImageView.image = UIImage(named: accounts[indexPath.row].image!) ?? UIImage(named: "noImage")
+        
         return cell
     }
     
@@ -354,5 +364,45 @@ class AccountsViewController: UIViewController, UITableViewDelegate, UITableView
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         searchCoreDataWith(text: searchBar.text!)
     }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.resignFirstResponder()
+    }
+}
+
+extension UIViewController: UITextFieldDelegate{
+    func addToolBarTo(searchBar: UISearchBar){
+        let toolBar = UIToolbar()
+        toolBar.barStyle = UIBarStyle.default
+        toolBar.isTranslucent = true
+        
+        let doneButton = UIBarButtonItem(title: "Done", style: UIBarButtonItemStyle.done, target: self, action: #selector(donePressed))
+        
+        let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.flexibleSpace, target: nil, action: nil)
+        toolBar.setItems([spaceButton, doneButton], animated: false)
+        toolBar.isUserInteractionEnabled = true
+        toolBar.sizeToFit()
+        
+        searchBar.inputAccessoryView = toolBar
+    }
+    
+    func addToolBarTo(textField: UITextField){
+        let toolBar = UIToolbar()
+        toolBar.barStyle = UIBarStyle.default
+        toolBar.isTranslucent = true
+        
+        let doneButton = UIBarButtonItem(title: "Done", style: UIBarButtonItemStyle.done, target: self, action: #selector(donePressed))
+        
+        let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.flexibleSpace, target: nil, action: nil)
+        toolBar.setItems([spaceButton, doneButton], animated: false)
+        toolBar.isUserInteractionEnabled = true
+        toolBar.sizeToFit()
+        
+        textField.inputAccessoryView = toolBar
+    }
+    func donePressed(){
+        view.endEditing(true)
+    }
+    
 }
 
