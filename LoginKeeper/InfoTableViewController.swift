@@ -14,11 +14,18 @@ class InfoTableViewController: UITableViewController {
     @IBOutlet var moreAppsCell: UITableViewCell!
     @IBOutlet var iconsCell: UITableViewCell!
     
+    @IBOutlet var versionLabel: UILabel!
     let accountsVC = AccountsViewController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        guard let version = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String else {
+            return
+        }
+        guard let build = Bundle.main.infoDictionary?["CFBundleVersion"] as? String else {
+            return
+        }
+        versionLabel.text = "Version \(version) (build \(build))"
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 

@@ -17,10 +17,11 @@ class AccountsViewController: UIViewController, UITableViewDelegate, UITableView
     @IBOutlet var lockButton: UIBarButtonItem!
     @IBOutlet var searchBar: UISearchBar! {
         didSet {
-            searchBar.returnKeyType = .done
-            searchBar.enablesReturnKeyAutomatically = false
+            searchBar.returnKeyType = .search
+            self.searchBar.delegate = self
         }
     }
+    
     @IBOutlet var tableView: UITableView!
     
     var index: Int?
@@ -54,6 +55,7 @@ class AccountsViewController: UIViewController, UITableViewDelegate, UITableView
         }
         
         addToolBarTo(searchBar: searchBar)
+        
     }
     
     func appDidEnterForeground() {
@@ -66,11 +68,15 @@ class AccountsViewController: UIViewController, UITableViewDelegate, UITableView
         if authenticated {
             fetchFromCoreData()
         }
-        
+        updateTableViewBottomInset()
     }
     
-    func dismissKeyboard() {
-        searchBar.resignFirstResponder()
+    @objc func dismissKeyboard(sender: UITapGestureRecognizer) {
+        if let view = sender.view {
+            if !searchBar.frame.contains(view.frame) {
+                view.resignFirstResponder()
+            }
+        }
     }
     
     override func willRotate(to toInterfaceOrientation: UIInterfaceOrientation, duration: TimeInterval) {
@@ -79,6 +85,14 @@ class AccountsViewController: UIViewController, UITableViewDelegate, UITableView
     
     override func didRotate(from fromInterfaceOrientation: UIInterfaceOrientation) {
         appDelegate.loadBannerView(forViewController: self, andOrientation: UIDevice.current.orientation)
+        updateTableViewBottomInset()
+    }
+    
+    func updateTableViewBottomInset() {
+        if let banner = appDelegate.adBannerView {
+            tableView.contentInset.bottom = banner.frame.size.height
+        }
+
     }
     
     func setPassword() {
@@ -137,18 +151,18 @@ class AccountsViewController: UIViewController, UITableViewDelegate, UITableView
                     self.lockButton.title = "Unlock"
                     self.tableView.reloadData()
                     
-                    switch error! {
-                    case LAError.authenticationFailed:
+                    switch error!._code {
+                    case LAError.authenticationFailed.rawValue:
                         self.loginAlert(message: error!.localizedDescription)
-                    case LAError.userCancel:
+                    case LAError.userCancel.rawValue:
                         self.loginAlert(message: error!.localizedDescription)
-                    case LAError.touchIDNotEnrolled:
+                    case Int(kLAErrorBiometryNotEnrolled):
                         self.loginAlert(message: error!.localizedDescription)
-                    case LAError.passcodeNotSet:
+                    case LAError.passcodeNotSet.rawValue:
                         self.loginAlert(message: error!.localizedDescription)
-                    case LAError.systemCancel:
+                    case LAError.systemCancel.rawValue:
                         self.loginAlert(message: error!.localizedDescription)
-                    case LAError.userFallback:
+                    case LAError.userFallback.rawValue:
                         let alert = UIAlertController(title: "Password", message: "Enter your password", preferredStyle: .alert)
                         alert.addTextField(configurationHandler: {textField in
                             textField.placeholder = "Enter your password"
@@ -197,18 +211,18 @@ class AccountsViewController: UIViewController, UITableViewDelegate, UITableView
                     self.searchBar.isUserInteractionEnabled = false
                     self.lockButton.title = "Unlock"
                     self.tableView.reloadData()
-                    switch error! {
-                    case LAError.authenticationFailed:
+                    switch error!._code{
+                    case LAError.authenticationFailed.rawValue:
                         self.loginAlert(message: error!.localizedDescription)
-                    case LAError.userCancel:
+                    case LAError.userCancel.rawValue:
                         self.loginAlert(message: error!.localizedDescription)
-                    case LAError.touchIDNotEnrolled:
+                    case Int(kLAErrorBiometryNotEnrolled):
                         self.loginAlert(message: error!.localizedDescription)
-                    case LAError.passcodeNotSet:
+                    case LAError.passcodeNotSet.rawValue:
                         self.loginAlert(message: error!.localizedDescription)
-                    case LAError.systemCancel:
+                    case LAError.systemCancel.rawValue:
                         self.loginAlert(message: error!.localizedDescription)
-                    case LAError.userFallback:
+                    case LAError.userFallback.rawValue:
                         self.loginAlert(message: error!.localizedDescription)
                     default:
                         self.loginAlert(message: error!.localizedDescription)
@@ -321,14 +335,14 @@ class AccountsViewController: UIViewController, UITableViewDelegate, UITableView
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
         index = indexPath.row
         
-        let deleteAction = UITableViewRowAction(style: .destructive, title: "Delete Acc", handler: {_ in
+        let deleteAction = UITableViewRowAction(style: .destructive, title: "Delete Acc", handler: {_,_  in
             self.appDelegate.persistentContainer.viewContext.delete(self.accounts[indexPath.row])
             self.accounts.remove(at: indexPath.row)
             self.tableView.deleteRows(at: [indexPath], with: .automatic)
             self.saveToCoreData()
         })
         
-        let insertAction = UITableViewRowAction(style: .normal, title: "Add Entry", handler: {_ in
+        let insertAction = UITableViewRowAction(style: .normal, title: "Add Entry", handler: {_,_  in
             self.performSegue(withIdentifier: "addNewEntrySegue", sender: self)
         })
         deleteAction.backgroundColor = UIColor(red: 216/255, green: 67/255, blue: 35/255, alpha: 1)
@@ -368,6 +382,12 @@ class AccountsViewController: UIViewController, UITableViewDelegate, UITableView
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         searchBar.resignFirstResponder()
     }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.text = nil
+        searchCoreDataWith(text: searchBar.text!)
+        searchBar.resignFirstResponder()
+    }
 }
 
 extension UIViewController: UITextFieldDelegate{
@@ -400,7 +420,7 @@ extension UIViewController: UITextFieldDelegate{
         
         textField.inputAccessoryView = toolBar
     }
-    func donePressed(){
+    @objc func donePressed(){
         view.endEditing(true)
     }
     

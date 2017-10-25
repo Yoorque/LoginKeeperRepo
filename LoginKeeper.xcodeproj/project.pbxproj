@@ -23,8 +23,8 @@
 		111EB6F21F0E431E00B12AC8 /* Account+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111EB6EE1F0E431E00B12AC8 /* Account+CoreDataProperties.swift */; };
 		111EB6F31F0E431E00B12AC8 /* Entry+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111EB6EF1F0E431E00B12AC8 /* Entry+CoreDataClass.swift */; };
 		111EB6F41F0E431E00B12AC8 /* Entry+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111EB6F01F0E431E00B12AC8 /* Entry+CoreDataProperties.swift */; };
+		11779E431F4A25E8000F0D7D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 11779E421F4A25E8000F0D7D /* GoogleService-Info.plist */; };
 		11E850F91F18DE5900F1B5C7 /* InfoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11E850F81F18DE5900F1B5C7 /* InfoTableViewController.swift */; };
-		11E850FF1F1E673F00F1B5C7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 11E850FE1F1E673F00F1B5C7 /* GoogleService-Info.plist */; };
 		DF1B3E4F59015A84C2DFE7C2 /* Pods_LoginKeeper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39307564D6F219D7841E90E1 /* Pods_LoginKeeper.framework */; };
 /* End PBXBuildFile section */
 
@@ -47,8 +47,8 @@
 		111EB6EE1F0E431E00B12AC8 /* Account+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Account+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		111EB6EF1F0E431E00B12AC8 /* Entry+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Entry+CoreDataClass.swift"; sourceTree = "<group>"; };
 		111EB6F01F0E431E00B12AC8 /* Entry+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Entry+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		11779E421F4A25E8000F0D7D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		11E850F81F18DE5900F1B5C7 /* InfoTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoTableViewController.swift; sourceTree = "<group>"; };
-		11E850FE1F1E673F00F1B5C7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		39307564D6F219D7841E90E1 /* Pods_LoginKeeper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LoginKeeper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4213D6A6028AFDDE5780A8FF /* Pods-LoginKeeper.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LoginKeeper.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LoginKeeper/Pods-LoginKeeper.debug.xcconfig"; sourceTree = "<group>"; };
 		D871D0A96ABE2387433DB6B1 /* Pods-LoginKeeper.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LoginKeeper.release.xcconfig"; path = "Pods/Target Support Files/Pods-LoginKeeper/Pods-LoginKeeper.release.xcconfig"; sourceTree = "<group>"; };
@@ -116,9 +116,9 @@
 			isa = PBXGroup;
 			children = (
 				111EB6CC1F0E2DDD00B12AC8 /* AppDelegate.swift */,
-				11E850FE1F1E673F00F1B5C7 /* GoogleService-Info.plist */,
 				111EB6D61F0E2DDD00B12AC8 /* Assets.xcassets */,
 				111EB6D81F0E2DDD00B12AC8 /* LaunchScreen.storyboard */,
+				11779E421F4A25E8000F0D7D /* GoogleService-Info.plist */,
 				111EB6DB1F0E2DDD00B12AC8 /* Info.plist */,
 				111EB6D31F0E2DDD00B12AC8 /* LoginKeeper.xcdatamodeld */,
 			);
@@ -181,12 +181,13 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0830;
-				LastUpgradeCheck = 0830;
+				LastUpgradeCheck = 0900;
 				ORGANIZATIONNAME = "Dusan Juranovic";
 				TargetAttributes = {
 					111EB6C81F0E2DDD00B12AC8 = {
 						CreatedOnToolsVersion = 8.3.3;
 						DevelopmentTeam = UKQDW363ZZ;
+						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.Keychain = {
@@ -220,7 +221,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				111EB6DA1F0E2DDD00B12AC8 /* LaunchScreen.storyboard in Resources */,
-				11E850FF1F1E673F00F1B5C7 /* GoogleService-Info.plist in Resources */,
+				11779E431F4A25E8000F0D7D /* GoogleService-Info.plist in Resources */,
 				111EB6D71F0E2DDD00B12AC8 /* Assets.xcassets in Resources */,
 				111EB6D21F0E2DDD00B12AC8 /* Main.storyboard in Resources */,
 			);
@@ -330,7 +331,9 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -338,7 +341,11 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -361,7 +368,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -381,7 +388,9 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -389,7 +398,11 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -406,7 +419,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -419,13 +432,20 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 4213D6A6028AFDDE5780A8FF /* Pods-LoginKeeper.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = UKQDW363ZZ;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				INFOPLIST_FILE = LoginKeeper/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.dusanjuranovic.LoginKeeper;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
@@ -433,13 +453,20 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = D871D0A96ABE2387433DB6B1 /* Pods-LoginKeeper.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = UKQDW363ZZ;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				INFOPLIST_FILE = LoginKeeper/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.dusanjuranovic.LoginKeeper;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
 		};

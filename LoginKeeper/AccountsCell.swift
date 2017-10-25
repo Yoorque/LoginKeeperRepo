@@ -31,7 +31,7 @@ class AccountsCell: UITableViewCell {
     @IBOutlet var entriesCountForAccountLabel: UILabel!
     var accountForCell: Account!
     
-    func starGesture(sender: UITapGestureRecognizer) {
+    @objc func starGesture(sender: UITapGestureRecognizer) {
         if let view = sender.view as? UIImageView{
             
             fetch(account: accountNameLabel.text!)

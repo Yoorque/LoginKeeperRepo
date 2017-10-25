@@ -42,7 +42,7 @@ class AddNewEntryViewController: UIViewController {
         saveEntry()
     }
     
-    func dismissKeyboard(sender: UITapGestureRecognizer ) {
+    @objc func dismissKeyboard(sender: UITapGestureRecognizer ) {
         //activeTextField?.resignFirstResponder()
         view.endEditing(true)
     }
@@ -55,7 +55,7 @@ class AddNewEntryViewController: UIViewController {
         appDelegate.loadBannerView(forViewController: self, andOrientation: UIDevice.current.orientation)
     }
     
-    func handleKeyboardNotification(notification: NSNotification) {
+    @objc func handleKeyboardNotification(notification: NSNotification) {
         let navigationBar = navigationController?.navigationBar.frame.height
         if let userInfo = notification.userInfo {
             let keyBoardFrame = userInfo[UIKeyboardFrameEndUserInfoKey] as! CGRect

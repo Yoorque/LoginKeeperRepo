@@ -84,11 +84,11 @@ class DetailsViewController: UIViewController {
         appDelegate.loadBannerView(forViewController: self, andOrientation: UIDevice.current.orientation)
     }
     
-    func dismissKeyboard(sender: UITapGestureRecognizer ) {
+    @objc func dismissKeyboard(sender: UITapGestureRecognizer ) {
         activeTextField?.resignFirstResponder()
     }
     
-    func handleKeyboardNotification(notification: NSNotification) {
+    @objc func handleKeyboardNotification(notification: NSNotification) {
         guard let navigationBar = navigationController?.navigationBar.frame.height else {
             return
         }

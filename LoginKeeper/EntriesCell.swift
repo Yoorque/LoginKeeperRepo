@@ -29,7 +29,7 @@ class EntriesCell: UITableViewCell {
     @IBOutlet var entryComment: UILabel!
     var entryForCell: Entry!
     
-    func starGesture(sender: UITapGestureRecognizer) {
+    @objc func starGesture(sender: UITapGestureRecognizer) {
         if let view = sender.view as? UIImageView{
         
             fetch(entry: entryName.text!)

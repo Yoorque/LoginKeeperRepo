@@ -111,7 +111,7 @@ class EntriesViewController: UIViewController, UITableViewDataSource, UITableVie
     }
     
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
-        let delete = UITableViewRowAction(style: .destructive, title: "Delete Entry", handler: {_ in
+        let delete = UITableViewRowAction(style: .destructive, title: "Delete Entry", handler: {_,_  in
             
             self.appDelegate.persistentContainer.viewContext.delete(self.entries![indexPath.row])
             self.entries?.remove(at: indexPath.row)

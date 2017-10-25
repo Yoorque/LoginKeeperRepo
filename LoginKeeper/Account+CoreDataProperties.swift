@@ -2,8 +2,9 @@
 //  Account+CoreDataProperties.swift
 //  LoginKeeper
 //
-//  Created by Dusan Juranovic on 7/31/17.
+//  Created by Dusan Juranovic on 10/9/17.
 //  Copyright © 2017 Dusan Juranovic. All rights reserved.
+//
 //
 
 import Foundation
@@ -17,8 +18,8 @@ extension Account {
     }
 
     @NSManaged public var favorited: Bool
-    @NSManaged public var name: String?
     @NSManaged public var image: String?
+    @NSManaged public var name: String?
     @NSManaged public var entries: NSSet?
 
 }

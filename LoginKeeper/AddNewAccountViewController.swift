@@ -8,17 +8,12 @@
 
 import UIKit
 import CoreData
-import Firebase
-import FirebaseDatabase
 
 class AddNewAccountViewController: UIViewController {
     
     @IBOutlet var topStackConstraint: NSLayoutConstraint!
     @IBOutlet var stackView: UIStackView!
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
-    
-    var ref: DatabaseReference!
-
     
     var activeTextField: UITextField? {
         didSet {
@@ -33,7 +28,7 @@ class AddNewAccountViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-         ref = Database.database().reference()
+        
         appDelegate.loadBannerView(forViewController: self, andOrientation: UIDevice.current.orientation)
         view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard)))
         
@@ -46,12 +41,12 @@ class AddNewAccountViewController: UIViewController {
     
     }
     
-    func handleKeyboardNotification(notification: NSNotification) {
+    @objc func handleKeyboardNotification(notification: NSNotification) {
         let navigationBar = navigationController?.navigationBar.frame.height
         if let userInfo = notification.userInfo {
             let keyBoardFrame = userInfo[UIKeyboardFrameEndUserInfoKey] as! CGRect
             let isKeyboardShowing = notification.name == .UIKeyboardWillShow
-            let totalHeights = (activeTextField?.frame.maxY)! + navigationBar!  + topStackConstraint.constant
+            let totalHeights = (activeTextField?.frame.maxY)! + navigationBar! + topStackConstraint.constant
             let difference = totalHeights - keyBoardFrame.size.height
             if keyBoardFrame.origin.y < totalHeights {
                 self.topStackConstraint.constant -= isKeyboardShowing ? difference + 30 : 0
@@ -68,7 +63,7 @@ class AddNewAccountViewController: UIViewController {
         }
     }
     
-    func dismissKeyboard(sender: UITapGestureRecognizer ) {
+    @objc func dismissKeyboard(sender: UITapGestureRecognizer ) {
         //activeTextField?.resignFirstResponder()
         view.endEditing(true)
     }
