@@ -152,17 +152,17 @@ class AccountsViewController: UIViewController, UITableViewDelegate, UITableView
                     self.tableView.reloadData()
                     
                     switch error!._code {
-                    case LAError.authenticationFailed.rawValue:
+                    case Int(kLAErrorAuthenticationFailed):
                         self.loginAlert(message: error!.localizedDescription)
-                    case LAError.userCancel.rawValue:
+                    case Int(kLAErrorUserCancel):
                         self.loginAlert(message: error!.localizedDescription)
                     case Int(kLAErrorBiometryNotEnrolled):
                         self.loginAlert(message: error!.localizedDescription)
-                    case LAError.passcodeNotSet.rawValue:
+                    case Int(kLAErrorPasscodeNotSet):
                         self.loginAlert(message: error!.localizedDescription)
-                    case LAError.systemCancel.rawValue:
+                    case Int(kLAErrorSystemCancel):
                         self.loginAlert(message: error!.localizedDescription)
-                    case LAError.userFallback.rawValue:
+                    case Int(kLAErrorUserFallback):
                         let alert = UIAlertController(title: "Password", message: "Enter your password", preferredStyle: .alert)
                         alert.addTextField(configurationHandler: {textField in
                             textField.placeholder = "Enter your password"
@@ -212,17 +212,17 @@ class AccountsViewController: UIViewController, UITableViewDelegate, UITableView
                     self.lockButton.title = "Unlock"
                     self.tableView.reloadData()
                     switch error!._code{
-                    case LAError.authenticationFailed.rawValue:
+                    case Int(kLAErrorAuthenticationFailed):
                         self.loginAlert(message: error!.localizedDescription)
-                    case LAError.userCancel.rawValue:
+                    case Int(kLAErrorUserCancel):
                         self.loginAlert(message: error!.localizedDescription)
                     case Int(kLAErrorBiometryNotEnrolled):
                         self.loginAlert(message: error!.localizedDescription)
-                    case LAError.passcodeNotSet.rawValue:
+                    case Int(kLAErrorPasscodeNotSet):
                         self.loginAlert(message: error!.localizedDescription)
-                    case LAError.systemCancel.rawValue:
+                    case Int(kLAErrorSystemCancel):
                         self.loginAlert(message: error!.localizedDescription)
-                    case LAError.userFallback.rawValue:
+                    case Int(kLAErrorUserFallback):
                         self.loginAlert(message: error!.localizedDescription)
                     default:
                         self.loginAlert(message: error!.localizedDescription)
