@@ -55,7 +55,6 @@ class AccountsViewController: UIViewController, UITableViewDelegate, UITableView
         }
         
         addToolBarTo(searchBar: searchBar)
-        
     }
     
     func appDidEnterForeground() {
