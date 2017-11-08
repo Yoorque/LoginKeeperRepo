@@ -21,19 +21,18 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="guh-oO-JUI">
-                                <rect key="frame" x="65" y="264.5" width="245" height="138.5"/>
+                                <rect key="frame" x="79.5" y="264.5" width="216.5" height="138.5"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Icon" translatesAutoresizingMaskIntoConstraints="NO" id="I7S-G4-wcP">
-                                        <rect key="frame" x="87.5" y="0.0" width="70" height="70"/>
+                                        <rect key="frame" x="73.5" y="0.0" width="70" height="70"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="70" id="A0m-VK-uTD"/>
                                             <constraint firstAttribute="height" constant="70" id="cZo-Mn-js2"/>
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LoginKeeper" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mt1-s2-YFJ">
-                                        <rect key="frame" x="0.0" y="70" width="245" height="48"/>
+                                        <rect key="frame" x="0.0" y="70" width="216.5" height="48"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="245" id="1Bs-Yd-Znd"/>
                                             <constraint firstAttribute="height" constant="48" id="dMd-nn-Y2A"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="40"/>
@@ -41,7 +40,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loading..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fqE-R2-QYQ">
-                                        <rect key="frame" x="85" y="118" width="75" height="20.5"/>
+                                        <rect key="frame" x="71" y="118" width="75" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
