@@ -357,7 +357,7 @@ class AccountsViewController: UIViewController, UITableViewDelegate, UITableView
             if let destinationVC = controller {
                 destinationVC.entries = accounts[index!].entries?.allObjects as? [Entry]
                 destinationVC.account = accounts[index!]
-                destinationVC.title = "Entries of \(accounts[index!].name!)"
+                destinationVC.titleTextLabel.text = "Entries of \(accounts[index!].name!)"
             }
         } else if segue.identifier == "addNewEntrySegue" {
             let controller = segue.destination as? AddNewEntryViewController
@@ -368,7 +368,7 @@ class AccountsViewController: UIViewController, UITableViewDelegate, UITableView
             let controller = segue.destination as? DetailsViewController
             if let destinationVC = controller {
                 destinationVC.entryDetails = accounts[index!].entries!.allObjects.first as? Entry
-                destinationVC.title = "\(accounts[index!].name!) details"
+                destinationVC.titleTextLabel.text = "\(accounts[index!].name!) details"
             }
         }
     }
