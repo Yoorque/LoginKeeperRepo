@@ -95,7 +95,7 @@ class AccountsViewController: UIViewController, UITableViewDelegate, UITableView
     }
     
     func setPassword() {
-        let alert = UIAlertController(title: "Password", message: "Set your password for LoginKeeper®", preferredStyle: .alert)
+        let alert = UIAlertController(title: "Password", message: "Set your backup password for LoginKeeper®", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Done", style: .default, handler: { _ in
             let password = alert.textFields?.first?.text!
             

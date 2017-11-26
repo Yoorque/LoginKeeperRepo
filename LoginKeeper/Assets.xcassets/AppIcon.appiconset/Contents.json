@@ -3,169 +3,155 @@
     {
       "size" : "20x20",
       "idiom" : "iphone",
-      "filename" : "Icon-Spotlight-40.png",
+      "filename" : "icons8-password-96.png",
       "scale" : "2x"
     },
     {
       "size" : "20x20",
       "idiom" : "iphone",
-      "filename" : "Icon-60.png",
+      "filename" : "icons8-password-97.png",
       "scale" : "3x"
     },
     {
       "size" : "29x29",
       "idiom" : "iphone",
-      "filename" : "icons8-Password-1.png",
+      "filename" : "icons8-password-98.png",
       "scale" : "1x"
     },
     {
       "size" : "29x29",
       "idiom" : "iphone",
-      "filename" : "icons8-Password.png",
+      "filename" : "icons8-password-99.png",
       "scale" : "2x"
     },
     {
       "size" : "29x29",
       "idiom" : "iphone",
-      "filename" : "Icon-Small@3x.png",
+      "filename" : "icons8-password-100.png",
       "scale" : "3x"
     },
     {
       "size" : "40x40",
       "idiom" : "iphone",
-      "filename" : "icons8-Password-2.png",
+      "filename" : "icons8-password-101.png",
       "scale" : "2x"
     },
     {
       "size" : "40x40",
       "idiom" : "iphone",
-      "filename" : "Icon-Spotlight-40@3x.png",
+      "filename" : "icons8-password-102.png",
       "scale" : "3x"
     },
     {
       "size" : "57x57",
       "idiom" : "iphone",
-      "filename" : "icons8-Password-15.png",
+      "filename" : "icons8-password-103.png",
       "scale" : "1x"
     },
     {
       "size" : "57x57",
       "idiom" : "iphone",
-      "filename" : "icons8-Password-16.png",
+      "filename" : "icons8-password-104.png",
       "scale" : "2x"
     },
     {
       "size" : "60x60",
       "idiom" : "iphone",
-      "filename" : "Icon-60@2x.png",
+      "filename" : "icons8-password-105.png",
       "scale" : "2x"
     },
     {
       "size" : "60x60",
       "idiom" : "iphone",
-      "filename" : "Icon-60@3x.png",
+      "filename" : "icons8-password-106.png",
       "scale" : "3x"
     },
     {
+      "idiom" : "ipad",
       "size" : "20x20",
-      "idiom" : "ipad",
-      "filename" : "icons8-Password-3.png",
       "scale" : "1x"
     },
     {
+      "idiom" : "ipad",
       "size" : "20x20",
-      "idiom" : "ipad",
-      "filename" : "icons8-Password-4.png",
       "scale" : "2x"
     },
     {
+      "idiom" : "ipad",
       "size" : "29x29",
-      "idiom" : "ipad",
-      "filename" : "Icon-Small.png",
       "scale" : "1x"
     },
     {
+      "idiom" : "ipad",
       "size" : "29x29",
-      "idiom" : "ipad",
-      "filename" : "Icon-Small@2x.png",
       "scale" : "2x"
     },
     {
+      "idiom" : "ipad",
       "size" : "40x40",
-      "idiom" : "ipad",
-      "filename" : "icons8-Password-5.png",
       "scale" : "1x"
     },
     {
+      "idiom" : "ipad",
       "size" : "40x40",
-      "idiom" : "ipad",
-      "filename" : "icons8-Password-6.png",
       "scale" : "2x"
     },
     {
+      "idiom" : "ipad",
       "size" : "50x50",
-      "idiom" : "ipad",
-      "filename" : "Icon-Small-50.png",
       "scale" : "1x"
     },
     {
+      "idiom" : "ipad",
       "size" : "50x50",
-      "idiom" : "ipad",
-      "filename" : "Icon-Small-50@2x.png",
       "scale" : "2x"
     },
     {
-      "size" : "72x72",
       "idiom" : "ipad",
-      "filename" : "Icon-72.png",
+      "size" : "72x72",
       "scale" : "1x"
     },
     {
-      "size" : "72x72",
       "idiom" : "ipad",
-      "filename" : "Icon-72@2x.png",
+      "size" : "72x72",
       "scale" : "2x"
     },
     {
-      "size" : "76x76",
       "idiom" : "ipad",
-      "filename" : "Icon-76.png",
+      "size" : "76x76",
       "scale" : "1x"
     },
     {
-      "size" : "76x76",
       "idiom" : "ipad",
-      "filename" : "Icon-76@2x.png",
+      "size" : "76x76",
       "scale" : "2x"
     },
     {
+      "idiom" : "ipad",
       "size" : "83.5x83.5",
-      "idiom" : "ipad",
-      "filename" : "Icon-iPadPro@2x-1.png",
       "scale" : "2x"
     },
     {
       "size" : "1024x1024",
       "idiom" : "ios-marketing",
-      "filename" : "Icon-iPadPro@2x.png",
+      "filename" : "icons8-password-107.png",
       "scale" : "1x"
     },
     {
       "size" : "60x60",
       "idiom" : "car",
-      "filename" : "icons8-Password-7.png",
+      "filename" : "icons8-password-108.png",
       "scale" : "2x"
     },
     {
       "size" : "60x60",
       "idiom" : "car",
-      "filename" : "icons8-Password-8.png",
+      "filename" : "icons8-password-109.png",
       "scale" : "3x"
     },
     {
       "size" : "24x24",
       "idiom" : "watch",
-      "filename" : "icons8-Password-12.png",
       "scale" : "2x",
       "role" : "notificationCenter",
       "subtype" : "38mm"
@@ -173,7 +159,6 @@
     {
       "size" : "27.5x27.5",
       "idiom" : "watch",
-      "filename" : "icons8-Password-11.png",
       "scale" : "2x",
       "role" : "notificationCenter",
       "subtype" : "42mm"
@@ -181,21 +166,18 @@
     {
       "size" : "29x29",
       "idiom" : "watch",
-      "filename" : "icons8-Password-10.png",
       "role" : "companionSettings",
       "scale" : "2x"
     },
     {
       "size" : "29x29",
       "idiom" : "watch",
-      "filename" : "icons8-Password-9.png",
       "role" : "companionSettings",
       "scale" : "3x"
     },
     {
       "size" : "40x40",
       "idiom" : "watch",
-      "filename" : "Icon-Spotlight-40@2x.png",
       "scale" : "2x",
       "role" : "appLauncher",
       "subtype" : "38mm"
@@ -203,7 +185,6 @@
     {
       "size" : "86x86",
       "idiom" : "watch",
-      "filename" : "icons8-Password-13.png",
       "scale" : "2x",
       "role" : "quickLook",
       "subtype" : "38mm"
@@ -211,15 +192,13 @@
     {
       "size" : "98x98",
       "idiom" : "watch",
-      "filename" : "icons8-Password-14.png",
       "scale" : "2x",
       "role" : "quickLook",
       "subtype" : "42mm"
     },
     {
-      "size" : "1024x1024",
       "idiom" : "watch-marketing",
-      "filename" : "Icon-iPadPro@2x-2.png",
+      "size" : "1024x1024",
       "scale" : "1x"
     }
   ],
