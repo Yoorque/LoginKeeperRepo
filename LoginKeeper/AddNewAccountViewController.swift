@@ -38,7 +38,6 @@ class AddNewAccountViewController: UIViewController {
             activeTF.inputAccessoryView = UIView()
             activeTF.inputAccessoryView?.backgroundColor = .red
         }
-    
     }
     
     @objc func handleKeyboardNotification(notification: NSNotification) {
