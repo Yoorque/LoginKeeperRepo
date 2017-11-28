@@ -14,7 +14,7 @@ import GoogleMobileAds
 class AppDelegate: UIResponder, UIApplicationDelegate, GADBannerViewDelegate {
 
     var window: UIWindow?
-    var adBannerView: GADBannerView?
+    var adBannerView: GADBannerView!
     var accountsVC: AccountsViewController?
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
@@ -26,7 +26,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GADBannerViewDelegate {
         UINavigationBar.appearance().tintColor = UIColor(red: 56/255, green: 124/255, blue: 254/255, alpha: 1)
         UINavigationBar.appearance().titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor(red: 56/255, green: 124/255, blue: 254/255, alpha: 1), NSAttributedStringKey.font: UIFont(name: "HiraginoSans-W6", size: 15)!]
         
-        GADMobileAds.configure(withApplicationID: "ca-app-pub-9468673959133010~5601234686")
         return true
     }
     
@@ -48,22 +47,53 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GADBannerViewDelegate {
         bannerView.isHidden = true
     }
     
-    func loadBannerView(forViewController view: UIViewController, andOrientation orientation: UIDeviceOrientation) {
+    func load(bannerView: GADBannerView ,forViewController viewController: UIViewController, andOrientation orientation: UIDeviceOrientation) {
+        bannerView.translatesAutoresizingMaskIntoConstraints = false
+        viewController.view.addSubview(adBannerView!)
         if orientation.isPortrait {
             adBannerView!.adSize = kGADAdSizeSmartBannerPortrait
         } else {
             adBannerView!.adSize = kGADAdSizeSmartBannerLandscape
         }
         
-        adBannerView!.frame.origin = CGPoint(x: 0, y: view.view.frame.size.height - adBannerView!.bounds.size.height)
+        if #available(iOS 11.0, *) {
+            // In iOS 11, we need to constrain the view to the safe area.
+            let guide = viewController.view.safeAreaLayoutGuide
+            NSLayoutConstraint.activate([
+                guide.leftAnchor.constraint(equalTo: bannerView.leftAnchor),
+                guide.rightAnchor.constraint(equalTo: bannerView.rightAnchor),
+                guide.bottomAnchor.constraint(equalTo: bannerView.bottomAnchor)
+                ])
+        }
+        else {
+            // In lower iOS versions, safe area is not available so we use
+            // bottom layout guide and view edges.
+            viewController.view.addConstraint(NSLayoutConstraint(item: bannerView,
+                                                  attribute: .leading,
+                                                  relatedBy: .equal,
+                                                  toItem: viewController.view,
+                                                  attribute: .leading,
+                                                  multiplier: 1,
+                                                  constant: 0))
+            viewController.view.addConstraint(NSLayoutConstraint(item: bannerView,
+                                                  attribute: .trailing,
+                                                  relatedBy: .equal,
+                                                  toItem: viewController.view,
+                                                  attribute: .trailing,
+                                                  multiplier: 1,
+                                                  constant: 0))
+            viewController.view.addConstraint(NSLayoutConstraint(item: bannerView,
+                                                  attribute: .bottom,
+                                                  relatedBy: .equal,
+                                                  toItem: viewController.bottomLayoutGuide,
+                                                  attribute: .top,
+                                                  multiplier: 1,
+                                                  constant: 0))
+        }
         
-        adBannerView!.rootViewController = view
+        adBannerView!.rootViewController = viewController
         adBannerView!.load(GADRequest())
         
-        let request = GADRequest()
-        request.testDevices = [kGADSimulatorID, "1618f756fe5310d67a0425a2dfb452ee"]
-        
-        view.view.addSubview(adBannerView!)
         adBannerView!.isHidden = true
     }
     

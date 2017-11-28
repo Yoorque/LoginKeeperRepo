@@ -28,7 +28,7 @@ class DetailsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        appDelegate.loadBannerView(forViewController: self, andOrientation: UIDevice.current.orientation)
+        appDelegate.load(bannerView: appDelegate.adBannerView,forViewController: self, andOrientation: UIDevice.current.orientation)
         
         view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard)))
         titleTextLabel.frame.size.height = 25
@@ -84,7 +84,7 @@ class DetailsViewController: UIViewController {
     }
     
     override func didRotate(from fromInterfaceOrientation: UIInterfaceOrientation) {
-        appDelegate.loadBannerView(forViewController: self, andOrientation: UIDevice.current.orientation)
+        appDelegate.load(bannerView: appDelegate.adBannerView,forViewController: self, andOrientation: UIDevice.current.orientation)
     }
     
     @objc func dismissKeyboard(sender: UITapGestureRecognizer ) {
