@@ -15,10 +15,10 @@ class InfoTableViewController: UITableViewController {
     @IBOutlet var iconsCell: UITableViewCell!
     
     @IBOutlet var versionLabel: UILabel!
-    let accountsVC = AccountsViewController()
-    
+    var authenticated: Bool?
     override func viewDidLoad() {
         super.viewDidLoad()
+        authenticated = UserDefaults.standard.bool(forKey: "authenticated")
         guard let version = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String else {
             return
         }
@@ -63,17 +63,17 @@ class InfoTableViewController: UITableViewController {
         case devWebsiteCell.tag:
             
             if let url = URL(string: "https://linkedin.com/in/dusan-juranovic") {
-                leavingAlert(toURL: url, title: "LinkedIn")
+                leavingAppAlert(toURL: url, title: "LinkedIn")
             }
             
         case moreAppsCell.tag:
             
-            showAlert()
+            underContructionAlert()
             
         case iconsCell.tag:
             
             if let url = URL(string: "https://icons8.com") {
-                leavingAlert(toURL: url, title: "icons8.com")
+                leavingAppAlert(toURL: url, title: "icons8.com")
             }
             
         default:
@@ -82,7 +82,7 @@ class InfoTableViewController: UITableViewController {
         tableView.deselectRow(at: indexPath, animated: true)
     }
     
-    func leavingAlert(toURL url: URL, title: String) {
+    func leavingAppAlert(toURL url: URL, title: String) {
         let alert = UIAlertController(title: "Leaving LoginKeepr", message: "You will be redirected to \(title). Are you sure?", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "I'm sure", style: .default, handler: { _ in
              UIApplication.shared.open(url, options: [:], completionHandler: nil)
@@ -91,7 +91,7 @@ class InfoTableViewController: UITableViewController {
         present(alert, animated: true, completion: nil)
     }
     
-    func showAlert() {
+    func underContructionAlert() {
         let alert = UIAlertController(title: "In Progress...", message: "We're working on this one!", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
         present(alert, animated: true, completion: nil)

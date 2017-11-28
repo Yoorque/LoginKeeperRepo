@@ -11,7 +11,6 @@ import CoreData
 import LocalAuthentication
 import GoogleMobileAds
 
-var authenticated = false
 
 class AccountsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate, AccountsDisplayAlertDelegate {
     @IBOutlet var lockButton: UIBarButtonItem!
@@ -24,6 +23,7 @@ class AccountsViewController: UIViewController, UITableViewDelegate, UITableView
     
     @IBOutlet var tableView: UITableView!
     
+    var authenticated = false
     var index: Int?
     var accounts = [Account]()
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
@@ -32,13 +32,13 @@ class AccountsViewController: UIViewController, UITableViewDelegate, UITableView
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         NotificationCenter.default.addObserver(forName: NSNotification.Name.UIApplicationWillEnterForeground, object: nil, queue: nil, using: {_ in
             self.navigationController?.popToViewController(self, animated: true)
             self.accounts = []
             self.tableView.reloadData()
             self.authenticateUser()
-            authenticated = false
-            
+            self.authenticated = false
         })
         
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
@@ -55,10 +55,6 @@ class AccountsViewController: UIViewController, UITableViewDelegate, UITableView
         }
         
         addToolBarTo(searchBar: searchBar)
-    }
-    
-    func appDidEnterForeground() {
-        authenticateUser()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -143,10 +139,10 @@ class AccountsViewController: UIViewController, UITableViewDelegate, UITableView
                     self.navigationItem.rightBarButtonItem?.isEnabled = true
                     self.searchBar.isUserInteractionEnabled = true
                     self.fetchFromCoreData()
-                    authenticated = true
+                    self.authenticated = true
                     print("Success: TouchID")
                 } else {
-                    authenticated = false
+                    self.authenticated = false
                     self.accounts = []
                     self.navigationItem.rightBarButtonItem?.isEnabled = false
                     self.searchBar.isUserInteractionEnabled = false
@@ -177,12 +173,12 @@ class AccountsViewController: UIViewController, UITableViewDelegate, UITableView
                                     self.searchBar.isUserInteractionEnabled = true
                                     self.lockButton.title = "Lock"
                                     self.fetchFromCoreData()
-                                    authenticated = true
+                                    self.authenticated = true
                                     print("Success")
                                 } else {
                                     self.alert(message: error!.localizedDescription)
                                     self.searchBar.isUserInteractionEnabled = false
-                                    authenticated = false
+                                    self.authenticated = false
                                 }
                             }
                         }))
@@ -204,10 +200,10 @@ class AccountsViewController: UIViewController, UITableViewDelegate, UITableView
                     self.searchBar.isUserInteractionEnabled = true
                     self.lockButton.title = "Lock"
                     self.fetchFromCoreData()
-                    authenticated = true
+                    self.authenticated = true
             
                 } else {
-                    authenticated = false
+                    self.authenticated = false
                     self.accounts = []
                     self.navigationItem.rightBarButtonItem?.isEnabled = false
                     self.searchBar.isUserInteractionEnabled = false
@@ -233,6 +229,7 @@ class AccountsViewController: UIViewController, UITableViewDelegate, UITableView
                 }
             })
         }
+        defaults.set(authenticated, forKey: "authenticated")
     }
     
     @IBAction func addAccountButton(_ sender: Any) {
