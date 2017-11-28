@@ -48,6 +48,7 @@ class InfoTableViewController: UITableViewController {
         let clickedCell = tableView.cellForRow(at: indexPath)
         switch clickedCell!.tag {
         case feedbackCell.tag:
+            
             let email = "juranovicd@gmail.com"
             if let url = URL(string: "mailto:\(email)") {
                 if authenticated == true {
@@ -61,13 +62,16 @@ class InfoTableViewController: UITableViewController {
             
         case devWebsiteCell.tag:
             
-            showAlert()
+            if let url = URL(string: "https://linkedin.com/in/dusan-juranovic") {
+                leavingAlert(toURL: url, title: "LinkedIn")
+            }
             
         case moreAppsCell.tag:
             
             showAlert()
             
         case iconsCell.tag:
+            
             if let url = URL(string: "https://icons8.com") {
                 leavingAlert(toURL: url, title: "icons8.com")
             }
@@ -79,7 +83,7 @@ class InfoTableViewController: UITableViewController {
     }
     
     func leavingAlert(toURL url: URL, title: String) {
-        let alert = UIAlertController(title: "Leaving LoginKeeper", message: "You will be redirected to \(title). Are you sure?", preferredStyle: .alert)
+        let alert = UIAlertController(title: "Leaving LoginKeepr", message: "You will be redirected to \(title). Are you sure?", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "I'm sure", style: .default, handler: { _ in
              UIApplication.shared.open(url, options: [:], completionHandler: nil)
         }))

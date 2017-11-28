@@ -24,6 +24,7 @@
 		111EB6F31F0E431E00B12AC8 /* Entry+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111EB6EF1F0E431E00B12AC8 /* Entry+CoreDataClass.swift */; };
 		111EB6F41F0E431E00B12AC8 /* Entry+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111EB6F01F0E431E00B12AC8 /* Entry+CoreDataProperties.swift */; };
 		11779E431F4A25E8000F0D7D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 11779E421F4A25E8000F0D7D /* GoogleService-Info.plist */; };
+		1196E3301FCDB386000FCB37 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1196E32F1FCDB386000FCB37 /* AboutViewController.swift */; };
 		11E850F91F18DE5900F1B5C7 /* InfoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11E850F81F18DE5900F1B5C7 /* InfoTableViewController.swift */; };
 		DF1B3E4F59015A84C2DFE7C2 /* Pods_LoginKeeper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39307564D6F219D7841E90E1 /* Pods_LoginKeeper.framework */; };
 /* End PBXBuildFile section */
@@ -48,6 +49,7 @@
 		111EB6EF1F0E431E00B12AC8 /* Entry+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Entry+CoreDataClass.swift"; sourceTree = "<group>"; };
 		111EB6F01F0E431E00B12AC8 /* Entry+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Entry+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		11779E421F4A25E8000F0D7D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		1196E32F1FCDB386000FCB37 /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		11E850F81F18DE5900F1B5C7 /* InfoTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoTableViewController.swift; sourceTree = "<group>"; };
 		39307564D6F219D7841E90E1 /* Pods_LoginKeeper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LoginKeeper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4213D6A6028AFDDE5780A8FF /* Pods-LoginKeeper.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LoginKeeper.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LoginKeeper/Pods-LoginKeeper.debug.xcconfig"; sourceTree = "<group>"; };
@@ -94,6 +96,7 @@
 				11E850F81F18DE5900F1B5C7 /* InfoTableViewController.swift */,
 				111EB6E91F0E3C2D00B12AC8 /* AddNewEntryViewController.swift */,
 				111EB6EB1F0E3EA500B12AC8 /* DetailsViewController.swift */,
+				1196E32F1FCDB386000FCB37 /* AboutViewController.swift */,
 				111EB6F71F0E438900B12AC8 /* CustomCells */,
 				111EB6F51F0E432300B12AC8 /* CoreDataModel */,
 				111EB6F61F0E435000B12AC8 /* SupportingFiles */,
@@ -285,6 +288,7 @@
 				111EB6CF1F0E2DDD00B12AC8 /* AccountsViewController.swift in Sources */,
 				111EB6F21F0E431E00B12AC8 /* Account+CoreDataProperties.swift in Sources */,
 				111EB6F11F0E431E00B12AC8 /* Account+CoreDataClass.swift in Sources */,
+				1196E3301FCDB386000FCB37 /* AboutViewController.swift in Sources */,
 				111EB6E81F0E3A0100B12AC8 /* EntriesCell.swift in Sources */,
 				111EB6EC1F0E3EA500B12AC8 /* DetailsViewController.swift in Sources */,
 				111EB6F41F0E431E00B12AC8 /* Entry+CoreDataProperties.swift in Sources */,

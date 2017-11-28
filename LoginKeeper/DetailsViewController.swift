@@ -69,7 +69,7 @@ class DetailsViewController: UIViewController {
     @IBAction func shareButton(_ sender: UIBarButtonItem) {
         NotificationCenter.default.removeObserver(self)
         
-        let textToShare = "Account name: \(entryDetails!.account!.name!)\nEntry name: \(entryDetails!.name!)\nUsername: \(entryDetails!.username!)\nPassword: \(entryDetails!.password!)\nComment: \(entryDetails!.comment!)"
+        let textToShare = "LoginKeepr \nAccount name: \(entryDetails!.account!.name!)\nEntry name: \(entryDetails!.name!)\nUsername: \(entryDetails!.username!)\nPassword: \(entryDetails!.password!)\nComment: \(entryDetails!.comment!)"
         
             let objectsToShare = [textToShare]
             let activityVC = UIActivityViewController(activityItems: objectsToShare, applicationActivities: nil)

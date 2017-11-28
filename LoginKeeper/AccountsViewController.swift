@@ -70,6 +70,9 @@ class AccountsViewController: UIViewController, UITableViewDelegate, UITableView
         updateTableViewBottomInset()
     }
     
+    @IBAction func showInfoButon(_ sender: Any) {
+        performSegue(withIdentifier: "showInfoSegue", sender: self)
+    }
     @objc func dismissKeyboard(sender: UITapGestureRecognizer) {
         if let view = sender.view {
             if !searchBar.frame.contains(view.frame) {
@@ -95,7 +98,7 @@ class AccountsViewController: UIViewController, UITableViewDelegate, UITableView
     }
     
     func setPassword() {
-        let alert = UIAlertController(title: "Password", message: "Set your backup password for LoginKeeper®", preferredStyle: .alert)
+        let alert = UIAlertController(title: "Password", message: "Set your backup password for LoginKeepr", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Done", style: .default, handler: { _ in
             let password = alert.textFields?.first?.text!
             
