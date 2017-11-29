@@ -23,7 +23,7 @@ class AccountsViewController: UIViewController, UITableViewDelegate, UITableView
     
     @IBOutlet var tableView: UITableView!
     
-    var authenticated = false
+    var authenticated: Bool?
     var index: Int?
     var accounts = [Account]()
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
@@ -39,6 +39,7 @@ class AccountsViewController: UIViewController, UITableViewDelegate, UITableView
             self.tableView.reloadData()
             self.authenticateUser()
             self.defaults.set(false, forKey: "authenticated")
+            
         })
         
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
@@ -59,10 +60,9 @@ class AccountsViewController: UIViewController, UITableViewDelegate, UITableView
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
+        
         appDelegate.load(bannerView: appDelegate.adBannerView,forViewController: self, andOrientation: UIDevice.current.orientation)
-        if defaults.bool(forKey: "authenticated") {
-            fetchFromCoreData()
-        }
+    
         updateTableViewBottomInset()
     }
     
@@ -129,10 +129,10 @@ class AccountsViewController: UIViewController, UITableViewDelegate, UITableView
     func authenticateUser() {
         let context = LAContext()
         var error: NSError?
-        let message = "Identify yourself"
+        let reason = "Identify yourself"
         
         if context.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: &error) {
-            context.evaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, localizedReason: message, reply: {success, error in
+            context.evaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, localizedReason: reason, reply: {success, error in
                 // Touch ID
                 DispatchQueue.main.async {
                 if success {
@@ -191,7 +191,7 @@ class AccountsViewController: UIViewController, UITableViewDelegate, UITableView
                 }
             })
         } else {
-            context.evaluatePolicy(.deviceOwnerAuthentication, localizedReason: message, reply: {success, error in
+            context.evaluatePolicy(.deviceOwnerAuthentication, localizedReason: reason, reply: {success, error in
                 //No Touch ID
                 DispatchQueue.main.async {
                     
