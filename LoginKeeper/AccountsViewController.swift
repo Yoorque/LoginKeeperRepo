@@ -38,7 +38,7 @@ class AccountsViewController: UIViewController, UITableViewDelegate, UITableView
             self.accounts = []
             self.tableView.reloadData()
             self.authenticateUser()
-            self.authenticated = false
+            self.defaults.set(false, forKey: "authenticated")
         })
         
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
@@ -60,7 +60,7 @@ class AccountsViewController: UIViewController, UITableViewDelegate, UITableView
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         appDelegate.load(bannerView: appDelegate.adBannerView,forViewController: self, andOrientation: UIDevice.current.orientation)
-        if authenticated {
+        if defaults.bool(forKey: "authenticated") {
             fetchFromCoreData()
         }
         updateTableViewBottomInset()
@@ -139,10 +139,10 @@ class AccountsViewController: UIViewController, UITableViewDelegate, UITableView
                     self.navigationItem.rightBarButtonItem?.isEnabled = true
                     self.searchBar.isUserInteractionEnabled = true
                     self.fetchFromCoreData()
-                    self.authenticated = true
+                    self.defaults.set(true, forKey: "authenticated")
                     print("Success: TouchID")
                 } else {
-                    self.authenticated = false
+                    self.defaults.set(false, forKey: "authenticated")
                     self.accounts = []
                     self.navigationItem.rightBarButtonItem?.isEnabled = false
                     self.searchBar.isUserInteractionEnabled = false
@@ -173,12 +173,12 @@ class AccountsViewController: UIViewController, UITableViewDelegate, UITableView
                                     self.searchBar.isUserInteractionEnabled = true
                                     self.lockButton.title = "Lock"
                                     self.fetchFromCoreData()
-                                    self.authenticated = true
+                                    self.defaults.set(true, forKey: "authenticated")
                                     print("Success")
                                 } else {
                                     self.alert(message: error!.localizedDescription)
                                     self.searchBar.isUserInteractionEnabled = false
-                                    self.authenticated = false
+                                    self.defaults.set(false, forKey: "authenticated")
                                 }
                             }
                         }))
@@ -200,10 +200,10 @@ class AccountsViewController: UIViewController, UITableViewDelegate, UITableView
                     self.searchBar.isUserInteractionEnabled = true
                     self.lockButton.title = "Lock"
                     self.fetchFromCoreData()
-                    self.authenticated = true
+                    self.defaults.set(true, forKey: "authenticated")
             
                 } else {
-                    self.authenticated = false
+                    self.defaults.set(false, forKey: "authenticated")
                     self.accounts = []
                     self.navigationItem.rightBarButtonItem?.isEnabled = false
                     self.searchBar.isUserInteractionEnabled = false
@@ -229,7 +229,6 @@ class AccountsViewController: UIViewController, UITableViewDelegate, UITableView
                 }
             })
         }
-        defaults.set(authenticated, forKey: "authenticated")
     }
     
     @IBAction func addAccountButton(_ sender: Any) {
@@ -240,7 +239,7 @@ class AccountsViewController: UIViewController, UITableViewDelegate, UITableView
         accounts = []
         tableView.reloadData()
         authenticateUser()
-        authenticated = false
+        defaults.set(false, forKey: "authenticated")
     }
     
     func displayAlert(title: String, msg: String) {
