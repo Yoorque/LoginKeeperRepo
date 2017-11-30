@@ -16,7 +16,7 @@ class AboutViewController: UIViewController {
         titleTextLabel.textAlignment = .center
         titleTextLabel.textColor = UIColor(red: 56/255, green: 124/255, blue: 254/255, alpha: 1)
         titleTextLabel.font = UIFont(name: "HiraginoSans-W6", size: 15)
-        titleTextLabel.text = "About LoginKeepr"
+        titleTextLabel.text = "About LoginKeeper"
         navigationItem.titleView = titleTextLabel
         // Do any additional setup after loading the view.
     }

@@ -83,7 +83,7 @@ class InfoTableViewController: UITableViewController {
     }
     
     func leavingAppAlert(toURL url: URL, title: String) {
-        let alert = UIAlertController(title: "Leaving LoginKeepr", message: "You will be redirected to \(title). Are you sure?", preferredStyle: .alert)
+        let alert = UIAlertController(title: "Leaving LoginKeeper", message: "You will be redirected to \(title). Are you sure?", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "I'm sure", style: .default, handler: { _ in
              UIApplication.shared.open(url, options: [:], completionHandler: nil)
         }))
