@@ -13,6 +13,7 @@ import GoogleMobileAds
 
 
 class AccountsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate, AccountsDisplayAlertDelegate {
+    //MARK: - Properties
     @IBOutlet var lockButton: UIBarButtonItem!
     @IBOutlet var searchBar: UISearchBar! {
         didSet {
@@ -30,6 +31,7 @@ class AccountsViewController: UIViewController, UITableViewDelegate, UITableView
     let defaults = UserDefaults.standard
     var passwordSetShownBefore = false
     
+    //MARK: - App life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -62,19 +64,8 @@ class AccountsViewController: UIViewController, UITableViewDelegate, UITableView
         super.viewWillAppear(true)
         
         appDelegate.load(bannerView: appDelegate.adBannerView,forViewController: self, andOrientation: UIDevice.current.orientation)
-    
+        
         updateTableViewBottomInset()
-    }
-    
-    @IBAction func showInfoButon(_ sender: Any) {
-        performSegue(withIdentifier: "showInfoSegue", sender: self)
-    }
-    @objc func dismissKeyboard(sender: UITapGestureRecognizer) {
-        if let view = sender.view {
-            if !searchBar.frame.contains(view.frame) {
-                view.resignFirstResponder()
-            }
-        }
     }
     
     override func willRotate(to toInterfaceOrientation: UIInterfaceOrientation, duration: TimeInterval) {
@@ -86,15 +77,23 @@ class AccountsViewController: UIViewController, UITableViewDelegate, UITableView
         updateTableViewBottomInset()
     }
     
+    //MARK: - Helper functions
     func updateTableViewBottomInset() {
         if let banner = appDelegate.adBannerView {
             tableView.contentInset.bottom = banner.frame.size.height
         }
-
+    }
+    
+    @objc func dismissKeyboard(sender: UITapGestureRecognizer) {
+        if let view = sender.view {
+            if !searchBar.frame.contains(view.frame) {
+                view.resignFirstResponder()
+            }
+        }
     }
     
     func setPassword() {
-        let alert = UIAlertController(title: "Password", message: "Set your backup password for LoginKeepr", preferredStyle: .alert)
+        let alert = UIAlertController(title: "Password", message: "Set your backup password for LoginKeeper", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Done", style: .default, handler: { _ in
             let password = alert.textFields?.first?.text!
             
@@ -117,15 +116,6 @@ class AccountsViewController: UIViewController, UITableViewDelegate, UITableView
         present(alert, animated: true, completion: nil)
     }
     
-    
-    func loginAlert(message: String) {
-        let alert = UIAlertController(title: "Error!", message: message, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: {_ in
-            self.authenticateUser()
-        }))
-        present(alert, animated: true, completion: nil)
-    }
-    
     func authenticateUser() {
         let context = LAContext()
         var error: NSError?
@@ -135,59 +125,44 @@ class AccountsViewController: UIViewController, UITableViewDelegate, UITableView
             context.evaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, localizedReason: reason, reply: {success, error in
                 // Touch ID
                 DispatchQueue.main.async {
-                if success {
-                    self.navigationItem.rightBarButtonItem?.isEnabled = true
-                    self.searchBar.isUserInteractionEnabled = true
-                    self.fetchFromCoreData()
-                    self.defaults.set(true, forKey: "authenticated")
-                    print("Success: TouchID")
-                } else {
-                    self.defaults.set(false, forKey: "authenticated")
-                    self.accounts = []
-                    self.navigationItem.rightBarButtonItem?.isEnabled = false
-                    self.searchBar.isUserInteractionEnabled = false
-                    self.lockButton.title = "Unlock"
-                    self.tableView.reloadData()
-                    
-                    switch error!._code {
-                    case Int(kLAErrorAuthenticationFailed):
-                        self.loginAlert(message: error!.localizedDescription)
-                    case Int(kLAErrorUserCancel):
-                        self.loginAlert(message: error!.localizedDescription)
-                    case Int(kLAErrorBiometryNotEnrolled):
-                        self.loginAlert(message: error!.localizedDescription)
-                    case Int(kLAErrorPasscodeNotSet):
-                        self.loginAlert(message: error!.localizedDescription)
-                    case Int(kLAErrorSystemCancel):
-                        self.loginAlert(message: error!.localizedDescription)
-                    case Int(kLAErrorUserFallback):
-                        let alert = UIAlertController(title: "Password", message: "Enter your password", preferredStyle: .alert)
-                        alert.addTextField(configurationHandler: {textField in
-                            textField.placeholder = "Enter your password"
-                        })
-                        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { _ in
-                            let defaults = UserDefaults.standard
-                            if let pass = defaults.value(forKey: "userPassword") as? String {
-                                if pass == alert.textFields?.first?.text {
-                                    self.navigationItem.rightBarButtonItem?.isEnabled = true
-                                    self.searchBar.isUserInteractionEnabled = true
-                                    self.lockButton.title = "Lock"
-                                    self.fetchFromCoreData()
-                                    self.defaults.set(true, forKey: "authenticated")
-                                    print("Success")
-                                } else {
-                                    self.alert(message: error!.localizedDescription)
-                                    self.searchBar.isUserInteractionEnabled = false
-                                    self.defaults.set(false, forKey: "authenticated")
-                                }
-                            }
-                        }))
-                        alert.addAction(UIAlertAction(title: "Cancel", style: .default, handler: nil))
-                        self.present(alert, animated: true, completion: nil)
-                    default:
-                        self.loginAlert(message: error!.localizedDescription)
+                    if success {
+                        self.navigationItem.rightBarButtonItem?.isEnabled = true
+                        self.searchBar.isUserInteractionEnabled = true
+                        self.fetchFromCoreData()
+                        self.defaults.set(true, forKey: "authenticated")
+                        print("Success: TouchID")
+                    } else {
+                        self.defaults.set(false, forKey: "authenticated")
+                        self.accounts = []
+                        self.navigationItem.rightBarButtonItem?.isEnabled = false
+                        self.searchBar.isUserInteractionEnabled = false
+                        self.lockButton.title = "Unlock"
+                        self.tableView.reloadData()
+                        
+                        switch error!._code {
+                        case Int(kLAErrorAuthenticationFailed):
+                            self.loginAlert(message: error!.localizedDescription)
+                            print("AuthFailed1")
+                        case Int(kLAErrorUserCancel):
+                            self.loginAlert(message: error!.localizedDescription)
+                            print("UserCanceled1")
+                        case Int(kLAErrorBiometryNotEnrolled):
+                            self.loginAlert(message: error!.localizedDescription)
+                            print("biometry1")
+                        case Int(kLAErrorPasscodeNotSet):
+                            self.userFallbackPasswordAlertWith(error: error!)
+                            print("PassNotSet1")
+                        case Int(kLAErrorSystemCancel):
+                            self.loginAlert(message: error!.localizedDescription)
+                              print("SystemCancel1")
+                        case Int(kLAErrorUserFallback):
+                            self.userFallbackPasswordAlertWith(error: error!)
+                              print("UserFallback1")
+                        default:
+                            self.userFallbackPasswordAlertWith(error: error!)
+                              print("default1")
+                        }
                     }
-                }
                 }
             })
         } else {
@@ -195,42 +170,98 @@ class AccountsViewController: UIViewController, UITableViewDelegate, UITableView
                 //No Touch ID
                 DispatchQueue.main.async {
                     
-                if success {
+                    if success {
+                        self.navigationItem.rightBarButtonItem?.isEnabled = true
+                        self.searchBar.isUserInteractionEnabled = true
+                        self.lockButton.title = "Lock"
+                        self.fetchFromCoreData()
+                        self.defaults.set(true, forKey: "authenticated")
+                        
+                    } else {
+                        self.defaults.set(false, forKey: "authenticated")
+                        self.accounts = []
+                        self.navigationItem.rightBarButtonItem?.isEnabled = false
+                        self.searchBar.isUserInteractionEnabled = false
+                        self.lockButton.title = "Unlock"
+                        self.tableView.reloadData()
+                        switch error!._code{
+                        case Int(kLAErrorAuthenticationFailed):
+                            self.loginAlert(message: error!.localizedDescription)
+                            print("AuthFailed2")
+                        case Int(kLAErrorUserCancel):
+                            self.loginAlert(message: error!.localizedDescription)
+                            print("UserCanceled2")
+                        case Int(kLAErrorBiometryNotEnrolled):
+                            self.loginAlert(message: error!.localizedDescription)
+                            print("biometry2")
+                        case Int(kLAErrorPasscodeNotSet):
+                            self.userFallbackPasswordAlertWith(error: error!)
+                            print("PassNotSet2")
+                        case Int(kLAErrorSystemCancel):
+                            self.loginAlert(message: error!.localizedDescription)
+                            print("SystemCancel2")
+                        case Int(kLAErrorUserFallback):
+                            self.userFallbackPasswordAlertWith(error: error!)
+                            print("UserFallback2")
+                        default:
+                            self.userFallbackPasswordAlertWith(error: error!)
+                            print("default2")
+                        }
+                    }
+                }
+            })
+        }
+    }
+    //MARK: - Alerts
+    func displayAlert(title: String, msg: String) {
+        let alert = UIAlertController(title: title, message: msg, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        present(alert, animated: true, completion: nil)
+    }
+    
+    func alert(message: String) {
+        let alert = UIAlertController(title: "Error!", message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        present(alert, animated: true, completion: nil)
+    }
+    
+    func loginAlert(message: String) {
+        let alert = UIAlertController(title: "Error!", message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: {_ in
+            self.authenticateUser()
+        }))
+        present(alert, animated: true, completion: nil)
+    }
+    
+    func userFallbackPasswordAlertWith(error: Error) {
+        let alert = UIAlertController(title: "Password", message: "Enter your password", preferredStyle: .alert)
+        alert.addTextField(configurationHandler: {textField in
+            textField.placeholder = "Enter your password"
+        })
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { _ in
+            let defaults = UserDefaults.standard
+            if let pass = defaults.value(forKey: "userPassword") as? String {
+                if pass == alert.textFields?.first?.text {
                     self.navigationItem.rightBarButtonItem?.isEnabled = true
                     self.searchBar.isUserInteractionEnabled = true
                     self.lockButton.title = "Lock"
                     self.fetchFromCoreData()
                     self.defaults.set(true, forKey: "authenticated")
-            
+                    print("Success")
                 } else {
-                    self.defaults.set(false, forKey: "authenticated")
-                    self.accounts = []
-                    self.navigationItem.rightBarButtonItem?.isEnabled = false
+                    self.alert(message: error.localizedDescription)
                     self.searchBar.isUserInteractionEnabled = false
-                    self.lockButton.title = "Unlock"
-                    self.tableView.reloadData()
-                    switch error!._code{
-                    case Int(kLAErrorAuthenticationFailed):
-                        self.loginAlert(message: error!.localizedDescription)
-                    case Int(kLAErrorUserCancel):
-                        self.loginAlert(message: error!.localizedDescription)
-                    case Int(kLAErrorBiometryNotEnrolled):
-                        self.loginAlert(message: error!.localizedDescription)
-                    case Int(kLAErrorPasscodeNotSet):
-                        self.loginAlert(message: error!.localizedDescription)
-                    case Int(kLAErrorSystemCancel):
-                        self.loginAlert(message: error!.localizedDescription)
-                    case Int(kLAErrorUserFallback):
-                        self.loginAlert(message: error!.localizedDescription)
-                    default:
-                        self.loginAlert(message: error!.localizedDescription)
-                    }
+                    self.defaults.set(false, forKey: "authenticated")
                 }
-                }
-            })
-        }
+            }
+        }))
+        alert.addAction(UIAlertAction(title: "Cancel", style: .default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
     }
-    
+    //MARK: - Button Actions
+    @IBAction func showInfoButon(_ sender: Any) {
+        performSegue(withIdentifier: "showInfoSegue", sender: self)
+    }
     @IBAction func addAccountButton(_ sender: Any) {
         searchBar.resignFirstResponder()
         performSegue(withIdentifier: "addNewAccountSegue", sender: self)
@@ -238,22 +269,16 @@ class AccountsViewController: UIViewController, UITableViewDelegate, UITableView
     @IBAction func lockButton(_ sender: UIBarButtonItem) {
         accounts = []
         tableView.reloadData()
-        authenticateUser()
+        if lockButton.title == "Unlock" {
+            authenticateUser()
+        }
+        if lockButton.title == "Lock" {
+            lockButton.title = "Unlock"
+        }
         defaults.set(false, forKey: "authenticated")
     }
     
-    func displayAlert(title: String, msg: String) {
-        let alert = UIAlertController(title: title, message: msg, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-        present(alert, animated: true, completion: nil)
-    }
-
-    func alert(message: String) {
-        let alert = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-        present(alert, animated: true, completion: nil)
-    }
-    
+    //MARK: - CoreData Requests
     func fetchFromCoreData() {
         let context = appDelegate.persistentContainer.viewContext
         let fetchRequest = NSFetchRequest<Account>(entityName: "Account")
