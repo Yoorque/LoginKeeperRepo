@@ -692,7 +692,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="323" height="30"/>
                                         <color key="textColor" red="0.2196078431372549" green="0.48627450980392156" blue="0.99607843137254903" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="next"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" spellCheckingType="no" returnKeyType="next"/>
                                         <connections>
                                             <outlet property="delegate" destination="rpA-qm-WNA" id="EH1-Fx-lJY"/>
                                         </connections>
@@ -728,7 +728,7 @@
                                         <rect key="frame" x="0.0" y="160" width="323" height="30"/>
                                         <color key="textColor" red="0.2196078431372549" green="0.48627450980392156" blue="0.99607843137254903" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="done"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="no" spellCheckingType="no" returnKeyType="done"/>
                                         <connections>
                                             <outlet property="delegate" destination="rpA-qm-WNA" id="1Pm-fx-Y6s"/>
                                         </connections>
@@ -827,7 +827,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="323" height="30"/>
                                         <color key="textColor" red="0.2196078431372549" green="0.48627450980392156" blue="0.99607843137254903" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="next"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" spellCheckingType="no" returnKeyType="next"/>
                                         <connections>
                                             <outlet property="delegate" destination="ox9-YF-LOE" id="zNw-ki-cKV"/>
                                         </connections>
@@ -863,7 +863,7 @@
                                         <rect key="frame" x="0.0" y="160" width="323" height="30"/>
                                         <color key="textColor" red="0.2196078431372549" green="0.48627450980392156" blue="0.99607843137254903" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="done"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="no" spellCheckingType="no" returnKeyType="done"/>
                                         <connections>
                                             <outlet property="delegate" destination="ox9-YF-LOE" id="XqU-dp-rrd"/>
                                         </connections>
@@ -1266,7 +1266,7 @@
                                                 <rect key="frame" x="0.0" y="35" width="207" height="30"/>
                                                 <color key="textColor" red="0.2196078431372549" green="0.48627450980392156" blue="0.99607843137254903" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" name="HiraMinProN-W6" family="Hiragino Mincho ProN" pointSize="20"/>
-                                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="next"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" spellCheckingType="no" returnKeyType="next"/>
                                                 <connections>
                                                     <outlet property="delegate" destination="gFM-Ue-sol" id="K33-Cv-QMb"/>
                                                 </connections>
@@ -1293,7 +1293,7 @@
                                                 <rect key="frame" x="0.0" y="140" width="207" height="30"/>
                                                 <color key="textColor" red="0.2196078431372549" green="0.48627450980392156" blue="0.99607843137254903" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" name="HiraMinProN-W6" family="Hiragino Mincho ProN" pointSize="20"/>
-                                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="done"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="no" spellCheckingType="no" returnKeyType="done"/>
                                                 <connections>
                                                     <outlet property="delegate" destination="gFM-Ue-sol" id="C2d-30-hgi"/>
                                                 </connections>

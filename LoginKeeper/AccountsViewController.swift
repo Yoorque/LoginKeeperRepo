@@ -24,7 +24,7 @@ class AccountsViewController: UIViewController, UITableViewDelegate, UITableView
     
     @IBOutlet var tableView: UITableView!
     
-    var authenticated: Bool?
+    //var authenticated: Bool?
     var index: Int?
     var accounts = [Account]()
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
@@ -34,14 +34,13 @@ class AccountsViewController: UIViewController, UITableViewDelegate, UITableView
     //MARK: - App life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        defaults.set(false, forKey: "authenticated")
         NotificationCenter.default.addObserver(forName: NSNotification.Name.UIApplicationWillEnterForeground, object: nil, queue: nil, using: {_ in
             self.navigationController?.popToViewController(self, animated: true)
             self.accounts = []
             self.tableView.reloadData()
             self.authenticateUser()
             self.defaults.set(false, forKey: "authenticated")
-            
         })
         
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
@@ -62,7 +61,11 @@ class AccountsViewController: UIViewController, UITableViewDelegate, UITableView
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-        
+    
+        if defaults.bool(forKey: "authenticated") == true {
+            fetchFromCoreData()
+            tableView.reloadData()
+        }
         appDelegate.load(bannerView: appDelegate.adBannerView,forViewController: self, andOrientation: UIDevice.current.orientation)
         
         updateTableViewBottomInset()
