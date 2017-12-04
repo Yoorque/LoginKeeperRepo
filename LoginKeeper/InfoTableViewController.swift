@@ -13,9 +13,9 @@ class InfoTableViewController: UITableViewController {
     @IBOutlet var devWebsiteCell: UITableViewCell!
     @IBOutlet var moreAppsCell: UITableViewCell!
     @IBOutlet var iconsCell: UITableViewCell!
-    
     @IBOutlet var versionLabel: UILabel!
     var authenticated: Bool?
+    let accountsVC = AccountsViewController()
     override func viewDidLoad() {
         super.viewDidLoad()
         authenticated = UserDefaults.standard.bool(forKey: "authenticated")
@@ -52,7 +52,7 @@ class InfoTableViewController: UITableViewController {
             let email = "juranovicd@gmail.com"
             if let url = URL(string: "mailto:\(email)") {
                 if authenticated == true {
-                  UIApplication.shared.open(url)
+                    UIApplication.shared.open(url, options: [:])
                 } else {
                     let alert = UIAlertController(title: "Error", message: "You are not authorised to use this feature", preferredStyle: .alert)
                     alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))

@@ -31,12 +31,6 @@ class DetailsViewController: UIViewController {
         appDelegate.load(bannerView: appDelegate.adBannerView,forViewController: self, andOrientation: UIDevice.current.orientation)
         
         view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard)))
-        titleTextLabel.frame.size.height = 25
-        titleTextLabel.textAlignment = .center
-        titleTextLabel.textColor = UIColor(red: 56/255, green: 124/255, blue: 254/255, alpha: 1)
-        titleTextLabel.font = UIFont(name: "HiraginoSans-W6", size: 15)
-        
-        navigationItem.titleView = titleTextLabel
     }
     func addObservers() {
         NotificationCenter.default.addObserver(self, selector: #selector(handleKeyboardNotification), name: .UIKeyboardWillShow, object: nil)
@@ -66,6 +60,122 @@ class DetailsViewController: UIViewController {
             }
         }
     }
+    
+    func textEditEnabled() {
+        print("Enabled")
+       
+        name.isEnabled = true
+        name.textColor = UIColor(displayP3Red: 56/255, green: 124/255, blue: 254/255, alpha: 1)
+        name.setNeedsLayout()
+       
+        username.isEnabled = true
+        username.textColor = UIColor(displayP3Red: 56/255, green: 124/255, blue: 254/255, alpha: 1)
+        username.setNeedsLayout()
+       
+        password.isEnabled = true
+        password.textColor = UIColor(displayP3Red: 56/255, green: 124/255, blue: 254/255, alpha: 1)
+        password.setNeedsLayout()
+       
+        comment.isEnabled = true
+        comment.textColor = UIColor(displayP3Red: 56/255, green: 124/255, blue: 254/255, alpha: 1)
+        comment.setNeedsLayout()
+    }
+    
+    func textEditDisabled() {
+        print("Disabled")
+        
+        name.isEnabled = false
+        name.textColor = UIColor(displayP3Red: 135/255, green: 140/255, blue: 154/255, alpha: 1)
+        name.setNeedsLayout()
+        
+        username.isEnabled = false
+        username.textColor = UIColor(displayP3Red: 135/255, green: 140/255, blue: 154/255, alpha: 1)
+        username.setNeedsLayout()
+        
+        password.isEnabled = false
+        password.textColor = UIColor(displayP3Red: 135/255, green: 140/255, blue: 154/255, alpha: 1)
+        password.setNeedsLayout()
+        
+        comment.isEnabled = false
+        comment.textColor = UIColor(displayP3Red: 135/255, green: 140/255, blue: 154/255, alpha: 1)
+        comment.setNeedsLayout()
+    }
+    @IBAction func editButton(_ sender: Any) {
+        let button = sender as! UIBarButtonItem
+        if name.isEnabled {
+            textEditDisabled()
+            button.style = .plain
+            button.title = "Edit"
+            saveChanges()
+        } else {
+            textEditEnabled()
+            button.style = .done
+            button.title = "Save"
+        }
+    }
+    func copyPaste(text: String) {
+        let copyPaste = UIPasteboard.general
+        copyPaste.string = text
+    }
+    func animateClipboardTextFor(textField: UITextField, with text: String) {
+        DispatchQueue.main.async {
+            self.navigationController?.navigationBar.isUserInteractionEnabled = false
+            let textColor = textField.textColor
+            UIView.animate(withDuration: 0.5, animations: {
+                textField.backgroundColor = UIColor(displayP3Red: 135/255, green: 140/255, blue: 154/255, alpha: 1)
+                textField.textColor = UIColor(displayP3Red: 250/255, green: 250/255, blue: 250/255, alpha: 1)
+                textField.text = "COPIED TO CLIPBOARD"
+            }, completion: {_ in
+                UIView.animate(withDuration: 0.5, animations: {
+                    textField.backgroundColor = UIColor(displayP3Red: 250/255, green: 250/255, blue: 250/255, alpha: 1)
+                    textField.textColor = textColor
+                    textField.text = text
+                    self.navigationController?.navigationBar.isUserInteractionEnabled = true
+                })
+            })
+        }
+    }
+    @IBAction func copyAccountButton(_ sender: Any) {
+        if let text = accountName.text {
+            copyPaste(text: text)
+            animateClipboardTextFor(textField: accountName, with: entryDetails?.account?.name ?? "")
+        }
+    }
+    @IBAction func copyEntryButton(_ sender: Any) {
+        if let text = name.text {
+            copyPaste(text: text)
+            animateClipboardTextFor(textField: name, with: entryDetails?.name ?? "")
+        }
+    }
+    @IBAction func copyUsernameButton(_ sender: Any) {
+        if let text = username.text {
+            copyPaste(text: text)
+            animateClipboardTextFor(textField: username, with: entryDetails?.username ?? "")
+        }
+    }
+    @IBAction func copyPasswordButton(_ sender: Any) {
+        if let text = password.text {
+            copyPaste(text: text)
+            animateClipboardTextFor(textField: password, with: entryDetails?.password ?? "")
+        }
+    }
+    @IBAction func copyCommentButton(_ sender: Any) {
+        if let text = comment.text {
+            copyPaste(text: text)
+            animateClipboardTextFor(textField: comment, with: entryDetails?.comment ?? "")
+        }
+    }
+    @IBAction func copyAllButton(_ sender: Any) {
+        let copyText = "Account\(entryDetails!.account!.name!)\nEntry name: \(entryDetails!.name!)\nUsername: \(entryDetails!.username!)\nPassword: \(entryDetails!.password!)\nComment: \(entryDetails!.comment!)"
+            copyPaste(text: copyText)
+        animateClipboardTextFor(textField: accountName, with: entryDetails?.account?.name ?? "")
+        animateClipboardTextFor(textField: name, with: entryDetails?.name ?? "")
+        animateClipboardTextFor(textField: username, with: entryDetails?.username ?? "")
+        animateClipboardTextFor(textField: password, with: entryDetails?.password ?? "")
+        animateClipboardTextFor(textField: comment, with: entryDetails?.comment ?? "")
+    }
+    
+    
     @IBAction func shareButton(_ sender: UIBarButtonItem) {
         NotificationCenter.default.removeObserver(self)
         
@@ -118,10 +228,6 @@ class DetailsViewController: UIViewController {
                 }
             }
         }
-    }
-
-    @IBAction func saveChangesButton(_ sender: UIBarButtonItem) {
-        saveChanges()
     }
     
     func saveChanges() {

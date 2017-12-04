@@ -21,10 +21,11 @@ class AddNewAccountViewController: UIViewController {
         }
     }
     @IBOutlet var accountTitle: UITextField!
+    @IBOutlet var entryName: UITextField!
     @IBOutlet var username: UITextField!
-    @IBOutlet var comment: UITextField!
-    @IBOutlet var confirmPassword: UITextField!
     @IBOutlet var password: UITextField!
+    @IBOutlet var confirmPassword: UITextField!
+    @IBOutlet var comment: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -78,7 +79,7 @@ class AddNewAccountViewController: UIViewController {
     override func didRotate(from fromInterfaceOrientation: UIInterfaceOrientation) {
         appDelegate.load(bannerView: appDelegate.adBannerView,forViewController: self, andOrientation: UIDevice.current.orientation)
     }
-
+    
     
     func displayAlert(title: String, msg: String) {
         let alert = UIAlertController(title: title, message: msg, preferredStyle: .alert)
@@ -90,25 +91,30 @@ class AddNewAccountViewController: UIViewController {
         if password.text == confirmPassword.text {
             if password.text != "" {
                 if accountTitle.text != "" {
-                    let context = appDelegate.persistentContainer.viewContext
-                    let accountEntity = NSEntityDescription.insertNewObject(forEntityName: "Account", into: context) as! Account
-                    accountEntity.name = accountTitle.text
-                    accountEntity.image = accountTitle.text?.lowercased()
-                    
-                    let entryEntity = NSEntityDescription.insertNewObject(forEntityName: "Entry", into: context) as! Entry
-                    entryEntity.name = accountTitle.text
-                    entryEntity.username = username.text
-                    entryEntity.password = password.text
-                    entryEntity.comment = comment.text
-                    
-                    accountEntity.addToEntries(entryEntity)
-                    do {
-                        try context.save()
+                    if entryName.text != "" {
+                        let context = appDelegate.persistentContainer.viewContext
+                        let accountEntity = NSEntityDescription.insertNewObject(forEntityName: "Account", into: context) as! Account
+                        accountEntity.name = accountTitle.text
+                        accountEntity.image = accountTitle.text?.lowercased()
                         
-                        navigationController?.popViewController(animated: true)
+                        let entryEntity = NSEntityDescription.insertNewObject(forEntityName: "Entry", into: context) as! Entry
+                        entryEntity.name = entryName.text
+                        entryEntity.username = username.text
+                        entryEntity.password = password.text
+                        entryEntity.comment = comment.text
                         
-                    } catch {
-                        displayAlert(title: "Error!", msg: "Oops! Unable to save at this time, please try again.")
+                        accountEntity.addToEntries(entryEntity)
+                        do {
+                            try context.save()
+                            
+                            navigationController?.popViewController(animated: true)
+                            
+                        } catch {
+                            displayAlert(title: "Error!", msg: "Oops! Unable to save at this time, please try again.")
+                        }
+                    }
+                    else {
+                        displayAlert(title: "No Entry name!", msg: "Entry name is required.")
                     }
                 } else {
                     displayAlert(title: "No Account name!", msg: "Account name is required.")
@@ -125,6 +131,9 @@ class AddNewAccountViewController: UIViewController {
         
         if textField == accountTitle {
             accountTitle.resignFirstResponder()
+            entryName.becomeFirstResponder()
+        } else if textField == entryName {
+            entryName.resignFirstResponder()
             username.becomeFirstResponder()
         } else if textField == username {
             username.resignFirstResponder()

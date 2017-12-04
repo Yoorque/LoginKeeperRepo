@@ -14,6 +14,7 @@ import GoogleMobileAds
 
 class AccountsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate, AccountsDisplayAlertDelegate {
     //MARK: - Properties
+    let accountLogos = ["mashreq", "weibo", "stackoverflow","nbd", "amazon", "apple", "badoo", "baidu", "balkaniyum", "bing", "blogger", "classmates", "couchsurfing", "crunchyroll", "ebay", "etoro", "facebook", "firebase", "flickr", "flixster", "foursquare", "friendster", "github", "gmail", "google+", "google", "grindr", "instagram", "line", "linkedin", "meetup", "mts", "myheritage", "myspace", "mytaxi", "netflix", "openstreetmaps", "opera", "orkut", "overpass", "pinterest", "qq", "quora", "qzone", "reddit", "renren", "shazam", "skype", "snapchat", "soundcloud", "soundhound", "stumbleupon", "tagged", "taringa", "telegram", "telenor", "thedots", "tinder", "tumblr", "twitter", "uber", "upwork", "viber", "vimeo", "vine", "vip", "vkontakte", "wechat", "weibo", "whatsapp", "wikipedia", "yahoo", "yelp", "youtube", "yy"]
     @IBOutlet var lockButton: UIBarButtonItem!
     @IBOutlet var searchBar: UISearchBar! {
         didSet {
@@ -36,11 +37,14 @@ class AccountsViewController: UIViewController, UITableViewDelegate, UITableView
         super.viewDidLoad()
         defaults.set(false, forKey: "authenticated")
         NotificationCenter.default.addObserver(forName: NSNotification.Name.UIApplicationWillEnterForeground, object: nil, queue: nil, using: {_ in
-            self.navigationController?.popToViewController(self, animated: true)
+            DispatchQueue.main.async {
+                
+            self.navigationController?.popToRootViewController(animated: true)
             self.accounts = []
             self.tableView.reloadData()
             self.authenticateUser()
             self.defaults.set(false, forKey: "authenticated")
+            }
         })
         
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
@@ -340,8 +344,17 @@ class AccountsViewController: UIViewController, UITableViewDelegate, UITableView
         cell.accountNameLabel.text = accounts[indexPath.row].name
         cell.entriesCountForAccountLabel.text = "\(accounts[indexPath.row].entries!.count)"
         cell.favoriteImageView.image = accounts[indexPath.row].favorited == true ? UIImage(named: "star") : UIImage(named: "emptyStar")
-        cell.accountImageView.image = UIImage(named: accounts[indexPath.row].image!) ?? UIImage(named: "noImage")
-        
+        for logo in accountLogos {
+            if accounts[indexPath.row].name?.lowercased().replacingOccurrences(of: " ", with: "") == logo {
+                cell.accountImageView.image = UIImage(named: logo)
+                break
+            } else if (accounts[indexPath.row].name?.lowercased().replacingOccurrences(of: " ", with: "").contains(logo))! {
+                cell.accountImageView.image = UIImage(named: logo)
+                break
+            } else {
+                cell.accountImageView.image = UIImage(named: "loginKeeper")
+            }
+        }
         return cell
     }
     
@@ -384,7 +397,7 @@ class AccountsViewController: UIViewController, UITableViewDelegate, UITableView
             if let destinationVC = controller {
                 destinationVC.entries = accounts[index!].entries?.allObjects as? [Entry]
                 destinationVC.account = accounts[index!]
-                destinationVC.titleTextLabel.text = "Entries of \(accounts[index!].name!)"
+                destinationVC.title = "Entries of \(accounts[index!].name!)"
             }
         } else if segue.identifier == "addNewEntrySegue" {
             let controller = segue.destination as? AddNewEntryViewController
@@ -395,7 +408,7 @@ class AccountsViewController: UIViewController, UITableViewDelegate, UITableView
             let controller = segue.destination as? DetailsViewController
             if let destinationVC = controller {
                 destinationVC.entryDetails = accounts[index!].entries!.allObjects.first as? Entry
-                destinationVC.titleTextLabel.text = "\(accounts[index!].name!) details"
+                destinationVC.title = "\(accounts[index!].name!) details"
             }
         }
     }
