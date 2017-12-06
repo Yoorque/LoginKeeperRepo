@@ -13,8 +13,11 @@ import GoogleMobileAds
 
 
 class AccountsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate, AccountsDisplayAlertDelegate {
+    
     //MARK: - Properties
+   
     let accountLogos = ["mashreq", "weibo", "stackoverflow","nbd", "amazon", "apple", "badoo", "baidu", "balkaniyum", "bing", "blogger", "classmates", "couchsurfing", "crunchyroll", "ebay", "etoro", "facebook", "firebase", "flickr", "flixster", "foursquare", "friendster", "github", "gmail", "google+", "google", "grindr", "instagram", "line", "linkedin", "meetup", "mts", "myheritage", "myspace", "mytaxi", "netflix", "openstreetmaps", "opera", "orkut", "overpass", "pinterest", "qq", "quora", "qzone", "reddit", "renren", "shazam", "skype", "snapchat", "soundcloud", "soundhound", "stumbleupon", "tagged", "taringa", "telegram", "telenor", "thedots", "tinder", "tumblr", "twitter", "uber", "upwork", "viber", "vimeo", "vine", "vip", "vkontakte", "wechat", "weibo", "whatsapp", "wikipedia", "yahoo", "yelp", "youtube", "yy"]
+    
     @IBOutlet var lockButton: UIBarButtonItem!
     @IBOutlet var searchBar: UISearchBar! {
         didSet {
@@ -51,16 +54,17 @@ class AccountsViewController: UIViewController, UITableViewDelegate, UITableView
         tapGesture.cancelsTouchesInView = false
         view.addGestureRecognizer(tapGesture)
         
-        if let shown = defaults.value(forKey: "shownBefore") as? Bool {
-            passwordSetShownBefore = shown
-        }
-        if passwordSetShownBefore == false {
-            setPassword()
-        } else {
-            authenticateUser()
-        }
-        
+            if let shown = defaults.value(forKey: "shownBefore") as? Bool {
+                passwordSetShownBefore = shown
+            }
+            if passwordSetShownBefore == false {
+                setPassword()
+            } else {
+                authenticateUser()
+            }
+
         addToolBarTo(searchBar: searchBar)
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -462,6 +466,6 @@ extension UIViewController: UITextFieldDelegate{
     @objc func donePressed(){
         view.endEditing(true)
     }
-    
 }
+
 
