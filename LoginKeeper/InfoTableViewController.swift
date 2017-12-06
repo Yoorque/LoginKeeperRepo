@@ -8,7 +8,7 @@
 
 import UIKit
 
-class InfoTableViewController: UITableViewController {
+class InfoTableViewController: UITableViewController, BWWalkthroughViewControllerDelegate {
     @IBOutlet var feedbackCell: UITableViewCell!
     @IBOutlet var devWebsiteCell: UITableViewCell!
     @IBOutlet var moreAppsCell: UITableViewCell!
@@ -32,7 +32,28 @@ class InfoTableViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
-
+    @IBAction func tutorialActionButton(_ sender: Any) {
+        let stb = UIStoryboard(name: "Main", bundle: nil)
+        let walkthrough = stb.instantiateViewController(withIdentifier: "Screen0") as! BWWalkthroughViewController
+        let pageOne = stb.instantiateViewController(withIdentifier: "Screen1")
+        let pageTwo = stb.instantiateViewController(withIdentifier: "Screen2")
+        let pageThree = stb.instantiateViewController(withIdentifier: "Screen3")
+        let pageFour = stb.instantiateViewController(withIdentifier: "Screen4")
+        let pageFive = stb.instantiateViewController(withIdentifier: "Screen5")
+        
+        walkthrough.delegate = self
+        walkthrough.add(viewController: pageOne)
+        walkthrough.add(viewController: pageTwo)
+        walkthrough.add(viewController: pageThree)
+        walkthrough.add(viewController: pageFour)
+        walkthrough.add(viewController: pageFive)
+        
+        self.present(walkthrough, animated: true, completion: nil)
+    }
+    
+    func walkthroughCloseButtonPressed() {
+        self.dismiss(animated: true, completion: nil)
+    }
     // MARK: - Table view data source
     
     override func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {

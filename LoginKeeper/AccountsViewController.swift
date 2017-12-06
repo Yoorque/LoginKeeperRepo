@@ -12,7 +12,7 @@ import LocalAuthentication
 import GoogleMobileAds
 
 
-class AccountsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate, AccountsDisplayAlertDelegate {
+class AccountsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate, AccountsDisplayAlertDelegate, BWWalkthroughViewControllerDelegate {
     
     //MARK: - Properties
    
@@ -34,6 +34,7 @@ class AccountsViewController: UIViewController, UITableViewDelegate, UITableView
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     let defaults = UserDefaults.standard
     var passwordSetShownBefore = false
+    var tutorialShown = false
     
     //MARK: - App life cycle
     override func viewDidLoad() {
@@ -53,7 +54,13 @@ class AccountsViewController: UIViewController, UITableViewDelegate, UITableView
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
         tapGesture.cancelsTouchesInView = false
         view.addGestureRecognizer(tapGesture)
+        if let tutShown = defaults.value(forKey: "tutorialShown") as? Bool {
+            tutorialShown = tutShown
+        }
         
+        if tutorialShown == false {
+            playTutorial()
+        } else {
             if let shown = defaults.value(forKey: "shownBefore") as? Bool {
                 passwordSetShownBefore = shown
             }
@@ -62,7 +69,7 @@ class AccountsViewController: UIViewController, UITableViewDelegate, UITableView
             } else {
                 authenticateUser()
             }
-
+        }
         addToolBarTo(searchBar: searchBar)
         
     }
@@ -86,6 +93,36 @@ class AccountsViewController: UIViewController, UITableViewDelegate, UITableView
     override func didRotate(from fromInterfaceOrientation: UIInterfaceOrientation) {
         appDelegate.load(bannerView: appDelegate.adBannerView,forViewController: self, andOrientation: UIDevice.current.orientation)
         updateTableViewBottomInset()
+    }
+    //MARK: - Tutorial Functions
+    
+    func playTutorial() {
+        defaults.setValue(true, forKey: "tutorialShown")
+        let stb = UIStoryboard(name: "Main", bundle: nil)
+        let walkthrough = stb.instantiateViewController(withIdentifier: "Screen0") as! BWWalkthroughViewController
+        let pageOne = stb.instantiateViewController(withIdentifier: "Screen1")
+        let pageTwo = stb.instantiateViewController(withIdentifier: "Screen2")
+        let pageThree = stb.instantiateViewController(withIdentifier: "Screen3")
+        let pageFour = stb.instantiateViewController(withIdentifier: "Screen4")
+        let pageFive = stb.instantiateViewController(withIdentifier: "Screen5")
+        
+        walkthrough.delegate = self
+        walkthrough.add(viewController: pageOne)
+        walkthrough.add(viewController: pageTwo)
+        walkthrough.add(viewController: pageThree)
+        walkthrough.add(viewController: pageFour)
+        walkthrough.add(viewController: pageFive)
+        
+        self.present(walkthrough, animated: true, completion: nil)
+    }
+    
+    func walkthroughCloseButtonPressed() {
+        self.dismiss(animated: true, completion: nil)
+        if passwordSetShownBefore == false {
+            setPassword()
+        } else {
+            authenticateUser()
+        }
     }
     
     //MARK: - Helper functions
