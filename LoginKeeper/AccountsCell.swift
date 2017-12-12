@@ -63,4 +63,5 @@ class AccountsCell: UITableViewCell {
             delegate?.alert(message: "Unable to fetch data.")
         }
     }
+    
 }

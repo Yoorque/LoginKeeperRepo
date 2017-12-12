@@ -41,14 +41,14 @@ class AccountsViewController: UIViewController, UITableViewDelegate, UITableView
         super.viewDidLoad()
         defaults.set(false, forKey: "authenticated")
         NotificationCenter.default.addObserver(forName: NSNotification.Name.UIApplicationWillEnterForeground, object: nil, queue: nil, using: {_ in
-            DispatchQueue.main.async {
-                
-            self.navigationController?.popToRootViewController(animated: true)
-            self.accounts = []
-            self.tableView.reloadData()
-            self.authenticateUser()
-            self.defaults.set(false, forKey: "authenticated")
-            }
+            print("Before \(Thread.isMainThread)")
+                self.navigationController?.popToRootViewController(animated: true)
+                self.accounts = []
+                self.tableView.reloadData()
+                print("After \(Thread.isMainThread)")
+                self.authenticateUser()
+                self.defaults.set(false, forKey: "authenticated")
+                print("WillEnterForeground with '\(self.defaults.value(forKey: "authenticated") as! Bool)' authentication")
         })
         
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
@@ -170,7 +170,10 @@ class AccountsViewController: UIViewController, UITableViewDelegate, UITableView
         let reason = "Identify yourself"
         
         if context.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: &error) {
-            context.evaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, localizedReason: reason, reply: {success, error in
+            print("canEvaluateWithTouchID")
+            context.evaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, localizedReason:
+                reason, reply: {success, error in
+                print("EvaluateWithTouchID")
                 // Touch ID
                 DispatchQueue.main.async {
                     if success {
@@ -214,7 +217,9 @@ class AccountsViewController: UIViewController, UITableViewDelegate, UITableView
                 }
             })
         } else {
+            print("canEvaluateWithPasscode")
             context.evaluatePolicy(.deviceOwnerAuthentication, localizedReason: reason, reply: {success, error in
+                print("EvaluateWithPasscode")
                 //No Touch ID
                 DispatchQueue.main.async {
                     
@@ -418,7 +423,7 @@ class AccountsViewController: UIViewController, UITableViewDelegate, UITableView
         let deleteAction = UITableViewRowAction(style: .destructive, title: "Delete Acc", handler: {_,_  in
             self.appDelegate.persistentContainer.viewContext.delete(self.accounts[indexPath.row])
             self.accounts.remove(at: indexPath.row)
-            self.tableView.deleteRows(at: [indexPath], with: .automatic)
+            self.tableView.deleteRows(at: [indexPath], with: .fade)
             self.saveToCoreData()
         })
         
