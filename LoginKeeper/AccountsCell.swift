@@ -12,11 +12,15 @@ import CoreData
 protocol AccountsDisplayAlertDelegate {
     func alert(message: String)
 }
+protocol ShowLogoDelegate {
+    func showLogosForRow(at: Int)
+}
 
 class AccountsCell: UITableViewCell {
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
     var delegate: AccountsDisplayAlertDelegate?
+    var showLogoDelegate: ShowLogoDelegate?
     
     @IBOutlet var favoriteImageView: UIImageView! {
         didSet {
@@ -26,7 +30,13 @@ class AccountsCell: UITableViewCell {
         }
     }
 
-    @IBOutlet var accountImageView: UIImageView!
+    @IBOutlet var accountImageView: UIImageView! {
+        didSet {
+            accountImageView.isUserInteractionEnabled = true
+            let tapGesture = UITapGestureRecognizer(target: self, action: #selector(changeLogo))
+            accountImageView.addGestureRecognizer(tapGesture)
+        }
+    }
     @IBOutlet var accountNameLabel: UILabel!
     @IBOutlet var entriesCountForAccountLabel: UILabel!
     var accountForCell: Account!
@@ -51,6 +61,11 @@ class AccountsCell: UITableViewCell {
         }
     }
     
+    @objc func changeLogo(sender: UITapGestureRecognizer) {
+        if let view = sender.view as? UIImageView {
+            showLogoDelegate?.showLogosForRow(at: view.tag)
+        }
+    }
     func fetch(account: String) {
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Account")
         let predicate = NSPredicate(format: "name == %@", account)

@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 
-class DetailsViewController: UIViewController {
+class DetailsViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet var stackView: UIStackView!
     @IBOutlet var favoritedStar: UIImageView!
 
@@ -18,11 +18,31 @@ class DetailsViewController: UIViewController {
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     
     var activeTextField: UITextField?
-    @IBOutlet var accountName: UITextField!
-    @IBOutlet var name: UITextField!
-    @IBOutlet var username: UITextField!
-    @IBOutlet var password: UITextField!
-    @IBOutlet var comment: UITextField!
+    @IBOutlet var accountName: UITextField! {
+        didSet {
+            accountName.textContentType = UITextContentType("")
+        }
+    }
+    @IBOutlet var entryName: UITextField! {
+        didSet {
+            entryName.textContentType = UITextContentType("")
+        }
+    }
+    @IBOutlet var username: UITextField! {
+        didSet {
+            username.textContentType = UITextContentType("")
+        }
+    }
+    @IBOutlet var password: UITextField! {
+        didSet {
+            password.textContentType = UITextContentType("")
+        }
+    }
+    @IBOutlet var comment: UITextField! {
+        didSet {
+            comment.textContentType = UITextContentType("")
+        }
+    }
     let titleTextLabel = UILabel()
     
     override func viewDidLoad() {
@@ -41,7 +61,7 @@ class DetailsViewController: UIViewController {
         super.viewWillAppear(true)
         addObservers()
         accountName.text = entryDetails?.account?.name
-        name.text = entryDetails?.name
+        entryName.text = entryDetails?.name
         username.text = entryDetails?.username
         password.text = entryDetails?.password
         comment.text = entryDetails?.comment
@@ -63,10 +83,13 @@ class DetailsViewController: UIViewController {
     
     func textEditEnabled() {
         print("Enabled")
-       
-        name.isEnabled = true
-        name.textColor = UIColor(displayP3Red: 56/255, green: 124/255, blue: 254/255, alpha: 1)
-        name.setNeedsLayout()
+        accountName.isEnabled = true
+        accountName.textColor = UIColor(displayP3Red: 56/255, green: 124/255, blue: 254/255, alpha: 1)
+        accountName.setNeedsLayout()
+        
+        entryName.isEnabled = true
+        entryName.textColor = UIColor(displayP3Red: 56/255, green: 124/255, blue: 254/255, alpha: 1)
+        entryName.setNeedsLayout()
        
         username.isEnabled = true
         username.textColor = UIColor(displayP3Red: 56/255, green: 124/255, blue: 254/255, alpha: 1)
@@ -84,9 +107,13 @@ class DetailsViewController: UIViewController {
     func textEditDisabled() {
         print("Disabled")
         
-        name.isEnabled = false
-        name.textColor = UIColor(displayP3Red: 135/255, green: 140/255, blue: 154/255, alpha: 1)
-        name.setNeedsLayout()
+        accountName.isEnabled = false
+        accountName.textColor = UIColor(displayP3Red: 135/255, green: 140/255, blue: 154/255, alpha: 1)
+        accountName.setNeedsLayout()
+        
+        entryName.isEnabled = false
+        entryName.textColor = UIColor(displayP3Red: 135/255, green: 140/255, blue: 154/255, alpha: 1)
+        entryName.setNeedsLayout()
         
         username.isEnabled = false
         username.textColor = UIColor(displayP3Red: 135/255, green: 140/255, blue: 154/255, alpha: 1)
@@ -102,7 +129,7 @@ class DetailsViewController: UIViewController {
     }
     @IBAction func editButton(_ sender: Any) {
         let button = sender as! UIBarButtonItem
-        if name.isEnabled {
+        if accountName.isEnabled {
             textEditDisabled()
             button.style = .plain
             button.title = "Edit"
@@ -142,9 +169,9 @@ class DetailsViewController: UIViewController {
         }
     }
     @IBAction func copyEntryButton(_ sender: Any) {
-        if let text = name.text {
+        if let text = entryName.text {
             copyPaste(text: text)
-            animateClipboardTextFor(textField: name, with: entryDetails?.name ?? "")
+            animateClipboardTextFor(textField: entryName, with: entryDetails?.name ?? "")
         }
     }
     @IBAction func copyUsernameButton(_ sender: Any) {
@@ -166,10 +193,10 @@ class DetailsViewController: UIViewController {
         }
     }
     @IBAction func copyAllButton(_ sender: Any) {
-        let copyText = "Account\(entryDetails!.account!.name!)\nEntry name: \(entryDetails!.name!)\nUsername: \(entryDetails!.username!)\nPassword: \(entryDetails!.password!)\nComment: \(entryDetails!.comment!)"
+        let copyText = "Account: \(entryDetails!.account!.name!)\nEntry name: \(entryDetails!.name!)\nUsername: \(entryDetails!.username!)\nPassword: \(entryDetails!.password!)\nComment: \(entryDetails!.comment!)"
             copyPaste(text: copyText)
         animateClipboardTextFor(textField: accountName, with: entryDetails?.account?.name ?? "")
-        animateClipboardTextFor(textField: name, with: entryDetails?.name ?? "")
+        animateClipboardTextFor(textField: entryName, with: entryDetails?.name ?? "")
         animateClipboardTextFor(textField: username, with: entryDetails?.username ?? "")
         animateClipboardTextFor(textField: password, with: entryDetails?.password ?? "")
         animateClipboardTextFor(textField: comment, with: entryDetails?.comment ?? "")
@@ -232,7 +259,8 @@ class DetailsViewController: UIViewController {
     
     func saveChanges() {
         let context = appDelegate.persistentContainer.viewContext
-        entryDetails?.name = name.text
+        entryDetails?.account?.name = accountName.text
+        entryDetails?.name = entryName.text
         entryDetails?.username = username.text
         entryDetails?.password = password.text
         entryDetails?.comment = comment.text
@@ -251,9 +279,11 @@ class DetailsViewController: UIViewController {
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        
-        if textField == name {
-            name.resignFirstResponder()
+        if textField == accountName {
+            accountName.resignFirstResponder()
+            entryName.becomeFirstResponder()
+        } else if textField == entryName {
+            entryName.resignFirstResponder()
             username.becomeFirstResponder()
         } else if textField == username {
             username.resignFirstResponder()

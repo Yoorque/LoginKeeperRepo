@@ -9,23 +9,48 @@
 import UIKit
 import CoreData
 
-class AddNewAccountViewController: UIViewController {
+class AddNewAccountViewController: UIViewController, UITextFieldDelegate {
     
+    @IBOutlet weak var logosScrollView: UIScrollView!
     @IBOutlet var topStackConstraint: NSLayoutConstraint!
     @IBOutlet var stackView: UIStackView!
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
+    var index = 0
+    var i = 0
+    var activeTextField = UITextField()
     
-    var activeTextField: UITextField? {
+    @IBOutlet var accountTitle: UITextField! {
         didSet {
-            addToolBarTo(textField: activeTextField!)
+            accountTitle.textContentType = UITextContentType("")
         }
     }
-    @IBOutlet var accountTitle: UITextField!
-    @IBOutlet var entryName: UITextField!
-    @IBOutlet var username: UITextField!
-    @IBOutlet var password: UITextField!
-    @IBOutlet var confirmPassword: UITextField!
-    @IBOutlet var comment: UITextField!
+    @IBOutlet var entryName: UITextField! {
+        didSet {
+            entryName.textContentType = UITextContentType("")
+        }
+    }
+    @IBOutlet var username: UITextField! {
+        didSet {
+            username.textContentType = UITextContentType("")
+        }
+    }
+    @IBOutlet var password: UITextField! {
+        didSet {
+            password.textContentType = UITextContentType("")
+        }
+    }
+    @IBOutlet var confirmPassword: UITextField! {
+        didSet {
+            confirmPassword.textContentType = UITextContentType("")
+        }
+    }
+    @IBOutlet var comment: UITextField! {
+        didSet {
+            comment.textContentType = UITextContentType("")
+        }
+    }
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,10 +60,38 @@ class AddNewAccountViewController: UIViewController {
         
         NotificationCenter.default.addObserver(self, selector: #selector(handleKeyboardNotification), name: .UIKeyboardWillShow, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(handleKeyboardNotification), name: .UIKeyboardWillHide, object: nil)
-        if let activeTF = activeTextField {
-            activeTF.inputAccessoryView = UIView()
-            activeTF.inputAccessoryView?.backgroundColor = .red
+        
+        
+        for logo in logoImagesPNG {
+            let logoImageView = UIImageView()
+            logoImageView.frame.size = CGSize(width: 50, height: 50)
+            logoImageView.frame.origin = CGPoint(x: i * 55, y: 0)
+            logoImageView.image = UIImage(named: logo)
+            logoImageView.tag = i
+            logoImageView.isUserInteractionEnabled = true
+            logosScrollView.addSubview(logoImageView)
+            logosScrollView.contentSize.width = (logoImageView.frame.size.width + 5) * CGFloat(i + 1)
+            i += 1
+            let tapGesture = UITapGestureRecognizer(target: self, action: #selector(logoTapped))
+            logoImageView.addGestureRecognizer(tapGesture)
         }
+        print(logosScrollView.contentSize.width)
+    }
+    
+    //MARK: - NEEDS WORK
+    //image view borders for selected view
+    @objc func logoTapped(sender: UITapGestureRecognizer) {
+        if let view = sender.view as? UIImageView {
+            for logo in logosScrollView.subviews {
+                logo.layer.borderColor = nil
+                logo.layer.borderWidth = 0
+            }
+            view.layer.borderColor = UIColor.white.cgColor
+            view.layer.borderWidth = 4
+            index = view.tag
+        }
+        
+        
     }
     
     @objc func handleKeyboardNotification(notification: NSNotification) {
@@ -46,7 +99,7 @@ class AddNewAccountViewController: UIViewController {
         if let userInfo = notification.userInfo {
             let keyBoardFrame = userInfo[UIKeyboardFrameEndUserInfoKey] as! CGRect
             let isKeyboardShowing = notification.name == .UIKeyboardWillShow
-            let totalHeights = (activeTextField?.frame.maxY)! + navigationBar! + topStackConstraint.constant
+            let totalHeights = activeTextField.frame.maxY + navigationBar! + topStackConstraint.constant
             let difference = totalHeights - keyBoardFrame.size.height
             if keyBoardFrame.origin.y < totalHeights {
                 self.topStackConstraint.constant -= isKeyboardShowing ? difference + 30 : 0
@@ -70,6 +123,12 @@ class AddNewAccountViewController: UIViewController {
     
     @IBAction func saveAccountButton(_ sender: UIBarButtonItem) {
         saveAccount()
+    }
+    //MARK: - NEEDS WORK
+    //Implement left and right scroll direction
+    @IBAction func leftScroll(_ sender: UIButton) {
+    }
+    @IBAction func rightScroll(_ sender: UIButton) {
     }
     
     override func willRotate(to toInterfaceOrientation: UIInterfaceOrientation, duration: TimeInterval) {
@@ -95,7 +154,7 @@ class AddNewAccountViewController: UIViewController {
                         let context = appDelegate.persistentContainer.viewContext
                         let accountEntity = NSEntityDescription.insertNewObject(forEntityName: "Account", into: context) as! Account
                         accountEntity.name = accountTitle.text
-                        accountEntity.image = accountTitle.text?.lowercased()
+                        accountEntity.image = logoImagesPNG[index]
                         
                         let entryEntity = NSEntityDescription.insertNewObject(forEntityName: "Entry", into: context) as! Entry
                         entryEntity.name = entryName.text
@@ -125,6 +184,8 @@ class AddNewAccountViewController: UIViewController {
         } else {
             displayAlert(title: "Passwords do not match!", msg: "Please enter your password again.")
         }
+        logoImagesPNG.remove(at: 0)
+        logoImagesPNG.insert("pngLoginKeeper", at: 0)
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -155,4 +216,36 @@ class AddNewAccountViewController: UIViewController {
     func textFieldDidBeginEditing(_ textField: UITextField) {
         activeTextField = textField
     }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        if textField == accountTitle {
+            for logo in accountLogos {
+                if accountTitle.text!.lowercased().replacingOccurrences(of: " ", with: "") == logo {
+                    for imageView in logosScrollView.subviews {
+                        if imageView.tag == 0 {
+                            imageView.removeFromSuperview()
+                        }
+                    }
+                    logoImagesPNG.remove(at: 0)
+                    logoImagesPNG.insert(logo, at: 0)
+                    let imageView = UIImageView()
+                    imageView.image = UIImage(named: logo)
+                    
+                    imageView.frame.size = CGSize(width: 50, height: 50)
+                    imageView.frame.origin = CGPoint(x:0, y: 0)
+                    imageView.image = UIImage(named: logo)
+                    imageView.tag = 0
+                    imageView.isUserInteractionEnabled = true
+                    let tapGesture = UITapGestureRecognizer(target: self, action: #selector(logoTapped))
+                    imageView.addGestureRecognizer(tapGesture)
+                    logosScrollView.addSubview(imageView)
+                    break
+                } else if accountTitle.text!.lowercased().replacingOccurrences(of: " ", with: "").contains(logo) {
+                    logoImagesPNG.insert(logo, at: 1)
+                    break
+                }
+            }
+        }
+    }
 }
+//MARK: - ScrollView Delegates

@@ -9,23 +9,39 @@
 import UIKit
 import CoreData
 
-class AddNewEntryViewController: UIViewController {
+class AddNewEntryViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet var stackView: UIStackView!
     
     @IBOutlet var topStackConstraint: NSLayoutConstraint!
     var account: Account?
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     
-    var activeTextField: UITextField? {
+    var activeTextField = UITextField()
+    @IBOutlet var name: UITextField! {
         didSet {
-            addToolBarTo(textField: activeTextField!)
+            name.textContentType = UITextContentType("")
         }
     }
-    @IBOutlet var name: UITextField!
-    @IBOutlet var username: UITextField!
-    @IBOutlet var password: UITextField!
-    @IBOutlet var confirmPassword: UITextField!
-    @IBOutlet var comment: UITextField!
+    @IBOutlet var username: UITextField! {
+        didSet {
+            username.textContentType = UITextContentType("")
+        }
+    }
+    @IBOutlet var password: UITextField! {
+        didSet {
+            password.textContentType = UITextContentType("")
+        }
+    }
+    @IBOutlet var confirmPassword: UITextField! {
+        didSet {
+            confirmPassword.textContentType = UITextContentType("")
+        }
+    }
+    @IBOutlet var comment: UITextField! {
+        didSet {
+            comment.textContentType = UITextContentType("")
+        }
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -59,7 +75,7 @@ class AddNewEntryViewController: UIViewController {
         let navigationBar = navigationController?.navigationBar.frame.height
         if let userInfo = notification.userInfo {
             let keyBoardFrame = userInfo[UIKeyboardFrameEndUserInfoKey] as! CGRect
-            let totalHeights = (activeTextField?.frame.maxY)! + navigationBar!  + topStackConstraint.constant
+            let totalHeights = activeTextField.frame.maxY + navigationBar!  + topStackConstraint.constant
             let isKeyboardShowing = notification.name == .UIKeyboardWillShow
             let difference = totalHeights - keyBoardFrame.size.height
             if keyBoardFrame.origin.y < totalHeights {

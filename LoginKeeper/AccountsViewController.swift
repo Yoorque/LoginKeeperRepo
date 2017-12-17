@@ -12,11 +12,9 @@ import LocalAuthentication
 import GoogleMobileAds
 
 
-class AccountsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate, AccountsDisplayAlertDelegate, BWWalkthroughViewControllerDelegate {
+class AccountsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate, AccountsDisplayAlertDelegate, BWWalkthroughViewControllerDelegate, ShowLogoDelegate {
     
     //MARK: - Properties
-   
-    let accountLogos = ["mashreq", "weibo", "stackoverflow","nbd", "amazon", "apple", "badoo", "baidu", "balkaniyum", "bing", "blogger", "classmates", "couchsurfing", "crunchyroll", "ebay", "etoro", "facebook", "firebase", "flickr", "flixster", "foursquare", "friendster", "github", "gmail", "google+", "google", "grindr", "instagram", "line", "linkedin", "meetup", "mts", "myheritage", "myspace", "mytaxi", "netflix", "openstreetmaps", "opera", "orkut", "overpass", "pinterest", "qq", "quora", "qzone", "reddit", "renren", "shazam", "skype", "snapchat", "soundcloud", "soundhound", "stumbleupon", "tagged", "taringa", "telegram", "telenor", "thedots", "tinder", "tumblr", "twitter", "uber", "upwork", "viber", "vimeo", "vine", "vip", "vkontakte", "wechat", "weibo", "whatsapp", "wikipedia", "yahoo", "yelp", "youtube", "yy"]
     
     @IBOutlet var lockButton: UIBarButtonItem!
     @IBOutlet var searchBar: UISearchBar! {
@@ -40,15 +38,16 @@ class AccountsViewController: UIViewController, UITableViewDelegate, UITableView
     override func viewDidLoad() {
         super.viewDidLoad()
         defaults.set(false, forKey: "authenticated")
-        NotificationCenter.default.addObserver(forName: NSNotification.Name.UIApplicationWillEnterForeground, object: nil, queue: nil, using: {_ in
-            print("Before \(Thread.isMainThread)")
-                self.navigationController?.popToRootViewController(animated: true)
-                self.accounts = []
-                self.tableView.reloadData()
-                print("After \(Thread.isMainThread)")
-                self.authenticateUser()
-                self.defaults.set(false, forKey: "authenticated")
-                print("WillEnterForeground with '\(self.defaults.value(forKey: "authenticated") as! Bool)' authentication")
+        
+        //MARK: - NEEDS WORK
+        //authentication
+        
+        NotificationCenter.default.addObserver(forName: NSNotification.Name.UIApplicationWillEnterForeground, object: nil, queue: .main, using: {_ in
+            self.navigationController?.popToRootViewController(animated: true)
+            self.accounts = []
+            self.tableView.reloadData()
+            self.defaults.set(false, forKey: "authenticated") //sets authentication to false for check in viewWillAppear()
+            self.authenticateUser() 
         })
         
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
@@ -70,14 +69,14 @@ class AccountsViewController: UIViewController, UITableViewDelegate, UITableView
                 authenticateUser()
             }
         }
-        addToolBarTo(searchBar: searchBar)
+        // addToolBarTo(searchBar: searchBar)
         
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-    
-        if defaults.bool(forKey: "authenticated") == true {
+        
+        if defaults.bool(forKey: "authenticated") == true { // false was set in observer
             fetchFromCoreData()
             tableView.reloadData()
         }
@@ -173,48 +172,48 @@ class AccountsViewController: UIViewController, UITableViewDelegate, UITableView
             print("canEvaluateWithTouchID")
             context.evaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, localizedReason:
                 reason, reply: {success, error in
-                print("EvaluateWithTouchID")
-                // Touch ID
-                DispatchQueue.main.async {
-                    if success {
-                        self.navigationItem.rightBarButtonItem?.isEnabled = true
-                        self.searchBar.isUserInteractionEnabled = true
-                        self.fetchFromCoreData()
-                        self.defaults.set(true, forKey: "authenticated")
-                        print("Success: TouchID")
-                    } else {
-                        self.defaults.set(false, forKey: "authenticated")
-                        self.accounts = []
-                        self.navigationItem.rightBarButtonItem?.isEnabled = false
-                        self.searchBar.isUserInteractionEnabled = false
-                        self.lockButton.title = "Unlock"
-                        self.tableView.reloadData()
-                        
-                        switch error!._code {
-                        case Int(kLAErrorAuthenticationFailed):
-                            self.loginAlert(message: error!.localizedDescription)
-                            print("AuthFailed1")
-                        case Int(kLAErrorUserCancel):
-                            self.loginAlert(message: error!.localizedDescription)
-                            print("UserCanceled1")
-                        case Int(kLAErrorBiometryNotEnrolled):
-                            self.loginAlert(message: error!.localizedDescription)
-                            print("biometry1")
-                        case Int(kLAErrorPasscodeNotSet):
-                            self.userFallbackPasswordAlertWith(error: error!)
-                            print("PassNotSet1")
-                        case Int(kLAErrorSystemCancel):
-                            self.loginAlert(message: error!.localizedDescription)
-                              print("SystemCancel1")
-                        case Int(kLAErrorUserFallback):
-                            self.userFallbackPasswordAlertWith(error: error!)
-                              print("UserFallback1")
-                        default:
-                            self.userFallbackPasswordAlertWith(error: error!)
-                              print("default1")
+                    print("EvaluateWithTouchID")
+                    // Touch ID
+                    DispatchQueue.main.async {
+                        if success {
+                            self.navigationItem.rightBarButtonItem?.isEnabled = true
+                            self.searchBar.isUserInteractionEnabled = true
+                            self.fetchFromCoreData()
+                            self.defaults.set(true, forKey: "authenticated")
+                            print("Success: TouchID")
+                        } else {
+                            self.defaults.set(false, forKey: "authenticated")
+                            self.accounts = []
+                            self.navigationItem.rightBarButtonItem?.isEnabled = false
+                            self.searchBar.isUserInteractionEnabled = false
+                            self.lockButton.title = "Unlock"
+                            self.tableView.reloadData()
+                            
+                            switch error!._code {
+                            case Int(kLAErrorAuthenticationFailed):
+                                self.loginAlert(message: error!.localizedDescription)
+                                print("AuthFailed1")
+                            case Int(kLAErrorUserCancel):
+                                self.loginAlert(message: error!.localizedDescription)
+                                print("UserCanceled1")
+                            case Int(kLAErrorBiometryNotEnrolled):
+                                self.loginAlert(message: error!.localizedDescription)
+                                print("biometry1")
+                            case Int(kLAErrorPasscodeNotSet):
+                                self.userFallbackPasswordAlertWith(error: error!)
+                                print("PassNotSet1")
+                            case Int(kLAErrorSystemCancel):
+                                self.loginAlert(message: error!.localizedDescription)
+                                print("SystemCancel1")
+                            case Int(kLAErrorUserFallback):
+                                self.userFallbackPasswordAlertWith(error: error!)
+                                print("UserFallback1")
+                            default:
+                                self.userFallbackPasswordAlertWith(error: error!)
+                                print("default1")
+                            }
                         }
                     }
-                }
             })
         } else {
             print("canEvaluateWithPasscode")
@@ -317,6 +316,8 @@ class AccountsViewController: UIViewController, UITableViewDelegate, UITableView
     }
     @IBAction func addAccountButton(_ sender: Any) {
         searchBar.resignFirstResponder()
+        logoImagesPNG.remove(at: 0)
+        logoImagesPNG.insert("loginKeeper", at: 0)
         performSegue(withIdentifier: "addNewAccountSegue", sender: self)
     }
     @IBAction func lockButton(_ sender: UIBarButtonItem) {
@@ -377,6 +378,16 @@ class AccountsViewController: UIViewController, UITableViewDelegate, UITableView
             fetchFromCoreData()
         }
     }
+    func showLogosForRow(at index: Int) {
+        self.index = index
+        logoImagesPNG.remove(at: 0)
+        logoImagesPNG.insert(accounts[index].image!, at: 0)
+        if accountLogos.contains(accounts[index].name!.lowercased().replacingOccurrences(of: " ", with: "")) {
+            logoImagesPNG.remove(at: 0)
+            logoImagesPNG.insert(accounts[index].name!.lowercased().replacingOccurrences(of: " ", with: ""), at: 0)
+        }
+        performSegue(withIdentifier: "showLogos", sender: self)
+    }
     
     //MARK: - Table View DataSource and Delegate
     
@@ -387,25 +398,19 @@ class AccountsViewController: UIViewController, UITableViewDelegate, UITableView
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "accountCell", for: indexPath) as! AccountsCell
         cell.delegate = self
+        cell.showLogoDelegate = self
         cell.accountNameLabel.text = accounts[indexPath.row].name
         cell.entriesCountForAccountLabel.text = "\(accounts[indexPath.row].entries!.count)"
         cell.favoriteImageView.image = accounts[indexPath.row].favorited == true ? UIImage(named: "star") : UIImage(named: "emptyStar")
-        for logo in accountLogos {
-            if accounts[indexPath.row].name?.lowercased().replacingOccurrences(of: " ", with: "") == logo {
-                cell.accountImageView.image = UIImage(named: logo)
-                break
-            } else if (accounts[indexPath.row].name?.lowercased().replacingOccurrences(of: " ", with: "").contains(logo))! {
-                cell.accountImageView.image = UIImage(named: logo)
-                break
-            } else {
-                cell.accountImageView.image = UIImage(named: "loginKeeper")
-            }
-        }
+        cell.accountImageView.tag = indexPath.row
+        cell.accountImageView.image = UIImage(named: accounts[indexPath.row].image!)
+        
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         index = indexPath.row
+        
         if searchBar.isFirstResponder {
             searchBar.resignFirstResponder()
         }
@@ -456,6 +461,11 @@ class AccountsViewController: UIViewController, UITableViewDelegate, UITableView
                 destinationVC.entryDetails = accounts[index!].entries!.allObjects.first as? Entry
                 destinationVC.title = "\(accounts[index!].name!) details"
             }
+        } else if segue.identifier == "showLogos" {
+            let controller = segue.destination as? LogosViewController
+            if let destinationVC = controller {
+                destinationVC.account = accounts[index!]
+            }
         }
     }
     
@@ -475,39 +485,39 @@ class AccountsViewController: UIViewController, UITableViewDelegate, UITableView
     }
 }
 
-extension UIViewController: UITextFieldDelegate{
-    func addToolBarTo(searchBar: UISearchBar){
-        let toolBar = UIToolbar()
-        toolBar.barStyle = UIBarStyle.default
-        toolBar.isTranslucent = true
-        
-        let doneButton = UIBarButtonItem(title: "Done", style: UIBarButtonItemStyle.done, target: self, action: #selector(donePressed))
-        
-        let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.flexibleSpace, target: nil, action: nil)
-        toolBar.setItems([spaceButton, doneButton], animated: false)
-        toolBar.isUserInteractionEnabled = true
-        toolBar.sizeToFit()
-        
-        searchBar.inputAccessoryView = toolBar
-    }
-    
-    func addToolBarTo(textField: UITextField){
-        let toolBar = UIToolbar()
-        toolBar.barStyle = UIBarStyle.default
-        toolBar.isTranslucent = true
-        
-        let doneButton = UIBarButtonItem(title: "Done", style: UIBarButtonItemStyle.done, target: self, action: #selector(donePressed))
-        
-        let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.flexibleSpace, target: nil, action: nil)
-        toolBar.setItems([spaceButton, doneButton], animated: false)
-        toolBar.isUserInteractionEnabled = true
-        toolBar.sizeToFit()
-        
-        textField.inputAccessoryView = toolBar
-    }
-    @objc func donePressed(){
-        view.endEditing(true)
-    }
-}
+//extension UIViewController: UITextFieldDelegate{
+//    func addToolBarTo(searchBar: UISearchBar){
+//        let toolBar = UIToolbar()
+//        toolBar.barStyle = UIBarStyle.default
+//        toolBar.isTranslucent = true
+//
+//        let doneButton = UIBarButtonItem(title: "Done", style: UIBarButtonItemStyle.done, target: self, action: #selector(donePressed))
+//
+//        let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.flexibleSpace, target: nil, action: nil)
+//        toolBar.setItems([spaceButton, doneButton], animated: false)
+//        toolBar.isUserInteractionEnabled = true
+//        toolBar.sizeToFit()
+//
+//        searchBar.inputAccessoryView = toolBar
+//    }
+//
+//    func addToolBarTo(textField: UITextField){
+//        let toolBar = UIToolbar()
+//        toolBar.barStyle = UIBarStyle.default
+//        toolBar.isTranslucent = true
+//
+//        let doneButton = UIBarButtonItem(title: "Done", style: UIBarButtonItemStyle.done, target: self, action: #selector(donePressed))
+//
+//        let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.flexibleSpace, target: nil, action: nil)
+//        toolBar.setItems([spaceButton, doneButton], animated: false)
+//        toolBar.isUserInteractionEnabled = true
+//        toolBar.sizeToFit()
+//
+//        textField.inputAccessoryView = toolBar
+//    }
+//    @objc func donePressed(){
+//        view.endEditing(true)
+//    }
+//}
 
 
