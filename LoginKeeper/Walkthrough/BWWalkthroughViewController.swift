@@ -135,8 +135,8 @@ import UIKit
         
         pageControl?.numberOfPages = controllers.count
         pageControl?.currentPage = 0
-        pageControl?.pageIndicatorTintColor = .lightGray
-        pageControl?.currentPageIndicatorTintColor = .black
+        //pageControl?.pageIndicatorTintColor = .lightGray
+        //pageControl?.currentPageIndicatorTintColor = .black
     }
     
     

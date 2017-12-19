@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 
-class AddNewAccountViewController: UIViewController, UITextFieldDelegate {
+class AddNewAccountViewController: UIViewController, UITextFieldDelegate, UIScrollViewDelegate {
     
     @IBOutlet weak var logosScrollView: UIScrollView!
     @IBOutlet var topStackConstraint: NSLayoutConstraint!
@@ -17,7 +17,7 @@ class AddNewAccountViewController: UIViewController, UITextFieldDelegate {
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     var index = 0
     var i = 0
-    var activeTextField = UITextField()
+    var activeTextField: UITextField?
     
     @IBOutlet var accountTitle: UITextField! {
         didSet {
@@ -82,6 +82,9 @@ class AddNewAccountViewController: UIViewController, UITextFieldDelegate {
     //image view borders for selected view
     @objc func logoTapped(sender: UITapGestureRecognizer) {
         if let view = sender.view as? UIImageView {
+            if let textField = activeTextField {
+                textField.resignFirstResponder()
+            }
             for logo in logosScrollView.subviews {
                 logo.layer.borderColor = nil
                 logo.layer.borderWidth = 0
@@ -99,7 +102,7 @@ class AddNewAccountViewController: UIViewController, UITextFieldDelegate {
         if let userInfo = notification.userInfo {
             let keyBoardFrame = userInfo[UIKeyboardFrameEndUserInfoKey] as! CGRect
             let isKeyboardShowing = notification.name == .UIKeyboardWillShow
-            let totalHeights = activeTextField.frame.maxY + navigationBar! + topStackConstraint.constant
+            let totalHeights = activeTextField!.frame.maxY + navigationBar! + topStackConstraint.constant
             let difference = totalHeights - keyBoardFrame.size.height
             if keyBoardFrame.origin.y < totalHeights {
                 self.topStackConstraint.constant -= isKeyboardShowing ? difference + 30 : 0
@@ -124,13 +127,7 @@ class AddNewAccountViewController: UIViewController, UITextFieldDelegate {
     @IBAction func saveAccountButton(_ sender: UIBarButtonItem) {
         saveAccount()
     }
-    //MARK: - NEEDS WORK
-    //Implement left and right scroll direction
-    @IBAction func leftScroll(_ sender: UIButton) {
-    }
-    @IBAction func rightScroll(_ sender: UIButton) {
-    }
-    
+
     override func willRotate(to toInterfaceOrientation: UIInterfaceOrientation, duration: TimeInterval) {
         appDelegate.removeBannerView()
     }
@@ -247,5 +244,10 @@ class AddNewAccountViewController: UIViewController, UITextFieldDelegate {
             }
         }
     }
+    //MARK: - ScrollView Delegates
+    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+        if let textField = activeTextField {
+            textField.resignFirstResponder()
+        }
+    }
 }
-//MARK: - ScrollView Delegates
