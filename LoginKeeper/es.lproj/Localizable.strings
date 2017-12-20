@@ -1,0 +1,62 @@
+/* 
+  Localizable.strings
+  LoginKeeper
+
+  Created by Dusan Juranovic on 12/19/17.
+  Copyright © 2017 Dusan Juranovic. All rights reserved.
+*/
+"About LoginKeeper" = "Acerca de LoginKeeper";
+"COPIED TO CLIPBOARD" = "COPIADO AL PORTAPAPELES";
+
+"OK" = "OK";
+"Done" = "Hecho";
+"Save" = "Guardar";
+"Edit" = "Editar";
+"Cancel" = "Cancelar";
+"Error!" = "Error!";
+"Lock" = "Trabar";
+"Unlock" = "Abrir";
+"Leaving LoginKeeper" = "Saliendo de LoginKeeper";
+"You will be redirected to" = "Serás redirigido a";
+"Are you sure?" = "¿Estás seguro?";
+"I'm sure" = "Estoy seguro";
+
+"Account" = "Cuenta";
+"No Account name!" = "¡Sin nombre de cuenta!";
+"Account name is required." = "Nombre de cuenta es requerido.";
+"Delete Acc" = "Borrar Cuenta";
+
+"Entry name" = "Nombre de entrada";
+"No Entry name!" = "¡Sin nombre de entrada!";
+"Entry name is required." = "Nombre de entrada es requerido.";
+"Add Entry" = "Añadir entrada";
+"Add new entry for" = "Agregar nueva entrada para";
+"Delete Entry" = "Eliminar la entrada";
+
+"Username" = "Nombre de usuario";
+
+"Password" = "Contraseña";
+"Enter Password" = "Introducir la contraseña";
+"Empty password" = "Contraseña vacía";
+"Please enter your password." = "Por favor, introduzca su contraseña.";
+"Passwords do not match!"  = "¡Las contraseñas no coinciden!";
+"Please enter your password again." = "Por favor ingresa tu contraseña de nuevo.";
+"Set your backup password for LoginKeeper" = "Configure su contraseña de respaldo para LoginKeeper";
+"Password is required!" = "¡Se requiere contraseña!";
+"Please set your password to continue." = "Por favor, configure su contraseña para continuar.";
+
+"Comment" = "Comentario";
+"Version" = "Versión";
+"build" = "construir";
+"Search" = "Buscar";
+
+"You are not authorised to use this feature." = "Usted no está autorizado para usar esta función.";
+"In progress..." = "En progreso...";
+"We're working on this one!" = "Estamos trabajando en esto!";
+"Oops! Unable to save changes at this time, please try again!" = "Oops! ¡No se pueden guardar los cambios en este momento, por favor intente de nuevo!";
+"Oops! Unable to fetch data at this time, please try again!" = "Oops! ¡No se pueden obtener datos en este momento, por favor intente de nuevo!";
+"Entries of" = "Entradas de";
+"details" = "detalles";
+"Identify yourself" = "Identifícate";
+
+"LoginKeeper® was developed solely using Apple Libraries and available resources provided by Apple and free open source resources. I, Dusan Juranovic, as a developer of LoginKeeper®, claim all distribution rights of LoginKeeper® as well as all copyrights©. LoginKeeper® is NOT recommended for storing valuable information such as , credit card details, bank details and all other information where loss of such information would bare great impact to individuals or companies alike and therefore LoginKeeper®  and I, Dusan Juranovic (developer), will not be held responsible for loss of any such information or assets. LoginKeeper® is intended only for purpose of not having to remember all of your login details or writing them down on pieces of paper. It is users judgment call to decide which information they enter into the app. If you have any issues or suggestions, please write an email to below provided email address. Thanks." = "LoginKeeper se desarrolló únicamente con las bibliotecas de Apple y los recursos disponibles proporcionados por Apple y los recursos de código abierto gratuitos. Yo, Dusan Juranovic, como desarrollador de LoginKeeper, reclamo todos los derechos de distribución del usuario y de todos los derechos de autor ©. LoginKeeper NO se recomienda para almacenar información valiosa, como detalles de tarjetas de crédito, datos bancarios y cualquier otra información donde la pérdida de dicha información tendría un gran impacto para personas o empresas, por lo que LoginKeeper y yo, Dusan Juranovic (desarrollador), no podremos responsable de la pérdida de dicha información o activos. LoginKeeper está destinado solo para no tener que recordar todos sus datos de acceso o escribirlos en papel. Es decisión de los usuarios decidir qué información ingresan en la aplicación. Si tiene algún problema o sugerencia, escriba un correo electrónico a la siguiente dirección de correo electrónico proporcionada. Gracias.";

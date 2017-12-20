@@ -1,0 +1,62 @@
+/* 
+  Localizable.strings
+  LoginKeeper
+
+  Created by Dusan Juranovic on 12/19/17.
+  Copyright © 2017 Dusan Juranovic. All rights reserved.
+*/
+
+"About LoginKeeper" = "लॉगिन किपर के बारे में";
+"COPIED TO CLIPBOARD" = "क्लिपबोर्ड पर कॉपी किया गया";
+
+"OK" = "ठीक है";
+"Done" = "संपन्न";
+"Save" = "सहेजें";
+"Edit" = "संपादित करें";
+"Cancel" = "रद्द करें";
+"Error!" = "त्रुटि!";
+"Lock" = "लॉक";
+"Unlock" = "अनलॉक";
+"Leaving LoginKeeper" = "लॉगिंग किपियर छोड़ना";
+"You will be redirected to" = "आपको पुनः निर्देशित किया जाएगा";
+"Are you sure?" = "क्या आप निश्चित हैं?";
+"I'm sure" = "मुझे यकीन है";
+
+"Account" = "खाता";
+"No Account name!" = "कोई खाता नाम नहीं!";
+"Account name is required." = "खाता नाम आवश्यक है।";
+"Delete Acc" = "खाता हटाएं";
+
+"Entry name" = "प्रविष्टि नाम";
+"No Entry name!" = "कोई प्रविष्टि नाम नहीं!";
+"Entry name is required." = "प्रविष्टि का नाम आवश्यक है।";
+"Add Entry" = "एंट्री जोड़ें";
+"Add new entry for" = "के लिए नई प्रविष्टि जोड़ें";
+"Delete Entry" = "एंट्री हटाएं";
+
+"Username" = "उपयोगकर्ता नाम";
+
+"Password" = "पासवर्ड";
+"Enter Password" = "पासवर्ड दर्ज करें";
+"Empty password" = "खाली पासवर्ड";
+"Please enter your password." = "कृपया अपना पासवर्ड दर्ज करें।";
+"Passwords do not match!"  = "पासवर्ड मेल नहीं खाते!";
+"Please enter your password again." = "कृपया अपना पासवर्ड फिर से दर्ज करें।";
+"Set your backup password for LoginKeeper" = "लॉगिनकिपर के लिए अपना बैकअप पासवर्ड सेट करें";
+"Password is required!" = "पासवर्ड आवश्यक है!";
+"Please set your password to continue." = "कृपया जारी रखने के लिए अपना पासवर्ड सेट करें।";
+
+"Comment" = "टिप्पणी";
+"Version" = "संस्करण";
+"build" = "बिल्ड";
+"Search" = "खोज";
+
+"You are not authorised to use this feature." = "आप इस सुविधा का उपयोग करने के लिए अधिकृत नहीं हैं।";
+"In progress..." = "प्रगति में है ...";
+"We're working on this one!" = "हम इस पर काम कर रहे हैं!";
+"Oops! Unable to save changes at this time, please try again!" = "ओह! इस समय परिवर्तनों को सहेजने में असमर्थ, कृपया पुनः प्रयास करें!";
+"Oops! Unable to fetch data at this time, please try again!" = "ओह! इस समय डेटा प्राप्त करने में असमर्थ, कृपया पुनः प्रयास करें!";
+"Entries of" = "प्रविष्टियां";
+"details" = "विवरण";
+"Identify yourself" = "खुद को पहचानें";
+"LoginKeeper® was developed solely using Apple Libraries and available resources provided by Apple and free open source resources. I, Dusan Juranovic, as a developer of LoginKeeper®, claim all distribution rights of LoginKeeper® as well as all copyrights©. LoginKeeper® is NOT recommended for storing valuable information such as , credit card details, bank details and all other information where loss of such information would bare great impact to individuals or companies alike and therefore LoginKeeper®  and I, Dusan Juranovic (developer), will not be held responsible for loss of any such information or assets. LoginKeeper® is intended only for purpose of not having to remember all of your login details or writing them down on pieces of paper. It is users judgment call to decide which information they enter into the app. If you have any issues or suggestions, please write an email to below provided email address. Thanks." = "लॉगिन किपर ® पूरी तरह से ऐप्पल और मुफ्त खुले स्रोत संसाधनों द्वारा उपलब्ध कराए गए एप्पल पुस्तकालयों और उपलब्ध संसाधनों का उपयोग कर रहा था। मैं, लॉगिन किपियर® के डेवलपर के रूप में, दुसान जुरानोविक, सभी लॉगिन अधिकारों के साथ- साथ ही सभी कॉपीराइटों के सभी अधिकारों का दावा करते हैं। लॉग इनकिपर ® ऐसे महत्वपूर्ण जानकारी को संग्रहित करने, जैसे क्रेडिट कार्ड के विवरण, बैंक विवरण और अन्य सभी जानकारी, जहां ऐसी जानकारी का नुकसान होता है, व्यक्तियों या कंपनियों को समान रूप से बहुत प्रभाव डालता है और इसलिए लॉगिनकिपर ® और मैं, दुसन जुरनोविक (डेवलपर) को संभाल नहीं करने की सलाह दी जाती है किसी भी ऐसी जानकारी या परिसंपत्तियों के नुकसान के लिए ज़िम्मेदार.लॉगकिपर ® का उद्देश्य केवल आपके सभी लॉगिन विवरणों को याद रखने या कागज़ के टुकड़ों पर लिखने के उद्देश्य से नहीं है। यह प्रयोक्ता निर्णय है कि वे किस ऐप्प में प्रवेश करें अगर आपके पास कोई समस्याएं या सुझाव हैं, तो कृपया नीचे दिए गए ईमेल पते पर एक ईमेल लिखें। धन्यवाद।";

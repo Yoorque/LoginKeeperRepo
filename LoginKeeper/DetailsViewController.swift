@@ -132,12 +132,12 @@ class DetailsViewController: UIViewController, UITextFieldDelegate {
         if accountName.isEnabled {
             textEditDisabled()
             button.style = .plain
-            button.title = "Edit"
+            button.title = NSLocalizedString("Edit", comment: "")
             saveChanges()
         } else {
             textEditEnabled()
             button.style = .done
-            button.title = "Save"
+            button.title = NSLocalizedString("Save", comment: "")
         }
     }
     func copyPaste(text: String) {
@@ -151,7 +151,7 @@ class DetailsViewController: UIViewController, UITextFieldDelegate {
             UIView.animate(withDuration: 0.5, animations: {
                 textField.backgroundColor = UIColor(displayP3Red: 135/255, green: 140/255, blue: 154/255, alpha: 1)
                 textField.textColor = UIColor(displayP3Red: 250/255, green: 250/255, blue: 250/255, alpha: 1)
-                textField.text = "COPIED TO CLIPBOARD"
+                textField.text = NSLocalizedString("COPIED TO CLIPBOARD", comment: "copy notification")
             }, completion: {_ in
                 UIView.animate(withDuration: 0.5, animations: {
                     textField.backgroundColor = UIColor(displayP3Red: 250/255, green: 250/255, blue: 250/255, alpha: 1)
@@ -191,9 +191,11 @@ class DetailsViewController: UIViewController, UITextFieldDelegate {
             copyPaste(text: text)
             animateClipboardTextFor(textField: comment, with: entryDetails?.comment ?? "")
         }
-    }
+    }    
+    
     @IBAction func copyAllButton(_ sender: Any) {
-        let copyText = "Account: \(entryDetails!.account!.name!)\nEntry name: \(entryDetails!.name!)\nUsername: \(entryDetails!.username!)\nPassword: \(entryDetails!.password!)\nComment: \(entryDetails!.comment!)"
+        
+        let copyText = "\(accountTextLoc): \(entryDetails!.account!.name!)\n\(entryNameTextLoc): \(entryDetails!.name!)\n\(usernameTextLoc): \(entryDetails!.username!)\n\(passwordTextLoc): \(entryDetails!.password!)\n\(commentTextLoc): \(entryDetails!.comment!)"
             copyPaste(text: copyText)
         animateClipboardTextFor(textField: accountName, with: entryDetails?.account?.name ?? "")
         animateClipboardTextFor(textField: entryName, with: entryDetails?.name ?? "")
@@ -206,7 +208,7 @@ class DetailsViewController: UIViewController, UITextFieldDelegate {
     @IBAction func shareButton(_ sender: UIBarButtonItem) {
         NotificationCenter.default.removeObserver(self)
         
-        let textToShare = "LoginKeeper \nAccount name: \(entryDetails!.account!.name!)\nEntry name: \(entryDetails!.name!)\nUsername: \(entryDetails!.username!)\nPassword: \(entryDetails!.password!)\nComment: \(entryDetails!.comment!)"
+        let textToShare = "LoginKeeper \n\(accountTextLoc): \(entryDetails!.account!.name!)\n\(entryNameTextLoc): \(entryDetails!.name!)\n\(usernameTextLoc): \(entryDetails!.username!)\n\(passwordTextLoc): \(entryDetails!.password!)\n\(commentTextLoc): \(entryDetails!.comment!)"
         
             let objectsToShare = [textToShare]
             let activityVC = UIActivityViewController(activityItems: objectsToShare, applicationActivities: nil)
@@ -267,9 +269,9 @@ class DetailsViewController: UIViewController, UITextFieldDelegate {
         do {
             try context.save()
         } catch {
-            print("Unable to save: \(error)")
-            let alert = UIAlertController(title: "Error!", message: "Oops! Unable to save changes at this time, please try again!", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            
+            let alert = UIAlertController(title: errorLoc, message: unableToSaveMessageLoc, preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: okLoc, style: .default, handler: nil))
             present(alert, animated: true, completion: nil)
         }
     }

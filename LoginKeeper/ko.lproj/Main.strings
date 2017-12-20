@@ -1,0 +1,142 @@
+
+/* Class = "UILabel"; text = "Account name"; ObjectID = "28i-Mw-C5V"; */
+"28i-Mw-C5V.text" = "Account name";
+
+/* Class = "UILabel"; text = "Developer:"; ObjectID = "3g6-v0-Ygk"; */
+"3g6-v0-Ygk.text" = "개발자:";
+
+/* Class = "UILabel"; text = "Comment"; ObjectID = "3ug-en-Aoa"; */
+"3ug-en-Aoa.text" = "논평";
+
+/* Class = "UITextField"; placeholder = "Confirm password (required)"; ObjectID = "4NY-8P-15S"; */
+"4NY-8P-15S.placeholder" = "암호 확인 (필수)";
+
+/* Class = "UILabel"; text = "LoginKeeper"; ObjectID = "6Nu-9j-TfH"; */
+"6Nu-9j-TfH.text" = "로그인 키퍼";
+
+/* Class = "UINavigationItem"; title = "Accounts"; ObjectID = "7de-8j-5af"; */
+"7de-8j-5af.title" = "계정";
+
+/* Class = "UILabel"; text = "LoginKeeper"; ObjectID = "9me-ze-Tu8"; */
+"9me-ze-Tu8.text" = "로그인 키퍼";
+
+/* Class = "UILabel"; text = "icons8.com"; ObjectID = "9wU-3T-eVT"; */
+"9wU-3T-eVT.text" = "icons8.com";
+
+/* Class = "UILabel"; text = "-Default is the first one in the scroll view-"; ObjectID = "Abp-m8-Wku"; */
+"Abp-m8-Wku.text" = "-기본값은 스크롤보기의 첫 번째 값입니다.-";
+
+/* Class = "UILabel"; text = "Disclaimer"; ObjectID = "Dnd-0R-ynT"; */
+"Dnd-0R-ynT.text" = "부인 성명";
+
+/* Class = "UINavigationItem"; title = "Add New Account"; ObjectID = "E8D-Rq-tOd"; */
+"E8D-Rq-tOd.title" = "새 계정 추가";
+
+/* Class = "UILabel"; text = "Entry name"; ObjectID = "EN3-26-xC9"; */
+"EN3-26-xC9.text" = "항목 이름";
+
+/* Class = "UILabel"; text = "Email:"; ObjectID = "EzQ-BD-0hD"; */
+"EzQ-BD-0hD.text" = "이메일:";
+
+/* Class = "UIBarButtonItem"; title = "Edit"; ObjectID = "Fb6-TP-OzK"; */
+"Fb6-TP-OzK.title" = "편집하다";
+
+/* Class = "UILabel"; text = "Feedback"; ObjectID = "FuE-fw-G6K"; */
+"FuE-fw-G6K.text" = "피드백";
+
+/* Class = "UITextField"; placeholder = "Username"; ObjectID = "JtM-J4-Gbz"; */
+"JtM-J4-Gbz.placeholder" = "사용자 이름";
+
+/* Class = "UIBarButtonItem"; title = "Lock"; ObjectID = "KRN-c3-QOC"; */
+"KRN-c3-QOC.title" = "자물쇠";
+
+/* Class = "UITextField"; placeholder = "Password (required)"; ObjectID = "LNo-xb-YV2"; */
+"LNo-xb-YV2.placeholder" = "비밀번호 (필요)";
+
+/* Class = "UILabel"; text = "◀︎   Choose your logo from the scroll menu   ▶︎"; ObjectID = "OAQ-SI-m1b"; */
+"OAQ-SI-m1b.text" = "◀︎   스크롤 메뉴에서 로고 선택   ▶︎";
+
+/* Class = "UITextField"; placeholder = "Entry Name (required)"; ObjectID = "Qgw-sU-47I"; */
+"Qgw-sU-47I.placeholder" = "항목 이름 (필수)";
+
+/* Class = "UINavigationItem"; title = "Info"; ObjectID = "REf-hL-2HP"; */
+"REf-hL-2HP.title" = "정보";
+
+/* Class = "UIBarButtonItem"; title = "Info"; ObjectID = "V9Y-1t-bnd"; */
+"V9Y-1t-bnd.title" = "정보";
+
+/* Class = "UILabel"; text = "LoginKeeper® was developed using the following free & open source resources:"; ObjectID = "ZTW-LK-HNF"; */
+"ZTW-LK-HNF.text" = "로그인 키퍼®는 다음의 무료 및 오픈 소스 리소스를 사용하여 개발되었습니다:";
+
+/* Class = "UITextField"; placeholder = "Confirm password (required)"; ObjectID = "aFU-Xk-o7Q"; */
+"aFU-Xk-o7Q.placeholder" = "암호 확인 (필수)";
+
+/* Class = "UILabel"; text = "LoginKeeper"; ObjectID = "au3-ib-kHJ"; */
+"au3-ib-kHJ.text" = "로그인 키퍼";
+
+/* Class = "UITextField"; placeholder = "Comment"; ObjectID = "axU-Qj-8gF"; */
+"axU-Qj-8gF.placeholder" = "논평";
+
+/* Class = "UILabel"; text = "About"; ObjectID = "bW6-dO-nVI"; */
+"bW6-dO-nVI.text" = "신청 정보";
+
+/* Class = "UILabel"; text = "LoginKeeper"; ObjectID = "cHH-cQ-M99"; */
+"cHH-cQ-M99.text" = "로그인 키퍼";
+
+/* Class = "UILabel"; text = "Developer website"; ObjectID = "ef8-fo-9ED"; */
+"ef8-fo-9ED.text" = "개발자 웹 사이트";
+
+/* Class = "UILabel"; text = "All changes are automatically saved"; ObjectID = "fmv-Ys-hzA"; */
+"fmv-Ys-hzA.text" = "모든 변경 사항이 자동으로 저장됩니다.";
+
+/* Class = "UILabel"; text = "More apps by developer"; ObjectID = "gqL-Oj-Kkg"; */
+"gqL-Oj-Kkg.text" = "개발자 별 앱 더보기";
+
+/* Class = "UILabel"; text = "Dusan Juranovic"; ObjectID = "iaT-Lv-CQA"; */
+"iaT-Lv-CQA.text" = "Dusan Juranovic (두산 주노 비치)";
+
+/* Class = "UITextField"; placeholder = "Comment"; ObjectID = "lR5-4h-YPa"; */
+"lR5-4h-YPa.placeholder" = "논평";
+
+/* Class = "UIButton"; normalTitle = "Skip"; ObjectID = "ljz-gl-szh"; */
+"ljz-gl-szh.normalTitle" = "버킷";
+
+/* Class = "UIButton"; normalTitle = "Copy all"; ObjectID = "meZ-KJ-6Qa"; */
+"meZ-KJ-6Qa.normalTitle" = "모두 복사";
+
+/* Class = "UINavigationItem"; title = "About LoginKeeper"; ObjectID = "ni1-Kc-bws"; */
+"ni1-Kc-bws.title" = "약 로그인 키퍼";
+
+/* Class = "UILabel"; text = "Username"; ObjectID = "owc-0p-pfa"; */
+"owc-0p-pfa.text" = "사용자 이름";
+
+/* Class = "UITextField"; placeholder = "Username"; ObjectID = "rkV-Gt-ep1"; */
+"rkV-Gt-ep1.placeholder" = "사용자 이름";
+
+/* Class = "UITextField"; placeholder = "Password (required)"; ObjectID = "sFK-NG-wDg"; */
+"sFK-NG-wDg.placeholder" = "비밀번호 (필요)";
+
+/* Class = "UILabel"; text = "Password"; ObjectID = "slb-33-AHV"; */
+"slb-33-AHV.text" = "암호";
+
+/* Class = "UILabel"; text = "by Dusan Juranovic"; ObjectID = "v14-yL-ACv"; */
+"v14-yL-ACv.text" = "으로 Dusan Juranovic (두산 주노 비치)";
+
+/* Class = "UITextField"; placeholder = "Account Title (required)"; ObjectID = "vgY-17-wLs"; */
+"vgY-17-wLs.placeholder" = "계정 제목 (필수)";
+
+/* Class = "UILabel"; text = "All rights reserved. Copyrights©"; ObjectID = "xqa-RF-TvC"; */
+"xqa-RF-TvC.text" = "판권 소유. 저작권 ©";
+
+/* Class = "UIBarButtonItem"; title = "Play Tutorial"; ObjectID = "y1Q-3C-FBj"; */
+"y1Q-3C-FBj.title" = "놀이 튜토리얼";
+
+/* Class = "UILabel"; text = "juranovicd@gmail.com"; ObjectID = "yGG-Ik-64k"; */
+"yGG-Ik-64k.text" = "juranovicd@gmail.com";
+
+/* Class = "UILabel"; text = "Comment"; ObjectID = "yZj-U9-A0o"; */
+"yZj-U9-A0o.text" = "논평";
+
+/* Class = "UITextField"; placeholder = "Entry Name (required)"; ObjectID = "zOh-H8-h8M"; */
+"zOh-H8-h8M.placeholder" = "항목 이름 (필수)";
+

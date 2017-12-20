@@ -1,0 +1,147 @@
+
+/* Class = "UILabel"; text = "Account name"; ObjectID = "28i-Mw-C5V"; */
+"28i-Mw-C5V.text" = "アカウント名";
+
+/* Class = "UILabel"; text = "Developer:"; ObjectID = "3g6-v0-Ygk"; */
+"3g6-v0-Ygk.text" = "開発者:";
+
+/* Class = "UILabel"; text = "Comment"; ObjectID = "3ug-en-Aoa"; */
+"3ug-en-Aoa.text" = "コメント";
+
+/* Class = "UITextField"; placeholder = "Confirm password (required)"; ObjectID = "4NY-8P-15S"; */
+"4NY-8P-15S.placeholder" = "パスワードの確認（必須）";
+
+/* Class = "UILabel"; text = "LoginKeeper"; ObjectID = "6Nu-9j-TfH"; */
+"6Nu-9j-TfH.text" = "ログインキーパー";
+
+/* Class = "UINavigationItem"; title = "Accounts"; ObjectID = "7de-8j-5af"; */
+"7de-8j-5af.title" = "アカウント";
+
+/* Class = "UILabel"; text = "LoginKeeper"; ObjectID = "9me-ze-Tu8"; */
+"9me-ze-Tu8.text" = "ログインキーパー";
+
+/* Class = "UILabel"; text = "icons8.com"; ObjectID = "9wU-3T-eVT"; */
+"9wU-3T-eVT.text" = "icons8.com";
+
+/* Class = "UILabel"; text = "-Default is the first one in the scroll view-"; ObjectID = "Abp-m8-Wku"; */
+"Abp-m8-Wku.text" = "-デフォルトはスクロールビューの最初のものです-";
+
+/* Class = "UILabel"; text = "Disclaimer"; ObjectID = "Dnd-0R-ynT"; */
+"Dnd-0R-ynT.text" = "免責事項";
+
+/* Class = "UINavigationItem"; title = "Add New Account"; ObjectID = "E8D-Rq-tOd"; */
+"E8D-Rq-tOd.title" = "新しいアカウントを追加";
+
+/* Class = "UILabel"; text = "Entry name"; ObjectID = "EN3-26-xC9"; */
+"EN3-26-xC9.text" = "エントリ名";
+
+/* Class = "UILabel"; text = "Email:"; ObjectID = "EzQ-BD-0hD"; */
+"EzQ-BD-0hD.text" = "Eメール:";
+
+/* Class = "UIBarButtonItem"; title = "Edit"; ObjectID = "Fb6-TP-OzK"; */
+"Fb6-TP-OzK.title" = "編集";
+
+/* Class = "UILabel"; text = "Feedback"; ObjectID = "FuE-fw-G6K"; */
+"FuE-fw-G6K.text" = "フィードバック";
+
+/* Class = "UITextField"; placeholder = "Username"; ObjectID = "JtM-J4-Gbz"; */
+"JtM-J4-Gbz.placeholder" = "ユーザー名";
+
+/* Class = "UIBarButtonItem"; title = "Lock"; ObjectID = "KRN-c3-QOC"; */
+"KRN-c3-QOC.title" = "ロック";
+
+/* Class = "UITextField"; placeholder = "Password (required)"; ObjectID = "LNo-xb-YV2"; */
+"LNo-xb-YV2.placeholder" = "パスワードが必要）";
+
+/* Class = "UILabel"; text = "◀︎   Choose your logo from the scroll menu   ▶︎"; ObjectID = "OAQ-SI-m1b"; */
+"OAQ-SI-m1b.text" = "◀︎   スクロールメニューからロゴを選択する   ▶︎";
+
+/* Class = "UITextField"; placeholder = "Entry Name (required)"; ObjectID = "Qgw-sU-47I"; */
+"Qgw-sU-47I.placeholder" = "エントリ名（必須）";
+
+/* Class = "UINavigationItem"; title = "Info"; ObjectID = "REf-hL-2HP"; */
+"REf-hL-2HP.title" = "情報";
+
+/* Class = "UIBarButtonItem"; title = "Info"; ObjectID = "V9Y-1t-bnd"; */
+"V9Y-1t-bnd.title" = "情報";
+
+/* Class = "UINavigationItem"; title = "Title"; ObjectID = "YJU-ma-TiN"; */
+"YJU-ma-TiN.title" = "タイトル";
+
+/* Class = "UINavigationItem"; title = "Title"; ObjectID = "Z1n-mA-U1S"; */
+"Z1n-mA-U1S.title" = "タイトル";
+
+/* Class = "UILabel"; text = "LoginKeeper® was developed using the following free & open source resources:"; ObjectID = "ZTW-LK-HNF"; */
+"ZTW-LK-HNF.text" = "ログインキーパーは以下のフリー＆オープンソースリソースを使用して開発されました：";
+
+/* Class = "UITextField"; placeholder = "Confirm password (required)"; ObjectID = "aFU-Xk-o7Q"; */
+"aFU-Xk-o7Q.placeholder" = "パスワードの確認（必須）";
+
+/* Class = "UILabel"; text = "LoginKeeper"; ObjectID = "au3-ib-kHJ"; */
+"au3-ib-kHJ.text" = "ログインキーパー";
+
+/* Class = "UITextField"; placeholder = "Comment"; ObjectID = "axU-Qj-8gF"; */
+"axU-Qj-8gF.placeholder" = "コメント";
+
+/* Class = "UILabel"; text = "About"; ObjectID = "bW6-dO-nVI"; */
+"bW6-dO-nVI.text" = "アプリケーションについて";
+
+/* Class = "UILabel"; text = "LoginKeeper"; ObjectID = "cHH-cQ-M99"; */
+"cHH-cQ-M99.text" = "ログインキーパー";
+
+/* Class = "UILabel"; text = "Developer website"; ObjectID = "ef8-fo-9ED"; */
+"ef8-fo-9ED.text" = "開発者のウェブサイト";
+
+/* Class = "UILabel"; text = "All changes are automatically saved"; ObjectID = "fmv-Ys-hzA"; */
+"fmv-Ys-hzA.text" = "すべての変更は自動的に保存されます";
+
+/* Class = "UILabel"; text = "More apps by developer"; ObjectID = "gqL-Oj-Kkg"; */
+"gqL-Oj-Kkg.text" = "開発者によるその他のアプリ";
+
+/* Class = "UILabel"; text = "Dusan Juranovic"; ObjectID = "iaT-Lv-CQA"; */
+"iaT-Lv-CQA.text" = "Dusan Juranovic";
+
+/* Class = "UITextField"; placeholder = "Comment"; ObjectID = "lR5-4h-YPa"; */
+"lR5-4h-YPa.placeholder" = "コメント";
+
+/* Class = "UIButton"; normalTitle = "Skip"; ObjectID = "ljz-gl-szh"; */
+"ljz-gl-szh.normalTitle" = "スキップ";
+
+/* Class = "UIButton"; normalTitle = "Copy all"; ObjectID = "meZ-KJ-6Qa"; */
+"meZ-KJ-6Qa.normalTitle" = "すべてをコピーする";
+
+/* Class = "UINavigationItem"; title = "About LoginKeeper"; ObjectID = "ni1-Kc-bws"; */
+"ni1-Kc-bws.title" = "ログインキーパーについて";
+
+/* Class = "UILabel"; text = "Username"; ObjectID = "owc-0p-pfa"; */
+"owc-0p-pfa.text" = "ユーザー名";
+
+/* Class = "UITextField"; placeholder = "Username"; ObjectID = "rkV-Gt-ep1"; */
+"rkV-Gt-ep1.placeholder" = "ユーザー名";
+
+/* Class = "UITextField"; placeholder = "Password (required)"; ObjectID = "sFK-NG-wDg"; */
+"sFK-NG-wDg.placeholder" = "パスワードが必要）";
+
+/* Class = "UILabel"; text = "Password"; ObjectID = "slb-33-AHV"; */
+"slb-33-AHV.text" = "パスワード";
+
+/* Class = "UILabel"; text = "by Dusan Juranovic"; ObjectID = "v14-yL-ACv"; */
+"v14-yL-ACv.text" = "〜によって Dusan Juranovic";
+
+/* Class = "UITextField"; placeholder = "Account Title (required)"; ObjectID = "vgY-17-wLs"; */
+"vgY-17-wLs.placeholder" = "アカウントのタイトル（必須）";
+
+/* Class = "UILabel"; text = "All rights reserved. Copyrights©"; ObjectID = "xqa-RF-TvC"; */
+"xqa-RF-TvC.text" = "全著作権所有。 著作権©";
+
+/* Class = "UIBarButtonItem"; title = "Play Tutorial"; ObjectID = "y1Q-3C-FBj"; */
+"y1Q-3C-FBj.title" = "チュートリアルを再生";
+
+/* Class = "UILabel"; text = "juranovicd@gmail.com"; ObjectID = "yGG-Ik-64k"; */
+"yGG-Ik-64k.text" = "juranovicd@gmail.com";
+
+/* Class = "UILabel"; text = "Comment"; ObjectID = "yZj-U9-A0o"; */
+"yZj-U9-A0o.text" = "コメント";
+
+/* Class = "UITextField"; placeholder = "Entry Name (required)"; ObjectID = "zOh-H8-h8M"; */
+"zOh-H8-h8M.placeholder" = "エントリ名（必須）";

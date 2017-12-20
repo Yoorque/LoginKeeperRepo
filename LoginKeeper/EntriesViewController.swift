@@ -24,7 +24,8 @@ class EntriesViewController: UIViewController, UITableViewDataSource, UITableVie
         fetchFromCoreData()
         tableView.setNeedsLayout()
     }
-
+    //MARK: - Localization
+    
     func fetchFromCoreData() {
         let context = appDelegate.persistentContainer.viewContext
         let fetchRequest = NSFetchRequest<Entry>(entityName: "Entry")
@@ -34,9 +35,9 @@ class EntriesViewController: UIViewController, UITableViewDataSource, UITableVie
             entries = try context.fetch(fetchRequest)
             tableView.reloadData()
         } catch {
-            print("Unable to fetch: \(error)")
-            let alert = UIAlertController(title: "Error!", message: "Oops! Unable to fetch data at this time, please try again!", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            
+            let alert = UIAlertController(title: errorLoc, message: unableToFetchMessageLoc, preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: okLoc, style: .default, handler: nil))
             present(alert, animated: true, completion: nil)
         }
     }
@@ -47,9 +48,9 @@ class EntriesViewController: UIViewController, UITableViewDataSource, UITableVie
             try context.save()
             tableView.reloadData()
         } catch {
-            print("Unable to save: \(error)")
-            let alert = UIAlertController(title: "Error!", message: "Oops! Unable to save at this time, please try again!", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            
+            let alert = UIAlertController(title: errorLoc, message: unableToSaveMessageLoc, preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: okLoc, style: .default, handler: nil))
             present(alert, animated: true, completion: nil)
         }
     }
@@ -73,20 +74,20 @@ class EntriesViewController: UIViewController, UITableViewDataSource, UITableVie
             let controller = segue.destination as? AddNewEntryViewController
             if let destinationVC = controller {
                 destinationVC.account = account
-                destinationVC.title = "Add new entry for \(account!.name!)"
+                destinationVC.title = "\(addNewEntryLoc) \(account!.name!)"
             }
         } else if segue.identifier == "showDetailsSegue" {
             let controller = segue.destination as? DetailsViewController
             if let destinationVC = controller {
                 destinationVC.entryDetails = entries?[index!]
-                destinationVC.title = "\(entries![index!].name!) details"
+                destinationVC.title = "\(entries![index!].name!) \(detailsLoc)"
             }
         }
     }
     
     func alert(message: String) {
-        let alert = UIAlertController(title: "Error!", message: message, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        let alert = UIAlertController(title: errorLoc, message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: okLoc, style: .default, handler: nil))
         present(alert, animated: true, completion: nil)
     }
    
@@ -112,7 +113,7 @@ class EntriesViewController: UIViewController, UITableViewDataSource, UITableVie
     }
     
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
-        let delete = UITableViewRowAction(style: .destructive, title: "Delete Entry", handler: {_,_  in
+        let delete = UITableViewRowAction(style: .destructive, title: deleteEntryLoc, handler: {_,_  in
             
             self.appDelegate.persistentContainer.viewContext.delete(self.entries![indexPath.row])
             self.entries?.remove(at: indexPath.row)

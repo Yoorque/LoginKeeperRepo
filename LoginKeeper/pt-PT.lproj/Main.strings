@@ -1,0 +1,144 @@
+
+/* Class = "UILabel"; text = "Account name"; ObjectID = "28i-Mw-C5V"; */
+"28i-Mw-C5V.text" = "Nome da conta";
+
+/* Class = "UILabel"; text = "Developer:"; ObjectID = "3g6-v0-Ygk"; */
+"3g6-v0-Ygk.text" = "Desenvolvedor:";
+
+/* Class = "UILabel"; text = "Comment"; ObjectID = "3ug-en-Aoa"; */
+"3ug-en-Aoa.text" = "Comentário";
+
+/* Class = "UITextField"; placeholder = "Confirm password (required)"; ObjectID = "4NY-8P-15S"; */
+"4NY-8P-15S.placeholder" = "Confirmar senha (requerida)";
+
+/* Class = "UILabel"; text = "LoginKeeper"; ObjectID = "6Nu-9j-TfH"; */
+"6Nu-9j-TfH.text" = "LoginKeeper";
+
+/* Class = "UINavigationItem"; title = "Accounts"; ObjectID = "7de-8j-5af"; */
+"7de-8j-5af.title" = "Contas";
+
+/* Class = "UILabel"; text = "LoginKeeper"; ObjectID = "9me-ze-Tu8"; */
+"9me-ze-Tu8.text" = "LoginKeeper";
+
+/* Class = "UILabel"; text = "icons8.com"; ObjectID = "9wU-3T-eVT"; */
+"9wU-3T-eVT.text" = "icons8.com";
+
+/* Class = "UILabel"; text = "-Default is the first one in the scroll view-"; ObjectID = "Abp-m8-Wku"; */
+"Abp-m8-Wku.text" = "-O padrão é o primeiro na exibição de rolagem-";
+
+/* Class = "UILabel"; text = "Disclaimer"; ObjectID = "Dnd-0R-ynT"; */
+"Dnd-0R-ynT.text" = "Aviso Legal";
+
+/* Class = "UINavigationItem"; title = "Add New Account"; ObjectID = "E8D-Rq-tOd"; */
+"E8D-Rq-tOd.title" = "Adicionar nova Conta";
+
+/* Class = "UILabel"; text = "Entry name"; ObjectID = "EN3-26-xC9"; */
+"EN3-26-xC9.text" = "Nome da Entrada";
+
+/* Class = "UILabel"; text = "Email:"; ObjectID = "EzQ-BD-0hD"; */
+"EzQ-BD-0hD.text" = "Email:";
+
+/* Class = "UIBarButtonItem"; title = "Edit"; ObjectID = "Fb6-TP-OzK"; */
+"Fb6-TP-OzK.title" = "Editar";
+
+/* Class = "UILabel"; text = "Feedback"; ObjectID = "FuE-fw-G6K"; */
+"FuE-fw-G6K.text" = "Comentários";
+
+/* Class = "UITextField"; placeholder = "Username"; ObjectID = "JtM-J4-Gbz"; */
+"JtM-J4-Gbz.placeholder" = "Nome de usuário";
+
+/* Class = "UIBarButtonItem"; title = "Lock"; ObjectID = "KRN-c3-QOC"; */
+"KRN-c3-QOC.title" = "Bloqueio";
+
+/* Class = "UITextField"; placeholder = "Password (required)"; ObjectID = "LNo-xb-YV2"; */
+"LNo-xb-YV2.placeholder" = "Senha (requerida)";
+
+/* Class = "UILabel"; text = "◀︎   Choose your logo from the scroll menu   ▶︎"; ObjectID = "OAQ-SI-m1b"; */
+"OAQ-SI-m1b.text" = "◀︎   Escolha o seu logotipo no menu de rolagem   ▶︎";
+
+/* Class = "UITextField"; placeholder = "Entry Name (required)"; ObjectID = "Qgw-sU-47I"; */
+"Qgw-sU-47I.placeholder" = "Nome da entrada (requerida)";
+
+/* Class = "UINavigationItem"; title = "Info"; ObjectID = "REf-hL-2HP"; */
+"REf-hL-2HP.title" = "Info";
+
+/* Class = "UIBarButtonItem"; title = "Info"; ObjectID = "V9Y-1t-bnd"; */
+"V9Y-1t-bnd.title" = "Info";
+
+/* Class = "UILabel"; text = "LoginKeeper® was developed using the following free & open source resources:"; ObjectID = "ZTW-LK-HNF"; */
+"ZTW-LK-HNF.text" = "O LoginKeeper® foi desenvolvido usando os seguintes recursos gratuitos e de código aberto:";
+
+/* Class = "UITextField"; placeholder = "Confirm password (required)"; ObjectID = "aFU-Xk-o7Q"; */
+"aFU-Xk-o7Q.placeholder" = "Confirmar senha (requerida)";
+
+/* Class = "UILabel"; text = "LoginKeeper"; ObjectID = "au3-ib-kHJ"; */
+"au3-ib-kHJ.text" = "LoginKeeper";
+
+/* Class = "UITextField"; placeholder = "Comment"; ObjectID = "axU-Qj-8gF"; */
+"axU-Qj-8gF.placeholder" = "Comentário";
+
+/* Class = "UILabel"; text = "About"; ObjectID = "bW6-dO-nVI"; */
+"bW6-dO-nVI.text" = "Sobre o aplicativo";
+
+/* Class = "UILabel"; text = "LoginKeeper"; ObjectID = "cHH-cQ-M99"; */
+"cHH-cQ-M99.text" = "LoginKeeper";
+
+/* Class = "UILabel"; text = "Developer website"; ObjectID = "ef8-fo-9ED"; */
+"ef8-fo-9ED.text" = "Site do desenvolvedor";
+
+/* Class = "UILabel"; text = "All changes are automatically saved"; ObjectID = "fmv-Ys-hzA"; */
+"fmv-Ys-hzA.text" = "Todas as alterações são salvas automaticamente";
+
+/* Class = "UILabel"; text = "More apps by developer"; ObjectID = "gqL-Oj-Kkg"; */
+"gqL-Oj-Kkg.text" = "Mais aplicativos pelo desenvolvedor";
+
+/* Class = "UILabel"; text = "Dusan Juranovic"; ObjectID = "iaT-Lv-CQA"; */
+"iaT-Lv-CQA.text" = "Dusan Juranovic";
+
+/* Class = "UITextField"; placeholder = "Comment"; ObjectID = "lR5-4h-YPa"; */
+"lR5-4h-YPa.placeholder" = "Comentário";
+
+/* Class = "UIButton"; normalTitle = "Skip"; ObjectID = "ljz-gl-szh"; */
+"ljz-gl-szh.normalTitle" = "Pular";
+
+/* Class = "UIButton"; normalTitle = "Copy all"; ObjectID = "meZ-KJ-6Qa"; */
+"meZ-KJ-6Qa.normalTitle" = "Copiar tudo";
+
+/* Class = "UINavigationItem"; title = "About LoginKeeper"; ObjectID = "ni1-Kc-bws"; */
+"ni1-Kc-bws.title" = "Sobre LoginKeeper";
+
+/* Class = "UILabel"; text = "Username"; ObjectID = "owc-0p-pfa"; */
+"owc-0p-pfa.text" = "Nome de usuário";
+
+/* Class = "UITextField"; placeholder = "Username"; ObjectID = "rkV-Gt-ep1"; */
+"rkV-Gt-ep1.placeholder" = "Nome de usuário";
+
+/* Class = "UITextField"; placeholder = "Password (required)"; ObjectID = "sFK-NG-wDg"; */
+"sFK-NG-wDg.placeholder" = "Senha (requerida)";
+
+/* Class = "UILabel"; text = "Password"; ObjectID = "slb-33-AHV"; */
+"slb-33-AHV.text" = "Senha";
+
+/* Class = "UILabel"; text = "by Dusan Juranovic"; ObjectID = "v14-yL-ACv"; */
+"v14-yL-ACv.text" = "por Dusan Juranovic";
+
+/* Class = "UITextField"; placeholder = "Account Title (required)"; ObjectID = "vgY-17-wLs"; */
+"vgY-17-wLs.placeholder" = "Título da conta (requerida)";
+
+
+/* Class = "UILabel"; text = "All rights reserved. Copyrights©"; ObjectID = "xqa-RF-TvC"; */
+"xqa-RF-TvC.text" = "Todos os direitos reservados. Copyrights ©";
+
+/* Class = "UIBarButtonItem"; title = "Play Tutorial"; ObjectID = "y1Q-3C-FBj"; */
+"y1Q-3C-FBj.title" = "Toque Tutorial";
+
+/* Class = "UILabel"; text = "juranovicd@gmail.com"; ObjectID = "yGG-Ik-64k"; */
+"yGG-Ik-64k.text" = "juranovicd@gmail.com";
+
+/* Class = "UILabel"; text = "Comment"; ObjectID = "yZj-U9-A0o"; */
+"yZj-U9-A0o.text" = "Comentário";
+
+/* Class = "UITextField"; placeholder = "Entry Name (required)"; ObjectID = "zOh-H8-h8M"; */
+"zOh-H8-h8M.placeholder" = "Nome da entrada (requerida)";
+
+

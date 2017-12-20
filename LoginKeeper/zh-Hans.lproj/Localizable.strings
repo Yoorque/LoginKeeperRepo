@@ -1,0 +1,79 @@
+/* 
+  Localizable.strings
+  LoginKeeper
+
+  Created by Dusan Juranovic on 12/19/17.
+  Copyright © 2017 Dusan Juranovic. All rights reserved.
+*/
+
+
+"About LoginKeeper" = "关于登录门将";
+"COPIED TO CLIPBOARD" = "复制到剪贴板";
+
+"OK" = "好";
+"Done" = "完成";
+"Save" = "保存";
+"Edit" = "编辑";
+"Cancel" = "取消";
+"Error!" = "错误!";
+"Lock" = "锁";
+"Unlock" = "开锁";
+"Leaving LoginKeeper" = "离开登录门将";
+"You will be redirected to" = "你将被重定向到";
+"Are you sure?" = "你确定？";
+"I'm sure" = "我确定";
+
+"Account" = "帐户";
+"No Account name!" = "没有帐户名称！";
+"Account name is required." = "帐户名称是必需的。";
+"Delete Acc" = "删除帐户";
+
+"Entry name" = "条目名称";
+"No Entry name!" = "没有条目名称！";
+"Entry name is required." = "条目名称是必需的.";
+"Add Entry" = "添加条目";
+"Add new entry for" = "为...添加新条目";
+"Delete Entry" = "删除条目";
+
+"Username" = "用户名";
+
+"Password" = "密码";
+"Enter Password" = "输入密码";
+"Empty password" = "空密码";
+"Please enter your password." = "请输入您的密码。";
+"Passwords do not match!"  = "密码不匹配！";
+"Please enter your password again." = "请再次输入你的密码。";
+"Set your backup password for LoginKeeper" = "设置登录管理员的密码";
+"Password is required!" = "密码是必需的！";
+"Please set your password to continue." = "请设置您的密码以继续。";
+
+"Comment" = "评论";
+"Version" = "版";
+"build" = "建立";
+"Search" = "搜索";
+
+"You are not authorised to use this feature." = "您无权使用此功能。";
+"In progress..." = "进行中...";
+"We're working on this one!" = "我们正在研究这个！";
+"Oops! Unable to save changes at this time, please try again!" = "哎呀！ 目前无法保存更改，请重试！";
+"Oops! Unable to fetch data at this time, please try again!" = "哎呀！ 目前无法提取数据，请重试！";
+"Entries of" = "参赛作品";
+"details" = "细节";
+"Identify yourself" = "证明你的身份";
+
+"LoginKeeper® was developed solely using Apple Libraries and available resources provided by Apple and free open source resources. I, Dusan Juranovic, as a developer of LoginKeeper®, claim all distribution rights of LoginKeeper® as well as all copyrights©. LoginKeeper® is NOT recommended for storing valuable information such as , credit card details, bank details and all other information where loss of such information would bare great impact to individuals or companies alike and therefore LoginKeeper®  and I, Dusan Juranovic (developer), will not be held responsible for loss of any such information or assets. LoginKeeper® is intended only for purpose of not having to remember all of your login details or writing them down on pieces of paper. It is users judgment call to decide which information they enter into the app. If you have any issues or suggestions, please write an email to below provided email address. Thanks." = "登录守护者 是仅使用苹果库和苹果提供的可用资源开发的，免费提供开源资源。 作为 登录守护者 的开发者，Dusan Juranovic声称拥有 登录守护者 以及所有版权的所有版权。 不建议使用 登录守护者 存储有价值的信息，如信用卡信息，银行信息和所有其他信息，如果这些信息丢失会对个人或公司造成重大影响，因此 登录守护者 和I，Dusan Juranovic（开发人员）将 不承担任何此类信息或资产的损失。 登录守护者 仅用于不必记住所有登录信息或将其写在纸上。 这是用户判断电话来决定他们进入应用程序的信息。 如果您有任何问题或建议，请写下电子邮件到下面提供的电子邮件地址。 谢谢。";
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

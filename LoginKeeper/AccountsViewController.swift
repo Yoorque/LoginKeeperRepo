@@ -20,6 +20,7 @@ class AccountsViewController: UIViewController, UITableViewDelegate, UITableView
     @IBOutlet var searchBar: UISearchBar! {
         didSet {
             searchBar.returnKeyType = .search
+            searchBar.placeholder = searchBarPlaceholderLoc
             self.searchBar.delegate = self
         }
     }
@@ -33,6 +34,7 @@ class AccountsViewController: UIViewController, UITableViewDelegate, UITableView
     let defaults = UserDefaults.standard
     var passwordSetShownBefore = false
     var tutorialShown = false
+    
     
     //MARK: - App life cycle
     override func viewDidLoad() {
@@ -140,8 +142,8 @@ class AccountsViewController: UIViewController, UITableViewDelegate, UITableView
     }
     
     func setPassword() {
-        let alert = UIAlertController(title: "Password", message: "Set your backup password for LoginKeeper", preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "Done", style: .default, handler: { _ in
+        let alert = UIAlertController(title: setPasswordLoc, message: setPasswordMessageLoc, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: doneLoc, style: .default, handler: { _ in
             let password = alert.textFields?.first?.text!
             
             self.defaults.set(password, forKey: "userPassword")
@@ -149,16 +151,16 @@ class AccountsViewController: UIViewController, UITableViewDelegate, UITableView
             self.authenticateUser()
         }))
         
-        alert.addAction(UIAlertAction(title: "Cancel", style: .default, handler: { _ in
+        alert.addAction(UIAlertAction(title: cancelAnswerLoc, style: .default, handler: { _ in
             self.defaults.set(false, forKey: "shownBefore")
-            let alert = UIAlertController(title: "Password is required", message: "Please set your password to continue.", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: {_ in
+            let alert = UIAlertController(title: passwordIsRequiredLoc, message: passwordIsRequiredMessageLoc, preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: okLoc, style: .default, handler: {_ in
                 self.setPassword()
             }))
             self.present(alert, animated: true, completion: nil)
         }))
         alert.addTextField(configurationHandler: {textField in
-            textField.placeholder = "Enter password"
+            textField.placeholder = enterPasswordLoc
         })
         present(alert, animated: true, completion: nil)
     }
@@ -166,7 +168,7 @@ class AccountsViewController: UIViewController, UITableViewDelegate, UITableView
     func authenticateUser() {
         let context = LAContext()
         var error: NSError?
-        let reason = "Identify yourself"
+        let reason = identifyLoc
         
         if context.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: &error) {
             print("canEvaluateWithTouchID")
@@ -180,13 +182,14 @@ class AccountsViewController: UIViewController, UITableViewDelegate, UITableView
                             self.searchBar.isUserInteractionEnabled = true
                             self.fetchFromCoreData()
                             self.defaults.set(true, forKey: "authenticated")
+                            self.lockButton.title = lockLoc
                             print("Success: TouchID")
                         } else {
                             self.defaults.set(false, forKey: "authenticated")
                             self.accounts = []
                             self.navigationItem.rightBarButtonItem?.isEnabled = false
                             self.searchBar.isUserInteractionEnabled = false
-                            self.lockButton.title = "Unlock"
+                            self.lockButton.title = unlockLoc
                             self.tableView.reloadData()
                             
                             switch error!._code {
@@ -225,7 +228,7 @@ class AccountsViewController: UIViewController, UITableViewDelegate, UITableView
                     if success {
                         self.navigationItem.rightBarButtonItem?.isEnabled = true
                         self.searchBar.isUserInteractionEnabled = true
-                        self.lockButton.title = "Lock"
+                        self.lockButton.title = lockLoc
                         self.fetchFromCoreData()
                         self.defaults.set(true, forKey: "authenticated")
                         
@@ -234,7 +237,7 @@ class AccountsViewController: UIViewController, UITableViewDelegate, UITableView
                         self.accounts = []
                         self.navigationItem.rightBarButtonItem?.isEnabled = false
                         self.searchBar.isUserInteractionEnabled = false
-                        self.lockButton.title = "Unlock"
+                        self.lockButton.title = unlockLoc
                         self.tableView.reloadData()
                         switch error!._code{
                         case Int(kLAErrorAuthenticationFailed):
@@ -267,36 +270,36 @@ class AccountsViewController: UIViewController, UITableViewDelegate, UITableView
     //MARK: - Alerts
     func displayAlert(title: String, msg: String) {
         let alert = UIAlertController(title: title, message: msg, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        alert.addAction(UIAlertAction(title: okLoc, style: .default, handler: nil))
         present(alert, animated: true, completion: nil)
     }
     
     func alert(message: String) {
-        let alert = UIAlertController(title: "Error!", message: message, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        let alert = UIAlertController(title: errorLoc, message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: okLoc, style: .default, handler: nil))
         present(alert, animated: true, completion: nil)
     }
     
     func loginAlert(message: String) {
-        let alert = UIAlertController(title: "Error!", message: message, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: {_ in
+        let alert = UIAlertController(title: errorLoc, message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: okLoc, style: .default, handler: {_ in
             self.authenticateUser()
         }))
         present(alert, animated: true, completion: nil)
     }
     
     func userFallbackPasswordAlertWith(error: Error) {
-        let alert = UIAlertController(title: "Password", message: "Enter your password", preferredStyle: .alert)
+        let alert = UIAlertController(title: passwordTextLoc, message: enterPasswordLoc, preferredStyle: .alert)
         alert.addTextField(configurationHandler: {textField in
-            textField.placeholder = "Enter your password"
+            textField.placeholder = enterPasswordLoc
         })
-        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { _ in
+        alert.addAction(UIAlertAction(title: okLoc, style: .default, handler: { _ in
             let defaults = UserDefaults.standard
             if let pass = defaults.value(forKey: "userPassword") as? String {
                 if pass == alert.textFields?.first?.text {
                     self.navigationItem.rightBarButtonItem?.isEnabled = true
                     self.searchBar.isUserInteractionEnabled = true
-                    self.lockButton.title = "Lock"
+                    self.lockButton.title = lockLoc
                     self.fetchFromCoreData()
                     self.defaults.set(true, forKey: "authenticated")
                     print("Success")
@@ -307,7 +310,7 @@ class AccountsViewController: UIViewController, UITableViewDelegate, UITableView
                 }
             }
         }))
-        alert.addAction(UIAlertAction(title: "Cancel", style: .default, handler: nil))
+        alert.addAction(UIAlertAction(title: cancelAnswerLoc, style: .default, handler: nil))
         self.present(alert, animated: true, completion: nil)
     }
     //MARK: - Button Actions
@@ -323,11 +326,11 @@ class AccountsViewController: UIViewController, UITableViewDelegate, UITableView
     @IBAction func lockButton(_ sender: UIBarButtonItem) {
         accounts = []
         tableView.reloadData()
-        if lockButton.title == "Unlock" {
+        if lockButton.title == unlockLoc {
             authenticateUser()
         }
-        if lockButton.title == "Lock" {
-            lockButton.title = "Unlock"
+        if lockButton.title == lockLoc {
+            lockButton.title = unlockLoc
         }
         defaults.set(false, forKey: "authenticated")
     }
@@ -340,11 +343,10 @@ class AccountsViewController: UIViewController, UITableViewDelegate, UITableView
         fetchRequest.sortDescriptors = [sortDescriptor]
         do {
             accounts = try context.fetch(fetchRequest)
-            lockButton.title = "Lock"
+            lockButton.title = lockLoc
             tableView.reloadData()
         } catch {
-            print("Unable to fetch: \(error)")
-            alert(message: "Oops! Unable to fetch data at this time, please try again.")
+            alert(message: unableToFetchMessageLoc)
         }
     }
     
@@ -354,8 +356,8 @@ class AccountsViewController: UIViewController, UITableViewDelegate, UITableView
             try context.save()
             tableView.reloadData()
         } catch {
-            print("Unable to save: \(error)")
-            alert(message: "Oops! Unable to save at this time, please try again.")
+            
+            alert(message: unableToSaveMessageLoc)
         }
     }
     
@@ -370,8 +372,8 @@ class AccountsViewController: UIViewController, UITableViewDelegate, UITableView
                 accounts = try context.fetch(fetchRequest)
                 tableView.reloadData()
             } catch {
-                print("Unable to fetch: \(error)")
-                alert(message: "Oops! Unable to fetch data at this time, please try again.")
+                
+                alert(message: unableToFetchMessageLoc)
                 
             }
         } else {
@@ -425,14 +427,14 @@ class AccountsViewController: UIViewController, UITableViewDelegate, UITableView
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
         index = indexPath.row
         
-        let deleteAction = UITableViewRowAction(style: .destructive, title: "Delete Acc", handler: {_,_  in
+        let deleteAction = UITableViewRowAction(style: .destructive, title: deleteAccountLoc, handler: {_,_  in
             self.appDelegate.persistentContainer.viewContext.delete(self.accounts[indexPath.row])
             self.accounts.remove(at: indexPath.row)
             self.tableView.deleteRows(at: [indexPath], with: .fade)
             self.saveToCoreData()
         })
         
-        let insertAction = UITableViewRowAction(style: .normal, title: "Add Entry", handler: {_,_  in
+        let insertAction = UITableViewRowAction(style: .normal, title: addEntryLoc, handler: {_,_  in
             self.performSegue(withIdentifier: "addNewEntrySegue", sender: self)
         })
         deleteAction.backgroundColor = UIColor(red: 216/255, green: 67/255, blue: 35/255, alpha: 1)
@@ -448,7 +450,7 @@ class AccountsViewController: UIViewController, UITableViewDelegate, UITableView
             if let destinationVC = controller {
                 destinationVC.entries = accounts[index!].entries?.allObjects as? [Entry]
                 destinationVC.account = accounts[index!]
-                destinationVC.title = "Entries of \(accounts[index!].name!)"
+                destinationVC.title = "\(entriesOfLoc) \(accounts[index!].name!)"
             }
         } else if segue.identifier == "addNewEntrySegue" {
             let controller = segue.destination as? AddNewEntryViewController
@@ -459,7 +461,7 @@ class AccountsViewController: UIViewController, UITableViewDelegate, UITableView
             let controller = segue.destination as? DetailsViewController
             if let destinationVC = controller {
                 destinationVC.entryDetails = accounts[index!].entries!.allObjects.first as? Entry
-                destinationVC.title = "\(accounts[index!].name!) details"
+                destinationVC.title = "\(accounts[index!].name!) \(detailsLoc)"
             }
         } else if segue.identifier == "showLogos" {
             let controller = segue.destination as? LogosViewController

@@ -1,0 +1,63 @@
+/* 
+  Localizable.strings
+  LoginKeeper
+
+  Created by Dusan Juranovic on 12/19/17.
+  Copyright © 2017 Dusan Juranovic. All rights reserved.
+*/
+
+"About LoginKeeper" = "À propos de LoginKeeper";
+"COPIED TO CLIPBOARD" = "COPIÉ DANS LE PRESSE-PAPIER";
+
+"OK" = "D'accord";
+"Done" = "Terminé";
+"Save" = "Sauvegarder";
+"Edit" = "Modifier";
+"Cancel" = "Annuler";
+"Error!" = "Erreur!";
+"Lock" = "La enfermer";
+"Unlock" = "Ouvrir";
+"Leaving LoginKeeper" = "Quitter LoginKeeper";
+"You will be redirected to" = "Vous allez être redirigé vers";
+"Are you sure?" = "Êtes-vous sûr?";
+"I'm sure" = "Je suis sûr";
+
+"Account" = "Compte";
+"No Account name!" = "Pas de nom de compte!";
+"Account name is required." = "Le nom du compte est requis.";
+"Delete Acc" = "Supprimer le compte";
+
+"Entry name" = "Nom de l'entrée";
+"No Entry name!" = "Pas de nom d'entrée!";
+"Entry name is required." = "Le nom d'entrée est requis.";
+"Add Entry" = "Ajouter une entrée";
+"Add new entry for" = "Ajouter une nouvelle entrée pour";
+"Delete Entry" = "Supprimer l'entrée";
+
+"Username" = "Nom d'utilisateur";
+
+"Password" = "Mot de passe";
+"Enter Password" = "Entrer le mot de passe";
+"Empty password" = "Mot de passe vide";
+"Please enter your password." = "S'il vous plait entrez votre mot de passe.";
+"Passwords do not match!"  = "Les mots de passe ne correspondent pas!";
+"Please enter your password again." = "Veuillez entrer votre mot de passe à nouveau.";
+"Set your backup password for LoginKeeper" = "Définissez votre mot de passe de sauvegarde pour LoginKeeper";
+"Password is required!" = "Mot de passe requis!";
+"Please set your password to continue." = "Veuillez définir votre mot de passe pour continuer.";
+
+"Comment" = "Commentaire";
+"Version" = "Version";
+"build" = "construire";
+"Search" = "Chercher";
+
+"You are not authorised to use this feature." = "Vous n'êtes pas autorisé à utiliser cette fonctionnalité.";
+"In progress..." = "En cours...";
+"We're working on this one!" = "Nous travaillons sur celui-ci!";
+"Oops! Unable to save changes at this time, please try again!" = "Oops! Impossible d'enregistrer les modifications pour le moment, veuillez réessayer!";
+"Oops! Unable to fetch data at this time, please try again!" = "Oops! Impossible d'extraire les données pour le moment, veuillez réessayer!";
+"Entries of" = "Entrées de";
+"details" = "détails";
+"Identify yourself" = "Identifiez-vous";
+"LoginKeeper® was developed solely using Apple Libraries and available resources provided by Apple and free open source resources. I, Dusan Juranovic, as a developer of LoginKeeper®, claim all distribution rights of LoginKeeper® as well as all copyrights©. LoginKeeper® is NOT recommended for storing valuable information such as , credit card details, bank details and all other information where loss of such information would bare great impact to individuals or companies alike and therefore LoginKeeper®  and I, Dusan Juranovic (developer), will not be held responsible for loss of any such information or assets. LoginKeeper® is intended only for purpose of not having to remember all of your login details or writing them down on pieces of paper. It is users judgment call to decide which information they enter into the app. If you have any issues or suggestions, please write an email to below provided email address. Thanks." = "LoginKeeper® a été développé uniquement à l'aide des bibliothèques Apple et des ressources disponibles fournies par Apple et des ressources Open Source gratuites. Moi, Dusan Juranovic, en tant que développeur de LoginKeeper®, réclame tous les droits de distribution de LoginKeeper® ainsi que tous les droits d'auteur ©. LoginKeeper® n'est PAS recommandé pour stocker des informations précieuses telles que les détails de carte de crédit, les coordonnées bancaires et toute autre information où la perte d'une telle information aurait un impact important sur les particuliers ou les entreprises. Ainsi, LoginKeeper® et moi, Dusan Juranovic (développeur), ne pas être tenu responsable de la perte de ces informations ou de ces biens. LoginKeeper® est uniquement destiné à ne pas avoir à se souvenir de toutes vos informations de connexion ou à les noter sur des feuilles de papier. C'est l'appel du jugement des utilisateurs pour décider quelles informations ils entrent dans l'application. Si vous avez des problèmes ou des suggestions, s'il vous plaît écrivez un email à l'adresse email ci-dessous. Merci.";
+

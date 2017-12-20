@@ -1,0 +1,63 @@
+/* 
+  Localizable.strings
+  LoginKeeper
+
+  Created by Dusan Juranovic on 12/19/17.
+  Copyright © 2017 Dusan Juranovic. All rights reserved.
+*/
+
+"About LoginKeeper" = "About LoginKeeper";
+"COPIED TO CLIPBOARD" = "COPIED TO CLIPBOARD";
+
+"OK" = "OK";
+"Done" = "Fertig";
+"Save" = "Speichern";
+"Edit" = "Bearbeiten";
+"Cancel" = "Abbrechen";
+"Error!" = "Fehler!";
+"Lock" = "Sperren";
+"Unlock" = "Entsperren";
+"Leaving LoginKeeper" = "LoginKeeper verlassen";
+"You will be redirected to" = "Sie werden weitergeleitet zu";
+"Are you sure?" = "Bist du sicher?";
+"I'm sure" = "Ich bin mir sicher";
+
+"Account" = "Konto";
+"No Account name!" = "Kein Kontoname!";
+"Account name is required." = "Kontoname ist erforderlich.";
+"Delete Acc" = "Konto löschen";
+
+"Entry name" = "Eintragsname";
+"No Entry name!" = "Kein Eintragsname!";
+"Entry name is required." = "Eintragsname ist erforderlich.";
+"Add Entry" = "Eintrag hinzufügen";
+"Add new entry for" = "Neuen Eintrag hinzufügen für";
+"Delete Entry" = "Eintrag löschen";
+
+"Username" = "Benutzername";
+
+"Password" = "Passwort";
+"Enter Password" = "Passwort eingeben";
+"Empty password" = "Leeres Passwort";
+"Please enter your password." = "Bitte geben Sie Ihr Passwort ein.";
+"Passwords do not match!"  = "Passwörter stimmen nicht überein!";
+"Please enter your password again." = "Bitte geben Sie Ihr Passwort erneut ein.";
+"Set your backup password for LoginKeeper" = "Setze dein Backup-Passwort für LoginKeeper";
+"Password is required!" = "Passwort ist erforderlich!";
+"Please set your password to continue." = "Bitte setze dein Passwort um fortzufahren.";
+
+"Comment" = "Kommentar";
+"Version" = "Version";
+"build" = "bauen";
+"Search" = "Suche";
+
+"You are not authorised to use this feature." = "Sie sind nicht berechtigt, diese Funktion zu verwenden.";
+"In progress..." = "In Bearbeitung ...";
+"We're working on this one!" = "Wir arbeiten an diesem!";
+"Oops! Unable to save changes at this time, please try again!" = "Ups! Die Änderungen können zu diesem Zeitpunkt nicht gespeichert werden, bitte versuchen Sie es erneut!";
+"Oops! Unable to fetch data at this time, please try again!" = "Ups! Die Änderungen können zu diesem Zeitpunkt nicht gespeichert werden, bitte versuchen Sie es erneut!";
+"Entries of" = "Einträge von";
+"details" = "details";
+"Identify yourself" = "Identifizieren Sie sich";
+"LoginKeeper® was developed solely using Apple Libraries and available resources provided by Apple and free open source resources. I, Dusan Juranovic, as a developer of LoginKeeper®, claim all distribution rights of LoginKeeper® as well as all copyrights©. LoginKeeper® is NOT recommended for storing valuable information such as , credit card details, bank details and all other information where loss of such information would bare great impact to individuals or companies alike and therefore LoginKeeper®  and I, Dusan Juranovic (developer), will not be held responsible for loss of any such information or assets. LoginKeeper® is intended only for purpose of not having to remember all of your login details or writing them down on pieces of paper. It is users judgment call to decide which information they enter into the app. If you have any issues or suggestions, please write an email to below provided email address. Thanks." = "LoginKeeper® wurde ausschließlich mit Apple Libraries und verfügbaren Ressourcen von Apple und freien Open-Source-Ressourcen entwickelt. I, Dusan Juranovic, als Entwickler von LoginKeeper®, beansprucht alle Vertriebsrechte von LoginKeeper® sowie alle Copyrights ©. LoginKeeper® wird NICHT empfohlen, um wertvolle Informationen wie Kreditkartendetails, Bankdaten und alle anderen Informationen zu speichern, bei denen der Verlust solcher Informationen große Auswirkungen auf Einzelpersonen oder Unternehmen haben würde und deshalb LoginKeeper® und ich, Dusan Juranovic (Entwickler), werden nicht für den Verlust solcher Informationen oder Vermögenswerte verantwortlich gemacht werden. LoginKeeper® dient nur dazu, dass Sie sich nicht alle Login-Daten merken oder auf Zettel schreiben müssen. Es ist die Entscheidung der Nutzer, zu entscheiden, welche Informationen sie in die App eingeben. Wenn Sie Probleme oder Vorschläge haben, schreiben Sie eine E-Mail an die unten angegebene E-Mail-Adresse. Vielen Dank.";
+

@@ -1,0 +1,63 @@
+/* 
+  Localizable.strings
+  LoginKeeper
+
+  Created by Dusan Juranovic on 12/19/17.
+  Copyright © 2017 Dusan Juranovic. All rights reserved.
+*/
+
+"About LoginKeeper" = "로그인 키퍼 정보";
+"COPIED TO CLIPBOARD" = "클립 보드에 복사";
+
+"OK" = "OK";
+"Done" = "완료";
+"Save" = "저장";
+"Edit" = "편집";
+"Cancel" = "취소";
+"Error!" = "오류!";
+"Lock" = "잠금";
+"Unlock" = "터놓다";
+"Leaving LoginKeeper" = "로그인 키퍼에서 나가기";
+"You will be redirected to" = "리디렉션됩니다";
+"Are you sure?" = "확실합니까?";
+"I'm sure" = "나는 확신한다";
+
+"Account" = "계정";
+"No Account name!" = "계정 이름 없음!";
+"Account name is required." = "계정 이름은 필수 항목입니다.";
+"Delete Acc" = "계정 삭제";
+
+"Entry name" = "항목 이름";
+"No Entry name!" = "항목 이름 없음!";
+"Entry name is required." = "항목 이름이 필요합니다.";
+"Add Entry" = "항목 추가";
+"Add new entry for" = "새 항목 추가 ";
+"Delete Entry" = "항목 삭제";
+
+"Username" = "사용자 이름";
+
+"Password" = "암호";
+"Enter Password" = "암호 입력";
+"Empty password" = "빈 암호";
+"Please enter your password." = "비밀번호를 입력하십시오.";
+"Passwords do not match!"  = "비밀번호가 일치하지 않습니다!";
+"Please enter your password again." = "비밀번호를 다시 입력하십시오.";
+"Set your backup password for LoginKeeper" = "로그인 키퍼의 백업 암호 설정";
+"Password is required!" = "비밀번호가 필요합니다!";
+"Please set your password to continue." = "계속하려면 암호를 설정하십시오.";
+
+"Comment" = "댓글";
+"Version" = "버전";
+"build" = "빌드";
+"Search" = "검색";
+
+"You are not authorised to use this feature." = "이 기능을 사용할 수있는 권한이 없습니다.";
+"In progress..." = "진행 중 ...";
+"We're working on this one!" = "우리는이 작업을하고 있습니다!";
+"Oops! Unable to save changes at this time, please try again!" = "죄송합니다! 지금은 변경 사항을 저장할 수 없습니다. 다시 시도하십시오!";
+"Oops! Unable to fetch data at this time, please try again!" = "지금 데이터를 가져올 수 없습니다. 다시 시도하십시오!";
+"Entries of" = "항목";
+"details" = "세부 정보";
+"Identify yourself" = "신분 확인";
+"LoginKeeper® was developed solely using Apple Libraries and available resources provided by Apple and free open source resources. I, Dusan Juranovic, as a developer of LoginKeeper®, claim all distribution rights of LoginKeeper® as well as all copyrights©. LoginKeeper® is NOT recommended for storing valuable information such as , credit card details, bank details and all other information where loss of such information would bare great impact to individuals or companies alike and therefore LoginKeeper®  and I, Dusan Juranovic (developer), will not be held responsible for loss of any such information or assets. LoginKeeper® is intended only for purpose of not having to remember all of your login details or writing them down on pieces of paper. It is users judgment call to decide which information they enter into the app. If you have any issues or suggestions, please write an email to below provided email address. Thanks." = "로그인 키퍼는 애플 라이브러리와 애플이 제공하는 리소스와 무료 오픈 소스 리소스를 사용하여 독자적으로 개발되었습니다. 두산 주라노 빅 (Dusan Juranovic)은 로그인 키퍼 (Login Keeper)의 개발자로서 모든 저작권뿐만 아니라 모든 로그인 키퍼의 배포권을 주장합니다. 신용 카드 세부 정보, 은행 정보 및 그러한 정보의 손실이 개인이나 회사 모두에게 큰 영향을 줄 수있는 모든 기타 정보와 같은 중요한 정보를 저장하는 데는 사용하지 않는 것이 좋습니다. 로그인 키퍼와 나는, Dusan Juranovic (개발자)는 개최되지 않습니다. 로그인 키퍼는 귀하의 로그인 정보를 모두 기억하거나 종이에 적어 두지 않아도되는 것을 목적으로 한 것입니다. 문제가 있거나 제안 사항이 있으면 아래 제공된 전자 메일 주소로 전자 메일을 보내주십시오. 감사합니다. ";
+

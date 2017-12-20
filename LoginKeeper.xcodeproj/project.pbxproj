@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1111F1131FE9A91500663E1E /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1111F1151FE9A91500663E1E /* Localizable.strings */; };
+		1111F1231FE9B7F400663E1E /* LocalizationStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1111F1221FE9B7F400663E1E /* LocalizationStrings.swift */; };
+		1111F1261FE9D07F00663E1E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1111F1281FE9D07F00663E1E /* InfoPlist.strings */; };
 		111EB6CD1F0E2DDD00B12AC8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111EB6CC1F0E2DDD00B12AC8 /* AppDelegate.swift */; };
 		111EB6CF1F0E2DDD00B12AC8 /* AccountsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111EB6CE1F0E2DDD00B12AC8 /* AccountsViewController.swift */; };
 		111EB6D21F0E2DDD00B12AC8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 111EB6D01F0E2DDD00B12AC8 /* Main.storyboard */; };
@@ -35,6 +38,61 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1111F0DF1FE997F300663E1E /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
+		1111F0E01FE997F300663E1E /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		1111F0E11FE9980500663E1E /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Main.strings"; sourceTree = "<group>"; };
+		1111F0E21FE9980500663E1E /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		1111F0E31FE9981200663E1E /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Main.strings; sourceTree = "<group>"; };
+		1111F0E41FE9981200663E1E /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		1111F0E71FE9982800663E1E /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Main.strings; sourceTree = "<group>"; };
+		1111F0E81FE9982800663E1E /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		1111F0E91FE9982D00663E1E /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Main.strings; sourceTree = "<group>"; };
+		1111F0EA1FE9982D00663E1E /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		1111F0EB1FE9983400663E1E /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Main.strings; sourceTree = "<group>"; };
+		1111F0EC1FE9983400663E1E /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		1111F0ED1FE9984100663E1E /* hi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = hi; path = hi.lproj/Main.strings; sourceTree = "<group>"; };
+		1111F0EE1FE9984100663E1E /* hi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = hi; path = hi.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		1111F0EF1FE9984800663E1E /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Main.strings"; sourceTree = "<group>"; };
+		1111F0F01FE9984800663E1E /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		1111F0F31FE9985B00663E1E /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/Main.strings; sourceTree = "<group>"; };
+		1111F0F41FE9985B00663E1E /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		1111F0F51FE9987C00663E1E /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Main.strings; sourceTree = "<group>"; };
+		1111F0F61FE9987D00663E1E /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		1111F1141FE9A91500663E1E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		1111F1161FE9A91800663E1E /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		1111F1171FE9A91A00663E1E /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		1111F1181FE9A91C00663E1E /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
+		1111F11A1FE9A92000663E1E /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
+		1111F11B1FE9A92100663E1E /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
+		1111F11C1FE9A92300663E1E /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
+		1111F11D1FE9A92400663E1E /* hi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = hi; path = hi.lproj/Localizable.strings; sourceTree = "<group>"; };
+		1111F11E1FE9A92700663E1E /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		1111F11F1FE9A92A00663E1E /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/Localizable.strings; sourceTree = "<group>"; };
+		1111F1201FE9A92B00663E1E /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
+		1111F1221FE9B7F400663E1E /* LocalizationStrings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizationStrings.swift; sourceTree = "<group>"; };
+		1111F1271FE9D07F00663E1E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		1111F1291FE9D08300663E1E /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
+		1111F12A1FE9D08500663E1E /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
+		1111F12B1FE9D08600663E1E /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		1111F12D1FE9D08900663E1E /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		1111F12E1FE9D08B00663E1E /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		1111F12F1FE9D08C00663E1E /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		1111F1301FE9D08D00663E1E /* hi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = hi; path = hi.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		1111F1311FE9D08F00663E1E /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
+		1111F1321FE9D09100663E1E /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		1111F1331FE9D09300663E1E /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		1111F1351FEADFF300663E1E /* sr-RS */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "sr-RS"; path = "sr-RS.lproj/Main.strings"; sourceTree = "<group>"; };
+		1111F1361FEADFF300663E1E /* sr-RS */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "sr-RS"; path = "sr-RS.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		1111F1371FEADFF300663E1E /* sr-RS */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "sr-RS"; path = "sr-RS.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
+		1111F1381FEADFF400663E1E /* sr-RS */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "sr-RS"; path = "sr-RS.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		1111F13D1FEB10B500663E1E /* sr-Latn */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "sr-Latn"; path = "sr-Latn.lproj/Main.strings"; sourceTree = "<group>"; };
+		1111F13E1FEB10B600663E1E /* sr-Latn */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "sr-Latn"; path = "sr-Latn.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		1111F13F1FEB10B600663E1E /* sr-Latn */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "sr-Latn"; path = "sr-Latn.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
+		1111F1401FEB10B600663E1E /* sr-Latn */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "sr-Latn"; path = "sr-Latn.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		1111F1411FEB13F300663E1E /* pt-PT */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-PT"; path = "pt-PT.lproj/Main.strings"; sourceTree = "<group>"; };
+		1111F1421FEB13F300663E1E /* pt-PT */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-PT"; path = "pt-PT.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		1111F1431FEB13F300663E1E /* pt-PT */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-PT"; path = "pt-PT.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
+		1111F1441FEB13F300663E1E /* pt-PT */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-PT"; path = "pt-PT.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		111EB6C91F0E2DDD00B12AC8 /* LoginKeeper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LoginKeeper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		111EB6CC1F0E2DDD00B12AC8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		111EB6CE1F0E2DDD00B12AC8 /* AccountsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountsViewController.swift; sourceTree = "<group>"; };
@@ -99,12 +157,15 @@
 		111EB6CB1F0E2DDD00B12AC8 /* LoginKeeper */ = {
 			isa = PBXGroup;
 			children = (
+				1111F1281FE9D07F00663E1E /* InfoPlist.strings */,
+				1111F1151FE9A91500663E1E /* Localizable.strings */,
 				11A0A9AE1FE5F76500BF38FF /* LogosViewController.swift */,
 				111EB6D01F0E2DDD00B12AC8 /* Main.storyboard */,
 				111EB6CE1F0E2DDD00B12AC8 /* AccountsViewController.swift */,
 				111EB6E31F0E33DC00B12AC8 /* AddNewAccountViewController.swift */,
 				11A0A9AA1FE5F2C600BF38FF /* Logos.swift */,
 				111EB6E51F0E382000B12AC8 /* EntriesViewController.swift */,
+				1111F1221FE9B7F400663E1E /* LocalizationStrings.swift */,
 				11E850F81F18DE5900F1B5C7 /* InfoTableViewController.swift */,
 				111EB6E91F0E3C2D00B12AC8 /* AddNewEntryViewController.swift */,
 				111EB6EB1F0E3EA500B12AC8 /* DetailsViewController.swift */,
@@ -230,6 +291,19 @@
 			knownRegions = (
 				en,
 				Base,
+				"zh-Hant",
+				es,
+				ja,
+				fr,
+				de,
+				hi,
+				"pt-BR",
+				ko,
+				ru,
+				"zh-Hans",
+				"sr-RS",
+				"sr-Latn",
+				"pt-PT",
 			);
 			mainGroup = 111EB6C01F0E2DDD00B12AC8;
 			productRefGroup = 111EB6CA1F0E2DDD00B12AC8 /* Products */;
@@ -246,6 +320,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1111F1131FE9A91500663E1E /* Localizable.strings in Resources */,
+				1111F1261FE9D07F00663E1E /* InfoPlist.strings in Resources */,
 				111EB6DA1F0E2DDD00B12AC8 /* LaunchScreen.storyboard in Resources */,
 				11779E431F4A25E8000F0D7D /* GoogleService-Info.plist in Resources */,
 				11A0A9A91FE5DA0800BF38FF /* Assets.xcassets in Resources */,
@@ -317,6 +393,7 @@
 				111EB6F11F0E431E00B12AC8 /* Account+CoreDataClass.swift in Sources */,
 				1196E3301FCDB386000FCB37 /* AboutViewController.swift in Sources */,
 				111EB6E81F0E3A0100B12AC8 /* EntriesCell.swift in Sources */,
+				1111F1231FE9B7F400663E1E /* LocalizationStrings.swift in Sources */,
 				111EB6EC1F0E3EA500B12AC8 /* DetailsViewController.swift in Sources */,
 				111EB6F41F0E431E00B12AC8 /* Entry+CoreDataProperties.swift in Sources */,
 				11E850F91F18DE5900F1B5C7 /* InfoTableViewController.swift in Sources */,
@@ -337,10 +414,65 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		1111F1151FE9A91500663E1E /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1111F1141FE9A91500663E1E /* en */,
+				1111F1161FE9A91800663E1E /* zh-Hans */,
+				1111F1171FE9A91A00663E1E /* zh-Hant */,
+				1111F1181FE9A91C00663E1E /* es */,
+				1111F11A1FE9A92000663E1E /* ja */,
+				1111F11B1FE9A92100663E1E /* fr */,
+				1111F11C1FE9A92300663E1E /* de */,
+				1111F11D1FE9A92400663E1E /* hi */,
+				1111F11E1FE9A92700663E1E /* pt-BR */,
+				1111F11F1FE9A92A00663E1E /* ko */,
+				1111F1201FE9A92B00663E1E /* ru */,
+				1111F1381FEADFF400663E1E /* sr-RS */,
+				1111F1401FEB10B600663E1E /* sr-Latn */,
+				1111F1441FEB13F300663E1E /* pt-PT */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		1111F1281FE9D07F00663E1E /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1111F1271FE9D07F00663E1E /* en */,
+				1111F1291FE9D08300663E1E /* zh-Hans */,
+				1111F12A1FE9D08500663E1E /* zh-Hant */,
+				1111F12B1FE9D08600663E1E /* es */,
+				1111F12D1FE9D08900663E1E /* ja */,
+				1111F12E1FE9D08B00663E1E /* fr */,
+				1111F12F1FE9D08C00663E1E /* de */,
+				1111F1301FE9D08D00663E1E /* hi */,
+				1111F1311FE9D08F00663E1E /* pt-BR */,
+				1111F1321FE9D09100663E1E /* ko */,
+				1111F1331FE9D09300663E1E /* ru */,
+				1111F1371FEADFF300663E1E /* sr-RS */,
+				1111F13F1FEB10B600663E1E /* sr-Latn */,
+				1111F1431FEB13F300663E1E /* pt-PT */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
 		111EB6D01F0E2DDD00B12AC8 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				111EB6D11F0E2DDD00B12AC8 /* Base */,
+				1111F0DF1FE997F300663E1E /* zh-Hans */,
+				1111F0E11FE9980500663E1E /* zh-Hant */,
+				1111F0E31FE9981200663E1E /* es */,
+				1111F0E71FE9982800663E1E /* ja */,
+				1111F0E91FE9982D00663E1E /* fr */,
+				1111F0EB1FE9983400663E1E /* de */,
+				1111F0ED1FE9984100663E1E /* hi */,
+				1111F0EF1FE9984800663E1E /* pt-BR */,
+				1111F0F31FE9985B00663E1E /* ko */,
+				1111F0F51FE9987C00663E1E /* ru */,
+				1111F1351FEADFF300663E1E /* sr-RS */,
+				1111F13D1FEB10B500663E1E /* sr-Latn */,
+				1111F1411FEB13F300663E1E /* pt-PT */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -349,6 +481,19 @@
 			isa = PBXVariantGroup;
 			children = (
 				111EB6D91F0E2DDD00B12AC8 /* Base */,
+				1111F0E01FE997F300663E1E /* zh-Hans */,
+				1111F0E21FE9980500663E1E /* zh-Hant */,
+				1111F0E41FE9981200663E1E /* es */,
+				1111F0E81FE9982800663E1E /* ja */,
+				1111F0EA1FE9982D00663E1E /* fr */,
+				1111F0EC1FE9983400663E1E /* de */,
+				1111F0EE1FE9984100663E1E /* hi */,
+				1111F0F01FE9984800663E1E /* pt-BR */,
+				1111F0F41FE9985B00663E1E /* ko */,
+				1111F0F61FE9987D00663E1E /* ru */,
+				1111F1361FEADFF300663E1E /* sr-RS */,
+				1111F13E1FEB10B600663E1E /* sr-Latn */,
+				1111F1421FEB13F300663E1E /* pt-PT */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -360,6 +505,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -418,6 +564,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";

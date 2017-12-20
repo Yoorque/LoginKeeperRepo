@@ -25,7 +25,9 @@ class InfoTableViewController: UITableViewController, BWWalkthroughViewControlle
         guard let build = Bundle.main.infoDictionary?["CFBundleVersion"] as? String else {
             return
         }
-        versionLabel.text = "Version \(version) (build \(build))"
+        let versionLoc = NSLocalizedString("Version", comment: "")
+        let buildLoc = NSLocalizedString("build", comment: "")
+        versionLabel.text = "\(versionLoc) \(version) (\(buildLoc) \(build))"
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -64,6 +66,7 @@ class InfoTableViewController: UITableViewController, BWWalkthroughViewControlle
     override func tableView(_ tableView: UITableView, estimatedHeightForFooterInSection section: Int) -> CGFloat {
         return 2
     }
+    // MARK: - Localization
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let clickedCell = tableView.cellForRow(at: indexPath)
@@ -75,8 +78,8 @@ class InfoTableViewController: UITableViewController, BWWalkthroughViewControlle
                 if authenticated == true {
                     UIApplication.shared.open(url, options: [:])
                 } else {
-                    let alert = UIAlertController(title: "Error", message: "You are not authorised to use this feature", preferredStyle: .alert)
-                    alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                    let alert = UIAlertController(title: errorLoc, message: notAuthorisedLoc, preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: okLoc, style: .default, handler: nil))
                     present(alert, animated: true, completion: nil)
                 }
             }
@@ -104,17 +107,18 @@ class InfoTableViewController: UITableViewController, BWWalkthroughViewControlle
     }
     
     func leavingAppAlert(toURL url: URL, title: String) {
-        let alert = UIAlertController(title: "Leaving LoginKeeper", message: "You will be redirected to \(title). Are you sure?", preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "I'm sure", style: .default, handler: { _ in
+        let alert = UIAlertController(title: leavingLoc, message: "\(leavingMessageLoc) \(title). \(leavingMessageLoc2)", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: sureAnswerLoc, style: .default, handler: { _ in
              UIApplication.shared.open(url, options: [:], completionHandler: nil)
         }))
-        alert.addAction(UIAlertAction(title: "Cancel", style: .default, handler: nil))
+        alert.addAction(UIAlertAction(title: cancelAnswerLoc, style: .default, handler: nil))
         present(alert, animated: true, completion: nil)
     }
     
     func underContructionAlert() {
-        let alert = UIAlertController(title: "In Progress...", message: "We're working on this one!", preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        
+        let alert = UIAlertController(title: inProgressLoc, message: workingLoc, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: okLoc, style: .default, handler: nil))
         present(alert, animated: true, completion: nil)
     }
     

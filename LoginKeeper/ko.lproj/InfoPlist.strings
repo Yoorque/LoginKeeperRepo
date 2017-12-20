@@ -1,0 +1,8 @@
+/* 
+  InfoPlist.strings
+  LoginKeeper
+
+  Created by Dusan Juranovic on 12/19/17.
+  Copyright © 2017 Dusan Juranovic. All rights reserved.
+*/
+"CFBundleDisplayName" = "로그인 키퍼";

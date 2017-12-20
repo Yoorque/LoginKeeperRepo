@@ -95,7 +95,7 @@ class AddNewEntryViewController: UIViewController, UITextFieldDelegate {
     
     func displayAlert(title: String, msg: String) {
         let alert = UIAlertController(title: title, message: msg, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        alert.addAction(UIAlertAction(title: okLoc, style: .default, handler: nil))
         present(alert, animated: true, completion: nil)
     }
     
@@ -117,16 +117,16 @@ class AddNewEntryViewController: UIViewController, UITextFieldDelegate {
                         navigationController?.popViewController(animated: true)
                     } catch {
                         print("Unable to save: \(error)")
-                        displayAlert(title: "Error!", msg: "Oops! Unable to save at this time, please try again.")
+                        displayAlert(title: errorLoc, msg: unableToSaveMessageLoc)
                     }
                 } else {
-                    displayAlert(title: "No Entry name!", msg: "New Entry name is required.")
+                    displayAlert(title: noEntryLoc, msg: noEntryMessageLoc)
                 }
             } else {
-                displayAlert(title: "Empty password", msg: "Please enter your password.")
+                displayAlert(title: emptyPasswordLoc, msg: emptyPasswordMessageLoc)
             }
         } else {
-            displayAlert(title: "Passwords do not match!", msg: "Please enter your password again.")
+            displayAlert(title: passNotMatchLoc, msg: passNotMatchMessageLoc)
         }
     }
     

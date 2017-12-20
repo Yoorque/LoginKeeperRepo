@@ -166,20 +166,20 @@ class AddNewAccountViewController: UIViewController, UITextFieldDelegate, UIScro
                             navigationController?.popViewController(animated: true)
                             
                         } catch {
-                            displayAlert(title: "Error!", msg: "Oops! Unable to save at this time, please try again.")
+                            displayAlert(title: errorLoc, msg: unableToSaveMessageLoc)
                         }
                     }
                     else {
-                        displayAlert(title: "No Entry name!", msg: "Entry name is required.")
+                        displayAlert(title: noEntryLoc, msg: noEntryMessageLoc)
                     }
                 } else {
-                    displayAlert(title: "No Account name!", msg: "Account name is required.")
+                    displayAlert(title: noAccountLoc, msg: noAccountMessageLoc)
                 }
             } else {
-                displayAlert(title: "Empty password", msg: "Please enter your password.")
+                displayAlert(title: emptyPasswordLoc, msg: emptyPasswordMessageLoc)
             }
         } else {
-            displayAlert(title: "Passwords do not match!", msg: "Please enter your password again.")
+            displayAlert(title: passNotMatchLoc, msg: passNotMatchMessageLoc)
         }
         logoImagesPNG.remove(at: 0)
         logoImagesPNG.insert("pngLoginKeeper", at: 0)

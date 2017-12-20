@@ -1,0 +1,62 @@
+/* 
+  Localizable.strings
+  LoginKeeper
+
+  Created by Dusan Juranovic on 12/19/17.
+  Copyright © 2017 Dusan Juranovic. All rights reserved.
+*/
+
+"About LoginKeeper" = "O LoginKeeper-u";
+"COPIED TO CLIPBOARD" = "KOPIRANO";
+
+"OK" = "OK";
+"Done" = "Završeno";
+"Save" = "Snimi";
+"Edit" = "Izmeni";
+"Cancel" = "Otkaži";
+"Error!" = "Greška!";
+"Lock" = "Zaključaj";
+"Unlock" = "Otključaj";
+"Leaving LoginKeeper" = "Napuštate LoginKeeper";
+"You will be redirected to" = "Bićete preusmereni na";
+"Are you sure?" = "Da li ste sigurni?";
+"I'm sure" = "Siguran/na sam";
+
+"Account" = "Nalog";
+"No Account name!" = "Nema naziva Naloga!";
+"Account name is required." = "Naziv Naloga je obavezan.";
+"Delete Acc" = "Izbriši Nalog";
+
+"Entry name" = "Naziv Unosa";
+"No Entry name!" = "Nema naziva Unosa!";
+"Entry name is required." = "Naziv Unosa je obavezan.";
+"Add Entry" = "Dodaj Unos";
+"Add new entry for" = "Dodaj Unos za Nalog";
+"Delete Entry" = "Izbriši Unos";
+
+"Username" = "Korisničko ime";
+
+"Password" = "Lozinka";
+"Enter Password" = "Unesite lozinku";
+"Empty password" = "Prazna lozinka";
+"Please enter your password." = "Molimo vas unesite lozinku.";
+"Passwords do not match!"  = "Lozinke se ne podudaraju!";
+"Please enter your password again." = "Molimo vas ponovo unesite lozinku.";
+"Set your backup password for LoginKeeper" = "Postavite sigurnosnu lozinku za LoginKeeper";
+"Password is required!" = "Lozinka je obavezna!";
+"Please set your password to continue." = "Molimo vas postavite lozinku za nastavak.";
+
+"Comment" = "Komentar";
+"Version" = "Verzija";
+"build" = "podverzija";
+
+"You are not authorised to use this feature." = "Niste ovlašćeni da koristite ovu opciju.";
+"In progress..." = "U izradi...";
+"We're working on this one!" = "Radimo na ovome!";
+"Oops! Unable to save changes at this time, please try again!" = "Ups! Trenutno ne možemo da snimimo izmene. Molimo vas pokušajte ponovo!";
+"Oops! Unable to fetch data at this time, please try again!" = "Ups! Trenutno ne možemo da dodjemo do podataka. Molimo vas pokušajte ponovo!";
+"Entries of" = "Unos za";
+"details" = "detalji";
+"Identify yourself" = "Identifikujte se";
+"LoginKeeper® was developed solely using Apple Libraries and available resources provided by Apple and free open source resources. I, Dusan Juranovic, as a developer of LoginKeeper®, claim all distribution rights of LoginKeeper® as well as all copyrights©. LoginKeeper® is NOT recommended for storing valuable information such as , credit card details, bank details and all other information where loss of such information would bare great impact to individuals or companies alike and therefore LoginKeeper®  and I, Dusan Juranovic (developer), will not be held responsible for loss of any such information or assets. LoginKeeper® is intended only for purpose of not having to remember all of your login details or writing them down on pieces of paper. It is users judgment call to decide which information they enter into the app. If you have any issues or suggestions, please write an email to below provided email address. Thanks." = "LoginKeeper® je razvijen isključivo koristeći Apple-ove datoteke i resurse obezbedjene od strane Apple-a. Ja, Dušan Juranović, kao kreator LoginKeeper®-a, zadržavam sva prava za distribuciju LoginKeeper®-a kao i sva prava© vezana za LoginKeeper®. Nije preporučeno koristiti LoginKeeper® za skladištenje vrednih informacija kao što su, detalji kreditnih kartica, detalji banaka niti svih ostalih podataka, čiji gubitak može izazvati teške posledice po privatna ili pravna lica. Stoga se, ja, Dušan Juranović (developer), kao i LoginKeeper®, ogradjujemo od svake odgovornosti za gubitak takvih ili sličnih informacija korišćenjem ove aplikacije.LoginKeeper® je namenjen samo za čuvanje pristupnih podataka za razne naloge, kako biste ih uvek imali pri ruci kada zatrebaju. Odgovornost je svakog korisnika da odluči koje će podatke skladištiti u aplikaciji. Ukoliko imate nekih problema sa aplikacijom ili sugestija za poboljšanje rada LoginKeeper®-a, molim vas da pišete na email adresu ispod. Hvala.";
+

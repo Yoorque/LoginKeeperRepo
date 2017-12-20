@@ -1,0 +1,63 @@
+/* 
+  Localizable.strings
+  LoginKeeper
+
+  Created by Dusan Juranovic on 12/19/17.
+  Copyright © 2017 Dusan Juranovic. All rights reserved.
+*/
+
+"About LoginKeeper" = "О LoginKeeper";
+"COPIED TO CLIPBOARD" = "КОПИРОВАНO К КЛИПАРУ";
+
+"OK" = "OK";
+"Done" = "Готово";
+"Save" = "Сохранить";
+"Edit" = "Изменить";
+"Cancel" = "Отмена";
+"Error!" = "Ошибка!";
+"Lock" = "Блокировать";
+"Unlock" = "Разблокировать";
+"Leaving LoginKeeper" = "Выход из LoginKeeper";
+"You will be redirected to" = "Вы будете перенаправлены на";
+"Are you sure?" = "Вы уверены?";
+"I'm sure" = "Я уверен»";
+
+"Account" = "Учетная запись";
+"No Account name!" = "Нет имени учетной записи!";
+"Account name is required." = "Имя учетной записи требуется.";
+"Delete Acc" = "Удалить учетную запись";
+
+"Entry name" = "Название записи";
+"No Entry name!" = "Нет имени записи!";
+"Entry name is required." = "Имя записи требуется.";
+"Add Entry" = "Добавить запись";
+"Add new entry for" = "Добавить новую запись для";
+"Delete Entry" = "Удалить запись";
+
+"Username" = "Имя пользователя";
+
+"Password" = "Пароль";
+"Enter Password" = "Введите пароль";
+"Empty password" = "Пустой пароль";
+"Please enter your password." = "Пожалуйста введите ваш пароль.";
+"Passwords do not match!"  = "Пароли не совпадают!";
+"Please enter your password again." = "Пожалуйста, введите свой пароль еще раз.";
+"Set your backup password for LoginKeeper" = "Установите пароль для резервного копирования для LoginKeeper";
+"Password is required!" = "Необходим пароль!";
+"Please set your password to continue." = "Пожалуйста, установите пароль для продолжения.";
+
+"Comment" = "Комментарий";
+"Version" = "Версия";
+"build" = "строить";
+"Search" = "Поиск";
+
+"You are not authorised to use this feature." = " вас нет права использовать эту функцию.";
+"In progress..." = "Выполняется...";
+"We're working on this one!" = "Мы работаем над этим!";
+"Oops! Unable to save changes at this time, please try again!" = "К сожалению, не удалось сохранить изменения в это время, повторите попытку!!";
+"Oops! Unable to fetch data at this time, please try again!" = "К сожалению, не удалось получить данные в это время, попробуйте еще раз!";
+"Entries of" = "Записи";
+"details" = "детали";
+"Identify yourself" = "Идентифицировать себя";
+"LoginKeeper® was developed solely using Apple Libraries and available resources provided by Apple and free open source resources. I, Dusan Juranovic, as a developer of LoginKeeper®, claim all distribution rights of LoginKeeper® as well as all copyrights©. LoginKeeper® is NOT recommended for storing valuable information such as , credit card details, bank details and all other information where loss of such information would bare great impact to individuals or companies alike and therefore LoginKeeper®  and I, Dusan Juranovic (developer), will not be held responsible for loss of any such information or assets. LoginKeeper® is intended only for purpose of not having to remember all of your login details or writing them down on pieces of paper. It is users judgment call to decide which information they enter into the app. If you have any issues or suggestions, please write an email to below provided email address. Thanks." = "ЛогинКипер® был разработан исключительно с использованием библиотек Apple и доступных ресурсов, предоставляемых Apple и бесплатными ресурсами с открытым исходным кодом. Я, Душан Юранович, как разработчик ЛогинКипер®, претендую на все права на распространение ЛогинКипер®, а также на все авторские права ©. ЛогинКипер® является НЕ рекомендуется хранить ценную информацию, такую ​​как данные кредитной карты, банковские реквизиты и всю другую информацию, где потеря такой информации может оказать большое влияние как на отдельных лиц, так и на пользователей, поэтому ЛогинКипер® и я, Душан Юранович (разработчик), не будут проводиться ответственный за потерю любой такой информации или активов. ЛогинКипер® предназначен только для того, чтобы не запоминать все ваши данные для входа или записывать их на листы бумаги. Пользовательский вызов пользователя определяет, какую информацию они вводят в приложение Если у вас есть какие-либо вопросы или предложения, пожалуйста, напишите письмо на указанный ниже адрес электронной почты.";
+
