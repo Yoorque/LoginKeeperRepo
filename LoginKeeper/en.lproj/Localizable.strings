@@ -1,0 +1,70 @@
+/* 
+  Localizable.strings
+  LoginKeeper
+
+  Created by Dusan Juranovic on 12/19/17.
+  Copyright © 2017 Dusan Juranovic. All rights reserved.
+*/
+
+"About LoginKeeper" = "About LoginKeeper";
+"COPIED TO CLIPBOARD" = "COPIED TO CLIPBOARD";
+
+"OK" = "OK";
+"Done" = "Done";
+"Save" = "Save";
+"Edit" = "Edit";
+"Cancel" = "Cancel";
+"Error!" = "Error!";
+"Lock" = "Lock";
+"Unlock" = "Unlock";
+"Leaving LoginKeeper" = "Leaving LoginKeeper";
+"You will be redirected to" = "You will be redirected to";
+"Are you sure?" = "Are you sure?";
+"I'm sure" = "I'm sure";
+
+"Account" = "Account";
+"No Account name!" = "No Account name!";
+"Account name is required." = "Account name is required.";
+"Delete Acc" = "Delete Acc";
+
+"Entry name" = "Entry name";
+"No Entry name!" = "No Entry name!";
+"Entry name is required." = "Entry name is required.";
+"Add Entry" = "Add Entry";
+"Add new entry for" = "Add new entry for";
+"Delete Entry" = "Delete Entry";
+
+"Username" = "Username";
+
+"Password" = "Password";
+"Enter Password" = "Enter Password";
+"Empty password" = "Empty password";
+"Please enter your password." = "Please enter your password.";
+"Passwords do not match!"  = "Passwords do not match!";
+"Please enter your password again." = "Please enter your password again.";
+"Set your backup password for LoginKeeper" = "Set your backup password for LoginKeeper";
+"Password is required!" = "Password is required!";
+"Please set your password to continue." = "Please set your password to continue.";
+
+"Comment" = "Comment";
+"Version" = "Version";
+"build" = "build";
+"Search" = "Search";
+
+"You are not authorised to use this feature." = "You are not authorised to use this feature.";
+"In progress..." = "In progress...";
+"We're working on this one!" = "We're working on this one!";
+"Oops! Unable to save changes at this time, please try again!" = "Oops! Unable to save changes at this time, please try again!";
+"Oops! Unable to fetch data at this time, please try again!" = "Oops! Unable to fetch data at this time, please try again!";
+"Entries of" = "Entries of";
+"details" = "details";
+"Identify yourself" = "Identify yourself";
+"LoginKeeper® was developed solely using Apple Libraries and available resources provided by Apple and free open source resources. I, Dusan Juranovic, as a developer of LoginKeeper®, claim all distribution rights of LoginKeeper® as well as all copyrights©. LoginKeeper® is NOT recommended for storing valuable information such as , credit card details, bank details and all other information where loss of such information would bare great impact to individuals or companies alike and therefore LoginKeeper®  and I, Dusan Juranovic (developer), will not be held responsible for loss of any such information or assets. LoginKeeper® is intended only for purpose of not having to remember all of your login details or writing them down on pieces of paper. It is users judgment call to decide which information they enter into the app. If you have any issues or suggestions, please write an email to below provided email address. Thanks." = "LoginKeeper® was developed solely using Apple Libraries and available resources provided by Apple and free open source resources. I, Dusan Juranovic, as a developer of LoginKeeper®, claim all distribution rights of LoginKeeper® as well as all copyrights©. LoginKeeper® is NOT recommended for storing valuable information such as , credit card details, bank details and all other information where loss of such information would bare great impact to individuals or companies alike and therefore LoginKeeper®  and I, Dusan Juranovic (developer), will not be held responsible for loss of any such information or assets. LoginKeeper® is intended only for purpose of not having to remember all of your login details or writing them down on pieces of paper. It is users judgment call to decide which information they enter into the app. If you have any issues or suggestions, please write an email to below provided email address. Thanks.";
+
+
+
+
+
+
+
+
