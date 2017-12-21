@@ -6,8 +6,8 @@
   Copyright © 2017 Dusan Juranovic. All rights reserved.
 */
 
-"About LoginKeeper" = "About LoginKeeper";
-"COPIED TO CLIPBOARD" = "COPIED TO CLIPBOARD";
+"About LoginKeeper" = "O LoginKeeper-u";
+"COPIED" = "KOPIRANO";
 
 "OK" = "OK";
 "Done" = "Završeno";
@@ -21,6 +21,13 @@
 "You will be redirected to" = "Bićete preusmereni na";
 "Are you sure?" = "Da li ste sigurni?";
 "I'm sure" = "Siguran/na sam";
+"Use Passcode" = "Koristite kod";
+"Close" = "Zatvori";
+"Skip" = "Preskoči";
+
+"No identities are enroled" = "Nema registrovanih identiteta";
+"Canceled by user." = "Otkazano od strane korisnika.";
+"Canceled by another authentication." = "Otkazano drugom autentikacijom.";
 
 "Account" = "Nalog";
 "No Account name!" = "Nema naziva Naloga!";

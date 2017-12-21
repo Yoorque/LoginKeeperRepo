@@ -6,8 +6,8 @@
   Copyright © 2017 Dusan Juranovic. All rights reserved.
 */
 
-"About LoginKeeper" = "О LoginKeeper";
-"COPIED TO CLIPBOARD" = "КОПИРОВАНO К КЛИПАРУ";
+"About LoginKeeper" = "О ЛогинКиперу";
+"COPIED" = "КОПИРОВАНO";
 
 "OK" = "OK";
 "Done" = "Готово";
@@ -17,10 +17,17 @@
 "Error!" = "Ошибка!";
 "Lock" = "Блокировать";
 "Unlock" = "Разблокировать";
-"Leaving LoginKeeper" = "Выход из LoginKeeper";
+"Leaving LoginKeeper" = "Выход из ЛогинКипера";
 "You will be redirected to" = "Вы будете перенаправлены на";
 "Are you sure?" = "Вы уверены?";
 "I'm sure" = "Я уверен»";
+"Use Passcode" = "Использовать код доступа";
+"Close" = "Закрыть";
+"Skip" = "Пропускать";
+
+"No identities are enroled" = "Никакие личности не зарегистрированы";
+"Canceled by user." = "Отменено пользователем.";
+"Canceled by another authentication." = "Отменено другой аутентификацией.";
 
 "Account" = "Учетная запись";
 "No Account name!" = "Нет имени учетной записи!";
@@ -42,7 +49,7 @@
 "Please enter your password." = "Пожалуйста введите ваш пароль.";
 "Passwords do not match!"  = "Пароли не совпадают!";
 "Please enter your password again." = "Пожалуйста, введите свой пароль еще раз.";
-"Set your backup password for LoginKeeper" = "Установите пароль для резервного копирования для LoginKeeper";
+"Set your backup password for LoginKeeper" = "Установите пароль для резервного копирования для ЛогинКипер";
 "Password is required!" = "Необходим пароль!";
 "Please set your password to continue." = "Пожалуйста, установите пароль для продолжения.";
 

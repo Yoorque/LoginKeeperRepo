@@ -7,7 +7,7 @@
 */
 
 "About LoginKeeper" = "Sobre o LoginKeeper";
-"COPIED TO CLIPBOARD" = "COPIADO";
+"COPIED" = "COPIADO";
 
 "OK" = "OK";
 "Done" = "Feito";
@@ -21,6 +21,13 @@
 "You will be redirected to" = "Você será redirecionado para";
 "Are you sure?" = "Você tem certeza?";
 "I'm sure" = "Tenho certeza";
+"Use Passcode" = "Use a senha";
+"Close" = "Fechar";
+"Skip" = "Pular";
+
+"No identities are enroled" = "Nenhuma identidade é registrada";
+"Canceled by user." = "Cancelado pelo usuário.";
+"Canceled by another authentication." = "Cancelado por outra autenticação.";
 
 "Account" = "Conta";
 "No Account name!" = "Nenhum nome da Conta!";

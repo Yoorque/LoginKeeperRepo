@@ -6,7 +6,7 @@
   Copyright © 2017 Dusan Juranovic. All rights reserved.
 */
 "About LoginKeeper" = "關於登錄守護者";
-"COPIED TO CLIPBOARD" = "複製到剪貼板";
+"COPIED" = "複製";
 
 "OK" = "好";
 "Done" = "完成";
@@ -20,6 +20,13 @@
 "You will be redirected to" = "你將被重定向到";
 "Are you sure?" = "你確定？";
 "I'm sure" = "我確定";
+"Use Passcode" = "使用密碼";
+"Close" = "關";
+"Skip" = "跳躍";
+
+"No identities are enroled" = "沒有身份認同";
+"Canceled by user." = "由用戶取消。";
+"Canceled by another authentication." = "通過另一個身份驗證取消。";
 
 "Account" = "帳戶";
 "No Account name!" = "沒有帳戶名稱！";

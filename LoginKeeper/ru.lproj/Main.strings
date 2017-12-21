@@ -33,7 +33,7 @@
 "E8D-Rq-tOd.title" = "Добавить новую учетную запись";
 
 /* Class = "UILabel"; text = "Entry name"; ObjectID = "EN3-26-xC9"; */
-"EN3-26-xC9.text" = "Название записи";
+"EN3-26-xC9.text" = "Название Записи";
 
 /* Class = "UILabel"; text = "Email:"; ObjectID = "EzQ-BD-0hD"; */
 "EzQ-BD-0hD.text" = "Эл. адрес:";
@@ -51,13 +51,13 @@
 "KRN-c3-QOC.title" = "Блокировать";
 
 /* Class = "UITextField"; placeholder = "Password (required)"; ObjectID = "LNo-xb-YV2"; */
-"LNo-xb-YV2.placeholder" = "Требуется (пароль)";
+"LNo-xb-YV2.placeholder" = "Пароль (обязательно)";
 
 /* Class = "UILabel"; text = "◀︎   Choose your logo from the scroll menu   ▶︎"; ObjectID = "OAQ-SI-m1b"; */
 "OAQ-SI-m1b.text" = "◀︎   Выберите свой логотип в меню прокрутки   ▶︎";
 
 /* Class = "UITextField"; placeholder = "Entry Name (required)"; ObjectID = "Qgw-sU-47I"; */
-"Qgw-sU-47I.placeholder" = "Имя входа (обязательно)";
+"Qgw-sU-47I.placeholder" = "Имя Входа (обязательно)";
 
 /* Class = "UINavigationItem"; title = "Info"; ObjectID = "REf-hL-2HP"; */
 "REf-hL-2HP.title" = "Инфо";

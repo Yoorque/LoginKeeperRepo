@@ -1,6 +1,6 @@
 
 /* Class = "UILabel"; text = "Account name"; ObjectID = "28i-Mw-C5V"; */
-"28i-Mw-C5V.text" = "Nome da conta";
+"28i-Mw-C5V.text" = "Nome da Conta";
 
 /* Class = "UILabel"; text = "Developer:"; ObjectID = "3g6-v0-Ygk"; */
 "3g6-v0-Ygk.text" = "Desenvolvedor:";
@@ -57,7 +57,7 @@
 "OAQ-SI-m1b.text" = "◀︎   Escolha o seu logotipo no menu de rolagem   ▶︎";
 
 /* Class = "UITextField"; placeholder = "Entry Name (required)"; ObjectID = "Qgw-sU-47I"; */
-"Qgw-sU-47I.placeholder" = "Nome da entrada (requerida)";
+"Qgw-sU-47I.placeholder" = "Nome da Entrada (requerida)";
 
 /* Class = "UINavigationItem"; title = "Info"; ObjectID = "REf-hL-2HP"; */
 "REf-hL-2HP.title" = "Info";
@@ -123,7 +123,7 @@
 "v14-yL-ACv.text" = "por Dusan Juranovic";
 
 /* Class = "UITextField"; placeholder = "Account Title (required)"; ObjectID = "vgY-17-wLs"; */
-"vgY-17-wLs.placeholder" = "Título da conta (requerida)";
+"vgY-17-wLs.placeholder" = "Título da Conta (requerida)";
 
 
 /* Class = "UILabel"; text = "All rights reserved. Copyrights©"; ObjectID = "xqa-RF-TvC"; */
@@ -139,6 +139,5 @@
 "yZj-U9-A0o.text" = "Comentário";
 
 /* Class = "UITextField"; placeholder = "Entry Name (required)"; ObjectID = "zOh-H8-h8M"; */
-"zOh-H8-h8M.placeholder" = "Nome da entrada (requerida)";
-
+"zOh-H8-h8M.placeholder" = "Nome da Entrada (requerida)";
 

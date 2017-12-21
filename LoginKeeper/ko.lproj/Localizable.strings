@@ -7,7 +7,7 @@
 */
 
 "About LoginKeeper" = "로그인 키퍼 정보";
-"COPIED TO CLIPBOARD" = "클립 보드에 복사";
+"COPIED" = "복사 됨";
 
 "OK" = "OK";
 "Done" = "완료";
@@ -21,6 +21,13 @@
 "You will be redirected to" = "리디렉션됩니다";
 "Are you sure?" = "확실합니까?";
 "I'm sure" = "나는 확신한다";
+"Use Passcode" = "암호 코드 사용";
+"Close" = "닫기";
+"Skip" = "버킷";
+
+"No identities are enroled" = "신원이 등록되지 않았습니다.";
+"Canceled by user." = "사용자가 취소했습니다.";
+"Canceled by another authentication." = "다른 인증에 의해 취소되었습니다.";
 
 "Account" = "계정";
 "No Account name!" = "계정 이름 없음!";

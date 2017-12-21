@@ -151,7 +151,7 @@ class DetailsViewController: UIViewController, UITextFieldDelegate {
             UIView.animate(withDuration: 0.5, animations: {
                 textField.backgroundColor = UIColor(displayP3Red: 135/255, green: 140/255, blue: 154/255, alpha: 1)
                 textField.textColor = UIColor(displayP3Red: 250/255, green: 250/255, blue: 250/255, alpha: 1)
-                textField.text = NSLocalizedString("COPIED TO CLIPBOARD", comment: "copy notification")
+                textField.text = NSLocalizedString("COPIED", comment: "copy notification")
             }, completion: {_ in
                 UIView.animate(withDuration: 0.5, animations: {
                     textField.backgroundColor = UIColor(displayP3Red: 250/255, green: 250/255, blue: 250/255, alpha: 1)

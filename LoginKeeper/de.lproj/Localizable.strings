@@ -6,8 +6,8 @@
   Copyright © 2017 Dusan Juranovic. All rights reserved.
 */
 
-"About LoginKeeper" = "About LoginKeeper";
-"COPIED TO CLIPBOARD" = "COPIED TO CLIPBOARD";
+"About LoginKeeper" = "Über LoginKeeper";
+"COPIED" = "KOPIERT";
 
 "OK" = "OK";
 "Done" = "Fertig";
@@ -21,6 +21,13 @@
 "You will be redirected to" = "Sie werden weitergeleitet zu";
 "Are you sure?" = "Bist du sicher?";
 "I'm sure" = "Ich bin mir sicher";
+"Use Passcode" = "Verwenden Sie den Passcode";
+"Close" = "Schließen";
+"Skip" = "Überspringen";
+
+"No identities are enroled" = "Keine Identitäten sind angemeldet";
+"Canceled by user." = "Vom Benutzer abgebrochen.";
+"Canceled by another authentication." = "Wird durch eine andere Authentifizierung abgebrochen.";
 
 "Account" = "Konto";
 "No Account name!" = "Kein Kontoname!";

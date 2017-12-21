@@ -168,12 +168,22 @@ class AccountsViewController: UIViewController, UITableViewDelegate, UITableView
     func authenticateUser() {
         let context = LAContext()
         var error: NSError?
+        
         let reason = identifyLoc
+        context.localizedCancelTitle = cancelAnswerLoc
+        context.localizedFallbackTitle = enterPasscodeAnswerLoc
+        
+        if #available(iOS 11.0, *) {
+            context.localizedReason = identifyLoc
+        } else {
+            // Fallback on earlier versions
+        }
         
         if context.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: &error) {
             print("canEvaluateWithTouchID")
             context.evaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, localizedReason:
                 reason, reply: {success, error in
+                    
                     print("EvaluateWithTouchID")
                     // Touch ID
                     DispatchQueue.main.async {
@@ -185,6 +195,7 @@ class AccountsViewController: UIViewController, UITableViewDelegate, UITableView
                             self.lockButton.title = lockLoc
                             print("Success: TouchID")
                         } else {
+                            let errorDescriptionLoc = NSLocalizedString(error!.localizedDescription, comment: "authentication failed message")
                             self.defaults.set(false, forKey: "authenticated")
                             self.accounts = []
                             self.navigationItem.rightBarButtonItem?.isEnabled = false
@@ -194,26 +205,26 @@ class AccountsViewController: UIViewController, UITableViewDelegate, UITableView
                             
                             switch error!._code {
                             case Int(kLAErrorAuthenticationFailed):
-                                self.loginAlert(message: error!.localizedDescription)
-                                print("AuthFailed1")
+                                self.loginAlert(message: errorDescriptionLoc)
+                                print("AuthFailed1 \(errorDescriptionLoc)")
                             case Int(kLAErrorUserCancel):
-                                self.loginAlert(message: error!.localizedDescription)
-                                print("UserCanceled1")
+                                self.loginAlert(message: errorDescriptionLoc)
+                                print("UserCanceled1 \(errorDescriptionLoc)")
                             case Int(kLAErrorBiometryNotEnrolled):
-                                self.loginAlert(message: error!.localizedDescription)
-                                print("biometry1")
+                                self.loginAlert(message: errorDescriptionLoc)
+                                print("biometry1 \(errorDescriptionLoc)")
                             case Int(kLAErrorPasscodeNotSet):
                                 self.userFallbackPasswordAlertWith(error: error!)
-                                print("PassNotSet1")
+                                print("PassNotSet1 \(errorDescriptionLoc)")
                             case Int(kLAErrorSystemCancel):
-                                self.loginAlert(message: error!.localizedDescription)
-                                print("SystemCancel1")
+                                self.loginAlert(message: errorDescriptionLoc)
+                                print("SystemCancel1 \(errorDescriptionLoc)")
                             case Int(kLAErrorUserFallback):
                                 self.userFallbackPasswordAlertWith(error: error!)
-                                print("UserFallback1")
+                                print("UserFallback1 \(errorDescriptionLoc)")
                             default:
                                 self.userFallbackPasswordAlertWith(error: error!)
-                                print("default1")
+                                print("default1 \(errorDescriptionLoc)")
                             }
                         }
                     }
@@ -233,6 +244,7 @@ class AccountsViewController: UIViewController, UITableViewDelegate, UITableView
                         self.defaults.set(true, forKey: "authenticated")
                         
                     } else {
+                        let errorDescriptionLoc = NSLocalizedString(error!.localizedDescription, comment: "authentication failed message")
                         self.defaults.set(false, forKey: "authenticated")
                         self.accounts = []
                         self.navigationItem.rightBarButtonItem?.isEnabled = false
@@ -241,26 +253,26 @@ class AccountsViewController: UIViewController, UITableViewDelegate, UITableView
                         self.tableView.reloadData()
                         switch error!._code{
                         case Int(kLAErrorAuthenticationFailed):
-                            self.loginAlert(message: error!.localizedDescription)
-                            print("AuthFailed2")
+                            self.loginAlert(message: errorDescriptionLoc)
+                            print("AuthFailed2 \(errorDescriptionLoc)")
                         case Int(kLAErrorUserCancel):
-                            self.loginAlert(message: error!.localizedDescription)
-                            print("UserCanceled2")
+                            self.loginAlert(message: errorDescriptionLoc)
+                            print("UserCanceled2 \(errorDescriptionLoc)")
                         case Int(kLAErrorBiometryNotEnrolled):
-                            self.loginAlert(message: error!.localizedDescription)
-                            print("biometry2")
+                            self.loginAlert(message: errorDescriptionLoc)
+                            print("biometry \(errorDescriptionLoc)2")
                         case Int(kLAErrorPasscodeNotSet):
                             self.userFallbackPasswordAlertWith(error: error!)
-                            print("PassNotSet2")
+                            print("PassNotSet2 \(errorDescriptionLoc)")
                         case Int(kLAErrorSystemCancel):
-                            self.loginAlert(message: error!.localizedDescription)
-                            print("SystemCancel2")
+                            self.loginAlert(message: errorDescriptionLoc)
+                            print("SystemCancel2 \(errorDescriptionLoc)")
                         case Int(kLAErrorUserFallback):
                             self.userFallbackPasswordAlertWith(error: error!)
-                            print("UserFallback2")
+                            print("UserFallback2 \(errorDescriptionLoc)")
                         default:
                             self.userFallbackPasswordAlertWith(error: error!)
-                            print("default2")
+                            print("default2 \(errorDescriptionLoc)")
                         }
                     }
                 }

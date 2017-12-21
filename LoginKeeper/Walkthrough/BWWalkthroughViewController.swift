@@ -237,10 +237,10 @@ import UIKit
         // Hide/Show navigation buttons
         if currentPage == controllers.count - 1{
             nextButton?.isHidden = true
-            closeButton?.setTitle("Close", for: .normal)
+            closeButton?.setTitle(closeLoc, for: .normal)
         }else{
             nextButton?.isHidden = false
-            closeButton?.setTitle("Skip", for: .normal)
+            closeButton?.setTitle(skipLoc, for: .normal)
         }
         
         if currentPage == 0{

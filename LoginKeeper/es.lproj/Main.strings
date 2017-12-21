@@ -1,6 +1,6 @@
 
 /* Class = "UILabel"; text = "Account name"; ObjectID = "28i-Mw-C5V"; */
-"28i-Mw-C5V.text" = "Nombre de la cuenta";
+"28i-Mw-C5V.text" = "Nombre de la Cuenta";
 
 /* Class = "UILabel"; text = "Developer:"; ObjectID = "3g6-v0-Ygk"; */
 "3g6-v0-Ygk.text" = "Desarrollador:";
@@ -30,10 +30,10 @@
 "Dnd-0R-ynT.text" = "Renuncia";
 
 /* Class = "UINavigationItem"; title = "Add New Account"; ObjectID = "E8D-Rq-tOd"; */
-"E8D-Rq-tOd.title" = "Agregar nueva cuenta";
+"E8D-Rq-tOd.title" = "Agregar nueva Cuenta";
 
 /* Class = "UILabel"; text = "Entry name"; ObjectID = "EN3-26-xC9"; */
-"EN3-26-xC9.text" = "Nombre de entrada";
+"EN3-26-xC9.text" = "Nombre de Entrada";
 
 /* Class = "UILabel"; text = "Email:"; ObjectID = "EzQ-BD-0hD"; */
 "EzQ-BD-0hD.text" = "Email:";
@@ -60,10 +60,10 @@
 "Qgw-sU-47I.placeholder" = "Nombre de entrada (requerido)";
 
 /* Class = "UINavigationItem"; title = "Info"; ObjectID = "REf-hL-2HP"; */
-"REf-hL-2HP.title" = "Información";
+"REf-hL-2HP.title" = "Info";
 
 /* Class = "UIBarButtonItem"; title = "Info"; ObjectID = "V9Y-1t-bnd"; */
-"V9Y-1t-bnd.title" = "Información";
+"V9Y-1t-bnd.title" = "Info";
 
 /* Class = "UINavigationItem"; title = "Title"; ObjectID = "YJU-ma-TiN"; */
 "YJU-ma-TiN.title" = "Título";
@@ -129,7 +129,7 @@
 "v14-yL-ACv.text" = "por Dusan Juranovic";
 
 /* Class = "UITextField"; placeholder = "Account Title (required)"; ObjectID = "vgY-17-wLs"; */
-"vgY-17-wLs.placeholder" = "Título de la cuenta (requerido)";
+"vgY-17-wLs.placeholder" = "Título de la Cuenta (requerido)";
 
 /* Class = "UINavigationItem"; title = "Title"; ObjectID = "x8b-gX-Bmj"; */
 "x8b-gX-Bmj.title" = "Título";
@@ -147,4 +147,4 @@
 "yZj-U9-A0o.text" = "Comentario";
 
 /* Class = "UITextField"; placeholder = "Entry Name (required)"; ObjectID = "zOh-H8-h8M"; */
-"zOh-H8-h8M.placeholder" = "Nombre de entrada (requerido)";
+"zOh-H8-h8M.placeholder" = "Nombre de Entrada (requerido)";

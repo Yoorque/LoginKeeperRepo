@@ -6,7 +6,7 @@
   Copyright © 2017 Dusan Juranovic. All rights reserved.
 */
 "About LoginKeeper" = "Acerca de LoginKeeper";
-"COPIED TO CLIPBOARD" = "COPIADO AL PORTAPAPELES";
+"COPIED" = "COPIADO";
 
 "OK" = "OK";
 "Done" = "Hecho";
@@ -20,6 +20,13 @@
 "You will be redirected to" = "Serás redirigido a";
 "Are you sure?" = "¿Estás seguro?";
 "I'm sure" = "Estoy seguro";
+"Use Passcode" = "Use el código";
+"Close" = "Cerca";
+"Skip" = "Omitir";
+
+"No identities are enroled" = "No se incluyen identidades";
+"Canceled by user." = "Cancelado por el usuario.";
+"Canceled by another authentication." = "Cancelado por otra autenticación.";
 
 "Account" = "Cuenta";
 "No Account name!" = "¡Sin nombre de cuenta!";

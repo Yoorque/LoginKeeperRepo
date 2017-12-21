@@ -6,7 +6,7 @@
   Copyright © 2017 Dusan Juranovic. All rights reserved.
 */
 "About LoginKeeper" = "ログインキーパーについて";
-"COPIED TO CLIPBOARD" = "クリップボードにコピー";
+"COPIED" = "コピーされた";
 
 "OK" = "OK";
 "Done" = "完了";
@@ -20,6 +20,13 @@
 "You will be redirected to" = "あなたはにリダイレクトされます";
 "Are you sure?" = "本気ですか？";
 "I'm sure" = "私は確信しています";
+"Use Passcode" = "パスコードを使用する";
+"Close" = "閉じる";
+"Skip" = "スキップ";
+
+"No identities are enroled" = "アイデンティティは登録されていません";
+"Canceled by user." = "ユーザーによってキャンセルされました。";
+"Canceled by another authentication." = "別の認証で取り消されました。";
 
 "Account" = "アカウント";
 "No Account name!" = "アカウント名はありません！";

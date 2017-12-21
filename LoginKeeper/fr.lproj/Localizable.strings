@@ -7,7 +7,7 @@
 */
 
 "About LoginKeeper" = "À propos de LoginKeeper";
-"COPIED TO CLIPBOARD" = "COPIÉ DANS LE PRESSE-PAPIER";
+"COPIED" = "COPIÉ";
 
 "OK" = "D'accord";
 "Done" = "Terminé";
@@ -21,6 +21,13 @@
 "You will be redirected to" = "Vous allez être redirigé vers";
 "Are you sure?" = "Êtes-vous sûr?";
 "I'm sure" = "Je suis sûr";
+"Use Passcode" = "Utiliser le code";
+"Close" = "Fermer";
+"Skip" = "Sauter";
+
+"No identities are enroled" = "Aucune identité n'est inscrite";
+"Canceled by user." = "Annulé par l'utilisateur.";
+"Canceled by another authentication." = "Annulé par une autre authentification.";
 
 "Account" = "Compte";
 "No Account name!" = "Pas de nom de compte!";

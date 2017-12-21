@@ -7,7 +7,7 @@
 */
 
 "About LoginKeeper" = "लॉगिन किपर के बारे में";
-"COPIED TO CLIPBOARD" = "क्लिपबोर्ड पर कॉपी किया गया";
+"COPIED" = "की नकल की";
 
 "OK" = "ठीक है";
 "Done" = "संपन्न";
@@ -21,6 +21,13 @@
 "You will be redirected to" = "आपको पुनः निर्देशित किया जाएगा";
 "Are you sure?" = "क्या आप निश्चित हैं?";
 "I'm sure" = "मुझे यकीन है";
+"Use Passcode" = "पासकोड का उपयोग करें";
+"Close" = "बंद करे";
+"Skip" = "छोड़ें";
+
+"No identities are enroled" = "कोई पहचान नहीं लगाई जाती है";
+"Canceled by user." = "उपयोगकर्ता द्वारा रद्द किया गया";
+"Canceled by another authentication." = "दूसरे प्रमाणीकरण द्वारा रद्द किया गया";
 
 "Account" = "खाता";
 "No Account name!" = "कोई खाता नाम नहीं!";

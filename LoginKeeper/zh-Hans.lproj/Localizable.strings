@@ -8,7 +8,7 @@
 
 
 "About LoginKeeper" = "关于登录门将";
-"COPIED TO CLIPBOARD" = "复制到剪贴板";
+"COPIED" = "复制";
 
 "OK" = "好";
 "Done" = "完成";
@@ -22,6 +22,14 @@
 "You will be redirected to" = "你将被重定向到";
 "Are you sure?" = "你确定？";
 "I'm sure" = "我确定";
+"Use Passcode" = "使用密码";
+"Close" = "关";
+"Skip" = "跳跃";
+
+"No identities are enroled" = "没有身份认同";
+"Canceled by user." = "由用户取消。";
+"Canceled by another authentication." = "通过另一个身份验证取消。";
+
 
 "Account" = "帐户";
 "No Account name!" = "没有帐户名称！";
