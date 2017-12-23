@@ -14,6 +14,7 @@ import GoogleMobileAds
 
 class AccountsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate, AccountsDisplayAlertDelegate, BWWalkthroughViewControllerDelegate, ShowLogoDelegate {
     
+    
     //MARK: - Properties
     
     @IBOutlet var lockButton: UIBarButtonItem!
@@ -45,11 +46,7 @@ class AccountsViewController: UIViewController, UITableViewDelegate, UITableView
         //authentication
         
         NotificationCenter.default.addObserver(forName: NSNotification.Name.UIApplicationWillEnterForeground, object: nil, queue: .main, using: {_ in
-            //self.dismiss(animated: true, completion: nil) //messes up TouchID
-            self.accounts = []
-            self.tableView.reloadData()
             self.defaults.set(false, forKey: "authenticated") //sets authentication to false for check in viewWillAppear()
-            
             self.authenticateUser()
         })
         
@@ -174,15 +171,13 @@ class AccountsViewController: UIViewController, UITableViewDelegate, UITableView
         context.localizedCancelTitle = cancelAnswerLoc
         context.localizedFallbackTitle = enterPasscodeAnswerLoc
         
+        BlurBackgroundView.blurCurrent(view: (navigationController?.topViewController?.view)!) //Blur the background
+        
         if context.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: &error) {
             print("canEvaluateWithTouchID")
             context.evaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, localizedReason:
                 reason, reply: {success, error in
                     // Touch ID
-                    guard error == nil else {
-                        print(error!)
-                        return
-                    }
                     
                     DispatchQueue.main.async {
                         if success {
@@ -192,15 +187,18 @@ class AccountsViewController: UIViewController, UITableViewDelegate, UITableView
                             self.fetchFromCoreData()
                             self.defaults.set(true, forKey: "authenticated")
                             self.lockButton.title = lockLoc
+                            BlurBackgroundView.removeBlurFrom(view: (self.navigationController?.topViewController?.view)!) //Unblur the background
                             print("Success: TouchID")
                         } else {
                             let errorDescriptionLoc = NSLocalizedString(error!.localizedDescription, comment: "authentication failed message")
+                           
+                            
                             self.defaults.set(false, forKey: "authenticated")
-                            self.accounts = []
+                            //self.accounts = []
                             self.navigationItem.rightBarButtonItem?.isEnabled = false
                             self.searchBar.isUserInteractionEnabled = false
                             self.lockButton.title = unlockLoc
-                            self.tableView.reloadData()
+                            //self.tableView.reloadData()
                             
                             switch error!._code {
                             case Int(kLAErrorAuthenticationFailed):
@@ -213,16 +211,16 @@ class AccountsViewController: UIViewController, UITableViewDelegate, UITableView
                                 self.loginAlert(message: errorDescriptionLoc)
                                 print("biometry1 \(errorDescriptionLoc)")
                             case Int(kLAErrorPasscodeNotSet):
-                                self.userFallbackPasswordAlertWith(error: passNotMatchMessageLoc)
+                                self.userFallbackPasswordAlert()
                                 print("PassNotSet1 \(errorDescriptionLoc)")
                             case Int(kLAErrorSystemCancel):
                                 self.loginAlert(message: errorDescriptionLoc)
                                 print("SystemCancel1 \(errorDescriptionLoc)")
                             case Int(kLAErrorUserFallback):
-                                self.userFallbackPasswordAlertWith(error: errorDescriptionLoc)
+                                self.userFallbackPasswordAlert()
                                 print("UserFallback1 \(errorDescriptionLoc)")
                             default:
-                                self.userFallbackPasswordAlertWith(error: errorDescriptionLoc)
+                               self.userFallbackPasswordAlert()
                                 print("default1 \(errorDescriptionLoc)")
                             }
                         }
@@ -232,10 +230,6 @@ class AccountsViewController: UIViewController, UITableViewDelegate, UITableView
             print("canEvaluateWithPasscode")
             context.evaluatePolicy(.deviceOwnerAuthentication, localizedReason: reason, reply: {success, error in
                 //No Touch ID
-                guard error == nil else {
-                    print(error!)
-                    return
-                }
                 
                 DispatchQueue.main.async {
                     if success {
@@ -245,15 +239,17 @@ class AccountsViewController: UIViewController, UITableViewDelegate, UITableView
                         self.lockButton.title = lockLoc
                         self.fetchFromCoreData()
                         self.defaults.set(true, forKey: "authenticated")
+                        BlurBackgroundView.removeBlurFrom(view: (self.navigationController?.topViewController?.view)!) //Unblur the background
                         print("Success: Passcode")
                     } else {
                         let errorDescriptionLoc = NSLocalizedString(error!.localizedDescription, comment: "authentication failed message")
                         self.defaults.set(false, forKey: "authenticated")
-                        self.accounts = []
+                        
+                       // self.accounts = []
                         self.navigationItem.rightBarButtonItem?.isEnabled = false
                         self.searchBar.isUserInteractionEnabled = false
                         self.lockButton.title = unlockLoc
-                        self.tableView.reloadData()
+                       // self.tableView.reloadData()
                         
                         switch error!._code{
                         case Int(kLAErrorAuthenticationFailed):
@@ -266,16 +262,16 @@ class AccountsViewController: UIViewController, UITableViewDelegate, UITableView
                             self.loginAlert(message: errorDescriptionLoc)
                             print("biometry \(errorDescriptionLoc)2")
                         case Int(kLAErrorPasscodeNotSet):
-                            self.userFallbackPasswordAlertWith(error: passNotMatchMessageLoc)
+                            self.userFallbackPasswordAlert()
                             print("PassNotSet2 \(errorDescriptionLoc)")
                         case Int(kLAErrorSystemCancel):
                             self.loginAlert(message: errorDescriptionLoc)
                             print("SystemCancel2 \(errorDescriptionLoc)")
                         case Int(kLAErrorUserFallback):
-                            self.userFallbackPasswordAlertWith(error: errorDescriptionLoc)
+                            self.userFallbackPasswordAlert()
                             print("UserFallback2 \(errorDescriptionLoc)")
                         default:
-                            self.userFallbackPasswordAlertWith(error: errorDescriptionLoc)
+                            self.userFallbackPasswordAlert()
                             print("default2 \(errorDescriptionLoc)")
                         }
                     }
@@ -290,7 +286,15 @@ class AccountsViewController: UIViewController, UITableViewDelegate, UITableView
         present(alert, animated: true, completion: nil)
     }
     
-    func alert(message: String) {
+    func wrongPassInfoAlert(message: String) {
+        let alert = UIAlertController(title: errorLoc, message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: okLoc, style: .default, handler: {_ in
+            self.userFallbackPasswordAlert()
+        }))
+        present(alert, animated: true, completion: nil)
+    }
+    
+    func coreDataAlert(message: String) {
         let alert = UIAlertController(title: errorLoc, message: message, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: okLoc, style: .default, handler: nil))
         present(alert, animated: true, completion: nil)
@@ -304,7 +308,8 @@ class AccountsViewController: UIViewController, UITableViewDelegate, UITableView
         present(alert, animated: true, completion: nil)
     }
     
-    func userFallbackPasswordAlertWith(error: String) {
+    func userFallbackPasswordAlert() {
+        
         let alert = UIAlertController(title: passwordTextLoc, message: enterPasswordLoc, preferredStyle: .alert)
         alert.addTextField(configurationHandler: {textField in
             textField.placeholder = enterPasswordLoc
@@ -319,15 +324,20 @@ class AccountsViewController: UIViewController, UITableViewDelegate, UITableView
                     self.lockButton.title = lockLoc
                     self.fetchFromCoreData()
                     self.defaults.set(true, forKey: "authenticated")
+                    BlurBackgroundView.removeBlurFrom(view: (self.navigationController?.topViewController?.view)!) //Unblur the background
                     print("Success")
                 } else {
-                    self.alert(message: error)
+                    self.wrongPassInfoAlert(message: passNotMatchMessageLoc)
+                    
                     self.searchBar.isUserInteractionEnabled = false
                     self.defaults.set(false, forKey: "authenticated")
+                    
                 }
             }
         }))
-        alert.addAction(UIAlertAction(title: cancelAnswerLoc, style: .default, handler: nil))
+        alert.addAction(UIAlertAction(title: cancelAnswerLoc, style: .default, handler: {_ in
+            self.authenticateUser()
+        }))
         self.present(alert, animated: true, completion: nil)
     }
     //MARK: - Button Actions
@@ -363,7 +373,7 @@ class AccountsViewController: UIViewController, UITableViewDelegate, UITableView
             lockButton.title = lockLoc
             tableView.reloadData()
         } catch {
-            alert(message: unableToFetchMessageLoc)
+            coreDataAlert(message: unableToFetchMessageLoc)
         }
     }
     
@@ -374,7 +384,7 @@ class AccountsViewController: UIViewController, UITableViewDelegate, UITableView
             tableView.reloadData()
         } catch {
             
-            alert(message: unableToSaveMessageLoc)
+            coreDataAlert(message: unableToSaveMessageLoc)
         }
     }
     
@@ -390,7 +400,7 @@ class AccountsViewController: UIViewController, UITableViewDelegate, UITableView
                 tableView.reloadData()
             } catch {
                 
-                alert(message: unableToFetchMessageLoc)
+                coreDataAlert(message: unableToFetchMessageLoc)
                 
             }
         } else {

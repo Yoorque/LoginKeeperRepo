@@ -10,7 +10,7 @@ import UIKit
 import CoreData
 
 protocol AccountsDisplayAlertDelegate {
-    func alert(message: String)
+    func coreDataAlert(message: String)
 }
 protocol ShowLogoDelegate {
     func showLogosForRow(at: Int)
@@ -56,7 +56,7 @@ class AccountsCell: UITableViewCell {
             do {
                 try context.save()
             } catch {
-                delegate?.alert(message: "Can't save to favorites.")
+                delegate?.coreDataAlert(message: "Can't save to favorites.")
             }
         }
     }
@@ -75,7 +75,7 @@ class AccountsCell: UITableViewCell {
             accountForCell = try context.fetch(fetchRequest).first as! Account
         } catch {
             print("Unable to fetch: \(error)")
-            delegate?.alert(message: "Unable to fetch data.")
+            delegate?.coreDataAlert(message: "Unable to fetch data.")
         }
     }
     
