@@ -81,6 +81,8 @@ class AccountsViewController: UIViewController, UITableViewDelegate, UITableView
         if defaults.bool(forKey: "authenticated") == true { // false was set in observer
             fetchFromCoreData()
             tableView.reloadData()
+        } else {
+            searchBar.isUserInteractionEnabled = false
         }
         
     }
@@ -354,10 +356,14 @@ class AccountsViewController: UIViewController, UITableViewDelegate, UITableView
         accounts = []
         tableView.reloadData()
         if lockButton.title == unlockLoc {
+            searchBar.isUserInteractionEnabled = true
+            navigationItem.rightBarButtonItem?.isEnabled = true
             authenticateUser()
         }
         if lockButton.title == lockLoc {
             lockButton.title = unlockLoc
+            searchBar.isUserInteractionEnabled = false
+            navigationItem.rightBarButtonItem?.isEnabled = false
         }
         defaults.set(false, forKey: "authenticated")
     }
