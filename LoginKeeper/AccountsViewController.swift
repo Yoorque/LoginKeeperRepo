@@ -65,9 +65,7 @@ class AccountsViewController: UIViewController, UITableViewDelegate, UITableView
             }
             if passwordSetShownBefore == false {
                 setPassword()
-            } else {
-                authenticateUser()
-            }
+            } 
         }
         // addToolBarTo(searchBar: searchBar)
         
@@ -83,6 +81,7 @@ class AccountsViewController: UIViewController, UITableViewDelegate, UITableView
             tableView.reloadData()
         } else {
             searchBar.isUserInteractionEnabled = false
+            authenticateUser()
         }
         
     }
