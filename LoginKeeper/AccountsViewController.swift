@@ -45,11 +45,12 @@ class AccountsViewController: UIViewController, UITableViewDelegate, UITableView
         //authentication
         
         NotificationCenter.default.addObserver(forName: NSNotification.Name.UIApplicationWillEnterForeground, object: nil, queue: .main, using: {_ in
-            self.navigationController?.popToRootViewController(animated: true)
+            //self.dismiss(animated: true, completion: nil) //messes up TouchID
             self.accounts = []
             self.tableView.reloadData()
             self.defaults.set(false, forKey: "authenticated") //sets authentication to false for check in viewWillAppear()
-            self.authenticateUser() 
+            
+            self.authenticateUser()
         })
         
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
@@ -145,7 +146,7 @@ class AccountsViewController: UIViewController, UITableViewDelegate, UITableView
         let alert = UIAlertController(title: setPasswordLoc, message: setPasswordMessageLoc, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: doneLoc, style: .default, handler: { _ in
             let password = alert.textFields?.first?.text!
-            
+            alert.textFields?.first?.isSecureTextEntry = true
             self.defaults.set(password, forKey: "userPassword")
             self.defaults.set(true, forKey: "shownBefore")
             self.authenticateUser()
@@ -173,21 +174,19 @@ class AccountsViewController: UIViewController, UITableViewDelegate, UITableView
         context.localizedCancelTitle = cancelAnswerLoc
         context.localizedFallbackTitle = enterPasscodeAnswerLoc
         
-        if #available(iOS 11.0, *) {
-            context.localizedReason = identifyLoc
-        } else {
-            // Fallback on earlier versions
-        }
-        
         if context.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: &error) {
             print("canEvaluateWithTouchID")
             context.evaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, localizedReason:
                 reason, reply: {success, error in
-                    
-                    print("EvaluateWithTouchID")
                     // Touch ID
+                    guard error == nil else {
+                        print(error!)
+                        return
+                    }
+                    
                     DispatchQueue.main.async {
                         if success {
+                            print("didEvaluateWithTouchID")
                             self.navigationItem.rightBarButtonItem?.isEnabled = true
                             self.searchBar.isUserInteractionEnabled = true
                             self.fetchFromCoreData()
@@ -214,35 +213,39 @@ class AccountsViewController: UIViewController, UITableViewDelegate, UITableView
                                 self.loginAlert(message: errorDescriptionLoc)
                                 print("biometry1 \(errorDescriptionLoc)")
                             case Int(kLAErrorPasscodeNotSet):
-                                self.userFallbackPasswordAlertWith(error: error!)
+                                self.userFallbackPasswordAlertWith(error: passNotMatchMessageLoc)
                                 print("PassNotSet1 \(errorDescriptionLoc)")
                             case Int(kLAErrorSystemCancel):
                                 self.loginAlert(message: errorDescriptionLoc)
                                 print("SystemCancel1 \(errorDescriptionLoc)")
                             case Int(kLAErrorUserFallback):
-                                self.userFallbackPasswordAlertWith(error: error!)
+                                self.userFallbackPasswordAlertWith(error: errorDescriptionLoc)
                                 print("UserFallback1 \(errorDescriptionLoc)")
                             default:
-                                self.userFallbackPasswordAlertWith(error: error!)
+                                self.userFallbackPasswordAlertWith(error: errorDescriptionLoc)
                                 print("default1 \(errorDescriptionLoc)")
                             }
                         }
                     }
-            })
+                })
         } else {
             print("canEvaluateWithPasscode")
             context.evaluatePolicy(.deviceOwnerAuthentication, localizedReason: reason, reply: {success, error in
-                print("EvaluateWithPasscode")
                 //No Touch ID
+                guard error == nil else {
+                    print(error!)
+                    return
+                }
+                
                 DispatchQueue.main.async {
-                    
                     if success {
+                        print("didEvaluateWithPasscode")
                         self.navigationItem.rightBarButtonItem?.isEnabled = true
                         self.searchBar.isUserInteractionEnabled = true
                         self.lockButton.title = lockLoc
                         self.fetchFromCoreData()
                         self.defaults.set(true, forKey: "authenticated")
-                        
+                        print("Success: Passcode")
                     } else {
                         let errorDescriptionLoc = NSLocalizedString(error!.localizedDescription, comment: "authentication failed message")
                         self.defaults.set(false, forKey: "authenticated")
@@ -251,6 +254,7 @@ class AccountsViewController: UIViewController, UITableViewDelegate, UITableView
                         self.searchBar.isUserInteractionEnabled = false
                         self.lockButton.title = unlockLoc
                         self.tableView.reloadData()
+                        
                         switch error!._code{
                         case Int(kLAErrorAuthenticationFailed):
                             self.loginAlert(message: errorDescriptionLoc)
@@ -262,16 +266,16 @@ class AccountsViewController: UIViewController, UITableViewDelegate, UITableView
                             self.loginAlert(message: errorDescriptionLoc)
                             print("biometry \(errorDescriptionLoc)2")
                         case Int(kLAErrorPasscodeNotSet):
-                            self.userFallbackPasswordAlertWith(error: error!)
+                            self.userFallbackPasswordAlertWith(error: passNotMatchMessageLoc)
                             print("PassNotSet2 \(errorDescriptionLoc)")
                         case Int(kLAErrorSystemCancel):
                             self.loginAlert(message: errorDescriptionLoc)
                             print("SystemCancel2 \(errorDescriptionLoc)")
                         case Int(kLAErrorUserFallback):
-                            self.userFallbackPasswordAlertWith(error: error!)
+                            self.userFallbackPasswordAlertWith(error: errorDescriptionLoc)
                             print("UserFallback2 \(errorDescriptionLoc)")
                         default:
-                            self.userFallbackPasswordAlertWith(error: error!)
+                            self.userFallbackPasswordAlertWith(error: errorDescriptionLoc)
                             print("default2 \(errorDescriptionLoc)")
                         }
                     }
@@ -300,7 +304,7 @@ class AccountsViewController: UIViewController, UITableViewDelegate, UITableView
         present(alert, animated: true, completion: nil)
     }
     
-    func userFallbackPasswordAlertWith(error: Error) {
+    func userFallbackPasswordAlertWith(error: String) {
         let alert = UIAlertController(title: passwordTextLoc, message: enterPasswordLoc, preferredStyle: .alert)
         alert.addTextField(configurationHandler: {textField in
             textField.placeholder = enterPasswordLoc
@@ -309,6 +313,7 @@ class AccountsViewController: UIViewController, UITableViewDelegate, UITableView
             let defaults = UserDefaults.standard
             if let pass = defaults.value(forKey: "userPassword") as? String {
                 if pass == alert.textFields?.first?.text {
+                    alert.textFields?.first?.isSecureTextEntry = true
                     self.navigationItem.rightBarButtonItem?.isEnabled = true
                     self.searchBar.isUserInteractionEnabled = true
                     self.lockButton.title = lockLoc
@@ -316,7 +321,7 @@ class AccountsViewController: UIViewController, UITableViewDelegate, UITableView
                     self.defaults.set(true, forKey: "authenticated")
                     print("Success")
                 } else {
-                    self.alert(message: error.localizedDescription)
+                    self.alert(message: error)
                     self.searchBar.isUserInteractionEnabled = false
                     self.defaults.set(false, forKey: "authenticated")
                 }
@@ -396,9 +401,15 @@ class AccountsViewController: UIViewController, UITableViewDelegate, UITableView
         self.index = index
         logoImagesPNG.remove(at: 0)
         logoImagesPNG.insert(accounts[index].image!, at: 0)
-        if accountLogos.contains(accounts[index].name!.lowercased().replacingOccurrences(of: " ", with: "")) {
-            logoImagesPNG.remove(at: 0)
-            logoImagesPNG.insert(accounts[index].name!.lowercased().replacingOccurrences(of: " ", with: ""), at: 0)
+        for account in accountLogos {
+            if account == accounts[index].name!.lowercased().replacingOccurrences(of: " ", with: "") {
+                logoImagesPNG.remove(at: 0)
+                logoImagesPNG.insert(account.lowercased().replacingOccurrences(of: " ", with: ""), at: 0)
+                break
+            } else if account.contains(accounts[index].name!.lowercased().replacingOccurrences(of: " ", with: "")) || accounts[index].name!.lowercased().replacingOccurrences(of: " ", with: "").contains(account) {
+                logoImagesPNG.remove(at: 0)
+                logoImagesPNG.insert(account.lowercased().replacingOccurrences(of: " ", with: ""), at: 0)
+            }
         }
         performSegue(withIdentifier: "showLogos", sender: self)
     }

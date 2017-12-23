@@ -24,7 +24,7 @@
 "9wU-3T-eVT.text" = "icons8.com";
 
 /* Class = "UILabel"; text = "-Default is the first one in the scroll view-"; ObjectID = "Abp-m8-Wku"; */
-"Abp-m8-Wku.text" = "-기본값은 스크롤보기의 첫 번째 값입니다.-";
+"Abp-m8-Wku.text" = "기본값은 스크롤보기의 첫 번째 값입니다.";
 
 /* Class = "UILabel"; text = "Disclaimer"; ObjectID = "Dnd-0R-ynT"; */
 "Dnd-0R-ynT.text" = "부인 성명";

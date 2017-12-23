@@ -24,13 +24,13 @@
 "9wU-3T-eVT.text" = "icons8.com";
 
 /* Class = "UILabel"; text = "-Default is the first one in the scroll view-"; ObjectID = "Abp-m8-Wku"; */
-"Abp-m8-Wku.text" = "-Podrazumevana je prva u skrol listi-";
+"Abp-m8-Wku.text" = "Prvi logo je predefinisan";
 
 /* Class = "UILabel"; text = "Disclaimer"; ObjectID = "Dnd-0R-ynT"; */
 "Dnd-0R-ynT.text" = "Odricanje od odgovornosti";
 
 /* Class = "UINavigationItem"; title = "Add New Account"; ObjectID = "E8D-Rq-tOd"; */
-"E8D-Rq-tOd.title" = "Dodaj novi nalog";
+"E8D-Rq-tOd.title" = "Dodaj novi Nalog";
 
 /* Class = "UILabel"; text = "Entry name"; ObjectID = "EN3-26-xC9"; */
 "EN3-26-xC9.text" = "Naziv Unosa";

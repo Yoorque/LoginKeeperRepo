@@ -149,7 +149,7 @@ class DetailsViewController: UIViewController, UITextFieldDelegate {
             self.navigationController?.navigationBar.isUserInteractionEnabled = false
             let textColor = textField.textColor
             UIView.animate(withDuration: 0.5, animations: {
-                textField.backgroundColor = UIColor(displayP3Red: 135/255, green: 140/255, blue: 154/255, alpha: 1)
+                textField.backgroundColor = UIColor(displayP3Red: 56/255, green: 124/255, blue: 254/255, alpha: 1)
                 textField.textColor = UIColor(displayP3Red: 250/255, green: 250/255, blue: 250/255, alpha: 1)
                 textField.text = NSLocalizedString("COPIED", comment: "copy notification")
             }, completion: {_ in
