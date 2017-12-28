@@ -14,9 +14,15 @@ class LogoCollectionViewCell: UICollectionViewCell {
             logoImageView.layer.masksToBounds = true
             logoImageView.layer.shadowColor = UIColor.black.cgColor
             logoImageView.layer.shadowOpacity = 0.5
-            logoImageView.layer.shadowOffset = CGSize(width: 2, height: 2)
+            logoImageView.layer.shadowOffset = CGSize(width: 0, height: 0)
             logoImageView.layer.shadowRadius = 2
         }
+    }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        layer.borderColor = UIColor.white.cgColor
+        layer.borderWidth = 0
     }
     
 }

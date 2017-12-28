@@ -42,6 +42,8 @@ class AddNewEntryViewController: UIViewController, UITextFieldDelegate {
             comment.textContentType = UITextContentType("")
         }
     }
+    
+    var titleTextLabel = UILabel()
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -52,6 +54,16 @@ class AddNewEntryViewController: UIViewController, UITextFieldDelegate {
         NotificationCenter.default.addObserver(self, selector: #selector(handleKeyboardNotification), name: .UIKeyboardWillShow, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(handleKeyboardNotification), name: .UIKeyboardWillHide, object: nil)
         
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        titleTextLabel.frame.size.height = 25
+        titleTextLabel.textAlignment = .center
+        titleTextLabel.textColor = UIColor(red: 56/255, green: 124/255, blue: 254/255, alpha: 1)
+        titleTextLabel.font = UIFont(name: "Zapf Dingbats", size: 15)
+        //titleTextLabel.text = title
+        navigationItem.titleView = titleTextLabel
     }
     
     @IBAction func saveEntryButton(_ sender: UIBarButtonItem) {

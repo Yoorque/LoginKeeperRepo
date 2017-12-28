@@ -61,36 +61,46 @@ class AddNewAccountViewController: UIViewController, UITextFieldDelegate, UIScro
         NotificationCenter.default.addObserver(self, selector: #selector(handleKeyboardNotification), name: .UIKeyboardWillShow, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(handleKeyboardNotification), name: .UIKeyboardWillHide, object: nil)
         
-        
+        var y = 0
+        var t = 0
         for logo in logoImagesPNG {
+            if i > logoImagesPNG.count / 2 {
+                y = 55
+                i = 0
+            }
             let logoImageView = UIImageView()
             logoImageView.frame.size = CGSize(width: 50, height: 50)
-            logoImageView.frame.origin = CGPoint(x: i * 55, y: 0)
+            logoImageView.frame.origin = CGPoint(x: i * 55, y: y)
             logoImageView.image = UIImage(named: logo)
-            logoImageView.tag = i
+            logoImageView.tag = t
             logoImageView.isUserInteractionEnabled = true
             logosScrollView.addSubview(logoImageView)
-            logosScrollView.contentSize.width = (logoImageView.frame.size.width + 5) * CGFloat(i + 1)
             i += 1
+            t += 1
             let tapGesture = UITapGestureRecognizer(target: self, action: #selector(logoTapped))
             logoImageView.addGestureRecognizer(tapGesture)
+        
         }
+        logosScrollView.contentSize.width = 55 * (CGFloat(logoImagesPNG.count / 2) + 1)
         print(logosScrollView.contentSize.width)
     }
     
     //MARK: - NEEDS WORK
-    //image view borders for selected view
+    //image view tint for selected logo
     @objc func logoTapped(sender: UITapGestureRecognizer) {
         if let view = sender.view as? UIImageView {
             if let textField = activeTextField {
                 textField.resignFirstResponder()
             }
             for logo in logosScrollView.subviews {
-                logo.layer.borderColor = nil
-                logo.layer.borderWidth = 0
+                if logo is UIImageView {
+                let logoImageView = logo as! UIImageView
+                        logoImageView.image = logoImageView.image!.withRenderingMode(.alwaysOriginal)
+                }
             }
-            view.layer.borderColor = UIColor.white.cgColor
-            view.layer.borderWidth = 4
+            
+            view.image = view.image!.withRenderingMode(.alwaysTemplate)
+            view.tintColor = .white
             index = view.tag
         }
         
@@ -182,7 +192,7 @@ class AddNewAccountViewController: UIViewController, UITextFieldDelegate, UIScro
             displayAlert(title: passNotMatchLoc, msg: passNotMatchMessageLoc)
         }
         logoImagesPNG.remove(at: 0)
-        logoImagesPNG.insert("pngLoginKeeper", at: 0)
+        logoImagesPNG.insert("pngloginkeeper", at: 0)
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {

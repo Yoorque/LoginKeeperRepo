@@ -18,6 +18,15 @@ class EntriesViewController: UIViewController, UITableViewDataSource, UITableVie
     var entries: [Entry]?
     let titleTextLabel = UILabel()
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        titleTextLabel.frame.size.height = 25
+        titleTextLabel.textAlignment = .center
+        titleTextLabel.textColor = UIColor(red: 56/255, green: 124/255, blue: 254/255, alpha: 1)
+        titleTextLabel.font = UIFont(name: "Zapf Dingbats", size: 15)
+        //titleTextLabel.text = title
+        navigationItem.titleView = titleTextLabel
+    }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         appDelegate.load(bannerView: appDelegate.adBannerView,forViewController: self, andOrientation: UIDevice.current.orientation)
@@ -66,7 +75,7 @@ class EntriesViewController: UIViewController, UITableViewDataSource, UITableVie
 
     
     @IBAction func addNewEntryButton(_ sender: UIBarButtonItem) {
-        performSegue(withIdentifier: "addNewEntrySegue", sender: self)
+        self.performSegue(withIdentifier: "addNewEntrySegue", sender: self)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -74,13 +83,13 @@ class EntriesViewController: UIViewController, UITableViewDataSource, UITableVie
             let controller = segue.destination as? AddNewEntryViewController
             if let destinationVC = controller {
                 destinationVC.account = account
-                destinationVC.title = "\(addNewEntryLoc) \(account!.name!)"
+                destinationVC.titleTextLabel.text = "\(addNewEntryLoc) \(account!.name!)"
             }
         } else if segue.identifier == "showDetailsSegue" {
             let controller = segue.destination as? DetailsViewController
             if let destinationVC = controller {
                 destinationVC.entryDetails = entries?[index!]
-                destinationVC.title = "\(entries![index!].name!) \(detailsLoc)"
+                destinationVC.titleTextLabel.text = "\(entries![index!].name!) \(detailsLoc)"
             }
         }
     }

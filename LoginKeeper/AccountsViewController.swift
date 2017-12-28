@@ -348,7 +348,7 @@ class AccountsViewController: UIViewController, UITableViewDelegate, UITableView
     @IBAction func addAccountButton(_ sender: Any) {
         searchBar.resignFirstResponder()
         logoImagesPNG.remove(at: 0)
-        logoImagesPNG.insert("loginKeeper", at: 0)
+        logoImagesPNG.insert("pngloginkeeper", at: 0)
         performSegue(withIdentifier: "addNewAccountSegue", sender: self)
     }
     @IBAction func lockButton(_ sender: UIBarButtonItem) {
@@ -421,7 +421,7 @@ class AccountsViewController: UIViewController, UITableViewDelegate, UITableView
                 logoImagesPNG.remove(at: 0)
                 logoImagesPNG.insert(account.lowercased().replacingOccurrences(of: " ", with: ""), at: 0)
                 break
-            } else if account.contains(accounts[index].name!.lowercased().replacingOccurrences(of: " ", with: "")) || accounts[index].name!.lowercased().replacingOccurrences(of: " ", with: "").contains(account) {
+            } else if accounts[index].name!.lowercased().replacingOccurrences(of: " ", with: "").contains(account) {
                 logoImagesPNG.remove(at: 0)
                 logoImagesPNG.insert(account.lowercased().replacingOccurrences(of: " ", with: ""), at: 0)
             }
@@ -488,18 +488,19 @@ class AccountsViewController: UIViewController, UITableViewDelegate, UITableView
             if let destinationVC = controller {
                 destinationVC.entries = accounts[index!].entries?.allObjects as? [Entry]
                 destinationVC.account = accounts[index!]
-                destinationVC.title = "\(entriesOfLoc) \(accounts[index!].name!)"
+                destinationVC.titleTextLabel.text = "\(entriesOfLoc) \(accounts[index!].name!)"
             }
         } else if segue.identifier == "addNewEntrySegue" {
             let controller = segue.destination as? AddNewEntryViewController
             if let destinationVC = controller {
                 destinationVC.account = accounts[index!]
+                destinationVC.titleTextLabel.text = "\(addNewEntryLoc) \(accounts[index!].name!)"
             }
         } else if segue.identifier == "showDetailsSegue" {
             let controller = segue.destination as? DetailsViewController
             if let destinationVC = controller {
                 destinationVC.entryDetails = accounts[index!].entries!.allObjects.first as? Entry
-                destinationVC.title = "\(accounts[index!].name!) \(detailsLoc)"
+                destinationVC.titleTextLabel.text = "\(accounts[index!].name!) \(detailsLoc)"
             }
         } else if segue.identifier == "showLogos" {
             let controller = segue.destination as? LogosViewController

@@ -27,15 +27,18 @@ class LogosViewController: UIViewController, UICollectionViewDelegate, UICollect
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "logoCell", for: indexPath) as! LogoCollectionViewCell
         cell.tag = indexPath.row
+       
         if indexPath.row == 0 {
-            cell.logoImageView.layer.borderColor = UIColor(displayP3Red: 60/255, green: 127/255, blue: 255/255, alpha: 1).cgColor
-            cell.logoImageView.layer.borderWidth = 2
+            print(indexPath.row)
+            cell.layer.borderColor = UIColor.red.cgColor
+            cell.layer.borderWidth = 2
         }
         
         cell.logoImageView.image = UIImage(named: logoImagesPNG[indexPath.row])
         
         return cell
     }
+    
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let selectedItem = collectionView.cellForItem(at: indexPath) as! LogoCollectionViewCell
@@ -50,10 +53,14 @@ class LogosViewController: UIViewController, UICollectionViewDelegate, UICollect
                     try self.viewContext?.save()
                     self.navigationController?.popViewController(animated: true)
                 } catch {
-                    
+                    self.displayAlert(title: errorLoc, msg: unableToSaveMessageLoc)
                 }
             })
         })
     }
-    
+    func displayAlert(title: String, msg: String) {
+        let alert = UIAlertController(title: title, message: msg, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: okLoc, style: .default, handler: nil))
+        present(alert, animated: true, completion: nil)
+    }
 }
