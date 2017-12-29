@@ -9,6 +9,7 @@
 import UIKit
 
 class LogoCollectionViewCell: UICollectionViewCell {
+    @IBOutlet weak var currentLogoLabel: UILabel!
     @IBOutlet weak var logoImageView: UIImageView! {
         didSet{
             logoImageView.layer.masksToBounds = true
@@ -23,6 +24,8 @@ class LogoCollectionViewCell: UICollectionViewCell {
         super.prepareForReuse()
         layer.borderColor = UIColor.white.cgColor
         layer.borderWidth = 0
+        currentLogoLabel.text = ""
+        currentLogoLabel.backgroundColor = nil
     }
     
 }

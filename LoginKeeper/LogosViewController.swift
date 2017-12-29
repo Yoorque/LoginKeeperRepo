@@ -11,6 +11,7 @@ import CoreData
 
 class LogosViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     
+   
     var account: Account!
     var viewContext = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext
     
@@ -29,9 +30,11 @@ class LogosViewController: UIViewController, UICollectionViewDelegate, UICollect
         cell.tag = indexPath.row
        
         if indexPath.row == 0 {
-            print(indexPath.row)
-            cell.layer.borderColor = UIColor.red.cgColor
+            cell.layer.borderColor = UIColor(red: 74/255, green: 122/255, blue: 246/255, alpha: 1).cgColor
             cell.layer.borderWidth = 2
+            cell.layer.cornerRadius = cell.frame.size.width / 8
+            cell.currentLogoLabel.text = "Current Logo"
+            cell.currentLogoLabel.backgroundColor = UIColor(red: 74/255, green: 122/255, blue: 246/255, alpha: 0.5)
         }
         
         cell.logoImageView.image = UIImage(named: logoImagesPNG[indexPath.row])
