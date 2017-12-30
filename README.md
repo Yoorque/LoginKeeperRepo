@@ -1,12 +1,12 @@
 # LoginKeeperRepo
-    Installation:
+Installation:
 1. On first run after install, you need to choose your recovery password (If you forget it, you will need to reinstall and you will lose all your data)
 2. After password is chosen, you will authenticate with your fingerprint on TouchID enabled devices or by using your phone passcode. Those devices that don't have touchID enrolled and passcode set, will be using initial password to login.
 
-    Data Storage:
+Data:
 1. All of the data is stored in a device and no internet connection is required.
 
-    Privacy:
+Privacy:
 1. Data can only be accessed in a same way as if someone has your device login details (passcode, password or fingerprints (god forbid) :D ).
 
     Disclaimer:
