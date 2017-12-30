@@ -25,7 +25,7 @@
 "Close" = "Close";
 "Skip" = "Skip";
 
-"No identities are enroled" = "No identities are enroled";
+"No identities are enrolled" = "No identities are enrolled";
 "Canceled by user." = "Canceled by user.";
 "Canceled by another authentication." = "Canceled by another authentication.";
 
@@ -58,7 +58,7 @@
 "build" = "build";
 "Search" = "Search";
 
-"You are not authorised to use this feature." = "You are not authorised to use this feature.";
+"You are not authorized to use this feature." = "You are not authorized to use this feature.";
 "In progress..." = "In progress...";
 "We're working on this one!" = "We're working on this one!";
 "Oops! Unable to save changes at this time, please try again!" = "Oops! Unable to save changes at this time, please try again!";

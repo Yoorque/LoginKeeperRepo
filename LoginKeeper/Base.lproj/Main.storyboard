@@ -1033,7 +1033,7 @@
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="SaN-k5-a61">
                                                     <rect key="frame" x="2" y="2" width="46" height="46"/>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eYc-hf-exd">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current Logo" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="4" translatesAutoresizingMaskIntoConstraints="NO" id="eYc-hf-exd">
                                                     <rect key="frame" x="2" y="38" width="46" height="10"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="10" id="JG1-xY-OYl"/>
@@ -1682,7 +1682,7 @@
         <image name="web" width="50" height="50"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="iTS-a3-3V6"/>
-        <segue reference="R23-PL-03t"/>
+        <segue reference="mYc-lo-ZTI"/>
+        <segue reference="h9s-k7-aFA"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -25,7 +25,7 @@
 "Close" = "Fermer";
 "Skip" = "Sauter";
 
-"No identities are enroled" = "Aucune identité n'est inscrite";
+"No identities are enrolled" = "Aucune identité n'est inscrite";
 "Canceled by user." = "Annulé par l'utilisateur.";
 "Canceled by another authentication." = "Annulé par une autre authentification.";
 
@@ -58,7 +58,7 @@
 "build" = "construire";
 "Search" = "Chercher";
 
-"You are not authorised to use this feature." = "Vous n'êtes pas autorisé à utiliser cette fonctionnalité.";
+"You are not authorized to use this feature." = "Vous n'êtes pas autorisé à utiliser cette fonctionnalité.";
 "In progress..." = "En cours...";
 "We're working on this one!" = "Nous travaillons sur celui-ci!";
 "Oops! Unable to save changes at this time, please try again!" = "Oops! Impossible d'enregistrer les modifications pour le moment, veuillez réessayer!";

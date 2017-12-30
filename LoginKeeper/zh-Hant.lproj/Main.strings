@@ -145,3 +145,6 @@
 
 /* Class = "UITextField"; placeholder = "Entry Name (required)"; ObjectID = "zOh-H8-h8M"; */
 "zOh-H8-h8M.placeholder" = "條目名稱（必填）";
+
+/* Class = "UILabel"; text = "Current Logo"; ObjectID = "eYc-hf-exd"; */
+"eYc-hf-exd.text" = "當前的標誌";

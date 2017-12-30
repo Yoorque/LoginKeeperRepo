@@ -24,7 +24,7 @@
 "Close" = "Cerca";
 "Skip" = "Omitir";
 
-"No identities are enroled" = "No se incluyen identidades";
+"No identities are enrolled" = "No hay identidades registradas";
 "Canceled by user." = "Cancelado por el usuario.";
 "Canceled by another authentication." = "Cancelado por otra autenticación.";
 
@@ -57,7 +57,7 @@
 "build" = "construir";
 "Search" = "Buscar";
 
-"You are not authorised to use this feature." = "Usted no está autorizado para usar esta función.";
+"You are not authorized to use this feature." = "Usted no está autorizado para usar esta función.";
 "In progress..." = "En progreso...";
 "We're working on this one!" = "Estamos trabajando en esto!";
 "Oops! Unable to save changes at this time, please try again!" = "Oops! ¡No se pueden guardar los cambios en este momento, por favor intente de nuevo!";

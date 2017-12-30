@@ -25,7 +25,7 @@
 "Close" = "Закрыть";
 "Skip" = "Пропускать";
 
-"No identities are enroled" = "Никакие личности не зарегистрированы";
+"No identities are enrolled" = "Никаких удостоверений не зарегистрировано";
 "Canceled by user." = "Отменено пользователем.";
 "Canceled by another authentication." = "Отменено другой аутентификацией.";
 
@@ -58,7 +58,7 @@
 "build" = "строить";
 "Search" = "Поиск";
 
-"You are not authorised to use this feature." = " вас нет права использовать эту функцию.";
+"You are not authorized to use this feature." = "У вас нет права использовать эту функцию.";
 "In progress..." = "Выполняется...";
 "We're working on this one!" = "Мы работаем над этим!";
 "Oops! Unable to save changes at this time, please try again!" = "К сожалению, не удалось сохранить изменения в это время, повторите попытку!!";

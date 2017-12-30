@@ -24,7 +24,7 @@
 "Close" = "閉じる";
 "Skip" = "スキップ";
 
-"No identities are enroled" = "アイデンティティは登録されていません";
+"No identities are enrolled" = "アイデンティティは登録されていません";
 "Canceled by user." = "ユーザーによってキャンセルされました。";
 "Canceled by another authentication." = "別の認証で取り消されました。";
 
@@ -57,7 +57,7 @@
 "build" = "ビルドする";
 "Search" = "サーチ";
 
-"You are not authorised to use this feature." = "この機能を使用する権限はありません。";
+"You are not authorized to use this feature." = "この機能を使用する権限はありません。";
 "In progress..." = "進行中...";
 "We're working on this one!" = "私たちはこれに取り組んでいます！";
 "Oops! Unable to save changes at this time, please try again!" = "おっとっと！ この時点で変更を保存できませんでした。もう一度お試しください。";

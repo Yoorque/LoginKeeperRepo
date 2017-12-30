@@ -9,7 +9,7 @@
 "3ug-en-Aoa.text" = "Comentário";
 
 /* Class = "UITextField"; placeholder = "Confirm password (required)"; ObjectID = "4NY-8P-15S"; */
-"4NY-8P-15S.placeholder" = "Confirmar senha (requerida)";
+"4NY-8P-15S.placeholder" = "Confirmar senha (requerido)";
 
 /* Class = "UILabel"; text = "LoginKeeper"; ObjectID = "6Nu-9j-TfH"; */
 "6Nu-9j-TfH.text" = "LoginKeeper";
@@ -51,13 +51,13 @@
 "KRN-c3-QOC.title" = "Bloqueio";
 
 /* Class = "UITextField"; placeholder = "Password (required)"; ObjectID = "LNo-xb-YV2"; */
-"LNo-xb-YV2.placeholder" = "Senha (requerida)";
+"LNo-xb-YV2.placeholder" = "Senha (requerido)";
 
 /* Class = "UILabel"; text = "◀︎   Choose your logo from the scroll menu   ▶︎"; ObjectID = "OAQ-SI-m1b"; */
 "OAQ-SI-m1b.text" = "◀︎   Escolha o seu logotipo no menu de rolagem   ▶︎";
 
 /* Class = "UITextField"; placeholder = "Entry Name (required)"; ObjectID = "Qgw-sU-47I"; */
-"Qgw-sU-47I.placeholder" = "Nome da Entrada (requerida)";
+"Qgw-sU-47I.placeholder" = "Nome da Entrada (requerido)";
 
 /* Class = "UINavigationItem"; title = "Info"; ObjectID = "REf-hL-2HP"; */
 "REf-hL-2HP.title" = "Info";
@@ -69,7 +69,7 @@
 "ZTW-LK-HNF.text" = "O LoginKeeper® foi desenvolvido usando os seguintes recursos gratuitos e de código aberto:";
 
 /* Class = "UITextField"; placeholder = "Confirm password (required)"; ObjectID = "aFU-Xk-o7Q"; */
-"aFU-Xk-o7Q.placeholder" = "Confirmar senha (requerida)";
+"aFU-Xk-o7Q.placeholder" = "Confirmar senha (requerido)";
 
 /* Class = "UILabel"; text = "LoginKeeper"; ObjectID = "au3-ib-kHJ"; */
 "au3-ib-kHJ.text" = "LoginKeeper";
@@ -102,7 +102,7 @@
 "ljz-gl-szh.normalTitle" = "Pular";
 
 /* Class = "UIButton"; normalTitle = "Copy all"; ObjectID = "meZ-KJ-6Qa"; */
-"meZ-KJ-6Qa.normalTitle" = "Copiar tudo";
+"meZ-KJ-6Qa.normalTitle" = "Copiar Tudo";
 
 /* Class = "UINavigationItem"; title = "About LoginKeeper"; ObjectID = "ni1-Kc-bws"; */
 "ni1-Kc-bws.title" = "Sobre LoginKeeper";
@@ -127,7 +127,7 @@
 
 
 /* Class = "UILabel"; text = "All rights reserved. Copyrights©"; ObjectID = "xqa-RF-TvC"; */
-"xqa-RF-TvC.text" = "Todos os direitos reservados. Copyrights ©";
+"xqa-RF-TvC.text" = "Todos os direitos reservados. Copyrights©";
 
 /* Class = "UIBarButtonItem"; title = "Play Tutorial"; ObjectID = "y1Q-3C-FBj"; */
 "y1Q-3C-FBj.title" = "Toque Tutorial";
@@ -139,5 +139,7 @@
 "yZj-U9-A0o.text" = "Comentário";
 
 /* Class = "UITextField"; placeholder = "Entry Name (required)"; ObjectID = "zOh-H8-h8M"; */
-"zOh-H8-h8M.placeholder" = "Nome da Entrada (requerida)";
+"zOh-H8-h8M.placeholder" = "Nome da Entrada (requerido)";
 
+/* Class = "UILabel"; text = "Current Logo"; ObjectID = "eYc-hf-exd"; */
+"eYc-hf-exd.text" = "Logotipo atual";

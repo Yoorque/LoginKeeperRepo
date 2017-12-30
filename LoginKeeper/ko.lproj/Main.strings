@@ -1,6 +1,6 @@
 
 /* Class = "UILabel"; text = "Account name"; ObjectID = "28i-Mw-C5V"; */
-"28i-Mw-C5V.text" = "Account name";
+"28i-Mw-C5V.text" = "계정 이름";
 
 /* Class = "UILabel"; text = "Developer:"; ObjectID = "3g6-v0-Ygk"; */
 "3g6-v0-Ygk.text" = "개발자:";
@@ -140,3 +140,5 @@
 /* Class = "UITextField"; placeholder = "Entry Name (required)"; ObjectID = "zOh-H8-h8M"; */
 "zOh-H8-h8M.placeholder" = "항목 이름 (필수)";
 
+/* Class = "UILabel"; text = "Current Logo"; ObjectID = "eYc-hf-exd"; */
+"eYc-hf-exd.text" = "현재 로고";

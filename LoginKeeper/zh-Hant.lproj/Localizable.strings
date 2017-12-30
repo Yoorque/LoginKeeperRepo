@@ -24,7 +24,7 @@
 "Close" = "關";
 "Skip" = "跳躍";
 
-"No identities are enroled" = "沒有身份認同";
+"No identities are enrolled" = "沒有身份註冊";
 "Canceled by user." = "由用戶取消。";
 "Canceled by another authentication." = "通過另一個身份驗證取消。";
 
@@ -57,7 +57,7 @@
 "build" = "建立";
 "Search" = "搜索";
 
-"You are not authorised to use this feature." = "您無權使用此功能。";
+"You are not authorized to use this feature." = "您無權使用此功能。";
 "In progress..." = "進行中...";
 "We're working on this one!" = "我們正在研究這個！";
 "Oops! Unable to save changes at this time, please try again!" = "哎呀！ 目前無法保存更改，請重試！";

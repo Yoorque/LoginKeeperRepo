@@ -25,7 +25,7 @@
 "Close" = "बंद करे";
 "Skip" = "छोड़ें";
 
-"No identities are enroled" = "कोई पहचान नहीं लगाई जाती है";
+"No identities are enrolled" = "कोई पहचान नामांकित नहीं हैं";
 "Canceled by user." = "उपयोगकर्ता द्वारा रद्द किया गया";
 "Canceled by another authentication." = "दूसरे प्रमाणीकरण द्वारा रद्द किया गया";
 
@@ -58,7 +58,7 @@
 "build" = "बिल्ड";
 "Search" = "खोज";
 
-"You are not authorised to use this feature." = "आप इस सुविधा का उपयोग करने के लिए अधिकृत नहीं हैं।";
+"You are not authorized to use this feature." = "आप इस सुविधा का उपयोग करने के लिए अधिकृत नहीं हैं।";
 "In progress..." = "प्रगति में है ...";
 "We're working on this one!" = "हम इस पर काम कर रहे हैं!";
 "Oops! Unable to save changes at this time, please try again!" = "ओह! इस समय परिवर्तनों को सहेजने में असमर्थ, कृपया पुनः प्रयास करें!";

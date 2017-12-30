@@ -25,7 +25,7 @@
 "Close" = "닫기";
 "Skip" = "버킷";
 
-"No identities are enroled" = "신원이 등록되지 않았습니다.";
+"No identities are enrolled" = "신원이 등록되지 않았습니다.";
 "Canceled by user." = "사용자가 취소했습니다.";
 "Canceled by another authentication." = "다른 인증에 의해 취소되었습니다.";
 
@@ -58,7 +58,7 @@
 "build" = "빌드";
 "Search" = "검색";
 
-"You are not authorised to use this feature." = "이 기능을 사용할 수있는 권한이 없습니다.";
+"You are not authorized to use this feature." = "이 기능을 사용할 수있는 권한이 없습니다.";
 "In progress..." = "진행 중 ...";
 "We're working on this one!" = "우리는이 작업을하고 있습니다!";
 "Oops! Unable to save changes at this time, please try again!" = "죄송합니다! 지금은 변경 사항을 저장할 수 없습니다. 다시 시도하십시오!";

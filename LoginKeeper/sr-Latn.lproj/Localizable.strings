@@ -25,7 +25,7 @@
 "Close" = "Zatvori";
 "Skip" = "Preskoči";
 
-"No identities are enroled" = "Nema registrovanih identiteta";
+"No identities are enrolled" = "Nema registrovanih identiteta";
 "Canceled by user." = "Otkazano od strane korisnika.";
 "Canceled by another authentication." = "Otkazano drugom autentikacijom.";
 
@@ -57,7 +57,7 @@
 "Version" = "Verzija";
 "build" = "podverzija";
 
-"You are not authorised to use this feature." = "Niste ovlašćeni da koristite ovu opciju.";
+"You are not authorized to use this feature." = "Niste ovlašćeni da koristite ovu funkciju.";
 "In progress..." = "U izradi...";
 "We're working on this one!" = "Radimo na ovome!";
 "Oops! Unable to save changes at this time, please try again!" = "Ups! Trenutno ne možemo da snimimo izmene. Molimo vas pokušajte ponovo!";

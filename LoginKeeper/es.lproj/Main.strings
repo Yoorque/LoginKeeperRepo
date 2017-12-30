@@ -30,7 +30,7 @@
 "Dnd-0R-ynT.text" = "Renuncia";
 
 /* Class = "UINavigationItem"; title = "Add New Account"; ObjectID = "E8D-Rq-tOd"; */
-"E8D-Rq-tOd.title" = "Agregar nueva Cuenta";
+"E8D-Rq-tOd.title" = "Agregar Nueva Cuenta";
 
 /* Class = "UILabel"; text = "Entry name"; ObjectID = "EN3-26-xC9"; */
 "EN3-26-xC9.text" = "Nombre de Entrada";
@@ -51,7 +51,7 @@
 "KRN-c3-QOC.title" = "Bloquear";
 
 /* Class = "UITextField"; placeholder = "Password (required)"; ObjectID = "LNo-xb-YV2"; */
-"LNo-xb-YV2.placeholder" = "Se requiere contraseña)";
+"LNo-xb-YV2.placeholder" = "Contraseña (requerido)";
 
 /* Class = "UILabel"; text = "◀︎   Choose your logo from the scroll menu   ▶︎"; ObjectID = "OAQ-SI-m1b"; */
 "OAQ-SI-m1b.text" = "◀︎   Elija su logotipo desde el menú de desplazamiento   ▶︎";
@@ -148,3 +148,6 @@
 
 /* Class = "UITextField"; placeholder = "Entry Name (required)"; ObjectID = "zOh-H8-h8M"; */
 "zOh-H8-h8M.placeholder" = "Nombre de Entrada (requerido)";
+
+/* Class = "UILabel"; text = "Current Logo"; ObjectID = "eYc-hf-exd"; */
+"eYc-hf-exd.text" = "Logotipo actual";
