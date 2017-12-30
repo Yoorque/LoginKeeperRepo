@@ -95,16 +95,21 @@ class AddNewAccountViewController: UIViewController, UITextFieldDelegate, UIScro
             for logo in logosScrollView.subviews {
                 if logo is UIImageView {
                 let logoImageView = logo as! UIImageView
-                        logoImageView.image = logoImageView.image!.withRenderingMode(.alwaysOriginal)
+                    logoImageView.image = logoImageView.image!.withRenderingMode(.alwaysOriginal)
+                    logo.layer.borderWidth = 0
+                    logo.layer.cornerRadius = logo.bounds.size.width / 8
                 }
             }
             
-            view.image = view.image!.withRenderingMode(.alwaysTemplate)
-            view.tintColor = .white
+            if view.tag == 0 {
+                view.layer.borderColor = UIColor.white.cgColor
+                view.layer.borderWidth = 2
+            } else {
+                view.image = view.image!.withRenderingMode(.alwaysTemplate)
+                view.tintColor = .white
+            }
             index = view.tag
         }
-        
-        
     }
     
     @objc func handleKeyboardNotification(notification: NSNotification) {
