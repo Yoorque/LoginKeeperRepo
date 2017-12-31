@@ -33,14 +33,14 @@
 "Account" = "Учетная запись";
 "No Account name!" = "Нет имени учетной записи!";
 "Account name is required." = "Имя учетной записи требуется.";
-"Delete Acc" = "Удалить учетную запись";
+"Delete Acc" = "Удалить учетную Запись";
 
-"Entry name" = "Название записи";
-"No Entry name!" = "Нет имени записи!";
-"Entry name is required." = "Имя записи требуется.";
-"Add Entry" = "Добавить запись";
-"Add new entry for" = "Добавить новую запись для";
-"Delete Entry" = "Удалить запись";
+"Entry name" = "Название Записи";
+"No Entry name!" = "Нет имени Записи!";
+"Entry name is required." = "Имя Записи требуется.";
+"Add Entry" = "Добавить Запись";
+"Add new entry for" = "Добавить новую Запись для";
+"Delete Entry" = "Удалить Запись";
 
 "Username" = "Имя пользователя";
 

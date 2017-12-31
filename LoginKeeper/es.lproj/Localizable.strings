@@ -34,12 +34,12 @@
 "Account name is required." = "Nombre de cuenta es requerido.";
 "Delete Acc" = "Borrar Cuenta";
 
-"Entry name" = "Nombre de entrada";
-"No Entry name!" = "¡Sin nombre de entrada!";
-"Entry name is required." = "Nombre de entrada es requerido.";
-"Add Entry" = "Añadir entrada";
-"Add new entry for" = "Agregar nueva entrada para";
-"Delete Entry" = "Eliminar la entrada";
+"Entry name" = "Nombre de Entrada";
+"No Entry name!" = "¡Sin nombre de Entrada!";
+"Entry name is required." = "Nombre de Entrada es requerido.";
+"Add Entry" = "Añadir Entrada";
+"Add new entry for" = "Agregar nueva Entrada para";
+"Delete Entry" = "Eliminar la Entrada";
 
 "Username" = "Nombre de usuario";
 
