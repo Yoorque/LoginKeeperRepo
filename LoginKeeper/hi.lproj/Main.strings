@@ -145,6 +145,3 @@
 
 /* Class = "UITextField"; placeholder = "Entry Name (required)"; ObjectID = "zOh-H8-h8M"; */
 "zOh-H8-h8M.placeholder" = "प्रवेश नाम (आवश्यक)";
-
-/* Class = "UILabel"; text = "Current Logo"; ObjectID = "eYc-hf-exd"; */
-"eYc-hf-exd.text" = "वर्तमान लोगो";

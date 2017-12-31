@@ -33,7 +33,7 @@ class LogosViewController: UIViewController, UICollectionViewDelegate, UICollect
             cell.layer.borderColor = UIColor(red: 74/255, green: 122/255, blue: 246/255, alpha: 1).cgColor
             cell.layer.borderWidth = 2
             cell.layer.cornerRadius = cell.frame.size.width / 8
-            cell.currentLogoLabel.text = "Current Logo"
+            cell.currentLogoLabel.text = NSLocalizedString("Current Logo", comment: "")
             cell.currentLogoLabel.backgroundColor = UIColor(red: 74/255, green: 122/255, blue: 246/255, alpha: 0.5)
         }
         
