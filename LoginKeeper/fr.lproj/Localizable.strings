@@ -31,16 +31,16 @@
 "Canceled by another authentication." = "Annulé par une autre authentification.";
 
 "Account" = "Compte";
-"No Account name!" = "Pas de nom de compte!";
-"Account name is required." = "Le nom du compte est requis.";
-"Delete Acc" = "Supprimer le compte";
+"No Account name!" = "Pas de nom de Compte!";
+"Account name is required." = "Le nom du Compte est requis.";
+"Delete Acc" = "Supprimer le Compte";
 
-"Entry name" = "Nom de l'entrée";
-"No Entry name!" = "Pas de nom d'entrée!";
-"Entry name is required." = "Le nom d'entrée est requis.";
-"Add Entry" = "Ajouter une entrée";
-"Add new entry for" = "Ajouter une nouvelle entrée pour";
-"Delete Entry" = "Supprimer l'entrée";
+"Entry name" = "Nom de l'Entrée";
+"No Entry name!" = "Pas de nom d'Entrée!";
+"Entry name is required." = "Le nom d'Entrée est requis.";
+"Add Entry" = "Ajouter une Entrée";
+"Add new entry for" = "Ajouter une nouvelle Entrée pour";
+"Delete Entry" = "Supprimer l'Entrée";
 
 "Username" = "Nom d'utilisateur";
 

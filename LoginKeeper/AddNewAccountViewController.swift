@@ -75,14 +75,14 @@ class AddNewAccountViewController: UIViewController, UITextFieldDelegate, UIScro
             logoImageView.tag = t
             logoImageView.isUserInteractionEnabled = true
             logosScrollView.addSubview(logoImageView)
+        
             i += 1
             t += 1
             let tapGesture = UITapGestureRecognizer(target: self, action: #selector(logoTapped))
             logoImageView.addGestureRecognizer(tapGesture)
-        
         }
+        
         logosScrollView.contentSize.width = 55 * (CGFloat(logoImagesPNG.count / 2) + 1)
-        print(logosScrollView.contentSize.width)
     }
     
     //MARK: - NEEDS WORK
@@ -97,13 +97,13 @@ class AddNewAccountViewController: UIViewController, UITextFieldDelegate, UIScro
                 let logoImageView = logo as! UIImageView
                     logoImageView.image = logoImageView.image!.withRenderingMode(.alwaysOriginal)
                     logo.layer.borderWidth = 0
-                    logo.layer.cornerRadius = logo.bounds.size.width / 8
                 }
             }
             
             if view.tag == 0 {
                 view.layer.borderColor = UIColor.white.cgColor
                 view.layer.borderWidth = 2
+                view.layer.cornerRadius = view.bounds.size.width / 8
             } else {
                 view.image = view.image!.withRenderingMode(.alwaysTemplate)
                 view.tintColor = .white
