@@ -45,8 +45,8 @@ class EntriesViewController: UIViewController, UITableViewDataSource, UITableVie
             tableView.reloadData()
         } catch {
             
-            let alert = UIAlertController(title: errorLoc, message: unableToFetchMessageLoc, preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: okLoc, style: .default, handler: nil))
+            let alert = UIAlertController(title: errorLocalized, message: unableToFetchMessageLocalized, preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: okLocalized, style: .default, handler: nil))
             present(alert, animated: true, completion: nil)
         }
     }
@@ -58,8 +58,8 @@ class EntriesViewController: UIViewController, UITableViewDataSource, UITableVie
             tableView.reloadData()
         } catch {
             
-            let alert = UIAlertController(title: errorLoc, message: unableToSaveMessageLoc, preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: okLoc, style: .default, handler: nil))
+            let alert = UIAlertController(title: errorLocalized, message: unableToSaveMessageLocalized, preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: okLocalized, style: .default, handler: nil))
             present(alert, animated: true, completion: nil)
         }
     }
@@ -83,20 +83,20 @@ class EntriesViewController: UIViewController, UITableViewDataSource, UITableVie
             let controller = segue.destination as? AddNewEntryViewController
             if let destinationVC = controller {
                 destinationVC.account = account
-                destinationVC.titleTextLabel.text = "\(addNewEntryLoc) \(account!.name!)"
+                destinationVC.titleTextLabel.text = "\(addNewEntryLocalized) \(account!.name!)"
             }
         } else if segue.identifier == "showDetailsSegue" {
             let controller = segue.destination as? DetailsViewController
             if let destinationVC = controller {
                 destinationVC.entryDetails = entries?[index!]
-                destinationVC.titleTextLabel.text = "\(entries![index!].name!) \(detailsLoc)"
+                destinationVC.titleTextLabel.text = "\(entries![index!].name!) \(detailsLocalized)"
             }
         }
     }
     
     func alert(message: String) {
-        let alert = UIAlertController(title: errorLoc, message: message, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: okLoc, style: .default, handler: nil))
+        let alert = UIAlertController(title: errorLocalized, message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: okLocalized, style: .default, handler: nil))
         present(alert, animated: true, completion: nil)
     }
    
@@ -122,7 +122,7 @@ class EntriesViewController: UIViewController, UITableViewDataSource, UITableVie
     }
     
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
-        let delete = UITableViewRowAction(style: .destructive, title: deleteEntryLoc, handler: {_,_  in
+        let delete = UITableViewRowAction(style: .destructive, title: deleteEntryLocalized, handler: {_,_  in
             
             self.appDelegate.persistentContainer.viewContext.delete(self.entries![indexPath.row])
             self.entries?.remove(at: indexPath.row)

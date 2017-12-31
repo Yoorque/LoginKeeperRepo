@@ -21,7 +21,7 @@ class AccountsViewController: UIViewController, UITableViewDelegate, UITableView
     @IBOutlet var searchBar: UISearchBar! {
         didSet {
             searchBar.returnKeyType = .search
-            searchBar.placeholder = searchBarPlaceholderLoc
+            searchBar.placeholder = searchBarPlaceholderLocalized
             self.searchBar.delegate = self
         }
     }
@@ -141,8 +141,8 @@ class AccountsViewController: UIViewController, UITableViewDelegate, UITableView
     }
     
     func setPassword() {
-        let alert = UIAlertController(title: setPasswordLoc, message: setPasswordMessageLoc, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: doneLoc, style: .default, handler: { _ in
+        let alert = UIAlertController(title: setPasswordLocalized, message: setPasswordMessageLocalized, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: doneLocalized, style: .default, handler: { _ in
             let password = alert.textFields?.first?.text!
             alert.textFields?.first?.isSecureTextEntry = true
             self.defaults.set(password, forKey: "userPassword")
@@ -150,16 +150,16 @@ class AccountsViewController: UIViewController, UITableViewDelegate, UITableView
             self.authenticateUser()
         }))
         
-        alert.addAction(UIAlertAction(title: cancelAnswerLoc, style: .default, handler: { _ in
+        alert.addAction(UIAlertAction(title: cancelAnswerLocalized, style: .default, handler: { _ in
             self.defaults.set(false, forKey: "shownBefore")
-            let alert = UIAlertController(title: passwordIsRequiredLoc, message: passwordIsRequiredMessageLoc, preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: okLoc, style: .default, handler: {_ in
+            let alert = UIAlertController(title: passwordIsRequiredLocalized, message: passwordIsRequiredMessageLocalized, preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: okLocalized, style: .default, handler: {_ in
                 self.setPassword()
             }))
             self.present(alert, animated: true, completion: nil)
         }))
         alert.addTextField(configurationHandler: {textField in
-            textField.placeholder = enterPasswordLoc
+            textField.placeholder = enterPasswordLocalized
         })
         present(alert, animated: true, completion: nil)
     }
@@ -168,9 +168,9 @@ class AccountsViewController: UIViewController, UITableViewDelegate, UITableView
         let context = LAContext()
         var error: NSError?
         
-        let reason = identifyLoc
-        context.localizedCancelTitle = cancelAnswerLoc
-        context.localizedFallbackTitle = enterPasscodeAnswerLoc
+        let reason = identifyLocalized
+        context.localizedCancelTitle = cancelAnswerLocalized
+        context.localizedFallbackTitle = enterPasscodeAnswerLocalized
         
         BlurBackgroundView.blurCurrent(view: (navigationController?.topViewController?.view)!) //Blur the background
         
@@ -187,42 +187,42 @@ class AccountsViewController: UIViewController, UITableViewDelegate, UITableView
                             self.searchBar.isUserInteractionEnabled = true
                             self.fetchFromCoreData()
                             self.defaults.set(true, forKey: "authenticated")
-                            self.lockButton.title = lockLoc
+                            self.lockButton.title = lockLocalized
                             BlurBackgroundView.removeBlurFrom(view: (self.navigationController?.topViewController?.view)!) //Unblur the background
                             print("Success: TouchID")
                         } else {
-                            let errorDescriptionLoc = NSLocalizedString(error!.localizedDescription, comment: "authentication failed message")
+                            let errorDescriptionLocalized = NSLocalizedString(error!.localizedDescription, comment: "authentication failed message")
                            
                             
                             self.defaults.set(false, forKey: "authenticated")
                             //self.accounts = []
                             self.navigationItem.rightBarButtonItem?.isEnabled = false
                             self.searchBar.isUserInteractionEnabled = false
-                            self.lockButton.title = unlockLoc
+                            self.lockButton.title = unlockLocalized
                             //self.tableView.reloadData()
                             
                             switch error!._code {
                             case Int(kLAErrorAuthenticationFailed):
-                                self.loginAlert(message: errorDescriptionLoc)
-                                print("AuthFailed1 \(errorDescriptionLoc)")
+                                self.loginAlert(message: errorDescriptionLocalized)
+                                print("AuthFailed1 \(errorDescriptionLocalized)")
                             case Int(kLAErrorUserCancel):
-                                self.loginAlert(message: errorDescriptionLoc)
-                                print("UserCanceled1 \(errorDescriptionLoc)")
+                                self.loginAlert(message: errorDescriptionLocalized)
+                                print("UserCanceled1 \(errorDescriptionLocalized)")
                             case Int(kLAErrorBiometryNotEnrolled):
-                                self.loginAlert(message: errorDescriptionLoc)
-                                print("biometry1 \(errorDescriptionLoc)")
+                                self.loginAlert(message: errorDescriptionLocalized)
+                                print("biometry1 \(errorDescriptionLocalized)")
                             case Int(kLAErrorPasscodeNotSet):
                                 self.userFallbackPasswordAlert()
-                                print("PassNotSet1 \(errorDescriptionLoc)")
+                                print("PassNotSet1 \(errorDescriptionLocalized)")
                             case Int(kLAErrorSystemCancel):
-                                self.loginAlert(message: errorDescriptionLoc)
-                                print("SystemCancel1 \(errorDescriptionLoc)")
+                                self.loginAlert(message: errorDescriptionLocalized)
+                                print("SystemCancel1 \(errorDescriptionLocalized)")
                             case Int(kLAErrorUserFallback):
                                 self.userFallbackPasswordAlert()
-                                print("UserFallback1 \(errorDescriptionLoc)")
+                                print("UserFallback1 \(errorDescriptionLocalized)")
                             default:
                                self.userFallbackPasswordAlert()
-                                print("default1 \(errorDescriptionLoc)")
+                                print("default1 \(errorDescriptionLocalized)")
                             }
                         }
                     }
@@ -237,43 +237,43 @@ class AccountsViewController: UIViewController, UITableViewDelegate, UITableView
                         print("didEvaluateWithPasscode")
                         self.navigationItem.rightBarButtonItem?.isEnabled = true
                         self.searchBar.isUserInteractionEnabled = true
-                        self.lockButton.title = lockLoc
+                        self.lockButton.title = lockLocalized
                         self.fetchFromCoreData()
                         self.defaults.set(true, forKey: "authenticated")
                         BlurBackgroundView.removeBlurFrom(view: (self.navigationController?.topViewController?.view)!) //Unblur the background
                         print("Success: Passcode")
                     } else {
-                        let errorDescriptionLoc = NSLocalizedString(error!.localizedDescription, comment: "authentication failed message")
+                        let errorDescriptionLocalized = NSLocalizedString(error!.localizedDescription, comment: "authentication failed message")
                         self.defaults.set(false, forKey: "authenticated")
                         
                        // self.accounts = []
                         self.navigationItem.rightBarButtonItem?.isEnabled = false
                         self.searchBar.isUserInteractionEnabled = false
-                        self.lockButton.title = unlockLoc
+                        self.lockButton.title = unlockLocalized
                        // self.tableView.reloadData()
                         
                         switch error!._code{
                         case Int(kLAErrorAuthenticationFailed):
-                            self.loginAlert(message: errorDescriptionLoc)
-                            print("AuthFailed2 \(errorDescriptionLoc)")
+                            self.loginAlert(message: errorDescriptionLocalized)
+                            print("AuthFailed2 \(errorDescriptionLocalized)")
                         case Int(kLAErrorUserCancel):
-                            self.loginAlert(message: errorDescriptionLoc)
-                            print("UserCanceled2 \(errorDescriptionLoc)")
+                            self.loginAlert(message: errorDescriptionLocalized)
+                            print("UserCanceled2 \(errorDescriptionLocalized)")
                         case Int(kLAErrorBiometryNotEnrolled):
-                            self.loginAlert(message: errorDescriptionLoc)
-                            print("biometry \(errorDescriptionLoc)2")
+                            self.loginAlert(message: errorDescriptionLocalized)
+                            print("biometry \(errorDescriptionLocalized)2")
                         case Int(kLAErrorPasscodeNotSet):
                             self.userFallbackPasswordAlert()
-                            print("PassNotSet2 \(errorDescriptionLoc)")
+                            print("PassNotSet2 \(errorDescriptionLocalized)")
                         case Int(kLAErrorSystemCancel):
-                            self.loginAlert(message: errorDescriptionLoc)
-                            print("SystemCancel2 \(errorDescriptionLoc)")
+                            self.loginAlert(message: errorDescriptionLocalized)
+                            print("SystemCancel2 \(errorDescriptionLocalized)")
                         case Int(kLAErrorUserFallback):
                             self.userFallbackPasswordAlert()
-                            print("UserFallback2 \(errorDescriptionLoc)")
+                            print("UserFallback2 \(errorDescriptionLocalized)")
                         default:
                             self.userFallbackPasswordAlert()
-                            print("default2 \(errorDescriptionLoc)")
+                            print("default2 \(errorDescriptionLocalized)")
                         }
                     }
                 }
@@ -283,27 +283,27 @@ class AccountsViewController: UIViewController, UITableViewDelegate, UITableView
     //MARK: - Alerts
     func displayAlert(title: String, msg: String) {
         let alert = UIAlertController(title: title, message: msg, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: okLoc, style: .default, handler: nil))
+        alert.addAction(UIAlertAction(title: okLocalized, style: .default, handler: nil))
         present(alert, animated: true, completion: nil)
     }
     
     func wrongPassInfoAlert(message: String) {
-        let alert = UIAlertController(title: errorLoc, message: message, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: okLoc, style: .default, handler: {_ in
+        let alert = UIAlertController(title: errorLocalized, message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: okLocalized, style: .default, handler: {_ in
             self.userFallbackPasswordAlert()
         }))
         present(alert, animated: true, completion: nil)
     }
     
     func coreDataAlert(message: String) {
-        let alert = UIAlertController(title: errorLoc, message: message, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: okLoc, style: .default, handler: nil))
+        let alert = UIAlertController(title: errorLocalized, message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: okLocalized, style: .default, handler: nil))
         present(alert, animated: true, completion: nil)
     }
     
     func loginAlert(message: String) {
-        let alert = UIAlertController(title: errorLoc, message: message, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: okLoc, style: .default, handler: {_ in
+        let alert = UIAlertController(title: errorLocalized, message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: okLocalized, style: .default, handler: {_ in
             self.authenticateUser()
         }))
         present(alert, animated: true, completion: nil)
@@ -311,24 +311,24 @@ class AccountsViewController: UIViewController, UITableViewDelegate, UITableView
     
     func userFallbackPasswordAlert() {
         
-        let alert = UIAlertController(title: passwordTextLoc, message: enterPasswordLoc, preferredStyle: .alert)
+        let alert = UIAlertController(title: passwordTextLocalized, message: enterPasswordLocalized, preferredStyle: .alert)
         alert.addTextField(configurationHandler: {textField in
-            textField.placeholder = enterPasswordLoc
+            textField.placeholder = enterPasswordLocalized
         })
-        alert.addAction(UIAlertAction(title: okLoc, style: .default, handler: { _ in
+        alert.addAction(UIAlertAction(title: okLocalized, style: .default, handler: { _ in
             let defaults = UserDefaults.standard
             if let pass = defaults.value(forKey: "userPassword") as? String {
                 if pass == alert.textFields?.first?.text {
                     alert.textFields?.first?.isSecureTextEntry = true
                     self.navigationItem.rightBarButtonItem?.isEnabled = true
                     self.searchBar.isUserInteractionEnabled = true
-                    self.lockButton.title = lockLoc
+                    self.lockButton.title = lockLocalized
                     self.fetchFromCoreData()
                     self.defaults.set(true, forKey: "authenticated")
                     BlurBackgroundView.removeBlurFrom(view: (self.navigationController?.topViewController?.view)!) //Unblur the background
                     print("Success")
                 } else {
-                    self.wrongPassInfoAlert(message: passNotMatchMessageLoc)
+                    self.wrongPassInfoAlert(message: passNotMatchMessageLocalized)
                     
                     self.searchBar.isUserInteractionEnabled = false
                     self.defaults.set(false, forKey: "authenticated")
@@ -336,7 +336,7 @@ class AccountsViewController: UIViewController, UITableViewDelegate, UITableView
                 }
             }
         }))
-        alert.addAction(UIAlertAction(title: cancelAnswerLoc, style: .default, handler: {_ in
+        alert.addAction(UIAlertAction(title: cancelAnswerLocalized, style: .default, handler: {_ in
             self.authenticateUser()
         }))
         self.present(alert, animated: true, completion: nil)
@@ -354,13 +354,13 @@ class AccountsViewController: UIViewController, UITableViewDelegate, UITableView
     @IBAction func lockButton(_ sender: UIBarButtonItem) {
         accounts = []
         tableView.reloadData()
-        if lockButton.title == unlockLoc {
+        if lockButton.title == unlockLocalized {
             searchBar.isUserInteractionEnabled = true
             navigationItem.rightBarButtonItem?.isEnabled = true
             authenticateUser()
         }
-        if lockButton.title == lockLoc {
-            lockButton.title = unlockLoc
+        if lockButton.title == lockLocalized {
+            lockButton.title = unlockLocalized
             searchBar.isUserInteractionEnabled = false
             navigationItem.rightBarButtonItem?.isEnabled = false
         }
@@ -375,10 +375,10 @@ class AccountsViewController: UIViewController, UITableViewDelegate, UITableView
         fetchRequest.sortDescriptors = [sortDescriptor]
         do {
             accounts = try context.fetch(fetchRequest)
-            lockButton.title = lockLoc
+            lockButton.title = lockLocalized
             tableView.reloadData()
         } catch {
-            coreDataAlert(message: unableToFetchMessageLoc)
+            coreDataAlert(message: unableToFetchMessageLocalized)
         }
     }
     
@@ -389,7 +389,7 @@ class AccountsViewController: UIViewController, UITableViewDelegate, UITableView
             tableView.reloadData()
         } catch {
             
-            coreDataAlert(message: unableToSaveMessageLoc)
+            coreDataAlert(message: unableToSaveMessageLocalized)
         }
     }
     
@@ -405,7 +405,7 @@ class AccountsViewController: UIViewController, UITableViewDelegate, UITableView
                 tableView.reloadData()
             } catch {
                 
-                coreDataAlert(message: unableToFetchMessageLoc)
+                coreDataAlert(message: unableToFetchMessageLocalized)
                 
             }
         } else {
@@ -465,14 +465,14 @@ class AccountsViewController: UIViewController, UITableViewDelegate, UITableView
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
         index = indexPath.row
         
-        let deleteAction = UITableViewRowAction(style: .destructive, title: deleteAccountLoc, handler: {_,_  in
+        let deleteAction = UITableViewRowAction(style: .destructive, title: deleteAccountLocalized, handler: {_,_  in
             self.appDelegate.persistentContainer.viewContext.delete(self.accounts[indexPath.row])
             self.accounts.remove(at: indexPath.row)
             self.tableView.deleteRows(at: [indexPath], with: .fade)
             self.saveToCoreData()
         })
         
-        let insertAction = UITableViewRowAction(style: .normal, title: addEntryLoc, handler: {_,_  in
+        let insertAction = UITableViewRowAction(style: .normal, title: addEntryLocalized, handler: {_,_  in
             self.performSegue(withIdentifier: "addNewEntrySegue", sender: self)
         })
         deleteAction.backgroundColor = UIColor(red: 216/255, green: 67/255, blue: 35/255, alpha: 1)
@@ -488,19 +488,19 @@ class AccountsViewController: UIViewController, UITableViewDelegate, UITableView
             if let destinationVC = controller {
                 destinationVC.entries = accounts[index!].entries?.allObjects as? [Entry]
                 destinationVC.account = accounts[index!]
-                destinationVC.titleTextLabel.text = "\(entriesOfLoc) \(accounts[index!].name!)"
+                destinationVC.titleTextLabel.text = "\(entriesOfLocalized) \(accounts[index!].name!)"
             }
         } else if segue.identifier == "addNewEntrySegue" {
             let controller = segue.destination as? AddNewEntryViewController
             if let destinationVC = controller {
                 destinationVC.account = accounts[index!]
-                destinationVC.titleTextLabel.text = "\(addNewEntryLoc) \(accounts[index!].name!)"
+                destinationVC.titleTextLabel.text = "\(addNewEntryLocalized) \(accounts[index!].name!)"
             }
         } else if segue.identifier == "showDetailsSegue" {
             let controller = segue.destination as? DetailsViewController
             if let destinationVC = controller {
                 destinationVC.entryDetails = accounts[index!].entries!.allObjects.first as? Entry
-                destinationVC.titleTextLabel.text = "\(accounts[index!].name!) \(detailsLoc)"
+                destinationVC.titleTextLabel.text = "\(accounts[index!].name!) \(detailsLocalized)"
             }
         } else if segue.identifier == "showLogos" {
             let controller = segue.destination as? LogosViewController

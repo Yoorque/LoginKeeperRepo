@@ -181,20 +181,20 @@ class AddNewAccountViewController: UIViewController, UITextFieldDelegate, UIScro
                             navigationController?.popViewController(animated: true)
                             
                         } catch {
-                            displayAlert(title: errorLoc, msg: unableToSaveMessageLoc)
+                            displayAlert(title: errorLocalized, msg: unableToSaveMessageLocalized)
                         }
                     }
                     else {
-                        displayAlert(title: noEntryLoc, msg: noEntryMessageLoc)
+                        displayAlert(title: noEntryLocalized, msg: noEntryMessageLocalized)
                     }
                 } else {
-                    displayAlert(title: noAccountLoc, msg: noAccountMessageLoc)
+                    displayAlert(title: noAccountLocalized, msg: noAccountMessageLocalized)
                 }
             } else {
-                displayAlert(title: emptyPasswordLoc, msg: emptyPasswordMessageLoc)
+                displayAlert(title: emptyPasswordLocalized, msg: emptyPasswordMessageLocalized)
             }
         } else {
-            displayAlert(title: passNotMatchLoc, msg: passNotMatchMessageLoc)
+            displayAlert(title: passNotMatchLocalized, msg: passNotMatchMessageLocalized)
         }
         logoImagesPNG.remove(at: 0)
         logoImagesPNG.insert("pngloginkeeper", at: 0)

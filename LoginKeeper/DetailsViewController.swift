@@ -202,7 +202,7 @@ class DetailsViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func copyAllButton(_ sender: Any) {
         
-        let copyText = "\(accountTextLoc): \(entryDetails!.account!.name!)\n\(entryNameTextLoc): \(entryDetails!.name!)\n\(usernameTextLoc): \(entryDetails!.username!)\n\(passwordTextLoc): \(entryDetails!.password!)\n\(commentTextLoc): \(entryDetails!.comment!)"
+        let copyText = "\(accountTextLocalized): \(entryDetails!.account!.name!)\n\(entryNameTextLocalized): \(entryDetails!.name!)\n\(usernameTextLocalized): \(entryDetails!.username!)\n\(passwordTextLocalized): \(entryDetails!.password!)\n\(commentTextLocalized): \(entryDetails!.comment!)"
             copyPaste(text: copyText)
         animateClipboardTextFor(textField: accountName, with: entryDetails?.account?.name ?? "")
         animateClipboardTextFor(textField: entryName, with: entryDetails?.name ?? "")
@@ -215,7 +215,7 @@ class DetailsViewController: UIViewController, UITextFieldDelegate {
     @IBAction func shareButton(_ sender: UIBarButtonItem) {
         NotificationCenter.default.removeObserver(self)
         
-        let textToShare = "LoginKeeper \n\(accountTextLoc): \(entryDetails!.account!.name!)\n\(entryNameTextLoc): \(entryDetails!.name!)\n\(usernameTextLoc): \(entryDetails!.username!)\n\(passwordTextLoc): \(entryDetails!.password!)\n\(commentTextLoc): \(entryDetails!.comment!)"
+        let textToShare = "LoginKeeper \n\(accountTextLocalized): \(entryDetails!.account!.name!)\n\(entryNameTextLocalized): \(entryDetails!.name!)\n\(usernameTextLocalized): \(entryDetails!.username!)\n\(passwordTextLocalized): \(entryDetails!.password!)\n\(commentTextLocalized): \(entryDetails!.comment!)"
         
             let objectsToShare = [textToShare]
             let activityVC = UIActivityViewController(activityItems: objectsToShare, applicationActivities: nil)
@@ -277,8 +277,8 @@ class DetailsViewController: UIViewController, UITextFieldDelegate {
             try context.save()
         } catch {
             
-            let alert = UIAlertController(title: errorLoc, message: unableToSaveMessageLoc, preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: okLoc, style: .default, handler: nil))
+            let alert = UIAlertController(title: errorLocalized, message: unableToSaveMessageLocalized, preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: okLocalized, style: .default, handler: nil))
             present(alert, animated: true, completion: nil)
         }
     }

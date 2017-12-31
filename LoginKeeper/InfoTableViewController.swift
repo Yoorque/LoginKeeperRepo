@@ -25,9 +25,9 @@ class InfoTableViewController: UITableViewController, BWWalkthroughViewControlle
         guard let build = Bundle.main.infoDictionary?["CFBundleVersion"] as? String else {
             return
         }
-        let versionLoc = NSLocalizedString("Version", comment: "")
-        let buildLoc = NSLocalizedString("build", comment: "")
-        versionLabel.text = "\(versionLoc) \(version) (\(buildLoc) \(build))"
+        let versionLocalized = NSLocalizedString("Version", comment: "")
+        let buildLocalized = NSLocalizedString("build", comment: "")
+        versionLabel.text = "\(versionLocalized) \(version) (\(buildLocalized) \(build))"
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -78,8 +78,8 @@ class InfoTableViewController: UITableViewController, BWWalkthroughViewControlle
                 if authenticated == true {
                     UIApplication.shared.open(url, options: [:])
                 } else {
-                    let alert = UIAlertController(title: errorLoc, message: notAuthorisedLoc, preferredStyle: .alert)
-                    alert.addAction(UIAlertAction(title: okLoc, style: .default, handler: nil))
+                    let alert = UIAlertController(title: errorLocalized, message: notAuthorisedLocalized, preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: okLocalized, style: .default, handler: nil))
                     present(alert, animated: true, completion: nil)
                 }
             }
@@ -107,18 +107,18 @@ class InfoTableViewController: UITableViewController, BWWalkthroughViewControlle
     }
     
     func leavingAppAlert(toURL url: URL, title: String) {
-        let alert = UIAlertController(title: leavingLoc, message: "\(leavingMessageLoc) \(title). \(leavingMessageLoc2)", preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: sureAnswerLoc, style: .default, handler: { _ in
+        let alert = UIAlertController(title: leavingLocalized, message: "\(leavingMessageLocalized) \(title). \(leavingMessageLocalized2)", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: sureAnswerLocalized, style: .default, handler: { _ in
              UIApplication.shared.open(url, options: [:], completionHandler: nil)
         }))
-        alert.addAction(UIAlertAction(title: cancelAnswerLoc, style: .default, handler: nil))
+        alert.addAction(UIAlertAction(title: cancelAnswerLocalized, style: .default, handler: nil))
         present(alert, animated: true, completion: nil)
     }
     
     func underContructionAlert() {
         
-        let alert = UIAlertController(title: inProgressLoc, message: workingLoc, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: okLoc, style: .default, handler: nil))
+        let alert = UIAlertController(title: inProgressLocalized, message: workingLocalized, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: okLocalized, style: .default, handler: nil))
         present(alert, animated: true, completion: nil)
     }
     

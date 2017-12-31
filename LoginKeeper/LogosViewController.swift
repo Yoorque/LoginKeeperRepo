@@ -56,14 +56,14 @@ class LogosViewController: UIViewController, UICollectionViewDelegate, UICollect
                     try self.viewContext?.save()
                     self.navigationController?.popViewController(animated: true)
                 } catch {
-                    self.displayAlert(title: errorLoc, msg: unableToSaveMessageLoc)
+                    self.displayAlert(title: errorLocalized, msg: unableToSaveMessageLocalized)
                 }
             })
         })
     }
     func displayAlert(title: String, msg: String) {
         let alert = UIAlertController(title: title, message: msg, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: okLoc, style: .default, handler: nil))
+        alert.addAction(UIAlertAction(title: okLocalized, style: .default, handler: nil))
         present(alert, animated: true, completion: nil)
     }
 }

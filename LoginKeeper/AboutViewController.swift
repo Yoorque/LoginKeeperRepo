@@ -19,10 +19,10 @@ class AboutViewController: UIViewController {
         titleTextLabel.textAlignment = .center
         titleTextLabel.textColor = UIColor(red: 56/255, green: 124/255, blue: 254/255, alpha: 1)
         titleTextLabel.font = UIFont(name: "Zapf Dingbats", size: 15)
-        titleTextLabel.text = aboutLoc
+        titleTextLabel.text = aboutLocalized
         
         navigationItem.titleView = titleTextLabel
-        aboutTextView.text = aboutTextLoc
+        aboutTextView.text = aboutTextLocalized
         // Do any additional setup after loading the view.
     }
 }

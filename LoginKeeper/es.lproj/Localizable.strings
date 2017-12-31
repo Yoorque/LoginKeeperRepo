@@ -44,7 +44,7 @@
 "Username" = "Nombre de usuario";
 
 "Password" = "Contraseña";
-"Enter Password" = "Introducir la contraseña";
+"Enter password" = "Introducir la contraseña";
 "Empty password" = "Contraseña vacía";
 "Please enter your password." = "Por favor, introduzca su contraseña.";
 "Passwords do not match!"  = "¡Las contraseñas no coinciden!";

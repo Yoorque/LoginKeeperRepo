@@ -107,7 +107,7 @@ class AddNewEntryViewController: UIViewController, UITextFieldDelegate {
     
     func displayAlert(title: String, msg: String) {
         let alert = UIAlertController(title: title, message: msg, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: okLoc, style: .default, handler: nil))
+        alert.addAction(UIAlertAction(title: okLocalized, style: .default, handler: nil))
         present(alert, animated: true, completion: nil)
     }
     
@@ -129,16 +129,16 @@ class AddNewEntryViewController: UIViewController, UITextFieldDelegate {
                         navigationController?.popViewController(animated: true)
                     } catch {
                         print("Unable to save: \(error)")
-                        displayAlert(title: errorLoc, msg: unableToSaveMessageLoc)
+                        displayAlert(title: errorLocalized, msg: unableToSaveMessageLocalized)
                     }
                 } else {
-                    displayAlert(title: noEntryLoc, msg: noEntryMessageLoc)
+                    displayAlert(title: noEntryLocalized, msg: noEntryMessageLocalized)
                 }
             } else {
-                displayAlert(title: emptyPasswordLoc, msg: emptyPasswordMessageLoc)
+                displayAlert(title: emptyPasswordLocalized, msg: emptyPasswordMessageLocalized)
             }
         } else {
-            displayAlert(title: passNotMatchLoc, msg: passNotMatchMessageLoc)
+            displayAlert(title: passNotMatchLocalized, msg: passNotMatchMessageLocalized)
         }
     }
     

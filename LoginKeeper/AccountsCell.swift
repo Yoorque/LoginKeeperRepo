@@ -75,7 +75,7 @@ class AccountsCell: UITableViewCell {
             accountForCell = try context.fetch(fetchRequest).first as! Account
         } catch {
             print("Unable to fetch: \(error)")
-            delegate?.coreDataAlert(message: unableToFetchMessageLoc)
+            delegate?.coreDataAlert(message: unableToFetchMessageLocalized)
         }
     }
     
