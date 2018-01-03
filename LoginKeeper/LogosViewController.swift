@@ -36,7 +36,6 @@ class LogosViewController: UIViewController, UICollectionViewDelegate, UICollect
             cell.currentLogoLabel.text = NSLocalizedString("Current Logo", comment: "")
             cell.currentLogoLabel.backgroundColor = UIColor(red: 74/255, green: 122/255, blue: 246/255, alpha: 0.5)
         }
-        
         cell.logoImageView.image = UIImage(named: logoImagesPNG[indexPath.row])
         
         return cell

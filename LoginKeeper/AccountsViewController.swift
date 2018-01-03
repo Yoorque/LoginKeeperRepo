@@ -11,7 +11,6 @@ import CoreData
 import LocalAuthentication
 import GoogleMobileAds
 
-
 class AccountsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate, AccountsDisplayAlertDelegate, BWWalkthroughViewControllerDelegate, ShowLogoDelegate {
     
     
@@ -22,7 +21,8 @@ class AccountsViewController: UIViewController, UITableViewDelegate, UITableView
         didSet {
             searchBar.returnKeyType = .search
             searchBar.placeholder = searchBarPlaceholderLocalized
-            self.searchBar.delegate = self
+            searchBar.delegate = self
+            searchBar.showsCancelButton = false
         }
     }
     
@@ -41,8 +41,7 @@ class AccountsViewController: UIViewController, UITableViewDelegate, UITableView
     override func viewDidLoad() {
         super.viewDidLoad()
         defaults.set(false, forKey: "authenticated")
-        
-        //MARK: - NEEDS WORK
+    
         //authentication
         
         NotificationCenter.default.addObserver(forName: NSNotification.Name.UIApplicationWillEnterForeground, object: nil, queue: .main, using: {_ in
@@ -485,6 +484,33 @@ class AccountsViewController: UIViewController, UITableViewDelegate, UITableView
         return [deleteAction, insertAction]
     }
     
+    @available(iOS 11.0, *)
+    func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        index = indexPath.row
+        let addAction = UIContextualAction(style: .normal, title: "Add Entry") { (action, view, completionHandler) in
+            self.performSegue(withIdentifier: "addNewEntrySegue", sender: self)
+        }
+        addAction.backgroundColor = UIColor(red: 44/255, green: 152/255, blue: 41/255, alpha: 1)
+        let swipeConfig = UISwipeActionsConfiguration(actions: [addAction])
+        return swipeConfig
+    }
+    
+    @available(iOS 11.0, *)
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        index = indexPath.row
+        let deleteAction = UIContextualAction(style: .destructive, title: "Delete Acc") { (action, view, completionHandler) in
+            self.appDelegate.persistentContainer.viewContext.delete(self.accounts[indexPath.row])
+            self.accounts.remove(at: indexPath.row)
+            self.tableView.deleteRows(at: [indexPath], with: .fade)
+            self.saveToCoreData()
+        }
+        
+        deleteAction.backgroundColor = UIColor(red: 216/255, green: 67/255, blue: 35/255, alpha: 1)
+        let swipeConfig = UISwipeActionsConfiguration(actions: [deleteAction])
+        
+        return swipeConfig
+    }
+   
     // MARK: - Segue Preparation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showEntriesSegue" {
@@ -515,6 +541,10 @@ class AccountsViewController: UIViewController, UITableViewDelegate, UITableView
     }
     
     //MARK: - SearchBar Delegates
+    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+        print("DidBeginEditing")
+        searchBar.showsCancelButton = true
+    }
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         searchCoreDataWith(text: searchBar.text!)
     }
@@ -524,6 +554,7 @@ class AccountsViewController: UIViewController, UITableViewDelegate, UITableView
     }
     
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.showsCancelButton = false
         searchBar.text = nil
         searchCoreDataWith(text: searchBar.text!)
         searchBar.resignFirstResponder()

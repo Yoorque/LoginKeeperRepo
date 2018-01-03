@@ -12,7 +12,7 @@ class LogoCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var currentLogoLabel: UILabel!
     @IBOutlet weak var logoImageView: UIImageView! {
         didSet{
-            logoImageView.layer.masksToBounds = true
+            
             logoImageView.layer.shadowColor = UIColor.black.cgColor
             logoImageView.layer.shadowOpacity = 0.5
             logoImageView.layer.shadowOffset = CGSize(width: 0, height: 0)

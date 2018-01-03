@@ -17,6 +17,8 @@ class AddNewAccountViewController: UIViewController, UITextFieldDelegate, UIScro
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     var index = 0
     var i = 0
+    var y = 0
+    var t = 0
     var activeTextField: UITextField?
     
     @IBOutlet var accountTitle: UITextField! {
@@ -61,8 +63,6 @@ class AddNewAccountViewController: UIViewController, UITextFieldDelegate, UIScro
         NotificationCenter.default.addObserver(self, selector: #selector(handleKeyboardNotification), name: .UIKeyboardWillShow, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(handleKeyboardNotification), name: .UIKeyboardWillHide, object: nil)
         
-        var y = 0
-        var t = 0
         for logo in logoImagesPNG {
             if i > logoImagesPNG.count / 2 {
                 y = 55
@@ -75,7 +75,7 @@ class AddNewAccountViewController: UIViewController, UITextFieldDelegate, UIScro
             logoImageView.tag = t
             logoImageView.isUserInteractionEnabled = true
             logosScrollView.addSubview(logoImageView)
-        
+            
             i += 1
             t += 1
             let tapGesture = UITapGestureRecognizer(target: self, action: #selector(logoTapped))
@@ -104,6 +104,7 @@ class AddNewAccountViewController: UIViewController, UITextFieldDelegate, UIScro
                 view.layer.borderColor = UIColor.white.cgColor
                 view.layer.borderWidth = 2
                 view.layer.cornerRadius = view.bounds.size.width / 8
+                view.clipsToBounds = true
             } else {
                 view.image = view.image!.withRenderingMode(.alwaysTemplate)
                 view.tintColor = .white
@@ -230,16 +231,17 @@ class AddNewAccountViewController: UIViewController, UITextFieldDelegate, UIScro
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
-        if textField == accountTitle {
             for logo in accountLogos {
-                if accountTitle.text!.lowercased().replacingOccurrences(of: " ", with: "") == logo {
+                if textField.text!.lowercased().replacingOccurrences(of: " ", with: "") == logo || textField.text!.lowercased().replacingOccurrences(of: " ", with: "").contains(logo)  {
                     for imageView in logosScrollView.subviews {
                         if imageView.tag == 0 {
                             imageView.removeFromSuperview()
                         }
                     }
+                    
                     logoImagesPNG.remove(at: 0)
                     logoImagesPNG.insert(logo, at: 0)
+                    
                     let imageView = UIImageView()
                     imageView.image = UIImage(named: logo)
                     
@@ -247,17 +249,15 @@ class AddNewAccountViewController: UIViewController, UITextFieldDelegate, UIScro
                     imageView.frame.origin = CGPoint(x:0, y: 0)
                     imageView.image = UIImage(named: logo)
                     imageView.tag = 0
+                    imageView.contentMode = .scaleAspectFit
                     imageView.isUserInteractionEnabled = true
                     let tapGesture = UITapGestureRecognizer(target: self, action: #selector(logoTapped))
                     imageView.addGestureRecognizer(tapGesture)
                     logosScrollView.addSubview(imageView)
                     break
-                } else if accountTitle.text!.lowercased().replacingOccurrences(of: " ", with: "").contains(logo) {
-                    logoImagesPNG.insert(logo, at: 1)
-                    break
                 }
             }
-        }
+        
     }
     //MARK: - ScrollView Delegates
     func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
