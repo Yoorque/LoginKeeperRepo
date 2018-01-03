@@ -24,14 +24,14 @@
 "Use Passcode" = "Use a Senha";
 "Close" = "Fechar";
 "Skip" = "Pular";
-"Current Logo" = "Logo atual";
+"Current Logo" = "Logotipo atual";
 
 "No identities are enrolled" = "Nenhuma identidade está inscrita";
-"Canceled by user." = "Cancelado pelo usuário.";
-"Canceled by another authentication." = "Cancelado por outra autenticação.";
+"Canceled by user." = "Cancelado pelo usuário";
+"Canceled by another authentication." = "Cancelado por outra autenticação";
 
 "Account" = "Conta";
-"No Account name!" = "Nenhum nome da Conta!";
+"No Account name!" = "Sem nome da Conta!";
 "Account name is required." = "O nome da Conta é obrigatório";
 "Delete Acc" = "Deletar Conta";
 
@@ -47,25 +47,25 @@
 "Password" = "Senha";
 "Enter Password" = "Digite a senha";
 "Empty password" = "Senha vazia";
-"Please enter your password." = "Por favor, insira sua senha.";
+"Please enter your password." = "Por favor, insira sua senha";
 "Passwords do not match!"  = "As senhas não combinam!";
-"Please enter your password again." = "Por favor digite sua senha novamente.";
+"Please enter your password again." = "Por favor digite sua senha novamente";
 "Set your backup password for LoginKeeper" = "Defina sua senha de cópia de segurança para LoginKeeper";
 "Password is required!" = "Senha requerida!";
 "Please set your password to continue." = "Defina sua senha para continuar";
 
 "Comment" = "Comentário";
 "Version" = "Versão";
-"build" = "construir";
+"build" = "construção";
 "Search" = "Busca";
 
-"You are not authorized to use this feature." = "Você não está autorizado a usar esse recurso.";
+"You are not authorized to use this feature." = "Você não está autorizado a usar esse recurso";
 "In progress..." = "Em andamento ...";
-"We're working on this one!" = "Estamos trabalhando nessa!";
-"Oops! Unable to save changes at this time, please try again!" = "Ups! Não é possível salvar as alterações neste momento, tente novamente!";
-"Oops! Unable to fetch data at this time, please try again!" = "Ops! Não é possível trazer dados no momento, tente novamente!";
+"We're working on this one!" = "Estamos trabalhando nisso!";
+"Oops! Unable to save changes at this time, please try again!" = "Desculpe! Não é possível salvar as alterações neste momento, tente novamente!";
+"Oops! Unable to fetch data at this time, please try again!" = "Desculpe! Não é possível trazer dados no momento, tente novamente!";
 "Entries of" = "Entradas de";
 "details" = "detalhes";
 "Identify yourself" = "Identifique-se";
-"LoginKeeper® was developed solely using Apple Libraries and available resources provided by Apple and free open source resources. I, Dusan Juranovic, as a developer of LoginKeeper®, claim all distribution rights of LoginKeeper® as well as all copyrights©. LoginKeeper® is NOT recommended for storing valuable information such as , credit card details, bank details and all other information where loss of such information would bare great impact to individuals or companies alike and therefore LoginKeeper®  and I, Dusan Juranovic (developer), will not be held responsible for loss of any such information or assets. LoginKeeper® is intended only for purpose of not having to remember all of your login details or writing them down on pieces of paper. It is users judgment call to decide which information they enter into the app. If you have any issues or suggestions, please write an email to below provided email address. Thanks." = "O LoginKeeper® foi desenvolvido exclusivamente usando as bibliotecas da Apple e os recursos disponíveis fornecidos pela Apple e recursos gratuitos de fonte aberta. Eu, Dusan Juranovic, como desenvolvedor do LoginKeeper®, reivindico todos os direitos de distribuição do LoginKeeper®, bem como todos os direitos autorais ©. LoginKeeper® NÃO é recomendado para armazenar informações valiosas, tais como, detalhes do cartão de crédito, detalhes do banco e todas as outras informações em que a perda de tais informações teria um grande impacto para indivíduos ou empresas e, portanto, LoginKeeper® e eu, Dusan Juranovic (desenvolvedor), não serão Responsável pela perda de tais informações ou recursos. O LoginKeeper® destina-se apenas a não ter que se lembrar de todos os seus detalhes de login ou redigi-los em pedaços de papel. É uma chamada de julgamento dos usuários para decidir quais as informações que entram no app. Se você tiver algum problema ou sugestão, escreva um e-mail para o endereço de e-mail fornecido abaixo. Obrigado.";
+"LoginKeeper® was developed solely using Apple Libraries and available resources provided by Apple and free open source resources. I, Dusan Juranovic, as a developer of LoginKeeper®, claim all distribution rights of LoginKeeper® as well as all copyrights©. LoginKeeper® is NOT recommended for storing valuable information such as , credit card details, bank details and all other information where loss of such information would bare great impact to individuals or companies alike and therefore LoginKeeper®  and I, Dusan Juranovic (developer), will not be held responsible for loss of any such information or assets. LoginKeeper® is intended only for purpose of not having to remember all of your login details or writing them down on pieces of paper. It is users judgment call to decide which information they enter into the app. If you have any issues or suggestions, please write an email to below provided email address. Thanks." = "O LoginKeeper® foi desenvolvido exclusivamente usando as bibliotecas da Apple e os recursos disponíveis fornecidos pela Apple e recursos gratuitos de fonte aberta. Eu, Dusan Juranovic, como desenvolvedor do LoginKeeper®, reivindico todos os direitos de distribuição do LoginKeeper®, bem como todos os direitos autorais©. LoginKeeper® NÃO é recomendado para armazenar informações valiosas, tais como, detalhes do cartão de crédito, detalhes do banco e todas as outras informações em que a perda de tais informações teria um grande impacto para indivíduos ou empresas e, portanto, LoginKeeper® e eu, Dusan Juranovic (desenvolvedor), não serão responsável pela perda de tais informações ou recursos. O LoginKeeper® destina-se apenas a não ter que se lembrar de todos os seus detalhes de login ou redigi-los em pedaços de papel. É uma chamada de julgamento dos usuários para decidir quais as informações que entram no app. Se você tiver algum problema ou sugestão, escreva um e-mail para o endereço de e-mail fornecido abaixo. Obrigado.";
 

@@ -77,7 +77,11 @@ class AccountsViewController: UIViewController, UITableViewDelegate, UITableView
         updateTableViewBottomInset()
         
         if defaults.bool(forKey: "authenticated") == true { // false was set in observer
-            fetchFromCoreData()
+            if searchBar.text == "" {
+                fetchFromCoreData()
+            } else {
+                searchCoreDataWith(text: searchBar.text!)
+            }
             tableView.reloadData()
         } else {
             searchBar.isUserInteractionEnabled = false
