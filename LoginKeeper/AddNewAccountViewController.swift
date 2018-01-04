@@ -232,7 +232,7 @@ class AddNewAccountViewController: UIViewController, UITextFieldDelegate, UIScro
     
     func textFieldDidEndEditing(_ textField: UITextField) {
             for logo in accountLogos {
-                if textField.text!.lowercased().replacingOccurrences(of: " ", with: "") == logo || textField.text!.lowercased().replacingOccurrences(of: " ", with: "").contains(logo)  {
+                if accountTitle.text!.lowercased().replacingOccurrences(of: " ", with: "") == logo || accountTitle.text!.lowercased().replacingOccurrences(of: " ", with: "").contains(logo)  {
                     for imageView in logosScrollView.subviews {
                         if imageView.tag == 0 {
                             imageView.removeFromSuperview()
@@ -255,6 +255,33 @@ class AddNewAccountViewController: UIViewController, UITextFieldDelegate, UIScro
                     imageView.addGestureRecognizer(tapGesture)
                     logosScrollView.addSubview(imageView)
                     break
+                } else {
+                    for logo in logoImagesPNG {
+                        if logo.contains(accountTitle.text!.lowercased().replacingOccurrences(of: " ", with: "")) {
+                            for imageView in logosScrollView.subviews {
+                                if imageView.tag == 0 {
+                                    imageView.removeFromSuperview()
+                                }
+                            }
+                            
+                            logoImagesPNG.remove(at: 0)
+                            logoImagesPNG.insert(logo, at: 0)
+                            
+                            let imageView = UIImageView()
+                            imageView.image = UIImage(named: logo)
+                            
+                            imageView.frame.size = CGSize(width: 50, height: 50)
+                            imageView.frame.origin = CGPoint(x:0, y: 0)
+                            imageView.image = UIImage(named: logo)
+                            imageView.tag = 0
+                            imageView.contentMode = .scaleAspectFit
+                            imageView.isUserInteractionEnabled = true
+                            let tapGesture = UITapGestureRecognizer(target: self, action: #selector(logoTapped))
+                            imageView.addGestureRecognizer(tapGesture)
+                            logosScrollView.addSubview(imageView)
+                            break
+                        }
+                    }
                 }
             }
         

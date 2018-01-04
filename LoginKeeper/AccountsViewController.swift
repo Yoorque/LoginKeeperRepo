@@ -15,7 +15,7 @@ class AccountsViewController: UIViewController, UITableViewDelegate, UITableView
     
     
     //MARK: - Properties
-    
+
     @IBOutlet var lockButton: UIBarButtonItem!
     @IBOutlet var searchBar: UISearchBar! {
         didSet {
@@ -43,7 +43,6 @@ class AccountsViewController: UIViewController, UITableViewDelegate, UITableView
         defaults.set(false, forKey: "authenticated")
     
         //authentication
-        
         NotificationCenter.default.addObserver(forName: NSNotification.Name.UIApplicationWillEnterForeground, object: nil, queue: .main, using: {_ in
             self.defaults.set(false, forKey: "authenticated") //sets authentication to false for check in viewWillAppear()
             self.authenticateUser()
@@ -471,7 +470,7 @@ class AccountsViewController: UIViewController, UITableViewDelegate, UITableView
         let deleteAction = UITableViewRowAction(style: .destructive, title: deleteAccountLocalized, handler: {_,_  in
             self.appDelegate.persistentContainer.viewContext.delete(self.accounts[indexPath.row])
             self.accounts.remove(at: indexPath.row)
-            self.tableView.deleteRows(at: [indexPath], with: .fade)
+            self.tableView.deleteRows(at: [indexPath], with: .left)
             self.saveToCoreData()
         })
         
@@ -480,7 +479,7 @@ class AccountsViewController: UIViewController, UITableViewDelegate, UITableView
         })
         deleteAction.backgroundColor = UIColor(red: 216/255, green: 67/255, blue: 35/255, alpha: 1)
         insertAction.backgroundColor = UIColor(red: 44/255, green: 152/255, blue: 41/255, alpha: 1)
-        
+    
         return [deleteAction, insertAction]
     }
     
@@ -492,6 +491,7 @@ class AccountsViewController: UIViewController, UITableViewDelegate, UITableView
         }
         addAction.backgroundColor = UIColor(red: 44/255, green: 152/255, blue: 41/255, alpha: 1)
         let swipeConfig = UISwipeActionsConfiguration(actions: [addAction])
+        
         return swipeConfig
     }
     
@@ -501,7 +501,7 @@ class AccountsViewController: UIViewController, UITableViewDelegate, UITableView
         let deleteAction = UIContextualAction(style: .destructive, title: "Delete Acc") { (action, view, completionHandler) in
             self.appDelegate.persistentContainer.viewContext.delete(self.accounts[indexPath.row])
             self.accounts.remove(at: indexPath.row)
-            self.tableView.deleteRows(at: [indexPath], with: .fade)
+            self.tableView.deleteRows(at: [indexPath], with: .left)
             self.saveToCoreData()
         }
         

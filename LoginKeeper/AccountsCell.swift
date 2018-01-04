@@ -37,7 +37,8 @@ class AccountsCell: UITableViewCell {
             accountImageView.addGestureRecognizer(tapGesture)
         }
     }
-    @IBOutlet var accountNameLabel: UILabel!
+    
+    @IBOutlet var accountNameLabel: UILabel!    
     @IBOutlet var entriesCountForAccountLabel: UILabel!
     var accountForCell: Account!
     
