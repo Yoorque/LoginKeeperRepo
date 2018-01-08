@@ -232,7 +232,7 @@ class AddNewAccountViewController: UIViewController, UITextFieldDelegate, UIScro
     
     func textFieldDidEndEditing(_ textField: UITextField) {
             for logo in accountLogos {
-                if accountTitle.text!.lowercased().replacingOccurrences(of: " ", with: "") == logo || accountTitle.text!.lowercased().replacingOccurrences(of: " ", with: "").contains(logo)  {
+                if accountTitle.text!.lowercased().replacingOccurrences(of: " ", with: "") == logo || accountTitle.text!.lowercased().replacingOccurrences(of: " ", with: "").contains(logo) {
                     for imageView in logosScrollView.subviews {
                         if imageView.tag == 0 {
                             imageView.removeFromSuperview()
@@ -257,7 +257,7 @@ class AddNewAccountViewController: UIViewController, UITextFieldDelegate, UIScro
                     break
                 } else {
                     for logo in logoImagesPNG {
-                        if logo.contains(accountTitle.text!.lowercased().replacingOccurrences(of: " ", with: "")) {
+                        if logo.contains(accountTitle.text!.lowercased().replacingOccurrences(of: " ", with: "")) && accountTitle.text!.count > 3 {
                             for imageView in logosScrollView.subviews {
                                 if imageView.tag == 0 {
                                     imageView.removeFromSuperview()

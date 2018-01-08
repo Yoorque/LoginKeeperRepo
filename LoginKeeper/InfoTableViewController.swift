@@ -42,6 +42,7 @@ class InfoTableViewController: UITableViewController, BWWalkthroughViewControlle
         let pageThree = stb.instantiateViewController(withIdentifier: "Screen3")
         let pageFour = stb.instantiateViewController(withIdentifier: "Screen4")
         let pageFive = stb.instantiateViewController(withIdentifier: "Screen5")
+        let pageSix = stb.instantiateViewController(withIdentifier: "Screen6")
         
         walkthrough.delegate = self
         walkthrough.add(viewController: pageOne)
@@ -49,6 +50,7 @@ class InfoTableViewController: UITableViewController, BWWalkthroughViewControlle
         walkthrough.add(viewController: pageThree)
         walkthrough.add(viewController: pageFour)
         walkthrough.add(viewController: pageFive)
+        walkthrough.add(viewController: pageSix)
         
         self.present(walkthrough, animated: true, completion: nil)
     }
