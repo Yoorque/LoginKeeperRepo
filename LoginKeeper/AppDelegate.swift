@@ -9,6 +9,7 @@
 import UIKit
 import CoreData
 import GoogleMobileAds
+import UserNotifications
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, GADBannerViewDelegate {
@@ -26,6 +27,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GADBannerViewDelegate {
         
         UINavigationBar.appearance().tintColor = UIColor(red: 56/255, green: 124/255, blue: 254/255, alpha: 1)
         UINavigationBar.appearance().titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor(red: 56/255, green: 124/255, blue: 254/255, alpha: 1), NSAttributedStringKey.font: UIFont(name: "Zapf Dingbats", size: 15)!]
+        
         
         return true
     }
@@ -48,13 +50,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GADBannerViewDelegate {
         bannerView.isHidden = true
     }
     
+    func loadAd(forViewController controller: UIViewController) {
+        load(bannerView: adBannerView,forViewController: controller, andOrientation: UIDevice.current.orientation)
+    }
+    
     func load(bannerView: GADBannerView ,forViewController viewController: UIViewController, andOrientation orientation: UIDeviceOrientation) {
         bannerView.translatesAutoresizingMaskIntoConstraints = false
         viewController.view.addSubview(adBannerView!)
-        if orientation.isPortrait {
-            adBannerView!.adSize = kGADAdSizeSmartBannerPortrait
-        } else {
+        switch orientation {
+        case .portrait:
+             adBannerView!.adSize = kGADAdSizeSmartBannerPortrait
+        case .landscapeLeft, .landscapeRight:
             adBannerView!.adSize = kGADAdSizeSmartBannerLandscape
+        case .faceUp:
+            adBannerView!.adSize = kGADAdSizeSmartBannerPortrait
+        default:
+            adBannerView!.adSize = kGADAdSizeSmartBannerPortrait
         }
         
         if #available(iOS 11.0, *) {
@@ -110,6 +121,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GADBannerViewDelegate {
 
     func applicationDidEnterBackground(_ application: UIApplication) {
         print("applicationDidEnterBackground")
+        removeBannerView()
         // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
         // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
     }
@@ -175,6 +187,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GADBannerViewDelegate {
             }
         }
     }
-
+    
 }
 

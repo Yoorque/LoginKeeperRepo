@@ -331,7 +331,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="about" translatesAutoresizingMaskIntoConstraints="NO" id="5cT-QB-QgT">
-                                                    <rect key="frame" x="8" y="5" width="35" height="35"/>
+                                                    <rect key="frame" x="8" y="4" width="35" height="35"/>
                                                     <color key="tintColor" red="0.21983420849999999" green="0.48451471330000001" blue="0.99449735880000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="35" id="EeS-3A-non"/>
@@ -365,7 +365,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mail" translatesAutoresizingMaskIntoConstraints="NO" id="Gxp-uN-eYg">
-                                                    <rect key="frame" x="8" y="5" width="35" height="35"/>
+                                                    <rect key="frame" x="8" y="4" width="35" height="35"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="35" id="Amt-wr-hM1"/>
                                                         <constraint firstAttribute="width" constant="35" id="y3c-Dk-uUj"/>
@@ -402,7 +402,10 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Developer website" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ef8-fo-9ED">
-                                                    <rect key="frame" x="51" y="14" width="140" height="17"/>
+                                                    <rect key="frame" x="51" y="13" width="140" height="19"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="19" id="6pD-IS-rIr"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" name="ZapfDingbatsITC" family="Zapf Dingbats" pointSize="17"/>
                                                     <color key="textColor" red="0.21983420849999999" green="0.48451471330000001" blue="0.99449735880000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -425,14 +428,17 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="moreApps" translatesAutoresizingMaskIntoConstraints="NO" id="b4K-fB-9OL">
-                                                    <rect key="frame" x="8" y="5" width="35" height="35"/>
+                                                    <rect key="frame" x="8" y="4" width="35" height="35"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="35" id="BEv-R5-sBF"/>
                                                         <constraint firstAttribute="width" constant="35" id="bZb-Ku-Idl"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="More apps by developer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gqL-Oj-Kkg">
-                                                    <rect key="frame" x="51" y="13" width="182.5" height="17"/>
+                                                    <rect key="frame" x="51" y="12" width="182.5" height="19"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="19" id="8gg-8n-L9h"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" name="ZapfDingbatsITC" family="Zapf Dingbats" pointSize="17"/>
                                                     <color key="textColor" red="0.21983420849999999" green="0.48451471330000001" blue="0.99449735880000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -484,10 +490,10 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icons" translatesAutoresizingMaskIntoConstraints="NO" id="3ff-SK-5Ri">
-                                                    <rect key="frame" x="8" y="5" width="35" height="35"/>
+                                                    <rect key="frame" x="8" y="4" width="35" height="35"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="35" id="2Q4-Ee-xsD"/>
-                                                        <constraint firstAttribute="width" constant="35" id="Q61-gu-L5e"/>
+                                                        <constraint firstAttribute="height" constant="35" id="Jmm-CC-hkD"/>
+                                                        <constraint firstAttribute="width" constant="35" id="xew-2K-55f"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="icons8.com" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9wU-3T-eVT">
@@ -498,24 +504,60 @@
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="9wU-3T-eVT" firstAttribute="leading" secondItem="3ff-SK-5Ri" secondAttribute="trailing" constant="8" id="Wrl-WA-BWP"/>
-                                                <constraint firstItem="3ff-SK-5Ri" firstAttribute="centerY" secondItem="V5T-i6-Vv1" secondAttribute="centerY" id="XpK-Da-V8h"/>
-                                                <constraint firstItem="3ff-SK-5Ri" firstAttribute="leading" secondItem="V5T-i6-Vv1" secondAttribute="leading" constant="8" id="eXA-XI-kLf"/>
-                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="9wU-3T-eVT" secondAttribute="trailing" constant="20" symbolic="YES" id="hrS-2D-vFY"/>
-                                                <constraint firstItem="9wU-3T-eVT" firstAttribute="centerY" secondItem="V5T-i6-Vv1" secondAttribute="centerY" id="ycd-Wf-pAh"/>
+                                                <constraint firstItem="9wU-3T-eVT" firstAttribute="centerY" secondItem="V5T-i6-Vv1" secondAttribute="centerY" id="4U8-fd-W61"/>
+                                                <constraint firstItem="3ff-SK-5Ri" firstAttribute="centerY" secondItem="V5T-i6-Vv1" secondAttribute="centerY" id="5UK-Nq-QbL"/>
+                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="9wU-3T-eVT" secondAttribute="trailing" constant="238" id="CJB-1H-ox0"/>
+                                                <constraint firstItem="3ff-SK-5Ri" firstAttribute="leading" secondItem="V5T-i6-Vv1" secondAttribute="leading" constant="8" id="IOb-Pi-Hlc"/>
+                                                <constraint firstItem="9wU-3T-eVT" firstAttribute="leading" secondItem="3ff-SK-5Ri" secondAttribute="trailing" constant="8" id="mqL-EN-Xm3"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" tag="8" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="TZ2-Ci-Pa0">
+                                        <rect key="frame" x="0.0" y="462" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="TZ2-Ci-Pa0" id="gFS-E2-xe8">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="anonymous" translatesAutoresizingMaskIntoConstraints="NO" id="BYg-yN-UrG">
+                                                    <rect key="frame" x="8" y="4" width="35" height="35"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="35" id="aqY-wh-EmM"/>
+                                                        <constraint firstAttribute="width" constant="35" id="yrA-Cv-13q"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BWWalkthrough" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xZi-G9-l6p">
+                                                    <rect key="frame" x="51" y="12" width="123" height="19"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="19" id="xex-YX-ooc"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="ZapfDingbatsITC" family="Zapf Dingbats" pointSize="17"/>
+                                                    <color key="textColor" red="0.21960784310000001" green="0.48627450979999998" blue="0.99607843139999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="BYg-yN-UrG" firstAttribute="leading" secondItem="gFS-E2-xe8" secondAttribute="leading" constant="8" id="SRM-qD-wbZ"/>
+                                                <constraint firstItem="xZi-G9-l6p" firstAttribute="leading" secondItem="BYg-yN-UrG" secondAttribute="trailing" constant="8" id="X7p-Uz-lal"/>
+                                                <constraint firstItem="BYg-yN-UrG" firstAttribute="centerY" secondItem="gFS-E2-xe8" secondAttribute="centerY" id="dJq-8I-1eg"/>
+                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="xZi-G9-l6p" secondAttribute="trailing" constant="174" id="ruF-Qm-sXS"/>
+                                                <constraint firstItem="xZi-G9-l6p" firstAttribute="centerY" secondItem="gFS-E2-xe8" secondAttribute="centerY" id="umr-gY-nRV"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" selectionStyle="none" indentationWidth="0.0" shouldIndentWhileEditing="NO" rowHeight="82" id="6rM-zf-n7U">
-                                        <rect key="frame" x="0.0" y="462" width="375" height="82"/>
+                                        <rect key="frame" x="0.0" y="506" width="375" height="82"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="6rM-zf-n7U" id="VL0-WN-KTe">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="81.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="by Dusan Juranovic" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v14-yL-ACv">
-                                                    <rect key="frame" x="112.5" y="32.5" width="150" height="17"/>
+                                                    <rect key="frame" x="112.5" y="31.5" width="150" height="19"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="19" id="psn-vj-7oG"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" name="ZapfDingbatsITC" family="Zapf Dingbats" pointSize="17"/>
                                                     <color key="textColor" red="0.2196078431372549" green="0.48627450980392156" blue="0.99607843137254903" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -550,6 +592,7 @@
                         <outlet property="iconsCell" destination="41R-B3-Yl3" id="m5d-un-F35"/>
                         <outlet property="moreAppsCell" destination="3hV-GJ-wZ5" id="tQx-Yc-vaV"/>
                         <outlet property="versionLabel" destination="89r-pc-JuW" id="BD4-vg-VGw"/>
+                        <outlet property="walkthroughDevCell" destination="TZ2-Ci-Pa0" id="Xiw-Db-Ya2"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vG9-Fl-pUG" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -924,10 +967,10 @@
                                                     </constraints>
                                                 </imageView>
                                                 <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="G0N-O7-cvu">
-                                                    <rect key="frame" x="302" y="12" width="20" height="20"/>
+                                                    <rect key="frame" x="287" y="4" width="35" height="35"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="20" id="aLZ-57-gF5"/>
-                                                        <constraint firstAttribute="height" constant="20" id="lQ8-0J-99y"/>
+                                                        <constraint firstAttribute="width" constant="35" id="aLZ-57-gF5"/>
+                                                        <constraint firstAttribute="height" constant="35" id="lQ8-0J-99y"/>
                                                     </constraints>
                                                 </imageView>
                                             </subviews>
@@ -1033,10 +1076,10 @@
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="SaN-k5-a61">
                                                     <rect key="frame" x="2" y="2" width="46" height="46"/>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="4" translatesAutoresizingMaskIntoConstraints="NO" id="eYc-hf-exd">
-                                                    <rect key="frame" x="2" y="38" width="46" height="10"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="7" translatesAutoresizingMaskIntoConstraints="NO" id="eYc-hf-exd">
+                                                    <rect key="frame" x="2" y="33" width="46" height="15"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="10" id="JG1-xY-OYl"/>
+                                                        <constraint firstAttribute="height" constant="15" id="JG1-xY-OYl"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" name="ZapfDingbatsITC" family="Zapf Dingbats" pointSize="7"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1147,7 +1190,7 @@
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Screen1" translatesAutoresizingMaskIntoConstraints="NO" id="HEW-Xl-Wsd">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <color key="backgroundColor" red="0.14891096949577332" green="0.41679143905639648" blue="0.93505853414535522" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.14901960784313725" green="0.41568627450980389" blue="0.93333333333333335" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </imageView>
                         </subviews>
                         <constraints>
@@ -1186,20 +1229,16 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="middleTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dDg-6n-0ef">
-                                                    <rect key="frame" x="21" y="2.5" width="56.5" height="38"/>
+                                                    <rect key="frame" x="21" y="2.5" width="56.5" height="40"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="40" id="tVC-pA-Kzr"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" name="ZapfDingbatsITC" family="Zapf Dingbats" pointSize="23"/>
                                                     <color key="textColor" red="0.2196078431372549" green="0.48627450980392156" blue="0.99607843137254903" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="f4a-JW-b3B">
-                                                    <rect key="frame" x="340" y="11" width="20" height="20"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="20" id="mTd-f9-fUQ"/>
-                                                        <constraint firstAttribute="height" constant="20" id="rPM-S2-tkI"/>
-                                                    </constraints>
-                                                </imageView>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalCentering" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="0wx-wD-UZb">
-                                                    <rect key="frame" x="301" y="7" width="34.5" height="29"/>
+                                                    <rect key="frame" x="285.5" y="7" width="34.5" height="29"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Comment" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yZj-U9-A0o">
                                                             <rect key="frame" x="0.0" y="0.0" width="34.5" height="6"/>
@@ -1221,16 +1260,22 @@
                                                         </label>
                                                     </subviews>
                                                 </stackView>
+                                                <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="f4a-JW-b3B">
+                                                    <rect key="frame" x="325" y="4" width="35" height="35"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="35" id="JeJ-cT-8oa"/>
+                                                        <constraint firstAttribute="height" constant="35" id="hhX-Sg-AZg"/>
+                                                    </constraints>
+                                                </imageView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="f4a-JW-b3B" firstAttribute="trailing" secondItem="OiX-kb-taM" secondAttribute="trailingMargin" id="6Cg-FS-NSA"/>
                                                 <constraint firstItem="dDg-6n-0ef" firstAttribute="centerY" secondItem="OiX-kb-taM" secondAttribute="centerY" id="JRh-84-Zm2"/>
                                                 <constraint firstItem="0wx-wD-UZb" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="dDg-6n-0ef" secondAttribute="trailing" constant="20" id="KPZ-AD-J0f"/>
-                                                <constraint firstItem="f4a-JW-b3B" firstAttribute="centerY" secondItem="OiX-kb-taM" secondAttribute="centerY" id="OTh-81-Vs5"/>
+                                                <constraint firstItem="f4a-JW-b3B" firstAttribute="leading" secondItem="0wx-wD-UZb" secondAttribute="trailing" constant="5" id="MoI-8N-zXs"/>
                                                 <constraint firstItem="0wx-wD-UZb" firstAttribute="centerY" secondItem="OiX-kb-taM" secondAttribute="centerY" id="Oxa-vO-U0w"/>
+                                                <constraint firstAttribute="trailing" secondItem="f4a-JW-b3B" secondAttribute="trailing" constant="15" id="RQ0-nG-XJ9"/>
                                                 <constraint firstItem="dDg-6n-0ef" firstAttribute="leading" secondItem="OiX-kb-taM" secondAttribute="leadingMargin" constant="6" id="XEJ-GT-sjS"/>
-                                                <constraint firstItem="f4a-JW-b3B" firstAttribute="leading" secondItem="0wx-wD-UZb" secondAttribute="trailing" constant="5" id="tiJ-az-azV"/>
-                                                <constraint firstItem="dDg-6n-0ef" firstAttribute="top" secondItem="OiX-kb-taM" secondAttribute="topMargin" constant="-8.5" id="v1q-ak-T8B"/>
+                                                <constraint firstItem="f4a-JW-b3B" firstAttribute="centerY" secondItem="OiX-kb-taM" secondAttribute="centerY" id="tzm-On-Iik"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.87905663249999999" green="0.89664590359999996" blue="0.98421400790000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1431,32 +1476,13 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="All changes are automatically saved" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fmv-Ys-hzA">
-                                <rect key="frame" x="153" y="76" width="144" height="20"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="20" id="at8-tu-jML"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="ZapfDingbatsITC" family="Zapf Dingbats" pointSize="9"/>
-                                <color key="textColor" red="0.21983420849999999" green="0.48451471330000001" blue="0.99449735880000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="at8-tu-jML"/>
-                                    </mask>
-                                </variation>
-                                <variation key="heightClass=compact-widthClass=compact">
-                                    <fontDescription key="fontDescription" name="ZapfDingbatsITC" family="Zapf Dingbats" pointSize="10"/>
-                                </variation>
-                                <variation key="heightClass=regular-widthClass=compact">
-                                    <mask key="constraints">
-                                        <include reference="at8-tu-jML"/>
-                                    </mask>
-                                </variation>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="meZ-KJ-6Qa">
-                                <rect key="frame" x="194.5" y="284" width="62" height="29"/>
-                                <fontDescription key="fontDescription" name="ZapfDingbatsITC" family="Zapf Dingbats" pointSize="17"/>
-                                <state key="normal" title="Copy all">
+                                <rect key="frame" x="195.5" y="284" width="60" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="dpi-uh-P9t"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="ZapfDingbatsITC" family="Zapf Dingbats" pointSize="16"/>
+                                <state key="normal" title="Copy All">
                                     <color key="titleColor" red="0.21983420849999999" green="0.48451471330000001" blue="0.99449735880000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
@@ -1472,7 +1498,7 @@
                                 </constraints>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="W5I-Uv-Bbf">
-                                <rect key="frame" x="74" y="333" width="227" height="114"/>
+                                <rect key="frame" x="74" y="324" width="227" height="114"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Icon" translatesAutoresizingMaskIntoConstraints="NO" id="uUY-Xw-6GY">
                                         <rect key="frame" x="85" y="0.0" width="57" height="57"/>
@@ -1497,10 +1523,8 @@
                             <constraint firstItem="sQE-93-odd" firstAttribute="leading" secondItem="1AP-bX-O2J" secondAttribute="leading" constant="10" id="Th3-BE-vcz"/>
                             <constraint firstItem="nDU-H1-Tht" firstAttribute="top" secondItem="qqa-B5-7Bu" secondAttribute="bottom" constant="8" id="caN-lj-zQn"/>
                             <constraint firstItem="sQE-93-odd" firstAttribute="top" secondItem="qqa-B5-7Bu" secondAttribute="bottom" constant="40" id="kMF-cx-Jdx"/>
-                            <constraint firstItem="G3E-E7-jUM" firstAttribute="top" secondItem="fmv-Ys-hzA" secondAttribute="bottom" constant="8" id="lgM-Ez-cM1"/>
                             <constraint firstItem="meZ-KJ-6Qa" firstAttribute="top" secondItem="Blt-9E-2tY" secondAttribute="bottom" constant="15" id="uSI-rS-ZBt"/>
                             <constraint firstItem="meZ-KJ-6Qa" firstAttribute="centerX" secondItem="Blt-9E-2tY" secondAttribute="centerX" id="zaS-QV-ngQ"/>
-                            <constraint firstItem="fmv-Ys-hzA" firstAttribute="centerX" secondItem="G3E-E7-jUM" secondAttribute="centerX" id="zrE-Uo-yop"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Title" id="YJU-ma-TiN">
@@ -1564,7 +1588,7 @@
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Screen2" translatesAutoresizingMaskIntoConstraints="NO" id="UpV-9H-1iJ">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <color key="backgroundColor" red="0.14891096949577332" green="0.41679143905639648" blue="0.93505853414535522" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.14901960784313725" green="0.41568627450980389" blue="0.93333333333333335" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </imageView>
                         </subviews>
                         <constraints>
@@ -1593,7 +1617,7 @@
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Screen3" translatesAutoresizingMaskIntoConstraints="NO" id="Pbq-9A-7wT">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <color key="backgroundColor" red="0.14891096949577332" green="0.41679143905639648" blue="0.93505853414535522" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.14901960784313725" green="0.41568627450980389" blue="0.93333333333333335" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </imageView>
                         </subviews>
                         <constraints>
@@ -1622,7 +1646,7 @@
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Screen4" translatesAutoresizingMaskIntoConstraints="NO" id="vYP-gb-72K">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <color key="backgroundColor" red="0.14891096949577332" green="0.41679143905639648" blue="0.93505853414535522" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.14901960784313725" green="0.41568627450980389" blue="0.93333333333333335" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </imageView>
                         </subviews>
                         <constraints>
@@ -1651,7 +1675,7 @@
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Screen5" translatesAutoresizingMaskIntoConstraints="NO" id="Mwu-li-ySG">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <color key="backgroundColor" red="0.14891096949577332" green="0.41679143905639648" blue="0.93505853414535522" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.14901960784313725" green="0.41568627450980389" blue="0.93333333333333335" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </imageView>
                         </subviews>
                         <constraints>
@@ -1680,7 +1704,7 @@
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Screen6" translatesAutoresizingMaskIntoConstraints="NO" id="iG0-ze-O7X">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <color key="backgroundColor" red="0.14891096949577332" green="0.41679143905639648" blue="0.93505853414535522" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.14901960784313725" green="0.41568627450980389" blue="0.93333333333333335" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </imageView>
                         </subviews>
                         <constraints>
@@ -1702,9 +1726,10 @@
         <image name="Screen2" width="1018" height="1809"/>
         <image name="Screen3" width="1018" height="1809"/>
         <image name="Screen4" width="1018" height="1809"/>
-        <image name="Screen5" width="1018" height="2657"/>
+        <image name="Screen5" width="1018" height="1810"/>
         <image name="Screen6" width="1018" height="1809"/>
         <image name="about" width="50" height="50"/>
+        <image name="anonymous" width="120" height="120"/>
         <image name="copy" width="20" height="20"/>
         <image name="icons" width="50" height="50"/>
         <image name="mail" width="50" height="50"/>
@@ -1712,7 +1737,7 @@
         <image name="web" width="50" height="50"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="mYc-lo-ZTI"/>
-        <segue reference="h9s-k7-aFA"/>
+        <segue reference="iTS-a3-3V6"/>
+        <segue reference="R23-PL-03t"/>
     </inferredMetricsTieBreakers>
 </document>

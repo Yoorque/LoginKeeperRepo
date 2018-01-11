@@ -26,6 +26,7 @@
 		111EB6F31F0E431E00B12AC8 /* Entry+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111EB6EF1F0E431E00B12AC8 /* Entry+CoreDataClass.swift */; };
 		111EB6F41F0E431E00B12AC8 /* Entry+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111EB6F01F0E431E00B12AC8 /* Entry+CoreDataProperties.swift */; };
 		11779E431F4A25E8000F0D7D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 11779E421F4A25E8000F0D7D /* GoogleService-Info.plist */; };
+		117E30502007B827006C9DD5 /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 117E304F2007B827006C9DD5 /* UserNotifications.framework */; };
 		1196E3301FCDB386000FCB37 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1196E32F1FCDB386000FCB37 /* AboutViewController.swift */; };
 		11A0A9A91FE5DA0800BF38FF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 11A0A9A81FE5DA0700BF38FF /* Assets.xcassets */; };
 		11A0A9AB1FE5F2C600BF38FF /* Logos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A0A9AA1FE5F2C600BF38FF /* Logos.swift */; };
@@ -99,6 +100,8 @@
 		111EB6F01F0E431E00B12AC8 /* Entry+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Entry+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		115539141FF84CB500709B4B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		11779E421F4A25E8000F0D7D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		117E304E2007B6CF006C9DD5 /* LoginKeeper.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = LoginKeeper.entitlements; sourceTree = "<group>"; };
+		117E304F2007B827006C9DD5 /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
 		1196E32F1FCDB386000FCB37 /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		11A0A9A81FE5DA0700BF38FF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		11A0A9AA1FE5F2C600BF38FF /* Logos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logos.swift; sourceTree = "<group>"; };
@@ -118,6 +121,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				117E30502007B827006C9DD5 /* UserNotifications.framework in Frameworks */,
 				DF1B3E4F59015A84C2DFE7C2 /* Pods_LoginKeeper.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -146,6 +150,7 @@
 		111EB6CB1F0E2DDD00B12AC8 /* LoginKeeper */ = {
 			isa = PBXGroup;
 			children = (
+				117E304E2007B6CF006C9DD5 /* LoginKeeper.entitlements */,
 				1111F1281FE9D07F00663E1E /* InfoPlist.strings */,
 				1111F1151FE9A91500663E1E /* Localizable.strings */,
 				11A0A9AE1FE5F76500BF38FF /* LogosViewController.swift */,
@@ -223,6 +228,7 @@
 		860486F66B05487DE1EC5950 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				117E304F2007B827006C9DD5 /* UserNotifications.framework */,
 				39307564D6F219D7841E90E1 /* Pods_LoginKeeper.framework */,
 			);
 			name = Frameworks;
@@ -267,8 +273,14 @@
 						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
+							com.apple.DataProtection = {
+								enabled = 1;
+							};
 							com.apple.Keychain = {
 								enabled = 0;
+							};
+							com.apple.Push = {
+								enabled = 1;
 							};
 						};
 					};
@@ -596,6 +608,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = LoginKeeper/LoginKeeper.entitlements;
 				DEVELOPMENT_TEAM = UKQDW363ZZ;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -619,6 +632,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = LoginKeeper/LoginKeeper.entitlements;
 				DEVELOPMENT_TEAM = UKQDW363ZZ;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",

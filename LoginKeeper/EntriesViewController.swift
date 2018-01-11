@@ -29,11 +29,16 @@ class EntriesViewController: UIViewController, UITableViewDataSource, UITableVie
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-        appDelegate.load(bannerView: appDelegate.adBannerView,forViewController: self, andOrientation: UIDevice.current.orientation)
+        appDelegate.loadAd(forViewController: self)
+        updateTableViewBottomInset()
         fetchFromCoreData()
-        tableView.setNeedsLayout()
     }
-    //MARK: - Localization
+    
+    func updateTableViewBottomInset() {
+        if let banner = appDelegate.adBannerView {
+            tableView.contentInset.bottom = banner.frame.size.height
+        }
+    }
     
     func fetchFromCoreData() {
         let context = appDelegate.persistentContainer.viewContext
@@ -69,8 +74,7 @@ class EntriesViewController: UIViewController, UITableViewDataSource, UITableVie
     }
     
     override func didRotate(from fromInterfaceOrientation: UIInterfaceOrientation) {
-        appDelegate.load(bannerView: appDelegate.adBannerView,forViewController: self, andOrientation: UIDevice.current.orientation)
-        
+        appDelegate.loadAd(forViewController: self)
     }
 
     

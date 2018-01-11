@@ -10,8 +10,9 @@ import UIKit
 import CoreData
 import LocalAuthentication
 import GoogleMobileAds
+import UserNotifications
 
-class AccountsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate, AccountsDisplayAlertDelegate, BWWalkthroughViewControllerDelegate, ShowLogoDelegate {
+class AccountsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate, AccountsDisplayAlertDelegate, BWWalkthroughViewControllerDelegate, ShowLogoDelegate, UNUserNotificationCenterDelegate {
     
     
     //MARK: - Properties
@@ -35,13 +36,33 @@ class AccountsViewController: UIViewController, UITableViewDelegate, UITableView
     let defaults = UserDefaults.standard
     var passwordSetShownBefore = false
     var tutorialShown = false
+    var notificationStrings = ["There must be some password you forgot. Come back.", "We miss you dearly. Show us some love.", "You got it all figured out? You sure?", "You don't really need to remember everything, you know?", "Put your mind at ease, write your logins here.", "Haven't seen you in a while. How have you been lately?", "And there goes another week without you. You have been missed."]
     
-    
+    func notify(with message: String) {
+        let localNotificationCenter = UNUserNotificationCenter.current()
+        localNotificationCenter.delegate = self
+        let content = UNMutableNotificationContent()
+        content.title = "Hey there \(UIDevice.current.name.replacingOccurrences(of: "'s iPhone", with: ""))!"
+        content.body = message
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 604800, repeats: true)
+        let request = UNNotificationRequest(identifier: "Notification", content: content, trigger: trigger)
+        localNotificationCenter.add(request) { (error) in
+            guard error == nil else {
+                print("Couldn't display notification due to \(error!)")
+                return
+            }
+            print("Notified")
+        }
+    }
     //MARK: - App life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         defaults.set(false, forKey: "authenticated")
-    
+        NotificationCenter.default.addObserver(forName: NSNotification.Name.UIApplicationDidEnterBackground, object: nil, queue: .main, using: {_ in
+            let randomNumber = Int(arc4random_uniform(UInt32(self.notificationStrings.count - 1)))
+            let message = self.notificationStrings[randomNumber]
+            self.notify(with: message)
+        })
         //authentication
         NotificationCenter.default.addObserver(forName: NSNotification.Name.UIApplicationWillEnterForeground, object: nil, queue: .main, using: {_ in
             self.defaults.set(false, forKey: "authenticated") //sets authentication to false for check in viewWillAppear()
@@ -71,10 +92,10 @@ class AccountsViewController: UIViewController, UITableViewDelegate, UITableView
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-        appDelegate.load(bannerView: appDelegate.adBannerView,forViewController: self, andOrientation: UIDevice.current.orientation)
-        updateTableViewBottomInset()
         
         if defaults.bool(forKey: "authenticated") == true { // false was set in observer
+            appDelegate.loadAd(forViewController: self)
+            updateTableViewBottomInset()
             if searchBar.text == "" {
                 fetchFromCoreData()
             } else {
@@ -93,8 +114,7 @@ class AccountsViewController: UIViewController, UITableViewDelegate, UITableView
     }
     
     override func didRotate(from fromInterfaceOrientation: UIInterfaceOrientation) {
-        appDelegate.load(bannerView: appDelegate.adBannerView,forViewController: self, andOrientation: UIDevice.current.orientation)
-        updateTableViewBottomInset()
+        appDelegate.loadAd(forViewController: self)
     }
     //MARK: - Tutorial Functions
     
@@ -193,6 +213,8 @@ class AccountsViewController: UIViewController, UITableViewDelegate, UITableView
                             self.defaults.set(true, forKey: "authenticated")
                             self.lockButton.title = lockLocalized
                             BlurBackgroundView.removeBlurFrom(view: (self.navigationController?.topViewController?.view)!) //Unblur the background
+                            self.appDelegate.loadAd(forViewController: (self.navigationController?.topViewController)!)
+                            self.updateTableViewBottomInset()
                             print("Success: TouchID")
                         } else {
                             let errorDescriptionLocalized = NSLocalizedString(error!.localizedDescription, comment: "authentication failed message")
@@ -245,6 +267,8 @@ class AccountsViewController: UIViewController, UITableViewDelegate, UITableView
                         self.fetchFromCoreData()
                         self.defaults.set(true, forKey: "authenticated")
                         BlurBackgroundView.removeBlurFrom(view: (self.navigationController?.topViewController?.view)!) //Unblur the background
+                        self.appDelegate.loadAd(forViewController: (self.navigationController?.topViewController)!)
+                        self.updateTableViewBottomInset()
                         print("Success: Passcode")
                     } else {
                         let errorDescriptionLocalized = NSLocalizedString(error!.localizedDescription, comment: "authentication failed message")
@@ -445,7 +469,13 @@ class AccountsViewController: UIViewController, UITableViewDelegate, UITableView
         cell.showLogoDelegate = self
         cell.accountNameLabel.text = accounts[indexPath.row].name
         cell.entriesCountForAccountLabel.text = "\(accounts[indexPath.row].entries!.count)"
-        cell.favoriteImageView.image = accounts[indexPath.row].favorited == true ? UIImage(named: "star") : UIImage(named: "emptyStar")
+        
+        if accounts[indexPath.row].entries!.count > 1 {
+            cell.favoriteImageView.isHidden = true
+        } else {
+            cell.favoriteImageView.isHidden = false
+            cell.favoriteImageView.image = (accounts[indexPath.row].entries?.allObjects.first as! Entry).favorited == true ? UIImage(named: "star") : UIImage(named: "emptyStar")
+        }
         cell.accountImageView.tag = indexPath.row
         cell.accountImageView.image = UIImage(named: accounts[indexPath.row].image!)
         

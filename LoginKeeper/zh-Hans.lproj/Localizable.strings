@@ -25,7 +25,7 @@
 "Use Passcode" = "使用密码";
 "Close" = "关";
 "Skip" = "跳跃";
-"Current Logo" = "当前的标志";
+"Current/Suggested Logo" = "当前/建议的标志";
 
 "No identities are enrolled" = "沒有身份註冊";
 "Canceled by user." = "由用户取消。";

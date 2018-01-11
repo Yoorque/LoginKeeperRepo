@@ -24,7 +24,7 @@
 "Use Passcode" = "암호 사용";
 "Close" = "닫기";
 "Skip" = "버킷";
-"Current Logo" = "현재 로고";
+"Current/Suggested Logo" = "현재 / 추천 로고";
 
 "No identities are enrolled" = "신원이 등록되지 않았습니다.";
 "Canceled by user." = "사용자가 취소했습니다.";

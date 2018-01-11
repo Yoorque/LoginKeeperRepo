@@ -101,8 +101,8 @@
 /* Class = "UIButton"; normalTitle = "Skip"; ObjectID = "ljz-gl-szh"; */
 "ljz-gl-szh.normalTitle" = "Preskoči";
 
-/* Class = "UIButton"; normalTitle = "Copy all"; ObjectID = "meZ-KJ-6Qa"; */
-"meZ-KJ-6Qa.normalTitle" = "Iskopiraj sve";
+/* Class = "UIButton"; normalTitle = "Copy All"; ObjectID = "meZ-KJ-6Qa"; */
+"meZ-KJ-6Qa.normalTitle" = "Iskopiraj Sve";
 
 /* Class = "UINavigationItem"; title = "About LoginKeeper"; ObjectID = "ni1-Kc-bws"; */
 "ni1-Kc-bws.title" = "O LoginKeeper-u";

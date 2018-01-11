@@ -23,7 +23,7 @@
 "Use Passcode" = "パスワードを使用する";
 "Close" = "閉じる";
 "Skip" = "スキップ";
-"Current Logo" = "現在のロゴ";
+"Current/Suggested Logo" = "現在/推奨ロゴ";
 
 "No identities are enrolled" = "アイデンティティは登録されていません";
 "Canceled by user." = "ユーザーによってキャンセルされました。";

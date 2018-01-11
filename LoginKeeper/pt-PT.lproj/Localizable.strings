@@ -24,7 +24,7 @@
 "Use Passcode" = "Use a Senha";
 "Close" = "Fechar";
 "Skip" = "Pular";
-"Current Logo" = "Logotipo atual";
+"Current/Suggested Logo" = "Logotipo atual/sugerido";
 
 "No identities are enrolled" = "Nenhuma identidade está inscrita";
 "Canceled by user." = "Cancelado pelo usuário";

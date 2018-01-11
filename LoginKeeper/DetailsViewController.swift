@@ -55,7 +55,7 @@ class DetailsViewController: UIViewController, UITextFieldDelegate {
         //titleTextLabel.text = title
         navigationItem.titleView = titleTextLabel
         
-        appDelegate.load(bannerView: appDelegate.adBannerView,forViewController: self, andOrientation: UIDevice.current.orientation)
+       appDelegate.loadAd(forViewController: self)
         
         view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard)))
     }
@@ -73,19 +73,15 @@ class DetailsViewController: UIViewController, UITextFieldDelegate {
         password.text = entryDetails?.password
         comment.text = entryDetails?.comment
         
-        if entryDetails!.account!.entries!.count > 1 {
             if entryDetails?.favorited == true {
                 favoritedStar.image = UIImage(named: "star")
             } else {
                 favoritedStar.image = UIImage(named: "emptyStar")
             }
-        } else {
-            if entryDetails?.account?.favorited == true {
-                favoritedStar.image = UIImage(named: "star")
-            } else {
-                favoritedStar.image = UIImage(named: "emptyStar")
-            }
         }
+    
+    func loadAd() {
+        appDelegate.load(bannerView: appDelegate.adBannerView,forViewController: self, andOrientation: UIDevice.current.orientation)
     }
     
     func textEditEnabled() {
@@ -230,7 +226,7 @@ class DetailsViewController: UIViewController, UITextFieldDelegate {
     }
     
     override func didRotate(from fromInterfaceOrientation: UIInterfaceOrientation) {
-        appDelegate.load(bannerView: appDelegate.adBannerView,forViewController: self, andOrientation: UIDevice.current.orientation)
+        loadAd()
     }
     
     @objc func dismissKeyboard(sender: UITapGestureRecognizer ) {

@@ -92,6 +92,13 @@ class AddNewAccountViewController: UIViewController, UITextFieldDelegate, UIScro
             if let textField = activeTextField {
                 textField.resignFirstResponder()
             }
+            UIView.animate(withDuration: 0.2, animations: {
+                view.transform = CGAffineTransform(scaleX: 0.7, y: 0.7)
+            }, completion: {_ in
+                UIView.animate(withDuration: 0.2, animations: {
+                    view.transform = .identity
+                })
+            })
             for logo in logosScrollView.subviews {
                 if logo is UIImageView {
                 let logoImageView = logo as! UIImageView

@@ -2,8 +2,8 @@
 //  Entry+CoreDataProperties.swift
 //  LoginKeeper
 //
-//  Created by Dusan Juranovic on 10/9/17.
-//  Copyright © 2017 Dusan Juranovic. All rights reserved.
+//  Created by Dusan Juranovic on 1/11/18.
+//  Copyright © 2018 Dusan Juranovic. All rights reserved.
 //
 //
 

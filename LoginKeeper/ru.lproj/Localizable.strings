@@ -24,7 +24,7 @@
 "Use Passcode" = "Использовать Пароль";
 "Close" = "Закрыть";
 "Skip" = "Пропускать";
-"Current Logo" = "Текущий логотип";
+"Current/Suggested Logo" = "Текущий/Предлагаемый логотип";
 
 "No identities are enrolled" = "Никаких удостоверений не зарегистрировано";
 "Canceled by user." = "Отменено пользователем.";

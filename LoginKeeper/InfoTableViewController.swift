@@ -13,9 +13,11 @@ class InfoTableViewController: UITableViewController, BWWalkthroughViewControlle
     @IBOutlet var devWebsiteCell: UITableViewCell!
     @IBOutlet var moreAppsCell: UITableViewCell!
     @IBOutlet var iconsCell: UITableViewCell!
+    @IBOutlet var walkthroughDevCell: UITableViewCell!
     @IBOutlet var versionLabel: UILabel!
     var authenticated: Bool?
     let accountsVC = AccountsViewController()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         authenticated = UserDefaults.standard.bool(forKey: "authenticated")
@@ -102,6 +104,10 @@ class InfoTableViewController: UITableViewController, BWWalkthroughViewControlle
                 leavingAppAlert(toURL: url, title: "icons8.com")
             }
             
+        case walkthroughDevCell.tag:
+            if let url = URL(string: "https://github.com/ariok/BWWalkthrough") {
+                leavingAppAlert(toURL: url, title: "GitHub")
+            }
         default:
             break
         }

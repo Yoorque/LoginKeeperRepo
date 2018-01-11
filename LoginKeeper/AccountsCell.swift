@@ -47,13 +47,15 @@ class AccountsCell: UITableViewCell {
             
             fetch(account: accountNameLabel.text!)
             
-            if view.image == UIImage(named: "star") {
+            if (accountForCell.entries?.allObjects.first as! Entry).favorited == true {
                 view.image = UIImage(named: "emptyStar")
-                accountForCell.favorited = false
+                (accountForCell.entries?.allObjects.first as! Entry).favorited = false
             } else {
                 view.image = UIImage(named: "star")
-                accountForCell.favorited = true
+                (accountForCell.entries?.allObjects.first as! Entry).favorited = true
             }
+            
+            
             do {
                 try context.save()
             } catch {
@@ -64,9 +66,18 @@ class AccountsCell: UITableViewCell {
     
     @objc func changeLogo(sender: UITapGestureRecognizer) {
         if let view = sender.view as? UIImageView {
-            showLogoDelegate?.showLogosForRow(at: view.tag)
+            UIView.animate(withDuration: 0.2, animations: {
+                view.transform = CGAffineTransform(scaleX: 0.7, y: 0.7)
+            }, completion: {_ in
+                UIView.animate(withDuration: 0.2, animations: {
+                    view.transform = .identity
+                }, completion: {_ in
+                    self.showLogoDelegate?.showLogosForRow(at: view.tag)
+                })
+            })
         }
     }
+    
     func fetch(account: String) {
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Account")
         let predicate = NSPredicate(format: "name == %@", account)
