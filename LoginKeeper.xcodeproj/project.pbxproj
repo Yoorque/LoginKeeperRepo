@@ -25,6 +25,7 @@
 		111EB6F21F0E431E00B12AC8 /* Account+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111EB6EE1F0E431E00B12AC8 /* Account+CoreDataProperties.swift */; };
 		111EB6F31F0E431E00B12AC8 /* Entry+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111EB6EF1F0E431E00B12AC8 /* Entry+CoreDataClass.swift */; };
 		111EB6F41F0E431E00B12AC8 /* Entry+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111EB6F01F0E431E00B12AC8 /* Entry+CoreDataProperties.swift */; };
+		1161FF0920082C1800E747F4 /* notification.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 1161FF0820082C1800E747F4 /* notification.aiff */; };
 		11779E431F4A25E8000F0D7D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 11779E421F4A25E8000F0D7D /* GoogleService-Info.plist */; };
 		117E30502007B827006C9DD5 /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 117E304F2007B827006C9DD5 /* UserNotifications.framework */; };
 		1196E3301FCDB386000FCB37 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1196E32F1FCDB386000FCB37 /* AboutViewController.swift */; };
@@ -99,6 +100,7 @@
 		111EB6EF1F0E431E00B12AC8 /* Entry+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Entry+CoreDataClass.swift"; sourceTree = "<group>"; };
 		111EB6F01F0E431E00B12AC8 /* Entry+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Entry+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		115539141FF84CB500709B4B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		1161FF0820082C1800E747F4 /* notification.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = notification.aiff; sourceTree = "<group>"; };
 		11779E421F4A25E8000F0D7D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		117E304E2007B6CF006C9DD5 /* LoginKeeper.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = LoginKeeper.entitlements; sourceTree = "<group>"; };
 		117E304F2007B827006C9DD5 /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
@@ -150,7 +152,6 @@
 		111EB6CB1F0E2DDD00B12AC8 /* LoginKeeper */ = {
 			isa = PBXGroup;
 			children = (
-				117E304E2007B6CF006C9DD5 /* LoginKeeper.entitlements */,
 				1111F1281FE9D07F00663E1E /* InfoPlist.strings */,
 				1111F1151FE9A91500663E1E /* Localizable.strings */,
 				11A0A9AE1FE5F76500BF38FF /* LogosViewController.swift */,
@@ -169,6 +170,7 @@
 				111EB6F71F0E438900B12AC8 /* CustomCells */,
 				111EB6F51F0E432300B12AC8 /* CoreDataModel */,
 				111EB6F61F0E435000B12AC8 /* SupportingFiles */,
+				1161FF022008257D00E747F4 /* Sounds */,
 			);
 			path = LoginKeeper;
 			sourceTree = "<group>";
@@ -193,6 +195,7 @@
 				11779E421F4A25E8000F0D7D /* GoogleService-Info.plist */,
 				111EB6DB1F0E2DDD00B12AC8 /* Info.plist */,
 				111EB6D31F0E2DDD00B12AC8 /* LoginKeeper.xcdatamodeld */,
+				117E304E2007B6CF006C9DD5 /* LoginKeeper.entitlements */,
 			);
 			name = SupportingFiles;
 			sourceTree = "<group>";
@@ -205,6 +208,14 @@
 				11A0A9B01FE5FA0200BF38FF /* LogoCollectionViewCell.swift */,
 			);
 			name = CustomCells;
+			sourceTree = "<group>";
+		};
+		1161FF022008257D00E747F4 /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				1161FF0820082C1800E747F4 /* notification.aiff */,
+			);
+			name = Sounds;
 			sourceTree = "<group>";
 		};
 		119356521FD9AA8B00E2D211 /* Walkthrough */ = {
@@ -323,6 +334,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1111F1131FE9A91500663E1E /* Localizable.strings in Resources */,
+				1161FF0920082C1800E747F4 /* notification.aiff in Resources */,
 				1111F1261FE9D07F00663E1E /* InfoPlist.strings in Resources */,
 				111EB6DA1F0E2DDD00B12AC8 /* LaunchScreen.storyboard in Resources */,
 				11779E431F4A25E8000F0D7D /* GoogleService-Info.plist in Resources */,

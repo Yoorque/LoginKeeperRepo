@@ -36,31 +36,18 @@ class AccountsViewController: UIViewController, UITableViewDelegate, UITableView
     let defaults = UserDefaults.standard
     var passwordSetShownBefore = false
     var tutorialShown = false
-    var notificationStrings = ["There must be some password you forgot. Come back.", "We miss you dearly. Show us some love.", "You got it all figured out? You sure?", "You don't really need to remember everything, you know?", "Put your mind at ease, write your logins here.", "Haven't seen you in a while. How have you been lately?", "And there goes another week without you. You have been missed."]
+    var notificationStrings = ["There must be some password you forgot. Come back.", "We miss you dearly. Show us some love.", "You got it all figured out? Are you sure?", "You don't really need to remember everything, you know?", "Put your mind at ease, store your logins here.", "Haven't seen you in a while. How have you been lately?", "And there goes another week without you. You have been missed."]
     
-    func notify(with message: String) {
-        let localNotificationCenter = UNUserNotificationCenter.current()
-        localNotificationCenter.delegate = self
-        let content = UNMutableNotificationContent()
-        content.title = "Hey there \(UIDevice.current.name.replacingOccurrences(of: "'s iPhone", with: ""))!"
-        content.body = message
-        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 604800, repeats: true)
-        let request = UNNotificationRequest(identifier: "Notification", content: content, trigger: trigger)
-        localNotificationCenter.add(request) { (error) in
-            guard error == nil else {
-                print("Couldn't display notification due to \(error!)")
-                return
-            }
-            print("Notified")
-        }
-    }
+    
     //MARK: - App life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         defaults.set(false, forKey: "authenticated")
+        
         NotificationCenter.default.addObserver(forName: NSNotification.Name.UIApplicationDidEnterBackground, object: nil, queue: .main, using: {_ in
-            let randomNumber = Int(arc4random_uniform(UInt32(self.notificationStrings.count - 1)))
-            let message = self.notificationStrings[randomNumber]
+            let randomString = Int(arc4random_uniform(UInt32(self.notificationStrings.count - 1)))
+            
+            let message = self.notificationStrings[randomString]
             self.notify(with: message)
         })
         //authentication
@@ -72,41 +59,52 @@ class AccountsViewController: UIViewController, UITableViewDelegate, UITableView
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
         tapGesture.cancelsTouchesInView = false
         view.addGestureRecognizer(tapGesture)
-        if let tutShown = defaults.value(forKey: "tutorialShown") as? Bool {
-            tutorialShown = tutShown
-        }
         
-        if tutorialShown == false {
-            playTutorial()
-        } else {
-            if let shown = defaults.value(forKey: "shownBefore") as? Bool {
-                passwordSetShownBefore = shown
-            }
-            if passwordSetShownBefore == false {
-                setPassword()
-            } 
-        }
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound], completionHandler: { (granted, error) in
+            guard error == nil else {return}
+                self.defaults.set(true, forKey: "notificationAlertShown")
+                if let tutShown = self.defaults.value(forKey: "tutorialShown") as? Bool {
+                    self.tutorialShown = tutShown
+                }
+                
+                if self.tutorialShown == false {
+                    DispatchQueue.main.async {
+                        self.playTutorial()
+                    }
+                } else {
+                    if let shown = self.defaults.value(forKey: "shownBefore") as? Bool {
+                        self.passwordSetShownBefore = shown
+                    }
+                    if self.passwordSetShownBefore == false {
+                        self.setPassword()
+                    }
+                }
+            
+        })
+        
         // addToolBarTo(searchBar: searchBar)
         
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-        
-        if defaults.bool(forKey: "authenticated") == true { // false was set in observer
-            appDelegate.loadAd(forViewController: self)
-            updateTableViewBottomInset()
-            if searchBar.text == "" {
-                fetchFromCoreData()
+        if defaults.bool(forKey: "notificationAlertShown") == true {
+            if defaults.bool(forKey: "authenticated") == true { // false was set in observer
+                appDelegate.loadAd(forViewController: self)
+                updateTableViewBottomInset()
+                if searchBar.text == "" {
+                    fetchFromCoreData()
+                } else {
+                    searchCoreDataWith(text: searchBar.text!)
+                }
+                tableView.reloadData()
             } else {
-                searchCoreDataWith(text: searchBar.text!)
+                searchBar.isUserInteractionEnabled = false
+                if defaults.bool(forKey: "passSetShown") == true {
+                    authenticateUser()
+                }
             }
-            tableView.reloadData()
-        } else {
-            searchBar.isUserInteractionEnabled = false
-            authenticateUser()
         }
-        
     }
     
     override func willRotate(to toInterfaceOrientation: UIInterfaceOrientation, duration: TimeInterval) {
@@ -149,7 +147,29 @@ class AccountsViewController: UIViewController, UITableViewDelegate, UITableView
         }
     }
     
+    //MARK: - Local Notifications
+    
+    func notify(with message: String) {
+        BlurBackgroundView.removeBlurFrom(view: self.view)
+        let localNotificationCenter = UNUserNotificationCenter.current()
+        localNotificationCenter.delegate = self
+        let content = UNMutableNotificationContent()
+        content.title = "Hey there \(UIDevice.current.name.replacingOccurrences(of: "'s iPhone", with: ""))!"
+        content.body = message
+        content.sound = UNNotificationSound(named: "notification.aiff")
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 604800, repeats: true)
+        let request = UNNotificationRequest(identifier: "Notification", content: content, trigger: trigger)
+        localNotificationCenter.add(request) { (error) in
+            guard error == nil else {
+                print("Couldn't display notification due to \(error!)")
+                return
+            }
+            print("Notification is scheduled")
+        }
+    }
+    
     //MARK: - Helper functions
+    
     func updateTableViewBottomInset() {
         if let banner = appDelegate.adBannerView {
             tableView.contentInset.bottom = banner.frame.size.height
@@ -171,7 +191,9 @@ class AccountsViewController: UIViewController, UITableViewDelegate, UITableView
             alert.textFields?.first?.isSecureTextEntry = true
             self.defaults.set(password, forKey: "userPassword")
             self.defaults.set(true, forKey: "shownBefore")
-            self.authenticateUser()
+            self.defaults.set(true, forKey: "passSetShown")
+            self.defaults.set(true, forKey: "authenticated")
+            //self.authenticateUser()
         }))
         
         alert.addAction(UIAlertAction(title: cancelAnswerLocalized, style: .default, handler: { _ in
