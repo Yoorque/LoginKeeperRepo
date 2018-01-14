@@ -36,8 +36,6 @@ class AccountsViewController: UIViewController, UITableViewDelegate, UITableView
     let defaults = UserDefaults.standard
     var passwordSetShownBefore = false
     var tutorialShown = false
-    var notificationStrings = ["There must be some password you forgot. Come back.", "We miss you dearly. Show us some love.", "You got it all figured out? Are you sure?", "You don't really need to remember everything, you know?", "Put your mind at ease, store your logins here.", "Haven't seen you in a while. How have you been lately?", "And there goes another week without you. You have been missed."]
-    
     
     //MARK: - App life cycle
     override func viewDidLoad() {
@@ -45,9 +43,9 @@ class AccountsViewController: UIViewController, UITableViewDelegate, UITableView
         defaults.set(false, forKey: "authenticated")
         
         NotificationCenter.default.addObserver(forName: NSNotification.Name.UIApplicationDidEnterBackground, object: nil, queue: .main, using: {_ in
-            let randomString = Int(arc4random_uniform(UInt32(self.notificationStrings.count - 1)))
+            let randomString = Int(arc4random_uniform(UInt32(localizedNotificationStrings.count - 1)))
             
-            let message = self.notificationStrings[randomString]
+            let message = localizedNotificationStrings[randomString]
             self.notify(with: message)
         })
         //authentication

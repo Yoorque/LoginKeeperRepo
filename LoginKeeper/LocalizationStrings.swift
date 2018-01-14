@@ -55,3 +55,12 @@ let lockLocalized = NSLocalizedString("Lock", comment: "")
 let entriesOfLocalized = NSLocalizedString("Entries of", comment: "")
 let searchBarPlaceholderLocalized = NSLocalizedString("Search", comment: "search bar")
 let aboutTextLocalized = NSLocalizedString("LoginKeeper® was developed solely using Apple Libraries and available resources provided by Apple and free open source resources. I, Dusan Juranovic, as a developer of LoginKeeper®, claim all distribution rights of LoginKeeper® as well as all copyrights©. LoginKeeper® is NOT recommended for storing valuable information such as , credit card details, bank details and all other information where loss of such information would bare great impact to individuals or companies alike and therefore LoginKeeper®  and I, Dusan Juranovic (developer), will not be held responsible for loss of any such information or assets. LoginKeeper® is intended only for purpose of not having to remember all of your login details or writing them down on pieces of paper. It is users judgment call to decide which information they enter into the app. If you have any issues or suggestions, please write an email to below provided email address. Thanks.", comment: "long about text")
+let localNotificationLocalized1 = NSLocalizedString("There must be some password you forgot. Come back.", comment: "1")
+let localNotificationLocalized2 = NSLocalizedString("We miss you dearly. Show us some love.", comment: "2")
+let localNotificationLocalized3 = NSLocalizedString("You got it all figured out? Are you sure?", comment: "3")
+let localNotificationLocalized4 = NSLocalizedString("You don't really need to remember everything, you know?", comment: "4")
+let localNotificationLocalized5 = NSLocalizedString("Put your mind at ease, store your logins here.", comment: "5")
+let localNotificationLocalized6 = NSLocalizedString("Haven't seen you in a while. How have you been lately?", comment: "6")
+let localNotificationLocalized7 = NSLocalizedString("And there goes another week without you. You have been missed.", comment: "7")
+var localizedNotificationStrings = [localNotificationLocalized1,localNotificationLocalized2,localNotificationLocalized3,localNotificationLocalized4,localNotificationLocalized5,localNotificationLocalized6,localNotificationLocalized7]
+

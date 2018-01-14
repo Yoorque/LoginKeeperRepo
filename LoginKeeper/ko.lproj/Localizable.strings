@@ -68,4 +68,10 @@
 "details" = "세부 정보";
 "Identify yourself" = "신분 확인";
 "LoginKeeper® was developed solely using Apple Libraries and available resources provided by Apple and free open source resources. I, Dusan Juranovic, as a developer of LoginKeeper®, claim all distribution rights of LoginKeeper® as well as all copyrights©. LoginKeeper® is NOT recommended for storing valuable information such as , credit card details, bank details and all other information where loss of such information would bare great impact to individuals or companies alike and therefore LoginKeeper®  and I, Dusan Juranovic (developer), will not be held responsible for loss of any such information or assets. LoginKeeper® is intended only for purpose of not having to remember all of your login details or writing them down on pieces of paper. It is users judgment call to decide which information they enter into the app. If you have any issues or suggestions, please write an email to below provided email address. Thanks." = "로그인 키퍼는 애플 라이브러리와 애플이 제공하는 리소스와 무료 오픈 소스 리소스를 사용하여 독자적으로 개발되었습니다. 두산 주라노 빅 (Dusan Juranovic)은 로그인 키퍼 (Login Keeper)의 개발자로서 모든 저작권뿐만 아니라 모든 로그인 키퍼의 배포권을 주장합니다. 신용 카드 세부 정보, 은행 정보 및 그러한 정보의 손실이 개인이나 회사 모두에게 큰 영향을 줄 수있는 모든 기타 정보와 같은 중요한 정보를 저장하는 데는 사용하지 않는 것이 좋습니다. 로그인 키퍼와 나는, Dusan Juranovic (개발자)는 개최되지 않습니다. 로그인 키퍼는 귀하의 로그인 정보를 모두 기억하거나 종이에 적어 두지 않아도되는 것을 목적으로 한 것입니다. 문제가 있거나 제안 사항이 있으면 아래 제공된 전자 메일 주소로 전자 메일을 보내주십시오. 감사합니다. ";
-
+"There must be some password you forgot. Come back." = "잊어 버린 암호가 있어야합니다. 돌아와."
+"We miss you dearly. Show us love." = "We miss you dearly. Show us some love."
+"You got it all figured out? Are you sure?" = "너 알아 냈어? 확실합니까?"
+"You don't really need to remember everything, you know?" = "너는 모든 것을 기억할 필요가 없다."
+"Put your mind at ease, store your logins here." = "마음을 편안하게 여기에 로그인하십시오."
+"Haven't seen you in a while. How have you been lately?" = "잠시 너를 보지 못 했어. 최근에 어떻게 지냈니?"
+"And there goes another week without you. You have been missed." = "그리고 당신 없이는 또 한 주 가버립니다. 당신은 그리워했습니다."

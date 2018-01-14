@@ -6,64 +6,71 @@
   Copyright © 2017 Dusan Juranovic. All rights reserved.
 */
 
-"About LoginKeeper" = "O LoginKeeper-u";
-"COPIED" = "KOPIRANO";
+"About LoginKeeper" = "О Логин Киперу";
+"COPIED" = "КОПИРАНО";
 
-"OK" = "OK";
-"Done" = "Završeno";
-"Save" = "Snimi";
-"Edit" = "Izmeni";
-"Cancel" = "Otkaži";
-"Error!" = "Greška!";
-"Lock" = "Zaključaj";
-"Unlock" = "Otključaj";
-"Leaving LoginKeeper" = "Napuštate LoginKeeper";
-"You will be redirected to" = "Bićete preusmereni na";
-"Are you sure?" = "Da li ste sigurni?";
-"I'm sure" = "Siguran/na sam";
-"Use Passcode" = "Koristiti lozinku";
-"Close" = "Zatvori";
-"Skip" = "Preskoči";
-"Current/Suggested Logo" = "Trenutni/Predloženi Logo";
+"OK" = "ОК";
+"Done" = "Завршено";
+"Save" = "Сними";
+"Edit" = "Измени";
+"Cancel" = "Откажи";
+"Error!" = "Грешка!";
+"Lock" = "Закључај";
+"Unlock" = "Откључај";
+"Leaving LoginKeeper" = "Напуштате Логин Кипер";
+"You will be redirected to" = "Бићете преусмерени на";
+"Are you sure?" = "Да ли сте сигурни?";
+"I'm sure" = "Сигуран/на сам";
+"Use Passcode" = "Користити лозинку";
+"Close" = "Затвори";
+"Skip" = "Прескочи";
+"Current/Suggested Logo" = "Тренутни/Предложени Лого";
 
-"No identities are enrolled" = "Nema registrovanih identiteta";
-"Canceled by user." = "Otkazano od strane korisnika.";
-"Canceled by another authentication." = "Otkazano drugom autentikacijom.";
+"No identities are enrolled" = "Нема регистрованих идентитета";
+"Canceled by user." = "Отказано од стране корисника.";
+"Canceled by another authentication." = "Отказано другом аутентикацијом.";
 
-"Account" = "Nalog";
-"No Account name!" = "Nema naziva Naloga!";
-"Account name is required." = "Naziv Naloga je obavezan.";
-"Delete Acc" = "Izbriši Nalog";
+"Account" = "Налог";
+"No Account name!" = "Нема назива Налога!";
+"Account name is required." = "Назив Налога је обавезан.";
+"Delete Acc" = "Избриши Налог";
 
-"Entry name" = "Naziv Unosa";
-"No Entry name!" = "Nema naziva Unosa!";
-"Entry name is required." = "Naziv Unosa je obavezan.";
-"Add Entry" = "Dodaj Unos";
-"Add new entry for" = "Dodaj Unos za Nalog";
-"Delete Entry" = "Izbriši Unos";
+"Entry name" = "Назив Уноса";
+"No Entry name!" = "Нема назива Уноса!";
+"Entry name is required." = "Назив Уноса је обавезан.";
+"Add Entry" = "Додај Унос";
+"Add new entry for" = "Додај Унос за Налог";
+"Delete Entry" = "Избриши Унос";
 
-"Username" = "Korisničko ime";
+"Username" = "Корисничко име";
 
-"Password" = "Lozinka";
-"Enter Password" = "Unesite lozinku";
-"Empty password" = "Prazna lozinka";
-"Please enter your password." = "Molimo vas unesite lozinku.";
-"Passwords do not match!"  = "Lozinke se ne podudaraju!";
-"Please enter your password again." = "Molimo vas ponovo unesite lozinku.";
-"Set your backup password for LoginKeeper" = "Postavite sigurnosnu lozinku za LoginKeeper";
-"Password is required!" = "Lozinka je obavezna!";
-"Please set your password to continue." = "Molimo vas postavite lozinku za nastavak.";
+"Password" = "Лозинка";
+"Enter Password" = "Унесите лозинку";
+"Empty password" = "Празна лозинка";
+"Please enter your password." = "Молимо вас унесите лозинку.";
+"Passwords do not match!"  = "Лозинке се не подударају!";
+"Please enter your password again." = "Молимо вас поново унесите лозинку.";
+"Set your backup password for LoginKeeper" = "Поставите сигурносну лозинку за Логин Кипер";
+"Password is required!" = "Лозинка је обавезна!";
+"Please set your password to continue." = "Молимо вас поставите лозинку за наставак.";
 
-"Comment" = "Komentar";
-"Version" = "Verzija";
-"build" = "podverzija";
+"Comment" = "Коментар";
+"Version" = "Верзија";
+"build" = "подверзија";
 
-"You are not authorized to use this feature." = "Niste ovlašćeni da koristite ovu funkciju.";
-"In progress..." = "U izradi...";
-"We're working on this one!" = "Radimo na ovome!";
-"Oops! Unable to save changes at this time, please try again!" = "Ups! Trenutno ne možemo da snimimo izmene. Molimo vas pokušajte ponovo!";
-"Oops! Unable to fetch data at this time, please try again!" = "Ups! Trenutno ne možemo da dodjemo do podataka. Molimo vas pokušajte ponovo!";
-"Entries of" = "Unos za";
-"details" = "detalji";
-"Identify yourself" = "Identifikujte se";
-"LoginKeeper® was developed solely using Apple Libraries and available resources provided by Apple and free open source resources. I, Dusan Juranovic, as a developer of LoginKeeper®, claim all distribution rights of LoginKeeper® as well as all copyrights©. LoginKeeper® is NOT recommended for storing valuable information such as , credit card details, bank details and all other information where loss of such information would bare great impact to individuals or companies alike and therefore LoginKeeper®  and I, Dusan Juranovic (developer), will not be held responsible for loss of any such information or assets. LoginKeeper® is intended only for purpose of not having to remember all of your login details or writing them down on pieces of paper. It is users judgment call to decide which information they enter into the app. If you have any issues or suggestions, please write an email to below provided email address. Thanks." = "LoginKeeper® je razvijen isključivo koristeći Apple-ove datoteke i resurse obezbedjene od strane Apple-a. Ja, Dušan Juranović, kao kreator LoginKeeper®-a, zadržavam sva prava za distribuciju LoginKeeper®-a kao i sva prava© vezana za LoginKeeper®. Nije preporučeno koristiti LoginKeeper® za skladištenje vrednih informacija kao što su, detalji kreditnih kartica, detalji banaka niti svih ostalih podataka, čiji gubitak može izazvati teške posledice po privatna ili pravna lica. Stoga se, ja, Dušan Juranović (developer), kao i LoginKeeper®, ogradjujemo od svake odgovornosti za gubitak takvih ili sličnih informacija korišćenjem ove aplikacije.LoginKeeper® je namenjen samo za čuvanje pristupnih podataka za razne naloge, kako biste ih uvek imali pri ruci kada zatrebaju. Odgovornost je svakog korisnika da odluči koje će podatke skladištiti u aplikaciji. Ukoliko imate nekih problema sa aplikacijom ili sugestija za poboljšanje rada LoginKeeper®-a, molim vas da pišete na email adresu ispod. Hvala.";
+"You are not authorized to use this feature." = "Нисте овлашћени да користите ову функцију.";
+"In progress..." = "У изради...";
+"We're working on this one!" = "Радимо на овоме!";
+"Oops! Unable to save changes at this time, please try again!" = "Упс! Тренутно не можемо да снимимо измене. Молимо вас покушајте поново";
+"Oops! Unable to fetch data at this time, please try again!" = "Упс! Тренутно не можемо да дођемо до података. Молимо вас покушајте поново!";
+"Entries of" = "Унос за";
+"details" = "детаљи";
+"Identify yourself" = "Идентификујте се";
+"LoginKeeper® was developed solely using Apple Libraries and available resources provided by Apple and free open source resources. I, Dusan Juranovic, as a developer of LoginKeeper®, claim all distribution rights of LoginKeeper® as well as all copyrights©. LoginKeeper® is NOT recommended for storing valuable information such as , credit card details, bank details and all other information where loss of such information would bare great impact to individuals or companies alike and therefore LoginKeeper®  and I, Dusan Juranovic (developer), will not be held responsible for loss of any such information or assets. LoginKeeper® is intended only for purpose of not having to remember all of your login details or writing them down on pieces of paper. It is users judgment call to decide which information they enter into the app. If you have any issues or suggestions, please write an email to below provided email address. Thanks." = "Логин Кипер је развијен искључиво користећи Apple-ове датотеке и ресурсе обезбеђене од стране Apple-а. Ја, Душан Јурановић, као креатор Логин Кипера, задржавам сва права за дистрибуцију Логин Кипера као и сва права везана за Логин Кипер. Није препоручено користити Логин Кипер за складиштење вредних информација као што су, детаљи кредитних картица, детаљи банака као ни свих осталих података, чији губитак може изазвати тешке последице по приватна или правна лица. Стога се, ја, Душан Јурановић (девелопер), каи и Логин Кипер, ограђујемо од сваке одговорности за губитак таквих или сличних информација коришћењем ове апликације. Логин Кипер је намењен само за чување приступних података за разне налоге, како бисте их увек имали при руци када затребају. Одговорност је сваког корисника да одлучи које ће податке складиштити у апликацији. Уколико имате неких проблема са апликацијом или сугестија за побољшање рада Логин Кипера, молим вас да пишете на имејл адресу испод. Хвала.";
+"There must be some password you forgot. Come back." = "Мора да постоји нека лозинка коју сте заборавили. Вратите се."
+"We miss you dearly. Show us love. :)" = "Много нам недостајете. Покажите да смо вам драги. :)"
+"You got it all figured out? Are you sure?" = "Мислите да је све под контролом? Јесте ли сигурни?"
+"You don't really need to remember everything, you know?" = "Знате да не морате баш све да памтите?"
+"Put your mind at ease, store your logins here." = "Одморите мозак. Запишите нешто овде."
+"Haven't seen you in a while. How have you been lately?" = "Нема вас дуго. Јел све у реду код вас?"
+"And there goes another week without you. You have been missed." = "И прође још једна недеља без вас. Недостајете."
