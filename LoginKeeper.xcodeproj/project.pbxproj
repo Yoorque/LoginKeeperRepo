@@ -154,24 +154,9 @@
 		111EB6CB1F0E2DDD00B12AC8 /* LoginKeeper */ = {
 			isa = PBXGroup;
 			children = (
-				111EB6D01F0E2DDD00B12AC8 /* Main.storyboard */,
-				111EB6CE1F0E2DDD00B12AC8 /* AccountsViewController.swift */,
-				11C6DE67200E101B006D3925 /* NotificationManager.swift */,
-				111EB6E51F0E382000B12AC8 /* EntriesViewController.swift */,
-				111EB6E31F0E33DC00B12AC8 /* AddNewAccountViewController.swift */,
-				111EB6E91F0E3C2D00B12AC8 /* AddNewEntryViewController.swift */,
-				111EB6EB1F0E3EA500B12AC8 /* DetailsViewController.swift */,
-				11A0A9AE1FE5F76500BF38FF /* LogosViewController.swift */,
-				11A0A9AA1FE5F2C600BF38FF /* Logos.swift */,
-				11E850F81F18DE5900F1B5C7 /* InfoTableViewController.swift */,
-				1196E32F1FCDB386000FCB37 /* AboutViewController.swift */,
-				11A4072A1FEE919A00FDAFD9 /* BlurBackgroundView.swift */,
-				1111F1221FE9B7F400663E1E /* LocalizationStrings.swift */,
-				1111F1281FE9D07F00663E1E /* InfoPlist.strings */,
-				1111F1151FE9A91500663E1E /* Localizable.strings */,
-				119356521FD9AA8B00E2D211 /* Walkthrough */,
-				111EB6F71F0E438900B12AC8 /* CustomCells */,
-				111EB6F51F0E432300B12AC8 /* CoreDataModel */,
+				11C6DE6C200E1ACD006D3925 /* Model */,
+				11C6DE6B200E1A97006D3925 /* View */,
+				11C6DE6D200E1B5B006D3925 /* Controller */,
 				111EB6F61F0E435000B12AC8 /* SupportingFiles */,
 				1161FF022008257D00E747F4 /* Sounds */,
 			);
@@ -197,6 +182,7 @@
 				11A0A9A81FE5DA0700BF38FF /* Assets.xcassets */,
 				11779E421F4A25E8000F0D7D /* GoogleService-Info.plist */,
 				111EB6DB1F0E2DDD00B12AC8 /* Info.plist */,
+				1111F1281FE9D07F00663E1E /* InfoPlist.strings */,
 				111EB6D31F0E2DDD00B12AC8 /* LoginKeeper.xcdatamodeld */,
 				117E304E2007B6CF006C9DD5 /* LoginKeeper.entitlements */,
 			);
@@ -228,6 +214,44 @@
 				11A38B6C1FD8546F00A06DF5 /* BWWalkthroughViewController.swift */,
 			);
 			path = Walkthrough;
+			sourceTree = "<group>";
+		};
+		11C6DE6B200E1A97006D3925 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				119356521FD9AA8B00E2D211 /* Walkthrough */,
+				111EB6D01F0E2DDD00B12AC8 /* Main.storyboard */,
+				11A4072A1FEE919A00FDAFD9 /* BlurBackgroundView.swift */,
+				11C6DE67200E101B006D3925 /* NotificationManager.swift */,
+				111EB6F71F0E438900B12AC8 /* CustomCells */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		11C6DE6C200E1ACD006D3925 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				1111F1151FE9A91500663E1E /* Localizable.strings */,
+				111EB6F51F0E432300B12AC8 /* CoreDataModel */,
+				1111F1221FE9B7F400663E1E /* LocalizationStrings.swift */,
+				11A0A9AA1FE5F2C600BF38FF /* Logos.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		11C6DE6D200E1B5B006D3925 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				111EB6CE1F0E2DDD00B12AC8 /* AccountsViewController.swift */,
+				111EB6E51F0E382000B12AC8 /* EntriesViewController.swift */,
+				111EB6E31F0E33DC00B12AC8 /* AddNewAccountViewController.swift */,
+				111EB6E91F0E3C2D00B12AC8 /* AddNewEntryViewController.swift */,
+				111EB6EB1F0E3EA500B12AC8 /* DetailsViewController.swift */,
+				11A0A9AE1FE5F76500BF38FF /* LogosViewController.swift */,
+				11E850F81F18DE5900F1B5C7 /* InfoTableViewController.swift */,
+				1196E32F1FCDB386000FCB37 /* AboutViewController.swift */,
+			);
+			name = Controller;
 			sourceTree = "<group>";
 		};
 		20AEBE83B2092B70C6413FAF /* Pods */ = {

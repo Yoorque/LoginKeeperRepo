@@ -44,9 +44,9 @@ class AccountsViewController: UIViewController, UITableViewDelegate, UITableView
         defaults.set(false, forKey: "authenticated")
         
         NotificationCenter.default.addObserver(forName: NSNotification.Name.UIApplicationDidEnterBackground, object: nil, queue: .main, using: {_ in
-            let randomString = Int(arc4random_uniform(UInt32(localizedNotificationStrings.count - 1)))
+            let random = Int(arc4random_uniform(UInt32(localizedNotificationStrings.count - 1)))
             
-            let message = localizedNotificationStrings[randomString]
+            let message = localizedNotificationStrings[random]
             self.notificationManager.notify(with: message)
         })
         //authentication
