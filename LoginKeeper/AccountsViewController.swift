@@ -12,7 +12,7 @@ import LocalAuthentication
 import GoogleMobileAds
 import UserNotifications
 
-class AccountsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate, AccountsDisplayAlertDelegate, BWWalkthroughViewControllerDelegate, ShowLogoDelegate, UNUserNotificationCenterDelegate {
+class AccountsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, AccountsDisplayAlertDelegate, BWWalkthroughViewControllerDelegate, ShowLogoDelegate {
     
     
     //MARK: - Properties
@@ -28,6 +28,7 @@ class AccountsViewController: UIViewController, UITableViewDelegate, UITableView
     }
     
     @IBOutlet var tableView: UITableView!
+    let notificationManager = NotificationManager()
     
     //var authenticated: Bool?
     var index: Int?
@@ -46,7 +47,7 @@ class AccountsViewController: UIViewController, UITableViewDelegate, UITableView
             let randomString = Int(arc4random_uniform(UInt32(localizedNotificationStrings.count - 1)))
             
             let message = localizedNotificationStrings[randomString]
-            self.notify(with: message)
+            self.notificationManager.notify(with: message)
         })
         //authentication
         NotificationCenter.default.addObserver(forName: NSNotification.Name.UIApplicationWillEnterForeground, object: nil, queue: .main, using: {_ in
@@ -142,27 +143,6 @@ class AccountsViewController: UIViewController, UITableViewDelegate, UITableView
             setPassword()
         } else {
             authenticateUser()
-        }
-    }
-    
-    //MARK: - Local Notifications
-    
-    func notify(with message: String) {
-        BlurBackgroundView.removeBlurFrom(view: self.view)
-        let localNotificationCenter = UNUserNotificationCenter.current()
-        localNotificationCenter.delegate = self
-        let content = UNMutableNotificationContent()
-        content.title = "Hey there \(UIDevice.current.name.replacingOccurrences(of: "'s iPhone", with: ""))!"
-        content.body = message
-        content.sound = UNNotificationSound(named: "notification.aiff")
-        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 604800, repeats: true)
-        let request = UNNotificationRequest(identifier: "Notification", content: content, trigger: trigger)
-        localNotificationCenter.add(request) { (error) in
-            guard error == nil else {
-                print("Couldn't display notification due to \(error!)")
-                return
-            }
-            print("Notification is scheduled")
         }
     }
     
@@ -591,7 +571,8 @@ class AccountsViewController: UIViewController, UITableViewDelegate, UITableView
             }
         }
     }
-    
+}
+extension AccountsViewController: UISearchBarDelegate {
     //MARK: - SearchBar Delegates
     func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
         print("DidBeginEditing")
