@@ -35,8 +35,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GADBannerViewDelegate {
         print("bannerViewDidLoadAd")
         
         bannerView.isHidden = false
-        let transform = CGAffineTransform(translationX: 0, y: adBannerView!.bounds.size.height)
-        bannerView.transform = transform
+        bannerView.transform = CGAffineTransform(translationX: 0, y: adBannerView!.bounds.size.height)
         
         UIView.animate(withDuration: 0.5, animations: {
             self.adBannerView!.transform = CGAffineTransform.identity

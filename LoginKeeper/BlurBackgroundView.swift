@@ -10,7 +10,7 @@ import UIKit
 
 class BlurBackgroundView: NSObject {
     static func blurCurrent(view: UIView) {
-        let blurEffect = UIBlurEffect(style: .light)
+        let blurEffect = UIBlurEffect(style: .extraLight)
         let blurVisualEffectView = UIVisualEffectView(effect: blurEffect)
         blurVisualEffectView.frame = view.bounds
         view.addSubview(blurVisualEffectView)

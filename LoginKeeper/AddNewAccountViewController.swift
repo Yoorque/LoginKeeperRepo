@@ -11,9 +11,10 @@ import CoreData
 
 class AddNewAccountViewController: UIViewController, UITextFieldDelegate, UIScrollViewDelegate {
     
+    @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
+    @IBOutlet weak var viewScrollView: UIScrollView!
     @IBOutlet weak var logosScrollView: UIScrollView!
-    @IBOutlet var topStackConstraint: NSLayoutConstraint!
-    @IBOutlet var stackView: UIStackView!
+    
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     var index = 0
     var i = 0
@@ -101,7 +102,7 @@ class AddNewAccountViewController: UIViewController, UITextFieldDelegate, UIScro
             })
             for logo in logosScrollView.subviews {
                 if logo is UIImageView {
-                let logoImageView = logo as! UIImageView
+                    let logoImageView = logo as! UIImageView
                     logoImageView.image = logoImageView.image!.withRenderingMode(.alwaysOriginal)
                     logo.layer.borderWidth = 0
                 }
@@ -121,22 +122,19 @@ class AddNewAccountViewController: UIViewController, UITextFieldDelegate, UIScro
     }
     
     @objc func handleKeyboardNotification(notification: NSNotification) {
-        let navigationBar = navigationController?.navigationBar.frame.height
         if let userInfo = notification.userInfo {
             let keyBoardFrame = userInfo[UIKeyboardFrameEndUserInfoKey] as! CGRect
             let isKeyboardShowing = notification.name == .UIKeyboardWillShow
-            let totalHeights = activeTextField!.frame.maxY + navigationBar! + topStackConstraint.constant
-            let difference = totalHeights - keyBoardFrame.size.height
-            if keyBoardFrame.origin.y < totalHeights {
-                self.topStackConstraint.constant -= isKeyboardShowing ? difference + 30 : 0
-                UIView.animate(withDuration: 0.5) {
-                    self.view.layoutIfNeeded()
-                }
-                
-            } else {
-                topStackConstraint.constant = 10
-                UIView.animate(withDuration: 0.5) {
-                    self.view.layoutIfNeeded()
+            if let textField = activeTextField {
+                if isKeyboardShowing {
+                    let contentInsets = UIEdgeInsetsMake(0, 0, keyBoardFrame.size.height, 0)
+                    viewScrollView.contentInset = contentInsets
+                    viewScrollView.scrollIndicatorInsets = contentInsets
+                    viewScrollView.scrollRectToVisible(textField.frame, animated: true)
+                } else {
+                    let contentInsets = UIEdgeInsets.zero
+                    viewScrollView.contentInset = contentInsets
+                    viewScrollView.scrollIndicatorInsets = contentInsets
                 }
             }
         }
@@ -150,7 +148,7 @@ class AddNewAccountViewController: UIViewController, UITextFieldDelegate, UIScro
     @IBAction func saveAccountButton(_ sender: UIBarButtonItem) {
         saveAccount()
     }
-
+    
     override func willRotate(to toInterfaceOrientation: UIInterfaceOrientation, duration: TimeInterval) {
         appDelegate.removeBannerView()
     }
@@ -238,59 +236,59 @@ class AddNewAccountViewController: UIViewController, UITextFieldDelegate, UIScro
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
-            for logo in accountLogos {
-                if accountTitle.text!.lowercased().replacingOccurrences(of: " ", with: "") == logo || accountTitle.text!.lowercased().replacingOccurrences(of: " ", with: "").contains(logo) {
-                    for imageView in logosScrollView.subviews {
-                        if imageView.tag == 0 {
-                            imageView.removeFromSuperview()
-                        }
+        for logo in accountLogos {
+            if accountTitle.text!.lowercased().replacingOccurrences(of: " ", with: "") == logo || accountTitle.text!.lowercased().replacingOccurrences(of: " ", with: "").contains(logo) {
+                for imageView in logosScrollView.subviews {
+                    if imageView.tag == 0 {
+                        imageView.removeFromSuperview()
                     }
-                    
-                    logoImagesPNG.remove(at: 0)
-                    logoImagesPNG.insert(logo, at: 0)
-                    
-                    let imageView = UIImageView()
-                    imageView.image = UIImage(named: logo)
-                    
-                    imageView.frame.size = CGSize(width: 50, height: 50)
-                    imageView.frame.origin = CGPoint(x:0, y: 0)
-                    imageView.image = UIImage(named: logo)
-                    imageView.tag = 0
-                    imageView.contentMode = .scaleAspectFit
-                    imageView.isUserInteractionEnabled = true
-                    let tapGesture = UITapGestureRecognizer(target: self, action: #selector(logoTapped))
-                    imageView.addGestureRecognizer(tapGesture)
-                    logosScrollView.addSubview(imageView)
-                    break
-                } else {
-                    for logo in logoImagesPNG {
-                        if logo.contains(accountTitle.text!.lowercased().replacingOccurrences(of: " ", with: "")) && accountTitle.text!.count > 3 {
-                            for imageView in logosScrollView.subviews {
-                                if imageView.tag == 0 {
-                                    imageView.removeFromSuperview()
-                                }
+                }
+                
+                logoImagesPNG.remove(at: 0)
+                logoImagesPNG.insert(logo, at: 0)
+                
+                let imageView = UIImageView()
+                imageView.image = UIImage(named: logo)
+                
+                imageView.frame.size = CGSize(width: 50, height: 50)
+                imageView.frame.origin = CGPoint(x:0, y: 0)
+                imageView.image = UIImage(named: logo)
+                imageView.tag = 0
+                imageView.contentMode = .scaleAspectFit
+                imageView.isUserInteractionEnabled = true
+                let tapGesture = UITapGestureRecognizer(target: self, action: #selector(logoTapped))
+                imageView.addGestureRecognizer(tapGesture)
+                logosScrollView.addSubview(imageView)
+                break
+            } else {
+                for logo in logoImagesPNG {
+                    if logo.contains(accountTitle.text!.lowercased().replacingOccurrences(of: " ", with: "")) && accountTitle.text!.count > 3 {
+                        for imageView in logosScrollView.subviews {
+                            if imageView.tag == 0 {
+                                imageView.removeFromSuperview()
                             }
-                            
-                            logoImagesPNG.remove(at: 0)
-                            logoImagesPNG.insert(logo, at: 0)
-                            
-                            let imageView = UIImageView()
-                            imageView.image = UIImage(named: logo)
-                            
-                            imageView.frame.size = CGSize(width: 50, height: 50)
-                            imageView.frame.origin = CGPoint(x:0, y: 0)
-                            imageView.image = UIImage(named: logo)
-                            imageView.tag = 0
-                            imageView.contentMode = .scaleAspectFit
-                            imageView.isUserInteractionEnabled = true
-                            let tapGesture = UITapGestureRecognizer(target: self, action: #selector(logoTapped))
-                            imageView.addGestureRecognizer(tapGesture)
-                            logosScrollView.addSubview(imageView)
-                            break
                         }
+                        
+                        logoImagesPNG.remove(at: 0)
+                        logoImagesPNG.insert(logo, at: 0)
+                        
+                        let imageView = UIImageView()
+                        imageView.image = UIImage(named: logo)
+                        
+                        imageView.frame.size = CGSize(width: 50, height: 50)
+                        imageView.frame.origin = CGPoint(x:0, y: 0)
+                        imageView.image = UIImage(named: logo)
+                        imageView.tag = 0
+                        imageView.contentMode = .scaleAspectFit
+                        imageView.isUserInteractionEnabled = true
+                        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(logoTapped))
+                        imageView.addGestureRecognizer(tapGesture)
+                        logosScrollView.addSubview(imageView)
+                        break
                     }
                 }
             }
+        }
         
     }
     //MARK: - ScrollView Delegates

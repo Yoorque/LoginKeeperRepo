@@ -285,11 +285,11 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="167.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Icon" translatesAutoresizingMaskIntoConstraints="NO" id="Qhz-Fa-LQh">
-                                                    <rect key="frame" x="152.5" y="5.5" width="70" height="70"/>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Icon-60" translatesAutoresizingMaskIntoConstraints="NO" id="Qhz-Fa-LQh">
+                                                    <rect key="frame" x="157.5" y="15.5" width="60" height="60"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="70" id="B6I-tU-Efq"/>
-                                                        <constraint firstAttribute="height" constant="70" id="WXE-q1-hKe"/>
+                                                        <constraint firstAttribute="width" constant="60" id="B6I-tU-Efq"/>
+                                                        <constraint firstAttribute="height" constant="60" id="WXE-q1-hKe"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LoginKeeper" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9me-ze-Tu8">
@@ -611,14 +611,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="4i4-qg-ady">
-                                <rect key="frame" x="26" y="74" width="323" height="190"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="esu-Nz-Mgf">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="lY3-W0-58N">
-                                        <rect key="frame" x="0.0" y="0.0" width="323" height="190"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="4i4-qg-ady">
+                                        <rect key="frame" x="10" y="8" width="355" height="222"/>
                                         <subviews>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Account Title (required)" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="vgY-17-wLs">
-                                                <rect key="frame" x="0.0" y="0.0" width="323" height="30"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="355" height="30"/>
                                                 <color key="textColor" red="0.21983420849999999" green="0.48451471330000001" blue="0.99449735880000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" name="ZapfDingbatsITC" family="Zapf Dingbats" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" spellCheckingType="no" returnKeyType="next"/>
@@ -627,7 +627,7 @@
                                                 </connections>
                                             </textField>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Entry Name (required)" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Qgw-sU-47I">
-                                                <rect key="frame" x="0.0" y="32" width="323" height="30"/>
+                                                <rect key="frame" x="0.0" y="32" width="355" height="30"/>
                                                 <color key="textColor" red="0.21983420849999999" green="0.48451471330000001" blue="0.99449735880000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" name="ZapfDingbatsITC" family="Zapf Dingbats" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" spellCheckingType="no" returnKeyType="next"/>
@@ -636,7 +636,7 @@
                                                 </connections>
                                             </textField>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="rkV-Gt-ep1">
-                                                <rect key="frame" x="0.0" y="64" width="323" height="30"/>
+                                                <rect key="frame" x="0.0" y="64" width="355" height="30"/>
                                                 <color key="textColor" red="0.21983420849999999" green="0.48451471330000001" blue="0.99449735880000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" name="ZapfDingbatsITC" family="Zapf Dingbats" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="next"/>
@@ -644,8 +644,14 @@
                                                     <outlet property="delegate" destination="rpA-qm-WNA" id="1Re-Ub-Cuy"/>
                                                 </connections>
                                             </textField>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GeR-ci-Erb">
+                                                <rect key="frame" x="0.0" y="96" width="355" height="30"/>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password (required)" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="sFK-NG-wDg">
-                                                <rect key="frame" x="0.0" y="96" width="323" height="30"/>
+                                                <rect key="frame" x="0.0" y="128" width="355" height="30"/>
                                                 <color key="textColor" red="0.21983420849999999" green="0.48451471330000001" blue="0.99449735880000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" name="ZapfDingbatsITC" family="Zapf Dingbats" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="next" secureTextEntry="YES"/>
@@ -654,7 +660,7 @@
                                                 </connections>
                                             </textField>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Confirm password (required)" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="aFU-Xk-o7Q">
-                                                <rect key="frame" x="0.0" y="128" width="323" height="30"/>
+                                                <rect key="frame" x="0.0" y="160" width="355" height="30"/>
                                                 <color key="textColor" red="0.21983420849999999" green="0.48451471330000001" blue="0.99449735880000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" name="ZapfDingbatsITC" family="Zapf Dingbats" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="next" secureTextEntry="YES"/>
@@ -663,7 +669,7 @@
                                                 </connections>
                                             </textField>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Comment" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="lR5-4h-YPa">
-                                                <rect key="frame" x="0.0" y="160" width="323" height="30"/>
+                                                <rect key="frame" x="0.0" y="192" width="355" height="30"/>
                                                 <color key="textColor" red="0.21983420849999999" green="0.48451471330000001" blue="0.99449735880000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" name="ZapfDingbatsITC" family="Zapf Dingbats" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="no" spellCheckingType="no" returnKeyType="done"/>
@@ -673,66 +679,74 @@
                                             </textField>
                                         </subviews>
                                     </stackView>
-                                </subviews>
-                            </stackView>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HJq-ii-ibM">
-                                <rect key="frame" x="26" y="305" width="323" height="105"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="105" id="fYW-Do-2yA"/>
-                                </constraints>
-                                <connections>
-                                    <outlet property="delegate" destination="rpA-qm-WNA" id="siB-yU-I8N"/>
-                                </connections>
-                            </scrollView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="Kky-UN-Kpp">
-                                <rect key="frame" x="26" y="272" width="323" height="29"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="◀︎   Choose your logo from the scroll menu   ▶︎" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OAQ-SI-m1b">
-                                        <rect key="frame" x="0.0" y="0.0" width="323" height="17"/>
+                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HJq-ii-ibM">
+                                        <rect key="frame" x="10" y="275" width="355" height="105"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="17" id="IVf-Hy-bUg"/>
+                                            <constraint firstAttribute="height" constant="105" id="fYW-Do-2yA"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="ZapfDingbatsITC" family="Zapf Dingbats" pointSize="14"/>
-                                        <color key="textColor" red="0.21960784310000001" green="0.48627450979999998" blue="0.99607843139999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Default is the first one in the scroll view" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Abp-m8-Wku">
-                                        <rect key="frame" x="0.0" y="19" width="323" height="10"/>
-                                        <fontDescription key="fontDescription" name="ZapfDingbatsITC" family="Zapf Dingbats" pointSize="10"/>
-                                        <color key="textColor" red="0.21983420849999999" green="0.48451471330000001" blue="0.99449735880000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
+                                        <connections>
+                                            <outlet property="delegate" destination="rpA-qm-WNA" id="siB-yU-I8N"/>
+                                        </connections>
+                                    </scrollView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="Kky-UN-Kpp">
+                                        <rect key="frame" x="10" y="238" width="355" height="29"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="◀︎   Choose your logo from the scroll menu   ▶︎" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OAQ-SI-m1b">
+                                                <rect key="frame" x="0.0" y="0.0" width="355" height="17"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="17" id="IVf-Hy-bUg"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="ZapfDingbatsITC" family="Zapf Dingbats" pointSize="14"/>
+                                                <color key="textColor" red="0.21960784310000001" green="0.48627450979999998" blue="0.99607843139999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Default is the first one in the scroll view" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Abp-m8-Wku">
+                                                <rect key="frame" x="0.0" y="19" width="355" height="10"/>
+                                                <fontDescription key="fontDescription" name="ZapfDingbatsITC" family="Zapf Dingbats" pointSize="10"/>
+                                                <color key="textColor" red="0.21983420849999999" green="0.48451471330000001" blue="0.99449735880000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mIA-w3-skU">
+                                        <rect key="frame" x="74" y="388" width="227" height="120"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Icon-60" translatesAutoresizingMaskIntoConstraints="NO" id="Qbr-qY-aZ3">
+                                                <rect key="frame" x="83.5" y="0.0" width="60" height="60"/>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LoginKeeper" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cHH-cQ-M99">
+                                                <rect key="frame" x="0.0" y="60" width="227" height="60"/>
+                                                <fontDescription key="fontDescription" name="ZapfDingbatsITC" family="Zapf Dingbats" pointSize="40"/>
+                                                <color key="textColor" red="0.21983420849999999" green="0.48451471330000001" blue="0.99449735880000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <variation key="heightClass=regular" alignment="center" axis="vertical" distribution="fillEqually"/>
+                                    </stackView>
                                 </subviews>
-                            </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mIA-w3-skU">
-                                <rect key="frame" x="74" y="418" width="227" height="114"/>
-                                <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Icon" translatesAutoresizingMaskIntoConstraints="NO" id="Qbr-qY-aZ3">
-                                        <rect key="frame" x="85" y="0.0" width="57" height="57"/>
-                                    </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LoginKeeper" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cHH-cQ-M99">
-                                        <rect key="frame" x="0.0" y="57" width="227" height="57"/>
-                                        <fontDescription key="fontDescription" name="ZapfDingbatsITC" family="Zapf Dingbats" pointSize="40"/>
-                                        <color key="textColor" red="0.21983420849999999" green="0.48451471330000001" blue="0.99449735880000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <variation key="heightClass=regular" alignment="center" axis="vertical" distribution="fillEqually"/>
-                            </stackView>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="HJq-ii-ibM" secondAttribute="trailing" constant="10" id="0nN-Dn-HkU"/>
+                                    <constraint firstItem="HJq-ii-ibM" firstAttribute="leading" secondItem="esu-Nz-Mgf" secondAttribute="leading" constant="10" id="5eR-5X-URs"/>
+                                    <constraint firstItem="HJq-ii-ibM" firstAttribute="top" secondItem="Kky-UN-Kpp" secondAttribute="bottom" constant="8" id="BKc-ax-Ug9"/>
+                                    <constraint firstItem="HJq-ii-ibM" firstAttribute="centerX" secondItem="esu-Nz-Mgf" secondAttribute="centerX" id="CSG-y8-1ZO"/>
+                                    <constraint firstItem="mIA-w3-skU" firstAttribute="top" secondItem="HJq-ii-ibM" secondAttribute="bottom" constant="8" id="DKu-QU-yM5"/>
+                                    <constraint firstAttribute="bottom" secondItem="mIA-w3-skU" secondAttribute="bottom" constant="133" id="FVV-Pa-9Sx"/>
+                                    <constraint firstAttribute="trailing" secondItem="4i4-qg-ady" secondAttribute="trailing" constant="10" id="Knc-sq-Ccj"/>
+                                    <constraint firstItem="mIA-w3-skU" firstAttribute="centerX" secondItem="esu-Nz-Mgf" secondAttribute="centerX" id="RIB-td-hZj"/>
+                                    <constraint firstItem="4i4-qg-ady" firstAttribute="top" secondItem="esu-Nz-Mgf" secondAttribute="top" constant="8" id="WVG-U5-hF9"/>
+                                    <constraint firstAttribute="trailing" secondItem="Kky-UN-Kpp" secondAttribute="trailing" constant="10" id="dbt-Nv-o62"/>
+                                    <constraint firstItem="Kky-UN-Kpp" firstAttribute="leading" secondItem="esu-Nz-Mgf" secondAttribute="leading" constant="10" id="oLW-lz-Frt"/>
+                                    <constraint firstItem="4i4-qg-ady" firstAttribute="leading" secondItem="esu-Nz-Mgf" secondAttribute="leading" constant="10" id="onh-iu-rSN"/>
+                                    <constraint firstItem="Kky-UN-Kpp" firstAttribute="top" secondItem="4i4-qg-ady" secondAttribute="bottom" constant="8" id="zit-vV-JGB"/>
+                                </constraints>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" red="0.87905663249999999" green="0.89664590359999996" blue="0.98421400790000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="4i4-qg-ady" firstAttribute="leading" secondItem="lHc-hn-KDF" secondAttribute="leadingMargin" constant="10" id="2CW-hB-tlA"/>
-                            <constraint firstItem="4i4-qg-ady" firstAttribute="top" secondItem="P5D-GH-dRz" secondAttribute="bottom" constant="10" id="5Ub-qX-q3T"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="Kky-UN-Kpp" secondAttribute="trailing" constant="10" id="Jdx-TW-UQw"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="4i4-qg-ady" secondAttribute="trailing" constant="10" id="LR2-Rb-fnk"/>
-                            <constraint firstItem="Kky-UN-Kpp" firstAttribute="top" secondItem="4i4-qg-ady" secondAttribute="bottom" constant="8" id="PMZ-l7-DuR"/>
-                            <constraint firstItem="mIA-w3-skU" firstAttribute="centerX" secondItem="lHc-hn-KDF" secondAttribute="centerX" id="dG6-rM-Dlv"/>
-                            <constraint firstItem="mIA-w3-skU" firstAttribute="top" secondItem="HJq-ii-ibM" secondAttribute="bottom" constant="8" id="g0E-ho-mSi"/>
-                            <constraint firstItem="HJq-ii-ibM" firstAttribute="top" secondItem="Kky-UN-Kpp" secondAttribute="bottom" constant="4" id="gxd-3f-sEM"/>
-                            <constraint firstItem="HJq-ii-ibM" firstAttribute="leading" secondItem="lHc-hn-KDF" secondAttribute="leadingMargin" constant="10" id="inp-IB-9WH"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="HJq-ii-ibM" secondAttribute="trailing" constant="10" id="mbw-Xr-1g7"/>
-                            <constraint firstItem="Kky-UN-Kpp" firstAttribute="leading" secondItem="lHc-hn-KDF" secondAttribute="leadingMargin" constant="10" id="oGR-xT-Qha"/>
+                            <constraint firstAttribute="trailing" secondItem="esu-Nz-Mgf" secondAttribute="trailing" id="NlO-C4-bIG"/>
+                            <constraint firstItem="esu-Nz-Mgf" firstAttribute="leading" secondItem="lHc-hn-KDF" secondAttribute="leading" id="h9i-Pk-oo8"/>
+                            <constraint firstItem="esu-Nz-Mgf" firstAttribute="top" secondItem="P5D-GH-dRz" secondAttribute="bottom" id="jiE-LJ-0Ja"/>
+                            <constraint firstItem="Kx0-mu-n3w" firstAttribute="top" secondItem="esu-Nz-Mgf" secondAttribute="bottom" id="wo6-Yx-fQ2"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Add New Account" id="E8D-Rq-tOd">
@@ -744,19 +758,19 @@
                     </navigationItem>
                     <connections>
                         <outlet property="accountTitle" destination="vgY-17-wLs" id="apD-jd-MdS"/>
+                        <outlet property="bottomConstraint" destination="FVV-Pa-9Sx" id="Tln-Nm-xKw"/>
                         <outlet property="comment" destination="lR5-4h-YPa" id="ldw-ar-078"/>
                         <outlet property="confirmPassword" destination="aFU-Xk-o7Q" id="pvP-tf-Fu7"/>
                         <outlet property="entryName" destination="Qgw-sU-47I" id="Tm2-Ec-jYP"/>
                         <outlet property="logosScrollView" destination="HJq-ii-ibM" id="k6L-xS-bFT"/>
                         <outlet property="password" destination="sFK-NG-wDg" id="EJV-Vp-M8O"/>
-                        <outlet property="stackView" destination="lY3-W0-58N" id="ddN-g6-eaP"/>
-                        <outlet property="topStackConstraint" destination="5Ub-qX-q3T" id="VE4-EO-HWq"/>
                         <outlet property="username" destination="rkV-Gt-ep1" id="pUr-DH-Pni"/>
+                        <outlet property="viewScrollView" destination="esu-Nz-Mgf" id="XlO-Xx-tp4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iiZ-C6-CdR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="868" y="-1385"/>
+            <point key="canvasLocation" x="868" y="-1385.7571214392804"/>
         </scene>
         <!--Title-->
         <scene sceneID="LAM-li-g6I">
@@ -770,115 +784,93 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="K79-Tq-njK">
-                                <rect key="frame" x="26" y="74" width="323" height="158"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vWE-xj-oeb">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <subviews>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Entry Name (required)" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="zOh-H8-h8M">
-                                        <rect key="frame" x="0.0" y="0.0" width="323" height="30"/>
-                                        <color key="textColor" red="0.2196078431372549" green="0.48627450980392156" blue="0.99607843137254903" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <fontDescription key="fontDescription" name="ZapfDingbatsITC" family="Zapf Dingbats" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" spellCheckingType="no" returnKeyType="next"/>
-                                        <connections>
-                                            <outlet property="delegate" destination="ox9-YF-LOE" id="zNw-ki-cKV"/>
-                                        </connections>
-                                    </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="JtM-J4-Gbz">
-                                        <rect key="frame" x="0.0" y="32" width="323" height="30"/>
-                                        <color key="textColor" red="0.2196078431372549" green="0.48627450980392156" blue="0.99607843137254903" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <fontDescription key="fontDescription" name="ZapfDingbatsITC" family="Zapf Dingbats" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="next"/>
-                                        <connections>
-                                            <outlet property="delegate" destination="ox9-YF-LOE" id="XWu-Ke-Kjq"/>
-                                        </connections>
-                                    </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password (required)" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="LNo-xb-YV2">
-                                        <rect key="frame" x="0.0" y="64" width="323" height="30"/>
-                                        <color key="textColor" red="0.2196078431372549" green="0.48627450980392156" blue="0.99607843137254903" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <fontDescription key="fontDescription" name="ZapfDingbatsITC" family="Zapf Dingbats" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="next" secureTextEntry="YES"/>
-                                        <connections>
-                                            <outlet property="delegate" destination="ox9-YF-LOE" id="19Z-4G-GIJ"/>
-                                        </connections>
-                                    </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Confirm password (required)" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="4NY-8P-15S">
-                                        <rect key="frame" x="0.0" y="96" width="323" height="30"/>
-                                        <color key="textColor" red="0.2196078431372549" green="0.48627450980392156" blue="0.99607843137254903" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <fontDescription key="fontDescription" name="ZapfDingbatsITC" family="Zapf Dingbats" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="next" secureTextEntry="YES"/>
-                                        <connections>
-                                            <outlet property="delegate" destination="ox9-YF-LOE" id="3yF-B0-Hqu"/>
-                                        </connections>
-                                    </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Comment" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="axU-Qj-8gF">
-                                        <rect key="frame" x="0.0" y="128" width="323" height="30"/>
-                                        <color key="textColor" red="0.2196078431372549" green="0.48627450980392156" blue="0.99607843137254903" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <fontDescription key="fontDescription" name="ZapfDingbatsITC" family="Zapf Dingbats" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="no" spellCheckingType="no" returnKeyType="done"/>
-                                        <connections>
-                                            <outlet property="delegate" destination="ox9-YF-LOE" id="XqU-dp-rrd"/>
-                                        </connections>
-                                    </textField>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JQo-5d-AWE">
+                                        <rect key="frame" x="74" y="174" width="227" height="120"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Icon-60" translatesAutoresizingMaskIntoConstraints="NO" id="u7D-9J-pVM">
+                                                <rect key="frame" x="83.5" y="0.0" width="60" height="60"/>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LoginKeeper" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Nu-9j-TfH">
+                                                <rect key="frame" x="0.0" y="60" width="227" height="60"/>
+                                                <fontDescription key="fontDescription" name="ZapfDingbatsITC" family="Zapf Dingbats" pointSize="40"/>
+                                                <color key="textColor" red="0.21983420849999999" green="0.48451471330000001" blue="0.99449735880000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <variation key="heightClass=regular" alignment="center" axis="vertical" distribution="fillEqually"/>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="K79-Tq-njK">
+                                        <rect key="frame" x="10" y="8" width="355" height="158"/>
+                                        <subviews>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Entry Name (required)" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="zOh-H8-h8M">
+                                                <rect key="frame" x="0.0" y="0.0" width="355" height="30"/>
+                                                <color key="textColor" red="0.2196078431372549" green="0.48627450980392156" blue="0.99607843137254903" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" name="ZapfDingbatsITC" family="Zapf Dingbats" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" spellCheckingType="no" returnKeyType="next"/>
+                                                <connections>
+                                                    <outlet property="delegate" destination="ox9-YF-LOE" id="zNw-ki-cKV"/>
+                                                </connections>
+                                            </textField>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="JtM-J4-Gbz">
+                                                <rect key="frame" x="0.0" y="32" width="355" height="30"/>
+                                                <color key="textColor" red="0.2196078431372549" green="0.48627450980392156" blue="0.99607843137254903" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" name="ZapfDingbatsITC" family="Zapf Dingbats" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="next"/>
+                                                <connections>
+                                                    <outlet property="delegate" destination="ox9-YF-LOE" id="XWu-Ke-Kjq"/>
+                                                </connections>
+                                            </textField>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password (required)" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="LNo-xb-YV2">
+                                                <rect key="frame" x="0.0" y="64" width="355" height="30"/>
+                                                <color key="textColor" red="0.2196078431372549" green="0.48627450980392156" blue="0.99607843137254903" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" name="ZapfDingbatsITC" family="Zapf Dingbats" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="next" secureTextEntry="YES"/>
+                                                <connections>
+                                                    <outlet property="delegate" destination="ox9-YF-LOE" id="19Z-4G-GIJ"/>
+                                                </connections>
+                                            </textField>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Confirm password (required)" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="4NY-8P-15S">
+                                                <rect key="frame" x="0.0" y="96" width="355" height="30"/>
+                                                <color key="textColor" red="0.2196078431372549" green="0.48627450980392156" blue="0.99607843137254903" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" name="ZapfDingbatsITC" family="Zapf Dingbats" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="next" secureTextEntry="YES"/>
+                                                <connections>
+                                                    <outlet property="delegate" destination="ox9-YF-LOE" id="3yF-B0-Hqu"/>
+                                                </connections>
+                                            </textField>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Comment" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="axU-Qj-8gF">
+                                                <rect key="frame" x="0.0" y="128" width="355" height="30"/>
+                                                <color key="textColor" red="0.2196078431372549" green="0.48627450980392156" blue="0.99607843137254903" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" name="ZapfDingbatsITC" family="Zapf Dingbats" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="no" spellCheckingType="no" returnKeyType="done"/>
+                                                <connections>
+                                                    <outlet property="delegate" destination="ox9-YF-LOE" id="XqU-dp-rrd"/>
+                                                </connections>
+                                            </textField>
+                                        </subviews>
+                                    </stackView>
                                 </subviews>
-                            </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JQo-5d-AWE">
-                                <rect key="frame" x="74" y="247" width="227" height="114"/>
-                                <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Icon" translatesAutoresizingMaskIntoConstraints="NO" id="u7D-9J-pVM">
-                                        <rect key="frame" x="85" y="0.0" width="57" height="57"/>
-                                    </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LoginKeeper" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Nu-9j-TfH">
-                                        <rect key="frame" x="0.0" y="57" width="227" height="57"/>
-                                        <fontDescription key="fontDescription" name="ZapfDingbatsITC" family="Zapf Dingbats" pointSize="40"/>
-                                        <color key="textColor" red="0.21983420849999999" green="0.48451471330000001" blue="0.99449735880000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <variation key="heightClass=regular" alignment="center" axis="vertical" distribution="fillEqually"/>
-                            </stackView>
+                                <constraints>
+                                    <constraint firstItem="K79-Tq-njK" firstAttribute="top" secondItem="vWE-xj-oeb" secondAttribute="top" constant="8" id="07C-cY-g9y"/>
+                                    <constraint firstItem="JQo-5d-AWE" firstAttribute="top" secondItem="K79-Tq-njK" secondAttribute="bottom" constant="8" id="2LN-X9-nq5"/>
+                                    <constraint firstAttribute="bottom" secondItem="JQo-5d-AWE" secondAttribute="bottom" constant="290" id="4Vu-AV-Xf0"/>
+                                    <constraint firstAttribute="trailing" secondItem="K79-Tq-njK" secondAttribute="trailing" constant="10" id="XHn-mX-NRd"/>
+                                    <constraint firstItem="JQo-5d-AWE" firstAttribute="centerX" secondItem="vWE-xj-oeb" secondAttribute="centerX" id="gXo-G1-ELK"/>
+                                    <constraint firstItem="K79-Tq-njK" firstAttribute="centerX" secondItem="JQo-5d-AWE" secondAttribute="centerX" id="gZM-Bh-Tp2"/>
+                                    <constraint firstItem="K79-Tq-njK" firstAttribute="leading" secondItem="vWE-xj-oeb" secondAttribute="leading" constant="10" id="s3R-GA-KKr"/>
+                                </constraints>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" red="0.87905663249999999" green="0.89664590359999996" blue="0.98421400790000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="K79-Tq-njK" firstAttribute="leading" secondItem="flM-7i-YAq" secondAttribute="leadingMargin" constant="10" id="Dnv-dF-Jh9"/>
-                            <constraint firstItem="JQo-5d-AWE" firstAttribute="centerX" secondItem="flM-7i-YAq" secondAttribute="centerX" id="KTf-ov-Tma"/>
-                            <constraint firstItem="K79-Tq-njK" firstAttribute="leading" secondItem="flM-7i-YAq" secondAttribute="leadingMargin" constant="10" id="TQd-OL-4Zb"/>
-                            <constraint firstItem="JQo-5d-AWE" firstAttribute="top" secondItem="axU-Qj-8gF" secondAttribute="bottom" constant="15" id="U0s-5s-xz7"/>
-                            <constraint firstItem="JQo-5d-AWE" firstAttribute="centerX" secondItem="flM-7i-YAq" secondAttribute="centerX" id="e2r-Gm-137"/>
-                            <constraint firstItem="JQo-5d-AWE" firstAttribute="top" secondItem="K79-Tq-njK" secondAttribute="bottom" constant="15" id="fhd-rD-NGo"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="K79-Tq-njK" secondAttribute="trailing" constant="10" id="lrF-qI-FyO"/>
-                            <constraint firstItem="K79-Tq-njK" firstAttribute="top" secondItem="ggE-JG-aB9" secondAttribute="bottom" constant="10" id="s6H-Mo-gwt"/>
-                            <constraint firstItem="K79-Tq-njK" firstAttribute="top" secondItem="ggE-JG-aB9" secondAttribute="bottom" constant="10" id="slQ-BQ-fwx"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="K79-Tq-njK" secondAttribute="trailing" constant="10" id="zrt-2K-Qxr"/>
+                            <constraint firstItem="kcs-Zf-Mdj" firstAttribute="top" secondItem="vWE-xj-oeb" secondAttribute="bottom" id="5lx-Ny-DkO"/>
+                            <constraint firstAttribute="trailing" secondItem="vWE-xj-oeb" secondAttribute="trailing" id="9de-Ur-6Gc"/>
+                            <constraint firstItem="vWE-xj-oeb" firstAttribute="top" secondItem="ggE-JG-aB9" secondAttribute="bottom" id="mm8-dx-P34"/>
+                            <constraint firstItem="vWE-xj-oeb" firstAttribute="leading" secondItem="flM-7i-YAq" secondAttribute="leading" id="mnG-BU-RWg"/>
                         </constraints>
-                        <variation key="default">
-                            <mask key="constraints">
-                                <exclude reference="Dnv-dF-Jh9"/>
-                                <exclude reference="TQd-OL-4Zb"/>
-                                <exclude reference="lrF-qI-FyO"/>
-                                <exclude reference="s6H-Mo-gwt"/>
-                                <exclude reference="slQ-BQ-fwx"/>
-                                <exclude reference="zrt-2K-Qxr"/>
-                                <exclude reference="KTf-ov-Tma"/>
-                                <exclude reference="U0s-5s-xz7"/>
-                                <exclude reference="e2r-Gm-137"/>
-                            </mask>
-                        </variation>
-                        <variation key="heightClass=compact">
-                            <mask key="constraints">
-                                <include reference="TQd-OL-4Zb"/>
-                                <include reference="lrF-qI-FyO"/>
-                                <include reference="slQ-BQ-fwx"/>
-                                <exclude reference="U0s-5s-xz7"/>
-                                <include reference="e2r-Gm-137"/>
-                            </mask>
-                        </variation>
-                        <variation key="heightClass=regular">
-                            <mask key="constraints">
-                                <include reference="Dnv-dF-Jh9"/>
-                                <include reference="s6H-Mo-gwt"/>
-                                <include reference="zrt-2K-Qxr"/>
-                                <include reference="KTf-ov-Tma"/>
-                            </mask>
-                        </variation>
                     </view>
                     <navigationItem key="navigationItem" title="Title" id="x8b-gX-Bmj">
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="PDe-bz-1R4">
@@ -892,14 +884,14 @@
                         <outlet property="confirmPassword" destination="4NY-8P-15S" id="Und-cc-z1w"/>
                         <outlet property="name" destination="zOh-H8-h8M" id="JPf-d9-IMO"/>
                         <outlet property="password" destination="LNo-xb-YV2" id="gEk-WW-DKO"/>
+                        <outlet property="scrollView" destination="vWE-xj-oeb" id="aNl-7k-Lq7"/>
                         <outlet property="stackView" destination="K79-Tq-njK" id="wnc-4V-3UL"/>
-                        <outlet property="topStackConstraint" destination="slQ-BQ-fwx" id="JqW-vL-Hgh"/>
                         <outlet property="username" destination="JtM-J4-Gbz" id="LqJ-W7-ak4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ysi-Mp-7hL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1686" y="-1384"/>
+            <point key="canvasLocation" x="1685.5999999999999" y="-1384.8575712143929"/>
         </scene>
         <!--Accounts-->
         <scene sceneID="tne-QT-ifu">
@@ -1498,13 +1490,13 @@
                                 </constraints>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="W5I-Uv-Bbf">
-                                <rect key="frame" x="74" y="324" width="227" height="114"/>
+                                <rect key="frame" x="74" y="324" width="227" height="120"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Icon" translatesAutoresizingMaskIntoConstraints="NO" id="uUY-Xw-6GY">
-                                        <rect key="frame" x="85" y="0.0" width="57" height="57"/>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Icon-60" translatesAutoresizingMaskIntoConstraints="NO" id="uUY-Xw-6GY">
+                                        <rect key="frame" x="83.5" y="0.0" width="60" height="60"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LoginKeeper" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="au3-ib-kHJ">
-                                        <rect key="frame" x="0.0" y="57" width="227" height="57"/>
+                                        <rect key="frame" x="0.0" y="60" width="227" height="60"/>
                                         <fontDescription key="fontDescription" name="ZapfDingbatsITC" family="Zapf Dingbats" pointSize="40"/>
                                         <color key="textColor" red="0.21983420849999999" green="0.48451471330000001" blue="0.99449735880000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
@@ -1721,7 +1713,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Icon" width="57" height="57"/>
+        <image name="Icon-60" width="60" height="60"/>
         <image name="Screen1" width="1018" height="1809"/>
         <image name="Screen2" width="1018" height="1809"/>
         <image name="Screen3" width="1018" height="1809"/>

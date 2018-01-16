@@ -10,13 +10,14 @@ import UIKit
 import CoreData
 
 class AddNewEntryViewController: UIViewController, UITextFieldDelegate {
+    @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet var stackView: UIStackView!
     
-    @IBOutlet var topStackConstraint: NSLayoutConstraint!
+    
     var account: Account?
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     
-    var activeTextField = UITextField()
+    var activeTextField: UITextField?
     @IBOutlet var name: UITextField! {
         didSet {
             name.textContentType = UITextContentType("")
@@ -84,22 +85,19 @@ class AddNewEntryViewController: UIViewController, UITextFieldDelegate {
     }
     
     @objc func handleKeyboardNotification(notification: NSNotification) {
-        let navigationBar = navigationController?.navigationBar.frame.height
         if let userInfo = notification.userInfo {
             let keyBoardFrame = userInfo[UIKeyboardFrameEndUserInfoKey] as! CGRect
-            let totalHeights = activeTextField.frame.maxY + navigationBar!  + topStackConstraint.constant
             let isKeyboardShowing = notification.name == .UIKeyboardWillShow
-            let difference = totalHeights - keyBoardFrame.size.height
-            if keyBoardFrame.origin.y < totalHeights {
-                self.topStackConstraint.constant -= isKeyboardShowing ? difference + 30 : 0
-                UIView.animate(withDuration: 0.5) {
-                    self.view.layoutIfNeeded()
-                }
-                
-            } else {
-                topStackConstraint.constant = 10
-                UIView.animate(withDuration: 0.5) {
-                    self.view.layoutIfNeeded()
+            if let textField = activeTextField {
+                if isKeyboardShowing {
+                    let contentInsets = UIEdgeInsetsMake(0, 0, keyBoardFrame.size.height, 0)
+                    scrollView.scrollRectToVisible(textField.frame, animated: true)
+                    scrollView.contentInset = contentInsets
+                    scrollView.scrollIndicatorInsets = contentInsets
+                } else {
+                    let contentInsets = UIEdgeInsets.zero
+                    scrollView.contentInset = contentInsets
+                    scrollView.scrollIndicatorInsets = contentInsets
                 }
             }
         }

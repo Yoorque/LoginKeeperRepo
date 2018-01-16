@@ -67,10 +67,10 @@
 "details" = "детаљи";
 "Identify yourself" = "Идентификујте се";
 "LoginKeeper® was developed solely using Apple Libraries and available resources provided by Apple and free open source resources. I, Dusan Juranovic, as a developer of LoginKeeper®, claim all distribution rights of LoginKeeper® as well as all copyrights©. LoginKeeper® is NOT recommended for storing valuable information such as , credit card details, bank details and all other information where loss of such information would bare great impact to individuals or companies alike and therefore LoginKeeper®  and I, Dusan Juranovic (developer), will not be held responsible for loss of any such information or assets. LoginKeeper® is intended only for purpose of not having to remember all of your login details or writing them down on pieces of paper. It is users judgment call to decide which information they enter into the app. If you have any issues or suggestions, please write an email to below provided email address. Thanks." = "Логин Кипер је развијен искључиво користећи Apple-ове датотеке и ресурсе обезбеђене од стране Apple-а. Ја, Душан Јурановић, као креатор Логин Кипера, задржавам сва права за дистрибуцију Логин Кипера као и сва права везана за Логин Кипер. Није препоручено користити Логин Кипер за складиштење вредних информација као што су, детаљи кредитних картица, детаљи банака као ни свих осталих података, чији губитак може изазвати тешке последице по приватна или правна лица. Стога се, ја, Душан Јурановић (девелопер), каи и Логин Кипер, ограђујемо од сваке одговорности за губитак таквих или сличних информација коришћењем ове апликације. Логин Кипер је намењен само за чување приступних података за разне налоге, како бисте их увек имали при руци када затребају. Одговорност је сваког корисника да одлучи које ће податке складиштити у апликацији. Уколико имате неких проблема са апликацијом или сугестија за побољшање рада Логин Кипера, молим вас да пишете на имејл адресу испод. Хвала.";
-"There must be some password you forgot. Come back." = "Мора да постоји нека лозинка коју сте заборавили. Вратите се."
-"We miss you dearly. Show us love. :)" = "Много нам недостајете. Покажите да смо вам драги. :)"
-"You got it all figured out? Are you sure?" = "Мислите да је све под контролом? Јесте ли сигурни?"
-"You don't really need to remember everything, you know?" = "Знате да не морате баш све да памтите?"
-"Put your mind at ease, store your logins here." = "Одморите мозак. Запишите нешто овде."
-"Haven't seen you in a while. How have you been lately?" = "Нема вас дуго. Јел све у реду код вас?"
-"And there goes another week without you. You have been missed." = "И прође још једна недеља без вас. Недостајете."
+"There must be some password you forgot. Come back." = "Мора да постоји нека лозинка коју си заборавио-ла. Врати се.";
+"We miss you dearly. Show us love. :)" = "Много нам недостајеш. Покажи да смо ти драги. :)";
+"You got it all figured out? Are you sure?" = "Мислиш да је све под контролом? Јеси ли сигуран/на?";
+"You don't really need to remember everything, you know?" = "Знаш да не мораш баш све да памтиш?";
+"Put your mind at ease, store your logins here." = "Одмори мозак. Запиши нешто.";
+"Haven't seen you in a while. How have you been lately?" = "Нема те дуго. Јел све у реду код тебе?";
+"And there goes another week without you. You have been missed." = "И прође још једна недеља без тебе. Недостајеш.";
