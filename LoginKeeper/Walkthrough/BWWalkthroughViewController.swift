@@ -111,7 +111,6 @@ import UIKit
         super.viewDidLoad()
         
         // Initialize UI Elements
-        
         pageControl?.addTarget(self, action: #selector(BWWalkthroughViewController.pageControlDidTouch), for: UIControlEvents.touchUpInside)
         
         // Scrollview
@@ -152,7 +151,6 @@ import UIKit
     
     @IBAction open func prevPage(){
         if currentPage > 0 {
-            
             delegate?.walkthroughPrevButtonPressed?()
             gotoPage(currentPage - 1)
         }

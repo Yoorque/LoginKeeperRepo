@@ -71,7 +71,7 @@ class AccountsViewController: UIViewController, UITableViewDelegate, UITableView
                         self.playTutorial()
                     }
                 } else {
-                    if let shown = self.defaults.value(forKey: "shownBefore") as? Bool {
+                    if let shown = self.defaults.value(forKey: "passSetShown") as? Bool {
                         self.passwordSetShownBefore = shown
                     }
                     if self.passwordSetShownBefore == false {
@@ -87,7 +87,9 @@ class AccountsViewController: UIViewController, UITableViewDelegate, UITableView
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
+        
         if defaults.bool(forKey: "notificationAlertShown") == true {
+            
             if defaults.bool(forKey: "authenticated") == true { // false was set in observer
                 appDelegate.loadAd(forViewController: self)
                 updateTableViewBottomInset()
@@ -96,9 +98,11 @@ class AccountsViewController: UIViewController, UITableViewDelegate, UITableView
                 } else {
                     searchCoreDataWith(text: searchBar.text!)
                 }
+                searchBar.isUserInteractionEnabled = true
                 tableView.reloadData()
             } else {
                 searchBar.isUserInteractionEnabled = false
+                
                 if defaults.bool(forKey: "passSetShown") == true {
                     authenticateUser()
                 }
@@ -171,7 +175,7 @@ class AccountsViewController: UIViewController, UITableViewDelegate, UITableView
             self.defaults.set(true, forKey: "shownBefore")
             self.defaults.set(true, forKey: "passSetShown")
             self.defaults.set(true, forKey: "authenticated")
-            //self.authenticateUser()
+            self.authenticateUser()
         }))
         
         alert.addAction(UIAlertAction(title: cancelAnswerLocalized, style: .default, handler: { _ in
@@ -591,6 +595,12 @@ extension AccountsViewController: UISearchBarDelegate {
         searchBar.text = nil
         searchCoreDataWith(text: searchBar.text!)
         searchBar.resignFirstResponder()
+    }
+    
+    func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
+        if searchBar.text == "" {
+            searchBar.showsCancelButton = false
+        }
     }
 }
 
