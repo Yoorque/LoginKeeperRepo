@@ -1139,7 +1139,7 @@
                                         <color key="backgroundColor" red="0.14901960784313725" green="0.44313725490196076" blue="1" alpha="0.50465539383561642" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                         <state key="normal" title="Skip">
-                                            <color key="titleColor" red="0.14901960784313725" green="0.41568627450980389" blue="0.93333333333333335" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
