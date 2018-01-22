@@ -145,3 +145,12 @@
 
 /* Class = "UITextField"; placeholder = "Entry Name (required)"; ObjectID = "zOh-H8-h8M"; */
 "zOh-H8-h8M.placeholder" = "Nom de l'Entrée (requis)";
+
+/* Class = "UIBarButtonItem"; title = "Restore Purchase"; ObjectID = "GTc-8q-ifN"; */
+"GTc-8q-ifN.title" = "Restaurer l'achat";
+
+/* Class = "UIButton"; normalTitle = "UNLOCK PREMIUM VERSION"; ObjectID = "qLS-sr-DOL"; */
+"qLS-sr-DOL.normalTitle" = "DÉVERROUILLER LA VERSION PREMIUM";
+
+/* Class = "UILabel"; text = "Your current version is"; ObjectID = "30k-6F-Ou7"; */
+"30k-6F-Ou7.text" = "Votre version actuelle est";

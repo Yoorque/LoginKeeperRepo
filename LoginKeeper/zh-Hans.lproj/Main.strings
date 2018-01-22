@@ -12,13 +12,13 @@
 "4NY-8P-15S.placeholder" = "确认密码（必填）";
 
 /* Class = "UILabel"; text = "LoginKeeper"; ObjectID = "6Nu-9j-TfH"; */
-"6Nu-9j-TfH.text" = "登录守护者";
+"6Nu-9j-TfH.text" = "LoginKeeper";
 
 /* Class = "UINavigationItem"; title = "Accounts"; ObjectID = "7de-8j-5af"; */
 "7de-8j-5af.title" = "帐号";
 
 /* Class = "UILabel"; text = "LoginKeeper"; ObjectID = "9me-ze-Tu8"; */
-"9me-ze-Tu8.text" = "登录守护者";
+"9me-ze-Tu8.text" = "LoginKeeper";
 
 /* Class = "UILabel"; text = "icons8.com"; ObjectID = "9wU-3T-eVT"; */
 "9wU-3T-eVT.text" = "icons8.com";
@@ -81,7 +81,7 @@
 "aFU-Xk-o7Q.placeholder" = "确认密码（必填）";
 
 /* Class = "UILabel"; text = "LoginKeeper"; ObjectID = "au3-ib-kHJ"; */
-"au3-ib-kHJ.text" = "登录守护者";
+"au3-ib-kHJ.text" = "LoginKeeper";
 
 /* Class = "UITextField"; placeholder = "Comment"; ObjectID = "axU-Qj-8gF"; */
 "axU-Qj-8gF.placeholder" = "评论";
@@ -90,7 +90,7 @@
 "bW6-dO-nVI.text" = "关于申请";
 
 /* Class = "UILabel"; text = "LoginKeeper"; ObjectID = "cHH-cQ-M99"; */
-"cHH-cQ-M99.text" = "登录守护者";
+"cHH-cQ-M99.text" = "LoginKeeper";
 
 /* Class = "UILabel"; text = "Developer website"; ObjectID = "ef8-fo-9ED"; */
 "ef8-fo-9ED.text" = "开发者网站";
@@ -114,7 +114,7 @@
 "meZ-KJ-6Qa.normalTitle" = "全部复制";
 
 /* Class = "UINavigationItem"; title = "About LoginKeeper"; ObjectID = "ni1-Kc-bws"; */
-"ni1-Kc-bws.title" = "关于登录守护者";
+"ni1-Kc-bws.title" = "关于LoginKeeper";
 
 /* Class = "UILabel"; text = "Username"; ObjectID = "owc-0p-pfa"; */
 "owc-0p-pfa.text" = "用户名";
@@ -151,3 +151,12 @@
 
 /* Class = "UITextField"; placeholder = "Entry Name (required)"; ObjectID = "zOh-H8-h8M"; */
 "zOh-H8-h8M.placeholder" = "条目名称（必填）";
+
+/* Class = "UIBarButtonItem"; title = "Restore Purchase"; ObjectID = "GTc-8q-ifN"; */
+"GTc-8q-ifN.title" = "恢复购买";
+
+/* Class = "UIButton"; normalTitle = "UNLOCK PREMIUM VERSION"; ObjectID = "qLS-sr-DOL"; */
+"qLS-sr-DOL.normalTitle" = "解锁优质版本";
+
+/* Class = "UILabel"; text = "Your current version is"; ObjectID = "30k-6F-Ou7"; */
+"30k-6F-Ou7.text" = "你目前的版本是";

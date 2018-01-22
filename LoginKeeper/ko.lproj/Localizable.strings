@@ -75,3 +75,20 @@
 "Put your mind at ease, store your logins here." = "마음을 편안하게 여기에 로그인하십시오.";
 "Haven't seen you in a while. How have you been lately?" = "잠시 너를 보지 못 했어. 최근에 어떻게 지냈니?";
 "And there goes another week without you. You have been missed." = "그리고 당신 없이는 또 한 주 가버립니다. 당신은 그리워했습니다.";
+"You cannot send emails. Check your email settings." = "이메일을 보낼 수 없습니다. 이메일 설정을 확인하십시오.";
+"No more ads for you. \nCongratulations!" = "더 이상 광고가 없습니다. \n치하!";
+"Internet connection required. Please check your internet connection" = "인터넷 연결이 필요합니다. 인터넷 연결을 확인하십시오.";
+"Remove ads" = "광고를 제거하다";
+"You have already purchased this functionality!" = "이미이 기능을 구입하셨습니다!";
+"You have successfully restored your purchase!" = "구매를 성공적으로 복구했습니다!";
+"You have successfully purchased Premium version!" = "프리미엄 버전을 성공적으로 구매하셨습니다!";
+"Basic version" = "기본 버전";
+"Premium version" = "프리미엄 버전";
+"Premium version LOCKED!" = "프리미엄 버전이 잠겨 있습니다!";
+"Premium version PURCHASED!" = "프리미엄 버전 구매처!";
+"Purchase Premium and remove ads" = "프리미엄 구매 및 광고 제거";
+
+"Feedback from" = "피드백";
+"Device:" = "장치:";
+"App Version:" = "앱 버전:";
+"Please enter your feedback below this line \n--------------------------------------------------" = "이 줄 아래에 의견을 입력하십시오. \n--------------------------------------------------";

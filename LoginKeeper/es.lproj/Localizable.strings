@@ -75,3 +75,20 @@
 "Put your mind at ease, store your logins here." = "Tranquilízate, almacena tus inicios de sesión aquí.";
 "Haven't seen you in a while. How have you been lately?" = "No te he visto en mucho tiempo. ¿Como has estado ultimamente?";
 "And there goes another week without you. You have been missed." = "Y ahí va otra semana sin ti. Te han extrañado.";
+"You cannot send emails. Check your email settings." = "No puedes enviar correos electrónicos Verifica tu configuración de correo electrónico.";
+"No more ads for you. \nCongratulations!" = "No más anuncios para ti. \n¡Felicitaciones!";
+"Internet connection required. Please check your internet connection" = "Requiere conexión a Internet. Por favor revise su conexion a internet";
+"Remove ads" = "Quitar anuncios";
+"You have already purchased this functionality!" = "¡Ya has comprado esta funcionalidad!";
+"You have successfully restored your purchase!" = "¡Ha restaurado con éxito su compra!";
+"You have successfully purchased Premium version!" = "¡Has comprado con éxito la versión Premium!";
+"Basic version" = "Versión Básica";
+"Premium version" = "Versión Premium";
+"Premium version LOCKED!" = "Versión Premium ¡BLOQUEADO!";
+"Premium version PURCHASED!" = "¡Versión premium COMPRADA!";
+"Purchase Premium and remove ads" = "Compra Premium y elimina anuncios";
+
+"Feedback from" = "Comentarios de";
+"Device:" = "Dispositivo:";
+"App Version:" = "Version de aplicacion:";
+"Please enter your feedback below this line \n--------------------------------------------------" = "Por favor ingrese sus comentarios debajo de esta línea \n--------------------------------------------------";

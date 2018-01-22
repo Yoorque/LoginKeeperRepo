@@ -75,3 +75,21 @@
 "Put your mind at ease, store your logins here." = "Положите свой разум на неприкосновенность, сохраните свои логины здесь.";
 "Haven't seen you in a while. How have you been lately?" = "Не видел тебя в то время. Как ты был в последнее время?";
 "And there goes another week without you. You have been missed." = "И через неделю пройдет без тебя. Вас пропустили.";
+"You cannot send emails. Check your email settings." = "Вы не можете отправлять электронные письма. Проверьте настройки электронной почты.";
+
+"No more ads for you. \nCongratulations!" = "Больше нет объявлений для вас. \nПоздравления!";
+"Internet connection required. Please check your internet connection" = "Требуется подключение к Интернету. Пожалуйста, проверьте подключение к интернету";
+"Remove ads" = "Убрать рекламу";
+"You have already purchased this functionality!" = "Вы уже приобрели эту функциональность!";
+"You have successfully restored your purchase!" = "Вы успешно восстановили свою покупку!";
+"You have successfully purchased Premium version!" = "Вы успешно приобрели премиум-версию!";
+"Basic version" = "Базовая версия";
+"Premium version" = "Версия для Печати";
+"Premium version LOCKED!" = "Премиум-версия ЗАБЛОКИРОВАНА!";
+"Premium version PURCHASED!" = "Премиум-версия ПОКУПКА!";
+"Purchase Premium and remove ads" = "Покупка Премиум и удаление рекламы";
+
+"Feedback from" = "Отзывы от";
+"Device:" = "Устройство:";
+"App Version:" = "Версия приложения:";
+"Please enter your feedback below this line \n--------------------------------------------------" = "Пожалуйста, введите свои данные ниже этой строки \n--------------------------------------------------";

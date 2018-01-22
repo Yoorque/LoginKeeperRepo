@@ -30,7 +30,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GADBannerViewDelegate {
         
         return true
     }
-    
+    func adsAreDisabled() {
+        adBannerView.removeFromSuperview()
+    }
     func adViewDidReceiveAd(_ bannerView: GADBannerView) {
         print("bannerViewDidLoadAd")
         

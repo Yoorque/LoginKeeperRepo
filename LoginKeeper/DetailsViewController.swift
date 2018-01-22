@@ -54,8 +54,12 @@ class DetailsViewController: UIViewController, UITextFieldDelegate {
         titleTextLabel.font = UIFont(name: "Zapf Dingbats", size: 15)
         //titleTextLabel.text = title
         navigationItem.titleView = titleTextLabel
-        
-       appDelegate.loadAd(forViewController: self)
+        if !UserDefaults.standard.bool(forKey: "premiumPurchased") {
+            appDelegate.loadAd(forViewController: self)
+        } else {
+            appDelegate.removeBannerView()
+        }
+       
         
         view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard)))
     }
@@ -165,36 +169,56 @@ class DetailsViewController: UIViewController, UITextFieldDelegate {
             })
         }
     }
-    @IBAction func copyAccountButton(_ sender: Any) {
-        if let text = accountName.text {
-            copyPaste(text: text)
-            animateClipboardTextFor(textField: accountName, with: entryDetails?.account?.name ?? "")
+    
+    func emptyTextAlert() {
+        let alert = UIAlertController(title: "Warning!", message: "Nothing to copy here.", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        present(alert, animated: true, completion: nil)
+    }
+    
+    @IBAction func copyButton(_ sender: UIButton) {
+        
+        switch sender.tag {
+        case 1:
+            if accountName.text != "" {
+                copyPaste(text: accountName.text!)
+                animateClipboardTextFor(textField: accountName, with: entryDetails!.account!.name!)
+            } else {
+                emptyTextAlert()
+            }
+        case 2:
+            if entryName.text != ""{
+                copyPaste(text: entryName.text!)
+                animateClipboardTextFor(textField: entryName, with: entryDetails!.name!)
+            } else {
+                emptyTextAlert()
+            }
+        case 3:
+            if username.text != ""{
+                copyPaste(text: username.text!)
+                animateClipboardTextFor(textField: username, with: entryDetails!.username!)
+            } else {
+                emptyTextAlert()
+            }
+        case 4:
+            if password.text != ""{
+                copyPaste(text: password.text!)
+                animateClipboardTextFor(textField: password, with: entryDetails!.password!)
+            } else {
+                emptyTextAlert()
+            }
+        case 5:
+            if comment.text != ""{
+                copyPaste(text: comment.text!)
+                animateClipboardTextFor(textField: comment, with: entryDetails!.comment!)
+            } else {
+                emptyTextAlert()
+            }
+        
+        default:
+            print("No such case")
         }
     }
-    @IBAction func copyEntryButton(_ sender: Any) {
-        if let text = entryName.text {
-            copyPaste(text: text)
-            animateClipboardTextFor(textField: entryName, with: entryDetails?.name ?? "")
-        }
-    }
-    @IBAction func copyUsernameButton(_ sender: Any) {
-        if let text = username.text {
-            copyPaste(text: text)
-            animateClipboardTextFor(textField: username, with: entryDetails?.username ?? "")
-        }
-    }
-    @IBAction func copyPasswordButton(_ sender: Any) {
-        if let text = password.text {
-            copyPaste(text: text)
-            animateClipboardTextFor(textField: password, with: entryDetails?.password ?? "")
-        }
-    }
-    @IBAction func copyCommentButton(_ sender: Any) {
-        if let text = comment.text {
-            copyPaste(text: text)
-            animateClipboardTextFor(textField: comment, with: entryDetails?.comment ?? "")
-        }
-    }    
     
     @IBAction func copyAllButton(_ sender: Any) {
         
@@ -226,7 +250,9 @@ class DetailsViewController: UIViewController, UITextFieldDelegate {
     }
     
     override func didRotate(from fromInterfaceOrientation: UIInterfaceOrientation) {
-        loadAd()
+        if !UserDefaults.standard.bool(forKey: "premiumPurchased") {
+            loadAd()
+        }
     }
     
     @objc func dismissKeyboard(sender: UITapGestureRecognizer ) {

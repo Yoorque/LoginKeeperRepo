@@ -7,35 +7,63 @@
 //
 
 import UIKit
+import MessageUI
 
-class InfoTableViewController: UITableViewController, BWWalkthroughViewControllerDelegate {
+class InfoTableViewController: UITableViewController, BWWalkthroughViewControllerDelegate, MFMailComposeViewControllerDelegate {
+    
     @IBOutlet var feedbackCell: UITableViewCell!
     @IBOutlet var devWebsiteCell: UITableViewCell!
     @IBOutlet var moreAppsCell: UITableViewCell!
     @IBOutlet var iconsCell: UITableViewCell!
     @IBOutlet var walkthroughDevCell: UITableViewCell!
     @IBOutlet var versionLabel: UILabel!
+    @IBOutlet weak var removeAds: UIButton!
     var authenticated: Bool?
     let accountsVC = AccountsViewController()
+    var version: String!
+    var build: String!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         authenticated = UserDefaults.standard.bool(forKey: "authenticated")
-        guard let version = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String else {
-            return
-        }
-        guard let build = Bundle.main.infoDictionary?["CFBundleVersion"] as? String else {
-            return
-        }
-        let versionLocalized = NSLocalizedString("Version", comment: "")
-        let buildLocalized = NSLocalizedString("build", comment: "")
-        versionLabel.text = "\(versionLocalized) \(version) (\(buildLocalized) \(build))"
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
+         version = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as! String
+         build = Bundle.main.infoDictionary?["CFBundleVersion"] as! String
 
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        versionLabel.text = "\(versionLocalized) \(version!) (\(buildLocalized) \(build!))"
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        if UserDefaults.standard.bool(forKey: "premiumPurchased") {
+            removeAds.setTitle(premiumVersionLocalized, for: .normal)
+            removeAds.backgroundColor = UIColor(red: 44/255, green: 152/255, blue: 41/255, alpha: 1)
+        } else {
+            removeAds.setTitle(removeAdsLocalized, for: .normal)
+            removeAds.backgroundColor = UIColor(red: 216/255, green: 67/255, blue: 35/255, alpha: 1)
+        }
+    }
+    //MARK: - Mail Functionality
+    func sendEmail() {
+        let compose = MFMailComposeViewController()
+        compose.mailComposeDelegate = self
+        compose.setToRecipients(["juranovicd@gmail.com"])
+        compose.setSubject("\(subjectLocalized) \(UIDevice.current.name.replacingOccurrences(of: "'s iPhone", with: ""))")
+        compose.setMessageBody("\(deviceLocalized) \(UIDevice.current.model), \(UIDevice.current.systemName) \(UIDevice.current.systemVersion) \n\(appVersionLocalized) \(version!) (\(buildLocalized) \(build!)) \n\(enterFeedbackLocalized)", isHTML: false)
+        
+        self.present(compose, animated: true, completion: nil)
+    }
+    
+    func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
+        controller.dismiss(animated: true, completion: {
+            self.dismiss(animated: true, completion: nil)
+        })
+    }
+
+    @IBAction func removeAdsButton(_ sender: UIButton) {
+        performSegue(withIdentifier: "removeAdsSegue", sender: self)
+    }
+    
+    //MARK: - Tutorial
     @IBAction func tutorialActionButton(_ sender: Any) {
         let stb = UIStoryboard(name: "Main", bundle: nil)
         let walkthrough = stb.instantiateViewController(withIdentifier: "Screen0") as! BWWalkthroughViewController
@@ -70,22 +98,15 @@ class InfoTableViewController: UITableViewController, BWWalkthroughViewControlle
     override func tableView(_ tableView: UITableView, estimatedHeightForFooterInSection section: Int) -> CGFloat {
         return 2
     }
-    // MARK: - Localization
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let clickedCell = tableView.cellForRow(at: indexPath)
         switch clickedCell!.tag {
         case feedbackCell.tag:
-            
-            let email = "juranovicd@gmail.com"
-            if let url = URL(string: "mailto:\(email)") {
-                if authenticated == true {
-                    UIApplication.shared.open(url, options: [:])
-                } else {
-                    let alert = UIAlertController(title: errorLocalized, message: notAuthorisedLocalized, preferredStyle: .alert)
-                    alert.addAction(UIAlertAction(title: okLocalized, style: .default, handler: nil))
-                    present(alert, animated: true, completion: nil)
-                }
+            if MFMailComposeViewController.canSendMail() {
+                sendEmail()
+            } else {
+                noMailFuncAlert()
             }
             
         case devWebsiteCell.tag:
@@ -114,6 +135,12 @@ class InfoTableViewController: UITableViewController, BWWalkthroughViewControlle
         tableView.deselectRow(at: indexPath, animated: true)
     }
     
+    //MARK: - Alerts
+    func noMailFuncAlert() {
+        let alert = UIAlertController(title: errorLocalized, message: noMailFuncLocalized, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: okLocalized, style: .default, handler: nil))
+        present(alert, animated: true, completion: nil)
+    }
     func leavingAppAlert(toURL url: URL, title: String) {
         let alert = UIAlertController(title: leavingLocalized, message: "\(leavingMessageLocalized) \(title). \(leavingMessageLocalized2)", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: sureAnswerLocalized, style: .default, handler: { _ in

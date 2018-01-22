@@ -139,3 +139,12 @@
 
 /* Class = "UITextField"; placeholder = "Entry Name (required)"; ObjectID = "zOh-H8-h8M"; */
 "zOh-H8-h8M.placeholder" = "Naziv Unosa (obavezno)";
+
+/* Class = "UIBarButtonItem"; title = "Restore Purchase"; ObjectID = "GTc-8q-ifN"; */
+"GTc-8q-ifN.title" = "Ranije kupljeno";
+
+/* Class = "UIButton"; normalTitle = "UNLOCK PREMIUM VERSION"; ObjectID = "qLS-sr-DOL"; */
+"qLS-sr-DOL.normalTitle" = "OTKLJUČAJ PREMIJUM VERZIJU";
+
+/* Class = "UILabel"; text = "Your current version is"; ObjectID = "30k-6F-Ou7"; */
+"30k-6F-Ou7.text" = "Vaša trenutna verzija je";

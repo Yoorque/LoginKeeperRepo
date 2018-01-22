@@ -78,9 +78,24 @@
 "Put your mind at ease, store your logins here." = "放心，把你的登录存储在这里。";
 "Haven't seen you in a while. How have you been lately?" = "有一段时间没有见过你。你最近怎么样？";
 "And there goes another week without you. You have been missed." = "还有一个星期没有你。你已经错过了。";
+"You cannot send emails. Check your email settings." = "您无法发送电子邮件。检查你的邮件设置。";
 
+"No more ads for you. \nCongratulations!" = "没有更多的广告给你。\n恭喜！";
+"Internet connection required. Please check your internet connection" = "需要互联网连接。 请检查您的互联网连接";
+"Remove ads" = "移除广告";
+"You have already purchased this functionality!" = "您已经购买了此功能！";
+"You have successfully restored your purchase!" = "您已成功恢复购买！";
+"You have successfully purchased Premium version!" = "您已成功购买高级版本！";
+"Basic version" = "基本版本";
+"Premium version" = "高级版本";
+"Premium version LOCKED!" = "高级版本锁定！";
+"Premium version PURCHASED!" = "高级版本已购买!";
+"Purchase Premium and remove ads" = "购买高级并移除广告";
 
-
+"Feedback from" = "来自的反馈";
+"Device:" = "设备:";
+"App Version:" = "应用程式版本:";
+"Please enter your feedback below this line \n--------------------------------------------------" = "请在此行下方输入您的意见 \n--------------------------------------------------";
 
 
 

@@ -47,8 +47,11 @@ class AddNewEntryViewController: UIViewController, UITextFieldDelegate {
     var titleTextLabel = UILabel()
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        appDelegate.load(bannerView: appDelegate.adBannerView,forViewController: self, andOrientation: UIDevice.current.orientation)
+        if !UserDefaults.standard.bool(forKey: "premiumPurchased") {
+            appDelegate.load(bannerView: appDelegate.adBannerView,forViewController: self, andOrientation: UIDevice.current.orientation)
+        } else {
+            appDelegate.removeBannerView()
+        }
         
         view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard)))
         
@@ -81,7 +84,11 @@ class AddNewEntryViewController: UIViewController, UITextFieldDelegate {
     }
     
     override func didRotate(from fromInterfaceOrientation: UIInterfaceOrientation) {
-        appDelegate.load(bannerView: appDelegate.adBannerView,forViewController: self, andOrientation: UIDevice.current.orientation)
+        if !UserDefaults.standard.bool(forKey: "premiumPurchased") {
+            appDelegate.load(bannerView: appDelegate.adBannerView,forViewController: self, andOrientation: UIDevice.current.orientation)
+        } else {
+            appDelegate.removeBannerView()
+        }
     }
     
     @objc func handleKeyboardNotification(notification: NSNotification) {

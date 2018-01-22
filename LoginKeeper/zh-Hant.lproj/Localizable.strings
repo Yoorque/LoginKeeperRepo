@@ -75,3 +75,20 @@
 "Put your mind at ease, store your logins here." = "放心，把你的登錄存儲在這裡。";
 "Haven't seen you in a while. How have you been lately?" = "有一段時間沒有見過你。你最近怎麼樣？";
 "And there goes another week without you. You have been missed." = "還有一個星期沒有你。你已經錯過了。";
+"You cannot send emails. Check your email settings." = "您無法發送電子郵件。檢查你的郵件設置。";
+"No more ads for you. \nCongratulations!" = "沒有更多的廣告給你。\n恭喜！";
+"Internet connection required. Please check your internet connection" = "需要互聯網連接。請檢查您的互聯網連接";
+"Remove ads" = "移除廣告";
+"You have already purchased this functionality!" = "您已經購買了此功能！";
+"You have successfully restored your purchase!" = "您已成功恢復購買！";
+"You have successfully purchased Premium version!" = "您已成功購買高級版本！";
+"Basic version" = "基本版本";
+"Premium version" = "高級版本";
+"Premium version LOCKED!" = "高級版本鎖定！";
+"Premium version PURCHASED!" = "高級版本已購買!";
+"Purchase Premium and remove ads" = "購買高級並移除廣告";
+
+"Feedback from" = "來自的反饋";
+"Device:" = "設備:";
+"App Version:" = "應用程式版本:";
+"Please enter your feedback below this line \n--------------------------------------------------" = "請在此行下方輸入您的意見 \n--------------------------------------------------";

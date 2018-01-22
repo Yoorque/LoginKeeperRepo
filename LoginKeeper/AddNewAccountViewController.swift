@@ -57,8 +57,11 @@ class AddNewAccountViewController: UIViewController, UITextFieldDelegate, UIScro
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        appDelegate.load(bannerView: appDelegate.adBannerView,forViewController: self, andOrientation: UIDevice.current.orientation)
+        if !UserDefaults.standard.bool(forKey: "premiumPurchased") {
+            appDelegate.load(bannerView: appDelegate.adBannerView,forViewController: self, andOrientation: UIDevice.current.orientation)
+        } else {
+            appDelegate.removeBannerView()
+        }
         view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard)))
         
         NotificationCenter.default.addObserver(self, selector: #selector(handleKeyboardNotification), name: .UIKeyboardWillShow, object: nil)
@@ -154,7 +157,11 @@ class AddNewAccountViewController: UIViewController, UITextFieldDelegate, UIScro
     }
     
     override func didRotate(from fromInterfaceOrientation: UIInterfaceOrientation) {
-        appDelegate.load(bannerView: appDelegate.adBannerView,forViewController: self, andOrientation: UIDevice.current.orientation)
+        if !UserDefaults.standard.bool(forKey: "premiumPurchased") {
+            appDelegate.load(bannerView: appDelegate.adBannerView,forViewController: self, andOrientation: UIDevice.current.orientation)
+        } else {
+            appDelegate.removeBannerView()
+        }
     }
     
     

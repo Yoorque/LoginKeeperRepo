@@ -12,13 +12,13 @@
 "4NY-8P-15S.placeholder" = "確認密碼（必填）";
 
 /* Class = "UILabel"; text = "LoginKeeper"; ObjectID = "6Nu-9j-TfH"; */
-"6Nu-9j-TfH.text" = "登錄守護者";
+"6Nu-9j-TfH.text" = "LoginKeeper";
 
 /* Class = "UINavigationItem"; title = "Accounts"; ObjectID = "7de-8j-5af"; */
 "7de-8j-5af.title" = "帳號";
 
 /* Class = "UILabel"; text = "LoginKeeper"; ObjectID = "9me-ze-Tu8"; */
-"9me-ze-Tu8.text" = "登錄守護者";
+"9me-ze-Tu8.text" = "LoginKeeper";
 
 /* Class = "UILabel"; text = "icons8.com"; ObjectID = "9wU-3T-eVT"; */
 "9wU-3T-eVT.text" = "icons8.com";
@@ -78,7 +78,7 @@
 "aFU-Xk-o7Q.placeholder" = "確認密碼（必填）";
 
 /* Class = "UILabel"; text = "LoginKeeper"; ObjectID = "au3-ib-kHJ"; */
-"au3-ib-kHJ.text" = "登錄守護者";
+"au3-ib-kHJ.text" = "LoginKeeper";
 
 /* Class = "UITextField"; placeholder = "Comment"; ObjectID = "axU-Qj-8gF"; */
 "axU-Qj-8gF.placeholder" = "評論";
@@ -87,7 +87,7 @@
 "bW6-dO-nVI.text" = "關於申請";
 
 /* Class = "UILabel"; text = "LoginKeeper"; ObjectID = "cHH-cQ-M99"; */
-"cHH-cQ-M99.text" = "登錄守護者";
+"cHH-cQ-M99.text" = "LoginKeeper";
 
 /* Class = "UILabel"; text = "Developer website"; ObjectID = "ef8-fo-9ED"; */
 "ef8-fo-9ED.text" = "開發者網站";
@@ -111,7 +111,7 @@
 "meZ-KJ-6Qa.normalTitle" = "全部複製";
 
 /* Class = "UINavigationItem"; title = "About LoginKeeper"; ObjectID = "ni1-Kc-bws"; */
-"ni1-Kc-bws.title" = "關於登錄守護者";
+"ni1-Kc-bws.title" = "關於LoginKeeper";
 
 /* Class = "UILabel"; text = "Username"; ObjectID = "owc-0p-pfa"; */
 "owc-0p-pfa.text" = "用戶名";
@@ -126,7 +126,7 @@
 "slb-33-AHV.text" = "密碼";
 
 /* Class = "UILabel"; text = "by Dusan Juranovic"; ObjectID = "v14-yL-ACv"; */
-"v14-yL-ACv.text" = "由杜桑Juranovic";
+"v14-yL-ACv.text" = "由Dusan Juranovic";
 
 /* Class = "UITextField"; placeholder = "Account Title (required)"; ObjectID = "vgY-17-wLs"; */
 "vgY-17-wLs.placeholder" = "帳戶標題（必填）";
@@ -145,3 +145,12 @@
 
 /* Class = "UITextField"; placeholder = "Entry Name (required)"; ObjectID = "zOh-H8-h8M"; */
 "zOh-H8-h8M.placeholder" = "條目名稱（必填）";
+
+/* Class = "UIBarButtonItem"; title = "Restore Purchase"; ObjectID = "GTc-8q-ifN"; */
+"GTc-8q-ifN.title" = "恢復購買";
+
+/* Class = "UIButton"; normalTitle = "UNLOCK PREMIUM VERSION"; ObjectID = "qLS-sr-DOL"; */
+"qLS-sr-DOL.normalTitle" = "解鎖優質版本";
+
+/* Class = "UILabel"; text = "Your current version is"; ObjectID = "30k-6F-Ou7"; */
+"30k-6F-Ou7.text" = "你目前的版本是";

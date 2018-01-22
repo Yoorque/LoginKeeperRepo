@@ -12,13 +12,13 @@
 "4NY-8P-15S.placeholder" = "암호 확인 (필수)";
 
 /* Class = "UILabel"; text = "LoginKeeper"; ObjectID = "6Nu-9j-TfH"; */
-"6Nu-9j-TfH.text" = "로그인 키퍼";
+"6Nu-9j-TfH.text" = "LoginKeeper";
 
 /* Class = "UINavigationItem"; title = "Accounts"; ObjectID = "7de-8j-5af"; */
 "7de-8j-5af.title" = "계정";
 
 /* Class = "UILabel"; text = "LoginKeeper"; ObjectID = "9me-ze-Tu8"; */
-"9me-ze-Tu8.text" = "로그인 키퍼";
+"9me-ze-Tu8.text" = "LoginKeeper";
 
 /* Class = "UILabel"; text = "icons8.com"; ObjectID = "9wU-3T-eVT"; */
 "9wU-3T-eVT.text" = "icons8.com";
@@ -72,7 +72,7 @@
 "aFU-Xk-o7Q.placeholder" = "암호 확인 (필수)";
 
 /* Class = "UILabel"; text = "LoginKeeper"; ObjectID = "au3-ib-kHJ"; */
-"au3-ib-kHJ.text" = "로그인 키퍼";
+"au3-ib-kHJ.text" = "LoginKeeper";
 
 /* Class = "UITextField"; placeholder = "Comment"; ObjectID = "axU-Qj-8gF"; */
 "axU-Qj-8gF.placeholder" = "논평";
@@ -105,7 +105,7 @@
 "meZ-KJ-6Qa.normalTitle" = "모두 복사";
 
 /* Class = "UINavigationItem"; title = "About LoginKeeper"; ObjectID = "ni1-Kc-bws"; */
-"ni1-Kc-bws.title" = "약 로그인 키퍼";
+"ni1-Kc-bws.title" = "약 LoginKeeper";
 
 /* Class = "UILabel"; text = "Username"; ObjectID = "owc-0p-pfa"; */
 "owc-0p-pfa.text" = "사용자 이름";
@@ -139,3 +139,12 @@
 
 /* Class = "UITextField"; placeholder = "Entry Name (required)"; ObjectID = "zOh-H8-h8M"; */
 "zOh-H8-h8M.placeholder" = "항목 이름 (필수)";
+
+/* Class = "UIBarButtonItem"; title = "Restore Purchase"; ObjectID = "GTc-8q-ifN"; */
+"GTc-8q-ifN.title" = "구매 복원";
+
+/* Class = "UIButton"; normalTitle = "UNLOCK PREMIUM VERSION"; ObjectID = "qLS-sr-DOL"; */
+"qLS-sr-DOL.normalTitle" = "프리미엄 버전 잠금 해제";
+
+/* Class = "UILabel"; text = "Your current version is"; ObjectID = "30k-6F-Ou7"; */
+"30k-6F-Ou7.text" = "현재 버전은";

@@ -12,8 +12,8 @@ import LocalAuthentication
 import GoogleMobileAds
 import UserNotifications
 
-class AccountsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, AccountsDisplayAlertDelegate, BWWalkthroughViewControllerDelegate, ShowLogoDelegate {
-    
+
+class AccountsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, AccountsDisplayAlertDelegate, BWWalkthroughViewControllerDelegate, ShowLogoDelegate  {
     
     //MARK: - Properties
 
@@ -91,7 +91,10 @@ class AccountsViewController: UIViewController, UITableViewDelegate, UITableView
         if defaults.bool(forKey: "notificationAlertShown") == true {
             
             if defaults.bool(forKey: "authenticated") == true { // false was set in observer
-                appDelegate.loadAd(forViewController: self)
+                if !UserDefaults.standard.bool(forKey: "premiumPurchased") {
+                    appDelegate.loadAd(forViewController: self)
+                }
+                
                 updateTableViewBottomInset()
                 if searchBar.text == "" {
                     fetchFromCoreData()
@@ -115,7 +118,11 @@ class AccountsViewController: UIViewController, UITableViewDelegate, UITableView
     }
     
     override func didRotate(from fromInterfaceOrientation: UIInterfaceOrientation) {
-        appDelegate.loadAd(forViewController: self)
+        if !UserDefaults.standard.bool(forKey: "premiumPurchased") {
+            appDelegate.loadAd(forViewController: self)
+        } else {
+            appDelegate.removeBannerView()
+        }
     }
     //MARK: - Tutorial Functions
     
@@ -217,7 +224,11 @@ class AccountsViewController: UIViewController, UITableViewDelegate, UITableView
                             self.defaults.set(true, forKey: "authenticated")
                             self.lockButton.title = lockLocalized
                             BlurBackgroundView.removeBlurFrom(view: (self.navigationController?.topViewController?.view)!) //Unblur the background
-                            self.appDelegate.loadAd(forViewController: (self.navigationController?.topViewController)!)
+                            if !UserDefaults.standard.bool(forKey: "premiumPurchased") {
+                                self.appDelegate.loadAd(forViewController: (self.navigationController?.topViewController)!)
+                            } else {
+                                self.appDelegate.removeBannerView()
+                            }
                             self.updateTableViewBottomInset()
                             print("Success: TouchID")
                         } else {
@@ -271,7 +282,11 @@ class AccountsViewController: UIViewController, UITableViewDelegate, UITableView
                         self.fetchFromCoreData()
                         self.defaults.set(true, forKey: "authenticated")
                         BlurBackgroundView.removeBlurFrom(view: (self.navigationController?.topViewController?.view)!) //Unblur the background
-                        self.appDelegate.loadAd(forViewController: (self.navigationController?.topViewController)!)
+                        if !UserDefaults.standard.bool(forKey: "premiumPurchased") {
+                                self.appDelegate.loadAd(forViewController: (self.navigationController?.topViewController)!)
+                            } else {
+                                self.appDelegate.removeBannerView()
+                            }
                         self.updateTableViewBottomInset()
                         print("Success: Passcode")
                     } else {
@@ -384,6 +399,7 @@ class AccountsViewController: UIViewController, UITableViewDelegate, UITableView
         performSegue(withIdentifier: "addNewAccountSegue", sender: self)
     }
     @IBAction func lockButton(_ sender: UIBarButtonItem) {
+        
         accounts = []
         tableView.reloadData()
         if lockButton.title == unlockLocalized {

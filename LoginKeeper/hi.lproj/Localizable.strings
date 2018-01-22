@@ -75,3 +75,20 @@
 "Put your mind at ease, store your logins here." = "अपने दिमाग को आसानी से रखो, यहां अपने लॉगिनों को जमा करें।";
 "Haven't seen you in a while. How have you been lately?" = "थोड़ी देर में आपको नहीं देखा। तुम अब कैसे हो?";
 "And there goes another week without you. You have been missed." = "और आपके बिना एक और हफ्ते चला जाता है आपको याद किया गया।";
+"You cannot send emails. Check your email settings." = "आप ईमेल नहीं भेज सकते अपनी ईमेल सेटिंग जांचें";
+"No more ads for you. \nCongratulations!" = "आपके लिए और विज्ञापन नहीं \nबधाई!";
+"Internet connection required. Please check your internet connection" = "इंटरनेट कनेक्शन की आवश्यकता है कृपया अपने इंटरनेट कनेक्शन की जाँच करें";
+"Remove ads" = "विज्ञापन हटाएँ";
+"You have already purchased this functionality!" = "आपने पहले से ही इस कार्यक्षमता को खरीदा है!";
+"You have successfully restored your purchase!" = "आपने अपनी खरीद सफलतापूर्वक बहाल कर ली है!";
+"You have successfully purchased Premium version!" = "आपने प्रीमियम संस्करण को सफलतापूर्वक खरीदा है!";
+"Basic version" = "मूल संस्करण";
+"Premium version" = "प्रीमियम संस्करण";
+"Premium version LOCKED!" = "प्रीमियम संस्करण लॉक किया गया!";
+"Premium version PURCHASED!" = "प्रीमियम संस्करण खरीदे गए!";
+"Purchase Premium and remove ads" = "प्रीमियम खरीदें और विज्ञापन निकालें";
+
+"Feedback from" = "से प्रतिक्रिया";
+"Device:" = "युक्ति:";
+"App Version:" = "एप्लिकेशन वेरीज़न:";
+"Please enter your feedback below this line \n--------------------------------------------------" = "कृपया इस रेखा के नीचे अपना फ़ीडबैक दर्ज करें \n--------------------------------------------------";

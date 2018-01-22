@@ -74,3 +74,20 @@
 "Put your mind at ease, store your logins here." = "Одмори мозак. Запиши нешто.";
 "Haven't seen you in a while. How have you been lately?" = "Нема те дуго. Јел све у реду код тебе?";
 "And there goes another week without you. You have been missed." = "И прође још једна недеља без тебе. Недостајеш.";
+"You cannot send emails. Check your email settings." = "Не можете послати имејл. Проверите подешавања за имејл.";
+"No more ads for you. \nCongratulations!" = "Нема више реклама за тебе. \nЧеститамо!";
+"Internet connection required. Please check your internet connection" = "Потребна је интернет конекција. Молимо Вас да проверите вашу интернет конекцију";
+"Remove ads" = "Уклони огласе";
+"You have already purchased this functionality!" = "Већ сте купили ову функционалност!";
+"You have successfully restored your purchase!" = "Успешно сте потврдили Вашу куповину!";
+"You have successfully purchased Premium version!" = "Успешно сте купили Премијум верзију!";
+"Basic version" = "Основна верзија";
+"Premium version" = "Премијум верзија";
+"Premium version LOCKED!" = "Премијум верзија ЗАКЉУЧАНА";
+"Premium version PURCHASED!" = "Премијум верзија КУПЉЕНА!";
+"Purchase Premium and remove ads" = "Купите Премијум и уклоните огласе";
+
+"Feedback from" = "Коментар од";
+"Device:" = "Уређај:";
+"App Version:" = "Верзија апликације:";
+"Please enter your feedback below this line \n--------------------------------------------------" = "Молимо Вас да оставите коментар испод ове линије \n--------------------------------------------------";

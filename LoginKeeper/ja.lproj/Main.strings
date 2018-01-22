@@ -18,7 +18,7 @@
 "7de-8j-5af.title" = "アカウント";
 
 /* Class = "UILabel"; text = "LoginKeeper"; ObjectID = "9me-ze-Tu8"; */
-"9me-ze-Tu8.text" = "ログインキーパー";
+"9me-ze-Tu8.text" = "LoginKeeper";
 
 /* Class = "UILabel"; text = "icons8.com"; ObjectID = "9wU-3T-eVT"; */
 "9wU-3T-eVT.text" = "icons8.com";
@@ -78,7 +78,7 @@
 "aFU-Xk-o7Q.placeholder" = "パスワードの確認（必須）";
 
 /* Class = "UILabel"; text = "LoginKeeper"; ObjectID = "au3-ib-kHJ"; */
-"au3-ib-kHJ.text" = "ログインキーパー";
+"au3-ib-kHJ.text" = "LoginKeeper";
 
 /* Class = "UITextField"; placeholder = "Comment"; ObjectID = "axU-Qj-8gF"; */
 "axU-Qj-8gF.placeholder" = "コメント";
@@ -87,7 +87,7 @@
 "bW6-dO-nVI.text" = "アプリケーションについて";
 
 /* Class = "UILabel"; text = "LoginKeeper"; ObjectID = "cHH-cQ-M99"; */
-"cHH-cQ-M99.text" = "ログインキーパー";
+"cHH-cQ-M99.text" = "LoginKeeper";
 
 /* Class = "UILabel"; text = "Developer website"; ObjectID = "ef8-fo-9ED"; */
 "ef8-fo-9ED.text" = "開発者のウェブサイト";
@@ -111,7 +111,7 @@
 "meZ-KJ-6Qa.normalTitle" = "すべてをコピーする";
 
 /* Class = "UINavigationItem"; title = "About LoginKeeper"; ObjectID = "ni1-Kc-bws"; */
-"ni1-Kc-bws.title" = "ログインキーパーについて";
+"ni1-Kc-bws.title" = "LoginKeeperについて";
 
 /* Class = "UILabel"; text = "Username"; ObjectID = "owc-0p-pfa"; */
 "owc-0p-pfa.text" = "ユーザー名";
@@ -145,3 +145,12 @@
 
 /* Class = "UITextField"; placeholder = "Entry Name (required)"; ObjectID = "zOh-H8-h8M"; */
 "zOh-H8-h8M.placeholder" = "エントリ名（必須）";
+
+/* Class = "UIBarButtonItem"; title = "Restore Purchase"; ObjectID = "GTc-8q-ifN"; */
+"GTc-8q-ifN.title" = "購入商品を復元する";
+
+/* Class = "UIButton"; normalTitle = "UNLOCK PREMIUM VERSION"; ObjectID = "qLS-sr-DOL"; */
+"qLS-sr-DOL.normalTitle" = "プレミアムバージョンを解除する";
+
+/* Class = "UILabel"; text = "Your current version is"; ObjectID = "30k-6F-Ou7"; */
+"30k-6F-Ou7.text" = "あなたの現在のバージョンは";

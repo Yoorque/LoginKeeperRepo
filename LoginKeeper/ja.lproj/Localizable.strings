@@ -75,3 +75,20 @@
 "Put your mind at ease, store your logins here." = "安心してここにログインしてください。";
 "Haven't seen you in a while. How have you been lately?" = "しばらくあなたを見ていない。最近あなたはどうでしたか？";
 "And there goes another week without you. You have been missed." = "あなたがいなくても、もう一週間かかる。あなたは逃した。";
+"You cannot send emails. Check your email settings." = "電子メールは送信できません。メール設定を確認してください。";
+"No more ads for you. \nCongratulations!" = "あなたのための広告はもうありません。 \nおめでとう！";
+"Internet connection required. Please check your internet connection" = "インターネット接続が必要です。インターネット接続を確認してください";
+"Remove ads" = "広告を削除";
+"You have already purchased this functionality!" = "あなたはすでにこの機能を購入しています！";
+"You have successfully restored your purchase!" = "あなたは正常にあなたの購入を復元しました！";
+"You have successfully purchased Premium version!" = "あなたは正常にプレミアムバージョンを購入しました！";
+"Basic version" = "基本バージョン";
+"Premium version" = "プレミアムバージョン";
+"Premium version LOCKED!" = "プレミアムバージョンがロック！";
+"Premium version PURCHASED!" = "プレミアム版を購入！";
+"Purchase Premium and remove ads" = "プレミアムを購入して広告を削除する";
+
+"Feedback from" = "フィードバック";
+"Device:" = "デバイス:";
+"App Version:" = "Apアプリのバージョン:";
+"Please enter your feedback below this line \n--------------------------------------------------" = "この行の下にフィードバックを入力してください \n--------------------------------------------------";

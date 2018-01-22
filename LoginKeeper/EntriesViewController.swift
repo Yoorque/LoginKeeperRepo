@@ -29,7 +29,11 @@ class EntriesViewController: UIViewController, UITableViewDataSource, UITableVie
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-        appDelegate.loadAd(forViewController: self)
+        if !UserDefaults.standard.bool(forKey: "premiumPurchased") {
+            appDelegate.loadAd(forViewController: self)
+        } else {
+            appDelegate.removeBannerView()
+        }
         updateTableViewBottomInset()
         fetchFromCoreData()
     }
@@ -74,7 +78,11 @@ class EntriesViewController: UIViewController, UITableViewDataSource, UITableVie
     }
     
     override func didRotate(from fromInterfaceOrientation: UIInterfaceOrientation) {
-        appDelegate.loadAd(forViewController: self)
+        if !UserDefaults.standard.bool(forKey: "premiumPurchased") {
+            appDelegate.loadAd(forViewController: self)
+        } else {
+            appDelegate.removeBannerView()
+        }
     }
 
     

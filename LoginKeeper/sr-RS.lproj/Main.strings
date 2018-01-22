@@ -1,21 +1,21 @@
 
 /* Class = "UILabel"; text = "Account name"; ObjectID = "28i-Mw-C5V"; */
-"28i-Mw-C5V.text" = "Naziv Naloga";
+"28i-Mw-C5V.text" = "Назив Налога";
 
 /* Class = "UILabel"; text = "Developer:"; ObjectID = "3g6-v0-Ygk"; */
-"3g6-v0-Ygk.text" = "Developer:";
+"3g6-v0-Ygk.text" = "Девелопер:";
 
 /* Class = "UILabel"; text = "Comment"; ObjectID = "3ug-en-Aoa"; */
-"3ug-en-Aoa.text" = "Komentar";
+"3ug-en-Aoa.text" = "Коментар";
 
 /* Class = "UITextField"; placeholder = "Confirm password (required)"; ObjectID = "4NY-8P-15S"; */
-"4NY-8P-15S.placeholder" = "Potvrdite lozinku (obavezno)";
+"4NY-8P-15S.placeholder" = "Потврдите лозинку (обавезно)";
 
 /* Class = "UILabel"; text = "LoginKeeper"; ObjectID = "6Nu-9j-TfH"; */
 "6Nu-9j-TfH.text" = "LoginKeeper";
 
 /* Class = "UINavigationItem"; title = "Accounts"; ObjectID = "7de-8j-5af"; */
-"7de-8j-5af.title" = "Nalozi";
+"7de-8j-5af.title" = "Налози";
 
 /* Class = "UILabel"; text = "LoginKeeper"; ObjectID = "9me-ze-Tu8"; */
 "9me-ze-Tu8.text" = "LoginKeeper";
@@ -24,118 +24,127 @@
 "9wU-3T-eVT.text" = "icons8.com";
 
 /* Class = "UILabel"; text = "-Default is the first one in the scroll view-"; ObjectID = "Abp-m8-Wku"; */
-"Abp-m8-Wku.text" = "Prvi logo je predefinisan";
+"Abp-m8-Wku.text" = "Први лого је предефинисан";
 
 /* Class = "UILabel"; text = "Disclaimer"; ObjectID = "Dnd-0R-ynT"; */
-"Dnd-0R-ynT.text" = "Odricanje od odgovornosti";
+"Dnd-0R-ynT.text" = "Одрицање од одговорности";
 
 /* Class = "UINavigationItem"; title = "Add New Account"; ObjectID = "E8D-Rq-tOd"; */
-"E8D-Rq-tOd.title" = "Dodaj novi Nalog";
+"E8D-Rq-tOd.title" = "Додај нови Налог";
 
 /* Class = "UILabel"; text = "Entry name"; ObjectID = "EN3-26-xC9"; */
-"EN3-26-xC9.text" = "Naziv Unosa";
+"EN3-26-xC9.text" = "Назив Уноса";
 
 /* Class = "UILabel"; text = "Email:"; ObjectID = "EzQ-BD-0hD"; */
-"EzQ-BD-0hD.text" = "Email:";
+"EzQ-BD-0hD.text" = "Имејл:";
 
 /* Class = "UIBarButtonItem"; title = "Edit"; ObjectID = "Fb6-TP-OzK"; */
-"Fb6-TP-OzK.title" = "Izmeni";
+"Fb6-TP-OzK.title" = "Измени";
 
 /* Class = "UILabel"; text = "Feedback"; ObjectID = "FuE-fw-G6K"; */
-"FuE-fw-G6K.text" = "Povratna informacija";
+"FuE-fw-G6K.text" = "Коментар";
 
 /* Class = "UITextField"; placeholder = "Username"; ObjectID = "JtM-J4-Gbz"; */
-"JtM-J4-Gbz.placeholder" = "Korisničko ime";
+"JtM-J4-Gbz.placeholder" = "Корисничко име";
 
 /* Class = "UIBarButtonItem"; title = "Lock"; ObjectID = "KRN-c3-QOC"; */
-"KRN-c3-QOC.title" = "Zaključaj";
+"KRN-c3-QOC.title" = "Закључај";
 
 /* Class = "UITextField"; placeholder = "Password (required)"; ObjectID = "LNo-xb-YV2"; */
-"LNo-xb-YV2.placeholder" = "Lozinka (obavezno)";
+"LNo-xb-YV2.placeholder" = "Лозинка (обавезно)";
 
 /* Class = "UILabel"; text = "◀︎   Choose your logo from the scroll menu   ▶︎"; ObjectID = "OAQ-SI-m1b"; */
-"OAQ-SI-m1b.text" = "◀︎   Izaberite logo iz skrol liste   ▶︎";
+"OAQ-SI-m1b.text" = "◀︎   Изаберите лого из скрол листе   ▶︎";
 
 /* Class = "UITextField"; placeholder = "Entry Name (required)"; ObjectID = "Qgw-sU-47I"; */
-"Qgw-sU-47I.placeholder" = "Naziv Unosa (obavezno)";
+"Qgw-sU-47I.placeholder" = "Назив Уноса (обавезно)";
 
 /* Class = "UINavigationItem"; title = "Info"; ObjectID = "REf-hL-2HP"; */
-"REf-hL-2HP.title" = "Info";
+"REf-hL-2HP.title" = "Инфо";
 
 /* Class = "UIBarButtonItem"; title = "Info"; ObjectID = "V9Y-1t-bnd"; */
-"V9Y-1t-bnd.title" = "Info";
+"V9Y-1t-bnd.title" = "Инфо";
 
 /* Class = "UILabel"; text = "LoginKeeper® was developed using the following free & open source resources:"; ObjectID = "ZTW-LK-HNF"; */
-"ZTW-LK-HNF.text" = "LoginKeeper® je razvijen korišćenjem sledećeg besplatnog i otvorenog koda i resursa :";
+"ZTW-LK-HNF.text" = "LoginKeeper је развијен коришћењем следећег бесплатног и отвореног кода и ресурса:";
 
 /* Class = "UITextField"; placeholder = "Confirm password (required)"; ObjectID = "aFU-Xk-o7Q"; */
-"aFU-Xk-o7Q.placeholder" = "Potvrdite lozinku (obavezno)";
+"aFU-Xk-o7Q.placeholder" = "Потврдите лозинку (обавезно)";
 
 /* Class = "UILabel"; text = "LoginKeeper"; ObjectID = "au3-ib-kHJ"; */
 "au3-ib-kHJ.text" = "LoginKeeper";
 
 /* Class = "UITextField"; placeholder = "Comment"; ObjectID = "axU-Qj-8gF"; */
-"axU-Qj-8gF.placeholder" = "Komentar";
+"axU-Qj-8gF.placeholder" = "Коментар";
 
 /* Class = "UILabel"; text = "About"; ObjectID = "bW6-dO-nVI"; */
-"bW6-dO-nVI.text" = "O aplikaciji";
+"bW6-dO-nVI.text" = "О апликацији";
 
 /* Class = "UILabel"; text = "LoginKeeper"; ObjectID = "cHH-cQ-M99"; */
 "cHH-cQ-M99.text" = "LoginKeeper";
 
 /* Class = "UILabel"; text = "Developer website"; ObjectID = "ef8-fo-9ED"; */
-"ef8-fo-9ED.text" = "Website developera";
+"ef8-fo-9ED.text" = "Веб сајт девелопера";
 
 /* Class = "UILabel"; text = "All changes are automatically saved"; ObjectID = "fmv-Ys-hzA"; */
-"fmv-Ys-hzA.text" = "Sve promene se automatski snimaju";
+"fmv-Ys-hzA.text" = "Све промене се аутоматски снимају";
 
 /* Class = "UILabel"; text = "More apps by developer"; ObjectID = "gqL-Oj-Kkg"; */
-"gqL-Oj-Kkg.text" = "Još aplikacija od developera";
+"gqL-Oj-Kkg.text" = "Још апликација од девелопера";
 
 /* Class = "UILabel"; text = "Dusan Juranovic"; ObjectID = "iaT-Lv-CQA"; */
-"iaT-Lv-CQA.text" = "Dušan Juranović";
+"iaT-Lv-CQA.text" = "Душан Јурановић";
 
 /* Class = "UITextField"; placeholder = "Comment"; ObjectID = "lR5-4h-YPa"; */
-"lR5-4h-YPa.placeholder" = "Komentar";
+"lR5-4h-YPa.placeholder" = "Коментар";
 
 /* Class = "UIButton"; normalTitle = "Skip"; ObjectID = "ljz-gl-szh"; */
-"ljz-gl-szh.normalTitle" = "Preskoči";
+"ljz-gl-szh.normalTitle" = "Прескочи";
 
 /* Class = "UIButton"; normalTitle = "Copy All"; ObjectID = "meZ-KJ-6Qa"; */
-"meZ-KJ-6Qa.normalTitle" = "Iskopiraj Sve";
+"meZ-KJ-6Qa.normalTitle" = "Ископирај Све";
 
 /* Class = "UINavigationItem"; title = "About LoginKeeper"; ObjectID = "ni1-Kc-bws"; */
-"ni1-Kc-bws.title" = "O LoginKeeper-u";
+"ni1-Kc-bws.title" = "О ЛогинКиперу";
 
 /* Class = "UILabel"; text = "Username"; ObjectID = "owc-0p-pfa"; */
-"owc-0p-pfa.text" = "Korisničko ime";
+"owc-0p-pfa.text" = "Корисничко име";
 
 /* Class = "UITextField"; placeholder = "Username"; ObjectID = "rkV-Gt-ep1"; */
-"rkV-Gt-ep1.placeholder" = "Korisničko ime";
+"rkV-Gt-ep1.placeholder" = "Корисничко име";
 
 /* Class = "UITextField"; placeholder = "Password (required)"; ObjectID = "sFK-NG-wDg"; */
-"sFK-NG-wDg.placeholder" = "Lozinka (obavezno)";
+"sFK-NG-wDg.placeholder" = "Лозинка (обавезно)";
 
 /* Class = "UILabel"; text = "Password"; ObjectID = "slb-33-AHV"; */
-"slb-33-AHV.text" = "Lozinka";
+"slb-33-AHV.text" = "Лозинка";
 
 /* Class = "UILabel"; text = "by Dusan Juranovic"; ObjectID = "v14-yL-ACv"; */
-"v14-yL-ACv.text" = "od Dušana Juranovića";
+"v14-yL-ACv.text" = "од Душана Јурановића";
 
 /* Class = "UITextField"; placeholder = "Account Title (required)"; ObjectID = "vgY-17-wLs"; */
-"vgY-17-wLs.placeholder" = "Naziv Naloga (obavezno)";
+"vgY-17-wLs.placeholder" = "Назив Налога (обавезно)";
 
 /* Class = "UILabel"; text = "All rights reserved. Copyrights©"; ObjectID = "xqa-RF-TvC"; */
-"xqa-RF-TvC.text" = "Sva prava zadržana. Autorska prava©";
+"xqa-RF-TvC.text" = "Сва права задржана. Ауторска права©";
 
 /* Class = "UIBarButtonItem"; title = "Play Tutorial"; ObjectID = "y1Q-3C-FBj"; */
-"y1Q-3C-FBj.title" = "Pusti Tutorijal";
+"y1Q-3C-FBj.title" = "Пусти Туторијал";
 
 /* Class = "UILabel"; text = "juranovicd@gmail.com"; ObjectID = "yGG-Ik-64k"; */
 "yGG-Ik-64k.text" = "juranovicd@gmail.com";
 
 /* Class = "UILabel"; text = "Comment"; ObjectID = "yZj-U9-A0o"; */
-"yZj-U9-A0o.text" = "Komentar";
+"yZj-U9-A0o.text" = "Коментар";
 
 /* Class = "UITextField"; placeholder = "Entry Name (required)"; ObjectID = "zOh-H8-h8M"; */
-"zOh-H8-h8M.placeholder" = "Naziv Unosa (obavezno)";
+"zOh-H8-h8M.placeholder" = "Назив Уноса (обавезно)";
+
+/* Class = "UIBarButtonItem"; title = "Restore Purchase"; ObjectID = "GTc-8q-ifN"; */
+"GTc-8q-ifN.title" = "Раније купљено";
+
+/* Class = "UIButton"; normalTitle = "UNLOCK PREMIUM VERSION"; ObjectID = "qLS-sr-DOL"; */
+"qLS-sr-DOL.normalTitle" = "ОТКЉУЧАЈ ПРЕМИЈУМ ВЕРЗИЈУ";
+
+/* Class = "UILabel"; text = "Your current version is"; ObjectID = "30k-6F-Ou7"; */
+"30k-6F-Ou7.text" = "Ваша тренутна верзија је";
