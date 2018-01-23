@@ -401,12 +401,13 @@ class AccountsViewController: UIViewController, UITableViewDelegate, UITableView
         let alert = UIAlertController(title: passwordTextLocalized, message: enterPasswordLocalized, preferredStyle: .alert)
         alert.addTextField(configurationHandler: {textField in
             textField.placeholder = enterPasswordLocalized
+            textField.isSecureTextEntry = true
         })
         alert.addAction(UIAlertAction(title: okLocalized, style: .default, handler: { _ in
             let defaults = UserDefaults.standard
             if let pass = defaults.value(forKey: "userPassword") as? String {
                 if pass == alert.textFields?.first?.text {
-                    alert.textFields?.first?.isSecureTextEntry = true
+                    
                     self.navigationItem.rightBarButtonItem?.isEnabled = true
                     self.searchBar.isUserInteractionEnabled = true
                     self.lockButton.title = lockLocalized
