@@ -93,3 +93,7 @@
 "Device:" = "デバイス:";
 "App Version:" = "Apアプリのバージョン:";
 "Please enter your feedback below this line \n--------------------------------------------------" = "この行の下にフィードバックを入力してください \n--------------------------------------------------";
+
+"Choose your authentication method" = "あなたの認証方法を選択してください";
+"Touch ID" = "Touch ID";
+"Password" = "パスワード";

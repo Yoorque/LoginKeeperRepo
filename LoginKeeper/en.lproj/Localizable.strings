@@ -95,6 +95,10 @@
 "App Version:" = "App Version:";
 "Please enter your feedback below this line \n--------------------------------------------------" = "Please enter your feedback below this line \n--------------------------------------------------";
 
+"Choose your authentication method" = "Choose your authentication method";
+"Touch ID" = "Touch ID";
+"Password" = "Password";
+
 
 
 

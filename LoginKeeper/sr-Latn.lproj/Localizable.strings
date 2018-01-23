@@ -92,3 +92,7 @@
 "Device:" = "Uredjaj:";
 "App Version:" = "Verzija aplikacije:";
 "Please enter your feedback below this line \n--------------------------------------------------" = "Molimo Vas da ostavite komentar ispod ove linije \n--------------------------------------------------";
+
+"Choose your authentication method" = "Izaberite metod autentikacije";
+"Touch ID" = "Touch ID";
+"Password" = "Lozinka";

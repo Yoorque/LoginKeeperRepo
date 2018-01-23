@@ -94,3 +94,7 @@
 "Device:" = "Dispositivo:";
 "App Version:" = "Versão da aplicação:";
 "Please enter your feedback below this line \n--------------------------------------------------" = "Digite seus comentários abaixo desta linha \n--------------------------------------------------";
+
+"Choose your authentication method" = "Escolhe o seu método de autenticação";
+"Touch ID" = "Touch ID";
+"Password" = "Senha";

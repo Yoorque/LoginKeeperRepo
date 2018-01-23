@@ -12,7 +12,7 @@ import LocalAuthentication
 import GoogleMobileAds
 import UserNotifications
 
-class AccountsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, AccountsDisplayAlertDelegate, BWWalkthroughViewControllerDelegate, ShowLogoDelegate  {
+class AccountsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, AccountsDisplayAlertDelegate, BWWalkthroughViewControllerDelegate, ShowLogoDelegate, UIViewControllerPreviewingDelegate  {
     
     //MARK: - Properties
     
@@ -51,7 +51,7 @@ class AccountsViewController: UIViewController, UITableViewDelegate, UITableView
         //authentication
         NotificationCenter.default.addObserver(forName: NSNotification.Name.UIApplicationWillEnterForeground, object: nil, queue: .main, using: {_ in
             self.defaults.set(false, forKey: "authenticated") //sets authentication to false for check in viewWillAppear()
-            self.authenticateUser()
+            self.chooseAuthMethod()
         })
         
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
@@ -81,7 +81,9 @@ class AccountsViewController: UIViewController, UITableViewDelegate, UITableView
         })
         
         // addToolBarTo(searchBar: searchBar)
-        
+        if traitCollection.forceTouchCapability == .available {
+            registerForPreviewing(with: self, sourceView: tableView)
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -108,7 +110,7 @@ class AccountsViewController: UIViewController, UITableViewDelegate, UITableView
                 searchBar.isUserInteractionEnabled = false
                 
                 if defaults.bool(forKey: "passSetShown") == true {
-                    authenticateUser()
+                    chooseAuthMethod()
                 }
             }
         }
@@ -125,6 +127,29 @@ class AccountsViewController: UIViewController, UITableViewDelegate, UITableView
             appDelegate.removeBannerView()
         }
     }
+    
+    //MARK: - Preview Delegates
+    
+    func previewingContext(_ previewingContext: UIViewControllerPreviewing, viewControllerForLocation location: CGPoint) -> UIViewController? {
+        if let indexPath = tableView.indexPathForRow(at: location) {
+            previewingContext.sourceRect = tableView.rectForRow(at: indexPath)
+            let destVC = storyboard?.instantiateViewController(withIdentifier: "DetailsViewController") as! DetailsViewController
+            
+            if accounts[indexPath.row].entries?.allObjects.count == 1 {
+                destVC.entryDetails = accounts[indexPath.row].entries?.allObjects.first as? Entry
+                destVC.preferredContentSize = CGSize(width: 0, height: 300)
+                
+                return destVC
+            }
+            return nil
+        }
+        return nil
+    }
+    
+    func previewingContext(_ previewingContext: UIViewControllerPreviewing, commit viewControllerToCommit: UIViewController) {
+        navigationController?.pushViewController(viewControllerToCommit, animated: true)
+    }
+    
     //MARK: - Tutorial Functions
     
     func playTutorial() {
@@ -172,6 +197,20 @@ class AccountsViewController: UIViewController, UITableViewDelegate, UITableView
                 view.resignFirstResponder()
             }
         }
+    }
+    
+    func chooseAuthMethod() {
+        BlurBackgroundView.blurCurrent(view: (navigationController?.topViewController?.view)!)
+        let alert = UIAlertController(title: "LoginKeeper", message: chooseAuthMethodLocalized, preferredStyle: .alert)
+        let touchID = UIAlertAction(title: touchIDLocalized, style: .default, handler: {_ in
+            self.authenticateUser()
+        })
+        let password = UIAlertAction(title: passwordLocalized, style: .default, handler: {_ in
+            self.userFallbackPasswordAlert()
+        })
+        alert.addAction(touchID)
+        alert.addAction(password)
+        present(alert, animated: true, completion: nil)
     }
     
     func setPassword() {

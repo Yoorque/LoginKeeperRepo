@@ -93,3 +93,7 @@
 "Device:" = "設備:";
 "App Version:" = "應用程式版本:";
 "Please enter your feedback below this line \n--------------------------------------------------" = "請在此行下方輸入您的意見 \n--------------------------------------------------";
+
+"Choose your authentication method" = "選擇您的驗證方法";
+"Touch ID" = "Touch ID";
+"Password" = "密碼";

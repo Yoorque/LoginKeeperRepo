@@ -98,7 +98,9 @@
 "App Version:" = "应用程式版本:";
 "Please enter your feedback below this line \n--------------------------------------------------" = "请在此行下方输入您的意见 \n--------------------------------------------------";
 
-
+"Choose your authentication method" = "选择您的验证方法";
+"Touch ID" = "Touch ID";
+"Password" = "密码";
 
 
 

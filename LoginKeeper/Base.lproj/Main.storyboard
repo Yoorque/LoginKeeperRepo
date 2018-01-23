@@ -19,7 +19,7 @@
         <!--About LoginKeeper-->
         <scene sceneID="V6c-rO-Tvq">
             <objects>
-                <viewController automaticallyAdjustsScrollViewInsets="NO" id="Z9S-mf-Ekw" customClass="AboutViewController" customModule="LoginKeeper" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AboutViewController" automaticallyAdjustsScrollViewInsets="NO" id="Z9S-mf-Ekw" customClass="AboutViewController" customModule="LoginKeeper" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jLT-oF-cmh"/>
                         <viewControllerLayoutGuide type="bottom" id="oTP-Hy-gRQ"/>
@@ -401,7 +401,7 @@
         <!--Info-->
         <scene sceneID="V85-hJ-Dp8">
             <objects>
-                <tableViewController id="Th8-3y-bPc" customClass="InfoTableViewController" customModule="LoginKeeper" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="InfoTableViewController" id="Th8-3y-bPc" customClass="InfoTableViewController" customModule="LoginKeeper" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="E7d-SG-h7h">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1868,7 +1868,7 @@
         <image name="web" width="50" height="50"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="mYc-lo-ZTI"/>
-        <segue reference="h9s-k7-aFA"/>
+        <segue reference="iTS-a3-3V6"/>
+        <segue reference="R23-PL-03t"/>
     </inferredMetricsTieBreakers>
 </document>

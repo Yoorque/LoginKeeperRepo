@@ -10,6 +10,7 @@ import UIKit
 import CoreData
 
 class DetailsViewController: UIViewController, UITextFieldDelegate {
+    
     @IBOutlet var stackView: UIStackView!
     @IBOutlet var favoritedStar: UIImageView!
 
@@ -45,6 +46,14 @@ class DetailsViewController: UIViewController, UITextFieldDelegate {
     }
     let titleTextLabel = UILabel()
     
+    override var previewActionItems: [UIPreviewActionItem] {
+        let copyAll = UIPreviewAction(title: "Copy All", style: .default, handler: {_,_  in
+            let copyText = "\(accountTextLocalized): \(self.entryDetails!.account!.name!)\n\(entryNameTextLocalized): \(self.entryDetails!.name!)\n\(usernameTextLocalized): \(self.entryDetails!.username!)\n\(passwordTextLocalized): \(self.entryDetails!.password!)\n\(commentTextLocalized): \(self.entryDetails!.comment!)"
+            self.copyPaste(text: copyText)
+        })
+        return [copyAll]
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -63,6 +72,8 @@ class DetailsViewController: UIViewController, UITextFieldDelegate {
         
         view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard)))
     }
+    
+    
     func addObservers() {
         NotificationCenter.default.addObserver(self, selector: #selector(handleKeyboardNotification), name: .UIKeyboardWillShow, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(handleKeyboardNotification), name: .UIKeyboardWillHide, object: nil)
@@ -71,6 +82,7 @@ class DetailsViewController: UIViewController, UITextFieldDelegate {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         addObservers()
+        
         accountName.text = entryDetails?.account?.name
         entryName.text = entryDetails?.name
         username.text = entryDetails?.username

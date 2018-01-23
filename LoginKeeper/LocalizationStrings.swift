@@ -74,6 +74,9 @@ let passwordIsRequiredMessageLocalized = NSLocalizedString("Please set your pass
 let enterPasswordLocalized = NSLocalizedString("Enter password", comment: "enter pass")
 let identifyLocalized = NSLocalizedString("Identify yourself", comment: "id")
 let noMailFuncLocalized = NSLocalizedString("You cannot send emails. Check your email settings", comment: "mail")
+let chooseAuthMethodLocalized = NSLocalizedString("Choose your authentication method", comment: "choose auth method")
+let touchIDLocalized = NSLocalizedString("Touch ID", comment: "touch ID")
+let passwordLocalized = NSLocalizedString("Password", comment: "pass")
 
 //MARK: - TableView Swipe
 let addEntryLocalized = NSLocalizedString("Add Entry", comment: "")

@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 
-class EntriesViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, EntriesDisplayAlertDelegate {
+class EntriesViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, EntriesDisplayAlertDelegate, UIViewControllerPreviewingDelegate {
 
     @IBOutlet var tableView: UITableView!
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
@@ -17,7 +17,7 @@ class EntriesViewController: UIViewController, UITableViewDataSource, UITableVie
     var account: Account?
     var entries: [Entry]?
     let titleTextLabel = UILabel()
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         titleTextLabel.frame.size.height = 25
@@ -26,6 +26,10 @@ class EntriesViewController: UIViewController, UITableViewDataSource, UITableVie
         titleTextLabel.font = UIFont(name: "Zapf Dingbats", size: 15)
         //titleTextLabel.text = title
         navigationItem.titleView = titleTextLabel
+        
+        if traitCollection.forceTouchCapability == .available {
+            registerForPreviewing(with: self, sourceView: tableView)
+        }
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
@@ -34,7 +38,7 @@ class EntriesViewController: UIViewController, UITableViewDataSource, UITableVie
         } else {
             appDelegate.removeBannerView()
         }
-        updateTableViewBottomInset()
+       // updateTableViewBottomInset()
         fetchFromCoreData()
     }
     
@@ -42,6 +46,25 @@ class EntriesViewController: UIViewController, UITableViewDataSource, UITableVie
         if let banner = appDelegate.adBannerView {
             tableView.contentInset.bottom = banner.frame.size.height
         }
+    }
+    
+    //MARK: - Preview Delegates
+    
+    func previewingContext(_ previewingContext: UIViewControllerPreviewing, viewControllerForLocation location: CGPoint) -> UIViewController? {
+        if let indexPath = tableView.indexPathForRow(at: location) {
+            previewingContext.sourceRect = tableView.rectForRow(at: indexPath)
+            let destVC = storyboard?.instantiateViewController(withIdentifier: "DetailsViewController") as! DetailsViewController
+            
+                destVC.entryDetails = entries?[indexPath.row]
+                destVC.preferredContentSize = CGSize(width: 0, height: 300)
+                destVC.appDelegate.removeBannerView()
+                return destVC
+        }
+        return nil
+    }
+    
+    func previewingContext(_ previewingContext: UIViewControllerPreviewing, commit viewControllerToCommit: UIViewController) {
+        navigationController?.pushViewController(viewControllerToCommit, animated: true)
     }
     
     func fetchFromCoreData() {
