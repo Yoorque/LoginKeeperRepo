@@ -106,12 +106,17 @@ class RemoveAdsViewController: UIViewController, SKProductsRequestDelegate, SKPa
     }
     
     func purchaseMyProduct(product: SKProduct) {
-        
-        if self.canMakePurchases() {
-            let payment = SKPayment(product: product)
-            SKPaymentQueue.default().add(self)
-            SKPaymentQueue.default().add(payment)
-            productID = product.productIdentifier
+        if reachability.isReachable() {
+            if self.canMakePurchases() {
+                let payment = SKPayment(product: product)
+                SKPaymentQueue.default().add(self)
+                SKPaymentQueue.default().add(payment)
+                productID = product.productIdentifier
+            } else {
+                let alert = UIAlertController(title: "LoginKeeper", message: cannotMakePurchaseLocalized, preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: okLocalized, style: .default, handler: nil))
+                present(alert, animated: true, completion: nil)
+            }
         } else {
             connectionCheckAlert()
         }

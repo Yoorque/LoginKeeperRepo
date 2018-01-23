@@ -37,7 +37,7 @@
 		11A38B6F1FD8547000A06DF5 /* BWWalkthroughPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A38B6D1FD8546F00A06DF5 /* BWWalkthroughPageViewController.swift */; };
 		11A4072B1FEE919A00FDAFD9 /* BlurBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A4072A1FEE919A00FDAFD9 /* BlurBackgroundView.swift */; };
 		11C6DE68200E101B006D3925 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C6DE67200E101B006D3925 /* NotificationManager.swift */; };
-		11C6DE7920140A2D006D3925 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11C6DE7820140A2D006D3925 /* StoreKit.framework */; };
+		11C6DE7920140A2D006D3925 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11C6DE7820140A2D006D3925 /* StoreKit.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		11C6DE7B20140E5B006D3925 /* RemoveAdsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C6DE7A20140E5B006D3925 /* RemoveAdsViewController.swift */; };
 		11C6DE7F2015F832006D3925 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C6DE7E2015F832006D3925 /* Reachability.swift */; };
 		11E850F91F18DE5900F1B5C7 /* InfoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11E850F81F18DE5900F1B5C7 /* InfoTableViewController.swift */; };
@@ -575,9 +575,12 @@
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Dusan Juranovic (UKQDW363ZZ)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Dusan Juranovic (LY2X8TM5G6)";
+				CODE_SIGN_STYLE = Automatic;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = UKQDW363ZZ;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -597,6 +600,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE = "3877fadd-6a9d-4e01-864d-b093fd959ab6";
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -634,9 +638,12 @@
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Dusan Juranovic (UKQDW363ZZ)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Dusan Juranovic (LY2X8TM5G6)";
+				CODE_SIGN_STYLE = Automatic;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = UKQDW363ZZ;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -649,6 +656,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				PROVISIONING_PROFILE = "3877fadd-6a9d-4e01-864d-b093fd959ab6";
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 4.0;
@@ -664,6 +672,8 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = LoginKeeper/LoginKeeper.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = UKQDW363ZZ;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -675,6 +685,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.dusanjuranovic.LoginKeeper;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -688,6 +700,8 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = LoginKeeper/LoginKeeper.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = UKQDW363ZZ;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -699,6 +713,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.dusanjuranovic.LoginKeeper;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;

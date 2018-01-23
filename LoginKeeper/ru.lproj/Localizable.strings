@@ -83,6 +83,7 @@
 "You have already purchased this functionality!" = "Вы уже приобрели эту функциональность!";
 "You have successfully restored your purchase!" = "Вы успешно восстановили свою покупку!";
 "You have successfully purchased Premium version!" = "Вы успешно приобрели премиум-версию!";
+"You are not authorized to make a purchase!" = "Вы не имеете права совершать покупку!";
 "Basic version" = "Базовая версия";
 "Premium version" = "Версия для Печати";
 "Premium version LOCKED!" = "Премиум-версия ЗАБЛОКИРОВАНА!";

@@ -82,6 +82,7 @@
 "You have already purchased this functionality!" = "이미이 기능을 구입하셨습니다!";
 "You have successfully restored your purchase!" = "구매를 성공적으로 복구했습니다!";
 "You have successfully purchased Premium version!" = "프리미엄 버전을 성공적으로 구매하셨습니다!";
+"You are not authorized to make a purchase!" = "Y구매할 권한이 없습니다!";
 "Basic version" = "기본 버전";
 "Premium version" = "프리미엄 버전";
 "Premium version LOCKED!" = "프리미엄 버전이 잠겨 있습니다!";

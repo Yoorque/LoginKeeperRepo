@@ -86,6 +86,7 @@
 "You have already purchased this functionality!" = "您已经购买了此功能！";
 "You have successfully restored your purchase!" = "您已成功恢复购买！";
 "You have successfully purchased Premium version!" = "您已成功购买高级版本！";
+"You are not authorized to make a purchase!" = "您无权进行购买！";
 "Basic version" = "基本版本";
 "Premium version" = "高级版本";
 "Premium version LOCKED!" = "高级版本锁定！";

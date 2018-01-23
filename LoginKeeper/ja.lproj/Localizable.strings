@@ -82,6 +82,7 @@
 "You have already purchased this functionality!" = "あなたはすでにこの機能を購入しています！";
 "You have successfully restored your purchase!" = "あなたは正常にあなたの購入を復元しました！";
 "You have successfully purchased Premium version!" = "あなたは正常にプレミアムバージョンを購入しました！";
+"You are not authorized to make a purchase!" = "あなたは購入を許可されていません！";
 "Basic version" = "基本バージョン";
 "Premium version" = "プレミアムバージョン";
 "Premium version LOCKED!" = "プレミアムバージョンがロック！";

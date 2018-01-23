@@ -25,6 +25,7 @@ let premiumVersionLocalized = NSLocalizedString("Premium version", comment: "pre
 let premiumVersionLockedLocalized = NSLocalizedString("Premium version LOCKED!", comment: "premium locked")
 let premiumVersionPurchasedLocalized = NSLocalizedString("Premium version PURCHASED!", comment: "purchased")
 let unlockPremiumTextLocalized = NSLocalizedString("Purchase Premium and remove ads", comment: "purchase premium text")
+let cannotMakePurchaseLocalized = NSLocalizedString("You are not authorized to make a purchase", comment: "no purchase allowed")
 
 //MARK: - About
 let aboutLocalized = NSLocalizedString("About LoginKeeper", comment: "about title")

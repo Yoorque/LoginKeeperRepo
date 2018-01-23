@@ -12,11 +12,10 @@ import LocalAuthentication
 import GoogleMobileAds
 import UserNotifications
 
-
 class AccountsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, AccountsDisplayAlertDelegate, BWWalkthroughViewControllerDelegate, ShowLogoDelegate  {
     
     //MARK: - Properties
-
+    
     @IBOutlet var lockButton: UIBarButtonItem!
     @IBOutlet var searchBar: UISearchBar! {
         didSet {
@@ -61,23 +60,23 @@ class AccountsViewController: UIViewController, UITableViewDelegate, UITableView
         
         UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound], completionHandler: { (granted, error) in
             guard error == nil else {return}
-                self.defaults.set(true, forKey: "notificationAlertShown")
-                if let tutShown = self.defaults.value(forKey: "tutorialShown") as? Bool {
-                    self.tutorialShown = tutShown
+            self.defaults.set(true, forKey: "notificationAlertShown")
+            if let tutShown = self.defaults.value(forKey: "tutorialShown") as? Bool {
+                self.tutorialShown = tutShown
+            }
+            
+            if self.tutorialShown == false {
+                DispatchQueue.main.async {
+                    self.playTutorial()
                 }
-                
-                if self.tutorialShown == false {
-                    DispatchQueue.main.async {
-                        self.playTutorial()
-                    }
-                } else {
-                    if let shown = self.defaults.value(forKey: "passSetShown") as? Bool {
-                        self.passwordSetShownBefore = shown
-                    }
-                    if self.passwordSetShownBefore == false {
-                        self.setPassword()
-                    }
+            } else {
+                if let shown = self.defaults.value(forKey: "passSetShown") as? Bool {
+                    self.passwordSetShownBefore = shown
                 }
+                if self.passwordSetShownBefore == false {
+                    self.setPassword()
+                }
+            }
             
         })
         
@@ -93,6 +92,8 @@ class AccountsViewController: UIViewController, UITableViewDelegate, UITableView
             if defaults.bool(forKey: "authenticated") == true { // false was set in observer
                 if !UserDefaults.standard.bool(forKey: "premiumPurchased") {
                     appDelegate.loadAd(forViewController: self)
+                } else {
+                    appDelegate.removeBannerView()
                 }
                 
                 updateTableViewBottomInset()
@@ -233,7 +234,7 @@ class AccountsViewController: UIViewController, UITableViewDelegate, UITableView
                             print("Success: TouchID")
                         } else {
                             let errorDescriptionLocalized = NSLocalizedString(error!.localizedDescription, comment: "authentication failed message")
-                           
+                            
                             
                             self.defaults.set(false, forKey: "authenticated")
                             //self.accounts = []
@@ -262,12 +263,12 @@ class AccountsViewController: UIViewController, UITableViewDelegate, UITableView
                                 self.userFallbackPasswordAlert()
                                 print("UserFallback1 \(errorDescriptionLocalized)")
                             default:
-                               self.userFallbackPasswordAlert()
+                                self.userFallbackPasswordAlert()
                                 print("default1 \(errorDescriptionLocalized)")
                             }
                         }
                     }
-                })
+            })
         } else {
             print("canEvaluateWithPasscode")
             context.evaluatePolicy(.deviceOwnerAuthentication, localizedReason: reason, reply: {success, error in
@@ -283,21 +284,21 @@ class AccountsViewController: UIViewController, UITableViewDelegate, UITableView
                         self.defaults.set(true, forKey: "authenticated")
                         BlurBackgroundView.removeBlurFrom(view: (self.navigationController?.topViewController?.view)!) //Unblur the background
                         if !UserDefaults.standard.bool(forKey: "premiumPurchased") {
-                                self.appDelegate.loadAd(forViewController: (self.navigationController?.topViewController)!)
-                            } else {
-                                self.appDelegate.removeBannerView()
-                            }
+                            self.appDelegate.loadAd(forViewController: (self.navigationController?.topViewController)!)
+                        } else {
+                            self.appDelegate.removeBannerView()
+                        }
                         self.updateTableViewBottomInset()
                         print("Success: Passcode")
                     } else {
                         let errorDescriptionLocalized = NSLocalizedString(error!.localizedDescription, comment: "authentication failed message")
                         self.defaults.set(false, forKey: "authenticated")
                         
-                       // self.accounts = []
+                        // self.accounts = []
                         self.navigationItem.rightBarButtonItem?.isEnabled = false
                         self.searchBar.isUserInteractionEnabled = false
                         self.lockButton.title = unlockLocalized
-                       // self.tableView.reloadData()
+                        // self.tableView.reloadData()
                         
                         switch error!._code{
                         case Int(kLAErrorAuthenticationFailed):
@@ -531,7 +532,7 @@ class AccountsViewController: UIViewController, UITableViewDelegate, UITableView
         })
         deleteAction.backgroundColor = UIColor(red: 216/255, green: 67/255, blue: 35/255, alpha: 1)
         insertAction.backgroundColor = UIColor(red: 44/255, green: 152/255, blue: 41/255, alpha: 1)
-    
+        
         return [deleteAction, insertAction]
     }
     
@@ -562,7 +563,7 @@ class AccountsViewController: UIViewController, UITableViewDelegate, UITableView
         
         return swipeConfig
     }
-   
+    
     // MARK: - Segue Preparation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showEntriesSegue" {

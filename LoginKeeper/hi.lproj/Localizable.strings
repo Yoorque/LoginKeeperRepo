@@ -82,6 +82,7 @@
 "You have already purchased this functionality!" = "आपने पहले से ही इस कार्यक्षमता को खरीदा है!";
 "You have successfully restored your purchase!" = "आपने अपनी खरीद सफलतापूर्वक बहाल कर ली है!";
 "You have successfully purchased Premium version!" = "आपने प्रीमियम संस्करण को सफलतापूर्वक खरीदा है!";
+"You are not authorized to make a purchase!" = "आप खरीद करने के लिए अधिकृत नहीं हैं!";
 "Basic version" = "मूल संस्करण";
 "Premium version" = "प्रीमियम संस्करण";
 "Premium version LOCKED!" = "प्रीमियम संस्करण लॉक किया गया!";
