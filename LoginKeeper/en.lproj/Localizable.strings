@@ -6,68 +6,79 @@
   Copyright © 2017 Dusan Juranovic. All rights reserved.
 */
 
-"About LoginKeeper" = "About LoginKeeper";
-"COPIED" = "COPIED";
 
+"About LoginKeeper" = "About LoginKeeper";
+
+//MARK: - Alerts
 "OK" = "OK";
-"Done" = "Done";
-"Save" = "Save";
-"Edit" = "Edit";
-"Cancel" = "Cancel";
 "Error!" = "Error!";
-"Lock" = "Lock";
-"Unlock" = "Unlock";
+"Cancel" = "Cancel";
 "Leaving LoginKeeper" = "Leaving LoginKeeper";
 "You will be redirected to" = "You will be redirected to";
 "Are you sure?" = "Are you sure?";
 "I'm sure" = "I'm sure";
 "Use Password" = "Use Password";
-"Close" = "Close";
-"Skip" = "Skip";
-"Current/Suggested Logo" = "Current/Suggested Logo";
-
 "No identities are enrolled" = "No identities are enrolled";
 "Canceled by user." = "Canceled by user.";
 "Canceled by another authentication." = "Canceled by another authentication.";
-
-"Account" = "Account";
 "No Account name!" = "No Account name!";
 "Account name is required." = "Account name is required.";
-"Delete Acc" = "Delete Acc";
-
-"Entry name" = "Entry name";
 "No Entry name!" = "No Entry name!";
 "Entry name is required." = "Entry name is required.";
-"Add Entry" = "Add Entry";
-"Add new entry for" = "Add new entry for";
-"Delete Entry" = "Delete Entry";
-
-"Username" = "Username";
-
-"Password" = "Password";
-"Enter Password" = "Enter Password";
-"Empty password" = "Empty password";
 "Please enter your password." = "Please enter your password.";
 "Passwords do not match!"  = "Passwords do not match!";
 "Please enter your password again." = "Please enter your password again.";
 "Set your backup password for LoginKeeper" = "Set your backup password for LoginKeeper";
 "Password is required!" = "Password is required!";
 "Please set your password to continue." = "Please set your password to continue.";
-
-"Comment" = "Comment";
-"Version" = "Version";
-"build" = "build";
-"Search" = "Search";
-
 "You are not authorized to use this feature." = "You are not authorized to use this feature.";
 "In progress..." = "In progress...";
 "We're working on this one!" = "We're working on this one!";
 "Oops! Unable to save changes at this time, please try again!" = "Oops! Unable to save changes at this time, please try again!";
 "Oops! Unable to fetch data at this time, please try again!" = "Oops! Unable to fetch data at this time, please try again!";
+"Identify yourself" = "Identify yourself";
+"Choose your authentication method" = "Choose your authentication method";
+"Touch ID" = "Touch ID";
+"Password" = "Password";
+
+//MARK: - Navigation Bar
+"Done" = "Done";
+"Save" = "Save";
+"Edit" = "Edit";
+"Lock" = "Lock";
+"Unlock" = "Unlock";
+"Account" = "Account";
+"Add new entry for" = "Add new entry for";
 "Entries of" = "Entries of";
 "details" = "details";
-"Identify yourself" = "Identify yourself";
+
+//MARK: - Tutorial
+"Close" = "Close";
+"Skip" = "Skip";
+
+//MARK: - Logos VC
+"Current/Suggested Logo" = "Current/Suggested Logo";
+
+//MARK: - TableView
+"Delete Acc" = "Delete Acc";
+"Add Entry" = "Add Entry";
+"Delete Entry" = "Delete Entry";
+
+//MARK: - Views
+"COPIED" = "COPIED";
+"Entry name" = "Entry name";
+"Username" = "Username";
+"Password" = "Password";
+"Enter Password" = "Enter Password";
+"Empty password" = "Empty password";
+"Comment" = "Comment";
+"Version" = "Version";
+"build" = "build";
+"Search" = "Search";
 "LoginKeeper® was developed solely using Apple Libraries and available resources provided by Apple and free open source resources. I, Dusan Juranovic, as a developer of LoginKeeper®, claim all distribution rights of LoginKeeper® as well as all copyrights©. LoginKeeper® is NOT recommended for storing valuable information such as , credit card details, bank details and all other information where loss of such information would bare great impact to individuals or companies alike and therefore LoginKeeper®  and I, Dusan Juranovic (developer), will not be held responsible for loss of any such information or assets. LoginKeeper® is intended only for purpose of not having to remember all of your login details or writing them down on pieces of paper. It is users judgment call to decide which information they enter into the app. If you have any issues or suggestions, please write an email to below provided email address. Thanks." = "LoginKeeper® was developed solely using Apple Libraries and available resources provided by Apple and free open source resources. I, Dusan Juranovic, as a developer of LoginKeeper®, claim all distribution rights of LoginKeeper® as well as all copyrights©. LoginKeeper® is NOT recommended for storing valuable information such as , credit card details, bank details and all other information where loss of such information would bare great impact to individuals or companies alike and therefore LoginKeeper®  and I, Dusan Juranovic (developer), will not be held responsible for loss of any such information or assets. LoginKeeper® is intended only for purpose of not having to remember all of your login details or writing them down on pieces of paper. It is users judgment call to decide which information they enter into the app. If you have any issues or suggestions, please write an email to below provided email address. Thanks.";
+
+//MARK: - UserNotifications
+"Hey" = "Hey";
 "There must be some password you forgot. Come back." = "There must be some password you forgot. Come back.";
 "We miss you dearly. Show us love. :)" = "We miss you dearly. Show us love. :)";
 "You got it all figured out? Are you sure?" = "You got it all figured out? Are you sure?";
@@ -77,6 +88,7 @@
 "And there goes another week without you. You have been missed." = "And there goes another week without you. You have been missed.";
 "You cannot send emails. Check your email settings" = "You cannot send emails. Check your email settings";
 
+//MARK: - IAP
 "No more ads for you. \nCongratulations!" = "No more ads for you. \nCongratulations!";
 "Internet connection required. Please check your internet connection" = "Internet connection required. Please check your internet connection";
 "Remove ads" = "Remove ads";
@@ -90,24 +102,9 @@
 "Premium version PURCHASED!" = "Premium version PURCHASED!";
 "Purchase Premium and remove ads" = "Purchase Premium and remove ads";
 
+//MARK: - Feedback Mail
+
 "Feedback from" = "Feedback from";
 "Device:" = "Device:";
 "App Version:" = "App Version:";
 "Please enter your feedback below this line \n--------------------------------------------------" = "Please enter your feedback below this line \n--------------------------------------------------";
-
-"Choose your authentication method" = "Choose your authentication method";
-"Touch ID" = "Touch ID";
-"Password" = "Password";
-
-
-
-
-
-
-
-
-
-
-
-
-

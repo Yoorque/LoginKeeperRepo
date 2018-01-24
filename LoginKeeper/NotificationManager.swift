@@ -15,7 +15,7 @@ class NotificationManager: NSObject {
     func notify(with message: String) {
         
         let content = UNMutableNotificationContent()
-        content.title = "Hey there \(UIDevice.current.name.replacingOccurrences(of: "'s iPhone", with: ""))!"
+        content.title = "\(heyThereLocalized) \(UIDevice.current.name.replacingOccurrences(of: "'s iPhone", with: ""))!"
         content.body = message
         content.sound = UNNotificationSound(named: "notification.aiff")
         let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 604800, repeats: true)

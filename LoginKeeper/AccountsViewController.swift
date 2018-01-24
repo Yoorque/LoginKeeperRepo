@@ -138,6 +138,7 @@ class AccountsViewController: UIViewController, UITableViewDelegate, UITableView
             if accounts[indexPath.row].entries?.allObjects.count == 1 {
                 destVC.entryDetails = accounts[indexPath.row].entries?.allObjects.first as? Entry
                 destVC.preferredContentSize = CGSize(width: 0, height: 300)
+                destVC.appDelegate.removeBannerView()
                 
                 return destVC
             }
@@ -179,7 +180,7 @@ class AccountsViewController: UIViewController, UITableViewDelegate, UITableView
         if passwordSetShownBefore == false {
             setPassword()
         } else {
-            authenticateUser()
+            chooseAuthMethod()
         }
     }
     
@@ -222,7 +223,7 @@ class AccountsViewController: UIViewController, UITableViewDelegate, UITableView
             self.defaults.set(true, forKey: "shownBefore")
             self.defaults.set(true, forKey: "passSetShown")
             self.defaults.set(true, forKey: "authenticated")
-            self.authenticateUser()
+            self.chooseAuthMethod()
         }))
         
         alert.addAction(UIAlertAction(title: cancelAnswerLocalized, style: .default, handler: { _ in
@@ -391,7 +392,7 @@ class AccountsViewController: UIViewController, UITableViewDelegate, UITableView
     func loginAlert(message: String) {
         let alert = UIAlertController(title: errorLocalized, message: message, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: okLocalized, style: .default, handler: {_ in
-            self.authenticateUser()
+            self.chooseAuthMethod()
         }))
         present(alert, animated: true, completion: nil)
     }
@@ -425,7 +426,7 @@ class AccountsViewController: UIViewController, UITableViewDelegate, UITableView
             }
         }))
         alert.addAction(UIAlertAction(title: cancelAnswerLocalized, style: .default, handler: {_ in
-            self.authenticateUser()
+            self.chooseAuthMethod()
         }))
         self.present(alert, animated: true, completion: nil)
     }
@@ -446,7 +447,7 @@ class AccountsViewController: UIViewController, UITableViewDelegate, UITableView
         if lockButton.title == unlockLocalized {
             searchBar.isUserInteractionEnabled = true
             navigationItem.rightBarButtonItem?.isEnabled = true
-            authenticateUser()
+            chooseAuthMethod()
         }
         if lockButton.title == lockLocalized {
             lockButton.title = unlockLocalized

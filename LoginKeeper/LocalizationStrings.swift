@@ -95,6 +95,7 @@ let entriesOfLocalized = NSLocalizedString("Entries of", comment: "")
 let searchBarPlaceholderLocalized = NSLocalizedString("Search", comment: "search bar")
 
 //MARK: - UserNotifications
+let heyThereLocalized = NSLocalizedString("Hey there", comment: "")
 let localNotificationLocalized1 = NSLocalizedString("There must be some password you forgot. Come back.", comment: "1")
 let localNotificationLocalized2 = NSLocalizedString("We miss you dearly. Show us some love.", comment: "2")
 let localNotificationLocalized3 = NSLocalizedString("You got it all figured out? Are you sure?", comment: "3")
