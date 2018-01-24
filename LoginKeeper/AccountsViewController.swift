@@ -138,7 +138,7 @@ class AccountsViewController: UIViewController, UITableViewDelegate, UITableView
             if accounts[indexPath.row].entries?.allObjects.count == 1 {
                 destVC.entryDetails = accounts[indexPath.row].entries?.allObjects.first as? Entry
                 destVC.preferredContentSize = CGSize(width: 0, height: 300)
-                destVC.appDelegate.removeBannerView()
+                destVC.appDelegate.removeBannerView() //not working
                 
                 return destVC
             }
@@ -541,6 +541,9 @@ class AccountsViewController: UIViewController, UITableViewDelegate, UITableView
         cell.accountImageView.tag = indexPath.row
         cell.accountImageView.image = UIImage(named: accounts[indexPath.row].image!)
         
+        if indexPath.row % 2 == 0 {
+            cell.backgroundColor = UIColor(red: 211/255, green: 220/255, blue: 251, alpha: 1)
+        }
         return cell
     }
     

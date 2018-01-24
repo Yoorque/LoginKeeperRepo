@@ -1117,7 +1117,7 @@
                                                 <constraint firstItem="kLj-Te-OPy" firstAttribute="centerY" secondItem="gAR-Hc-fKH" secondAttribute="centerY" id="wRk-S2-Dj6"/>
                                             </constraints>
                                         </tableViewCellContentView>
-                                        <color key="backgroundColor" red="0.87905663249999999" green="0.89664590359999996" blue="0.98421400790000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" red="0.8784313725490196" green="0.89803921568627454" blue="0.98421400790000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <connections>
                                             <outlet property="accountImageView" destination="cOf-69-pdC" id="VDG-Ln-tTr"/>
                                             <outlet property="accountNameLabel" destination="Ist-rs-dfg" id="Odq-fv-fb8"/>
@@ -1868,7 +1868,7 @@
         <image name="web" width="50" height="50"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="iTS-a3-3V6"/>
-        <segue reference="R23-PL-03t"/>
+        <segue reference="mYc-lo-ZTI"/>
+        <segue reference="h9s-k7-aFA"/>
     </inferredMetricsTieBreakers>
 </document>
