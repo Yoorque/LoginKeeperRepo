@@ -11,11 +11,7 @@ import CoreData
 
 class DetailsViewController: UIViewController, UITextFieldDelegate {
     
-    @IBOutlet var stackView: UIStackView! {
-        didSet {
-            print(stackView.frame.size.height)
-        }
-    }
+    @IBOutlet var stackView: UIStackView!
     @IBOutlet var favoritedStar: UIImageView!
 
     @IBOutlet var topStackConstraint: NSLayoutConstraint!
