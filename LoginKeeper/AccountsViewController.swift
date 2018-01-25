@@ -542,7 +542,7 @@ class AccountsViewController: UIViewController, UITableViewDelegate, UITableView
         cell.accountImageView.image = UIImage(named: accounts[indexPath.row].image!)
         
         if indexPath.row % 2 == 0 {
-            cell.backgroundColor = UIColor(red: 211/255, green: 220/255, blue: 251, alpha: 1)
+            cell.backgroundColor = UIColor(red: 211/255, green: 220/255, blue: 251/255, alpha: 1)
         }
         return cell
     }

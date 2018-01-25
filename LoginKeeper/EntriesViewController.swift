@@ -149,7 +149,7 @@ class EntriesViewController: UIViewController, UITableViewDataSource, UITableVie
         cell.entryComment.text = entries![indexPath.row].comment
         cell.favoriteImageView.image = entries?[indexPath.row].favorited == true ? UIImage(named: "star") : UIImage(named: "emptyStar")
         if indexPath.row % 2 == 0 {
-            cell.backgroundColor = UIColor(red: 211/255, green: 220/255, blue: 251, alpha: 1)
+            cell.backgroundColor = UIColor(red: 211/255, green: 220/255, blue: 251/255, alpha: 1)
         }
         return cell
     }

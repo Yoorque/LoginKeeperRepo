@@ -24,6 +24,7 @@ class RemoveAdsViewController: UIViewController, SKProductsRequestDelegate, SKPa
     var iapProducts = [SKProduct]()
     var premiumPurchased = UserDefaults.standard.bool(forKey: "premiumPurchased")
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -37,6 +38,11 @@ class RemoveAdsViewController: UIViewController, SKProductsRequestDelegate, SKPa
                 connectionCheckAlert()
             }
         }
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(true)
+        SKPaymentQueue.default().remove(self)
     }
     
     func purchasedView() {
@@ -68,7 +74,13 @@ class RemoveAdsViewController: UIViewController, SKProductsRequestDelegate, SKPa
                 alert.addAction(UIAlertAction(title: okLocalized, style: .default, handler: nil))
                 present(alert, animated: true, completion: nil)
             } else {
-                purchaseMyProduct(product: iapProducts[0])
+                for product in iapProducts {
+                    if product.productIdentifier == PRODUCT_ID {
+                        purchaseMyProduct(product: product)
+                    } else {
+                        print("No products yet")
+                    }
+                }
             }
         } else {
             let alert = UIAlertController(title: "LoginKeeper" , message: connectionCheckLocalized, preferredStyle: .alert)
@@ -128,9 +140,12 @@ class RemoveAdsViewController: UIViewController, SKProductsRequestDelegate, SKPa
             numberFormatter.formatterBehavior = .behavior10_4
             numberFormatter.numberStyle = .currency
             iapProducts = response.products
+
             let removeAdsProduct = response.products[0]
             numberFormatter.locale = removeAdsProduct.priceLocale
+            
             let price2Str = numberFormatter.string(from: removeAdsProduct.price)
+            
             priceText.text = removeAdsProduct.localizedDescription + " \(price2Str!)"
         }
     }

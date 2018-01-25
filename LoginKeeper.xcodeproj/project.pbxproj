@@ -184,6 +184,7 @@
 		111EB6F61F0E435000B12AC8 /* SupportingFiles */ = {
 			isa = PBXGroup;
 			children = (
+				11C6DE7E2015F832006D3925 /* Reachability.swift */,
 				111EB6CC1F0E2DDD00B12AC8 /* AppDelegate.swift */,
 				111EB6D81F0E2DDD00B12AC8 /* LaunchScreen.storyboard */,
 				11A0A9A81FE5DA0700BF38FF /* Assets.xcassets */,
@@ -253,7 +254,6 @@
 				111EB6E51F0E382000B12AC8 /* EntriesViewController.swift */,
 				111EB6E31F0E33DC00B12AC8 /* AddNewAccountViewController.swift */,
 				111EB6E91F0E3C2D00B12AC8 /* AddNewEntryViewController.swift */,
-				11C6DE7E2015F832006D3925 /* Reachability.swift */,
 				111EB6EB1F0E3EA500B12AC8 /* DetailsViewController.swift */,
 				11A0A9AE1FE5F76500BF38FF /* LogosViewController.swift */,
 				11E850F81F18DE5900F1B5C7 /* InfoTableViewController.swift */,
