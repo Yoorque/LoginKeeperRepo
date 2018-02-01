@@ -38,7 +38,7 @@
 "No Entry name!" = "エントリー名はありません！";
 "Entry name is required." = "エントリー名は必須です。";
 "Add Entry" = "エントリを追加";
-"Add new entry for" = "の新しいエントリを追加";
+"New Entry for" = "新しいエントリ";
 "Delete Entry" = "記入を消す";
 
 "Username" = "ユーザー名";

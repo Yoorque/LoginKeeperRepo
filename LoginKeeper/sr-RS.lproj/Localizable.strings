@@ -39,7 +39,7 @@
 "No Entry name!" = "Нема назива Уноса!";
 "Entry name is required." = "Назив Уноса је обавезан.";
 "Add Entry" = "Додај Унос";
-"Add new entry for" = "Додај Унос за Налог";
+"New Entry for" = "Нови Унос за";
 "Delete Entry" = "Избриши Унос";
 
 "Username" = "Корисничко име";

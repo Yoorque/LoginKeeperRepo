@@ -38,7 +38,7 @@
 "No Entry name!" = "¡Sin nombre de Entrada!";
 "Entry name is required." = "Nombre de Entrada es requerido.";
 "Add Entry" = "Añadir Entrada";
-"Add new entry for" = "Agregar nueva Entrada para";
+"New Entry for" = "Nueva Entrada para";
 "Delete Entry" = "Eliminar la Entrada";
 
 "Username" = "Nombre de usuario";

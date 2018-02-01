@@ -85,7 +85,7 @@ let deleteAccountLocalized = NSLocalizedString("Delete Acc", comment: "")
 
 //MARK: - Navigation Bar
 let doneLocalized = NSLocalizedString("Done", comment: "")
-let addNewEntryLocalized = NSLocalizedString("Add new entry for", comment: "add new entry")
+let addNewEntryLocalized = NSLocalizedString("New Entry for", comment: "add new entry")
 let detailsLocalized = NSLocalizedString("details", comment: "")
 let unlockLocalized = NSLocalizedString("Unlock", comment: "")
 let lockLocalized = NSLocalizedString("Lock", comment: "")

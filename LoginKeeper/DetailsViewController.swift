@@ -9,12 +9,13 @@
 import UIKit
 import CoreData
 
-class DetailsViewController: UIViewController, UITextFieldDelegate {
+class DetailsViewController: UIViewController, UITextFieldDelegate, UIScrollViewDelegate {
     
+    @IBOutlet weak var logoImage: UIImageView!
     @IBOutlet var stackView: UIStackView!
     @IBOutlet var favoritedStar: UIImageView!
-
-    @IBOutlet var topStackConstraint: NSLayoutConstraint!
+    @IBOutlet weak var scrollView: UIScrollView!
+    
     var entryDetails: Entry?
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     
@@ -45,6 +46,7 @@ class DetailsViewController: UIViewController, UITextFieldDelegate {
         }
     }
     let titleTextLabel = UILabel()
+    let imageViewForTitle = UIImageView()
     
     override var previewActionItems: [UIPreviewActionItem] {
         let copyAll = UIPreviewAction(title: "Copy All", style: .default, handler: {_,_  in
@@ -57,22 +59,27 @@ class DetailsViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        titleTextLabel.frame.size.height = 25
-        titleTextLabel.textAlignment = .center
-        titleTextLabel.textColor = UIColor(red: 56/255, green: 124/255, blue: 254/255, alpha: 1)
-        titleTextLabel.font = UIFont(name: "Zapf Dingbats", size: 15)
-        //titleTextLabel.text = title
-        navigationItem.titleView = titleTextLabel
+//        titleTextLabel.frame.size.height = 25
+//        titleTextLabel.textAlignment = .center
+//        titleTextLabel.textColor = UIColor(red: 56/255, green: 124/255, blue: 254/255, alpha: 1)
+//        titleTextLabel.font = UIFont(name: "Zapf Dingbats", size: 15)
+//        navigationItem.titleView = titleTextLabel
+        
         if !UserDefaults.standard.bool(forKey: "premiumPurchased") {
             appDelegate.loadAd(forViewController: self)
         } else {
             appDelegate.removeBannerView()
         }
        
+        logoImage.image = UIImage(named: "\(entryDetails!.account!.image!)")?.resizedImage(newSize: CGSize(width: 60, height: 60))
+        imageViewForTitle.image = UIImage(named: "\(entryDetails!.account!.image!)")?.resizedImage(newSize: CGSize(width: 45, height: 45))
+        logoImage.contentMode = .scaleAspectFit
+        imageViewForTitle.contentMode = .scaleAspectFit
+        navigationItem.titleView = imageViewForTitle
+        navigationItem.titleView?.isHidden = true
         
         view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard)))
     }
-    
     
     func addObservers() {
         NotificationCenter.default.addObserver(self, selector: #selector(handleKeyboardNotification), name: .UIKeyboardWillShow, object: nil)
@@ -83,18 +90,19 @@ class DetailsViewController: UIViewController, UITextFieldDelegate {
         super.viewWillAppear(true)
         addObservers()
         
+        
         accountName.text = entryDetails?.account?.name
         entryName.text = entryDetails?.name
         username.text = entryDetails?.username
         password.text = entryDetails?.password
         comment.text = entryDetails?.comment
         
-            if entryDetails?.favorited == true {
-                favoritedStar.image = UIImage(named: "star")
-            } else {
-                favoritedStar.image = UIImage(named: "emptyStar")
-            }
+        if entryDetails?.favorited == true {
+            favoritedStar.image = UIImage(named: "star")
+        } else {
+            favoritedStar.image = UIImage(named: "emptyStar")
         }
+    }
     
     func loadAd() {
         appDelegate.load(bannerView: appDelegate.adBannerView,forViewController: self, andOrientation: UIDevice.current.orientation)
@@ -109,15 +117,15 @@ class DetailsViewController: UIViewController, UITextFieldDelegate {
         entryName.isEnabled = true
         entryName.textColor = UIColor(displayP3Red: 56/255, green: 124/255, blue: 254/255, alpha: 1)
         entryName.setNeedsLayout()
-       
+        
         username.isEnabled = true
         username.textColor = UIColor(displayP3Red: 56/255, green: 124/255, blue: 254/255, alpha: 1)
         username.setNeedsLayout()
-       
+        
         password.isEnabled = true
         password.textColor = UIColor(displayP3Red: 56/255, green: 124/255, blue: 254/255, alpha: 1)
         password.setNeedsLayout()
-       
+        
         comment.isEnabled = true
         comment.textColor = UIColor(displayP3Red: 56/255, green: 124/255, blue: 254/255, alpha: 1)
         comment.setNeedsLayout()
@@ -226,7 +234,7 @@ class DetailsViewController: UIViewController, UITextFieldDelegate {
             } else {
                 emptyTextAlert()
             }
-        
+            
         default:
             print("No such case")
         }
@@ -235,7 +243,7 @@ class DetailsViewController: UIViewController, UITextFieldDelegate {
     @IBAction func copyAllButton(_ sender: Any) {
         
         let copyText = "\(accountTextLocalized): \(entryDetails!.account!.name!)\n\(entryNameTextLocalized): \(entryDetails!.name!)\n\(usernameTextLocalized): \(entryDetails!.username!)\n\(passwordTextLocalized): \(entryDetails!.password!)\n\(commentTextLocalized): \(entryDetails!.comment!)"
-            copyPaste(text: copyText)
+        copyPaste(text: copyText)
         animateClipboardTextFor(textField: accountName, with: entryDetails?.account?.name ?? "")
         animateClipboardTextFor(textField: entryName, with: entryDetails?.name ?? "")
         animateClipboardTextFor(textField: username, with: entryDetails?.username ?? "")
@@ -249,11 +257,11 @@ class DetailsViewController: UIViewController, UITextFieldDelegate {
         
         let textToShare = "LoginKeeper \n\(accountTextLocalized): \(entryDetails!.account!.name!)\n\(entryNameTextLocalized): \(entryDetails!.name!)\n\(usernameTextLocalized): \(entryDetails!.username!)\n\(passwordTextLocalized): \(entryDetails!.password!)\n\(commentTextLocalized): \(entryDetails!.comment!)"
         
-            let objectsToShare = [textToShare]
-            let activityVC = UIActivityViewController(activityItems: objectsToShare, applicationActivities: nil)
-
-            activityVC.popoverPresentationController?.sourceView = sender.customView
-            self.present(activityVC, animated: true, completion: nil)
+        let objectsToShare = [textToShare]
+        let activityVC = UIActivityViewController(activityItems: objectsToShare, applicationActivities: nil)
+        
+        activityVC.popoverPresentationController?.sourceView = sender.customView
+        self.present(activityVC, animated: true, completion: nil)
         
     }
     
@@ -272,29 +280,19 @@ class DetailsViewController: UIViewController, UITextFieldDelegate {
     }
     
     @objc func handleKeyboardNotification(notification: NSNotification) {
-        guard let navigationBar = navigationController?.navigationBar.frame.height else {
-            return
-        }
-        
         if let userInfo = notification.userInfo {
             let keyBoardFrame = userInfo[UIKeyboardFrameEndUserInfoKey] as! CGRect
-            
-            let totalHeights = (activeTextField?.frame.maxY)! + navigationBar + topStackConstraint.constant
             let isKeyboardShowing = notification.name == .UIKeyboardWillShow
-            
-            let difference = totalHeights - keyBoardFrame.size.height
-            
-            
-            if keyBoardFrame.origin.y < totalHeights {
-                self.topStackConstraint.constant -= isKeyboardShowing ? difference + 30 : 0
-                UIView.animate(withDuration: 0.5) {
-                    self.view.layoutIfNeeded()
-                }
-                
-            } else {
-                topStackConstraint.constant = 40
-                UIView.animate(withDuration: 0.5) {
-                    self.view.layoutIfNeeded()
+            if let textField = activeTextField {
+                if isKeyboardShowing {
+                    let contentInsets = UIEdgeInsetsMake(0, 0, keyBoardFrame.size.height, 0)
+                    scrollView.scrollRectToVisible(textField.frame, animated: true)
+                    scrollView.contentInset = contentInsets
+                    scrollView.scrollIndicatorInsets = contentInsets
+                } else {
+                    let contentInsets = UIEdgeInsets.zero
+                    scrollView.contentInset = contentInsets
+                    scrollView.scrollIndicatorInsets = contentInsets
                 }
             }
         }
@@ -345,4 +343,18 @@ class DetailsViewController: UIViewController, UITextFieldDelegate {
         activeTextField = textField
     }
     
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let scaleX = 1 - scrollView.contentOffset.y / 100
+        let scaleY = 1 - scrollView.contentOffset.y / 100
+        logoImage.transform = CGAffineTransform(scaleX: min(scaleX, 1.2) , y: min(scaleY, 1.2))
+        
+        if scrollView.contentOffset.y > navigationController!.navigationBar.frame.height {
+            logoImage.isHidden = true
+            imageViewForTitle.isHidden = false
+        } else {
+            logoImage.isHidden = false
+            imageViewForTitle.isHidden = true
+        }
+    }
 }
+

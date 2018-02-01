@@ -41,7 +41,7 @@
 "No Entry name!" = "没有条目名称！";
 "Entry name is required." = "条目名称是必需的.";
 "Add Entry" = "添加条目";
-"Add new entry for" = "为...添加新条目";
+"New Entry for" = "新的入场券";
 "Delete Entry" = "删除条目";
 
 "Username" = "用户名";

@@ -39,7 +39,7 @@
 "No Entry name!" = "항목 이름 없음!";
 "Entry name is required." = "항목 이름이 필요합니다.";
 "Add Entry" = "항목 추가";
-"Add new entry for" = "새 항목 추가 ";
+"New Entry for" = "에 대한 새 항목";
 "Delete Entry" = "항목 삭제";
 
 "Username" = "사용자 이름";

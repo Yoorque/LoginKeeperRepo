@@ -11,7 +11,6 @@ import CoreData
 
 class AddNewAccountViewController: UIViewController, UITextFieldDelegate, UIScrollViewDelegate {
     
-    @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
     @IBOutlet weak var viewScrollView: UIScrollView!
     @IBOutlet weak var logosScrollView: UIScrollView!
     
@@ -21,6 +20,8 @@ class AddNewAccountViewController: UIViewController, UITextFieldDelegate, UIScro
     var y = 0
     var t = 0
     var activeTextField: UITextField?
+    
+    @IBOutlet weak var addNewAccLabel: UILabel!
     
     @IBOutlet var accountTitle: UITextField! {
         didSet {
@@ -89,7 +90,6 @@ class AddNewAccountViewController: UIViewController, UITextFieldDelegate, UIScro
         logosScrollView.contentSize.width = 55 * (CGFloat(logoImagesPNG.count / 2) + 1)
     }
     
-    //MARK: - NEEDS WORK
     //image view tint for selected logo
     @objc func logoTapped(sender: UITapGestureRecognizer) {
         if let view = sender.view as? UIImageView {
@@ -300,8 +300,27 @@ class AddNewAccountViewController: UIViewController, UITextFieldDelegate, UIScro
     }
     //MARK: - ScrollView Delegates
     func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
-        if let textField = activeTextField {
-            textField.resignFirstResponder()
+        if scrollView == logosScrollView {
+            if let textField = activeTextField {
+                textField.resignFirstResponder()
+            }
         }
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        if scrollView == viewScrollView {
+            let scaleX = 1 - viewScrollView.contentOffset.y / 100
+            let scaleY = 1 - viewScrollView.contentOffset.y / 100
+            addNewAccLabel.transform = CGAffineTransform(scaleX: min(scaleX, 1.5) , y: min(scaleY, 1.5))
+        }
+    
+        if viewScrollView.contentOffset.y > navigationController!.navigationBar.frame.height {
+            addNewAccLabel.isHidden = true
+            title = "Add New Account"
+        } else {
+            addNewAccLabel.isHidden = false
+            title = ""
+        }
+        
     }
 }

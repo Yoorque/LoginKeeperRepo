@@ -17,15 +17,21 @@ class EntriesViewController: UIViewController, UITableViewDataSource, UITableVie
     var account: Account?
     var entries: [Entry]?
     let titleTextLabel = UILabel()
+    let logoNavImage = UIImageView()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        titleTextLabel.frame.size.height = 25
-        titleTextLabel.textAlignment = .center
-        titleTextLabel.textColor = UIColor(red: 56/255, green: 124/255, blue: 254/255, alpha: 1)
-        titleTextLabel.font = UIFont(name: "Zapf Dingbats", size: 15)
-        //titleTextLabel.text = title
-        navigationItem.titleView = titleTextLabel
+//        titleTextLabel.frame.size.height = 25
+//        titleTextLabel.textAlignment = .center
+//        titleTextLabel.textColor = UIColor(red: 56/255, green: 124/255, blue: 254/255, alpha: 1)
+//        titleTextLabel.font = UIFont(name: "Zapf Dingbats", size: 15)
+//        //titleTextLabel.text = title
+//        navigationItem.titleView = titleTextLabel
+        
+        
+        logoNavImage.image = UIImage(named: account!.image!)?.resizedImage(newSize: CGSize(width: 45, height: 45))
+        logoNavImage.contentMode = .scaleAspectFit
+        navigationItem.titleView = logoNavImage
         
         if traitCollection.forceTouchCapability == .available {
             registerForPreviewing(with: self, sourceView: tableView)
@@ -170,5 +176,17 @@ class EntriesViewController: UIViewController, UITableViewDataSource, UITableVie
         })
         
         return [delete]
+    }
+}
+
+extension UIImage {
+    func resizedImage(newSize: CGSize) -> UIImage {
+        guard self.size != newSize else { return self }
+        
+        UIGraphicsBeginImageContextWithOptions(newSize, false, 0.0);
+        self.draw(in: CGRect(x: 0, y: 0, width: newSize.width, height: newSize.height))
+        let newImage: UIImage = UIGraphicsGetImageFromCurrentImageContext()!
+        UIGraphicsEndImageContext()
+        return newImage
     }
 }

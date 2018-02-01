@@ -39,7 +39,7 @@
 "No Entry name!" = "कोई प्रविष्टि नाम नहीं!";
 "Entry name is required." = "प्रविष्टि का नाम आवश्यक है।";
 "Add Entry" = "एंट्री जोड़ें";
-"Add new entry for" = "के लिए नई प्रविष्टि जोड़ें";
+"New Entry for" = "के लिए नई प्रविष्टि";
 "Delete Entry" = "एंट्री हटाएं";
 
 "Username" = "उपयोगकर्ता नाम";

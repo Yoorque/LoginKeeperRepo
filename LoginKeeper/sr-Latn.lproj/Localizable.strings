@@ -39,7 +39,7 @@
 "No Entry name!" = "Nema naziva Unosa!";
 "Entry name is required." = "Naziv Unosa je obavezan.";
 "Add Entry" = "Dodaj Unos";
-"Add new entry for" = "Dodaj Unos za Nalog";
+"New Entry for" = "Novi Unos za";
 "Delete Entry" = "Izbriši Unos";
 
 "Username" = "Korisničko ime";

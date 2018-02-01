@@ -39,7 +39,7 @@
 "No Entry name!" = "Нет имени Записи!";
 "Entry name is required." = "Имя Записи требуется.";
 "Add Entry" = "Добавить Запись";
-"Add new entry for" = "Добавить новую Запись для";
+"New Entry for" = "Новая Запись для";
 "Delete Entry" = "Удалить Запись";
 
 "Username" = "Имя пользователя";

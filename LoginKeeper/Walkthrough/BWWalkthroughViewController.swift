@@ -87,7 +87,7 @@ import UIKit
     
     
     // MARK: - Private properties -
-    
+
     open let scrollview = UIScrollView()
     private var controllers = [UIViewController]()
     private var lastViewConstraint: [NSLayoutConstraint]?
@@ -109,6 +109,10 @@ import UIKit
 
     override open func viewDidLoad() {
         super.viewDidLoad()
+        
+        NotificationCenter.default.addObserver(forName: NSNotification.Name.UIApplicationDidEnterBackground, object: nil, queue: .main, using: {_ in
+            self.dismiss(animated: true, completion: nil)
+        })
         
         // Initialize UI Elements
         pageControl?.addTarget(self, action: #selector(BWWalkthroughViewController.pageControlDidTouch), for: UIControlEvents.touchUpInside)

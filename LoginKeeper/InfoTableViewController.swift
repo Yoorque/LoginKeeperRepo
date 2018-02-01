@@ -11,6 +11,7 @@ import MessageUI
 
 class InfoTableViewController: UITableViewController, BWWalkthroughViewControllerDelegate, MFMailComposeViewControllerDelegate {
     
+    let walkthrough = BWWalkthroughViewController()
     @IBOutlet var feedbackCell: UITableViewCell!
     @IBOutlet var devWebsiteCell: UITableViewCell!
     @IBOutlet var moreAppsCell: UITableViewCell!
@@ -46,7 +47,7 @@ class InfoTableViewController: UITableViewController, BWWalkthroughViewControlle
     func sendEmail() {
         let compose = MFMailComposeViewController()
         compose.mailComposeDelegate = self
-        compose.setToRecipients(["juranovicd@gmail.com"])
+        compose.setToRecipients(["simpleloginkeeper@gmail.com"])
         compose.setSubject("\(subjectLocalized) \(UIDevice.current.name.replacingOccurrences(of: "'s iPhone", with: ""))")
         compose.setMessageBody("\(deviceLocalized) \(UIDevice.current.model), \(UIDevice.current.systemName) \(UIDevice.current.systemVersion) \n\(appVersionLocalized) \(version!) (\(buildLocalized) \(build!)) \n\(enterFeedbackLocalized)", isHTML: false)
         
@@ -103,12 +104,24 @@ class InfoTableViewController: UITableViewController, BWWalkthroughViewControlle
         let clickedCell = tableView.cellForRow(at: indexPath)
         switch clickedCell!.tag {
         case feedbackCell.tag:
-            if MFMailComposeViewController.canSendMail() {
-                sendEmail()
-            } else {
-                noMailFuncAlert()
-            }
-            
+            let alert = UIAlertController(title: "LoginKeeper", message: "Please choose an option for leaving feedback.", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "App Store Review", style: .default, handler: {_ in
+                let appID = "1317604418"
+                let urlStr = "https://itunes.apple.com/us/app/appName/id\(appID)?mt=8&action=write-review"
+                
+                if let url = URL(string: urlStr), UIApplication.shared.canOpenURL(url) {
+                    self.leavingAppAlert(toURL: url, title: "App Store")
+                }
+            }))
+            alert.addAction(UIAlertAction(title: "Email Developer", style: .default, handler: {_ in
+                if MFMailComposeViewController.canSendMail() {
+                    self.sendEmail()
+                } else {
+                    self.noMailFuncAlert()
+                }
+            }))
+            alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+            present(alert, animated: true, completion: nil)
         case devWebsiteCell.tag:
             
             if let url = URL(string: "https://linkedin.com/in/dusan-juranovic") {
@@ -146,7 +159,7 @@ class InfoTableViewController: UITableViewController, BWWalkthroughViewControlle
         alert.addAction(UIAlertAction(title: sureAnswerLocalized, style: .default, handler: { _ in
              UIApplication.shared.open(url, options: [:], completionHandler: nil)
         }))
-        alert.addAction(UIAlertAction(title: cancelAnswerLocalized, style: .default, handler: nil))
+        alert.addAction(UIAlertAction(title: cancelAnswerLocalized, style: .cancel, handler: nil))
         present(alert, animated: true, completion: nil)
     }
     

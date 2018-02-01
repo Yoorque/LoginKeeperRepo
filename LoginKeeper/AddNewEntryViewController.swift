@@ -9,10 +9,10 @@
 import UIKit
 import CoreData
 
-class AddNewEntryViewController: UIViewController, UITextFieldDelegate {
+class AddNewEntryViewController: UIViewController, UITextFieldDelegate, UIScrollViewDelegate {
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet var stackView: UIStackView!
-    
+    @IBOutlet weak var addNewEntryLabel: UILabel!
     
     var account: Account?
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
@@ -47,6 +47,7 @@ class AddNewEntryViewController: UIViewController, UITextFieldDelegate {
     var titleTextLabel = UILabel()
     override func viewDidLoad() {
         super.viewDidLoad()
+        addNewEntryLabel.text = titleTextLabel.text
         if !UserDefaults.standard.bool(forKey: "premiumPurchased") {
             appDelegate.load(bannerView: appDelegate.adBannerView,forViewController: self, andOrientation: UIDevice.current.orientation)
         } else {
@@ -58,16 +59,6 @@ class AddNewEntryViewController: UIViewController, UITextFieldDelegate {
         NotificationCenter.default.addObserver(self, selector: #selector(handleKeyboardNotification), name: .UIKeyboardWillShow, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(handleKeyboardNotification), name: .UIKeyboardWillHide, object: nil)
         
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(true)
-        titleTextLabel.frame.size.height = 25
-        titleTextLabel.textAlignment = .center
-        titleTextLabel.textColor = UIColor(red: 56/255, green: 124/255, blue: 254/255, alpha: 1)
-        titleTextLabel.font = UIFont(name: "Zapf Dingbats", size: 15)
-        //titleTextLabel.text = title
-        navigationItem.titleView = titleTextLabel
     }
     
     @IBAction func saveEntryButton(_ sender: UIBarButtonItem) {
@@ -173,4 +164,18 @@ class AddNewEntryViewController: UIViewController, UITextFieldDelegate {
         activeTextField = textField
     }
     
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let scaleX = 1 - scrollView.contentOffset.y / 100
+        let scaleY = 1 - scrollView.contentOffset.y / 100
+        addNewEntryLabel.transform = CGAffineTransform(scaleX: min(scaleX, 1.2) , y: min(scaleY, 1.2))
+        
+        if scrollView.contentOffset.y > navigationController!.navigationBar.frame.height {
+            addNewEntryLabel.isHidden = true
+            title = titleTextLabel.text
+        } else {
+            addNewEntryLabel.isHidden = false
+            addNewEntryLabel.text = titleTextLabel.text
+            title = ""
+        }
+    }
 }

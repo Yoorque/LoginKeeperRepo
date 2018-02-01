@@ -98,8 +98,8 @@
                                     </mask>
                                 </variation>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="juranovicd@gmail.com" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yGG-Ik-64k">
-                                <rect key="frame" x="101.5" y="583" width="172" height="20"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="simpleloginkeeper@gmail.com" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yGG-Ik-64k">
+                                <rect key="frame" x="71.5" y="583" width="232" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20" id="lfI-9W-lUV"/>
                                 </constraints>
@@ -744,10 +744,10 @@
             </objects>
             <point key="canvasLocation" x="-746.39999999999998" y="-1384.8575712143929"/>
         </scene>
-        <!--Add New Account-->
+        <!--Add New Account View Controller-->
         <scene sceneID="WSo-RJ-2pz">
             <objects>
-                <viewController id="rpA-qm-WNA" customClass="AddNewAccountViewController" customModule="LoginKeeper" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AddNewAccountViewController" id="rpA-qm-WNA" customClass="AddNewAccountViewController" customModule="LoginKeeper" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="P5D-GH-dRz"/>
                         <viewControllerLayoutGuide type="bottom" id="Kx0-mu-n3w"/>
@@ -759,8 +759,17 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="esu-Nz-Mgf">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add New Account" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nOl-GB-3dL">
+                                        <rect key="frame" x="88" y="8" width="199" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="u9s-a3-sF6"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="ZapfDingbatsITC" family="Zapf Dingbats" pointSize="25"/>
+                                        <color key="textColor" red="0.2196078431372549" green="0.48627450980392156" blue="0.99607843137254903" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="4i4-qg-ady">
-                                        <rect key="frame" x="10" y="8" width="355" height="190"/>
+                                        <rect key="frame" x="10" y="56" width="355" height="190"/>
                                         <subviews>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Account Title (required)" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="vgY-17-wLs">
                                                 <rect key="frame" x="0.0" y="0.0" width="355" height="30"/>
@@ -819,7 +828,7 @@
                                         </subviews>
                                     </stackView>
                                     <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HJq-ii-ibM">
-                                        <rect key="frame" x="10" y="243" width="355" height="105"/>
+                                        <rect key="frame" x="10" y="291" width="355" height="105"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="105" id="fYW-Do-2yA"/>
                                         </constraints>
@@ -828,7 +837,7 @@
                                         </connections>
                                     </scrollView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="Kky-UN-Kpp">
-                                        <rect key="frame" x="10" y="206" width="355" height="29"/>
+                                        <rect key="frame" x="10" y="254" width="355" height="29"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="◀︎   Choose your logo from the scroll menu   ▶︎" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OAQ-SI-m1b">
                                                 <rect key="frame" x="0.0" y="0.0" width="355" height="17"/>
@@ -848,7 +857,7 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mIA-w3-skU">
-                                        <rect key="frame" x="74" y="356" width="227" height="120"/>
+                                        <rect key="frame" x="74" y="404" width="227" height="120"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Icon-60" translatesAutoresizingMaskIntoConstraints="NO" id="Qbr-qY-aZ3">
                                                 <rect key="frame" x="83.5" y="0.0" width="60" height="60"/>
@@ -856,7 +865,7 @@
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LoginKeeper" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cHH-cQ-M99">
                                                 <rect key="frame" x="0.0" y="60" width="227" height="60"/>
                                                 <fontDescription key="fontDescription" name="ZapfDingbatsITC" family="Zapf Dingbats" pointSize="40"/>
-                                                <color key="textColor" red="0.21983420849999999" green="0.48451471330000001" blue="0.99449735880000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="textColor" red="0.2196078431372549" green="0.48627450980392156" blue="0.99607843137254903" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
@@ -866,18 +875,23 @@
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="HJq-ii-ibM" secondAttribute="trailing" constant="10" id="0nN-Dn-HkU"/>
                                     <constraint firstItem="HJq-ii-ibM" firstAttribute="leading" secondItem="esu-Nz-Mgf" secondAttribute="leading" constant="10" id="5eR-5X-URs"/>
+                                    <constraint firstItem="nOl-GB-3dL" firstAttribute="centerX" secondItem="esu-Nz-Mgf" secondAttribute="centerX" id="7Cw-0v-Rqs"/>
                                     <constraint firstItem="HJq-ii-ibM" firstAttribute="top" secondItem="Kky-UN-Kpp" secondAttribute="bottom" constant="8" id="BKc-ax-Ug9"/>
                                     <constraint firstItem="HJq-ii-ibM" firstAttribute="centerX" secondItem="esu-Nz-Mgf" secondAttribute="centerX" id="CSG-y8-1ZO"/>
                                     <constraint firstItem="mIA-w3-skU" firstAttribute="top" secondItem="HJq-ii-ibM" secondAttribute="bottom" constant="8" id="DKu-QU-yM5"/>
                                     <constraint firstAttribute="bottom" secondItem="mIA-w3-skU" secondAttribute="bottom" constant="133" id="FVV-Pa-9Sx"/>
+                                    <constraint firstItem="4i4-qg-ady" firstAttribute="top" secondItem="nOl-GB-3dL" secondAttribute="bottom" constant="8" id="GQO-Jy-Qhp"/>
+                                    <constraint firstItem="nOl-GB-3dL" firstAttribute="top" secondItem="esu-Nz-Mgf" secondAttribute="top" constant="8" id="Huk-H8-F9c"/>
                                     <constraint firstAttribute="trailing" secondItem="4i4-qg-ady" secondAttribute="trailing" constant="10" id="Knc-sq-Ccj"/>
                                     <constraint firstItem="mIA-w3-skU" firstAttribute="centerX" secondItem="esu-Nz-Mgf" secondAttribute="centerX" id="RIB-td-hZj"/>
-                                    <constraint firstItem="4i4-qg-ady" firstAttribute="top" secondItem="esu-Nz-Mgf" secondAttribute="top" constant="8" id="WVG-U5-hF9"/>
                                     <constraint firstAttribute="trailing" secondItem="Kky-UN-Kpp" secondAttribute="trailing" constant="10" id="dbt-Nv-o62"/>
                                     <constraint firstItem="Kky-UN-Kpp" firstAttribute="leading" secondItem="esu-Nz-Mgf" secondAttribute="leading" constant="10" id="oLW-lz-Frt"/>
                                     <constraint firstItem="4i4-qg-ady" firstAttribute="leading" secondItem="esu-Nz-Mgf" secondAttribute="leading" constant="10" id="onh-iu-rSN"/>
                                     <constraint firstItem="Kky-UN-Kpp" firstAttribute="top" secondItem="4i4-qg-ady" secondAttribute="bottom" constant="8" id="zit-vV-JGB"/>
                                 </constraints>
+                                <connections>
+                                    <outlet property="delegate" destination="rpA-qm-WNA" id="V1Y-Sn-VVy"/>
+                                </connections>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" red="0.87905663249999999" green="0.89664590359999996" blue="0.98421400790000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -888,7 +902,7 @@
                             <constraint firstItem="Kx0-mu-n3w" firstAttribute="top" secondItem="esu-Nz-Mgf" secondAttribute="bottom" id="wo6-Yx-fQ2"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Add New Account" id="E8D-Rq-tOd">
+                    <navigationItem key="navigationItem" id="E8D-Rq-tOd">
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="Af7-Ty-b99">
                             <connections>
                                 <action selector="saveAccountButton:" destination="rpA-qm-WNA" id="3PB-9N-72t"/>
@@ -897,7 +911,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="accountTitle" destination="vgY-17-wLs" id="apD-jd-MdS"/>
-                        <outlet property="bottomConstraint" destination="FVV-Pa-9Sx" id="Tln-Nm-xKw"/>
+                        <outlet property="addNewAccLabel" destination="nOl-GB-3dL" id="spx-n6-t7H"/>
                         <outlet property="comment" destination="lR5-4h-YPa" id="ldw-ar-078"/>
                         <outlet property="confirmPassword" destination="aFU-Xk-o7Q" id="pvP-tf-Fu7"/>
                         <outlet property="entryName" destination="Qgw-sU-47I" id="Tm2-Ec-jYP"/>
@@ -911,10 +925,10 @@
             </objects>
             <point key="canvasLocation" x="868" y="-1385.7571214392804"/>
         </scene>
-        <!--Title-->
+        <!--Add New Entry View Controller-->
         <scene sceneID="LAM-li-g6I">
             <objects>
-                <viewController id="ox9-YF-LOE" customClass="AddNewEntryViewController" customModule="LoginKeeper" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AddNewEntryViewController" id="ox9-YF-LOE" customClass="AddNewEntryViewController" customModule="LoginKeeper" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ggE-JG-aB9"/>
                         <viewControllerLayoutGuide type="bottom" id="kcs-Zf-Mdj"/>
@@ -926,8 +940,17 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vWE-xj-oeb">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add New Entry" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RZ5-gW-aYV">
+                                        <rect key="frame" x="104" y="8" width="167" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="1xt-tp-DqT"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="ZapfDingbatsITC" family="Zapf Dingbats" pointSize="25"/>
+                                        <color key="textColor" red="0.21960784310000001" green="0.48627450979999998" blue="0.99607843139999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JQo-5d-AWE">
-                                        <rect key="frame" x="74" y="174" width="227" height="120"/>
+                                        <rect key="frame" x="74" y="244" width="227" height="120"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Icon-60" translatesAutoresizingMaskIntoConstraints="NO" id="u7D-9J-pVM">
                                                 <rect key="frame" x="83.5" y="0.0" width="60" height="60"/>
@@ -942,7 +965,7 @@
                                         <variation key="heightClass=regular" alignment="center" axis="vertical" distribution="fillEqually"/>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="K79-Tq-njK">
-                                        <rect key="frame" x="10" y="8" width="355" height="158"/>
+                                        <rect key="frame" x="10" y="56" width="355" height="158"/>
                                         <subviews>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Entry Name (required)" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="zOh-H8-h8M">
                                                 <rect key="frame" x="0.0" y="0.0" width="355" height="30"/>
@@ -993,14 +1016,19 @@
                                     </stackView>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="K79-Tq-njK" firstAttribute="top" secondItem="vWE-xj-oeb" secondAttribute="top" constant="8" id="07C-cY-g9y"/>
-                                    <constraint firstItem="JQo-5d-AWE" firstAttribute="top" secondItem="K79-Tq-njK" secondAttribute="bottom" constant="8" id="2LN-X9-nq5"/>
+                                    <constraint firstItem="JQo-5d-AWE" firstAttribute="top" secondItem="K79-Tq-njK" secondAttribute="bottom" constant="30" id="2LN-X9-nq5"/>
                                     <constraint firstAttribute="bottom" secondItem="JQo-5d-AWE" secondAttribute="bottom" constant="290" id="4Vu-AV-Xf0"/>
+                                    <constraint firstItem="K79-Tq-njK" firstAttribute="top" secondItem="RZ5-gW-aYV" secondAttribute="bottom" constant="8" id="T3r-Sk-ovK"/>
                                     <constraint firstAttribute="trailing" secondItem="K79-Tq-njK" secondAttribute="trailing" constant="10" id="XHn-mX-NRd"/>
                                     <constraint firstItem="JQo-5d-AWE" firstAttribute="centerX" secondItem="vWE-xj-oeb" secondAttribute="centerX" id="gXo-G1-ELK"/>
                                     <constraint firstItem="K79-Tq-njK" firstAttribute="centerX" secondItem="JQo-5d-AWE" secondAttribute="centerX" id="gZM-Bh-Tp2"/>
+                                    <constraint firstItem="RZ5-gW-aYV" firstAttribute="centerX" secondItem="vWE-xj-oeb" secondAttribute="centerX" id="pVE-Wa-jEc"/>
                                     <constraint firstItem="K79-Tq-njK" firstAttribute="leading" secondItem="vWE-xj-oeb" secondAttribute="leading" constant="10" id="s3R-GA-KKr"/>
+                                    <constraint firstItem="RZ5-gW-aYV" firstAttribute="top" secondItem="vWE-xj-oeb" secondAttribute="top" constant="8" id="yuj-49-Igo"/>
                                 </constraints>
+                                <connections>
+                                    <outlet property="delegate" destination="ox9-YF-LOE" id="7Ua-Py-zdH"/>
+                                </connections>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" red="0.87905663249999999" green="0.89664590359999996" blue="0.98421400790000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1011,7 +1039,7 @@
                             <constraint firstItem="vWE-xj-oeb" firstAttribute="leading" secondItem="flM-7i-YAq" secondAttribute="leading" id="mnG-BU-RWg"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Title" id="x8b-gX-Bmj">
+                    <navigationItem key="navigationItem" id="x8b-gX-Bmj">
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="PDe-bz-1R4">
                             <connections>
                                 <action selector="saveEntryButton:" destination="ox9-YF-LOE" id="9FO-a4-ng0"/>
@@ -1019,6 +1047,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="addNewEntryLabel" destination="RZ5-gW-aYV" id="tkj-sc-y9d"/>
                         <outlet property="comment" destination="axU-Qj-8gF" id="Uf8-CB-iv2"/>
                         <outlet property="confirmPassword" destination="4NY-8P-15S" id="Und-cc-z1w"/>
                         <outlet property="name" destination="zOh-H8-h8M" id="JPf-d9-IMO"/>
@@ -1336,7 +1365,7 @@
             </objects>
             <point key="canvasLocation" x="1685.5999999999999" y="142.57871064467767"/>
         </scene>
-        <!--Title-->
+        <!--Entries-->
         <scene sceneID="2ip-gN-L32">
             <objects>
                 <viewController storyboardIdentifier="EntriesViewController" id="Sjf-UP-v9L" customClass="EntriesViewController" customModule="LoginKeeper" customModuleProvider="target" sceneMemberID="viewController">
@@ -1431,7 +1460,7 @@
                             <constraint firstAttribute="trailing" secondItem="byd-aE-Qxv" secondAttribute="trailing" id="qGr-bM-AKI"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Title" id="Z1n-mA-U1S">
+                    <navigationItem key="navigationItem" title="Entries" id="Z1n-mA-U1S">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="e1j-Ks-dZi">
                             <connections>
                                 <action selector="addNewEntryButton:" destination="Sjf-UP-v9L" id="57e-6o-S1f"/>
@@ -1448,7 +1477,7 @@
             </objects>
             <point key="canvasLocation" x="1686" y="-601"/>
         </scene>
-        <!--Title-->
+        <!--Details View Controller-->
         <scene sceneID="B1H-Wm-yIi">
             <objects>
                 <viewController storyboardIdentifier="DetailsViewController" id="gFM-Ue-sol" customClass="DetailsViewController" customModule="LoginKeeper" customModuleProvider="target" sceneMemberID="viewController">
@@ -1460,145 +1489,191 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="sQE-93-odd">
-                                <rect key="frame" x="10" y="104" width="355" height="165"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6nM-3I-d2r">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="ygh-FH-gKF">
-                                        <rect key="frame" x="0.0" y="0.0" width="355" height="165"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="W5I-Uv-Bbf">
+                                        <rect key="frame" x="74" y="334" width="227" height="120"/>
                                         <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="tJS-da-H6s">
-                                                <rect key="frame" x="0.0" y="0.0" width="100" height="165"/>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Icon-60" translatesAutoresizingMaskIntoConstraints="NO" id="uUY-Xw-6GY">
+                                                <rect key="frame" x="83.5" y="0.0" width="60" height="60"/>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LoginKeeper" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="au3-ib-kHJ">
+                                                <rect key="frame" x="0.0" y="60" width="227" height="60"/>
+                                                <fontDescription key="fontDescription" name="ZapfDingbatsITC" family="Zapf Dingbats" pointSize="40"/>
+                                                <color key="textColor" red="0.21983420849999999" green="0.48451471330000001" blue="0.99449735880000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" red="0.74434715509414673" green="0.23519855737686157" blue="0.99883526563644409" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <variation key="heightClass=regular" alignment="center" axis="vertical" distribution="fillEqually"/>
+                                    </stackView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="nDU-H1-Tht">
+                                        <rect key="frame" x="336.5" y="38" width="30" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="30" id="aI0-Ak-7Nu"/>
+                                            <constraint firstAttribute="height" constant="30" id="rf6-h9-qMn"/>
+                                        </constraints>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="meZ-KJ-6Qa">
+                                        <rect key="frame" x="192.5" y="286" width="60" height="28"/>
+                                        <fontDescription key="fontDescription" name="ZapfDingbatsITC" family="Zapf Dingbats" pointSize="16"/>
+                                        <state key="normal" title="Copy All">
+                                            <color key="titleColor" red="0.21983420849999999" green="0.48451471330000001" blue="0.99449735880000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="copyAllButton:" destination="gFM-Ue-sol" eventType="touchUpInside" id="3Eb-Of-TQQ"/>
+                                        </connections>
+                                    </button>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="pwB-bZ-o04">
+                                        <rect key="frame" x="157" y="8" width="60" height="60"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="60" id="fv7-3N-wOL"/>
+                                            <constraint firstAttribute="width" constant="60" id="sxV-1T-iec"/>
+                                        </constraints>
+                                    </imageView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="sQE-93-odd">
+                                        <rect key="frame" x="8" y="76" width="358.5" height="190"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="ygh-FH-gKF">
+                                                <rect key="frame" x="0.0" y="0.0" width="358.5" height="190"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Account name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="28i-Mw-C5V">
-                                                        <rect key="frame" x="0.0" y="0.0" width="100" height="25"/>
-                                                        <fontDescription key="fontDescription" name="ZapfDingbatsITC" family="Zapf Dingbats" pointSize="16"/>
-                                                        <color key="textColor" red="0.21983420849999999" green="0.48451471330000001" blue="0.99449735880000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Entry name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="EN3-26-xC9">
-                                                        <rect key="frame" x="0.0" y="35" width="100" height="25"/>
-                                                        <fontDescription key="fontDescription" name="ZapfDingbatsITC" family="Zapf Dingbats" pointSize="16"/>
-                                                        <color key="textColor" red="0.2196078431372549" green="0.48627450980392156" blue="0.99607843137254903" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="owc-0p-pfa">
-                                                        <rect key="frame" x="0.0" y="70" width="100" height="25"/>
-                                                        <fontDescription key="fontDescription" name="ZapfDingbatsITC" family="Zapf Dingbats" pointSize="16"/>
-                                                        <color key="textColor" red="0.21983420849999999" green="0.48451471330000001" blue="0.99449735880000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="slb-33-AHV">
-                                                        <rect key="frame" x="0.0" y="105" width="100" height="25"/>
-                                                        <fontDescription key="fontDescription" name="ZapfDingbatsITC" family="Zapf Dingbats" pointSize="16"/>
-                                                        <color key="textColor" red="0.21983420849999999" green="0.48451471330000001" blue="0.99449735880000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Comment" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="3ug-en-Aoa">
-                                                        <rect key="frame" x="0.0" y="140" width="100" height="25"/>
-                                                        <fontDescription key="fontDescription" name="ZapfDingbatsITC" family="Zapf Dingbats" pointSize="16"/>
-                                                        <color key="textColor" red="0.21983420849999999" green="0.48451471330000001" blue="0.99449735880000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                </subviews>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="100" id="bJc-CD-WIp"/>
-                                                </constraints>
-                                            </stackView>
-                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="9tY-4L-a0U">
-                                                <rect key="frame" x="105" y="0.0" width="250" height="165"/>
-                                                <subviews>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="mya-bb-i7N">
-                                                        <rect key="frame" x="0.0" y="0.0" width="220" height="165"/>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="tJS-da-H6s">
+                                                        <rect key="frame" x="0.0" y="0.0" width="100" height="190"/>
                                                         <subviews>
-                                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="G3E-E7-jUM">
-                                                                <rect key="frame" x="0.0" y="0.0" width="220" height="25"/>
-                                                                <color key="textColor" red="0.52972324409470606" green="0.54860450103587721" blue="0.6052482718593909" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                <fontDescription key="fontDescription" name="ZapfDingbatsITC" family="Zapf Dingbats" pointSize="17"/>
-                                                                <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" spellCheckingType="no" returnKeyType="next"/>
-                                                                <connections>
-                                                                    <outlet property="delegate" destination="gFM-Ue-sol" id="PFU-B2-FJ7"/>
-                                                                </connections>
-                                                            </textField>
-                                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="qzY-lV-ISe">
-                                                                <rect key="frame" x="0.0" y="35" width="220" height="25"/>
-                                                                <color key="textColor" red="0.52972324409470606" green="0.54860450103587721" blue="0.6052482718593909" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                <fontDescription key="fontDescription" name="ZapfDingbatsITC" family="Zapf Dingbats" pointSize="17"/>
-                                                                <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" spellCheckingType="no" returnKeyType="next"/>
-                                                                <connections>
-                                                                    <outlet property="delegate" destination="gFM-Ue-sol" id="K33-Cv-QMb"/>
-                                                                </connections>
-                                                            </textField>
-                                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="HAt-gr-4L7">
-                                                                <rect key="frame" x="0.0" y="70" width="220" height="25"/>
-                                                                <color key="textColor" red="0.52972324409470606" green="0.54860450103587721" blue="0.6052482718593909" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                <fontDescription key="fontDescription" name="ZapfDingbatsITC" family="Zapf Dingbats" pointSize="17"/>
-                                                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="next"/>
-                                                                <connections>
-                                                                    <outlet property="delegate" destination="gFM-Ue-sol" id="T15-8I-wB7"/>
-                                                                </connections>
-                                                            </textField>
-                                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="wCW-qc-GmP">
-                                                                <rect key="frame" x="0.0" y="105" width="220" height="25"/>
-                                                                <color key="textColor" red="0.52972324409470606" green="0.54860450103587721" blue="0.6052482718593909" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                <fontDescription key="fontDescription" name="ZapfDingbatsITC" family="Zapf Dingbats" pointSize="17"/>
-                                                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="next"/>
-                                                                <connections>
-                                                                    <outlet property="delegate" destination="gFM-Ue-sol" id="D7z-xM-FbV"/>
-                                                                </connections>
-                                                            </textField>
-                                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Blt-9E-2tY">
-                                                                <rect key="frame" x="0.0" y="140" width="220" height="25"/>
-                                                                <color key="textColor" red="0.52972324409470606" green="0.54860450103587721" blue="0.6052482718593909" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                <fontDescription key="fontDescription" name="ZapfDingbatsITC" family="Zapf Dingbats" pointSize="17"/>
-                                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="no" spellCheckingType="no" returnKeyType="done"/>
-                                                                <connections>
-                                                                    <outlet property="delegate" destination="gFM-Ue-sol" id="C2d-30-hgi"/>
-                                                                </connections>
-                                                            </textField>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Account name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="28i-Mw-C5V">
+                                                                <rect key="frame" x="0.0" y="0.0" width="100" height="30"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" constant="100" id="ymP-Bt-NXo"/>
+                                                                </constraints>
+                                                                <fontDescription key="fontDescription" name="ZapfDingbatsITC" family="Zapf Dingbats" pointSize="16"/>
+                                                                <color key="textColor" red="0.2196078431372549" green="0.48627450980392156" blue="0.99607843137254903" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Entry name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="EN3-26-xC9">
+                                                                <rect key="frame" x="0.0" y="40" width="100" height="30"/>
+                                                                <fontDescription key="fontDescription" name="ZapfDingbatsITC" family="Zapf Dingbats" pointSize="16"/>
+                                                                <color key="textColor" red="0.2196078431372549" green="0.48627450980392156" blue="0.99607843137254903" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="owc-0p-pfa">
+                                                                <rect key="frame" x="0.0" y="80" width="100" height="30"/>
+                                                                <fontDescription key="fontDescription" name="ZapfDingbatsITC" family="Zapf Dingbats" pointSize="16"/>
+                                                                <color key="textColor" red="0.21983420849999999" green="0.48451471330000001" blue="0.99449735880000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="slb-33-AHV">
+                                                                <rect key="frame" x="0.0" y="120" width="100" height="30"/>
+                                                                <fontDescription key="fontDescription" name="ZapfDingbatsITC" family="Zapf Dingbats" pointSize="16"/>
+                                                                <color key="textColor" red="0.21983420849999999" green="0.48451471330000001" blue="0.99449735880000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Comment" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="3ug-en-Aoa">
+                                                                <rect key="frame" x="0.0" y="160" width="100" height="30"/>
+                                                                <fontDescription key="fontDescription" name="ZapfDingbatsITC" family="Zapf Dingbats" pointSize="16"/>
+                                                                <color key="textColor" red="0.21983420849999999" green="0.48451471330000001" blue="0.99449735880000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
                                                         </subviews>
                                                     </stackView>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="VrS-SZ-eMs">
-                                                        <rect key="frame" x="225" y="0.0" width="25" height="165"/>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="9tY-4L-a0U">
+                                                        <rect key="frame" x="105" y="0.0" width="253.5" height="190"/>
                                                         <subviews>
-                                                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i2D-Et-7lo">
-                                                                <rect key="frame" x="0.0" y="0.0" width="25" height="25"/>
-                                                                <constraints>
-                                                                    <constraint firstAttribute="height" constant="25" id="Jry-IR-VOR"/>
-                                                                    <constraint firstAttribute="width" constant="25" id="qNu-KR-pst"/>
-                                                                </constraints>
-                                                                <state key="normal" image="copy"/>
-                                                                <connections>
-                                                                    <action selector="copyButton:" destination="gFM-Ue-sol" eventType="touchUpInside" id="UbQ-yC-ZDb"/>
-                                                                </connections>
-                                                            </button>
-                                                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zq6-np-0ap">
-                                                                <rect key="frame" x="0.0" y="35" width="25" height="25"/>
-                                                                <state key="normal" image="copy"/>
-                                                                <connections>
-                                                                    <action selector="copyButton:" destination="gFM-Ue-sol" eventType="touchUpInside" id="URO-8B-6Va"/>
-                                                                </connections>
-                                                            </button>
-                                                            <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WDE-gl-Kfe">
-                                                                <rect key="frame" x="0.0" y="70" width="25" height="25"/>
-                                                                <state key="normal" image="copy"/>
-                                                                <connections>
-                                                                    <action selector="copyButton:" destination="gFM-Ue-sol" eventType="touchUpInside" id="JdH-09-8rs"/>
-                                                                </connections>
-                                                            </button>
-                                                            <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bqx-zW-5vv">
-                                                                <rect key="frame" x="0.0" y="105" width="25" height="25"/>
-                                                                <state key="normal" image="copy"/>
-                                                                <connections>
-                                                                    <action selector="copyButton:" destination="gFM-Ue-sol" eventType="touchUpInside" id="clj-G8-dlx"/>
-                                                                </connections>
-                                                            </button>
-                                                            <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k9n-aV-Cnh">
-                                                                <rect key="frame" x="0.0" y="140" width="25" height="25"/>
-                                                                <state key="normal" image="copy"/>
-                                                                <connections>
-                                                                    <action selector="copyButton:" destination="gFM-Ue-sol" eventType="touchUpInside" id="Grn-15-vAT"/>
-                                                                </connections>
-                                                            </button>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="mya-bb-i7N">
+                                                                <rect key="frame" x="0.0" y="0.0" width="218.5" height="190"/>
+                                                                <subviews>
+                                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="G3E-E7-jUM">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="218.5" height="30"/>
+                                                                        <color key="textColor" red="0.52972324409470606" green="0.54860450103587721" blue="0.6052482718593909" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                        <fontDescription key="fontDescription" name="ZapfDingbatsITC" family="Zapf Dingbats" pointSize="17"/>
+                                                                        <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" spellCheckingType="no" returnKeyType="next"/>
+                                                                        <connections>
+                                                                            <outlet property="delegate" destination="gFM-Ue-sol" id="PFU-B2-FJ7"/>
+                                                                        </connections>
+                                                                    </textField>
+                                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="qzY-lV-ISe">
+                                                                        <rect key="frame" x="0.0" y="40" width="218.5" height="30"/>
+                                                                        <color key="textColor" red="0.52972324409470606" green="0.54860450103587721" blue="0.6052482718593909" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                        <fontDescription key="fontDescription" name="ZapfDingbatsITC" family="Zapf Dingbats" pointSize="17"/>
+                                                                        <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" spellCheckingType="no" returnKeyType="next"/>
+                                                                        <connections>
+                                                                            <outlet property="delegate" destination="gFM-Ue-sol" id="K33-Cv-QMb"/>
+                                                                        </connections>
+                                                                    </textField>
+                                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="HAt-gr-4L7">
+                                                                        <rect key="frame" x="0.0" y="80" width="218.5" height="30"/>
+                                                                        <color key="textColor" red="0.52972324409470606" green="0.54860450103587721" blue="0.6052482718593909" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                        <fontDescription key="fontDescription" name="ZapfDingbatsITC" family="Zapf Dingbats" pointSize="17"/>
+                                                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="next"/>
+                                                                        <connections>
+                                                                            <outlet property="delegate" destination="gFM-Ue-sol" id="T15-8I-wB7"/>
+                                                                        </connections>
+                                                                    </textField>
+                                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="wCW-qc-GmP">
+                                                                        <rect key="frame" x="0.0" y="120" width="218.5" height="30"/>
+                                                                        <color key="textColor" red="0.52972324409470606" green="0.54860450103587721" blue="0.6052482718593909" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                        <fontDescription key="fontDescription" name="ZapfDingbatsITC" family="Zapf Dingbats" pointSize="17"/>
+                                                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="next"/>
+                                                                        <connections>
+                                                                            <outlet property="delegate" destination="gFM-Ue-sol" id="D7z-xM-FbV"/>
+                                                                        </connections>
+                                                                    </textField>
+                                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Blt-9E-2tY">
+                                                                        <rect key="frame" x="0.0" y="160" width="218.5" height="30"/>
+                                                                        <color key="textColor" red="0.52972324409470606" green="0.54860450103587721" blue="0.6052482718593909" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                        <fontDescription key="fontDescription" name="ZapfDingbatsITC" family="Zapf Dingbats" pointSize="17"/>
+                                                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="no" spellCheckingType="no" returnKeyType="done"/>
+                                                                        <connections>
+                                                                            <outlet property="delegate" destination="gFM-Ue-sol" id="C2d-30-hgi"/>
+                                                                        </connections>
+                                                                    </textField>
+                                                                </subviews>
+                                                            </stackView>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="VrS-SZ-eMs">
+                                                                <rect key="frame" x="223.5" y="0.0" width="30" height="190"/>
+                                                                <subviews>
+                                                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i2D-Et-7lo">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="height" constant="30" id="LEa-DZ-tUo"/>
+                                                                            <constraint firstAttribute="width" constant="30" id="YOL-rj-Qyp"/>
+                                                                        </constraints>
+                                                                        <state key="normal" image="copy"/>
+                                                                        <connections>
+                                                                            <action selector="copyButton:" destination="gFM-Ue-sol" eventType="touchUpInside" id="UbQ-yC-ZDb"/>
+                                                                        </connections>
+                                                                    </button>
+                                                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zq6-np-0ap">
+                                                                        <rect key="frame" x="0.0" y="40" width="30" height="30"/>
+                                                                        <state key="normal" image="copy"/>
+                                                                        <connections>
+                                                                            <action selector="copyButton:" destination="gFM-Ue-sol" eventType="touchUpInside" id="URO-8B-6Va"/>
+                                                                        </connections>
+                                                                    </button>
+                                                                    <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WDE-gl-Kfe">
+                                                                        <rect key="frame" x="0.0" y="80" width="30" height="30"/>
+                                                                        <state key="normal" image="copy"/>
+                                                                        <connections>
+                                                                            <action selector="copyButton:" destination="gFM-Ue-sol" eventType="touchUpInside" id="JdH-09-8rs"/>
+                                                                        </connections>
+                                                                    </button>
+                                                                    <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bqx-zW-5vv">
+                                                                        <rect key="frame" x="0.0" y="120" width="30" height="30"/>
+                                                                        <state key="normal" image="copy"/>
+                                                                        <connections>
+                                                                            <action selector="copyButton:" destination="gFM-Ue-sol" eventType="touchUpInside" id="clj-G8-dlx"/>
+                                                                        </connections>
+                                                                    </button>
+                                                                    <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k9n-aV-Cnh">
+                                                                        <rect key="frame" x="0.0" y="160" width="30" height="30"/>
+                                                                        <state key="normal" image="copy"/>
+                                                                        <connections>
+                                                                            <action selector="copyButton:" destination="gFM-Ue-sol" eventType="touchUpInside" id="Grn-15-vAT"/>
+                                                                        </connections>
+                                                                    </button>
+                                                                </subviews>
+                                                            </stackView>
                                                         </subviews>
                                                     </stackView>
                                                 </subviews>
@@ -1606,59 +1681,36 @@
                                         </subviews>
                                     </stackView>
                                 </subviews>
-                            </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="meZ-KJ-6Qa">
-                                <rect key="frame" x="195.5" y="284" width="60" height="20"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="20" id="dpi-uh-P9t"/>
+                                    <constraint firstItem="sQE-93-odd" firstAttribute="top" secondItem="pwB-bZ-o04" secondAttribute="bottom" constant="8" id="1RC-aC-na9"/>
+                                    <constraint firstItem="sQE-93-odd" firstAttribute="centerX" secondItem="6nM-3I-d2r" secondAttribute="centerX" id="1ZE-TH-bKZ"/>
+                                    <constraint firstItem="sQE-93-odd" firstAttribute="top" secondItem="nDU-H1-Tht" secondAttribute="bottom" constant="8" id="2fU-en-1DL"/>
+                                    <constraint firstAttribute="trailing" secondItem="sQE-93-odd" secondAttribute="trailing" constant="8" id="8Qw-vU-3sg"/>
+                                    <constraint firstItem="sQE-93-odd" firstAttribute="leading" secondItem="6nM-3I-d2r" secondAttribute="leading" constant="8" id="EIw-Ml-fcB"/>
+                                    <constraint firstItem="W5I-Uv-Bbf" firstAttribute="top" secondItem="meZ-KJ-6Qa" secondAttribute="bottom" constant="20" id="MK9-nt-rdk"/>
+                                    <constraint firstItem="pwB-bZ-o04" firstAttribute="centerX" secondItem="6nM-3I-d2r" secondAttribute="centerX" id="Syh-w9-VYp"/>
+                                    <constraint firstItem="ygh-FH-gKF" firstAttribute="top" secondItem="pwB-bZ-o04" secondAttribute="bottom" constant="8" id="UKB-T1-4mT"/>
+                                    <constraint firstItem="meZ-KJ-6Qa" firstAttribute="top" secondItem="sQE-93-odd" secondAttribute="bottom" constant="20" id="W0j-KX-3SL"/>
+                                    <constraint firstItem="pwB-bZ-o04" firstAttribute="top" secondItem="6nM-3I-d2r" secondAttribute="top" constant="8" id="WtO-Nf-Lhg"/>
+                                    <constraint firstAttribute="trailing" secondItem="nDU-H1-Tht" secondAttribute="trailing" constant="8" id="ZS6-FK-Vhi"/>
+                                    <constraint firstItem="W5I-Uv-Bbf" firstAttribute="centerX" secondItem="6nM-3I-d2r" secondAttribute="centerX" id="ZrJ-hO-zsG"/>
+                                    <constraint firstAttribute="bottom" secondItem="W5I-Uv-Bbf" secondAttribute="bottom" constant="149" id="iCd-b5-eHe"/>
+                                    <constraint firstItem="meZ-KJ-6Qa" firstAttribute="centerX" secondItem="Blt-9E-2tY" secondAttribute="centerX" id="jDO-B0-A07"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="ZapfDingbatsITC" family="Zapf Dingbats" pointSize="16"/>
-                                <state key="normal" title="Copy All">
-                                    <color key="titleColor" red="0.21983420849999999" green="0.48451471330000001" blue="0.99449735880000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
                                 <connections>
-                                    <action selector="copyAllButton:" destination="gFM-Ue-sol" eventType="touchUpInside" id="3Eb-Of-TQQ"/>
+                                    <outlet property="delegate" destination="gFM-Ue-sol" id="2VQ-Gb-coy"/>
                                 </connections>
-                            </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="nDU-H1-Tht">
-                                <rect key="frame" x="345" y="72" width="20" height="20"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="20" id="KyF-4T-geI"/>
-                                    <constraint firstAttribute="width" constant="20" id="T3l-4T-FPx"/>
-                                </constraints>
-                            </imageView>
-                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="W5I-Uv-Bbf">
-                                <rect key="frame" x="74" y="324" width="227" height="120"/>
-                                <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Icon-60" translatesAutoresizingMaskIntoConstraints="NO" id="uUY-Xw-6GY">
-                                        <rect key="frame" x="83.5" y="0.0" width="60" height="60"/>
-                                    </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LoginKeeper" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="au3-ib-kHJ">
-                                        <rect key="frame" x="0.0" y="60" width="227" height="60"/>
-                                        <fontDescription key="fontDescription" name="ZapfDingbatsITC" family="Zapf Dingbats" pointSize="40"/>
-                                        <color key="textColor" red="0.21983420849999999" green="0.48451471330000001" blue="0.99449735880000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <color key="backgroundColor" red="0.74434715509414673" green="0.23519855737686157" blue="0.99883526563644409" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <variation key="heightClass=regular" alignment="center" axis="vertical" distribution="fillEqually"/>
-                            </stackView>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" red="0.87905663249999999" green="0.89664590359999996" blue="0.98421400790000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="W5I-Uv-Bbf" firstAttribute="centerX" secondItem="1AP-bX-O2J" secondAttribute="centerX" id="Itv-Zj-HIX"/>
-                            <constraint firstItem="W5I-Uv-Bbf" firstAttribute="top" secondItem="meZ-KJ-6Qa" secondAttribute="bottom" constant="20" id="KDO-wc-Jct"/>
-                            <constraint firstAttribute="trailing" secondItem="nDU-H1-Tht" secondAttribute="trailing" constant="10" id="QEA-Xw-I9V"/>
-                            <constraint firstAttribute="trailing" secondItem="sQE-93-odd" secondAttribute="trailing" constant="10" id="QuV-yo-dec"/>
-                            <constraint firstItem="sQE-93-odd" firstAttribute="leading" secondItem="1AP-bX-O2J" secondAttribute="leading" constant="10" id="Th3-BE-vcz"/>
-                            <constraint firstItem="nDU-H1-Tht" firstAttribute="top" secondItem="qqa-B5-7Bu" secondAttribute="bottom" constant="8" id="caN-lj-zQn"/>
-                            <constraint firstItem="sQE-93-odd" firstAttribute="top" secondItem="qqa-B5-7Bu" secondAttribute="bottom" constant="40" id="kMF-cx-Jdx"/>
-                            <constraint firstItem="meZ-KJ-6Qa" firstAttribute="top" secondItem="Blt-9E-2tY" secondAttribute="bottom" constant="15" id="uSI-rS-ZBt"/>
-                            <constraint firstItem="meZ-KJ-6Qa" firstAttribute="centerX" secondItem="Blt-9E-2tY" secondAttribute="centerX" id="zaS-QV-ngQ"/>
+                            <constraint firstItem="6nM-3I-d2r" firstAttribute="leading" secondItem="1AP-bX-O2J" secondAttribute="leading" id="6Ev-kZ-om9"/>
+                            <constraint firstItem="6ho-3a-4eR" firstAttribute="top" secondItem="6nM-3I-d2r" secondAttribute="bottom" id="98V-2I-GiU"/>
+                            <constraint firstItem="6nM-3I-d2r" firstAttribute="top" secondItem="qqa-B5-7Bu" secondAttribute="bottom" id="D7k-zT-d4C"/>
+                            <constraint firstAttribute="trailing" secondItem="6nM-3I-d2r" secondAttribute="trailing" id="Zm7-fO-TU6"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Title" id="YJU-ma-TiN">
+                    <navigationItem key="navigationItem" id="YJU-ma-TiN">
                         <rightBarButtonItems>
                             <barButtonItem systemItem="action" id="lKU-gH-Bvk">
                                 <connections>
@@ -1677,15 +1729,16 @@
                         <outlet property="comment" destination="Blt-9E-2tY" id="Wj6-hq-ExI"/>
                         <outlet property="entryName" destination="qzY-lV-ISe" id="Pkd-UT-3mF"/>
                         <outlet property="favoritedStar" destination="nDU-H1-Tht" id="g3B-GY-rVt"/>
+                        <outlet property="logoImage" destination="pwB-bZ-o04" id="3jm-k2-kYb"/>
                         <outlet property="password" destination="wCW-qc-GmP" id="6Mi-Mv-UQ8"/>
+                        <outlet property="scrollView" destination="6nM-3I-d2r" id="5iS-yL-gwV"/>
                         <outlet property="stackView" destination="ygh-FH-gKF" id="Kb4-Ql-zaL"/>
-                        <outlet property="topStackConstraint" destination="kMF-cx-Jdx" id="LVI-0J-rgJ"/>
                         <outlet property="username" destination="HAt-gr-4L7" id="Mdn-4I-dop"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Uw1-YF-ans" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2492" y="-601"/>
+            <point key="canvasLocation" x="2492" y="-601.34932533733138"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="tAA-Nm-5hO">
@@ -1868,7 +1921,7 @@
         <image name="web" width="50" height="50"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="mYc-lo-ZTI"/>
-        <segue reference="h9s-k7-aFA"/>
+        <segue reference="iTS-a3-3V6"/>
+        <segue reference="R23-PL-03t"/>
     </inferredMetricsTieBreakers>
 </document>

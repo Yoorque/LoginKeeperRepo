@@ -140,9 +140,9 @@ class RemoveAdsViewController: UIViewController, SKProductsRequestDelegate, SKPa
             numberFormatter.formatterBehavior = .behavior10_4
             numberFormatter.numberStyle = .currency
             iapProducts = response.products
-
             let removeAdsProduct = response.products[0]
             numberFormatter.locale = removeAdsProduct.priceLocale
+            print(response.products[0].priceLocale)
             
             let price2Str = numberFormatter.string(from: removeAdsProduct.price)
             
