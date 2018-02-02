@@ -18,7 +18,7 @@ class AboutViewController: UIViewController {
         titleTextLabel.frame.size.height = 25
         titleTextLabel.textAlignment = .center
         titleTextLabel.textColor = UIColor(red: 56/255, green: 124/255, blue: 254/255, alpha: 1)
-        titleTextLabel.font = UIFont(name: "Zapf Dingbats", size: 15)
+        titleTextLabel.font = UIFont(name: "Lato-Black", size: 17)
         titleTextLabel.text = aboutLocalized
         
         navigationItem.titleView = titleTextLabel

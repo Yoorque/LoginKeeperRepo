@@ -21,17 +21,11 @@ class EntriesViewController: UIViewController, UITableViewDataSource, UITableVie
 
     override func viewDidLoad() {
         super.viewDidLoad()
-//        titleTextLabel.frame.size.height = 25
-//        titleTextLabel.textAlignment = .center
-//        titleTextLabel.textColor = UIColor(red: 56/255, green: 124/255, blue: 254/255, alpha: 1)
-//        titleTextLabel.font = UIFont(name: "Zapf Dingbats", size: 15)
-//        //titleTextLabel.text = title
-//        navigationItem.titleView = titleTextLabel
         
-        
-        logoNavImage.image = UIImage(named: account!.image!)?.resizedImage(newSize: CGSize(width: 45, height: 45))
-        logoNavImage.contentMode = .scaleAspectFit
+        logoNavImage.frame.size = CGSize(width: 40, height: 40)
+        logoNavImage.image = UIImage(named: account!.image!)?.resizedImage(newSize: CGSize(width: 40, height: 40))
         navigationItem.titleView = logoNavImage
+        logoNavImage.addShadow()
         
         if traitCollection.forceTouchCapability == .available {
             registerForPreviewing(with: self, sourceView: tableView)
@@ -41,10 +35,10 @@ class EntriesViewController: UIViewController, UITableViewDataSource, UITableVie
         super.viewWillAppear(true)
         if !UserDefaults.standard.bool(forKey: "premiumPurchased") {
             appDelegate.loadAd(forViewController: self)
+            updateTableViewBottomInset()
         } else {
             appDelegate.removeBannerView()
         }
-       // updateTableViewBottomInset()
         fetchFromCoreData()
     }
     
@@ -109,6 +103,7 @@ class EntriesViewController: UIViewController, UITableViewDataSource, UITableVie
     override func didRotate(from fromInterfaceOrientation: UIInterfaceOrientation) {
         if !UserDefaults.standard.bool(forKey: "premiumPurchased") {
             appDelegate.loadAd(forViewController: self)
+            updateTableViewBottomInset()            
         } else {
             appDelegate.removeBannerView()
         }
@@ -188,5 +183,17 @@ extension UIImage {
         let newImage: UIImage = UIGraphicsGetImageFromCurrentImageContext()!
         UIGraphicsEndImageContext()
         return newImage
+    }
+}
+
+extension UIView {
+    func addShadow() {
+        self.contentMode = .scaleAspectFit
+        self.backgroundColor = .white
+        self.layer.shadowColor = UIColor.black.cgColor
+        self.layer.shadowRadius = 2
+        self.layer.shadowOffset = CGSize(width: 0, height: 0)
+        self.layer.shadowOpacity = 0.5
+        self.layer.cornerRadius = self.frame.size.width / 4
     }
 }

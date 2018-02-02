@@ -59,12 +59,6 @@ class DetailsViewController: UIViewController, UITextFieldDelegate, UIScrollView
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        titleTextLabel.frame.size.height = 25
-//        titleTextLabel.textAlignment = .center
-//        titleTextLabel.textColor = UIColor(red: 56/255, green: 124/255, blue: 254/255, alpha: 1)
-//        titleTextLabel.font = UIFont(name: "Zapf Dingbats", size: 15)
-//        navigationItem.titleView = titleTextLabel
-        
         if !UserDefaults.standard.bool(forKey: "premiumPurchased") {
             appDelegate.loadAd(forViewController: self)
         } else {
@@ -72,7 +66,7 @@ class DetailsViewController: UIViewController, UITextFieldDelegate, UIScrollView
         }
        
         logoImage.image = UIImage(named: "\(entryDetails!.account!.image!)")?.resizedImage(newSize: CGSize(width: 60, height: 60))
-        imageViewForTitle.image = UIImage(named: "\(entryDetails!.account!.image!)")?.resizedImage(newSize: CGSize(width: 45, height: 45))
+        imageViewForTitle.image = UIImage(named: "\(entryDetails!.account!.image!)")?.resizedImage(newSize: CGSize(width: 40, height: 40))
         logoImage.contentMode = .scaleAspectFit
         imageViewForTitle.contentMode = .scaleAspectFit
         navigationItem.titleView = imageViewForTitle
@@ -347,13 +341,15 @@ class DetailsViewController: UIViewController, UITextFieldDelegate, UIScrollView
         let scaleX = 1 - scrollView.contentOffset.y / 100
         let scaleY = 1 - scrollView.contentOffset.y / 100
         logoImage.transform = CGAffineTransform(scaleX: min(scaleX, 1.2) , y: min(scaleY, 1.2))
-        
-        if scrollView.contentOffset.y > navigationController!.navigationBar.frame.height {
-            logoImage.isHidden = true
-            imageViewForTitle.isHidden = false
-        } else {
-            logoImage.isHidden = false
-            imageViewForTitle.isHidden = true
+        if let navController = navigationController {
+            if scrollView.contentOffset.y > navController.navigationBar.frame.height {
+                logoImage.isHidden = true
+                imageViewForTitle.isHidden = false
+                imageViewForTitle.addShadow()
+            } else {
+                logoImage.isHidden = false
+                imageViewForTitle.isHidden = true
+            }
         }
     }
 }

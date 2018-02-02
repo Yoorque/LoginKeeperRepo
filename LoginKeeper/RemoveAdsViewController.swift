@@ -49,7 +49,7 @@ class RemoveAdsViewController: UIViewController, SKProductsRequestDelegate, SKPa
         unlockText.text = removedAdsLocalized
         purchasedText.text = premiumVersionPurchasedLocalized
         purchasedText.textColor = UIColor(red: 44/255, green: 152/255, blue: 41/255, alpha: 1)
-        purchasedText.font = UIFont(name: "Zapf Dingbats", size: 22)
+        purchasedText.font = UIFont(name: "Lato-Bold", size: 22)
         NSLayoutConstraint(item: purchasedText, attribute: .top, relatedBy: .equal, toItem: versionText, attribute: .bottom, multiplier: 1, constant: 8).isActive = true
         versionText.text = premiumVersionLocalized
         versionText.textColor = UIColor(red: 44/255, green: 152/255, blue: 41/255, alpha: 1)
@@ -142,7 +142,6 @@ class RemoveAdsViewController: UIViewController, SKProductsRequestDelegate, SKPa
             iapProducts = response.products
             let removeAdsProduct = response.products[0]
             numberFormatter.locale = removeAdsProduct.priceLocale
-            print(response.products[0].priceLocale)
             
             let price2Str = numberFormatter.string(from: removeAdsProduct.price)
             

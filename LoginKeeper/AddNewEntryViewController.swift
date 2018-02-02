@@ -13,6 +13,7 @@ class AddNewEntryViewController: UIViewController, UITextFieldDelegate, UIScroll
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet var stackView: UIStackView!
     @IBOutlet weak var addNewEntryLabel: UILabel!
+    var titleTextLabel = UILabel()
     
     var account: Account?
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
@@ -44,9 +45,12 @@ class AddNewEntryViewController: UIViewController, UITextFieldDelegate, UIScroll
         }
     }
     
-    var titleTextLabel = UILabel()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        titleTextLabel.contentMode = .center
+        titleTextLabel.font = UIFont(name: "Lato-Black", size: 17)
+        titleTextLabel.textColor = UIColor(red: 56/255, green: 124/255, blue: 254/255, alpha: 1)
         addNewEntryLabel.text = titleTextLabel.text
         if !UserDefaults.standard.bool(forKey: "premiumPurchased") {
             appDelegate.load(bannerView: appDelegate.adBannerView,forViewController: self, andOrientation: UIDevice.current.orientation)
@@ -169,13 +173,16 @@ class AddNewEntryViewController: UIViewController, UITextFieldDelegate, UIScroll
         let scaleY = 1 - scrollView.contentOffset.y / 100
         addNewEntryLabel.transform = CGAffineTransform(scaleX: min(scaleX, 1.2) , y: min(scaleY, 1.2))
         
-        if scrollView.contentOffset.y > navigationController!.navigationBar.frame.height {
-            addNewEntryLabel.isHidden = true
-            title = titleTextLabel.text
-        } else {
-            addNewEntryLabel.isHidden = false
-            addNewEntryLabel.text = titleTextLabel.text
-            title = ""
+        if let navController = navigationController {
+            if scrollView.contentOffset.y > navController.navigationBar.frame.height {
+                addNewEntryLabel.isHidden = true
+                navigationItem.titleView = titleTextLabel
+                titleTextLabel.isHidden = false
+            } else {
+                addNewEntryLabel.isHidden = false
+                addNewEntryLabel.text = titleTextLabel.text
+                titleTextLabel.isHidden = true
+            }
         }
     }
 }

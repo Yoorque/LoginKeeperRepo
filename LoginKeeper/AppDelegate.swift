@@ -27,7 +27,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GADBannerViewDelegate {
         adBannerView!.adUnitID = "ca-app-pub-9468673959133010/5461633889"
         
         UINavigationBar.appearance().tintColor = UIColor(red: 56/255, green: 124/255, blue: 254/255, alpha: 1)
-        UINavigationBar.appearance().titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor(red: 56/255, green: 124/255, blue: 254/255, alpha: 1), NSAttributedStringKey.font: UIFont(name: "Zapf Dingbats", size: 15)!]
+        UINavigationBar.appearance().titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor(red: 56/255, green: 124/255, blue: 254/255, alpha: 1), NSAttributedStringKey.font: UIFont(name: "Lato-Black", size: 17)!]
         
         return true
     }

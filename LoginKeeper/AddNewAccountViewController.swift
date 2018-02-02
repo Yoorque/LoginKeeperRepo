@@ -309,18 +309,18 @@ class AddNewAccountViewController: UIViewController, UITextFieldDelegate, UIScro
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         if scrollView == viewScrollView {
-            let scaleX = 1 - viewScrollView.contentOffset.y / 100
-            let scaleY = 1 - viewScrollView.contentOffset.y / 100
-            addNewAccLabel.transform = CGAffineTransform(scaleX: min(scaleX, 1.5) , y: min(scaleY, 1.5))
+            let scale = 1 - viewScrollView.contentOffset.y / 100
+            
+            addNewAccLabel.transform = CGAffineTransform(scaleX: min(scale, 1.5) , y: min(scale, 1.5))
         }
-    
-        if viewScrollView.contentOffset.y > navigationController!.navigationBar.frame.height {
-            addNewAccLabel.isHidden = true
-            title = "Add New Account"
-        } else {
-            addNewAccLabel.isHidden = false
-            title = ""
+        if let navController = navigationController {
+            if viewScrollView.contentOffset.y > navController.navigationBar.frame.height {
+                addNewAccLabel.isHidden = true
+                title = "Add New Account"
+            } else {
+                addNewAccLabel.isHidden = false
+                title = ""
+            }
         }
-        
     }
 }

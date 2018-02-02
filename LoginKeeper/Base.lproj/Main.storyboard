@@ -11,8 +11,17 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="ZapfDingbats.ttf">
-            <string>ZapfDingbatsITC</string>
+        <array key="Lato-Black.ttf">
+            <string>Lato-Black</string>
+        </array>
+        <array key="Lato-Bold.ttf">
+            <string>Lato-Bold</string>
+        </array>
+        <array key="Lato-Regular.ttf">
+            <string>Lato-Regular</string>
+        </array>
+        <array key="Lato-Semibold.ttf">
+            <string>Lato-Semibold</string>
         </array>
     </customFonts>
     <scenes>
@@ -29,7 +38,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" contentMode="scaleAspectFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" delaysContentTouches="NO" canCancelContentTouches="NO" bouncesZoom="NO" editable="NO" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3gR-S5-rT6">
-                                <rect key="frame" x="18" y="101" width="339" height="380"/>
+                                <rect key="frame" x="18" y="106.5" width="339" height="355"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="223" id="34d-73-H6V"/>
@@ -37,7 +46,7 @@
                                 </constraints>
                                 <string key="text">LoginKeeper® was developed solely using Apple Libraries and available resources provided by Apple and free open source resources. I, Dusan Juranovic, as a developer of LoginKeeper®, claim all distribution rights of LoginKeeper® as well as all copyrights©. LoginKeeper® is NOT recommended for storing valuable information such as , credit card details, bank details and all other information where loss of such information would bare great impact to individuals or companies alike and therefore LoginKeeper®  and I, Dusan Juranovic (developer), will not be held responsible for loss of any such information or assets. LoginKeeper® is intended only for purpose of not having to remember all of your login details or writing them down on pieces of paper. It is users judgment call to decide which information they enter into the app. If you have any issues or suggestions, please write an email to below provided email address. Thanks.</string>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" name="ZapfDingbatsITC" family="Zapf Dingbats" pointSize="15"/>
+                                <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="15"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                 <variation key="default">
                                     <mask key="constraints">
@@ -58,38 +67,41 @@
                                 </variation>
                             </textView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Developer:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3g6-v0-Ygk">
-                                <rect key="frame" x="151" y="489" width="73" height="15"/>
-                                <fontDescription key="fontDescription" name="ZapfDingbatsITC" family="Zapf Dingbats" pointSize="15"/>
+                                <rect key="frame" x="146.5" y="469.5" width="82" height="21.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="8ME-pe-QKs"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="17"/>
                                 <color key="textColor" red="0.2196078431372549" green="0.48627450980392156" blue="0.99607843137254903" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dusan Juranovic" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iaT-Lv-CQA">
-                                <rect key="frame" x="124" y="512" width="127" height="17"/>
-                                <fontDescription key="fontDescription" name="ZapfDingbatsITC" family="Zapf Dingbats" pointSize="17"/>
+                                <rect key="frame" x="126.5" y="499" width="122.5" height="20.5"/>
+                                <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="All rights reserved. Copyrights©" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="7" translatesAutoresizingMaskIntoConstraints="NO" id="xqa-RF-TvC">
-                                <rect key="frame" x="103" y="633" width="169" height="14"/>
+                                <rect key="frame" x="103.5" y="631" width="168" height="16"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="14" id="LcV-7G-Xdq"/>
+                                    <constraint firstAttribute="height" constant="16" id="LcV-7G-Xdq"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="ZapfDingbatsITC" family="Zapf Dingbats" pointSize="12"/>
+                                <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="12"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EzQ-BD-0hD">
-                                <rect key="frame" x="166.5" y="560" width="42" height="15"/>
-                                <fontDescription key="fontDescription" name="ZapfDingbatsITC" family="Zapf Dingbats" pointSize="15"/>
+                                <rect key="frame" x="166" y="550.5" width="44.5" height="20.5"/>
+                                <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="17"/>
                                 <color key="textColor" red="0.2196078431372549" green="0.48627450980392156" blue="0.99607843137254903" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Disclaimer" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dnd-0R-ynT">
-                                <rect key="frame" x="152.5" y="78" width="70" height="15"/>
+                                <rect key="frame" x="148.5" y="78" width="78.5" height="20.5"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="15" id="C1j-Jg-NUY"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="ZapfDingbatsITC" family="Zapf Dingbats" pointSize="15"/>
+                                <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="17"/>
                                 <color key="textColor" red="0.2196078431372549" green="0.48627450980392156" blue="0.99607843137254903" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="heightClass=regular">
@@ -99,11 +111,11 @@
                                 </variation>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="simpleloginkeeper@gmail.com" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yGG-Ik-64k">
-                                <rect key="frame" x="71.5" y="583" width="232" height="20"/>
+                                <rect key="frame" x="75.5" y="579" width="224" height="22"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="20" id="lfI-9W-lUV"/>
+                                    <constraint firstAttribute="height" constant="22" id="lfI-9W-lUV"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="ZapfDingbatsITC" family="Zapf Dingbats" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -284,7 +296,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="sAY-cr-teX"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="ZapfDingbatsITC" family="Zapf Dingbats" pointSize="20"/>
+                                <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="20"/>
                                 <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -293,33 +305,17 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="acc-4D-kvG"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="ZapfDingbatsITC" family="Zapf Dingbats" pointSize="25"/>
+                                <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="25"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qLS-sr-DOL">
-                                <rect key="frame" x="54.5" y="352" width="266" height="50"/>
-                                <color key="backgroundColor" red="0.17254901960784313" green="0.59607843137254901" blue="0.16078431372549018" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="06q-T9-6ae"/>
-                                    <constraint firstAttribute="width" constant="266" id="mSg-XK-jRE"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="ZapfDingbatsITC" family="Zapf Dingbats" pointSize="18"/>
-                                <state key="normal" title="UNLOCK PREMIUM VERSION">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <action selector="purchasePremium:" destination="Tpu-fk-P1J" eventType="touchUpInside" id="F92-uG-9v6"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Price" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pVU-4u-6Nn">
-                                <rect key="frame" x="54" y="244" width="266" height="40"/>
+                                <rect key="frame" x="168.5" y="244" width="37.5" height="40"/>
                                 <color key="backgroundColor" red="0.88563368060000003" green="0.99798387290000001" blue="0.99497014279999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="cGq-8Y-phx"/>
-                                    <constraint firstAttribute="width" constant="266" id="iT8-w0-fZn"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="ZapfDingbatsITC" family="Zapf Dingbats" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -328,7 +324,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20" id="n2O-RT-vFe"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="ZapfDingbatsITC" family="Zapf Dingbats" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -337,41 +333,56 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20" id="H1v-UN-MrD"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="ZapfDingbatsITC" family="Zapf Dingbats" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="maF-Gq-WkE">
-                                <rect key="frame" x="74" y="410" width="227" height="120"/>
+                                <rect key="frame" x="78" y="410" width="219.5" height="120"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Icon-60" translatesAutoresizingMaskIntoConstraints="NO" id="1fZ-4F-xSp">
-                                        <rect key="frame" x="83.5" y="0.0" width="60" height="60"/>
+                                        <rect key="frame" x="80" y="0.0" width="60" height="60"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LoginKeeper" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g5Y-4y-9sf">
-                                        <rect key="frame" x="0.0" y="60" width="227" height="60"/>
-                                        <fontDescription key="fontDescription" name="ZapfDingbatsITC" family="Zapf Dingbats" pointSize="40"/>
+                                        <rect key="frame" x="0.0" y="60" width="219.5" height="60"/>
+                                        <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="40"/>
                                         <color key="textColor" red="0.21983420849999999" green="0.48451471330000001" blue="0.99449735880000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
                                 <variation key="heightClass=regular" alignment="center" axis="vertical" distribution="fillEqually"/>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qLS-sr-DOL">
+                                <rect key="frame" x="56.5" y="352" width="262" height="34"/>
+                                <color key="backgroundColor" red="0.17254901960784313" green="0.59607843137254901" blue="0.16078431372549018" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="262" id="B7R-MB-BL9"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="18"/>
+                                <inset key="titleEdgeInsets" minX="5" minY="10" maxX="5" maxY="10"/>
+                                <state key="normal" title="UNLOCK PREMIUM VERSION">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="purchasePremium:" destination="Tpu-fk-P1J" eventType="touchUpInside" id="F92-uG-9v6"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.8784313725490196" green="0.89803921568627454" blue="0.98431372549019602" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="cqt-Z2-JzX" firstAttribute="top" secondItem="Dfd-u4-m1T" secondAttribute="bottom" constant="8" id="2Uh-oT-hAB"/>
+                            <constraint firstItem="qLS-sr-DOL" firstAttribute="top" secondItem="IfR-9Y-8Ya" secondAttribute="bottom" constant="8" id="DGj-7v-mVf"/>
                             <constraint firstItem="IfR-9Y-8Ya" firstAttribute="leading" secondItem="vTA-Sc-8H5" secondAttribute="leadingMargin" id="Dmk-Hx-808"/>
+                            <constraint firstItem="qLS-sr-DOL" firstAttribute="centerX" secondItem="vTA-Sc-8H5" secondAttribute="centerX" id="Dwp-93-UbZ"/>
                             <constraint firstItem="cqt-Z2-JzX" firstAttribute="trailing" secondItem="vTA-Sc-8H5" secondAttribute="trailingMargin" id="GGB-av-bzB"/>
                             <constraint firstItem="pVU-4u-6Nn" firstAttribute="top" secondItem="dht-FV-BNd" secondAttribute="bottom" constant="40" id="Mhb-X1-j8q"/>
                             <constraint firstItem="maF-Gq-WkE" firstAttribute="centerX" secondItem="vTA-Sc-8H5" secondAttribute="centerX" id="NXW-8G-dCH"/>
                             <constraint firstItem="dht-FV-BNd" firstAttribute="top" secondItem="30k-6F-Ou7" secondAttribute="bottom" constant="8" id="QcQ-8g-TjH"/>
-                            <constraint firstItem="qLS-sr-DOL" firstAttribute="centerX" secondItem="vTA-Sc-8H5" secondAttribute="centerX" id="Uyf-OG-DXh"/>
                             <constraint firstItem="30k-6F-Ou7" firstAttribute="leading" secondItem="vTA-Sc-8H5" secondAttribute="leadingMargin" id="cNb-VO-d54"/>
                             <constraint firstItem="maF-Gq-WkE" firstAttribute="top" secondItem="IfR-9Y-8Ya" secondAttribute="bottom" constant="66" id="dA1-Vc-7dt"/>
                             <constraint firstItem="dht-FV-BNd" firstAttribute="leading" secondItem="vTA-Sc-8H5" secondAttribute="leadingMargin" id="dsf-Cg-4vp"/>
                             <constraint firstItem="dht-FV-BNd" firstAttribute="trailing" secondItem="vTA-Sc-8H5" secondAttribute="trailingMargin" id="g9J-Q4-sJ0"/>
                             <constraint firstItem="pVU-4u-6Nn" firstAttribute="centerX" secondItem="vTA-Sc-8H5" secondAttribute="centerX" id="gYO-BD-0QO"/>
-                            <constraint firstItem="qLS-sr-DOL" firstAttribute="top" secondItem="IfR-9Y-8Ya" secondAttribute="bottom" constant="8" id="m7o-hn-aF3"/>
                             <constraint firstItem="cqt-Z2-JzX" firstAttribute="leading" secondItem="vTA-Sc-8H5" secondAttribute="leadingMargin" id="nJ9-3T-YdD"/>
                             <constraint firstItem="IfR-9Y-8Ya" firstAttribute="trailing" secondItem="vTA-Sc-8H5" secondAttribute="trailingMargin" id="obw-hl-tIT"/>
                             <constraint firstItem="30k-6F-Ou7" firstAttribute="top" secondItem="cqt-Z2-JzX" secondAttribute="bottom" constant="30" id="r1m-OL-fHn"/>
@@ -396,7 +407,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pW1-20-1PU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-746.39999999999998" y="-2079.3103448275865"/>
+            <point key="canvasLocation" x="-746.5" y="-2079.5"/>
         </scene>
         <!--Info-->
         <scene sceneID="V85-hJ-Dp8">
@@ -417,35 +428,35 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Version 1.0 (build 1)" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="89r-pc-JuW">
-                                                    <rect key="frame" x="111" y="79" width="153.5" height="21"/>
+                                                    <rect key="frame" x="113.5" y="79" width="148.5" height="20"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="21" id="Am9-fT-sgJ"/>
+                                                        <constraint firstAttribute="height" constant="20" id="Am9-fT-sgJ"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" name="ZapfDingbatsITC" family="Zapf Dingbats" pointSize="17"/>
+                                                    <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="17"/>
                                                     <color key="textColor" red="0.2196078431372549" green="0.48627450980392156" blue="0.99607843137254903" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wPQ-NW-GIr">
-                                                    <rect key="frame" x="44" y="11" width="287" height="60"/>
+                                                    <rect key="frame" x="47" y="11" width="282" height="60"/>
                                                     <subviews>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Icon-60" translatesAutoresizingMaskIntoConstraints="NO" id="Qhz-Fa-LQh">
                                                             <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LoginKeeper" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9me-ze-Tu8">
-                                                            <rect key="frame" x="60" y="0.0" width="227" height="60"/>
-                                                            <fontDescription key="fontDescription" name="ZapfDingbatsITC" family="Zapf Dingbats" pointSize="40"/>
+                                                            <rect key="frame" x="60" y="0.0" width="222" height="60"/>
+                                                            <fontDescription key="fontDescription" name="Lato-Semibold" family="Lato" pointSize="40"/>
                                                             <color key="textColor" red="0.21983420848846436" green="0.48451471328735352" blue="0.99449735879898071" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
                                                 </stackView>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Grt-BN-kej">
-                                                    <rect key="frame" x="111" y="108" width="154" height="29"/>
+                                                    <rect key="frame" x="111" y="107" width="154" height="33"/>
                                                     <color key="backgroundColor" red="0.84550261500000001" green="0.26120758059999999" blue="0.13906452059999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="154" id="ijg-FY-aa4"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" name="ZapfDingbatsITC" family="Zapf Dingbats" pointSize="17"/>
+                                                    <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="17"/>
                                                     <state key="normal">
                                                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </state>
@@ -482,8 +493,8 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="About" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bW6-dO-nVI">
-                                                    <rect key="frame" x="51" y="14" width="44.5" height="17"/>
-                                                    <fontDescription key="fontDescription" name="ZapfDingbatsITC" family="Zapf Dingbats" pointSize="17"/>
+                                                    <rect key="frame" x="51" y="11.5" width="46.5" height="20.5"/>
+                                                    <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="17"/>
                                                     <color key="textColor" red="0.21983420849999999" green="0.48451471330000001" blue="0.99449735880000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -515,8 +526,8 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Feedback" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FuE-fw-G6K">
-                                                    <rect key="frame" x="51" y="13" width="75" height="17"/>
-                                                    <fontDescription key="fontDescription" name="ZapfDingbatsITC" family="Zapf Dingbats" pointSize="17"/>
+                                                    <rect key="frame" x="51" y="11.5" width="71.5" height="20.5"/>
+                                                    <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="17"/>
                                                     <color key="textColor" red="0.21983420849999999" green="0.48451471330000001" blue="0.99449735880000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -545,11 +556,11 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Developer website" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ef8-fo-9ED">
-                                                    <rect key="frame" x="51" y="13" width="140" height="19"/>
+                                                    <rect key="frame" x="51" y="12.5" width="140" height="20"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="19" id="6pD-IS-rIr"/>
+                                                        <constraint firstAttribute="height" constant="20" id="6pD-IS-rIr"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" name="ZapfDingbatsITC" family="Zapf Dingbats" pointSize="17"/>
+                                                    <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="17"/>
                                                     <color key="textColor" red="0.21983420849999999" green="0.48451471330000001" blue="0.99449735880000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -578,11 +589,11 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="More apps by developer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gqL-Oj-Kkg">
-                                                    <rect key="frame" x="51" y="12" width="182.5" height="19"/>
+                                                    <rect key="frame" x="51" y="11.5" width="180" height="20"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="19" id="8gg-8n-L9h"/>
+                                                        <constraint firstAttribute="height" constant="20" id="8gg-8n-L9h"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" name="ZapfDingbatsITC" family="Zapf Dingbats" pointSize="17"/>
+                                                    <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="17"/>
                                                     <color key="textColor" red="0.21983420849999999" green="0.48451471330000001" blue="0.99449735880000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -610,7 +621,7 @@
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LoginKeeper® was developed using the following free &amp; open source resources:" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZTW-LK-HNF">
                                                     <rect key="frame" x="16" y="31" width="343" height="39.5"/>
-                                                    <fontDescription key="fontDescription" name="ZapfDingbatsITC" family="Zapf Dingbats" pointSize="12"/>
+                                                    <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="12"/>
                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -640,8 +651,8 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="icons8.com" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9wU-3T-eVT">
-                                                    <rect key="frame" x="51" y="13" width="86" height="17"/>
-                                                    <fontDescription key="fontDescription" name="ZapfDingbatsITC" family="Zapf Dingbats" pointSize="17"/>
+                                                    <rect key="frame" x="51" y="11.5" width="84" height="20.5"/>
+                                                    <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="17"/>
                                                     <color key="textColor" red="0.21983420849999999" green="0.48451471330000001" blue="0.99449735880000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -670,11 +681,11 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BWWalkthrough" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xZi-G9-l6p">
-                                                    <rect key="frame" x="51" y="12" width="123" height="19"/>
+                                                    <rect key="frame" x="51" y="11.5" width="125.5" height="20"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="19" id="xex-YX-ooc"/>
+                                                        <constraint firstAttribute="height" constant="20" id="xex-YX-ooc"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" name="ZapfDingbatsITC" family="Zapf Dingbats" pointSize="17"/>
+                                                    <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="17"/>
                                                     <color key="textColor" red="0.21960784310000001" green="0.48627450979999998" blue="0.99607843139999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -697,11 +708,11 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="by Dusan Juranovic" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v14-yL-ACv">
-                                                    <rect key="frame" x="112.5" y="31.5" width="150" height="19"/>
+                                                    <rect key="frame" x="115" y="31" width="146" height="20"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="19" id="psn-vj-7oG"/>
+                                                        <constraint firstAttribute="height" constant="20" id="psn-vj-7oG"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" name="ZapfDingbatsITC" family="Zapf Dingbats" pointSize="17"/>
+                                                    <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="17"/>
                                                     <color key="textColor" red="0.2196078431372549" green="0.48627450980392156" blue="0.99607843137254903" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -760,21 +771,21 @@
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add New Account" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nOl-GB-3dL">
-                                        <rect key="frame" x="88" y="8" width="199" height="40"/>
+                                        <rect key="frame" x="86.5" y="8" width="203" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="u9s-a3-sF6"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="ZapfDingbatsITC" family="Zapf Dingbats" pointSize="25"/>
+                                        <fontDescription key="fontDescription" name="Lato-Black" family="Lato" pointSize="25"/>
                                         <color key="textColor" red="0.2196078431372549" green="0.48627450980392156" blue="0.99607843137254903" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="4i4-qg-ady">
                                         <rect key="frame" x="10" y="56" width="355" height="190"/>
                                         <subviews>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Account Title (required)" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="vgY-17-wLs">
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="g" borderStyle="roundedRect" placeholder="Account Title (required)" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="vgY-17-wLs">
                                                 <rect key="frame" x="0.0" y="0.0" width="355" height="30"/>
                                                 <color key="textColor" red="0.21983420849999999" green="0.48451471330000001" blue="0.99449735880000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <fontDescription key="fontDescription" name="ZapfDingbatsITC" family="Zapf Dingbats" pointSize="14"/>
+                                                <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" spellCheckingType="no" returnKeyType="next"/>
                                                 <connections>
                                                     <outlet property="delegate" destination="rpA-qm-WNA" id="EH1-Fx-lJY"/>
@@ -783,7 +794,7 @@
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Entry Name (required)" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Qgw-sU-47I">
                                                 <rect key="frame" x="0.0" y="32" width="355" height="30"/>
                                                 <color key="textColor" red="0.21983420849999999" green="0.48451471330000001" blue="0.99449735880000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <fontDescription key="fontDescription" name="ZapfDingbatsITC" family="Zapf Dingbats" pointSize="14"/>
+                                                <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" spellCheckingType="no" returnKeyType="next"/>
                                                 <connections>
                                                     <outlet property="delegate" destination="rpA-qm-WNA" id="LQM-xN-Nz5"/>
@@ -792,7 +803,7 @@
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="rkV-Gt-ep1">
                                                 <rect key="frame" x="0.0" y="64" width="355" height="30"/>
                                                 <color key="textColor" red="0.21983420849999999" green="0.48451471330000001" blue="0.99449735880000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <fontDescription key="fontDescription" name="ZapfDingbatsITC" family="Zapf Dingbats" pointSize="14"/>
+                                                <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="next"/>
                                                 <connections>
                                                     <outlet property="delegate" destination="rpA-qm-WNA" id="1Re-Ub-Cuy"/>
@@ -801,7 +812,7 @@
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password (required)" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="sFK-NG-wDg">
                                                 <rect key="frame" x="0.0" y="96" width="355" height="30"/>
                                                 <color key="textColor" red="0.21983420849999999" green="0.48451471330000001" blue="0.99449735880000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <fontDescription key="fontDescription" name="ZapfDingbatsITC" family="Zapf Dingbats" pointSize="14"/>
+                                                <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="next" secureTextEntry="YES"/>
                                                 <connections>
                                                     <outlet property="delegate" destination="rpA-qm-WNA" id="Ax5-3g-FdW"/>
@@ -810,7 +821,7 @@
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Confirm password (required)" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="aFU-Xk-o7Q">
                                                 <rect key="frame" x="0.0" y="128" width="355" height="30"/>
                                                 <color key="textColor" red="0.21983420849999999" green="0.48451471330000001" blue="0.99449735880000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <fontDescription key="fontDescription" name="ZapfDingbatsITC" family="Zapf Dingbats" pointSize="14"/>
+                                                <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="next" secureTextEntry="YES"/>
                                                 <connections>
                                                     <outlet property="delegate" destination="rpA-qm-WNA" id="1B4-W2-M52"/>
@@ -819,7 +830,7 @@
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Comment" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="lR5-4h-YPa">
                                                 <rect key="frame" x="0.0" y="160" width="355" height="30"/>
                                                 <color key="textColor" red="0.21983420849999999" green="0.48451471330000001" blue="0.99449735880000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <fontDescription key="fontDescription" name="ZapfDingbatsITC" family="Zapf Dingbats" pointSize="14"/>
+                                                <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="no" spellCheckingType="no" returnKeyType="done"/>
                                                 <connections>
                                                     <outlet property="delegate" destination="rpA-qm-WNA" id="xBy-lu-OHR"/>
@@ -828,7 +839,7 @@
                                         </subviews>
                                     </stackView>
                                     <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HJq-ii-ibM">
-                                        <rect key="frame" x="10" y="291" width="355" height="105"/>
+                                        <rect key="frame" x="10" y="293" width="355" height="105"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="105" id="fYW-Do-2yA"/>
                                         </constraints>
@@ -837,34 +848,34 @@
                                         </connections>
                                     </scrollView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="Kky-UN-Kpp">
-                                        <rect key="frame" x="10" y="254" width="355" height="29"/>
+                                        <rect key="frame" x="10" y="254" width="355" height="31"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="◀︎   Choose your logo from the scroll menu   ▶︎" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OAQ-SI-m1b">
                                                 <rect key="frame" x="0.0" y="0.0" width="355" height="17"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="17" id="IVf-Hy-bUg"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" name="ZapfDingbatsITC" family="Zapf Dingbats" pointSize="14"/>
+                                                <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="14"/>
                                                 <color key="textColor" red="0.21960784310000001" green="0.48627450979999998" blue="0.99607843139999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Default is the first one in the scroll view" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Abp-m8-Wku">
-                                                <rect key="frame" x="0.0" y="19" width="355" height="10"/>
-                                                <fontDescription key="fontDescription" name="ZapfDingbatsITC" family="Zapf Dingbats" pointSize="10"/>
+                                                <rect key="frame" x="0.0" y="19" width="355" height="12"/>
+                                                <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="10"/>
                                                 <color key="textColor" red="0.21983420849999999" green="0.48451471330000001" blue="0.99449735880000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mIA-w3-skU">
-                                        <rect key="frame" x="74" y="404" width="227" height="120"/>
+                                        <rect key="frame" x="77" y="406" width="222" height="120"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Icon-60" translatesAutoresizingMaskIntoConstraints="NO" id="Qbr-qY-aZ3">
-                                                <rect key="frame" x="83.5" y="0.0" width="60" height="60"/>
+                                                <rect key="frame" x="81" y="0.0" width="60" height="60"/>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LoginKeeper" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cHH-cQ-M99">
-                                                <rect key="frame" x="0.0" y="60" width="227" height="60"/>
-                                                <fontDescription key="fontDescription" name="ZapfDingbatsITC" family="Zapf Dingbats" pointSize="40"/>
+                                                <rect key="frame" x="0.0" y="60" width="222" height="60"/>
+                                                <fontDescription key="fontDescription" name="Lato-Semibold" family="Lato" pointSize="40"/>
                                                 <color key="textColor" red="0.2196078431372549" green="0.48627450980392156" blue="0.99607843137254903" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -941,23 +952,23 @@
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add New Entry" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RZ5-gW-aYV">
-                                        <rect key="frame" x="104" y="8" width="167" height="40"/>
+                                        <rect key="frame" x="102" y="8" width="171" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="1xt-tp-DqT"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="ZapfDingbatsITC" family="Zapf Dingbats" pointSize="25"/>
+                                        <fontDescription key="fontDescription" name="Lato-Black" family="Lato" pointSize="25"/>
                                         <color key="textColor" red="0.21960784310000001" green="0.48627450979999998" blue="0.99607843139999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JQo-5d-AWE">
-                                        <rect key="frame" x="74" y="244" width="227" height="120"/>
+                                        <rect key="frame" x="77" y="244" width="222" height="120"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Icon-60" translatesAutoresizingMaskIntoConstraints="NO" id="u7D-9J-pVM">
-                                                <rect key="frame" x="83.5" y="0.0" width="60" height="60"/>
+                                                <rect key="frame" x="81" y="0.0" width="60" height="60"/>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LoginKeeper" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Nu-9j-TfH">
-                                                <rect key="frame" x="0.0" y="60" width="227" height="60"/>
-                                                <fontDescription key="fontDescription" name="ZapfDingbatsITC" family="Zapf Dingbats" pointSize="40"/>
+                                                <rect key="frame" x="0.0" y="60" width="222" height="60"/>
+                                                <fontDescription key="fontDescription" name="Lato-Semibold" family="Lato" pointSize="40"/>
                                                 <color key="textColor" red="0.21983420849999999" green="0.48451471330000001" blue="0.99449735880000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -970,7 +981,7 @@
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Entry Name (required)" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="zOh-H8-h8M">
                                                 <rect key="frame" x="0.0" y="0.0" width="355" height="30"/>
                                                 <color key="textColor" red="0.2196078431372549" green="0.48627450980392156" blue="0.99607843137254903" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <fontDescription key="fontDescription" name="ZapfDingbatsITC" family="Zapf Dingbats" pointSize="14"/>
+                                                <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" spellCheckingType="no" returnKeyType="next"/>
                                                 <connections>
                                                     <outlet property="delegate" destination="ox9-YF-LOE" id="zNw-ki-cKV"/>
@@ -979,7 +990,7 @@
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="JtM-J4-Gbz">
                                                 <rect key="frame" x="0.0" y="32" width="355" height="30"/>
                                                 <color key="textColor" red="0.2196078431372549" green="0.48627450980392156" blue="0.99607843137254903" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <fontDescription key="fontDescription" name="ZapfDingbatsITC" family="Zapf Dingbats" pointSize="14"/>
+                                                <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="next"/>
                                                 <connections>
                                                     <outlet property="delegate" destination="ox9-YF-LOE" id="XWu-Ke-Kjq"/>
@@ -988,7 +999,7 @@
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password (required)" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="LNo-xb-YV2">
                                                 <rect key="frame" x="0.0" y="64" width="355" height="30"/>
                                                 <color key="textColor" red="0.2196078431372549" green="0.48627450980392156" blue="0.99607843137254903" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <fontDescription key="fontDescription" name="ZapfDingbatsITC" family="Zapf Dingbats" pointSize="14"/>
+                                                <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="next" secureTextEntry="YES"/>
                                                 <connections>
                                                     <outlet property="delegate" destination="ox9-YF-LOE" id="19Z-4G-GIJ"/>
@@ -997,7 +1008,7 @@
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Confirm password (required)" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="4NY-8P-15S">
                                                 <rect key="frame" x="0.0" y="96" width="355" height="30"/>
                                                 <color key="textColor" red="0.2196078431372549" green="0.48627450980392156" blue="0.99607843137254903" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <fontDescription key="fontDescription" name="ZapfDingbatsITC" family="Zapf Dingbats" pointSize="14"/>
+                                                <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="next" secureTextEntry="YES"/>
                                                 <connections>
                                                     <outlet property="delegate" destination="ox9-YF-LOE" id="3yF-B0-Hqu"/>
@@ -1006,7 +1017,7 @@
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Comment" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="axU-Qj-8gF">
                                                 <rect key="frame" x="0.0" y="128" width="355" height="30"/>
                                                 <color key="textColor" red="0.2196078431372549" green="0.48627450980392156" blue="0.99607843137254903" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <fontDescription key="fontDescription" name="ZapfDingbatsITC" family="Zapf Dingbats" pointSize="14"/>
+                                                <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="no" spellCheckingType="no" returnKeyType="done"/>
                                                 <connections>
                                                     <outlet property="delegate" destination="ox9-YF-LOE" id="XqU-dp-rrd"/>
@@ -1094,12 +1105,12 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ist-rs-dfg">
-                                                    <rect key="frame" x="60" y="2" width="56.5" height="40"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Labelg" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ist-rs-dfg">
+                                                    <rect key="frame" x="60" y="2" width="66" height="40"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="40" id="WjA-e6-v8M"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" name="ZapfDingbatsITC" family="Zapf Dingbats" pointSize="23"/>
+                                                    <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="23"/>
                                                     <color key="textColor" red="0.2196078431372549" green="0.48627450980392156" blue="0.99607843137254903" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -1110,7 +1121,7 @@
                                                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="30" id="6Nm-OA-q6J"/>
                                                         <constraint firstAttribute="height" constant="30" id="8No-oE-Ibi"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" name="ZapfDingbatsITC" family="Zapf Dingbats" pointSize="21"/>
+                                                    <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="21"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                     <userDefinedRuntimeAttributes>
@@ -1236,12 +1247,12 @@
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="SaN-k5-a61">
                                                     <rect key="frame" x="2" y="2" width="46" height="46"/>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="7" translatesAutoresizingMaskIntoConstraints="NO" id="eYc-hf-exd">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="5" translatesAutoresizingMaskIntoConstraints="NO" id="eYc-hf-exd">
                                                     <rect key="frame" x="2" y="33" width="46" height="15"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="15" id="JG1-xY-OYl"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" name="ZapfDingbatsITC" family="Zapf Dingbats" pointSize="7"/>
+                                                    <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="6"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -1295,7 +1306,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="s3S-Zo-9TR">
-                                <rect key="frame" x="168" y="536" width="39" height="71"/>
+                                <rect key="frame" x="168" y="537" width="39" height="70"/>
                                 <subviews>
                                     <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="Kal-J5-3ti">
                                         <rect key="frame" x="0.0" y="0.0" width="39" height="37"/>
@@ -1303,9 +1314,9 @@
                                         <color key="currentPageIndicatorTintColor" red="0.14901960784313725" green="0.41568627450980389" blue="0.93333333333333335" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </pageControl>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ljz-gl-szh">
-                                        <rect key="frame" x="0.0" y="37" width="39" height="34"/>
+                                        <rect key="frame" x="0.0" y="37" width="39" height="33"/>
                                         <color key="backgroundColor" red="0.14901960784313725" green="0.44313725490196076" blue="1" alpha="0.50465539383561642" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="17"/>
                                         <state key="normal" title="Skip">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
@@ -1388,33 +1399,33 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="middleTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dDg-6n-0ef">
-                                                    <rect key="frame" x="21" y="2.5" width="56.5" height="40"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Labelg" textAlignment="natural" lineBreakMode="middleTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dDg-6n-0ef">
+                                                    <rect key="frame" x="21" y="2.5" width="66" height="40"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="40" id="tVC-pA-Kzr"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" name="ZapfDingbatsITC" family="Zapf Dingbats" pointSize="23"/>
+                                                    <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="23"/>
                                                     <color key="textColor" red="0.2196078431372549" green="0.48627450980392156" blue="0.99607843137254903" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalCentering" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="0wx-wD-UZb">
-                                                    <rect key="frame" x="285.5" y="7" width="34.5" height="29"/>
+                                                    <rect key="frame" x="287" y="7" width="33" height="29"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Comment" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yZj-U9-A0o">
-                                                            <rect key="frame" x="0.0" y="0.0" width="34.5" height="6"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="33" height="6"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="6" id="m1D-mc-aXr"/>
                                                             </constraints>
-                                                            <fontDescription key="fontDescription" name="ZapfDingbatsITC" family="Zapf Dingbats" pointSize="7"/>
+                                                            <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="7"/>
                                                             <color key="textColor" red="0.90724718569999996" green="0.2997568846" blue="0.23624575140000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="middleTruncation" baselineAdjustment="alignBaselines" minimumFontSize="7" translatesAutoresizingMaskIntoConstraints="NO" id="lLd-Nb-Ey4">
-                                                            <rect key="frame" x="0.0" y="9" width="34.5" height="20"/>
+                                                            <rect key="frame" x="0.0" y="9" width="33" height="20"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="20" id="Idb-by-otu"/>
                                                             </constraints>
-                                                            <fontDescription key="fontDescription" name="ZapfDingbatsITC" family="Zapf Dingbats" pointSize="14"/>
+                                                            <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="14"/>
                                                             <color key="textColor" red="0.2196078431372549" green="0.48627450980392156" blue="0.99607843137254903" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
@@ -1493,14 +1504,14 @@
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="W5I-Uv-Bbf">
-                                        <rect key="frame" x="74" y="334" width="227" height="120"/>
+                                        <rect key="frame" x="77" y="338" width="222" height="120"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Icon-60" translatesAutoresizingMaskIntoConstraints="NO" id="uUY-Xw-6GY">
-                                                <rect key="frame" x="83.5" y="0.0" width="60" height="60"/>
+                                                <rect key="frame" x="81" y="0.0" width="60" height="60"/>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LoginKeeper" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="au3-ib-kHJ">
-                                                <rect key="frame" x="0.0" y="60" width="227" height="60"/>
-                                                <fontDescription key="fontDescription" name="ZapfDingbatsITC" family="Zapf Dingbats" pointSize="40"/>
+                                                <rect key="frame" x="0.0" y="60" width="222" height="60"/>
+                                                <fontDescription key="fontDescription" name="Lato-Semibold" family="Lato" pointSize="40"/>
                                                 <color key="textColor" red="0.21983420849999999" green="0.48451471330000001" blue="0.99449735880000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -1516,8 +1527,8 @@
                                         </constraints>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="meZ-KJ-6Qa">
-                                        <rect key="frame" x="192.5" y="286" width="60" height="28"/>
-                                        <fontDescription key="fontDescription" name="ZapfDingbatsITC" family="Zapf Dingbats" pointSize="16"/>
+                                        <rect key="frame" x="193" y="286" width="59" height="32"/>
+                                        <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="16"/>
                                         <state key="normal" title="Copy All">
                                             <color key="titleColor" red="0.21983420849999999" green="0.48451471330000001" blue="0.99449735880000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1547,31 +1558,31 @@
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="100" id="ymP-Bt-NXo"/>
                                                                 </constraints>
-                                                                <fontDescription key="fontDescription" name="ZapfDingbatsITC" family="Zapf Dingbats" pointSize="16"/>
+                                                                <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="16"/>
                                                                 <color key="textColor" red="0.2196078431372549" green="0.48627450980392156" blue="0.99607843137254903" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Entry name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="EN3-26-xC9">
                                                                 <rect key="frame" x="0.0" y="40" width="100" height="30"/>
-                                                                <fontDescription key="fontDescription" name="ZapfDingbatsITC" family="Zapf Dingbats" pointSize="16"/>
+                                                                <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="16"/>
                                                                 <color key="textColor" red="0.2196078431372549" green="0.48627450980392156" blue="0.99607843137254903" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="owc-0p-pfa">
                                                                 <rect key="frame" x="0.0" y="80" width="100" height="30"/>
-                                                                <fontDescription key="fontDescription" name="ZapfDingbatsITC" family="Zapf Dingbats" pointSize="16"/>
+                                                                <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="16"/>
                                                                 <color key="textColor" red="0.21983420849999999" green="0.48451471330000001" blue="0.99449735880000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="slb-33-AHV">
                                                                 <rect key="frame" x="0.0" y="120" width="100" height="30"/>
-                                                                <fontDescription key="fontDescription" name="ZapfDingbatsITC" family="Zapf Dingbats" pointSize="16"/>
+                                                                <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="16"/>
                                                                 <color key="textColor" red="0.21983420849999999" green="0.48451471330000001" blue="0.99449735880000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Comment" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="3ug-en-Aoa">
                                                                 <rect key="frame" x="0.0" y="160" width="100" height="30"/>
-                                                                <fontDescription key="fontDescription" name="ZapfDingbatsITC" family="Zapf Dingbats" pointSize="16"/>
+                                                                <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="16"/>
                                                                 <color key="textColor" red="0.21983420849999999" green="0.48451471330000001" blue="0.99449735880000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
@@ -1583,10 +1594,10 @@
                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="mya-bb-i7N">
                                                                 <rect key="frame" x="0.0" y="0.0" width="218.5" height="190"/>
                                                                 <subviews>
-                                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="G3E-E7-jUM">
+                                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="g" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="G3E-E7-jUM">
                                                                         <rect key="frame" x="0.0" y="0.0" width="218.5" height="30"/>
                                                                         <color key="textColor" red="0.52972324409470606" green="0.54860450103587721" blue="0.6052482718593909" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                        <fontDescription key="fontDescription" name="ZapfDingbatsITC" family="Zapf Dingbats" pointSize="17"/>
+                                                                        <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="17"/>
                                                                         <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" spellCheckingType="no" returnKeyType="next"/>
                                                                         <connections>
                                                                             <outlet property="delegate" destination="gFM-Ue-sol" id="PFU-B2-FJ7"/>
@@ -1595,7 +1606,7 @@
                                                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="qzY-lV-ISe">
                                                                         <rect key="frame" x="0.0" y="40" width="218.5" height="30"/>
                                                                         <color key="textColor" red="0.52972324409470606" green="0.54860450103587721" blue="0.6052482718593909" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                        <fontDescription key="fontDescription" name="ZapfDingbatsITC" family="Zapf Dingbats" pointSize="17"/>
+                                                                        <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="17"/>
                                                                         <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" spellCheckingType="no" returnKeyType="next"/>
                                                                         <connections>
                                                                             <outlet property="delegate" destination="gFM-Ue-sol" id="K33-Cv-QMb"/>
@@ -1604,7 +1615,7 @@
                                                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="HAt-gr-4L7">
                                                                         <rect key="frame" x="0.0" y="80" width="218.5" height="30"/>
                                                                         <color key="textColor" red="0.52972324409470606" green="0.54860450103587721" blue="0.6052482718593909" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                        <fontDescription key="fontDescription" name="ZapfDingbatsITC" family="Zapf Dingbats" pointSize="17"/>
+                                                                        <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="17"/>
                                                                         <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="next"/>
                                                                         <connections>
                                                                             <outlet property="delegate" destination="gFM-Ue-sol" id="T15-8I-wB7"/>
@@ -1613,7 +1624,7 @@
                                                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="wCW-qc-GmP">
                                                                         <rect key="frame" x="0.0" y="120" width="218.5" height="30"/>
                                                                         <color key="textColor" red="0.52972324409470606" green="0.54860450103587721" blue="0.6052482718593909" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                        <fontDescription key="fontDescription" name="ZapfDingbatsITC" family="Zapf Dingbats" pointSize="17"/>
+                                                                        <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="17"/>
                                                                         <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="next"/>
                                                                         <connections>
                                                                             <outlet property="delegate" destination="gFM-Ue-sol" id="D7z-xM-FbV"/>
@@ -1622,7 +1633,7 @@
                                                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Blt-9E-2tY">
                                                                         <rect key="frame" x="0.0" y="160" width="218.5" height="30"/>
                                                                         <color key="textColor" red="0.52972324409470606" green="0.54860450103587721" blue="0.6052482718593909" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                        <fontDescription key="fontDescription" name="ZapfDingbatsITC" family="Zapf Dingbats" pointSize="17"/>
+                                                                        <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="17"/>
                                                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="no" spellCheckingType="no" returnKeyType="done"/>
                                                                         <connections>
                                                                             <outlet property="delegate" destination="gFM-Ue-sol" id="C2d-30-hgi"/>

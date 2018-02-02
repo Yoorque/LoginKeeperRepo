@@ -13,10 +13,13 @@ class LogoCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var logoImageView: UIImageView! {
         didSet{
             
+            logoImageView.backgroundColor = .white
+            logoImageView.layer.cornerRadius = 15
             logoImageView.layer.shadowColor = UIColor.black.cgColor
             logoImageView.layer.shadowOpacity = 0.5
             logoImageView.layer.shadowOffset = CGSize(width: 0, height: 0)
             logoImageView.layer.shadowRadius = 2
+            
         }
     }
     
