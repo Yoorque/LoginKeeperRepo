@@ -8,14 +8,6 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <customFonts key="customFonts">
-        <array key="Lato-Regular.ttf">
-            <string>Lato-Regular</string>
-        </array>
-        <array key="Lato-Semibold.ttf">
-            <string>Lato-Semibold</string>
-        </array>
-    </customFonts>
     <scenes>
         <!--View Controller-->
         <scene sceneID="EHf-IW-A2E">
@@ -29,41 +21,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="erc-gE-0pF">
-                                <rect key="frame" x="77" y="262" width="222" height="143"/>
-                                <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Icon" translatesAutoresizingMaskIntoConstraints="NO" id="I7S-G4-wcP">
-                                        <rect key="frame" x="81" y="0.0" width="60" height="60"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="60" id="i2t-1p-Mil"/>
-                                            <constraint firstAttribute="width" constant="60" id="zbq-DY-8CR"/>
-                                        </constraints>
-                                    </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LoginKeeper" textAlignment="justified" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mt1-s2-YFJ">
-                                        <rect key="frame" x="0.0" y="68" width="222" height="46"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="46" id="L7e-8J-Lu8"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="Lato-Semibold" family="Lato" pointSize="40"/>
-                                        <color key="textColor" red="0.21983420849999999" green="0.48451471330000001" blue="0.99449735880000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loading..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fqE-R2-QYQ">
-                                        <rect key="frame" x="76" y="122" width="70.5" height="21"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="21" id="OaB-Mk-xU3"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="17"/>
-                                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                            </stackView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Icon-72" translatesAutoresizingMaskIntoConstraints="NO" id="SsY-D9-4AE">
+                                <rect key="frame" x="137" y="283" width="100" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="QfD-4W-OWx"/>
+                                    <constraint firstAttribute="height" constant="100" id="XDF-Te-Nl9"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="erc-gE-0pF" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="98X-vj-hqO"/>
-                            <constraint firstItem="erc-gE-0pF" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="HeW-xe-bCW"/>
+                            <constraint firstItem="SsY-D9-4AE" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="enE-20-p2G"/>
+                            <constraint firstItem="SsY-D9-4AE" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="rN7-LH-Q9S"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -73,6 +42,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Icon" width="57" height="57"/>
+        <image name="Icon-72" width="72" height="72"/>
     </resources>
 </document>

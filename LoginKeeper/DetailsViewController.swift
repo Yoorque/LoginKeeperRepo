@@ -66,7 +66,7 @@ class DetailsViewController: UIViewController, UITextFieldDelegate, UIScrollView
         }
        
         logoImage.image = UIImage(named: "\(entryDetails!.account!.image!)")?.resizedImage(newSize: CGSize(width: 60, height: 60))
-        imageViewForTitle.image = UIImage(named: "\(entryDetails!.account!.image!)")?.resizedImage(newSize: CGSize(width: 40, height: 40))
+        imageViewForTitle.image = UIImage(named: "\(entryDetails!.account!.image!)")?.resizedImage(newSize: CGSize(width: 30, height: 30))
         logoImage.contentMode = .scaleAspectFit
         imageViewForTitle.contentMode = .scaleAspectFit
         navigationItem.titleView = imageViewForTitle

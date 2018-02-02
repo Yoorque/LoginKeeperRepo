@@ -27,9 +27,9 @@ class InfoTableViewController: UITableViewController, BWWalkthroughViewControlle
     override func viewDidLoad() {
         super.viewDidLoad()
         authenticated = UserDefaults.standard.bool(forKey: "authenticated")
-         version = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as! String
-         build = Bundle.main.infoDictionary?["CFBundleVersion"] as! String
-
+        version = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as! String
+        build = Bundle.main.infoDictionary?["CFBundleVersion"] as! String
+        
         versionLabel.text = "\(versionLocalized) \(version!) (\(buildLocalized) \(build!))"
     }
     
@@ -59,9 +59,13 @@ class InfoTableViewController: UITableViewController, BWWalkthroughViewControlle
             self.dismiss(animated: true, completion: nil)
         })
     }
-
+    
     @IBAction func removeAdsButton(_ sender: UIButton) {
-        performSegue(withIdentifier: "removeAdsSegue", sender: self)
+        if authenticated == true {
+            performSegue(withIdentifier: "removeAdsSegue", sender: self)
+        } else {
+            notAuthorizedAlert()
+        }
     }
     
     //MARK: - Tutorial
@@ -104,24 +108,28 @@ class InfoTableViewController: UITableViewController, BWWalkthroughViewControlle
         let clickedCell = tableView.cellForRow(at: indexPath)
         switch clickedCell!.tag {
         case feedbackCell.tag:
-            let alert = UIAlertController(title: "LoginKeeper", message: "Please choose an option for leaving feedback.", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "App Store Review", style: .default, handler: {_ in
-                let appID = "1317604418"
-                let urlStr = "https://itunes.apple.com/us/app/appName/id\(appID)?mt=8&action=write-review"
-                
-                if let url = URL(string: urlStr), UIApplication.shared.canOpenURL(url) {
-                    self.leavingAppAlert(toURL: url, title: "App Store")
-                }
-            }))
-            alert.addAction(UIAlertAction(title: "Email Developer", style: .default, handler: {_ in
-                if MFMailComposeViewController.canSendMail() {
-                    self.sendEmail()
-                } else {
-                    self.noMailFuncAlert()
-                }
-            }))
-            alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
-            present(alert, animated: true, completion: nil)
+            if authenticated == true {
+                let alert = UIAlertController(title: "LoginKeeper", message: "Please choose an option for leaving feedback.", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "App Store Review", style: .default, handler: {_ in
+                    let appID = "1317604418"
+                    let urlStr = "https://itunes.apple.com/us/app/appName/id\(appID)?mt=8&action=write-review"
+                    
+                    if let url = URL(string: urlStr), UIApplication.shared.canOpenURL(url) {
+                        self.leavingAppAlert(toURL: url, title: "App Store")
+                    }
+                }))
+                alert.addAction(UIAlertAction(title: "Email Developer", style: .default, handler: {_ in
+                    if MFMailComposeViewController.canSendMail() {
+                        self.sendEmail()
+                    } else {
+                        self.noMailFuncAlert()
+                    }
+                }))
+                alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+                present(alert, animated: true, completion: nil)
+            } else {
+                notAuthorizedAlert()
+            }
         case devWebsiteCell.tag:
             
             if let url = URL(string: "https://linkedin.com/in/dusan-juranovic") {
@@ -149,6 +157,11 @@ class InfoTableViewController: UITableViewController, BWWalkthroughViewControlle
     }
     
     //MARK: - Alerts
+    func notAuthorizedAlert() {
+        let alert = UIAlertController(title: errorLocalized, message: notAuthorisedLocalized, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: okLocalized, style: .default, handler: nil))
+        present(alert, animated: true, completion: nil)
+    }
     func noMailFuncAlert() {
         let alert = UIAlertController(title: errorLocalized, message: noMailFuncLocalized, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: okLocalized, style: .default, handler: nil))
@@ -157,7 +170,7 @@ class InfoTableViewController: UITableViewController, BWWalkthroughViewControlle
     func leavingAppAlert(toURL url: URL, title: String) {
         let alert = UIAlertController(title: leavingLocalized, message: "\(leavingMessageLocalized) \(title). \(leavingMessageLocalized2)", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: sureAnswerLocalized, style: .default, handler: { _ in
-             UIApplication.shared.open(url, options: [:], completionHandler: nil)
+            UIApplication.shared.open(url, options: [:], completionHandler: nil)
         }))
         alert.addAction(UIAlertAction(title: cancelAnswerLocalized, style: .cancel, handler: nil))
         present(alert, animated: true, completion: nil)

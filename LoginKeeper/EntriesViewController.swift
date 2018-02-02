@@ -22,8 +22,8 @@ class EntriesViewController: UIViewController, UITableViewDataSource, UITableVie
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        logoNavImage.frame.size = CGSize(width: 40, height: 40)
-        logoNavImage.image = UIImage(named: account!.image!)?.resizedImage(newSize: CGSize(width: 40, height: 40))
+        logoNavImage.frame.size = CGSize(width: 30, height: 30)
+        logoNavImage.image = UIImage(named: account!.image!)?.resizedImage(newSize: CGSize(width: 30, height: 30))
         navigationItem.titleView = logoNavImage
         logoNavImage.addShadow()
         
