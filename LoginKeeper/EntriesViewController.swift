@@ -21,7 +21,7 @@ class EntriesViewController: UIViewController, UITableViewDataSource, UITableVie
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        view.addGradient()
         logoNavImage.frame.size = CGSize(width: 30, height: 30)
         logoNavImage.image = UIImage(named: account!.image!)?.resizedImage(newSize: CGSize(width: 30, height: 30))
         navigationItem.titleView = logoNavImage
@@ -40,6 +40,14 @@ class EntriesViewController: UIViewController, UITableViewDataSource, UITableVie
             appDelegate.removeBannerView()
         }
         fetchFromCoreData()
+    }
+    
+    override func viewWillLayoutSubviews() {
+        for v in view.layer.sublayers! {
+            if v .isKind(of: CAGradientLayer.self) {
+                v.frame = view.bounds
+            }
+        }
     }
     
     func updateTableViewBottomInset() {
@@ -150,7 +158,9 @@ class EntriesViewController: UIViewController, UITableViewDataSource, UITableVie
         cell.entryComment.text = entries![indexPath.row].comment
         cell.favoriteImageView.image = entries?[indexPath.row].favorited == true ? UIImage(named: "star") : UIImage(named: "emptyStar")
         if indexPath.row % 2 == 0 {
-            cell.backgroundColor = UIColor(red: 211/255, green: 220/255, blue: 251/255, alpha: 1)
+            cell.backgroundColor? = UIColor.white.withAlphaComponent(0.3)
+        } else {
+            cell.backgroundColor? = UIColor.white.withAlphaComponent(0.1)
         }
         return cell
     }
@@ -172,28 +182,10 @@ class EntriesViewController: UIViewController, UITableViewDataSource, UITableVie
         
         return [delete]
     }
-}
-
-extension UIImage {
-    func resizedImage(newSize: CGSize) -> UIImage {
-        guard self.size != newSize else { return self }
-        
-        UIGraphicsBeginImageContextWithOptions(newSize, false, 0.0);
-        self.draw(in: CGRect(x: 0, y: 0, width: newSize.width, height: newSize.height))
-        let newImage: UIImage = UIGraphicsGetImageFromCurrentImageContext()!
-        UIGraphicsEndImageContext()
-        return newImage
+    
+    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        let footer = UIView()
+        return footer
     }
 }
 
-extension UIView {
-    func addShadow() {
-        self.contentMode = .scaleAspectFit
-        self.backgroundColor = .white
-        self.layer.shadowColor = UIColor.black.cgColor
-        self.layer.shadowRadius = 2
-        self.layer.shadowOffset = CGSize(width: 0, height: 0)
-        self.layer.shadowOpacity = 0.5
-        self.layer.cornerRadius = self.frame.size.width / 4
-    }
-}

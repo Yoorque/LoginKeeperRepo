@@ -110,5 +110,5 @@ let localizedNotificationStrings = [localNotificationLocalized1,localNotificatio
 let subjectLocalized = NSLocalizedString("Feedback from", comment: "subject")
 let deviceLocalized = NSLocalizedString("Device:", comment: "device")
 let appVersionLocalized = NSLocalizedString("App Version:", comment: "app version")
-let enterFeedbackLocalized = NSLocalizedString("Please enter your feedback below this line \n--------------------------------------------------", comment: "feeback")
+let enterFeedbackLocalized = NSLocalizedString("Please enter your feedback below this line \n--------------------------------------------------", comment: "feedback")
 

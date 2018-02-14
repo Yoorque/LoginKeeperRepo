@@ -2,13 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>UIAppFonts</key>
-	<array>
-		<string>Lato-Heavy.ttf</string>
-		<string>Lato-Semibold.ttf</string>
-		<string>Lato-Black.ttf</string>
-		<string>Lato-Bold.ttf</string>
-	</array>
 	<key>CFBundleDisplayName</key>
 	<string>LoginKeeper</string>
 	<key>CFBundleExecutable</key>
@@ -22,9 +15,9 @@
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.7</string>
+	<string>2.0</string>
 	<key>CFBundleVersion</key>
-	<string>1</string>
+	<string>2</string>
 	<key>ITSAppUsesNonExemptEncryption</key>
 	<false/>
 	<key>LSRequiresIPhoneOS</key>
@@ -33,6 +26,13 @@
 	<string>Identify yourself</string>
 	<key>NSLocationUsageDescription</key>
 	<string>Location is not used at any time</string>
+	<key>UIAppFonts</key>
+	<array>
+		<string>Lato-Heavy.ttf</string>
+		<string>Lato-Semibold.ttf</string>
+		<string>Lato-Black.ttf</string>
+		<string>Lato-Bold.ttf</string>
+	</array>
 	<key>UIApplicationExitsOnSuspend</key>
 	<false/>
 	<key>UILaunchStoryboardName</key>

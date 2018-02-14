@@ -12,8 +12,7 @@ class LogoCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var currentLogoLabel: UILabel!
     @IBOutlet weak var logoImageView: UIImageView! {
         didSet{
-            
-            logoImageView.backgroundColor = .white
+            logoImageView.backgroundColor = UIColor.white.withAlphaComponent(0.1)
             logoImageView.layer.cornerRadius = 15
             logoImageView.layer.shadowColor = UIColor.black.cgColor
             logoImageView.layer.shadowOpacity = 0.5

@@ -15,14 +15,23 @@ class AboutViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.addGradient()
         titleTextLabel.frame.size.height = 25
         titleTextLabel.textAlignment = .center
-        titleTextLabel.textColor = UIColor(red: 56/255, green: 124/255, blue: 254/255, alpha: 1)
+        titleTextLabel.textColor = UIColor.white
         titleTextLabel.font = UIFont(name: "Lato-Black", size: 17)
         titleTextLabel.text = aboutLocalized
         
         navigationItem.titleView = titleTextLabel
         aboutTextView.text = aboutTextLocalized
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewWillLayoutSubviews() {
+        for v in view.layer.sublayers! {
+            if v .isKind(of: CAGradientLayer.self) {
+                v.frame = view.bounds
+            }
+        }
     }
 }

@@ -10,6 +10,7 @@ import UIKit
 import StoreKit
 
 class RemoveAdsViewController: UIViewController, SKProductsRequestDelegate, SKPaymentTransactionObserver {
+    @IBOutlet weak var purchasedConstraint: NSLayoutConstraint!
     
     @IBOutlet weak var purchasePremiumButton: UIButton!
     @IBOutlet weak var unlockText: UILabel!
@@ -27,7 +28,7 @@ class RemoveAdsViewController: UIViewController, SKProductsRequestDelegate, SKPa
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.view.addGradient()
         if premiumPurchased {
             purchasedView()
         } else {
@@ -45,12 +46,20 @@ class RemoveAdsViewController: UIViewController, SKProductsRequestDelegate, SKPa
         SKPaymentQueue.default().remove(self)
     }
     
+    override func viewWillLayoutSubviews() {
+        for v in view.layer.sublayers! {
+            if v .isKind(of: CAGradientLayer.self) {
+                v.frame = view.bounds
+            }
+        }
+    }
+    
     func purchasedView() {
         unlockText.text = removedAdsLocalized
         purchasedText.text = premiumVersionPurchasedLocalized
         purchasedText.textColor = UIColor(red: 44/255, green: 152/255, blue: 41/255, alpha: 1)
         purchasedText.font = UIFont(name: "Lato-Bold", size: 22)
-        NSLayoutConstraint(item: purchasedText, attribute: .top, relatedBy: .equal, toItem: versionText, attribute: .bottom, multiplier: 1, constant: 8).isActive = true
+        purchasedConstraint.constant = 30
         versionText.text = premiumVersionLocalized
         versionText.textColor = UIColor(red: 44/255, green: 152/255, blue: 41/255, alpha: 1)
         purchasePremiumButton.isHidden = true
@@ -58,13 +67,13 @@ class RemoveAdsViewController: UIViewController, SKProductsRequestDelegate, SKPa
     }
     
     func notPurchasedView() {
-        priceText.isHidden = false
         unlockText.text = unlockPremiumTextLocalized
         versionText.text = basicVersionLocalized
         versionText.textColor = UIColor(red: 216/255, green: 67/255, blue: 35/255, alpha: 1)
         purchasedText.text = premiumVersionLockedLocalized
         purchasedText.textColor = UIColor(red: 216/255, green: 67/255, blue: 35/255, alpha: 1)
         purchasePremiumButton.isHidden = false
+        priceText.isHidden = false
     }
     
     @IBAction func purchasePremium(_ sender: UIButton) {

@@ -23,26 +23,41 @@ class DetailsViewController: UIViewController, UITextFieldDelegate, UIScrollView
     @IBOutlet var accountName: UITextField! {
         didSet {
             accountName.textContentType = UITextContentType("")
+            accountName.layer.cornerRadius = 15
+            accountName.addLine()
+            accountName.layoutSubviews()
         }
     }
     @IBOutlet var entryName: UITextField! {
         didSet {
             entryName.textContentType = UITextContentType("")
+            entryName.layer.cornerRadius = 15
+            entryName.addLine()
+            accountName.layoutSubviews()
         }
     }
     @IBOutlet var username: UITextField! {
         didSet {
             username.textContentType = UITextContentType("")
+            username.layer.cornerRadius = 15
+            username.addLine()
+            accountName.layoutSubviews()
         }
     }
     @IBOutlet var password: UITextField! {
         didSet {
             password.textContentType = UITextContentType("")
+            password.layer.cornerRadius = 15
+            password.addLine()
+            accountName.layoutSubviews()
         }
     }
     @IBOutlet var comment: UITextField! {
         didSet {
             comment.textContentType = UITextContentType("")
+            comment.layer.cornerRadius = 15
+            comment.addLine()
+            accountName.layoutSubviews()
         }
     }
     let titleTextLabel = UILabel()
@@ -59,6 +74,7 @@ class DetailsViewController: UIViewController, UITextFieldDelegate, UIScrollView
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        view.addGradient()
         if !UserDefaults.standard.bool(forKey: "premiumPurchased") {
             appDelegate.loadAd(forViewController: self)
         } else {
@@ -105,48 +121,38 @@ class DetailsViewController: UIViewController, UITextFieldDelegate, UIScrollView
     func textEditEnabled() {
         print("Enabled")
         accountName.isEnabled = true
-        accountName.textColor = UIColor(displayP3Red: 56/255, green: 124/255, blue: 254/255, alpha: 1)
-        accountName.setNeedsLayout()
+        accountName.textColor = .white
         
         entryName.isEnabled = true
-        entryName.textColor = UIColor(displayP3Red: 56/255, green: 124/255, blue: 254/255, alpha: 1)
-        entryName.setNeedsLayout()
+        entryName.textColor = .white
         
         username.isEnabled = true
-        username.textColor = UIColor(displayP3Red: 56/255, green: 124/255, blue: 254/255, alpha: 1)
-        username.setNeedsLayout()
+        username.textColor = .white
         
         password.isEnabled = true
-        password.textColor = UIColor(displayP3Red: 56/255, green: 124/255, blue: 254/255, alpha: 1)
-        password.setNeedsLayout()
+        password.textColor = .white
         
         comment.isEnabled = true
-        comment.textColor = UIColor(displayP3Red: 56/255, green: 124/255, blue: 254/255, alpha: 1)
-        comment.setNeedsLayout()
+        comment.textColor = .white
     }
     
     func textEditDisabled() {
         print("Disabled")
         
         accountName.isEnabled = false
-        accountName.textColor = UIColor(displayP3Red: 135/255, green: 140/255, blue: 154/255, alpha: 1)
-        accountName.setNeedsLayout()
+        accountName.textColor = .lightText
         
         entryName.isEnabled = false
-        entryName.textColor = UIColor(displayP3Red: 135/255, green: 140/255, blue: 154/255, alpha: 1)
-        entryName.setNeedsLayout()
+        entryName.textColor = .lightText
         
         username.isEnabled = false
-        username.textColor = UIColor(displayP3Red: 135/255, green: 140/255, blue: 154/255, alpha: 1)
-        username.setNeedsLayout()
+        username.textColor = .lightText
         
         password.isEnabled = false
-        password.textColor = UIColor(displayP3Red: 135/255, green: 140/255, blue: 154/255, alpha: 1)
-        password.setNeedsLayout()
+        password.textColor = .lightText
         
         comment.isEnabled = false
-        comment.textColor = UIColor(displayP3Red: 135/255, green: 140/255, blue: 154/255, alpha: 1)
-        comment.setNeedsLayout()
+        comment.textColor = .lightText
     }
     @IBAction func editButton(_ sender: Any) {
         let button = sender as! UIBarButtonItem
@@ -167,15 +173,16 @@ class DetailsViewController: UIViewController, UITextFieldDelegate, UIScrollView
     }
     func animateClipboardTextFor(textField: UITextField, with text: String) {
         DispatchQueue.main.async {
+            
             self.navigationController?.navigationBar.isUserInteractionEnabled = false
             let textColor = textField.textColor
             UIView.animate(withDuration: 0.5, animations: {
-                textField.backgroundColor = UIColor(displayP3Red: 56/255, green: 124/255, blue: 254/255, alpha: 1)
-                textField.textColor = UIColor(displayP3Red: 250/255, green: 250/255, blue: 250/255, alpha: 1)
+                textField.backgroundColor = UIColor(red: 190/255, green: 60/255, blue: 255/255, alpha: 1)
+                textField.textColor = UIColor(red: 250/255, green: 250/255, blue: 250/255, alpha: 1)
                 textField.text = NSLocalizedString("COPIED", comment: "copy notification")
             }, completion: {_ in
                 UIView.animate(withDuration: 0.5, animations: {
-                    textField.backgroundColor = UIColor(displayP3Red: 250/255, green: 250/255, blue: 250/255, alpha: 1)
+                    textField.backgroundColor = .clear
                     textField.textColor = textColor
                     textField.text = text
                     self.navigationController?.navigationBar.isUserInteractionEnabled = true
@@ -352,5 +359,15 @@ class DetailsViewController: UIViewController, UITextFieldDelegate, UIScrollView
             }
         }
     }
+    override func viewWillLayoutSubviews() {
+        for v in view.layer.sublayers! {
+            if v .isKind(of: CAGradientLayer.self) {
+                v.frame = view.bounds
+            }
+        }
+    }
 }
+
+
+
 

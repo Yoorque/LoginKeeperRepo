@@ -44,6 +44,16 @@
 		111EB6F21F0E431E00B12AC8 /* Account+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111EB6EE1F0E431E00B12AC8 /* Account+CoreDataProperties.swift */; };
 		111EB6F31F0E431E00B12AC8 /* Entry+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111EB6EF1F0E431E00B12AC8 /* Entry+CoreDataClass.swift */; };
 		111EB6F41F0E431E00B12AC8 /* Entry+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111EB6F01F0E431E00B12AC8 /* Entry+CoreDataProperties.swift */; };
+		112B903020346BFB0091F661 /* Screen1.png in Resources */ = {isa = PBXBuildFile; fileRef = 112B903220346BFB0091F661 /* Screen1.png */; };
+		112B904020346CCB0091F661 /* Screen2.png in Resources */ = {isa = PBXBuildFile; fileRef = 112B904220346CCB0091F661 /* Screen2.png */; };
+		112B905020346D410091F661 /* Screen3.png in Resources */ = {isa = PBXBuildFile; fileRef = 112B905220346D410091F661 /* Screen3.png */; };
+		112B906020346D6B0091F661 /* Screen4.png in Resources */ = {isa = PBXBuildFile; fileRef = 112B906220346D6B0091F661 /* Screen4.png */; };
+		112B907020346D8C0091F661 /* Screen5.png in Resources */ = {isa = PBXBuildFile; fileRef = 112B907220346D8C0091F661 /* Screen5.png */; };
+		112B908020346DA80091F661 /* Screen6.png in Resources */ = {isa = PBXBuildFile; fileRef = 112B908220346DA80091F661 /* Screen6.png */; };
+		115D16C9202FC5050072B5DA /* UIView+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 115D16C8202FC5050072B5DA /* UIView+extensions.swift */; };
+		115D16CB202FC54A0072B5DA /* UITextField+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 115D16CA202FC54A0072B5DA /* UITextField+extensions.swift */; };
+		115D16CD202FC5930072B5DA /* UIImage+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 115D16CC202FC5930072B5DA /* UIImage+extensions.swift */; };
+		115D16CF202FC6370072B5DA /* UISearchBar+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 115D16CE202FC6370072B5DA /* UISearchBar+extensions.swift */; };
 		1161FF0920082C1800E747F4 /* notification.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 1161FF0820082C1800E747F4 /* notification.aiff */; };
 		11779E431F4A25E8000F0D7D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 11779E421F4A25E8000F0D7D /* GoogleService-Info.plist */; };
 		117E30502007B827006C9DD5 /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 117E304F2007B827006C9DD5 /* UserNotifications.framework */; };
@@ -141,7 +151,95 @@
 		111EB6EE1F0E431E00B12AC8 /* Account+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Account+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		111EB6EF1F0E431E00B12AC8 /* Entry+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Entry+CoreDataClass.swift"; sourceTree = "<group>"; };
 		111EB6F01F0E431E00B12AC8 /* Entry+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Entry+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		112B903120346BFB0091F661 /* Base */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Base; path = Base.lproj/Screen1.png; sourceTree = "<group>"; };
+		112B903320346BFE0091F661 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "zh-Hant"; path = "zh-Hant.lproj/Screen1.png"; sourceTree = "<group>"; };
+		112B903420346C000091F661 /* es */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = es; path = es.lproj/Screen1.png; sourceTree = "<group>"; };
+		112B903520346C020091F661 /* ja */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ja; path = ja.lproj/Screen1.png; sourceTree = "<group>"; };
+		112B903620346C030091F661 /* fr */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = fr; path = fr.lproj/Screen1.png; sourceTree = "<group>"; };
+		112B903720346C050091F661 /* de */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = de; path = de.lproj/Screen1.png; sourceTree = "<group>"; };
+		112B903820346C070091F661 /* hi */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = hi; path = hi.lproj/Screen1.png; sourceTree = "<group>"; };
+		112B903920346C090091F661 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "pt-BR"; path = "pt-BR.lproj/Screen1.png"; sourceTree = "<group>"; };
+		112B903A20346C0A0091F661 /* ko */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ko; path = ko.lproj/Screen1.png; sourceTree = "<group>"; };
+		112B903B20346C0C0091F661 /* ru */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ru; path = ru.lproj/Screen1.png; sourceTree = "<group>"; };
+		112B903C20346C0D0091F661 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "zh-Hans"; path = "zh-Hans.lproj/Screen1.png"; sourceTree = "<group>"; };
+		112B903D20346C0F0091F661 /* sr-RS */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "sr-RS"; path = "sr-RS.lproj/Screen1.png"; sourceTree = "<group>"; };
+		112B903E20346C100091F661 /* sr-Latn */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "sr-Latn"; path = "sr-Latn.lproj/Screen1.png"; sourceTree = "<group>"; };
+		112B903F20346C120091F661 /* pt-PT */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "pt-PT"; path = "pt-PT.lproj/Screen1.png"; sourceTree = "<group>"; };
+		112B904120346CCB0091F661 /* Base */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Base; path = Base.lproj/Screen2.png; sourceTree = "<group>"; };
+		112B904320346CD10091F661 /* pt-PT */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "pt-PT"; path = "pt-PT.lproj/Screen2.png"; sourceTree = "<group>"; };
+		112B904420346CD30091F661 /* sr-Latn */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "sr-Latn"; path = "sr-Latn.lproj/Screen2.png"; sourceTree = "<group>"; };
+		112B904520346CD40091F661 /* sr-RS */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "sr-RS"; path = "sr-RS.lproj/Screen2.png"; sourceTree = "<group>"; };
+		112B904620346CD50091F661 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "zh-Hans"; path = "zh-Hans.lproj/Screen2.png"; sourceTree = "<group>"; };
+		112B904720346CD60091F661 /* ko */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ko; path = ko.lproj/Screen2.png; sourceTree = "<group>"; };
+		112B904820346CDB0091F661 /* ru */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ru; path = ru.lproj/Screen2.png; sourceTree = "<group>"; };
+		112B904920346CDC0091F661 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "pt-BR"; path = "pt-BR.lproj/Screen2.png"; sourceTree = "<group>"; };
+		112B904A20346CDD0091F661 /* hi */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = hi; path = hi.lproj/Screen2.png; sourceTree = "<group>"; };
+		112B904B20346CDF0091F661 /* de */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = de; path = de.lproj/Screen2.png; sourceTree = "<group>"; };
+		112B904C20346CE00091F661 /* fr */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = fr; path = fr.lproj/Screen2.png; sourceTree = "<group>"; };
+		112B904D20346CE10091F661 /* ja */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ja; path = ja.lproj/Screen2.png; sourceTree = "<group>"; };
+		112B904E20346CE20091F661 /* es */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = es; path = es.lproj/Screen2.png; sourceTree = "<group>"; };
+		112B904F20346CE30091F661 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "zh-Hant"; path = "zh-Hant.lproj/Screen2.png"; sourceTree = "<group>"; };
+		112B905120346D410091F661 /* Base */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Base; path = Base.lproj/Screen3.png; sourceTree = "<group>"; };
+		112B905320346D4C0091F661 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "zh-Hant"; path = "zh-Hant.lproj/Screen3.png"; sourceTree = "<group>"; };
+		112B905420346D4F0091F661 /* es */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = es; path = es.lproj/Screen3.png; sourceTree = "<group>"; };
+		112B905520346D530091F661 /* ja */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ja; path = ja.lproj/Screen3.png; sourceTree = "<group>"; };
+		112B905620346D540091F661 /* fr */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = fr; path = fr.lproj/Screen3.png; sourceTree = "<group>"; };
+		112B905720346D580091F661 /* de */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = de; path = de.lproj/Screen3.png; sourceTree = "<group>"; };
+		112B905820346D5A0091F661 /* hi */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = hi; path = hi.lproj/Screen3.png; sourceTree = "<group>"; };
+		112B905920346D5B0091F661 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "pt-BR"; path = "pt-BR.lproj/Screen3.png"; sourceTree = "<group>"; };
+		112B905A20346D5C0091F661 /* ko */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ko; path = ko.lproj/Screen3.png; sourceTree = "<group>"; };
+		112B905B20346D5D0091F661 /* ru */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ru; path = ru.lproj/Screen3.png; sourceTree = "<group>"; };
+		112B905C20346D5E0091F661 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "zh-Hans"; path = "zh-Hans.lproj/Screen3.png"; sourceTree = "<group>"; };
+		112B905D20346D610091F661 /* sr-RS */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "sr-RS"; path = "sr-RS.lproj/Screen3.png"; sourceTree = "<group>"; };
+		112B905E20346D630091F661 /* sr-Latn */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "sr-Latn"; path = "sr-Latn.lproj/Screen3.png"; sourceTree = "<group>"; };
+		112B905F20346D640091F661 /* pt-PT */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "pt-PT"; path = "pt-PT.lproj/Screen3.png"; sourceTree = "<group>"; };
+		112B906120346D6B0091F661 /* Base */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Base; path = Base.lproj/Screen4.png; sourceTree = "<group>"; };
+		112B906320346D6E0091F661 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "zh-Hant"; path = "zh-Hant.lproj/Screen4.png"; sourceTree = "<group>"; };
+		112B906420346D6F0091F661 /* es */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = es; path = es.lproj/Screen4.png; sourceTree = "<group>"; };
+		112B906520346D710091F661 /* ja */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ja; path = ja.lproj/Screen4.png; sourceTree = "<group>"; };
+		112B906620346D720091F661 /* fr */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = fr; path = fr.lproj/Screen4.png; sourceTree = "<group>"; };
+		112B906720346D730091F661 /* de */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = de; path = de.lproj/Screen4.png; sourceTree = "<group>"; };
+		112B906820346D750091F661 /* hi */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = hi; path = hi.lproj/Screen4.png; sourceTree = "<group>"; };
+		112B906920346D770091F661 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "pt-BR"; path = "pt-BR.lproj/Screen4.png"; sourceTree = "<group>"; };
+		112B906A20346D790091F661 /* ko */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ko; path = ko.lproj/Screen4.png; sourceTree = "<group>"; };
+		112B906B20346D7A0091F661 /* ru */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ru; path = ru.lproj/Screen4.png; sourceTree = "<group>"; };
+		112B906C20346D7B0091F661 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "zh-Hans"; path = "zh-Hans.lproj/Screen4.png"; sourceTree = "<group>"; };
+		112B906D20346D840091F661 /* sr-RS */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "sr-RS"; path = "sr-RS.lproj/Screen4.png"; sourceTree = "<group>"; };
+		112B906E20346D860091F661 /* sr-Latn */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "sr-Latn"; path = "sr-Latn.lproj/Screen4.png"; sourceTree = "<group>"; };
+		112B906F20346D870091F661 /* pt-PT */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "pt-PT"; path = "pt-PT.lproj/Screen4.png"; sourceTree = "<group>"; };
+		112B907120346D8C0091F661 /* Base */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Base; path = Base.lproj/Screen5.png; sourceTree = "<group>"; };
+		112B907320346D920091F661 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "zh-Hant"; path = "zh-Hant.lproj/Screen5.png"; sourceTree = "<group>"; };
+		112B907420346D930091F661 /* es */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = es; path = es.lproj/Screen5.png; sourceTree = "<group>"; };
+		112B907520346D950091F661 /* ja */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ja; path = ja.lproj/Screen5.png; sourceTree = "<group>"; };
+		112B907620346D960091F661 /* fr */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = fr; path = fr.lproj/Screen5.png; sourceTree = "<group>"; };
+		112B907720346D970091F661 /* de */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = de; path = de.lproj/Screen5.png; sourceTree = "<group>"; };
+		112B907820346D980091F661 /* hi */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = hi; path = hi.lproj/Screen5.png; sourceTree = "<group>"; };
+		112B907920346D9B0091F661 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "pt-BR"; path = "pt-BR.lproj/Screen5.png"; sourceTree = "<group>"; };
+		112B907A20346D9C0091F661 /* ko */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ko; path = ko.lproj/Screen5.png; sourceTree = "<group>"; };
+		112B907B20346D9E0091F661 /* ru */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ru; path = ru.lproj/Screen5.png; sourceTree = "<group>"; };
+		112B907C20346D9F0091F661 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "zh-Hans"; path = "zh-Hans.lproj/Screen5.png"; sourceTree = "<group>"; };
+		112B907D20346DA10091F661 /* sr-RS */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "sr-RS"; path = "sr-RS.lproj/Screen5.png"; sourceTree = "<group>"; };
+		112B907E20346DA20091F661 /* pt-PT */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "pt-PT"; path = "pt-PT.lproj/Screen5.png"; sourceTree = "<group>"; };
+		112B907F20346DA40091F661 /* sr-Latn */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "sr-Latn"; path = "sr-Latn.lproj/Screen5.png"; sourceTree = "<group>"; };
+		112B908120346DA80091F661 /* Base */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Base; path = Base.lproj/Screen6.png; sourceTree = "<group>"; };
+		112B908320346DAC0091F661 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "zh-Hant"; path = "zh-Hant.lproj/Screen6.png"; sourceTree = "<group>"; };
+		112B908420346DAE0091F661 /* es */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = es; path = es.lproj/Screen6.png; sourceTree = "<group>"; };
+		112B908520346DB00091F661 /* ja */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ja; path = ja.lproj/Screen6.png; sourceTree = "<group>"; };
+		112B908620346DB10091F661 /* fr */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = fr; path = fr.lproj/Screen6.png; sourceTree = "<group>"; };
+		112B908720346DB20091F661 /* de */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = de; path = de.lproj/Screen6.png; sourceTree = "<group>"; };
+		112B908820346DB30091F661 /* hi */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = hi; path = hi.lproj/Screen6.png; sourceTree = "<group>"; };
+		112B908920346DB60091F661 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "pt-BR"; path = "pt-BR.lproj/Screen6.png"; sourceTree = "<group>"; };
+		112B908A20346DB70091F661 /* ko */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ko; path = ko.lproj/Screen6.png; sourceTree = "<group>"; };
+		112B908B20346DB80091F661 /* ru */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ru; path = ru.lproj/Screen6.png; sourceTree = "<group>"; };
+		112B908C20346DBA0091F661 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "zh-Hans"; path = "zh-Hans.lproj/Screen6.png"; sourceTree = "<group>"; };
+		112B908D20346DBE0091F661 /* sr-RS */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "sr-RS"; path = "sr-RS.lproj/Screen6.png"; sourceTree = "<group>"; };
+		112B908E20346DC00091F661 /* pt-PT */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "pt-PT"; path = "pt-PT.lproj/Screen6.png"; sourceTree = "<group>"; };
+		112B908F20346DC10091F661 /* sr-Latn */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "sr-Latn"; path = "sr-Latn.lproj/Screen6.png"; sourceTree = "<group>"; };
 		115539141FF84CB500709B4B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		115D16C8202FC5050072B5DA /* UIView+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+extensions.swift"; sourceTree = "<group>"; };
+		115D16CA202FC54A0072B5DA /* UITextField+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+extensions.swift"; sourceTree = "<group>"; };
+		115D16CC202FC5930072B5DA /* UIImage+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+extensions.swift"; sourceTree = "<group>"; };
+		115D16CE202FC6370072B5DA /* UISearchBar+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UISearchBar+extensions.swift"; sourceTree = "<group>"; };
 		1161FF0820082C1800E747F4 /* notification.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = notification.aiff; sourceTree = "<group>"; };
 		11779E421F4A25E8000F0D7D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		117E304E2007B6CF006C9DD5 /* LoginKeeper.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = LoginKeeper.entitlements; sourceTree = "<group>"; };
@@ -280,6 +378,31 @@
 			name = CustomCells;
 			sourceTree = "<group>";
 		};
+		112B8FF92034685A0091F661 /* TutorialImages */ = {
+			isa = PBXGroup;
+			children = (
+				112B903220346BFB0091F661 /* Screen1.png */,
+				112B904220346CCB0091F661 /* Screen2.png */,
+				112B905220346D410091F661 /* Screen3.png */,
+				112B906220346D6B0091F661 /* Screen4.png */,
+				112B907220346D8C0091F661 /* Screen5.png */,
+				112B908220346DA80091F661 /* Screen6.png */,
+			);
+			name = TutorialImages;
+			path = "../Graphics/TutorialImages/iPhone 5.5'/English";
+			sourceTree = "<group>";
+		};
+		115D16C7202FC3C50072B5DA /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				115D16C8202FC5050072B5DA /* UIView+extensions.swift */,
+				115D16CA202FC54A0072B5DA /* UITextField+extensions.swift */,
+				115D16CC202FC5930072B5DA /* UIImage+extensions.swift */,
+				115D16CE202FC6370072B5DA /* UISearchBar+extensions.swift */,
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
 		1161FF022008257D00E747F4 /* Sounds */ = {
 			isa = PBXGroup;
 			children = (
@@ -300,6 +423,7 @@
 		11C6DE6B200E1A97006D3925 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				112B8FF92034685A0091F661 /* TutorialImages */,
 				119356521FD9AA8B00E2D211 /* Walkthrough */,
 				111EB6D01F0E2DDD00B12AC8 /* Main.storyboard */,
 				11A4072A1FEE919A00FDAFD9 /* BlurBackgroundView.swift */,
@@ -312,6 +436,7 @@
 		11C6DE6C200E1ACD006D3925 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				115D16C7202FC3C50072B5DA /* Extensions */,
 				1111F1151FE9A91500663E1E /* Localizable.strings */,
 				111EB6F51F0E432300B12AC8 /* CoreDataModel */,
 				1111F1221FE9B7F400663E1E /* LocalizationStrings.swift */,
@@ -453,7 +578,9 @@
 				1101626320240629001C0EBC /* Lato-LightItalic.ttf in Resources */,
 				1101627220240629001C0EBC /* Lato-Medium.ttf in Resources */,
 				1101626D20240629001C0EBC /* Lato-Semibold.ttf in Resources */,
+				112B905020346D410091F661 /* Screen3.png in Resources */,
 				1111F1131FE9A91500663E1E /* Localizable.strings in Resources */,
+				112B904020346CCB0091F661 /* Screen2.png in Resources */,
 				1101626520240629001C0EBC /* SIL Open Font License.txt in Resources */,
 				1101626820240629001C0EBC /* Lato-SemiboldItalic.ttf in Resources */,
 				1161FF0920082C1800E747F4 /* notification.aiff in Resources */,
@@ -462,15 +589,19 @@
 				1101626620240629001C0EBC /* Lato-Bold.ttf in Resources */,
 				1101626420240629001C0EBC /* Lato-Thin.ttf in Resources */,
 				1111F1261FE9D07F00663E1E /* InfoPlist.strings in Resources */,
+				112B906020346D6B0091F661 /* Screen4.png in Resources */,
 				111EB6DA1F0E2DDD00B12AC8 /* LaunchScreen.storyboard in Resources */,
 				1101627120240629001C0EBC /* Lato-Light.ttf in Resources */,
 				11779E431F4A25E8000F0D7D /* GoogleService-Info.plist in Resources */,
 				11A0A9A91FE5DA0800BF38FF /* Assets.xcassets in Resources */,
+				112B907020346D8C0091F661 /* Screen5.png in Resources */,
 				1101627020240629001C0EBC /* Lato-BoldItalic.ttf in Resources */,
 				1101626B20240629001C0EBC /* Lato-Hairline.ttf in Resources */,
 				1101626220240629001C0EBC /* Lato-Italic.ttf in Resources */,
 				1101626E20240629001C0EBC /* Lato-MediumItalic.ttf in Resources */,
 				111EB6D21F0E2DDD00B12AC8 /* Main.storyboard in Resources */,
+				112B908020346DA80091F661 /* Screen6.png in Resources */,
+				112B903020346BFB0091F661 /* Screen1.png in Resources */,
 				1101626A20240629001C0EBC /* Lato-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -545,15 +676,19 @@
 				11C6DE68200E101B006D3925 /* NotificationManager.swift in Sources */,
 				111EB6EC1F0E3EA500B12AC8 /* DetailsViewController.swift in Sources */,
 				111EB6F41F0E431E00B12AC8 /* Entry+CoreDataProperties.swift in Sources */,
+				115D16C9202FC5050072B5DA /* UIView+extensions.swift in Sources */,
 				11E850F91F18DE5900F1B5C7 /* InfoTableViewController.swift in Sources */,
 				111EB6E21F0E312500B12AC8 /* AccountsCell.swift in Sources */,
+				115D16CD202FC5930072B5DA /* UIImage+extensions.swift in Sources */,
 				111EB6E41F0E33DC00B12AC8 /* AddNewAccountViewController.swift in Sources */,
 				11A0A9B11FE5FA0200BF38FF /* LogoCollectionViewCell.swift in Sources */,
+				115D16CF202FC6370072B5DA /* UISearchBar+extensions.swift in Sources */,
 				11A38B6F1FD8547000A06DF5 /* BWWalkthroughPageViewController.swift in Sources */,
 				111EB6CD1F0E2DDD00B12AC8 /* AppDelegate.swift in Sources */,
 				111EB6D51F0E2DDD00B12AC8 /* LoginKeeper.xcdatamodeld in Sources */,
 				11A38B6E1FD8547000A06DF5 /* BWWalkthroughViewController.swift in Sources */,
 				111EB6EA1F0E3C2D00B12AC8 /* AddNewEntryViewController.swift in Sources */,
+				115D16CB202FC54A0072B5DA /* UITextField+extensions.swift in Sources */,
 				11A0A9AF1FE5F76500BF38FF /* LogosViewController.swift in Sources */,
 				111EB6F31F0E431E00B12AC8 /* Entry+CoreDataClass.swift in Sources */,
 				11C6DE7F2015F832006D3925 /* Reachability.swift in Sources */,
@@ -634,6 +769,138 @@
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
+		};
+		112B903220346BFB0091F661 /* Screen1.png */ = {
+			isa = PBXVariantGroup;
+			children = (
+				112B903120346BFB0091F661 /* Base */,
+				112B903320346BFE0091F661 /* zh-Hant */,
+				112B903420346C000091F661 /* es */,
+				112B903520346C020091F661 /* ja */,
+				112B903620346C030091F661 /* fr */,
+				112B903720346C050091F661 /* de */,
+				112B903820346C070091F661 /* hi */,
+				112B903920346C090091F661 /* pt-BR */,
+				112B903A20346C0A0091F661 /* ko */,
+				112B903B20346C0C0091F661 /* ru */,
+				112B903C20346C0D0091F661 /* zh-Hans */,
+				112B903D20346C0F0091F661 /* sr-RS */,
+				112B903E20346C100091F661 /* sr-Latn */,
+				112B903F20346C120091F661 /* pt-PT */,
+			);
+			name = Screen1.png;
+			path = "Graphics/TutorialImages/iPhone 5.5'/English";
+			sourceTree = SOURCE_ROOT;
+		};
+		112B904220346CCB0091F661 /* Screen2.png */ = {
+			isa = PBXVariantGroup;
+			children = (
+				112B904120346CCB0091F661 /* Base */,
+				112B904320346CD10091F661 /* pt-PT */,
+				112B904420346CD30091F661 /* sr-Latn */,
+				112B904520346CD40091F661 /* sr-RS */,
+				112B904620346CD50091F661 /* zh-Hans */,
+				112B904720346CD60091F661 /* ko */,
+				112B904820346CDB0091F661 /* ru */,
+				112B904920346CDC0091F661 /* pt-BR */,
+				112B904A20346CDD0091F661 /* hi */,
+				112B904B20346CDF0091F661 /* de */,
+				112B904C20346CE00091F661 /* fr */,
+				112B904D20346CE10091F661 /* ja */,
+				112B904E20346CE20091F661 /* es */,
+				112B904F20346CE30091F661 /* zh-Hant */,
+			);
+			name = Screen2.png;
+			path = "Graphics/TutorialImages/iPhone 5.5'/English";
+			sourceTree = SOURCE_ROOT;
+		};
+		112B905220346D410091F661 /* Screen3.png */ = {
+			isa = PBXVariantGroup;
+			children = (
+				112B905120346D410091F661 /* Base */,
+				112B905320346D4C0091F661 /* zh-Hant */,
+				112B905420346D4F0091F661 /* es */,
+				112B905520346D530091F661 /* ja */,
+				112B905620346D540091F661 /* fr */,
+				112B905720346D580091F661 /* de */,
+				112B905820346D5A0091F661 /* hi */,
+				112B905920346D5B0091F661 /* pt-BR */,
+				112B905A20346D5C0091F661 /* ko */,
+				112B905B20346D5D0091F661 /* ru */,
+				112B905C20346D5E0091F661 /* zh-Hans */,
+				112B905D20346D610091F661 /* sr-RS */,
+				112B905E20346D630091F661 /* sr-Latn */,
+				112B905F20346D640091F661 /* pt-PT */,
+			);
+			name = Screen3.png;
+			path = "Graphics/TutorialImages/iPhone 5.5'/English";
+			sourceTree = SOURCE_ROOT;
+		};
+		112B906220346D6B0091F661 /* Screen4.png */ = {
+			isa = PBXVariantGroup;
+			children = (
+				112B906120346D6B0091F661 /* Base */,
+				112B906320346D6E0091F661 /* zh-Hant */,
+				112B906420346D6F0091F661 /* es */,
+				112B906520346D710091F661 /* ja */,
+				112B906620346D720091F661 /* fr */,
+				112B906720346D730091F661 /* de */,
+				112B906820346D750091F661 /* hi */,
+				112B906920346D770091F661 /* pt-BR */,
+				112B906A20346D790091F661 /* ko */,
+				112B906B20346D7A0091F661 /* ru */,
+				112B906C20346D7B0091F661 /* zh-Hans */,
+				112B906D20346D840091F661 /* sr-RS */,
+				112B906E20346D860091F661 /* sr-Latn */,
+				112B906F20346D870091F661 /* pt-PT */,
+			);
+			name = Screen4.png;
+			path = "Graphics/TutorialImages/iPhone 5.5'/English";
+			sourceTree = SOURCE_ROOT;
+		};
+		112B907220346D8C0091F661 /* Screen5.png */ = {
+			isa = PBXVariantGroup;
+			children = (
+				112B907120346D8C0091F661 /* Base */,
+				112B907320346D920091F661 /* zh-Hant */,
+				112B907420346D930091F661 /* es */,
+				112B907520346D950091F661 /* ja */,
+				112B907620346D960091F661 /* fr */,
+				112B907720346D970091F661 /* de */,
+				112B907820346D980091F661 /* hi */,
+				112B907920346D9B0091F661 /* pt-BR */,
+				112B907A20346D9C0091F661 /* ko */,
+				112B907B20346D9E0091F661 /* ru */,
+				112B907C20346D9F0091F661 /* zh-Hans */,
+				112B907D20346DA10091F661 /* sr-RS */,
+				112B907E20346DA20091F661 /* pt-PT */,
+				112B907F20346DA40091F661 /* sr-Latn */,
+			);
+			name = Screen5.png;
+			path = "Graphics/TutorialImages/iPhone 5.5'/English";
+			sourceTree = SOURCE_ROOT;
+		};
+		112B908220346DA80091F661 /* Screen6.png */ = {
+			isa = PBXVariantGroup;
+			children = (
+				112B908120346DA80091F661 /* Base */,
+				112B908320346DAC0091F661 /* zh-Hant */,
+				112B908420346DAE0091F661 /* es */,
+				112B908520346DB00091F661 /* ja */,
+				112B908620346DB10091F661 /* fr */,
+				112B908720346DB20091F661 /* de */,
+				112B908820346DB30091F661 /* hi */,
+				112B908920346DB60091F661 /* pt-BR */,
+				112B908A20346DB70091F661 /* ko */,
+				112B908B20346DB80091F661 /* ru */,
+				112B908C20346DBA0091F661 /* zh-Hans */,
+				112B908D20346DBE0091F661 /* sr-RS */,
+				112B908E20346DC00091F661 /* pt-PT */,
+				112B908F20346DC10091F661 /* sr-Latn */,
+			);
+			name = Screen6.png;
+			path = "Graphics/TutorialImages/iPhone 5.5'/English";
+			sourceTree = SOURCE_ROOT;
 		};
 /* End PBXVariantGroup section */
 

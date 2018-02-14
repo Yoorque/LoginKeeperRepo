@@ -40,6 +40,7 @@ class AccountsViewController: UIViewController, UITableViewDelegate, UITableView
     //MARK: - App life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.addGradient()
         defaults.set(false, forKey: "authenticated")
         
         NotificationCenter.default.addObserver(forName: NSNotification.Name.UIApplicationDidEnterBackground, object: nil, queue: .main, using: {_ in
@@ -128,6 +129,13 @@ class AccountsViewController: UIViewController, UITableViewDelegate, UITableView
         }
     }
     
+    override func viewWillLayoutSubviews() {
+        for v in view.layer.sublayers! {
+            if v .isKind(of: CAGradientLayer.self) {
+                v.frame = view.bounds
+            }
+        }
+    }
     //MARK: - Preview Delegates
     
     func previewingContext(_ previewingContext: UIViewControllerPreviewing, viewControllerForLocation location: CGPoint) -> UIViewController? {
@@ -542,7 +550,11 @@ class AccountsViewController: UIViewController, UITableViewDelegate, UITableView
         cell.accountImageView.image = UIImage(named: accounts[indexPath.row].image!)
         
         if indexPath.row % 2 == 0 {
-            cell.backgroundColor = UIColor(red: 211/255, green: 220/255, blue: 251/255, alpha: 1)
+            cell.backgroundColor? = UIColor.white.withAlphaComponent(0.3)
+            cell.entriesCountForAccountLabel.backgroundColor = UIColor.white.withAlphaComponent(0.1)
+        } else {
+            cell.backgroundColor? = UIColor.white.withAlphaComponent(0.1)
+            cell.entriesCountForAccountLabel.backgroundColor = UIColor.white.withAlphaComponent(0.3)
         }
         return cell
     }
@@ -578,6 +590,11 @@ class AccountsViewController: UIViewController, UITableViewDelegate, UITableView
         insertAction.backgroundColor = UIColor(red: 44/255, green: 152/255, blue: 41/255, alpha: 1)
         
         return [deleteAction, insertAction]
+    }
+    
+    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        let footer = UIView()
+        return footer
     }
     
     @available(iOS 11.0, *)
@@ -637,33 +654,7 @@ class AccountsViewController: UIViewController, UITableViewDelegate, UITableView
         }
     }
 }
-extension AccountsViewController: UISearchBarDelegate {
-    //MARK: - SearchBar Delegates
-    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
-        print("DidBeginEditing")
-        searchBar.showsCancelButton = true
-    }
-    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        searchCoreDataWith(text: searchBar.text!)
-    }
-    
-    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        searchBar.resignFirstResponder()
-    }
-    
-    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
-        searchBar.showsCancelButton = false
-        searchBar.text = nil
-        searchCoreDataWith(text: searchBar.text!)
-        searchBar.resignFirstResponder()
-    }
-    
-    func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
-        if searchBar.text == "" {
-            searchBar.showsCancelButton = false
-        }
-    }
-}
+
 
 //extension UIViewController: UITextFieldDelegate{
 //    func addToolBarTo(searchBar: UISearchBar){

@@ -11,6 +11,7 @@ import MessageUI
 
 class InfoTableViewController: UITableViewController, BWWalkthroughViewControllerDelegate, MFMailComposeViewControllerDelegate {
     
+    
     let walkthrough = BWWalkthroughViewController()
     @IBOutlet var feedbackCell: UITableViewCell!
     @IBOutlet var devWebsiteCell: UITableViewCell!
@@ -23,9 +24,14 @@ class InfoTableViewController: UITableViewController, BWWalkthroughViewControlle
     let accountsVC = AccountsViewController()
     var version: String!
     var build: String!
+    var bcgView = UIView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        bcgView.frame = self.view.frame
+        bcgView.addGradient()
+        tableView.backgroundView = bcgView
+        
         authenticated = UserDefaults.standard.bool(forKey: "authenticated")
         version = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as! String
         build = Bundle.main.infoDictionary?["CFBundleVersion"] as! String
@@ -43,6 +49,13 @@ class InfoTableViewController: UITableViewController, BWWalkthroughViewControlle
             removeAds.backgroundColor = UIColor(red: 216/255, green: 67/255, blue: 35/255, alpha: 1)
         }
     }
+    
+    override func viewWillLayoutSubviews() {
+        bcgView.layer.sublayers?.removeAll()
+        bcgView.addGradient()
+        bcgView.frame = self.view.frame
+    }
+    
     //MARK: - Mail Functionality
     func sendEmail() {
         let compose = MFMailComposeViewController()
@@ -106,6 +119,15 @@ class InfoTableViewController: UITableViewController, BWWalkthroughViewControlle
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let clickedCell = tableView.cellForRow(at: indexPath)
+        if indexPath.row != 0 {
+        UIView.animate(withDuration: 0.2, animations: {
+            clickedCell?.contentView.transform = CGAffineTransform(scaleX: 1, y: 0.3)
+        }, completion: {_ in
+            UIView.animate(withDuration: 0.2, animations: {
+                clickedCell?.contentView.transform = .identity
+            })
+        })
+        }
         switch clickedCell!.tag {
         case feedbackCell.tag:
             if authenticated == true {

@@ -11,6 +11,7 @@ import CoreData
 
 class AddNewAccountViewController: UIViewController, UITextFieldDelegate, UIScrollViewDelegate {
     
+    
     @IBOutlet weak var viewScrollView: UIScrollView!
     @IBOutlet weak var logosScrollView: UIScrollView!
     
@@ -26,31 +27,37 @@ class AddNewAccountViewController: UIViewController, UITextFieldDelegate, UIScro
     @IBOutlet var accountTitle: UITextField! {
         didSet {
             accountTitle.textContentType = UITextContentType("")
+            accountTitle.addLine()
         }
     }
     @IBOutlet var entryName: UITextField! {
         didSet {
             entryName.textContentType = UITextContentType("")
+            entryName.addLine()
         }
     }
     @IBOutlet var username: UITextField! {
         didSet {
             username.textContentType = UITextContentType("")
+            username.addLine()
         }
     }
     @IBOutlet var password: UITextField! {
         didSet {
             password.textContentType = UITextContentType("")
+            password.addLine()
         }
     }
     @IBOutlet var confirmPassword: UITextField! {
         didSet {
             confirmPassword.textContentType = UITextContentType("")
+            confirmPassword.addLine()
         }
     }
     @IBOutlet var comment: UITextField! {
         didSet {
             comment.textContentType = UITextContentType("")
+            comment.addLine()
         }
     }
     
@@ -58,6 +65,7 @@ class AddNewAccountViewController: UIViewController, UITextFieldDelegate, UIScro
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.addGradient()
         if !UserDefaults.standard.bool(forKey: "premiumPurchased") {
             appDelegate.load(bannerView: appDelegate.adBannerView,forViewController: self, andOrientation: UIDevice.current.orientation)
         } else {
@@ -90,19 +98,39 @@ class AddNewAccountViewController: UIViewController, UITextFieldDelegate, UIScro
         logosScrollView.contentSize.width = 55 * (CGFloat(logoImagesPNG.count / 2) + 1)
     }
     
+    override func viewWillLayoutSubviews() {
+        for v in view.layer.sublayers! {
+            if v .isKind(of: CAGradientLayer.self) {
+                v.frame = view.bounds
+            }
+        }
+    }
+    
     //image view tint for selected logo
     @objc func logoTapped(sender: UITapGestureRecognizer) {
         if let view = sender.view as? UIImageView {
             if let textField = activeTextField {
                 textField.resignFirstResponder()
             }
+            
             UIView.animate(withDuration: 0.2, animations: {
                 view.transform = CGAffineTransform(scaleX: 0.7, y: 0.7)
             }, completion: {_ in
+                if view.tag == 0 {
+                    view.layer.borderColor = UIColor.purple.cgColor
+                    view.layer.borderWidth = 2
+                    view.layer.cornerRadius = view.bounds.size.width / 8
+                    view.clipsToBounds = true
+                } else {
+                    view.image = view.image!.withRenderingMode(.alwaysTemplate)
+                    view.tintColor = UIColor.purple
+                }
                 UIView.animate(withDuration: 0.2, animations: {
                     view.transform = .identity
+                }, completion: {_ in
                 })
             })
+            
             for logo in logosScrollView.subviews {
                 if logo is UIImageView {
                     let logoImageView = logo as! UIImageView
@@ -111,15 +139,6 @@ class AddNewAccountViewController: UIViewController, UITextFieldDelegate, UIScro
                 }
             }
             
-            if view.tag == 0 {
-                view.layer.borderColor = UIColor.white.cgColor
-                view.layer.borderWidth = 2
-                view.layer.cornerRadius = view.bounds.size.width / 8
-                view.clipsToBounds = true
-            } else {
-                view.image = view.image!.withRenderingMode(.alwaysTemplate)
-                view.tintColor = .white
-            }
             index = view.tag
         }
     }

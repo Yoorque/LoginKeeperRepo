@@ -22,35 +22,40 @@ class AddNewEntryViewController: UIViewController, UITextFieldDelegate, UIScroll
     @IBOutlet var name: UITextField! {
         didSet {
             name.textContentType = UITextContentType("")
+            name.addLine()
         }
     }
     @IBOutlet var username: UITextField! {
         didSet {
             username.textContentType = UITextContentType("")
+            username.addLine()
         }
     }
     @IBOutlet var password: UITextField! {
         didSet {
             password.textContentType = UITextContentType("")
+            password.addLine()
         }
     }
     @IBOutlet var confirmPassword: UITextField! {
         didSet {
             confirmPassword.textContentType = UITextContentType("")
+            confirmPassword.addLine()
         }
     }
     @IBOutlet var comment: UITextField! {
         didSet {
             comment.textContentType = UITextContentType("")
+            comment.addLine()
         }
     }
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.addGradient()
         titleTextLabel.contentMode = .center
         titleTextLabel.font = UIFont(name: "Lato-Black", size: 17)
-        titleTextLabel.textColor = UIColor(red: 56/255, green: 124/255, blue: 254/255, alpha: 1)
+        titleTextLabel.textColor = .white
         addNewEntryLabel.text = titleTextLabel.text
         if !UserDefaults.standard.bool(forKey: "premiumPurchased") {
             appDelegate.load(bannerView: appDelegate.adBannerView,forViewController: self, andOrientation: UIDevice.current.orientation)
@@ -63,6 +68,14 @@ class AddNewEntryViewController: UIViewController, UITextFieldDelegate, UIScroll
         NotificationCenter.default.addObserver(self, selector: #selector(handleKeyboardNotification), name: .UIKeyboardWillShow, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(handleKeyboardNotification), name: .UIKeyboardWillHide, object: nil)
         
+    }
+    
+    override func viewWillLayoutSubviews() {
+        for v in view.layer.sublayers! {
+            if v .isKind(of: CAGradientLayer.self) {
+                v.frame = view.bounds
+            }
+        }
     }
     
     @IBAction func saveEntryButton(_ sender: UIBarButtonItem) {

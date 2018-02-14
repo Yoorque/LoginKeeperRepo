@@ -12,13 +12,21 @@ import CoreData
 class LogosViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     
    
+    @IBOutlet weak var logosCollectionView: UICollectionView!
     var account: Account!
     var viewContext = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Do any additional setup after loading the view.
+        view.addGradient()
+    }
+    override func viewWillLayoutSubviews() {
+        for v in view.layer.sublayers! {
+            if v .isKind(of: CAGradientLayer.self) {
+                v.frame = view.bounds
+            }
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -30,7 +38,7 @@ class LogosViewController: UIViewController, UICollectionViewDelegate, UICollect
         cell.tag = indexPath.row
        
         if indexPath.row == 0 {
-            cell.layer.borderColor = UIColor(red: 74/255, green: 122/255, blue: 246/255, alpha: 1).cgColor
+            cell.layer.borderColor = UIColor.white.cgColor
             cell.layer.borderWidth = 2
             cell.layer.cornerRadius = 15
             cell.currentLogoLabel.text = NSLocalizedString("Current/Suggested Logo", comment: "")
