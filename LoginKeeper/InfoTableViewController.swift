@@ -11,8 +11,7 @@ import MessageUI
 
 class InfoTableViewController: UITableViewController, BWWalkthroughViewControllerDelegate, MFMailComposeViewControllerDelegate {
     
-    
-    let walkthrough = BWWalkthroughViewController()
+    //MARK: - Outlets
     @IBOutlet var feedbackCell: UITableViewCell!
     @IBOutlet var devWebsiteCell: UITableViewCell!
     @IBOutlet var moreAppsCell: UITableViewCell!
@@ -20,14 +19,21 @@ class InfoTableViewController: UITableViewController, BWWalkthroughViewControlle
     @IBOutlet var walkthroughDevCell: UITableViewCell!
     @IBOutlet var versionLabel: UILabel!
     @IBOutlet weak var removeAds: UIButton!
+
+    //MARK: - Properties
+    let walkthrough = BWWalkthroughViewController()
     var authenticated: Bool?
     let accountsVC = AccountsViewController()
     var version: String!
     var build: String!
     var bcgView = UIView()
     
+    //MARK: - App life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        if #available(iOS 11.0, *) {
+            tableView.contentInsetAdjustmentBehavior = .scrollableAxes
+        }
         bcgView.frame = self.view.frame
         bcgView.addGradient()
         tableView.backgroundView = bcgView
@@ -73,6 +79,7 @@ class InfoTableViewController: UITableViewController, BWWalkthroughViewControlle
         })
     }
     
+    //MARK: - RemoveAds Button
     @IBAction func removeAdsButton(_ sender: UIButton) {
         if authenticated == true {
             performSegue(withIdentifier: "removeAdsSegue", sender: self)
@@ -106,7 +113,7 @@ class InfoTableViewController: UITableViewController, BWWalkthroughViewControlle
     func walkthroughCloseButtonPressed() {
         self.dismiss(animated: true, completion: nil)
     }
-    // MARK: - Table view data source
+    // MARK: - TableView data source
     
     override func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
         let footerView = UIView()

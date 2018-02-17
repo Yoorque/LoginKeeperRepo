@@ -3,67 +3,67 @@
     {
       "size" : "20x20",
       "idiom" : "iphone",
-      "filename" : "icons8-password-96.png",
+      "filename" : "AppIcon-40.png",
       "scale" : "2x"
     },
     {
       "size" : "20x20",
       "idiom" : "iphone",
-      "filename" : "icons8-password-97.png",
+      "filename" : "AppIcon60.png",
       "scale" : "3x"
     },
     {
       "size" : "29x29",
       "idiom" : "iphone",
-      "filename" : "icons8-password-98.png",
+      "filename" : "AppIcon-29.png",
       "scale" : "1x"
     },
     {
       "size" : "29x29",
       "idiom" : "iphone",
-      "filename" : "icons8-password-99.png",
+      "filename" : "AppIcon-58.png",
       "scale" : "2x"
     },
     {
       "size" : "29x29",
       "idiom" : "iphone",
-      "filename" : "icons8-password-100.png",
+      "filename" : "AppIcon-87.png",
       "scale" : "3x"
     },
     {
       "size" : "40x40",
       "idiom" : "iphone",
-      "filename" : "icons8-password-101.png",
+      "filename" : "AppIcon-80.png",
       "scale" : "2x"
     },
     {
       "size" : "40x40",
       "idiom" : "iphone",
-      "filename" : "icons8-password-102.png",
+      "filename" : "AppIcon-120.png",
       "scale" : "3x"
     },
     {
       "size" : "57x57",
       "idiom" : "iphone",
-      "filename" : "icons8-password-103.png",
+      "filename" : "AppIcon-57.png",
       "scale" : "1x"
     },
     {
       "size" : "57x57",
       "idiom" : "iphone",
-      "filename" : "icons8-password-104.png",
+      "filename" : "AppIcon-114.png",
       "scale" : "2x"
     },
     {
       "size" : "60x60",
       "idiom" : "iphone",
-      "filename" : "icons8-password-105.png",
+      "filename" : "AppIcon-121.png",
       "scale" : "2x"
     },
     {
       "size" : "60x60",
       "idiom" : "iphone",
-      "filename" : "icons8-password-106.png",
+      "filename" : "AppIcon-180.png",
       "scale" : "3x"
     },
     {
@@ -134,19 +134,17 @@
     {
       "size" : "1024x1024",
       "idiom" : "ios-marketing",
-      "filename" : "icons8-password-107.png",
+      "filename" : "AppIcon1024.png",
       "scale" : "1x"
     },
     {
-      "size" : "60x60",
       "idiom" : "car",
-      "filename" : "icons8-password-108.png",
+      "size" : "60x60",
       "scale" : "2x"
     },
     {
-      "size" : "60x60",
       "idiom" : "car",
-      "filename" : "icons8-password-109.png",
+      "size" : "60x60",
       "scale" : "3x"
     },
     {

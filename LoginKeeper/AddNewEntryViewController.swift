@@ -10,15 +10,13 @@ import UIKit
 import CoreData
 
 class AddNewEntryViewController: UIViewController, UITextFieldDelegate, UIScrollViewDelegate {
+    
+    //MARK: - Outlets
+    @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet var stackView: UIStackView!
     @IBOutlet weak var addNewEntryLabel: UILabel!
-    var titleTextLabel = UILabel()
-    
-    var account: Account?
-    let appDelegate = UIApplication.shared.delegate as! AppDelegate
-    
-    var activeTextField: UITextField?
+   
     @IBOutlet var name: UITextField! {
         didSet {
             name.textContentType = UITextContentType("")
@@ -50,6 +48,14 @@ class AddNewEntryViewController: UIViewController, UITextFieldDelegate, UIScroll
         }
     }
     
+    //MARK: - Properties
+    var titleTextLabel = UILabel()
+    var account: Account?
+    let appDelegate = UIApplication.shared.delegate as! AppDelegate
+    var activeTextField: UITextField?
+    var originalBottomConstraint: CGFloat = 0.0
+    
+    //MARK: - App life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         view.addGradient()
@@ -67,24 +73,7 @@ class AddNewEntryViewController: UIViewController, UITextFieldDelegate, UIScroll
         
         NotificationCenter.default.addObserver(self, selector: #selector(handleKeyboardNotification), name: .UIKeyboardWillShow, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(handleKeyboardNotification), name: .UIKeyboardWillHide, object: nil)
-        
-    }
-    
-    override func viewWillLayoutSubviews() {
-        for v in view.layer.sublayers! {
-            if v .isKind(of: CAGradientLayer.self) {
-                v.frame = view.bounds
-            }
-        }
-    }
-    
-    @IBAction func saveEntryButton(_ sender: UIBarButtonItem) {
-        saveEntry()
-    }
-    
-    @objc func dismissKeyboard(sender: UITapGestureRecognizer ) {
-        //activeTextField?.resignFirstResponder()
-        view.endEditing(true)
+        originalBottomConstraint = bottomConstraint.constant
     }
     
     override func willRotate(to toInterfaceOrientation: UIInterfaceOrientation, duration: TimeInterval) {
@@ -99,6 +88,25 @@ class AddNewEntryViewController: UIViewController, UITextFieldDelegate, UIScroll
         }
     }
     
+    override func viewWillLayoutSubviews() {
+        for v in view.layer.sublayers! {
+            if v .isKind(of: CAGradientLayer.self) {
+                v.frame = view.bounds
+            }
+        }
+    }
+    
+    //MARK: - Actions
+    @IBAction func saveEntryButton(_ sender: UIBarButtonItem) {
+        saveEntry()
+    }
+    
+    //MARK: - Keyboard
+    @objc func dismissKeyboard(sender: UITapGestureRecognizer ) {
+        //activeTextField?.resignFirstResponder()
+        view.endEditing(true)
+    }
+    
     @objc func handleKeyboardNotification(notification: NSNotification) {
         if let userInfo = notification.userInfo {
             let keyBoardFrame = userInfo[UIKeyboardFrameEndUserInfoKey] as! CGRect
@@ -109,21 +117,25 @@ class AddNewEntryViewController: UIViewController, UITextFieldDelegate, UIScroll
                     scrollView.scrollRectToVisible(textField.frame, animated: true)
                     scrollView.contentInset = contentInsets
                     scrollView.scrollIndicatorInsets = contentInsets
+                    bottomConstraint.constant = 0
                 } else {
                     let contentInsets = UIEdgeInsets.zero
                     scrollView.contentInset = contentInsets
                     scrollView.scrollIndicatorInsets = contentInsets
+                    bottomConstraint.constant = originalBottomConstraint
                 }
             }
         }
     }
     
+    //MARK: - Alerts
     func displayAlert(title: String, msg: String) {
         let alert = UIAlertController(title: title, message: msg, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: okLocalized, style: .default, handler: nil))
         present(alert, animated: true, completion: nil)
     }
     
+    //MARK: - CoreData
     func saveEntry() {
         if password.text == confirmPassword.text {
             if password.text != "" {
@@ -155,6 +167,7 @@ class AddNewEntryViewController: UIViewController, UITextFieldDelegate, UIScroll
         }
     }
     
+    //MARK: - TextFields
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         
         if textField == name {
@@ -181,10 +194,11 @@ class AddNewEntryViewController: UIViewController, UITextFieldDelegate, UIScroll
         activeTextField = textField
     }
     
+    //MARK: - ScrollView
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        let scaleX = 1 - scrollView.contentOffset.y / 100
-        let scaleY = 1 - scrollView.contentOffset.y / 100
-        addNewEntryLabel.transform = CGAffineTransform(scaleX: min(scaleX, 1.2) , y: min(scaleY, 1.2))
+        
+        let scale = 1 - scrollView.contentOffset.y / 200
+        addNewEntryLabel.transform = CGAffineTransform(scaleX: min(scale, 1.2) , y: min(scale, 1.2))
         
         if let navController = navigationController {
             if scrollView.contentOffset.y > navController.navigationBar.frame.height {

@@ -11,15 +11,13 @@ import CoreData
 
 class DetailsViewController: UIViewController, UITextFieldDelegate, UIScrollViewDelegate {
     
+    //MARK: - Outlets
+    @IBOutlet weak var bottomContraint: NSLayoutConstraint!
     @IBOutlet weak var logoImage: UIImageView!
     @IBOutlet var stackView: UIStackView!
     @IBOutlet var favoritedStar: UIImageView!
     @IBOutlet weak var scrollView: UIScrollView!
     
-    var entryDetails: Entry?
-    let appDelegate = UIApplication.shared.delegate as! AppDelegate
-    
-    var activeTextField: UITextField?
     @IBOutlet var accountName: UITextField! {
         didSet {
             accountName.textContentType = UITextContentType("")
@@ -28,6 +26,7 @@ class DetailsViewController: UIViewController, UITextFieldDelegate, UIScrollView
             accountName.layoutSubviews()
         }
     }
+    
     @IBOutlet var entryName: UITextField! {
         didSet {
             entryName.textContentType = UITextContentType("")
@@ -36,6 +35,7 @@ class DetailsViewController: UIViewController, UITextFieldDelegate, UIScrollView
             accountName.layoutSubviews()
         }
     }
+    
     @IBOutlet var username: UITextField! {
         didSet {
             username.textContentType = UITextContentType("")
@@ -44,6 +44,7 @@ class DetailsViewController: UIViewController, UITextFieldDelegate, UIScrollView
             accountName.layoutSubviews()
         }
     }
+    
     @IBOutlet var password: UITextField! {
         didSet {
             password.textContentType = UITextContentType("")
@@ -52,6 +53,7 @@ class DetailsViewController: UIViewController, UITextFieldDelegate, UIScrollView
             accountName.layoutSubviews()
         }
     }
+    
     @IBOutlet var comment: UITextField! {
         didSet {
             comment.textContentType = UITextContentType("")
@@ -60,8 +62,14 @@ class DetailsViewController: UIViewController, UITextFieldDelegate, UIScrollView
             accountName.layoutSubviews()
         }
     }
+    
+    //MARK: - Properties
+    var entryDetails: Entry?
+    let appDelegate = UIApplication.shared.delegate as! AppDelegate
+    var activeTextField: UITextField?
     let titleTextLabel = UILabel()
     let imageViewForTitle = UIImageView()
+    var originalBottomConstraint: CGFloat = 0.0
     
     override var previewActionItems: [UIPreviewActionItem] {
         let copyAll = UIPreviewAction(title: "Copy All", style: .default, handler: {_,_  in
@@ -71,6 +79,7 @@ class DetailsViewController: UIViewController, UITextFieldDelegate, UIScrollView
         return [copyAll]
     }
     
+    //MARK: - App life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -89,17 +98,13 @@ class DetailsViewController: UIViewController, UITextFieldDelegate, UIScrollView
         navigationItem.titleView?.isHidden = true
         
         view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard)))
-    }
-    
-    func addObservers() {
-        NotificationCenter.default.addObserver(self, selector: #selector(handleKeyboardNotification), name: .UIKeyboardWillShow, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(handleKeyboardNotification), name: .UIKeyboardWillHide, object: nil)
+        
+        originalBottomConstraint = bottomContraint.constant
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         addObservers()
-        
         
         accountName.text = entryDetails?.account?.name
         entryName.text = entryDetails?.name
@@ -112,6 +117,34 @@ class DetailsViewController: UIViewController, UITextFieldDelegate, UIScrollView
         } else {
             favoritedStar.image = UIImage(named: "emptyStar")
         }
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        saveChanges()
+    }
+    
+    override func willRotate(to toInterfaceOrientation: UIInterfaceOrientation, duration: TimeInterval) {
+        appDelegate.removeBannerView()
+    }
+    
+    override func didRotate(from fromInterfaceOrientation: UIInterfaceOrientation) {
+        if !UserDefaults.standard.bool(forKey: "premiumPurchased") {
+            loadAd()
+        }
+    }
+    
+    override func viewWillLayoutSubviews() {
+        for v in view.layer.sublayers! {
+            if v .isKind(of: CAGradientLayer.self) {
+                v.frame = view.bounds
+            }
+        }
+    }
+    
+    //MARK: - Helper functions
+    func addObservers() {
+        NotificationCenter.default.addObserver(self, selector: #selector(handleKeyboardNotification), name: .UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(handleKeyboardNotification), name: .UIKeyboardWillHide, object: nil)
     }
     
     func loadAd() {
@@ -154,23 +187,15 @@ class DetailsViewController: UIViewController, UITextFieldDelegate, UIScrollView
         comment.isEnabled = false
         comment.textColor = .lightText
     }
-    @IBAction func editButton(_ sender: Any) {
-        let button = sender as! UIBarButtonItem
-        if accountName.isEnabled {
-            textEditDisabled()
-            button.style = .plain
-            button.title = NSLocalizedString("Edit", comment: "")
-            saveChanges()
-        } else {
-            textEditEnabled()
-            button.style = .done
-            button.title = NSLocalizedString("Save", comment: "")
-        }
-    }
+    
+    
+    
+    
     func copyPaste(text: String) {
         let copyPaste = UIPasteboard.general
         copyPaste.string = text
     }
+    
     func animateClipboardTextFor(textField: UITextField, with text: String) {
         DispatchQueue.main.async {
             
@@ -197,6 +222,8 @@ class DetailsViewController: UIViewController, UITextFieldDelegate, UIScrollView
         present(alert, animated: true, completion: nil)
     }
     
+    
+    //MARK: - Actions
     @IBAction func copyButton(_ sender: UIButton) {
         
         switch sender.tag {
@@ -241,6 +268,20 @@ class DetailsViewController: UIViewController, UITextFieldDelegate, UIScrollView
         }
     }
     
+    @IBAction func editButton(_ sender: Any) {
+        let button = sender as! UIBarButtonItem
+        if accountName.isEnabled {
+            textEditDisabled()
+            button.style = .plain
+            button.title = NSLocalizedString("Edit", comment: "")
+            saveChanges()
+        } else {
+            textEditEnabled()
+            button.style = .done
+            button.title = NSLocalizedString("Save", comment: "")
+        }
+    }
+    
     @IBAction func copyAllButton(_ sender: Any) {
         
         let copyText = "\(accountTextLocalized): \(entryDetails!.account!.name!)\n\(entryNameTextLocalized): \(entryDetails!.name!)\n\(usernameTextLocalized): \(entryDetails!.username!)\n\(passwordTextLocalized): \(entryDetails!.password!)\n\(commentTextLocalized): \(entryDetails!.comment!)"
@@ -266,16 +307,7 @@ class DetailsViewController: UIViewController, UITextFieldDelegate, UIScrollView
         
     }
     
-    override func willRotate(to toInterfaceOrientation: UIInterfaceOrientation, duration: TimeInterval) {
-        appDelegate.removeBannerView()
-    }
-    
-    override func didRotate(from fromInterfaceOrientation: UIInterfaceOrientation) {
-        if !UserDefaults.standard.bool(forKey: "premiumPurchased") {
-            loadAd()
-        }
-    }
-    
+    //MARK: - Keyboard
     @objc func dismissKeyboard(sender: UITapGestureRecognizer ) {
         activeTextField?.resignFirstResponder()
     }
@@ -290,15 +322,18 @@ class DetailsViewController: UIViewController, UITextFieldDelegate, UIScrollView
                     scrollView.scrollRectToVisible(textField.frame, animated: true)
                     scrollView.contentInset = contentInsets
                     scrollView.scrollIndicatorInsets = contentInsets
+                    bottomContraint.constant = 0
                 } else {
                     let contentInsets = UIEdgeInsets.zero
                     scrollView.contentInset = contentInsets
                     scrollView.scrollIndicatorInsets = contentInsets
+                    bottomContraint.constant = originalBottomConstraint
                 }
             }
         }
     }
     
+    //MARK: - CoreData functions
     func saveChanges() {
         let context = appDelegate.persistentContainer.viewContext
         entryDetails?.account?.name = accountName.text
@@ -316,10 +351,7 @@ class DetailsViewController: UIViewController, UITextFieldDelegate, UIScrollView
         }
     }
     
-    override func viewWillDisappear(_ animated: Bool) {
-        saveChanges()
-    }
-    
+    //MARK: - TextField functions
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         if textField == accountName {
             accountName.resignFirstResponder()
@@ -344,10 +376,11 @@ class DetailsViewController: UIViewController, UITextFieldDelegate, UIScrollView
         activeTextField = textField
     }
     
+    //MARK: - ScrollView
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        let scaleX = 1 - scrollView.contentOffset.y / 100
-        let scaleY = 1 - scrollView.contentOffset.y / 100
-        logoImage.transform = CGAffineTransform(scaleX: min(scaleX, 1.2) , y: min(scaleY, 1.2))
+    
+        let scale = 1 - scrollView.contentOffset.y / 200
+        logoImage.transform = CGAffineTransform(scaleX: min(scale, 1.2) , y: min(scale, 1.2))
         if let navController = navigationController {
             if scrollView.contentOffset.y > navController.navigationBar.frame.height {
                 logoImage.isHidden = true
@@ -356,13 +389,6 @@ class DetailsViewController: UIViewController, UITextFieldDelegate, UIScrollView
             } else {
                 logoImage.isHidden = false
                 imageViewForTitle.isHidden = true
-            }
-        }
-    }
-    override func viewWillLayoutSubviews() {
-        for v in view.layer.sublayers! {
-            if v .isKind(of: CAGradientLayer.self) {
-                v.frame = view.bounds
             }
         }
     }

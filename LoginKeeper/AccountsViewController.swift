@@ -14,8 +14,7 @@ import UserNotifications
 
 class AccountsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, AccountsDisplayAlertDelegate, BWWalkthroughViewControllerDelegate, ShowLogoDelegate, UIViewControllerPreviewingDelegate  {
     
-    //MARK: - Properties
-    
+    //MARK: - Outlets
     @IBOutlet var lockButton: UIBarButtonItem!
     @IBOutlet var searchBar: UISearchBar! {
         didSet {
@@ -27,9 +26,9 @@ class AccountsViewController: UIViewController, UITableViewDelegate, UITableView
     }
     
     @IBOutlet var tableView: UITableView!
-    let notificationManager = NotificationManager()
     
-    //var authenticated: Bool?
+    //MARK: - Properties
+    let notificationManager = NotificationManager()
     var index: Int?
     var accounts = [Account]()
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
@@ -40,6 +39,7 @@ class AccountsViewController: UIViewController, UITableViewDelegate, UITableView
     //MARK: - App life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         view.addGradient()
         defaults.set(false, forKey: "authenticated")
         
@@ -200,14 +200,6 @@ class AccountsViewController: UIViewController, UITableViewDelegate, UITableView
         }
     }
     
-    @objc func dismissKeyboard(sender: UITapGestureRecognizer) {
-        if let view = sender.view {
-            if !searchBar.frame.contains(view.frame) {
-                view.resignFirstResponder()
-            }
-        }
-    }
-    
     func chooseAuthMethod() {
         BlurBackgroundView.blurCurrent(view: (navigationController?.topViewController?.view)!)
         let alert = UIAlertController(title: "LoginKeeper", message: chooseAuthMethodLocalized, preferredStyle: .alert)
@@ -285,11 +277,10 @@ class AccountsViewController: UIViewController, UITableViewDelegate, UITableView
                             
                             
                             self.defaults.set(false, forKey: "authenticated")
-                            //self.accounts = []
+                            
                             self.navigationItem.rightBarButtonItem?.isEnabled = false
                             self.searchBar.isUserInteractionEnabled = false
                             self.lockButton.title = unlockLocalized
-                            //self.tableView.reloadData()
                             
                             switch error!._code {
                             case Int(kLAErrorAuthenticationFailed):
@@ -342,11 +333,9 @@ class AccountsViewController: UIViewController, UITableViewDelegate, UITableView
                         let errorDescriptionLocalized = NSLocalizedString(error!.localizedDescription, comment: "authentication failed message")
                         self.defaults.set(false, forKey: "authenticated")
                         
-                        // self.accounts = []
                         self.navigationItem.rightBarButtonItem?.isEnabled = false
                         self.searchBar.isUserInteractionEnabled = false
                         self.lockButton.title = unlockLocalized
-                        // self.tableView.reloadData()
                         
                         switch error!._code{
                         case Int(kLAErrorAuthenticationFailed):
@@ -376,6 +365,16 @@ class AccountsViewController: UIViewController, UITableViewDelegate, UITableView
             })
         }
     }
+    
+    //MARK: - Gestures
+    @objc func dismissKeyboard(sender: UITapGestureRecognizer) {
+        if let view = sender.view {
+            if !searchBar.frame.contains(view.frame) {
+                view.resignFirstResponder()
+            }
+        }
+    }
+    
     //MARK: - Alerts
     func displayAlert(title: String, msg: String) {
         let alert = UIAlertController(title: title, message: msg, preferredStyle: .alert)
@@ -438,7 +437,8 @@ class AccountsViewController: UIViewController, UITableViewDelegate, UITableView
         }))
         self.present(alert, animated: true, completion: nil)
     }
-    //MARK: - Button Actions
+    
+    //MARK: - Actions
     @IBAction func showInfoButon(_ sender: Any) {
         performSegue(withIdentifier: "showInfoSegue", sender: self)
     }
@@ -465,7 +465,7 @@ class AccountsViewController: UIViewController, UITableViewDelegate, UITableView
         defaults.set(false, forKey: "authenticated")
     }
     
-    //MARK: - CoreData Requests
+    //MARK: - CoreData
     func fetchFromCoreData() {
         let context = appDelegate.persistentContainer.viewContext
         let fetchRequest = NSFetchRequest<Account>(entityName: "Account")
@@ -510,6 +510,7 @@ class AccountsViewController: UIViewController, UITableViewDelegate, UITableView
             fetchFromCoreData()
         }
     }
+    
     func showLogosForRow(at index: Int) {
         self.index = index
         logoImagesPNG.remove(at: 0)
@@ -654,41 +655,3 @@ class AccountsViewController: UIViewController, UITableViewDelegate, UITableView
         }
     }
 }
-
-
-//extension UIViewController: UITextFieldDelegate{
-//    func addToolBarTo(searchBar: UISearchBar){
-//        let toolBar = UIToolbar()
-//        toolBar.barStyle = UIBarStyle.default
-//        toolBar.isTranslucent = true
-//
-//        let doneButton = UIBarButtonItem(title: "Done", style: UIBarButtonItemStyle.done, target: self, action: #selector(donePressed))
-//
-//        let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.flexibleSpace, target: nil, action: nil)
-//        toolBar.setItems([spaceButton, doneButton], animated: false)
-//        toolBar.isUserInteractionEnabled = true
-//        toolBar.sizeToFit()
-//
-//        searchBar.inputAccessoryView = toolBar
-//    }
-//
-//    func addToolBarTo(textField: UITextField){
-//        let toolBar = UIToolbar()
-//        toolBar.barStyle = UIBarStyle.default
-//        toolBar.isTranslucent = true
-//
-//        let doneButton = UIBarButtonItem(title: "Done", style: UIBarButtonItemStyle.done, target: self, action: #selector(donePressed))
-//
-//        let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.flexibleSpace, target: nil, action: nil)
-//        toolBar.setItems([spaceButton, doneButton], animated: false)
-//        toolBar.isUserInteractionEnabled = true
-//        toolBar.sizeToFit()
-//
-//        textField.inputAccessoryView = toolBar
-//    }
-//    @objc func donePressed(){
-//        view.endEditing(true)
-//    }
-//}
-
-

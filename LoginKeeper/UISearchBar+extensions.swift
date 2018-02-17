@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 extension AccountsViewController: UISearchBarDelegate {
-    //MARK: - SearchBar Delegates
+    
     func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
         print("DidBeginEditing")
         searchBar.showsCancelButton = true

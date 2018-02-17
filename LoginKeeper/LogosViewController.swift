@@ -11,11 +11,14 @@ import CoreData
 
 class LogosViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     
-   
+    //MARK: - Outlets
     @IBOutlet weak var logosCollectionView: UICollectionView!
+    
+    //MARK: - Properties
     var account: Account!
     var viewContext = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext
     
+    //MARK: - App life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -29,6 +32,7 @@ class LogosViewController: UIViewController, UICollectionViewDelegate, UICollect
         }
     }
     
+    //MARK: - CollectionView Delegates & DataSource
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return logoImagesPNG.count
     }
@@ -68,6 +72,8 @@ class LogosViewController: UIViewController, UICollectionViewDelegate, UICollect
             })
         })
     }
+    
+    //MARK: - Alerts
     func displayAlert(title: String, msg: String) {
         let alert = UIAlertController(title: title, message: msg, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: okLocalized, style: .default, handler: nil))

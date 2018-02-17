@@ -70,6 +70,7 @@
 		11C6DE7B20140E5B006D3925 /* RemoveAdsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C6DE7A20140E5B006D3925 /* RemoveAdsViewController.swift */; };
 		11C6DE7F2015F832006D3925 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C6DE7E2015F832006D3925 /* Reachability.swift */; };
 		11E850F91F18DE5900F1B5C7 /* InfoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11E850F81F18DE5900F1B5C7 /* InfoTableViewController.swift */; };
+		11FFA7BB2037D577002FAB90 /* launchscreen in Resources */ = {isa = PBXBuildFile; fileRef = 11FFA7BA2037D577002FAB90 /* launchscreen */; };
 		DF1B3E4F59015A84C2DFE7C2 /* Pods_LoginKeeper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39307564D6F219D7841E90E1 /* Pods_LoginKeeper.framework */; };
 /* End PBXBuildFile section */
 
@@ -257,6 +258,7 @@
 		11C6DE7A20140E5B006D3925 /* RemoveAdsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoveAdsViewController.swift; sourceTree = "<group>"; };
 		11C6DE7E2015F832006D3925 /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		11E850F81F18DE5900F1B5C7 /* InfoTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoTableViewController.swift; sourceTree = "<group>"; };
+		11FFA7BA2037D577002FAB90 /* launchscreen */ = {isa = PBXFileReference; lastKnownFileType = file; name = launchscreen; path = Graphics/Icon/launchscreen; sourceTree = SOURCE_ROOT; };
 		39307564D6F219D7841E90E1 /* Pods_LoginKeeper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LoginKeeper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4213D6A6028AFDDE5780A8FF /* Pods-LoginKeeper.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LoginKeeper.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LoginKeeper/Pods-LoginKeeper.debug.xcconfig"; sourceTree = "<group>"; };
 		D871D0A96ABE2387433DB6B1 /* Pods-LoginKeeper.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LoginKeeper.release.xcconfig"; path = "Pods/Target Support Files/Pods-LoginKeeper/Pods-LoginKeeper.release.xcconfig"; sourceTree = "<group>"; };
@@ -358,6 +360,7 @@
 				11C6DE7E2015F832006D3925 /* Reachability.swift */,
 				111EB6CC1F0E2DDD00B12AC8 /* AppDelegate.swift */,
 				111EB6D81F0E2DDD00B12AC8 /* LaunchScreen.storyboard */,
+				11FFA7BA2037D577002FAB90 /* launchscreen */,
 				11A0A9A81FE5DA0700BF38FF /* Assets.xcassets */,
 				11779E421F4A25E8000F0D7D /* GoogleService-Info.plist */,
 				111EB6DB1F0E2DDD00B12AC8 /* Info.plist */,
@@ -584,6 +587,7 @@
 				1101626520240629001C0EBC /* SIL Open Font License.txt in Resources */,
 				1101626820240629001C0EBC /* Lato-SemiboldItalic.ttf in Resources */,
 				1161FF0920082C1800E747F4 /* notification.aiff in Resources */,
+				11FFA7BB2037D577002FAB90 /* launchscreen in Resources */,
 				1101627320240629001C0EBC /* Lato-ThinItalic.ttf in Resources */,
 				1101626F20240629001C0EBC /* Lato-Heavy.ttf in Resources */,
 				1101626620240629001C0EBC /* Lato-Bold.ttf in Resources */,

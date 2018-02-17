@@ -10,15 +10,16 @@ import UIKit
 import StoreKit
 
 class RemoveAdsViewController: UIViewController, SKProductsRequestDelegate, SKPaymentTransactionObserver {
-    @IBOutlet weak var purchasedConstraint: NSLayoutConstraint!
     
+    //MARK: - Outlets
+    @IBOutlet weak var versionConstraint: NSLayoutConstraint!
     @IBOutlet weak var purchasePremiumButton: UIButton!
     @IBOutlet weak var unlockText: UILabel!
     @IBOutlet weak var priceText: UILabel!
     @IBOutlet weak var versionText: UILabel!
     @IBOutlet weak var purchasedText: UILabel!
+    //MARK: - Properties
     let reachability = Reachability()
-    
     let PRODUCT_ID = "com.loginkeeper.removeads"
     var productID = ""
     var productsRequest = SKProductsRequest()
@@ -26,9 +27,11 @@ class RemoveAdsViewController: UIViewController, SKProductsRequestDelegate, SKPa
     var premiumPurchased = UserDefaults.standard.bool(forKey: "premiumPurchased")
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     
+    //MARK: - App life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.addGradient()
+        
         if premiumPurchased {
             purchasedView()
         } else {
@@ -54,16 +57,18 @@ class RemoveAdsViewController: UIViewController, SKProductsRequestDelegate, SKPa
         }
     }
     
+    //MARK: - Initial Views
     func purchasedView() {
         unlockText.text = removedAdsLocalized
-        purchasedText.text = premiumVersionPurchasedLocalized
-        purchasedText.textColor = UIColor(red: 44/255, green: 152/255, blue: 41/255, alpha: 1)
-        purchasedText.font = UIFont(name: "Lato-Bold", size: 22)
-        purchasedConstraint.constant = 30
+        UIView.animate(withDuration: 1, delay: 0, options:[.repeat, .autoreverse], animations: {
+            self.unlockText.transform = CGAffineTransform(scaleX: 1.3, y: 1.3)
+        }, completion: nil)
+        versionConstraint.constant = 50
         versionText.text = premiumVersionLocalized
         versionText.textColor = UIColor(red: 44/255, green: 152/255, blue: 41/255, alpha: 1)
         purchasePremiumButton.isHidden = true
         priceText.isHidden = true
+        purchasedText.isHidden = true
     }
     
     func notPurchasedView() {
@@ -74,8 +79,11 @@ class RemoveAdsViewController: UIViewController, SKProductsRequestDelegate, SKPa
         purchasedText.textColor = UIColor(red: 216/255, green: 67/255, blue: 35/255, alpha: 1)
         purchasePremiumButton.isHidden = false
         priceText.isHidden = false
+        purchasedText.isHidden = false
     }
     
+    
+    //MARK: - Purchase methods
     @IBAction func purchasePremium(_ sender: UIButton) {
         if reachability.isReachable() {
             if UserDefaults.standard.bool(forKey: "premiumPurchased") {
@@ -183,6 +191,7 @@ class RemoveAdsViewController: UIViewController, SKProductsRequestDelegate, SKPa
         }
     }
     
+    //MARK: - Connection Check
     func connectionCheckAlert() {
         let alert = UIAlertController(title: "LoginKeeper" , message: connectionCheckLocalized, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: okLocalized, style: .default, handler: nil))

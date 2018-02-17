@@ -24,7 +24,6 @@ class AboutViewController: UIViewController {
         
         navigationItem.titleView = titleTextLabel
         aboutTextView.text = aboutTextLocalized
-        // Do any additional setup after loading the view.
     }
     
     override func viewWillLayoutSubviews() {

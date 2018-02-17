@@ -10,8 +10,11 @@ import UIKit
 import CoreData
 
 class EntriesViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, EntriesDisplayAlertDelegate, UIViewControllerPreviewingDelegate {
-
+    
+    //MARK: - Outlets
     @IBOutlet var tableView: UITableView!
+    
+    //MARK: - Properties
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     var index: Int?
     var account: Account?
@@ -19,6 +22,7 @@ class EntriesViewController: UIViewController, UITableViewDataSource, UITableVie
     let titleTextLabel = UILabel()
     let logoNavImage = UIImageView()
 
+    //MARK: - App life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         view.addGradient()
@@ -42,6 +46,19 @@ class EntriesViewController: UIViewController, UITableViewDataSource, UITableVie
         fetchFromCoreData()
     }
     
+    override func willRotate(to toInterfaceOrientation: UIInterfaceOrientation, duration: TimeInterval) {
+        appDelegate.removeBannerView()
+    }
+    
+    override func didRotate(from fromInterfaceOrientation: UIInterfaceOrientation) {
+        if !UserDefaults.standard.bool(forKey: "premiumPurchased") {
+            appDelegate.loadAd(forViewController: self)
+            updateTableViewBottomInset()
+        } else {
+            appDelegate.removeBannerView()
+        }
+    }
+    
     override func viewWillLayoutSubviews() {
         for v in view.layer.sublayers! {
             if v .isKind(of: CAGradientLayer.self) {
@@ -50,6 +67,7 @@ class EntriesViewController: UIViewController, UITableViewDataSource, UITableVie
         }
     }
     
+    //MARK: - Helper methods
     func updateTableViewBottomInset() {
         if let banner = appDelegate.adBannerView {
             tableView.contentInset.bottom = banner.frame.size.height
@@ -75,6 +93,8 @@ class EntriesViewController: UIViewController, UITableViewDataSource, UITableVie
         navigationController?.pushViewController(viewControllerToCommit, animated: true)
     }
     
+    
+    //MARK: - CoreData
     func fetchFromCoreData() {
         let context = appDelegate.persistentContainer.viewContext
         let fetchRequest = NSFetchRequest<Entry>(entityName: "Entry")
@@ -103,25 +123,13 @@ class EntriesViewController: UIViewController, UITableViewDataSource, UITableVie
             present(alert, animated: true, completion: nil)
         }
     }
-
-    override func willRotate(to toInterfaceOrientation: UIInterfaceOrientation, duration: TimeInterval) {
-        appDelegate.removeBannerView()
-    }
     
-    override func didRotate(from fromInterfaceOrientation: UIInterfaceOrientation) {
-        if !UserDefaults.standard.bool(forKey: "premiumPurchased") {
-            appDelegate.loadAd(forViewController: self)
-            updateTableViewBottomInset()            
-        } else {
-            appDelegate.removeBannerView()
-        }
-    }
-
-    
+    //MARK: - Actions
     @IBAction func addNewEntryButton(_ sender: UIBarButtonItem) {
         self.performSegue(withIdentifier: "addNewEntrySegue", sender: self)
     }
     
+    //MARK: - Segue
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "addNewEntrySegue" {
             let controller = segue.destination as? AddNewEntryViewController
@@ -137,13 +145,6 @@ class EntriesViewController: UIViewController, UITableViewDataSource, UITableVie
             }
         }
     }
-    
-    func alert(message: String) {
-        let alert = UIAlertController(title: errorLocalized, message: message, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: okLocalized, style: .default, handler: nil))
-        present(alert, animated: true, completion: nil)
-    }
-   
     
     //MARK: - Table View DataSource and Delegate
     
@@ -186,6 +187,13 @@ class EntriesViewController: UIViewController, UITableViewDataSource, UITableVie
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
         let footer = UIView()
         return footer
+    }
+    
+    //MARK: - Alerts
+    func alert(message: String) {
+        let alert = UIAlertController(title: errorLocalized, message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: okLocalized, style: .default, handler: nil))
+        present(alert, animated: true, completion: nil)
     }
 }
 

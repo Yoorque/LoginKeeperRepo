@@ -11,17 +11,10 @@ import CoreData
 
 class AddNewAccountViewController: UIViewController, UITextFieldDelegate, UIScrollViewDelegate {
     
-    
+    //MARK: - Outlets
+    @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
     @IBOutlet weak var viewScrollView: UIScrollView!
     @IBOutlet weak var logosScrollView: UIScrollView!
-    
-    let appDelegate = UIApplication.shared.delegate as! AppDelegate
-    var index = 0
-    var i = 0
-    var y = 0
-    var t = 0
-    var activeTextField: UITextField?
-    
     @IBOutlet weak var addNewAccLabel: UILabel!
     
     @IBOutlet var accountTitle: UITextField! {
@@ -30,30 +23,35 @@ class AddNewAccountViewController: UIViewController, UITextFieldDelegate, UIScro
             accountTitle.addLine()
         }
     }
+    
     @IBOutlet var entryName: UITextField! {
         didSet {
             entryName.textContentType = UITextContentType("")
             entryName.addLine()
         }
     }
+    
     @IBOutlet var username: UITextField! {
         didSet {
             username.textContentType = UITextContentType("")
             username.addLine()
         }
     }
+    
     @IBOutlet var password: UITextField! {
         didSet {
             password.textContentType = UITextContentType("")
             password.addLine()
         }
     }
+    
     @IBOutlet var confirmPassword: UITextField! {
         didSet {
             confirmPassword.textContentType = UITextContentType("")
             confirmPassword.addLine()
         }
     }
+    
     @IBOutlet var comment: UITextField! {
         didSet {
             comment.textContentType = UITextContentType("")
@@ -61,8 +59,16 @@ class AddNewAccountViewController: UIViewController, UITextFieldDelegate, UIScro
         }
     }
     
+    //MARK: - Properties
+    let appDelegate = UIApplication.shared.delegate as! AppDelegate
+    var index = 0
+    var i = 0
+    var y = 0
+    var t = 0
+    var activeTextField: UITextField?
+    var originalBottomConstraint: CGFloat = 0.0
     
-    
+    //MARK: - App life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         view.addGradient()
@@ -96,6 +102,19 @@ class AddNewAccountViewController: UIViewController, UITextFieldDelegate, UIScro
         }
         
         logosScrollView.contentSize.width = 55 * (CGFloat(logoImagesPNG.count / 2) + 1)
+        originalBottomConstraint = bottomConstraint.constant
+    }
+    
+    override func willRotate(to toInterfaceOrientation: UIInterfaceOrientation, duration: TimeInterval) {
+        appDelegate.removeBannerView()
+    }
+    
+    override func didRotate(from fromInterfaceOrientation: UIInterfaceOrientation) {
+        if !UserDefaults.standard.bool(forKey: "premiumPurchased") {
+            appDelegate.load(bannerView: appDelegate.adBannerView,forViewController: self, andOrientation: UIDevice.current.orientation)
+        } else {
+            appDelegate.removeBannerView()
+        }
     }
     
     override func viewWillLayoutSubviews() {
@@ -106,7 +125,7 @@ class AddNewAccountViewController: UIViewController, UITextFieldDelegate, UIScro
         }
     }
     
-    //image view tint for selected logo
+    //MARK: - Gesture
     @objc func logoTapped(sender: UITapGestureRecognizer) {
         if let view = sender.view as? UIImageView {
             if let textField = activeTextField {
@@ -143,6 +162,7 @@ class AddNewAccountViewController: UIViewController, UITextFieldDelegate, UIScro
         }
     }
     
+    //MARK: - Keyboard
     @objc func handleKeyboardNotification(notification: NSNotification) {
         if let userInfo = notification.userInfo {
             let keyBoardFrame = userInfo[UIKeyboardFrameEndUserInfoKey] as! CGRect
@@ -153,10 +173,12 @@ class AddNewAccountViewController: UIViewController, UITextFieldDelegate, UIScro
                     viewScrollView.contentInset = contentInsets
                     viewScrollView.scrollIndicatorInsets = contentInsets
                     viewScrollView.scrollRectToVisible(textField.frame, animated: true)
+                    bottomConstraint.constant = 0
                 } else {
                     let contentInsets = UIEdgeInsets.zero
                     viewScrollView.contentInset = contentInsets
                     viewScrollView.scrollIndicatorInsets = contentInsets
+                    bottomConstraint.constant = originalBottomConstraint
                 }
             }
         }
@@ -167,29 +189,12 @@ class AddNewAccountViewController: UIViewController, UITextFieldDelegate, UIScro
         view.endEditing(true)
     }
     
+    //MARK: - Actions
     @IBAction func saveAccountButton(_ sender: UIBarButtonItem) {
         saveAccount()
     }
     
-    override func willRotate(to toInterfaceOrientation: UIInterfaceOrientation, duration: TimeInterval) {
-        appDelegate.removeBannerView()
-    }
-    
-    override func didRotate(from fromInterfaceOrientation: UIInterfaceOrientation) {
-        if !UserDefaults.standard.bool(forKey: "premiumPurchased") {
-            appDelegate.load(bannerView: appDelegate.adBannerView,forViewController: self, andOrientation: UIDevice.current.orientation)
-        } else {
-            appDelegate.removeBannerView()
-        }
-    }
-    
-    
-    func displayAlert(title: String, msg: String) {
-        let alert = UIAlertController(title: title, message: msg, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-        present(alert, animated: true, completion: nil)
-    }
-    
+    //MARK: - CoreData
     func saveAccount() {
         if password.text == confirmPassword.text {
             if password.text != "" {
@@ -232,6 +237,7 @@ class AddNewAccountViewController: UIViewController, UITextFieldDelegate, UIScro
         logoImagesPNG.insert("pngloginkeeper", at: 0)
     }
     
+    //MARK: - TextFields
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         
         if textField == accountTitle {
@@ -315,8 +321,8 @@ class AddNewAccountViewController: UIViewController, UITextFieldDelegate, UIScro
                 }
             }
         }
-        
     }
+    
     //MARK: - ScrollView Delegates
     func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
         if scrollView == logosScrollView {
@@ -328,7 +334,8 @@ class AddNewAccountViewController: UIViewController, UITextFieldDelegate, UIScro
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         if scrollView == viewScrollView {
-            let scale = 1 - viewScrollView.contentOffset.y / 100
+        
+            let scale = 1 - viewScrollView.contentOffset.y / 200
             
             addNewAccLabel.transform = CGAffineTransform(scaleX: min(scale, 1.5) , y: min(scale, 1.5))
         }
@@ -341,5 +348,12 @@ class AddNewAccountViewController: UIViewController, UITextFieldDelegate, UIScro
                 title = ""
             }
         }
+    }
+    
+    //MARK: - Alerts
+    func displayAlert(title: String, msg: String) {
+        let alert = UIAlertController(title: title, message: msg, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        present(alert, animated: true, completion: nil)
     }
 }
