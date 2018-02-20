@@ -43,6 +43,7 @@ class InfoTableViewController: UITableViewController, BWWalkthroughViewControlle
         build = Bundle.main.infoDictionary?["CFBundleVersion"] as! String
         
         versionLabel.text = "\(versionLocalized) \(version!) (\(buildLocalized) \(build!))"
+        removeAds.contentEdgeInsets = UIEdgeInsets(top: 5, left: 10, bottom: 5, right: 10)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -127,13 +128,17 @@ class InfoTableViewController: UITableViewController, BWWalkthroughViewControlle
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let clickedCell = tableView.cellForRow(at: indexPath)
         if indexPath.row != 0 {
-        UIView.animate(withDuration: 0.2, animations: {
-            clickedCell?.contentView.transform = CGAffineTransform(scaleX: 1, y: 0.3)
-        }, completion: {_ in
-            UIView.animate(withDuration: 0.2, animations: {
-                clickedCell?.contentView.transform = .identity
-            })
-        })
+            for logoView in clickedCell!.contentView.subviews {
+                if logoView .isKind(of: UIImageView.self) {
+                    UIView.animate(withDuration: 0.2, animations: {
+                        logoView.transform = CGAffineTransform(scaleX: 1, y: 0.3)
+                    }, completion: {_ in
+                        UIView.animate(withDuration: 0.2, animations: {
+                            logoView.transform = .identity
+                        })
+                    })
+                }
+            }
         }
         switch clickedCell!.tag {
         case feedbackCell.tag:

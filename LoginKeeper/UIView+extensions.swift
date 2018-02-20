@@ -17,6 +17,7 @@ extension UIView {
         gradient.frame = self.bounds
         gradient.colors = [c1, c2]
         gradient.locations = [0.0, 1.0]
+    
         self.layer.insertSublayer(gradient, at: 0)
     }
 }

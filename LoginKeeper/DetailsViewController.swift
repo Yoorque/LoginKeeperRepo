@@ -18,6 +18,7 @@ class DetailsViewController: UIViewController, UITextFieldDelegate, UIScrollView
     @IBOutlet var favoritedStar: UIImageView!
     @IBOutlet weak var scrollView: UIScrollView!
     
+    @IBOutlet weak var undoButton: UIBarButtonItem!
     @IBOutlet var accountName: UITextField! {
         didSet {
             accountName.textContentType = UITextContentType("")
@@ -100,6 +101,9 @@ class DetailsViewController: UIViewController, UITextFieldDelegate, UIScrollView
         view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard)))
         
         originalBottomConstraint = bottomContraint.constant
+        undoButton.isEnabled = false
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(textChange), name: NSNotification.Name.UITextFieldTextDidChange, object: nil)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -153,6 +157,7 @@ class DetailsViewController: UIViewController, UITextFieldDelegate, UIScrollView
     
     func textEditEnabled() {
         print("Enabled")
+        
         accountName.isEnabled = true
         accountName.textColor = .white
         
@@ -171,7 +176,7 @@ class DetailsViewController: UIViewController, UITextFieldDelegate, UIScrollView
     
     func textEditDisabled() {
         print("Disabled")
-        
+        undoButton.isEnabled = false
         accountName.isEnabled = false
         accountName.textColor = .lightText
         
@@ -203,7 +208,7 @@ class DetailsViewController: UIViewController, UITextFieldDelegate, UIScrollView
             let textColor = textField.textColor
             UIView.animate(withDuration: 0.5, animations: {
                 textField.backgroundColor = UIColor(red: 190/255, green: 60/255, blue: 255/255, alpha: 1)
-                textField.textColor = UIColor(red: 250/255, green: 250/255, blue: 250/255, alpha: 1)
+                textField.textColor = UIColor(red: 255/255, green: 255/255, blue: 255/255, alpha: 1)
                 textField.text = NSLocalizedString("COPIED", comment: "copy notification")
             }, completion: {_ in
                 UIView.animate(withDuration: 0.5, animations: {
@@ -307,6 +312,10 @@ class DetailsViewController: UIViewController, UITextFieldDelegate, UIScrollView
         
     }
     
+    @IBAction func undoButtonTapped(_ sender: Any) {
+        activeTextField?.undoManager?.undo()
+    }
+    
     //MARK: - Keyboard
     @objc func dismissKeyboard(sender: UITapGestureRecognizer ) {
         activeTextField?.resignFirstResponder()
@@ -374,6 +383,19 @@ class DetailsViewController: UIViewController, UITextFieldDelegate, UIScrollView
     }
     func textFieldDidBeginEditing(_ textField: UITextField) {
         activeTextField = textField
+    }
+    
+    @objc func textChange() {
+        if let textField = activeTextField {
+            if let manager = textField.undoManager {
+                if manager.canUndo {
+                    undoButton.isEnabled = true
+                } else {
+                    undoButton.isEnabled = false
+                }
+                
+            }
+        }
     }
     
     //MARK: - ScrollView

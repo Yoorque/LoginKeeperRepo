@@ -42,6 +42,7 @@ class RemoveAdsViewController: UIViewController, SKProductsRequestDelegate, SKPa
                 connectionCheckAlert()
             }
         }
+        purchasePremiumButton.contentEdgeInsets = UIEdgeInsets(top: 5, left: 10, bottom: 5, right: 10)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -62,7 +63,8 @@ class RemoveAdsViewController: UIViewController, SKProductsRequestDelegate, SKPa
         unlockText.text = removedAdsLocalized
         UIView.animate(withDuration: 1, delay: 0, options:[.repeat, .autoreverse], animations: {
             self.unlockText.transform = CGAffineTransform(scaleX: 1.3, y: 1.3)
-        }, completion: nil)
+        })
+        
         versionConstraint.constant = 50
         versionText.text = premiumVersionLocalized
         versionText.textColor = UIColor(red: 44/255, green: 152/255, blue: 41/255, alpha: 1)

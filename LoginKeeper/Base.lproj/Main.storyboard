@@ -329,13 +329,9 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qLS-sr-DOL">
-                                        <rect key="frame" x="60" y="276.5" width="254" height="34"/>
+                                        <rect key="frame" x="65" y="276.5" width="244" height="34"/>
                                         <color key="backgroundColor" red="0.17254901960784313" green="0.59607843137254901" blue="0.16078431372549018" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="254" id="BR7-0L-1dx"/>
-                                        </constraints>
                                         <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="18"/>
-                                        <inset key="titleEdgeInsets" minX="5" minY="10" maxX="5" maxY="10"/>
                                         <state key="normal" title="UNLOCK PREMIUM VERSION">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
@@ -453,11 +449,8 @@
                                                     </subviews>
                                                 </stackView>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Grt-BN-kej">
-                                                    <rect key="frame" x="110.5" y="107" width="154" height="33"/>
+                                                    <rect key="frame" x="172.5" y="107" width="30" height="33"/>
                                                     <color key="backgroundColor" red="0.84550261500000001" green="0.26120758059999999" blue="0.13906452059999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="154" id="ijg-FY-aa4"/>
-                                                    </constraints>
                                                     <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="17"/>
                                                     <state key="normal">
                                                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1815,6 +1808,11 @@
                                     <action selector="editButton:" destination="gFM-Ue-sol" id="8mc-M8-cHQ"/>
                                 </connections>
                             </barButtonItem>
+                            <barButtonItem systemItem="undo" id="jsn-F4-xaQ">
+                                <connections>
+                                    <action selector="undoButtonTapped:" destination="gFM-Ue-sol" id="Dth-n2-Fcn"/>
+                                </connections>
+                            </barButtonItem>
                         </rightBarButtonItems>
                     </navigationItem>
                     <connections>
@@ -1827,6 +1825,7 @@
                         <outlet property="password" destination="wCW-qc-GmP" id="6Mi-Mv-UQ8"/>
                         <outlet property="scrollView" destination="6nM-3I-d2r" id="5iS-yL-gwV"/>
                         <outlet property="stackView" destination="ygh-FH-gKF" id="Kb4-Ql-zaL"/>
+                        <outlet property="undoButton" destination="jsn-F4-xaQ" id="FMe-Sd-g3t"/>
                         <outlet property="username" destination="HAt-gr-4L7" id="Mdn-4I-dop"/>
                     </connections>
                 </viewController>
