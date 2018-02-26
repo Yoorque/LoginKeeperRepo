@@ -56,6 +56,7 @@ import UIKit
     override open var prefersStatusBarHidden: Bool {
         return true
     }
+    
     weak open var delegate:BWWalkthroughViewControllerDelegate?
     
     // If you need a page control, next or prev buttons, add them via IB and connect with these Outlets
@@ -109,7 +110,7 @@ import UIKit
 
     override open func viewDidLoad() {
         super.viewDidLoad()
-        
+        UIApplication.shared.isStatusBarHidden = true
         NotificationCenter.default.addObserver(forName: NSNotification.Name.UIApplicationDidEnterBackground, object: nil, queue: .main, using: {_ in
             self.dismiss(animated: true, completion: nil)
         })

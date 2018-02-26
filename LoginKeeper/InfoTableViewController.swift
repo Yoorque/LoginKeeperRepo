@@ -48,6 +48,7 @@ class InfoTableViewController: UITableViewController, BWWalkthroughViewControlle
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
+        UIApplication.shared.isStatusBarHidden = false
         if UserDefaults.standard.bool(forKey: "premiumPurchased") {
             removeAds.setTitle(premiumVersionLocalized, for: .normal)
             removeAds.backgroundColor = UIColor(red: 44/255, green: 152/255, blue: 41/255, alpha: 1)

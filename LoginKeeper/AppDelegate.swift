@@ -21,6 +21,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GADBannerViewDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         print("didFinishLaunchingWithOptions")
         UIApplication.shared.statusBarStyle = .lightContent
+        UIApplication.shared.isStatusBarHidden = false
+        
         GADMobileAds.configure(withApplicationID: "ca-app-pub-9468673959133010~5601234686")
         adBannerView = GADBannerView(adSize: kGADAdSizeSmartBannerPortrait)
         adBannerView!.delegate = self
