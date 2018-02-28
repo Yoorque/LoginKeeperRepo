@@ -45,7 +45,6 @@ class AccountsViewController: UIViewController, UITableViewDelegate, UITableView
         
         NotificationCenter.default.addObserver(forName: NSNotification.Name.UIApplicationDidEnterBackground, object: nil, queue: .main, using: {_ in
             let random = Int(arc4random_uniform(UInt32(localizedNotificationStrings.count - 1)))
-            
             let message = localizedNotificationStrings[random]
             self.notificationManager.notify(with: message)
         })

@@ -144,27 +144,27 @@ class InfoTableViewController: UITableViewController, BWWalkthroughViewControlle
         switch clickedCell!.tag {
         case feedbackCell.tag:
             if authenticated == true {
-                let alert = UIAlertController(title: "LoginKeeper", message: "Please choose an option for leaving feedback.", preferredStyle: .alert)
-                alert.addAction(UIAlertAction(title: "App Store Review", style: .default, handler: {_ in
+//                let alert = UIAlertController(title: "LoginKeeper", message: "Please choose an option for leaving feedback.", preferredStyle: .alert)
+//                alert.addAction(UIAlertAction(title: "App Store Review", style: .default, handler: {_ in
                     let appID = "1317604418"
                     let urlStr = "https://itunes.apple.com/us/app/appName/id\(appID)?mt=8&action=write-review"
                     
                     if let url = URL(string: urlStr), UIApplication.shared.canOpenURL(url) {
                         self.leavingAppAlert(toURL: url, title: "App Store")
                     }
-                }))
-                alert.addAction(UIAlertAction(title: "Email Developer", style: .default, handler: {_ in
-                    if MFMailComposeViewController.canSendMail() {
-                        self.sendEmail()
-                    } else {
-                        self.noMailFuncAlert()
-                    }
-                }))
-                alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
-                present(alert, animated: true, completion: nil)
-            } else {
-                notAuthorizedAlert()
-            }
+//                }))
+//                alert.addAction(UIAlertAction(title: "Email Developer", style: .default, handler: {_ in
+//                    if MFMailComposeViewController.canSendMail() {
+//                        self.sendEmail()
+//                    } else {
+//                        self.noMailFuncAlert()
+//                    }
+//                }))
+//                alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+//                present(alert, animated: true, completion: nil)
+//            } else {
+//                notAuthorizedAlert()
+                }
         case devWebsiteCell.tag:
             
             if let url = URL(string: "https://linkedin.com/in/dusan-juranovic") {
